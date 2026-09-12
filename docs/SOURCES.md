@@ -48313,6 +48313,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Independently re-derived the station split as … and called it threshold-dependent.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-004819d2f5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-004819d2f5` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-005bf8d0f6"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -48353,6 +48363,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `From the bill of materials in … and producing **no test**.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-00a9cadc5b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-00a9cadc5b` · **quoted from an earlier version** · 0.24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-00b2bde87b"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I1.md`
 
@@ -48371,6 +48391,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/F3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/F3.md)
 - **Located by:** `The join is spatial, not by id. … below that, CMEMS pixels.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-00dd04793f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-00dd04793f` · **quoted from an earlier version** · 0.083
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-00e59d3486"></a>
@@ -48503,6 +48533,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-028b4ed780"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-028b4ed780` · **quoted from an earlier version** · 29
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-02bb897b65"></a>
 ### As published at `00a157f` in `docs/hypodrafts/G1.md`
 
@@ -48511,6 +48551,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** `**Error classes.** class … every estimate being within-cell.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-02bf94dcdf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-02bf94dcdf` · **quoted from an earlier version** · 109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-02c46ef356"></a>
@@ -48613,6 +48663,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Standardiseret bestemmelse af overløb … the repo's own fetch path is dead.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-041337511d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-041337511d` · **quoted from an earlier version** · 13
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0442a132c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0442a132c5` · **quoted from an earlier version** · 15,150
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-04673377d7"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -48683,6 +48753,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-04f497a3ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-04f497a3ab` · **quoted from an earlier version** · 92.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-0509b918bf"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -48701,6 +48781,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-053d08db08"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-053d08db08` · **quoted from an earlier version** · 393
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-05e6585f07"></a>
@@ -48731,6 +48821,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `an earlier sample put it at … aggregation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-061fe0b7fd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-061fe0b7fd` · **quoted from an earlier version** · 1,315.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-063ab72c8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-063ab72c8a` · **quoted from an earlier version** · 80
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0650e3db8e"></a>
@@ -48773,6 +48883,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The number moved … to *half*` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-06a34f37d0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06a34f37d0` · **quoted from an earlier version** · 138
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-06b52ec5c4"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -48813,6 +48933,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Three environments … carrying a named instrument are up to` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-06e74a6cb3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06e74a6cb3` · **quoted from an earlier version** · 31
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-06e78f1740"></a>
 ### As published at `00a157f` in `docs/CAUSATION.md`
 
@@ -48821,6 +48951,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CAUSATION.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CAUSATION.md)
 - **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06f91dc419"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06f91dc419` · **quoted from an earlier version** · 116.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-071554959e"></a>
@@ -48973,6 +49113,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-08783dc68f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-08783dc68f` · **quoted from an earlier version** · 149
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-0884f1e51a"></a>
 ### As published at `00a157f` in `docs/SEABED.md`
 
@@ -48991,6 +49141,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `month index … station-years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-08a43547a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-08a43547a0` · **quoted from an earlier version** · 35,085
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-08e62059ca"></a>
@@ -49013,6 +49173,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The null is computed, not assumed … against which any observed path is scored.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-0910df9394"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0910df9394` · **quoted from an earlier version** · 0.968
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-09110d95a3"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -49021,6 +49191,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `From the bill of materials in … and producing **no test**.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-092fe85fff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-092fe85fff` · **quoted from an earlier version** · 0.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0937a1a41c"></a>
@@ -49081,6 +49261,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
 - **Located by:** `is not a picture of Danish farming under … a floor on the fragility of the whole` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0a209973a3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0a209973a3` · **quoted from an earlier version** · 1,418
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0a20c3941a"></a>
@@ -49173,6 +49363,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Size, estimated and not measured … I did not run it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-0b42090e27"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b42090e27` · **quoted from an earlier version** · 43
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0b82dfabcf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b82dfabcf` · **quoted from an earlier version** · 71,550
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0b89fa632f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b89fa632f` · **quoted from an earlier version** · 551.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-0b8dcd3835"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -49241,6 +49461,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0bcc506d81"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0bcc506d81` · **quoted from an earlier version** · 3,860
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0bfb8ab8f8"></a>
@@ -49323,6 +49553,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `sits over combined sewer, where stormwater and sewage share one pipe … built that way almost everywhere.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-0d23fcbd4a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0d23fcbd4a` · **quoted from an earlier version** · 162
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-0d40ae78d5"></a>
 ### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
 
@@ -49351,6 +49591,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/LANDBRUG.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/LANDBRUG.md)
 - **Located by:** `This page argues, in Danish … rather than for a different answer.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0dc9f513c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0dc9f513c5` · **quoted from an earlier version** · 7.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0dd212ef3f"></a>
@@ -49423,6 +49673,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| source | what it measures | resolution / coverage | note | … same Danish data |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-0ec3310d9d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0ec3310d9d` · **quoted from an earlier version** · 5.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-0ed4e53d9d"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -49451,6 +49711,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/R6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/R6.md)
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0f57bd267d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0f57bd267d` · **quoted from an earlier version** · 0.625
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-0f6c123160"></a>
@@ -49493,6 +49763,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Station panel (verified). … month-matched null is mandatory.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-104d81168a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-104d81168a` · **quoted from an earlier version** · 9.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-10801b938e"></a>
 ### As published at `00a157f` in `docs/data/flood2012/README.md`
 
@@ -49521,6 +49801,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-10f18b755a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-10f18b755a` · **quoted from an earlier version** · 87,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-110f7efcd5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-110f7efcd5` · **quoted from an earlier version** · 407.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-11513d1680"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-11513d1680` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1158f59e22"></a>
@@ -49833,6 +50143,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The example this list used to give was wrong … no reanalysis of the archive can fix it` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1492931a16"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1492931a16` · **quoted from an earlier version** · 1,835.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-14a61443f4"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -49841,6 +50161,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Error classes present. … stated not ignored.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-14b9545114"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-14b9545114` · **quoted from an earlier version** · 4,631
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-14bc542cba"></a>
@@ -49871,6 +50201,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D1.md)
 - **Located by:** `Verified by reading the … nearly complete on the response.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-150ca08ac4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-150ca08ac4` · **quoted from an earlier version** · 0.098
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1546645182"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1546645182` · **quoted from an earlier version** · 108,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-15a99107d6"></a>
@@ -49923,6 +50273,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Verified by reading the … nearly complete on the response.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-162c8705ba"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-162c8705ba` · **quoted from an earlier version** · 23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-162ded5f2a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -49951,6 +50311,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `Not the statistic's nominal null. … percentile of this one.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-16654f6dbc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-16654f6dbc` · **quoted from an earlier version** · 0.402
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-16753ba8ce"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-16753ba8ce` · **quoted from an earlier version** · 30,850
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-167f57fea1"></a>
@@ -50083,6 +50463,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1822bd9b18"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1822bd9b18` · **quoted from an earlier version** · 4,248.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-18236f24a7"></a>
 ### As published at `00a157f` in `docs/LANDBRUG.md`
 
@@ -50143,6 +50533,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Sætningen, der bruges politisk … Mellem de to sætninger ligger tre led:` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-18b533727b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-18b533727b` · **quoted from an earlier version** · 0.14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-18c18e9814"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -50183,6 +50583,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The open EMODnet route … binding constraint on an open-only version.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-190921c537"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-190921c537` · **quoted from an earlier version** · 225
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-191e7b3b6e"></a>
 ### As published at `00a157f` in `docs/CONSTRUCTED.md`
 
@@ -50211,6 +50621,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
 - **Located by:** `called EU trawling effort … stations` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-197ae07b86"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-197ae07b86` · **quoted from an earlier version** · 54
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-19d2c6a39d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-19d2c6a39d` · **quoted from an earlier version** · 13.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-19d5c78619"></a>
@@ -50273,6 +50703,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1aae5b1397"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1aae5b1397` · **quoted from an earlier version** · 228.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1ab177f671"></a>
 ### As published at `00a157f` in `docs/hypodrafts/L3.md`
 
@@ -50303,6 +50743,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1ad22d9abc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ad22d9abc` · **quoted from an earlier version** · 0.516
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1ada3d9329"></a>
 ### As published at `00a157f` in `docs/PLAN.md`
 
@@ -50321,6 +50771,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1b40bd46be"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1b40bd46be` · **quoted from an earlier version** · 1,052.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1b811d8a29"></a>
@@ -50393,6 +50853,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `ODA vegetation, **not in repo** … Use the ODA field.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1c20552c49"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c20552c49` · **quoted from an earlier version** · 232
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1c230bcf95"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -50401,6 +50871,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `The null is computed, not assumed … against which any observed path is scored.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c531c5e89"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c531c5e89` · **quoted from an earlier version** · 3.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1c5a1d04ad"></a>
@@ -50413,6 +50893,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Subsidiary: per station … one and not the other.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1c6db12a1c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c6db12a1c` · **quoted from an earlier version** · 0.50
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c9e3d82fa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c9e3d82fa` · **quoted from an earlier version** · 0.510
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ca807727c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ca807727c` · **quoted from an earlier version** · 139,933
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1ca95fe352"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -50421,6 +50931,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/AUDIT.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/AUDIT.md)
 - **Located by:** `HAS AN ERROR … independently reimplemented.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1d0705c12c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d0705c12c` · **quoted from an earlier version** · 5.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1d0a4b2223"></a>
@@ -50443,6 +50963,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** ``docs/data/areas/stations_series.{json,bin}` — … which is the composition problem.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1d11c3005c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d11c3005c` · **quoted from an earlier version** · 0.640
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1d14ba0101"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -50451,6 +50981,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `Fetch OBIS occurrences with … report both.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1d4989405a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d4989405a` · **quoted from an earlier version** · 0.404
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1d5bb38136"></a>
@@ -50493,6 +51033,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-1dd9092da3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1dd9092da3` · **quoted from an earlier version** · 229
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-1de24f2f80"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -50521,6 +51071,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C4.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C4.md)
 - **Located by:** `Station panel (verified). … month-matched null is mandatory.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1e762df705"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1e762df705` · **quoted from an earlier version** · 554.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ea29cbbc8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ea29cbbc8` · **quoted from an earlier version** · 10.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-1ec681c766"></a>
@@ -50603,6 +51173,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| set | stations … not the start year.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-202bb174da"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-202bb174da` · **quoted from an earlier version** · 821.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-204785f449"></a>
 ### As published at `00a157f` in `docs/AGENT_BRIEF.md`
 
@@ -50653,6 +51233,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Enumerating the `Parameter` column of the whole CTD extract … Dihydrogensulfid` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-20a809f20d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20a809f20d` · **quoted from an earlier version** · 72,413
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-20a8a2da87"></a>
 ### As published at `00a157f` in `docs/CURRENTS.md`
 
@@ -50683,6 +51273,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-20d8cdb649"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20d8cdb649` · **quoted from an earlier version** · 161
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-20eb39aee3"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -50691,6 +51291,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Every Danish stream that reaches the sea is the target … where the money actually goes.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-20f6ab824f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20f6ab824f` · **quoted from an earlier version** · 0.564
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-20f9ee22e8"></a>
@@ -50833,6 +51443,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fetched, with provenance separated rather than pooled … national geodata` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-22b8b497b9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-22b8b497b9` · **quoted from an earlier version** · 85
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-22ba84510d"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -50851,6 +51471,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/B1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/B1.md)
 - **Located by:** `per-sample E. coli + enterococci, dated … the raw table keeps them` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2303a95e80"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2303a95e80` · **quoted from an earlier version** · 17
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-233792e1c3"></a>
@@ -51043,6 +51673,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `What it costs, item by item … has to be accepted whole.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-256d75e8a3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-256d75e8a3` · **quoted from an earlier version** · 290.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-257414f2aa"></a>
 ### As published at `00a157f` in `docs/hypodrafts/Z8.md`
 
@@ -51133,6 +51773,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `cannot be scored at all, and that is the finding … touches them.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-263053b7e9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-263053b7e9` · **quoted from an earlier version** · 108
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-263c3f9c4e"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -51151,6 +51801,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2680c5aeae"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2680c5aeae` · **quoted from an earlier version** · 0.28
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-26957ca8b8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-26957ca8b8` · **quoted from an earlier version** · 3,703.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-269b9ee989"></a>
@@ -51243,6 +51913,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `filter as above … cells).` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-27402f17b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-27402f17b4` · **quoted from an earlier version** · 205.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-2743276e38"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -51261,6 +51941,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SEABED.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SEABED.md)
 - **Located by:** `That matters because resuspending sulphidic sediment … not measurements of Køge Bugt.)` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-27573db1f7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-27573db1f7` · **quoted from an earlier version** · 32.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-27598d3564"></a>
@@ -51341,6 +52031,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/B1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/B1.md)
 - **Located by:** `Vesthimmerlands Forsyning … set.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2886ef41e7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2886ef41e7` · **quoted from an earlier version** · 0.151
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2892cf29cf"></a>
@@ -51443,6 +52143,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-29fc9ba490"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-29fc9ba490` · **quoted from an earlier version** · 655.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-2a00439c62"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -51461,6 +52171,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/Z8.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/Z8.md)
 - **Located by:** `Satellite IOPs are all … primary document |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2a1d1cfdd4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2a1d1cfdd4` · **quoted from an earlier version** · 0.065
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2a2d907f4c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2a2d907f4c` · **quoted from an earlier version** · 38,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2a33ef6b1e"></a>
@@ -51501,6 +52231,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2b2253bfc5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2b2253bfc5` · **quoted from an earlier version** · 123
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2b55ec1673"></a>
@@ -51593,6 +52333,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The floor is the eelgrass requirement … of surface irradiance.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-2c76c6b5b3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2c76c6b5b3` · **quoted from an earlier version** · 0.658
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-2c93e27815"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C1.md`
 
@@ -51641,6 +52391,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2d424a8e69"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2d424a8e69` · **quoted from an earlier version** · 35
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2d55b4590a"></a>
@@ -51693,6 +52453,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `month index … station-years.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-2df03f3c20"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2df03f3c20` · **quoted from an earlier version** · 267,612
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-2e071cb18b"></a>
 ### As published at `00a157f` in `docs/openproblems/J1.md`
 
@@ -51731,6 +52501,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/A1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/A1.md)
 - **Located by:** `| Source | Verified here | Error class | … consistent with the stated` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2eaa6cf48f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2eaa6cf48f` · **quoted from an earlier version** · 60
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2eae4e647d"></a>
@@ -51801,6 +52581,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** `**Balanced panel:** stations with … is what turns over.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f53fe70c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2f53fe70c5` · **quoted from an earlier version** · 30,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f6c2d6ede"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2f6c2d6ede` · **quoted from an earlier version** · 77.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-2f73196abc"></a>
@@ -51913,6 +52713,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-30942ca70b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-30942ca70b` · **quoted from an earlier version** · 0.775
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-30e196302c"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -51931,6 +52741,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3104249ac0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3104249ac0` · **quoted from an earlier version** · 0.109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-310b03352c"></a>
@@ -51973,6 +52793,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `HAS AN ERROR … independently reimplemented.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-3153f8b56b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3153f8b56b` · **quoted from an earlier version** · 250
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3164ad237f"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -52001,6 +52831,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-31e5045107"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-31e5045107` · **quoted from an earlier version** · 4.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-32372ffa14"></a>
@@ -52133,6 +52973,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-33471e4645"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33471e4645` · **quoted from an earlier version** · 82
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-33476c4211"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33476c4211` · **quoted from an earlier version** · 275.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3350980d2f"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -52141,6 +53001,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-33a0e135a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33a0e135a1` · **quoted from an earlier version** · 100.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-33eeac7cc8"></a>
@@ -52173,6 +53043,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `That asymmetry is the problem. … entire national record.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-34183e48e5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34183e48e5` · **quoted from an earlier version** · 48,760
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-343978237f"></a>
 ### As published at `00a157f` in `docs/KNOWN_AND_UNKNOWN.md`
 
@@ -52181,6 +53061,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
 - **Located by:** `Their known unknowns are stated openly … negative values in dry years` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-343b73edfa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-343b73edfa` · **quoted from an earlier version** · 247.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3443bf4ffa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3443bf4ffa` · **quoted from an earlier version** · 71
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3445c5489b"></a>
@@ -52201,6 +53101,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C1.md)
 - **Located by:** `on most rows of all three parameters … nor salinometer from CTD.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34db791e14"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34db791e14` · **quoted from an earlier version** · 0.138
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34e4b3ea11"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34e4b3ea11` · **quoted from an earlier version** · 10.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-34e6149dcb"></a>
@@ -52231,6 +53151,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `The four automatically registered sheets were … which is the behaviour that makes it believable` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3510815ca6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3510815ca6` · **quoted from an earlier version** · 192
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-35164555a9"></a>
@@ -52333,6 +53263,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-36854b8c48"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-36854b8c48` · **quoted from an earlier version** · 175.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-36a3ab0224"></a>
 ### As published at `00a157f` in `docs/hypodrafts/L3.md`
 
@@ -52361,6 +53301,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `First, R has no physical units … name sitting in the unit field.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-36e1d57582"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-36e1d57582` · **quoted from an earlier version** · 497.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-36e3126591"></a>
@@ -52403,6 +53353,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-37407e2c0b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-37407e2c0b` · **quoted from an earlier version** · 15.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3745c85309"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -52431,6 +53391,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/data/flood2012/README.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/data/flood2012/README.md)
 - **Located by:** `Pixel values are depth bands, not metres … no modelled flooding, or outside the sheet` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-376e45062f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-376e45062f` · **quoted from an earlier version** · 0.830
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3780c50598"></a>
@@ -52603,6 +53573,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-3903bf77a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3903bf77a1` · **quoted from an earlier version** · 8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3924bcfa5e"></a>
 ### As published at `00a157f` in `docs/CURRENTS.md`
 
@@ -52611,6 +53591,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
 - **Located by:** `Rain intense enough to overflow a combined sewer … wetter in total but gentler` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-393770e5cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-393770e5cb` · **quoted from an earlier version** · 681,555
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-394fac90ec"></a>
@@ -52631,6 +53621,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `ODA Hav / Vandkemi … quantity specified in section` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3a198d6e75"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3a198d6e75` · **quoted from an earlier version** · 721.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3a34c27ad8"></a>
@@ -52691,6 +53691,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `PICO+NANO+MICRO − CHL … cells.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b10f9a148"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3b10f9a148` · **quoted from an earlier version** · 18.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3b3c2fe074"></a>
@@ -52813,6 +53823,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-3c47af5ccd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3c47af5ccd` · **quoted from an earlier version** · 334
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3c6b5dcee0"></a>
 ### As published at `00a157f` in `docs/INCIDENCE.md`
 
@@ -52831,6 +53851,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3cb5e600ba"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3cb5e600ba` · **quoted from an earlier version** · 6.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ccff3f417"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ccff3f417` · **quoted from an earlier version** · 45.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3cd3662ddc"></a>
@@ -52953,6 +53993,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Sparse programmes are not thin … few chances to.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-3e34257dcb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3e34257dcb` · **quoted from an earlier version** · 22,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3e377e6603"></a>
 ### As published at `00a157f` in `docs/INCIDENCE.md`
 
@@ -53011,6 +54061,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `Because the figure is easy to lose … takes the series with it.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ecd67674e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ecd67674e` · **quoted from an earlier version** · 0.790
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ef32a0071"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ef32a0071` · **quoted from an earlier version** · 9,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-3efc385b53"></a>
@@ -53073,6 +54143,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `An unresolved discrepancy, flagged not settled. … quoting either number.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-3fc1c6d3d6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3fc1c6d3d6` · **quoted from an earlier version** · 26
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-3fd74c752c"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -53081,6 +54161,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The requirement for all … Slopes borrowed from typologically similar water bodies` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4008448e46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4008448e46` · **quoted from an earlier version** · 78
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-401162376e"></a>
@@ -53143,6 +54233,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-407cc05ab9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-407cc05ab9` · **quoted from an earlier version** · 10.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-40b0429ebc"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I1.md`
 
@@ -53171,6 +54271,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D1.md)
 - **Located by:** `Verified by reading the … nearly complete on the response.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-411941f49a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-411941f49a` · **quoted from an earlier version** · 0.13
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-412b14a9bb"></a>
@@ -53333,6 +54443,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `all of Jul, Aug and Sep … by decade band).` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-42de6d52cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-42de6d52cb` · **quoted from an earlier version** · 0.40
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4320b75c16"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4320b75c16` · **quoted from an earlier version** · 28,921
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4327141053"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4327141053` · **quoted from an earlier version** · 1,880.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4338386a8a"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -53351,6 +54491,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** `Under it I measured the dependence … would have been wrong by that factor.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43686761d1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-43686761d1` · **quoted from an earlier version** · 430
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-436b0e29cc"></a>
@@ -53401,6 +54551,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/POLITICS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/POLITICS.md)
 - **Located by:** `That cuts both ways and it is worth being blunt … none of them claims that it is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43f29318f3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-43f29318f3` · **quoted from an earlier version** · 41
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-4403383d51"></a>
@@ -53463,6 +54623,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Nitrogen loading does affect summer chlorophyll and water clarity. … direction consistent everywhere.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-447ef9be1e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-447ef9be1e` · **quoted from an earlier version** · 115,906
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4488d7a145"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -53523,6 +54693,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `the three groundwater layers in … carrying no analyte.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-45456bdb02"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45456bdb02` · **quoted from an earlier version** · 8.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-45643f21ec"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D7.md`
 
@@ -53573,6 +54753,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Second response. … a separate production path` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-45c2ede5af"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45c2ede5af` · **quoted from an earlier version** · 355.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-45e43db92b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45e43db92b` · **quoted from an earlier version** · 0.07
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-45ec631f95"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -53603,6 +54803,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Because the figure is easy to lose … takes the series with it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-461686bb99"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-461686bb99` · **quoted from an earlier version** · 0.810
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4641049538"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4641049538` · **quoted from an earlier version** · 88,955
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4646c2b9e3"></a>
 ### As published at `00a157f` in `docs/data/flood2012/README.md`
 
@@ -53631,6 +54851,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Error classes present. … stated not ignored.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-46e3ed0ff3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-46e3ed0ff3` · **quoted from an earlier version** · 11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-46ed87d1af"></a>
@@ -53673,6 +54903,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Eight runs per model … crossed with phosphorus at present or` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-47929086bb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-47929086bb` · **quoted from an earlier version** · 0.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-47abaf3825"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -53701,6 +54941,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/FLOOD_GAP.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/FLOOD_GAP.md)
 - **Located by:** `If the sheets were placed wrongly, … the other bands still avoid water.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4807eb0843"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4807eb0843` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-484cc419a4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-484cc419a4` · **quoted from an earlier version** · 151.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-484d884a60"></a>
@@ -53733,6 +54993,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `filter as above … cells).` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4873f2cb30"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4873f2cb30` · **quoted from an earlier version** · 990.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4880995e61"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -53741,6 +55011,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `The complete visit register … So the monthly panel` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-489988636b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-489988636b` · **quoted from an earlier version** · 130
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-48a90d92d9"></a>
@@ -53813,6 +55093,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** ``docs/data/areas/stations_series.{json,bin}` — … which is the composition problem.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-49431ae530"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-49431ae530` · **quoted from an earlier version** · 103
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-495a45a2db"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -53853,6 +55143,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Response — Secchi depth. … often` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4985d57c96"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4985d57c96` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-49f0370cdb"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -53861,6 +55161,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-49f1beb927"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-49f1beb927` · **quoted from an earlier version** · 98
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-49fcccd98c"></a>
@@ -53891,6 +55201,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CURRENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CURRENTS.md)
 - **Located by:** `Aarhus Bugt registers oxygen depletion every year … extreme case in this set` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a24d288c0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4a24d288c0` · **quoted from an earlier version** · 119
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a27c76e37"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4a27c76e37` · **quoted from an earlier version** · 0.595
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-4a365d8492"></a>
@@ -54033,6 +55363,46 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Water body | Chlorophyll | Kd | … Østersøen, Bornholm` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4b8bfc7195"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4b8bfc7195` · **quoted from an earlier version** · 10.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4b9344929e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4b9344929e` · **quoted from an earlier version** · 0.734
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bcc708811"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bcc708811` · **quoted from an earlier version** · 0.798
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bd2477588"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bd2477588` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4bd89ab970"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C1.md`
 
@@ -54041,6 +55411,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C1.md)
 - **Located by:** `Intermediate … never load the archive into memory.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bf696c1e1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bf696c1e1` · **quoted from an earlier version** · 310
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-4c095c59f2"></a>
@@ -54083,6 +55463,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| set | stations … not the start year.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4c1f48ee3e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4c1f48ee3e` · **quoted from an earlier version** · 0.27
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4c4451f860"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -54101,6 +55491,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D7.md)
 - **Located by:** `Third response … A dense modern arm, not a fourth path.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4c929d805b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4c929d805b` · **quoted from an earlier version** · 15.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-4cbd3ac8cf"></a>
@@ -54193,6 +55593,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `HELCOM PEG biovolume list … (geometric model)` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4d6e41e00a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4d6e41e00a` · **quoted from an earlier version** · 205,544
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4d7b050c23"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -54283,6 +55693,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** ``docs/data/areas/stations_series.{json,bin}` — … turnover, not merely decline.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-4e6a1c5566"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4e6a1c5566` · **quoted from an earlier version** · 0.21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-4e726417ea"></a>
 ### As published at `00a157f` in `docs/SEABED.md`
 
@@ -54341,6 +55761,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D7.md)
 - **Located by:** `Response — Secchi depth. … often` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4f1c6ae243"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4f1c6ae243` · **quoted from an earlier version** · 2,495.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-4f66315ae9"></a>
@@ -54493,6 +55923,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-512afef935"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-512afef935` · **quoted from an earlier version** · 12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5130b4bea0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5130b4bea0` · **quoted from an earlier version** · 0.11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-5156875bc1"></a>
 ### As published at `00a157f` in `docs/CONSTRUCTED.md`
 
@@ -54501,6 +55951,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CONSTRUCTED.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CONSTRUCTED.md)
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5157c60a12"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5157c60a12` · **quoted from an earlier version** · 242.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-515eaedcd7"></a>
@@ -54521,6 +55981,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** `**Balanced panel:** stations with … is what turns over.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-517d63d602"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-517d63d602` · **quoted from an earlier version** · 199.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-518de6cc9b"></a>
@@ -54653,6 +56123,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Verified by reading the … nearly complete on the response.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-528a1983a2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-528a1983a2` · **quoted from an earlier version** · 0.782
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-5298cd71b8"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I1.md`
 
@@ -54703,6 +56183,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Quantisation:** … Class` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-53033ed442"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-53033ed442` · **quoted from an earlier version** · 17.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-536d2b5134"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-536d2b5134` · **quoted from an earlier version** · 450
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-538a73226f"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -54711,6 +56211,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/A1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/A1.md)
 - **Located by:** `| Source | Verified here | Error class | … consistent with the stated` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-53a05b30aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-53a05b30aa` · **quoted from an earlier version** · 565
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-53a7b1097a"></a>
@@ -54823,6 +56333,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-54bb3576eb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54bb3576eb` · **quoted from an earlier version** · 0.283
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-54c17b6b1d"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -54843,6 +56363,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-54d4c736a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54d4c736a0` · **quoted from an earlier version** · 114,015
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-54f7a9fa96"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54f7a9fa96` · **quoted from an earlier version** · 0.22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-55012076bc"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D7.md`
 
@@ -54851,6 +56391,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D7.md)
 - **Located by:** `Third response … A dense modern arm, not a fourth path.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-558348ae49"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-558348ae49` · **quoted from an earlier version** · 106,666
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-55ae1f1a94"></a>
@@ -54901,6 +56451,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `the abundance eMoF is … three orders of magnitude.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5616810c22"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5616810c22` · **quoted from an earlier version** · 40.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-561a762071"></a>
@@ -54973,6 +56533,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The phenology mix moves. … phenology × year.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-56ce949ad1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-56ce949ad1` · **quoted from an earlier version** · 33
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5709466251"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5709466251` · **quoted from an earlier version** · 72,370
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5713a3b364"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5713a3b364` · **quoted from an earlier version** · 117
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-571c776b95"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D7.md`
 
@@ -54981,6 +56571,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D7.md)
 - **Located by:** `Response — Secchi depth. … often` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-57268f2e22"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-57268f2e22` · **quoted from an earlier version** · 0.08
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-57452739ef"></a>
@@ -55011,6 +56611,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-578d6463f3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-578d6463f3` · **quoted from an earlier version** · 119,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-57a067dad6"></a>
@@ -55153,6 +56763,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `toxicants and metals, which remove grazers and filter feeders … the light from whatever might recolonise` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-58d6d72058"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-58d6d72058` · **quoted from an earlier version** · 0.313
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-58df1e375b"></a>
 ### As published at `00a157f` in `docs/hypodrafts/G1.md`
 
@@ -55211,6 +56831,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `Repeating on `oxysat_bed` … Not separated here.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-59e656a25a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-59e656a25a` · **quoted from an earlier version** · 31,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-59f9a6b80c"></a>
@@ -55311,6 +56941,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CONSTRUCTED.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CONSTRUCTED.md)
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5af1b8e578"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5af1b8e578` · **quoted from an earlier version** · 7.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-5af5d4e605"></a>
@@ -55423,6 +57063,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-5c0d927ee8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c0d927ee8` · **quoted from an earlier version** · 865
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c0fcf505a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c0fcf505a` · **quoted from an earlier version** · 0.26
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-5c1e7ce5fc"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -55441,6 +57101,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** `The phenology mix moves. … phenology × year.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c65cbafad"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c65cbafad` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-5c71700314"></a>
@@ -55623,6 +57293,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Verified by reading the … nearly complete on the response.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-5ec392b512"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5ec392b512` · **quoted from an earlier version** · 84
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-5ecd978c0c"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -55631,6 +57311,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `And three honest deductions from that total. … the analysis has never been run.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5ef870127f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5ef870127f` · **quoted from an earlier version** · 20,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-5f1c56a67a"></a>
@@ -55683,6 +57373,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `This page prices one question. … survives to be a time series.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-603ec057ea"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-603ec057ea` · **quoted from an earlier version** · 2,800
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-605a15b61e"></a>
 ### As published at `00a157f` in `docs/hypodrafts/L3.md`
 
@@ -55713,6 +57413,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-60c9c37325"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-60c9c37325` · **quoted from an earlier version** · 24.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-60ce281af9"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D1.md`
 
@@ -55741,6 +57451,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `Repeating on `oxysat_bed` … Not separated here.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6115768d23"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6115768d23` · **quoted from an earlier version** · 77
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-612dc9f3ec"></a>
@@ -55803,6 +57523,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fødevarestyrelsen found PFOS in calf meat … never as an effect in an organism.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-61fee8b5ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-61fee8b5ab` · **quoted from an earlier version** · 16.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6205cef571"></a>
 ### As published at `00a157f` in `docs/hypodrafts/Z8.md`
 
@@ -55843,6 +57573,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Måledækning … dyrkningsbidrag **negativt**` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6221f1a030"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6221f1a030` · **quoted from an earlier version** · 127,348
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62735c2dd6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62735c2dd6` · **quoted from an earlier version** · 128.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6286175c25"></a>
 ### As published at `00a157f` in `docs/SEABED.md`
 
@@ -55881,6 +57631,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
 - **Located by:** `This table is the reason the page is organised the way it is … which is what extensive cattle on owned land is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62b48526cf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62b48526cf` · **quoted from an earlier version** · 0.522
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62bcead372"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62bcead372` · **quoted from an earlier version** · 482.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-62c546156c"></a>
@@ -55933,6 +57703,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-62fa69dd70"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62fa69dd70` · **quoted from an earlier version** · 0.19
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-63531e4345"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -55983,6 +57763,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The complete visit register … So the monthly panel` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-63d6ac56bd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-63d6ac56bd` · **quoted from an earlier version** · 6.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-63e6b13b8b"></a>
 ### As published at `00a157f` in `docs/CAUSATION.md`
 
@@ -56021,6 +57811,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `HELCOM PEG biovolume list … (geometric model)` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-64559f7198"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-64559f7198` · **quoted from an earlier version** · 71,475
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-648e1dfb65"></a>
@@ -56143,6 +57943,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `(placebo). … °E.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6631a797e1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6631a797e1` · **quoted from an earlier version** · 0.538
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-663919599d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-663919599d` · **quoted from an earlier version** · 549
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-663f09df10"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -56171,6 +57991,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `Enumerating the `Parameter` column of the whole CTD extract … Dihydrogensulfid` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-66e3d6e240"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-66e3d6e240` · **quoted from an earlier version** · 27,545
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-670657b3d7"></a>
@@ -56293,6 +58123,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6900075777"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6900075777` · **quoted from an earlier version** · 51.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6901a3eb54"></a>
 ### As published at `00a157f` in `docs/LIGHT.md`
 
@@ -56341,6 +58181,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `all of Jul, Aug and Sep … by decade band).` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-69b813826e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-69b813826e` · **quoted from an earlier version** · 0.096
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-6a0c0be20d"></a>
@@ -56423,6 +58273,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| set | stations … not the start year.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6a911b79e6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6a911b79e6` · **quoted from an earlier version** · 1,766.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6aaf0426d1"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C1.md`
 
@@ -56471,6 +58331,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C4.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C4.md)
 - **Located by:** `naive read does not mask it … for mg l⁻¹).` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6b5fd21283"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6b5fd21283` · **quoted from an earlier version** · 0.034
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-6b6249e30d"></a>
@@ -56543,6 +58413,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6c636628f2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6c636628f2` · **quoted from an earlier version** · 354,821
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6c7456fb25"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D1.md`
 
@@ -56581,6 +58461,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/Z8.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/Z8.md)
 - **Located by:** `**`lys.csv.gz`** — … Secchi-derived Kd cannot enter.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6d86668a2e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6d86668a2e` · **quoted from an earlier version** · 0.035
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-6d957140c5"></a>
@@ -56663,6 +58553,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Pre-registered windows, … fall in it, in order.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6e9ad496a7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6e9ad496a7` · **quoted from an earlier version** · 481,197
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6e9bf04dd2"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -56743,6 +58643,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Every Danish stream that reaches the sea is the target … where the money actually goes.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-6f4d08f4aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6f4d08f4aa` · **quoted from an earlier version** · 24,276
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-6f9e6a9b2a"></a>
 ### As published at `00a157f` in `docs/openproblems/R6.md`
 
@@ -56751,6 +58661,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/R6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/R6.md)
 - **Located by:** `Two full independent scans … nothing comparative.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6fa89c01f1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6fa89c01f1` · **quoted from an earlier version** · 95
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-6fe9c3beb9"></a>
@@ -56793,6 +58713,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `record **` … coarse` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-70e62fe30c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-70e62fe30c` · **quoted from an earlier version** · 14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-71066a6d6a"></a>
 ### As published at `00a157f` in `docs/EXPERIMENTS.md`
 
@@ -56801,6 +58731,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/EXPERIMENTS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/EXPERIMENTS.md)
 - **Located by:** `The national assessment attaches one number … not the variables at issue.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-710807ec36"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-710807ec36` · **quoted from an earlier version** · 40,532
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-712b9819e4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-712b9819e4` · **quoted from an earlier version** · 296.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-7165f4b836"></a>
@@ -56841,6 +58791,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `The third column is the current state … Corridor candidates` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-71d02fc6ff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-71d02fc6ff` · **quoted from an earlier version** · 15.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-71d26ef41f"></a>
@@ -56963,6 +58923,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `ERDDAP `EUT_BALTIC_PROFILES` … Open, no registration` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-7306704635"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7306704635` · **quoted from an earlier version** · 51
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-73253d020c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-73253d020c` · **quoted from an earlier version** · 728
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-73609b2955"></a>
 ### As published at `00a157f` in `docs/openproblems/R6.md`
 
@@ -56991,6 +58971,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-73f52b3c1f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-73f52b3c1f` · **quoted from an earlier version** · 90,355
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-73f5cea0ed"></a>
@@ -57103,6 +59093,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The join is spatial, not by id. … below that, CMEMS pixels.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-755e432375"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-755e432375` · **quoted from an earlier version** · 93
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-757d74ae9a"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -57143,6 +59143,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The join is spatial, not by id. … below that, CMEMS pixels.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-75beb8410e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-75beb8410e` · **quoted from an earlier version** · 469
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-75c1b9d66b"></a>
 ### As published at `00a157f` in `docs/data/flood2012/README.md`
 
@@ -57163,6 +59173,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Not the statistic's nominal null. … percentile of this one.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-76181005ae"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-76181005ae` · **quoted from an earlier version** · 10.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-761b17ac0a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -57171,6 +59191,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `ERDDAP `EUT_BALTIC_PROFILES` … Open, no registration` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7641bafc5e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7641bafc5e` · **quoted from an earlier version** · 0.10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-764b1e64c2"></a>
@@ -57193,6 +59223,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `cut, converted to a loading cut through the water body's fitted TN slope … The indicator itself yields one value per six years.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-7651114acb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7651114acb` · **quoted from an earlier version** · 0.044
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-7663de955d"></a>
 ### As published at `00a157f` in `docs/hypodrafts/L3.md`
 
@@ -57201,6 +59241,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `month index … stations.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-768bc3ce9f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-768bc3ce9f` · **quoted from an earlier version** · 7.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-769105a0df"></a>
@@ -57333,6 +59383,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Eelgrass has a requirement, not a preference. … rather than inherited from an assessment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-7775d61b1b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7775d61b1b` · **quoted from an earlier version** · 1,217.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7784c3f0ee"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7784c3f0ee` · **quoted from an earlier version** · 76
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-77999b77b5"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -57341,6 +59411,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/AUDIT.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/AUDIT.md)
 - **Located by:** `HAS AN ERROR … independently reimplemented.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-779c67501a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-779c67501a` · **quoted from an earlier version** · 332
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-779db984b0"></a>
@@ -57373,6 +59453,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The null already exists and was measured … splitting water that behaves as one thing.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-784f91240e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-784f91240e` · **quoted from an earlier version** · 84,575
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-787b576c88"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -57393,6 +59483,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-78e0d6e329"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-78e0d6e329` · **quoted from an earlier version** · 71.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-78e4b74b6f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-78e4b74b6f` · **quoted from an earlier version** · 419
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7910c9c2e7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7910c9c2e7` · **quoted from an earlier version** · 295
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-793729c237"></a>
 ### As published at `00a157f` in `docs/hypodrafts/Z8.md`
 
@@ -57411,6 +59531,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7941e979ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7941e979ab` · **quoted from an earlier version** · 3,831.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-7976e1b6b2"></a>
@@ -57441,6 +59571,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `Fetch OBIS occurrences with … report both.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-798a163816"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-798a163816` · **quoted from an earlier version** · 0.18
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7997a7d986"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7997a7d986` · **quoted from an earlier version** · 0.092
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-79bbac6163"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-79bbac6163` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Assignment is by nearest point on the marine boundary, one rule … km dropped.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-79e1e5f406"></a>
@@ -57593,6 +59753,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The null is computed, not assumed … against which any observed path is scored.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-7d3c3064ac"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7d3c3064ac` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7d60d19f84"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7d60d19f84` · **quoted from an earlier version** · 131.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-7d764ed0da"></a>
 ### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
 
@@ -57631,6 +59811,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `Enumerating the `Parameter` column of the whole CTD extract … Dihydrogensulfid` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7dd57c02fb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7dd57c02fb` · **quoted from an earlier version** · 1.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-7de13e601d"></a>
@@ -57681,6 +59871,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/A7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/A7.md)
 - **Located by:** `record **` … coarse` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7e6de5f777"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7e6de5f777` · **quoted from an earlier version** · 0.766
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7eae2ccdbd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7eae2ccdbd` · **quoted from an earlier version** · 56
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7eb5aa8866"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7eb5aa8866` · **quoted from an earlier version** · 171
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-7ece94638d"></a>
@@ -57813,6 +60033,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Water body | Chlorophyll | Kd | … Østersøen, Bornholm` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-7fc473a720"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fc473a720` · **quoted from an earlier version** · 114
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7fcab95b52"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fcab95b52` · **quoted from an earlier version** · 149.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7fed507583"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fed507583` · **quoted from an earlier version** · 0.12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-801103b922"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C4.md`
 
@@ -57853,6 +60103,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `There is no … speaks to it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-80992d9c6d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-80992d9c6d` · **quoted from an earlier version** · 14,850
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-80ab917311"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -57871,6 +60131,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `First, R has no physical units … name sitting in the unit field.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-80f0552bee"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-80f0552bee` · **quoted from an earlier version** · 0.16
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-81102a3dc0"></a>
@@ -57911,6 +60181,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/F3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/F3.md)
 - **Located by:** ``data/raw/cmems/grid/transp__{inner,arkona}__YYYY.nc` | … stream one year at a time` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-81bd5af221"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-81bd5af221` · **quoted from an earlier version** · 2,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-81cd5c13f9"></a>
@@ -58063,6 +60343,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Not the statistic's nominal null. … percentile of this one.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-83bfbb156f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-83bfbb156f` · **quoted from an earlier version** · 0.019
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-83e05b1c29"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -58213,6 +60503,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Sparse programmes are not thin … few chances to.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-873095b0cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-873095b0cb` · **quoted from an earlier version** · 0.05
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-87717da9bc"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C4.md`
 
@@ -58253,6 +60553,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-87a7b8bf07"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-87a7b8bf07` · **quoted from an earlier version** · 459.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-87bf7a10f0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-87bf7a10f0` · **quoted from an earlier version** · 318
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-87e54eff91"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -58283,6 +60603,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A storm is … dead-bed threshold,` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-8813f8118b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8813f8118b` · **quoted from an earlier version** · 3,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-8826c0e0e7"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -58303,6 +60633,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `**`ctd.csv.gz`** — all … rows.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-888d1546e8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-888d1546e8` · **quoted from an earlier version** · 43,945
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-88af2b87d1"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -58321,6 +60661,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `This page prices one question. … survives to be a time series.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-88de237c1a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-88de237c1a` · **quoted from an earlier version** · 238.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-88e6bc77bc"></a>
@@ -58433,6 +60783,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five times in this project a quoted null was wrong … rather than quoting.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-89c05be395"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-89c05be395` · **quoted from an earlier version** · 19.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-89c944a1b0"></a>
 ### As published at `00a157f` in `docs/hypodrafts/G1.md`
 
@@ -58521,6 +60881,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `an earlier sample put it at … aggregation` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8acfad0fe5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8acfad0fe5` · **quoted from an earlier version** · 38
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-8b08736629"></a>
@@ -58613,6 +60983,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Water body | Chlorophyll | Kd | … Østersøen, Bornholm` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-8b89749685"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8b89749685` · **quoted from an earlier version** · 896
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8b947a0c2f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8b947a0c2f` · **quoted from an earlier version** · 185
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-8ba0589774"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -58631,6 +61021,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** ``docs/data/areas/stations_series.{json,bin}` — … turnover, not merely decline.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8c1b5ec0b8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8c1b5ec0b8` · **quoted from an earlier version** · 279.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-8c48736296"></a>
@@ -58723,6 +61123,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The surface-route figure has crossed a line that mattered rhetorically … the argument should not lean on it` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-8d1a03fe0d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8d1a03fe0d` · **quoted from an earlier version** · 0.679
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-8d3e73ffab"></a>
 ### As published at `00a157f` in `docs/AGENT_BRIEF.md`
 
@@ -58783,6 +61193,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-8e2db0fb92"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8e2db0fb92` · **quoted from an earlier version** · 94,055
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-8e3acf8bb6"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D1.md`
 
@@ -58803,6 +61223,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A farming statistic is an input … model-as-datum**, exactly.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-8e728f613e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8e728f613e` · **quoted from an earlier version** · 7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-8ea6edb0e1"></a>
 ### As published at `00a157f` in `docs/HYPOTHESES.md`
 
@@ -58821,6 +61251,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C4.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C4.md)
 - **Located by:** `Layout checked … (no time-of-day)` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8f1936f08e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8f1936f08e` · **quoted from an earlier version** · 102,697
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-8f42920c00"></a>
@@ -58953,6 +61393,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `### What the pilot already shows … strengthening of thermal stratification here.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-90cf64d2ed"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-90cf64d2ed` · **quoted from an earlier version** · 97,876
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-90dd20acd5"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -58961,6 +61411,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `the abundance eMoF is … three orders of magnitude.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-90ee0eee68"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-90ee0eee68` · **quoted from an earlier version** · 127
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9103565f59"></a>
@@ -59053,6 +61513,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Repeating on `oxysat_bed` … Not separated here.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-921ef602b6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-921ef602b6` · **quoted from an earlier version** · 27.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-922381c96a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-922381c96a` · **quoted from an earlier version** · 37
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-92247a081b"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -59083,6 +61563,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `**On the classification circularity.** … before using a pooled label again.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-93035d0ba4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-93035d0ba4` · **quoted from an earlier version** · 165.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9341c8788f"></a>
 ### As published at `00a157f` in `docs/OPEN_PROBLEMS.md`
 
@@ -59103,6 +61593,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Station panel (verified). … month-matched null is mandatory.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9360e97dfb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9360e97dfb` · **quoted from an earlier version** · 0.531
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-936b7dfaea"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -59111,6 +61611,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `Because the figure is easy to lose … takes the series with it.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9378869ff2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9378869ff2` · **quoted from an earlier version** · 299
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-93823a0d62"></a>
@@ -59181,6 +61691,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-93f829ed3f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-93f829ed3f` · **quoted from an earlier version** · 1,605,986
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9417565504"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9417565504` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-942d7a6735"></a>
@@ -59343,6 +61873,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `circular shift of the event index by whole years … never exceed it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-952ca66ee2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-952ca66ee2` · **quoted from an earlier version** · 0.20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-95379ea5bb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-95379ea5bb` · **quoted from an earlier version** · 0.47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9564100490"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I1.md`
 
@@ -59443,6 +61993,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Three details did the work … off when it was first solved` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9697db6732"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9697db6732` · **quoted from an earlier version** · 100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-969f0b6d64"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -59451,6 +62011,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96abbde9fc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96abbde9fc` · **quoted from an earlier version** · 17,800
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96ba4daafa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96ba4daafa` · **quoted from an earlier version** · 224,735
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96bb466f25"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96bb466f25` · **quoted from an earlier version** · 0.012
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-96cefbca77"></a>
@@ -59513,6 +62103,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `same, values … sit in an mg/l column` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-97b3e98a8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-97b3e98a8a` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-97b57483bf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-97b57483bf` · **quoted from an earlier version** · 437.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-97b671650c"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -59521,6 +62131,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/AUDIT.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/AUDIT.md)
 - **Located by:** `It inherits … different numbers.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9809297546"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9809297546` · **quoted from an earlier version** · 83
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9813d9ff93"></a>
@@ -59551,6 +62171,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `| Dimensions | … first five years spin-up;` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-985e3cf7b5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-985e3cf7b5` · **quoted from an earlier version** · 25,561
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9867746470"></a>
@@ -59783,6 +62413,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `CYANOBLOOM mask), daily, … each from` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9b78951f37"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9b78951f37` · **quoted from an earlier version** · 5.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9b78a4bb89"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -59873,6 +62513,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Error classes on the proxies: … no clock time.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9ca300ec28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ca300ec28` · **quoted from an earlier version** · 280
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9ca470bf05"></a>
 ### As published at `00a157f` in `docs/CAUSATION.md`
 
@@ -59901,6 +62551,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `| Water body | Chlorophyll | Kd | … Østersøen, Bornholm` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ccbe5c122"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ccbe5c122` · **quoted from an earlier version** · 5.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9cf0ef51cb"></a>
@@ -59943,6 +62603,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A sampler on a … mm row is a floor.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9d96c497c8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9d96c497c8` · **quoted from an earlier version** · 0.29
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9dc95a60ed"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9dc95a60ed` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9de2b5c1a8"></a>
 ### As published at `00a157f` in `docs/data/flood2012/README.md`
 
@@ -59971,6 +62651,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `ERDDAP `EUT_BALTIC_PROFILES` … Open, no registration` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9e0e59b040"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9e0e59b040` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9e58f3eb77"></a>
@@ -60033,6 +62723,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The bottom half attenuates less, and the gap closes … rising overall though not at every step.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9eb5438b01"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9eb5438b01` · **quoted from an earlier version** · 1,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9ee6117d83"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -60041,6 +62741,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ef046717d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ef046717d` · **quoted from an earlier version** · 1,526.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-9f3315768c"></a>
@@ -60083,6 +62793,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `drawn down far enough to push pH above … which is the carbon entry` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9f608a0c48"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9f608a0c48` · **quoted from an earlier version** · 201
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-9f7ca9edd5"></a>
 ### As published at `00a157f` in `docs/CAUSATION.md`
 
@@ -60123,6 +62843,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Faecal indicator is sewage-specific … for separate stormwater.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-9fbf6e4cbf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9fbf6e4cbf` · **quoted from an earlier version** · 16
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ffab0a6c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ffab0a6c3` · **quoted from an earlier version** · 30
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a0052bdf39"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -60133,6 +62873,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `stations, months … Near-bed:` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a059ac3b79"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a059ac3b79` · **quoted from an earlier version** · 13,170
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a06816fd9b"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -60141,6 +62891,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `Not obtained, and this limits the page. … every model-level number here is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a06a395a17"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a06a395a17` · **quoted from an earlier version** · 115
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a07a1825d8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a07a1825d8` · **quoted from an earlier version** · 0.039
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a0b21cde9b"></a>
@@ -60161,6 +62931,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a0d2776898"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a0d2776898` · **quoted from an earlier version** · 161,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a0d8856566"></a>
@@ -60191,6 +62971,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a1004b2b33"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a1004b2b33` · **quoted from an earlier version** · 0.523
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a1135d8276"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a1135d8276` · **quoted from an earlier version** · 191
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a1168505c0"></a>
@@ -60333,6 +63133,46 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `is not a metaphor. It means fat filth … no unit in which it would be reported` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a2c114fac1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2c114fac1` · **quoted from an earlier version** · 211.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2d5576af8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2d5576af8` · **quoted from an earlier version** · 580,100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2d9c9ecca"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2d9c9ecca` · **quoted from an earlier version** · 578,019
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2e5ee8468"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2e5ee8468` · **quoted from an earlier version** · 0.618
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a2f676f15e"></a>
 ### As published at `00a157f` in `docs/FLOOD_GAP.md`
 
@@ -60353,6 +63193,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `each yielding less energy. Freshwater carries … a hundred to five hundred times more` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a37f1fcb3a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a37f1fcb3a` · **quoted from an earlier version** · 45.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a3a4b1f92a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/B1.md`
 
@@ -60361,6 +63211,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/B1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/B1.md)
 - **Located by:** `per-sample E. coli + enterococci, dated … the raw table keeps them` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a3a4cd55c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a3a4cd55c3` · **quoted from an earlier version** · 48,103
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a3a65e078a"></a>
@@ -60431,6 +63291,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
 - **Located by:** `The first thing to get right, because almost every summary gets it wrong … what was checked here is the present tense of it` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a43fa9cb28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a43fa9cb28` · **quoted from an earlier version** · 458.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a464d6860c"></a>
@@ -60523,6 +63393,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a4dc1545a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a4dc1545a0` · **quoted from an earlier version** · 772
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a4f3dcfda7"></a>
 ### As published at `00a157f` in `docs/CONSTRUCTED.md`
 
@@ -60573,6 +63453,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The national pollutant concentrations … only discharges without prior settling` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a560867617"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a560867617` · **quoted from an earlier version** · 62
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a56be0e5e6"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -60603,6 +63493,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Statistic: Kendall τ … Recompute τ under` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-a5b7cd1011"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a5b7cd1011` · **quoted from an earlier version** · 3,910
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-a5c95ac1d8"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -60631,6 +63531,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/KNOWN_AND_UNKNOWN.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/KNOWN_AND_UNKNOWN.md)
 - **Located by:** `called EU trawling effort … stations` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a5dbb59f0c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a5dbb59f0c` · **quoted from an earlier version** · 609.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a5e45168c5"></a>
@@ -60771,6 +63681,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `Because the figure is easy to lose … takes the series with it.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a83e29a688"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a83e29a688` · **quoted from an earlier version** · 4,540
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-a845c3415a"></a>
@@ -60943,6 +63863,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `There is no … speaks to it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-aa0148792b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aa0148792b` · **quoted from an earlier version** · 0.844
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `One reading fits these numbers, and it is not tested here … than its own shape alone would` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-aa0b96b71b"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C4.md`
 
@@ -61063,6 +63993,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-aae13b1f8f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aae13b1f8f` · **quoted from an earlier version** · 42
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aae9791d1c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aae9791d1c` · **quoted from an earlier version** · 491,620
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab1bc32a91"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab1bc32a91` · **quoted from an earlier version** · 12.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ab3448bc59"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -61073,6 +64033,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fetch OBIS occurrences with … report both.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ab3a4b544c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab3a4b544c` · **quoted from an earlier version** · 231.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab5daefe46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab5daefe46` · **quoted from an earlier version** · 124.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ab617a25b3"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -61081,6 +64061,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab7a35b7b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab7a35b7b4` · **quoted from an earlier version** · 64
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ab83990606"></a>
@@ -61131,6 +64121,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ac29a891a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ac29a891a1` · **quoted from an earlier version** · 0.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ac681bc831"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ac681bc831` · **quoted from an earlier version** · 7.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ac7d0ce402"></a>
@@ -61213,6 +64223,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ad26c402bc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ad26c402bc` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ad37795413"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -61223,6 +64243,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Quantisation:** … Class` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ad9da1fd73"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ad9da1fd73` · **quoted from an earlier version** · 0.698
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ada9e60431"></a>
 ### As published at `00a157f` in `docs/hypodrafts/D1.md`
 
@@ -61231,6 +64261,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D1.md)
 - **Located by:** `Fields per HELCOM metadata record … that is the fleet.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aded95b725"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aded95b725` · **quoted from an earlier version** · 5.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-adeeb02657"></a>
@@ -61263,6 +64303,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Error classes present. … stated not ignored.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ae1d86e3b5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ae1d86e3b5` · **quoted from an earlier version** · 97,035
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ae43edc06a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ae43edc06a` · **quoted from an earlier version** · 20,300
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ae9340fc2d"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -61271,6 +64331,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `This page prices one question. … survives to be a time series.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aea2847b09"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aea2847b09` · **quoted from an earlier version** · 686.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-aea7bba17c"></a>
@@ -61363,6 +64433,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `First, R has no physical units … name sitting in the unit field.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-b02a3c9cbb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b02a3c9cbb` · **quoted from an earlier version** · 0.924
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-b031dee30a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -61381,6 +64461,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `Third, the candidate signal … by arithmetic rather than judgement.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b03f7581cf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b03f7581cf` · **quoted from an earlier version** · 21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b049ff339e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b049ff339e` · **quoted from an earlier version** · 0.050
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b05a927df9"></a>
@@ -61431,6 +64531,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** `Under it I measured the dependence … would have been wrong by that factor.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b08d9333fc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b08d9333fc` · **quoted from an earlier version** · 32
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b0a6350909"></a>
@@ -61533,6 +64643,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Archived `oxysat_bed` is computed … no second, rival model.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-b21aa8968d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b21aa8968d` · **quoted from an earlier version** · 12,107
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-b232ec3929"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -61553,6 +64673,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `### What the pilot already shows … strengthening of thermal stratification here.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-b290d6b680"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b290d6b680` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-b29e0fbfc2"></a>
 ### As published at `00a157f` in `docs/CONSTRUCTED.md`
 
@@ -61571,6 +64701,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/PLACES.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/PLACES.md)
 - **Located by:** `These are not in conflict. … whether it is dead` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b2e034910d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b2e034910d` · **quoted from an earlier version** · 3,811
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b2ee6fdf43"></a>
@@ -61873,6 +65013,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-b7aaf3f215"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7aaf3f215` · **quoted from an earlier version** · 0.111
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-b7c8e27133"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -61883,6 +65033,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-b7dcb2471e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7dcb2471e` · **quoted from an earlier version** · 214.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b7e33a1cc3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7e33a1cc3` · **quoted from an earlier version** · 0.585
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-b803ef3f6a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -61891,6 +65061,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b83956a783"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b83956a783` · **quoted from an earlier version** · 25,958
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b84531e312"></a>
@@ -61911,6 +65091,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b860940972"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b860940972` · **quoted from an earlier version** · 0.844
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b8b7ab769f"></a>
@@ -61941,6 +65131,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/LIGHT.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/LIGHT.md)
 - **Located by:** `The bottom half attenuates less, and the gap closes … rising overall though not at every step.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b92b2789e2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b92b2789e2` · **quoted from an earlier version** · 222.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-b94ffab82a"></a>
@@ -62083,6 +65283,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `ODA vegetation, **not in repo** … Use the ODA field.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-bad593d32b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bad593d32b` · **quoted from an earlier version** · 10.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-badf0cefff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-badf0cefff` · **quoted from an earlier version** · 104
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-bae2a6bc93"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C4.md`
 
@@ -62143,6 +65363,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Typetallene for miljøfarlige stoffer … i slam fra bassiner.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-bbfdd29e8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bbfdd29e8a` · **quoted from an earlier version** · 164.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-bc534775c6"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -62151,6 +65381,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `The ensemble method — comparing the two model types where both exist … Det Sydfynske Øhav` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bc687bf64b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bc687bf64b` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bc6f8e00ac"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bc6f8e00ac` · **quoted from an earlier version** · 2,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-bc79d47019"></a>
@@ -62193,6 +65443,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The raw CTD file … per cast in the` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-bce79bbf01"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bce79bbf01` · **quoted from an earlier version** · 116
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-bce9466683"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -62231,6 +65491,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd082e5b30"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bd082e5b30` · **quoted from an earlier version** · 236
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-bd1416f2ff"></a>
@@ -62281,6 +65551,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `That is the expected answer: full moonlight is … about a millionth` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd4c594ee4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bd4c594ee4` · **quoted from an earlier version** · 211.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-bd6952b14b"></a>
@@ -62423,6 +65703,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Response — Secchi depth. … often` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-bea278c619"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bea278c619` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-beaff77879"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -62533,6 +65823,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Five measurements, in rough order of value per krone. … The hard part was never the electronics.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c004de5d9e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c004de5d9e` · **quoted from an earlier version** · 2,600
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c00db079a9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c00db079a9` · **quoted from an earlier version** · 0.672
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c0647f2814"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c0647f2814` · **quoted from an earlier version** · 0.725
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c078133e41"></a>
 ### As published at `00a157f` in `docs/EXPOSURE.md`
 
@@ -62551,6 +65871,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `The complete visit register … So the monthly panel` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c0ab2c44d4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c0ab2c44d4` · **quoted from an earlier version** · 0.124
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c0b1025d80"></a>
@@ -62683,6 +66013,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `record **` … coarse` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c19e34d8b6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c19e34d8b6` · **quoted from an earlier version** · 119,877
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c1aced2443"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -62723,6 +66063,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Third response … A dense modern arm, not a fourth path.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c20d405511"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c20d405511` · **quoted from an earlier version** · 27
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c235459768"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1b.md`
 
@@ -62753,6 +66103,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `### What the pilot already shows … strengthening of thermal stratification here.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c30371f1c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c30371f1c3` · **quoted from an earlier version** · 182
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c3336c5f72"></a>
 ### As published at `00a157f` in `docs/hypodrafts/AUDIT.md`
 
@@ -62761,6 +66121,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/AUDIT.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/AUDIT.md)
 - **Located by:** `fix.** Line … verified by its own pilot.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c33e805b05"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c33e805b05` · **quoted from an earlier version** · 0.859
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c341a9943e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c341a9943e` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `A national time series has one unit of replication. … so an effect size can be estimated across them.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c342d04de4"></a>
@@ -62781,6 +66161,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/OPEN_PROBLEMS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/OPEN_PROBLEMS.md)
 - **Located by:** `which was not known … are not negligible in a fjord` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c34c372a3a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c34c372a3a` · **quoted from an earlier version** · 38,230
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c3538fac97"></a>
@@ -62853,6 +66243,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| set | stations … not the start year.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c3bdf108ec"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c3bdf108ec` · **quoted from an earlier version** · 34
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c418514cf5"></a>
 ### As published at `00a157f` in `docs/hypodrafts/G1.md`
 
@@ -62871,6 +66271,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I3.md)
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c48c74b6c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c48c74b6c5` · **quoted from an earlier version** · 10,465
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c49e72ff13"></a>
@@ -62963,6 +66373,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Before using it for … reason it survives the calibration error` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c5abca23c9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c5abca23c9` · **quoted from an earlier version** · 0.178
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c5b4ead45b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c5b4ead45b` · **quoted from an earlier version** · 1,475
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c5dec8e261"></a>
 ### As published at `00a157f` in `docs/LANDBRUG.md`
 
@@ -63003,6 +66433,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Third, the candidate signal … by arithmetic rather than judgement.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c67812e053"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c67812e053` · **quoted from an earlier version** · 0.288
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c68d73f869"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -63011,6 +66451,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c6c578ffef"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c6c578ffef` · **quoted from an earlier version** · 50.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c702778f41"></a>
@@ -63081,6 +66531,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `From the bill of materials in … and producing **no test**.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c7a11a0d28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c7a11a0d28` · **quoted from an earlier version** · 165
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c7a6892ca0"></a>
@@ -63233,6 +66693,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fetch: Køge Bugt is a southeast-facing funnel … its stranding direction are the same.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-c8ec26f195"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c8ec26f195` · **quoted from an earlier version** · 56,105
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-c916aad4c9"></a>
 ### As published at `00a157f` in `docs/hypodrafts/I3.md`
 
@@ -63251,6 +66721,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** `Read `stations_series.bin` at the … rows — seconds.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c96d965f8f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c96d965f8f` · **quoted from an earlier version** · 48
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-c976d6fd0e"></a>
@@ -63311,6 +66791,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** ``docs/data/areas/stations_series.{json,bin}` — … which is the composition problem.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c9ff0949aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c9ff0949aa` · **quoted from an earlier version** · 96
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ca32bdc330"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ca32bdc330` · **quoted from an earlier version** · 0.550
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ca3dcf2fe6"></a>
@@ -63393,6 +66893,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Response — Secchi depth. … often` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-cb9d025902"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cb9d025902` · **quoted from an earlier version** · 449,600
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-cbac70f6ce"></a>
 ### As published at `00a157f` in `docs/hypodrafts/F3.md`
 
@@ -63401,6 +66911,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/F3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/F3.md)
 - **Located by:** `needs three `TOPICS` entries … I did not run it.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cbe080e000"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cbe080e000` · **quoted from an earlier version** · 53,283
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-cbfef015df"></a>
@@ -63421,6 +66941,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `month index … stations.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ccc8e0b973"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ccc8e0b973` · **quoted from an earlier version** · 45
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ccd75bd373"></a>
@@ -63473,6 +67003,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-cda8ad774c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cda8ad774c` · **quoted from an earlier version** · 0.023
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-cdcc7e4282"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -63481,6 +67021,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `| Point | Theirs | Ours, corrected | Who is right | … It simply never appears in the public argument.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cdceae6bf3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cdceae6bf3` · **quoted from an earlier version** · 0.639
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-cddc43b618"></a>
@@ -63551,6 +67101,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/A7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/A7.md)
 - **Located by:** `An unresolved discrepancy, flagged not settled. … quoting either number.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ce7390d99d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ce7390d99d` · **quoted from an earlier version** · 169.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ce876f4363"></a>
@@ -63641,6 +67201,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/CONSTRUCTED.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/CONSTRUCTED.md)
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cf0e72c504"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cf0e72c504` · **quoted from an earlier version** · 288.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-cf580f30e7"></a>
@@ -63913,6 +67483,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-d235bcc756"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d235bcc756` · **quoted from an earlier version** · 204,688
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-d24732b6da"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -64003,6 +67583,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| construction | held against | result | verdict | … not what one of them is` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-d3566c38dc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d3566c38dc` · **quoted from an earlier version** · 66.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-d383469191"></a>
 ### As published at `00a157f` in `docs/openproblems/J1.md`
 
@@ -64011,6 +67601,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/J1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/J1.md)
 - **Located by:** `Third, the candidate signal … by arithmetic rather than judgement.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d391a684b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d391a684b4` · **quoted from an earlier version** · 0.124
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-d3d06f0d94"></a>
@@ -64051,6 +67651,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** `**On the classification circularity.** … before using a pooled label again.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d40cc0eb2e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d40cc0eb2e` · **quoted from an earlier version** · 12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-d4bd0debbe"></a>
@@ -64363,6 +67973,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Fields per HELCOM metadata record … that is the fleet.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-d82a617d28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d82a617d28` · **quoted from an earlier version** · 282,480
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-d83b2e8dfe"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -64393,6 +68013,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `record **` … coarse` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-d888749c9b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d888749c9b` · **quoted from an earlier version** · 65.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-d8a960c51c"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -64413,6 +68043,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Point | Theirs | Ours, corrected | Who is right | … It simply never appears in the public argument.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-d8f01ce3e3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d8f01ce3e3` · **quoted from an earlier version** · 0.050
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-d90511b35c"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -64431,6 +68071,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `The open EMODnet route … binding constraint on an open-only version.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d9797ee125"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d9797ee125` · **quoted from an earlier version** · 188
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-d9a041eabc"></a>
@@ -64593,6 +68243,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `| Source | Verified here | Error class | … consistent with the stated` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-dbeea8773d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dbeea8773d` · **quoted from an earlier version** · 0.602
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-dbfc5adce4"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C4.md`
 
@@ -64753,6 +68413,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-dd97966b20"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dd97966b20` · **quoted from an earlier version** · 1,313
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-dd9881040f"></a>
 ### As published at `00a157f` in `docs/hypodrafts/K1.md`
 
@@ -64811,6 +68481,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/F3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/F3.md)
 - **Located by:** `The join is spatial, not by id. … below that, CMEMS pixels.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de242b69ad"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de242b69ad` · **quoted from an earlier version** · 217,960
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de643f2e46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de643f2e46` · **quoted from an earlier version** · 417
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de71bde5c2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de71bde5c2` · **quoted from an earlier version** · 47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-de742f5e60"></a>
@@ -64873,6 +68573,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Everything above as a list of things to buy … The laboratory is the commitment.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-deeb8f289b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-deeb8f289b` · **quoted from an earlier version** · 59.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-def38648b3"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1.md`
 
@@ -64881,6 +68591,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/A1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/A1.md)
 - **Located by:** `| Source | Verified here | Error class | … consistent with the stated` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-df1783acc1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-df1783acc1` · **quoted from an earlier version** · 18.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-df1b844a38"></a>
@@ -64983,6 +68703,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `an earlier sample put it at … aggregation` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-dfdb599450"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dfdb599450` · **quoted from an earlier version** · 343.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e0a4fb71a6"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -64991,6 +68721,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `What it costs, item by item … has to be accepted whole.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e0aea50818"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e0aea50818` · **quoted from an earlier version** · 0.139
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e0c26a7058"></a>
@@ -65053,6 +68793,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `VanDa `/phytoplankton/*` … **not established**.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e13f18d45b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e13f18d45b` · **quoted from an earlier version** · 17.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e158a7cde8"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -65061,6 +68811,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/GRUNDLAGET.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/GRUNDLAGET.md)
 - **Located by:** `no coefficient, NOT COMPUTED. … than the one we published.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e16cb077d7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e16cb077d7` · **quoted from an earlier version** · 84.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e16defc924"></a>
@@ -65151,6 +68911,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C4.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C4.md)
 - **Located by:** `Pre-registered windows, … fall in it, in order.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e2f582be5e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e2f582be5e` · **quoted from an earlier version** · 0.04
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e346a38554"></a>
@@ -65303,6 +69073,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `**`lys.csv.gz`** — … Secchi-derived Kd cannot enter.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e5a12e42f4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e5a12e42f4` · **quoted from an earlier version** · 335
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e5ce387cb5"></a>
 ### As published at `00a157f` in `docs/hypodrafts/TRIAGE.md`
 
@@ -65373,6 +69153,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Its per-parameter counts … immaterial.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e6fec48a4d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e6fec48a4d` · **quoted from an earlier version** · 0.36
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e7138101d2"></a>
 ### As published at `00a157f` in `docs/GRUNDLAGET.md`
 
@@ -65413,6 +69203,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Read `stations_series.bin` at the … rows — seconds.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e7508812a8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7508812a8` · **quoted from an earlier version** · 358
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e75c595f2e"></a>
 ### As published at `00a157f` in `docs/openproblems/R6.md`
 
@@ -65421,6 +69221,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/R6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/R6.md)
 - **Located by:** `| Source | What it measures … different lab chain |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e76d8407a9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e76d8407a9` · **quoted from an earlier version** · 0.022
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e77754e37d"></a>
@@ -65463,6 +69273,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `LOOP catchments show … No term in any published account carries this` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e7abde727a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7abde727a` · **quoted from an earlier version** · 85.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e7cbc0b362"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -65471,6 +69291,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/C6.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/C6.md)
 - **Located by:** `Error classes present. … stated not ignored.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e7d4a5dddb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7d4a5dddb` · **quoted from an earlier version** · 22,404
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e7d4a97cc9"></a>
@@ -65523,6 +69353,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Read the five arrays at the … disagreement is equally the finding.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e8a6ebd9b9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e8a6ebd9b9` · **quoted from an earlier version** · 0.118
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e8ab68c1b7"></a>
 ### As published at `00a157f` in `docs/hypodrafts/A1b.md`
 
@@ -65531,6 +69371,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/A1b.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/A1b.md)
 - **Located by:** `recomputed each vintage … of area by catchment` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e8c8bd11ca"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e8c8bd11ca` · **quoted from an earlier version** · 0.402
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e8ce47d698"></a>
@@ -65543,6 +69393,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `A. Nutrient-driven production in place … recorded in `flags.json`` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e90afeff3d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e90afeff3d` · **quoted from an earlier version** · 35.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e9269c289d"></a>
 ### As published at `00a157f` in `docs/hypodrafts/L3.md`
 
@@ -65551,6 +69411,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `| set | stations … not the start year.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e92b7556c4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e92b7556c4` · **quoted from an earlier version** · 0.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e95174c6db"></a>
@@ -65583,6 +69453,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Visits per station-year … differently-observed units.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-e97645f8e0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e97645f8e0` · **quoted from an earlier version** · 0.149
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-e99017aac7"></a>
 ### As published at `00a157f` in `docs/LANDBRUG.md`
 
@@ -65601,6 +69481,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/G1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/G1.md)
 - **Located by:** `Under it I measured the dependence … would have been wrong by that factor.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9b5c353bf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9b5c353bf` · **quoted from an earlier version** · 336,244
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9c9fbebd9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9c9fbebd9` · **quoted from an earlier version** · 16.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9d081e13a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9d081e13a` · **quoted from an earlier version** · 0.109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-e9d6cdec18"></a>
@@ -65703,6 +69613,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `If the sheets were placed wrongly, … the other bands still avoid water.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-eb0a74f8c8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-eb0a74f8c8` · **quoted from an earlier version** · 118
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-eb248b5722"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C6.md`
 
@@ -65721,6 +69641,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/Z8.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/Z8.md)
 - **Located by:** `**`lys.csv.gz`** — … Secchi-derived Kd cannot enter.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ebae590cb3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ebae590cb3` · **quoted from an earlier version** · 161,990
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ebb064a233"></a>
@@ -65773,6 +69703,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `First, R has no physical units … name sitting in the unit field.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ec1a790d4f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ec1a790d4f` · **quoted from an earlier version** · 1,148.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ec2e00930a"></a>
 ### As published at `00a157f` in `docs/hypodrafts/C1.md`
 
@@ -65813,6 +69753,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `**`ctd.csv.gz`** — all … rows.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ecc65ddeb6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ecc65ddeb6` · **quoted from an earlier version** · 572.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ecc8103631"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -65831,6 +69781,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/TRIAGE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/TRIAGE.md)
 - **Located by:** `It is because nutrients are in group A … position to compete.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ed310c2003"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ed310c2003` · **quoted from an earlier version** · 63,476
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ed540ba456"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ed540ba456` · **quoted from an earlier version** · 152,578
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-ed88a8cb50"></a>
@@ -65903,6 +69873,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ee1fca0f46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ee1fca0f46` · **quoted from an earlier version** · 51.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ee236ca78c"></a>
 ### As published at `00a157f` in `docs/PLAN.md`
 
@@ -65973,6 +69953,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Error classes present. … stated not ignored.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ef54ab569e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ef54ab569e` · **quoted from an earlier version** · 245
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ef7b3a7540"></a>
 ### As published at `00a157f` in `docs/openproblems/A7.md`
 
@@ -65991,6 +69981,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/F3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/F3.md)
 - **Located by:** `ODA vegetation, **not in repo** … Use the ODA field.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-efd5657388"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-efd5657388` · **quoted from an earlier version** · 0.39
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-efe27c21c2"></a>
@@ -66031,6 +70031,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/L3.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/L3.md)
 - **Located by:** `The summer-peaked share … not inherited.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f01f225287"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f01f225287` · **quoted from an earlier version** · 562.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f02585fd39"></a>
@@ -66141,6 +70151,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/openproblems/A7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/openproblems/A7.md)
 - **Located by:** `Separately, the Zenodo file … stations near Bornholm.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f1a0889914"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f1a0889914` · **quoted from an earlier version** · 21.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f1cb145821"></a>
@@ -66323,6 +70343,36 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Every Danish stream that reaches the sea is the target … where the money actually goes.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-f3af492557"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3af492557` · **quoted from an earlier version** · 0.136
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3bba6a009"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3bba6a009` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3c5101439"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3c5101439` · **quoted from an earlier version** · 94,092
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-f3cee2ce28"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -66331,6 +70381,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SENSING.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SENSING.md)
 - **Located by:** `Every Danish stream that reaches the sea is the target … where the money actually goes.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3d1dbf36d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3d1dbf36d` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f42ee66dc2"></a>
@@ -66413,6 +70473,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Event index (built and run here). … assert dates from memory.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-f4fd25c876"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f4fd25c876` · **quoted from an earlier version** · 0.878
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-f4fdce81b4"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -66441,6 +70511,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/INCIDENCE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/INCIDENCE.md)
 - **Located by:** `Above that line three things happen at once … on the far side of the step` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f545b0d648"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f545b0d648` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f5760d1624"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f5760d1624` · **quoted from an earlier version** · 6.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f5a2337552"></a>
@@ -66523,6 +70613,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `The collection is skewed toward the government … parties that voted against` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-f69736413a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f69736413a` · **quoted from an earlier version** · 131
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-f6cee720d1"></a>
 ### As published at `00a157f` in `docs/FLOOD_GAP.md`
 
@@ -66541,6 +70641,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/I1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/I1.md)
 - **Located by:** `(quantisation): … per station, unrecoverably.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f6ee6faa73"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f6ee6faa73` · **quoted from an earlier version** · 227.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f6fed7832b"></a>
@@ -66623,6 +70733,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Southwest and southeast drive … rather than away from it.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-f8424e43d1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8424e43d1` · **quoted from an earlier version** · 75.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-f8764696dd"></a>
 ### As published at `00a157f` in `docs/CAUSATION.md`
 
@@ -66671,6 +70791,26 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/D7.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/D7.md)
 - **Located by:** ``SigtDybdeMedVandkikkert` True … Clean shallow subset` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8e3e73533"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8e3e73533` · **quoted from an earlier version** · 0.17
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8e59f0888"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8e59f0888` · **quoted from an earlier version** · 57
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-f9c85364e3"></a>
@@ -66813,6 +70953,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Triple join … real leverage.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-fbd2bc0b4a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fbd2bc0b4a` · **quoted from an earlier version** · 189,830
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-fbfb20c9e8"></a>
 ### As published at `00a157f` in `docs/SENSING.md`
 
@@ -66873,6 +71023,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `This page prices one question. … survives to be a time series.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-fc7530c00a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fc7530c00a` · **quoted from an earlier version** · 13,595
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-fc7fb64ebb"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -66893,6 +71053,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Thirty Alcian blue TEP samples … spectrophotometer.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-fd827fe0d5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fd827fe0d5` · **quoted from an earlier version** · 0.23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-fd96364a71"></a>
 ### As published at `00a157f` in `docs/SETTLE.md`
 
@@ -66901,6 +71071,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/SETTLE.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/SETTLE.md)
 - **Located by:** `What it costs, item by item … has to be accepted whole.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fda8f1db4c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fda8f1db4c` · **quoted from an earlier version** · 158.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-fdb3c8c4de"></a>
@@ -67013,6 +71193,16 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Decomposer microbes build biomass near … starves the next crop.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-ffa1e649aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ffa1e649aa` · **quoted from an earlier version** · 0.916
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-ffafe8b02a"></a>
 ### As published at `00a157f` in `docs/INCIDENCE.md`
 
@@ -67051,4196 +71241,6 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
 - **Where:** [`docs/hypodrafts/K1.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/hypodrafts/K1.md)
 - **Located by:** `Independence.** Of the … not cross-validate one.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-54f7a9fa96"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-54f7a9fa96` · **quoted from an earlier version** · 0.22
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4985d57c96"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4985d57c96` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a1004b2b33"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a1004b2b33` · **quoted from an earlier version** · 0.523
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c3bdf108ec"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c3bdf108ec` · **quoted from an earlier version** · 34
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-411941f49a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-411941f49a` · **quoted from an earlier version** · 0.13
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-028b4ed780"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-028b4ed780` · **quoted from an earlier version** · 29
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b08d9333fc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b08d9333fc` · **quoted from an earlier version** · 32
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3153f8b56b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3153f8b56b` · **quoted from an earlier version** · 250
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0b89fa632f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0b89fa632f` · **quoted from an earlier version** · 551.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c6c578ffef"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c6c578ffef` · **quoted from an earlier version** · 50.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e9b5c353bf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e9b5c353bf` · **quoted from an earlier version** · 336,244
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-710807ec36"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-710807ec36` · **quoted from an earlier version** · 40,532
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e9c9fbebd9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e9c9fbebd9` · **quoted from an earlier version** · 16.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-053d08db08"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-053d08db08` · **quoted from an earlier version** · 393
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-27573db1f7"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-27573db1f7` · **quoted from an earlier version** · 32.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-27402f17b4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-27402f17b4` · **quoted from an earlier version** · 205.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8b89749685"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8b89749685` · **quoted from an earlier version** · 896
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-56ce949ad1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-56ce949ad1` · **quoted from an earlier version** · 33
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ac29a891a1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ac29a891a1` · **quoted from an earlier version** · 0.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-dbeea8773d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-dbeea8773d` · **quoted from an earlier version** · 0.602
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c96d965f8f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c96d965f8f` · **quoted from an earlier version** · 48
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-71d02fc6ff"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-71d02fc6ff` · **quoted from an earlier version** · 15.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-62bcead372"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-62bcead372` · **quoted from an earlier version** · 482.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-42de6d52cb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-42de6d52cb` · **quoted from an earlier version** · 0.40
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2a1d1cfdd4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2a1d1cfdd4` · **quoted from an earlier version** · 0.065
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e2f582be5e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e2f582be5e` · **quoted from an earlier version** · 0.04
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a2d5576af8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a2d5576af8` · **quoted from an earlier version** · 580,100
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c30371f1c3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c30371f1c3` · **quoted from an earlier version** · 182
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-cdceae6bf3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-cdceae6bf3` · **quoted from an earlier version** · 0.639
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-110f7efcd5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-110f7efcd5` · **quoted from an earlier version** · 407.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-69b813826e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-69b813826e` · **quoted from an earlier version** · 0.096
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-16753ba8ce"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-16753ba8ce` · **quoted from an earlier version** · 30,850
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e7d4a5dddb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e7d4a5dddb` · **quoted from an earlier version** · 22,404
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5709466251"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5709466251` · **quoted from an earlier version** · 72,370
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5616810c22"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5616810c22` · **quoted from an earlier version** · 40.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-202bb174da"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-202bb174da` · **quoted from an earlier version** · 821.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f545b0d648"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f545b0d648` · **quoted from an earlier version** · 5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-53a05b30aa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-53a05b30aa` · **quoted from an earlier version** · 565
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b7dcb2471e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b7dcb2471e` · **quoted from an earlier version** · 214.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-97b3e98a8a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-97b3e98a8a` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d9797ee125"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d9797ee125` · **quoted from an earlier version** · 188
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e76d8407a9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e76d8407a9` · **quoted from an earlier version** · 0.022
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-cbe080e000"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-cbe080e000` · **quoted from an earlier version** · 53,283
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-00a9cadc5b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-00a9cadc5b` · **quoted from an earlier version** · 0.24
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4b9344929e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4b9344929e` · **quoted from an earlier version** · 0.734
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-104d81168a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-104d81168a` · **quoted from an earlier version** · 9.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-34db791e14"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-34db791e14` · **quoted from an earlier version** · 0.138
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-08783dc68f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-08783dc68f` · **quoted from an earlier version** · 149
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6b5fd21283"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6b5fd21283` · **quoted from an earlier version** · 0.034
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3a198d6e75"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3a198d6e75` · **quoted from an earlier version** · 721.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1d11c3005c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1d11c3005c` · **quoted from an earlier version** · 0.640
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-62b48526cf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-62b48526cf` · **quoted from an earlier version** · 0.522
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-73f52b3c1f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-73f52b3c1f` · **quoted from an earlier version** · 90,355
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9809297546"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9809297546` · **quoted from an earlier version** · 83
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-75beb8410e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-75beb8410e` · **quoted from an earlier version** · 469
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bce79bbf01"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bce79bbf01` · **quoted from an earlier version** · 116
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1c9e3d82fa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1c9e3d82fa` · **quoted from an earlier version** · 0.510
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7306704635"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7306704635` · **quoted from an earlier version** · 51
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-aae9791d1c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-aae9791d1c` · **quoted from an earlier version** · 491,620
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5af1b8e578"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5af1b8e578` · **quoted from an earlier version** · 7.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f3bba6a009"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f3bba6a009` · **quoted from an earlier version** · 2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-90ee0eee68"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-90ee0eee68` · **quoted from an earlier version** · 127
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-80992d9c6d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-80992d9c6d` · **quoted from an earlier version** · 14,850
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7651114acb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7651114acb` · **quoted from an earlier version** · 0.044
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-76181005ae"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-76181005ae` · **quoted from an earlier version** · 10.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-985e3cf7b5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-985e3cf7b5` · **quoted from an earlier version** · 25,561
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-37407e2c0b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-37407e2c0b` · **quoted from an earlier version** · 15.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a43fa9cb28"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a43fa9cb28` · **quoted from an earlier version** · 458.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4320b75c16"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4320b75c16` · **quoted from an earlier version** · 28,921
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a0d2776898"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a0d2776898` · **quoted from an earlier version** · 161,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a5b7cd1011"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a5b7cd1011` · **quoted from an earlier version** · 3,910
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-197ae07b86"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-197ae07b86` · **quoted from an earlier version** · 54
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-31e5045107"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-31e5045107` · **quoted from an earlier version** · 4.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9b78951f37"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9b78951f37` · **quoted from an earlier version** · 5.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1b40bd46be"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1b40bd46be` · **quoted from an earlier version** · 1,052.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e97645f8e0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e97645f8e0` · **quoted from an earlier version** · 0.149
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-263053b7e9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-263053b7e9` · **quoted from an earlier version** · 108
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-93035d0ba4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-93035d0ba4` · **quoted from an earlier version** · 165.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3ccff3f417"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3ccff3f417` · **quoted from an earlier version** · 45.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-952ca66ee2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-952ca66ee2` · **quoted from an earlier version** · 0.20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-20f6ab824f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-20f6ab824f` · **quoted from an earlier version** · 0.564
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f69736413a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f69736413a` · **quoted from an earlier version** · 131
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-73253d020c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-73253d020c` · **quoted from an earlier version** · 728
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7fcab95b52"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7fcab95b52` · **quoted from an earlier version** · 149.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9ef046717d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9ef046717d` · **quoted from an earlier version** · 1,526.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-16654f6dbc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-16654f6dbc` · **quoted from an earlier version** · 0.402
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f8e59f0888"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f8e59f0888` · **quoted from an earlier version** · 57
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2680c5aeae"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2680c5aeae` · **quoted from an earlier version** · 0.28
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bc6f8e00ac"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bc6f8e00ac` · **quoted from an earlier version** · 2,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6fa89c01f1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6fa89c01f1` · **quoted from an earlier version** · 95
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0bcc506d81"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0bcc506d81` · **quoted from an earlier version** · 3,860
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-779c67501a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-779c67501a` · **quoted from an earlier version** · 332
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0442a132c5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0442a132c5` · **quoted from an earlier version** · 15,150
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d82a617d28"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d82a617d28` · **quoted from an earlier version** · 282,480
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-49f1beb927"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-49f1beb927` · **quoted from an earlier version** · 98
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-57268f2e22"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-57268f2e22` · **quoted from an earlier version** · 0.08
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5c65cbafad"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5c65cbafad` · **quoted from an earlier version** · 5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a37f1fcb3a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a37f1fcb3a` · **quoted from an earlier version** · 45.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-343b73edfa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-343b73edfa` · **quoted from an earlier version** · 247.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-11513d1680"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-11513d1680` · **quoted from an earlier version** · 1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9697db6732"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9697db6732` · **quoted from an earlier version** · 100
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-22b8b497b9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-22b8b497b9` · **quoted from an earlier version** · 85
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7941e979ab"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7941e979ab` · **quoted from an earlier version** · 3,831.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c0ab2c44d4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c0ab2c44d4` · **quoted from an earlier version** · 0.124
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5157c60a12"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5157c60a12` · **quoted from an earlier version** · 242.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-484cc419a4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-484cc419a4` · **quoted from an earlier version** · 151.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-04f497a3ab"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-04f497a3ab` · **quoted from an earlier version** · 92.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ec1a790d4f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ec1a790d4f` · **quoted from an earlier version** · 1,148.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-921ef602b6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-921ef602b6` · **quoted from an earlier version** · 27.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2a2d907f4c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2a2d907f4c` · **quoted from an earlier version** · 38,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-df1783acc1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-df1783acc1` · **quoted from an earlier version** · 18.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ae43edc06a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ae43edc06a` · **quoted from an earlier version** · 20,300
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-fd827fe0d5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-fd827fe0d5` · **quoted from an earlier version** · 0.23
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9ca300ec28"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9ca300ec28` · **quoted from an earlier version** · 280
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-54d4c736a0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-54d4c736a0` · **quoted from an earlier version** · 114,015
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c341a9943e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c341a9943e` · **quoted from an earlier version** · 65
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `A national time series has one unit of replication. … so an effect size can be estimated across them.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-447ef9be1e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-447ef9be1e` · **quoted from an earlier version** · 115,906
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7dd57c02fb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7dd57c02fb` · **quoted from an earlier version** · 1.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-87bf7a10f0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-87bf7a10f0` · **quoted from an earlier version** · 318
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6631a797e1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6631a797e1` · **quoted from an earlier version** · 0.538
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e7abde727a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e7abde727a` · **quoted from an earlier version** · 85.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e9d081e13a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e9d081e13a` · **quoted from an earlier version** · 0.109
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-45c2ede5af"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-45c2ede5af` · **quoted from an earlier version** · 355.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-33a0e135a1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-33a0e135a1` · **quoted from an earlier version** · 100.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ce7390d99d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ce7390d99d` · **quoted from an earlier version** · 169.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6c636628f2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6c636628f2` · **quoted from an earlier version** · 354,821
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4a27c76e37"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4a27c76e37` · **quoted from an earlier version** · 0.595
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8e728f613e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8e728f613e` · **quoted from an earlier version** · 7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-08a43547a0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-08a43547a0` · **quoted from an earlier version** · 35,085
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-aae13b1f8f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-aae13b1f8f` · **quoted from an earlier version** · 42
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-873095b0cb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-873095b0cb` · **quoted from an earlier version** · 0.05
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4d6e41e00a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4d6e41e00a` · **quoted from an earlier version** · 205,544
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-29fc9ba490"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-29fc9ba490` · **quoted from an earlier version** · 655.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bea278c619"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bea278c619` · **quoted from an earlier version** · 65
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-20d8cdb649"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-20d8cdb649` · **quoted from an earlier version** · 161
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-59e656a25a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-59e656a25a` · **quoted from an earlier version** · 31,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-cb9d025902"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-cb9d025902` · **quoted from an earlier version** · 449,600
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3510815ca6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3510815ca6` · **quoted from an earlier version** · 192
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f01f225287"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f01f225287` · **quoted from an earlier version** · 562.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ad9da1fd73"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ad9da1fd73` · **quoted from an earlier version** · 0.698
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-61fee8b5ab"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-61fee8b5ab` · **quoted from an earlier version** · 16.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-45456bdb02"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-45456bdb02` · **quoted from an earlier version** · 8.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-66e3d6e240"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-66e3d6e240` · **quoted from an earlier version** · 27,545
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-cf0e72c504"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-cf0e72c504` · **quoted from an earlier version** · 288.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b02a3c9cbb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b02a3c9cbb` · **quoted from an earlier version** · 0.924
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f3d1dbf36d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f3d1dbf36d` · **quoted from an earlier version** · 6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-de242b69ad"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-de242b69ad` · **quoted from an earlier version** · 217,960
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-96abbde9fc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-96abbde9fc` · **quoted from an earlier version** · 17,800
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-90cf64d2ed"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-90cf64d2ed` · **quoted from an earlier version** · 97,876
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0b82dfabcf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0b82dfabcf` · **quoted from an earlier version** · 71,550
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3c47af5ccd"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3c47af5ccd` · **quoted from an earlier version** · 334
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1ca807727c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1ca807727c` · **quoted from an earlier version** · 139,933
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-de71bde5c2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-de71bde5c2` · **quoted from an earlier version** · 47
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5ef870127f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5ef870127f` · **quoted from an earlier version** · 20,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e6fec48a4d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e6fec48a4d` · **quoted from an earlier version** · 0.36
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-aa0148792b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-aa0148792b` · **quoted from an earlier version** · 0.844
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `One reading fits these numbers, and it is not tested here … than its own shape alone would` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6e9ad496a7"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6e9ad496a7` · **quoted from an earlier version** · 481,197
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f6ee6faa73"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f6ee6faa73` · **quoted from an earlier version** · 227.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1d4989405a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1d4989405a` · **quoted from an earlier version** · 0.404
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-60c9c37325"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-60c9c37325` · **quoted from an earlier version** · 24.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a3a4cd55c3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a3a4cd55c3` · **quoted from an earlier version** · 48,103
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-30942ca70b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-30942ca70b` · **quoted from an earlier version** · 0.775
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4008448e46"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4008448e46` · **quoted from an earlier version** · 78
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a83e29a688"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a83e29a688` · **quoted from an earlier version** · 4,540
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-162c8705ba"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-162c8705ba` · **quoted from an earlier version** · 23
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-de643f2e46"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-de643f2e46` · **quoted from an earlier version** · 417
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-79bbac6163"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-79bbac6163` · **quoted from an earlier version** · 20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `Assignment is by nearest point on the marine boundary, one rule … km dropped.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ad26c402bc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ad26c402bc` · **quoted from an earlier version** · 3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-712b9819e4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-712b9819e4` · **quoted from an earlier version** · 296.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9417565504"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9417565504` · **quoted from an earlier version** · 1.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ecc65ddeb6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ecc65ddeb6` · **quoted from an earlier version** · 572.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5c0d927ee8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5c0d927ee8` · **quoted from an earlier version** · 865
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d391a684b4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d391a684b4` · **quoted from an earlier version** · 0.124
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-02bf94dcdf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-02bf94dcdf` · **quoted from an earlier version** · 109
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4a24d288c0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4a24d288c0` · **quoted from an earlier version** · 119
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-58d6d72058"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-58d6d72058` · **quoted from an earlier version** · 0.313
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-768bc3ce9f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-768bc3ce9f` · **quoted from an earlier version** · 7.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b290d6b680"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b290d6b680` · **quoted from an earlier version** · 22
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-063ab72c8a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-063ab72c8a` · **quoted from an earlier version** · 80
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d40cc0eb2e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d40cc0eb2e` · **quoted from an earlier version** · 12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-fbd2bc0b4a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-fbd2bc0b4a` · **quoted from an earlier version** · 189,830
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1ea29cbbc8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1ea29cbbc8` · **quoted from an earlier version** · 10.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4641049538"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4641049538` · **quoted from an earlier version** · 88,955
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-fc7530c00a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-fc7530c00a` · **quoted from an earlier version** · 13,595
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-888d1546e8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-888d1546e8` · **quoted from an earlier version** · 43,945
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f4fd25c876"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f4fd25c876` · **quoted from an earlier version** · 0.878
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-43f29318f3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-43f29318f3` · **quoted from an earlier version** · 41
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-54bb3576eb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-54bb3576eb` · **quoted from an earlier version** · 0.283
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d3566c38dc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d3566c38dc` · **quoted from an earlier version** · 66.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2303a95e80"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2303a95e80` · **quoted from an earlier version** · 17
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ca32bdc330"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ca32bdc330` · **quoted from an earlier version** · 0.550
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0910df9394"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0910df9394` · **quoted from an earlier version** · 0.968
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-81bd5af221"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-81bd5af221` · **quoted from an earlier version** · 2,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-061fe0b7fd"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-061fe0b7fd` · **quoted from an earlier version** · 1,315.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ae1d86e3b5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ae1d86e3b5` · **quoted from an earlier version** · 97,035
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7d60d19f84"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7d60d19f84` · **quoted from an earlier version** · 131.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-88de237c1a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-88de237c1a` · **quoted from an earlier version** · 238.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-10f18b755a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-10f18b755a` · **quoted from an earlier version** · 87,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-64559f7198"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-64559f7198` · **quoted from an earlier version** · 71,475
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5ec392b512"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5ec392b512` · **quoted from an earlier version** · 84
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ab3a4b544c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ab3a4b544c` · **quoted from an earlier version** · 231.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4873f2cb30"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4873f2cb30` · **quoted from an earlier version** · 990.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-004819d2f5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-004819d2f5` · **quoted from an earlier version** · 25
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7910c9c2e7"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7910c9c2e7` · **quoted from an earlier version** · 295
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-256d75e8a3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-256d75e8a3` · **quoted from an earlier version** · 290.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b92b2789e2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b92b2789e2` · **quoted from an earlier version** · 222.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-47929086bb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-47929086bb` · **quoted from an earlier version** · 0.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c34c372a3a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c34c372a3a` · **quoted from an earlier version** · 38,230
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c0647f2814"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c0647f2814` · **quoted from an earlier version** · 0.725
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d888749c9b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d888749c9b` · **quoted from an earlier version** · 65.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-00dd04793f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-00dd04793f` · **quoted from an earlier version** · 0.083
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-041337511d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-041337511d` · **quoted from an earlier version** · 13
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-18b533727b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-18b533727b` · **quoted from an earlier version** · 0.14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6115768d23"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6115768d23` · **quoted from an earlier version** · 77
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2eaa6cf48f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2eaa6cf48f` · **quoted from an earlier version** · 60
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-63d6ac56bd"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-63d6ac56bd` · **quoted from an earlier version** · 6.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e16cb077d7"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e16cb077d7` · **quoted from an earlier version** · 84.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-87a7b8bf07"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-87a7b8bf07` · **quoted from an earlier version** · 459.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-53033ed442"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-53033ed442` · **quoted from an earlier version** · 17.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0d23fcbd4a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0d23fcbd4a` · **quoted from an earlier version** · 162
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ffa1e649aa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ffa1e649aa` · **quoted from an earlier version** · 0.916
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7775d61b1b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7775d61b1b` · **quoted from an earlier version** · 1,217.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-784f91240e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-784f91240e` · **quoted from an earlier version** · 84,575
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-798a163816"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-798a163816` · **quoted from an earlier version** · 0.18
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4f1c6ae243"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4f1c6ae243` · **quoted from an earlier version** · 2,495.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7eae2ccdbd"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7eae2ccdbd` · **quoted from an earlier version** · 56
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-536d2b5134"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-536d2b5134` · **quoted from an earlier version** · 450
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-393770e5cb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-393770e5cb` · **quoted from an earlier version** · 681,555
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1c20552c49"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1c20552c49` · **quoted from an earlier version** · 232
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c7a11a0d28"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c7a11a0d28` · **quoted from an earlier version** · 165
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b7aaf3f215"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b7aaf3f215` · **quoted from an earlier version** · 0.111
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-489988636b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-489988636b` · **quoted from an earlier version** · 130
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-46e3ed0ff3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-46e3ed0ff3` · **quoted from an earlier version** · 11
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9fbf6e4cbf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9fbf6e4cbf` · **quoted from an earlier version** · 16
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-96bb466f25"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-96bb466f25` · **quoted from an earlier version** · 0.012
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ef54ab569e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ef54ab569e` · **quoted from an earlier version** · 245
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c8ec26f195"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c8ec26f195` · **quoted from an earlier version** · 56,105
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0ec3310d9d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0ec3310d9d` · **quoted from an earlier version** · 5.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-70e62fe30c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-70e62fe30c` · **quoted from an earlier version** · 14
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-93f829ed3f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-93f829ed3f` · **quoted from an earlier version** · 1,605,986
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8e2db0fb92"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8e2db0fb92` · **quoted from an earlier version** · 94,055
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5130b4bea0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5130b4bea0` · **quoted from an earlier version** · 0.11
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-517d63d602"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-517d63d602` · **quoted from an earlier version** · 199.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4bcc708811"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4bcc708811` · **quoted from an earlier version** · 0.798
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-603ec057ea"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-603ec057ea` · **quoted from an earlier version** · 2,800
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c9ff0949aa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c9ff0949aa` · **quoted from an earlier version** · 96
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5c0fcf505a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5c0fcf505a` · **quoted from an earlier version** · 0.26
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-dfdb599450"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-dfdb599450` · **quoted from an earlier version** · 343.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-33476c4211"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-33476c4211` · **quoted from an earlier version** · 275.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-34183e48e5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-34183e48e5` · **quoted from an earlier version** · 48,760
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0a209973a3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0a209973a3` · **quoted from an earlier version** · 1,418
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-26957ca8b8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-26957ca8b8` · **quoted from an earlier version** · 3,703.1
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1dd9092da3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1dd9092da3` · **quoted from an earlier version** · 229
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9e0e59b040"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9e0e59b040` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3443bf4ffa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3443bf4ffa` · **quoted from an earlier version** · 71
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-badf0cefff"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-badf0cefff` · **quoted from an earlier version** · 104
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-558348ae49"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-558348ae49` · **quoted from an earlier version** · 106,666
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8b947a0c2f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8b947a0c2f` · **quoted from an earlier version** · 185
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7784c3f0ee"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7784c3f0ee` · **quoted from an earlier version** · 76
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9eb5438b01"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9eb5438b01` · **quoted from an earlier version** · 1,415
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e0aea50818"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e0aea50818` · **quoted from an earlier version** · 0.139
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1aae5b1397"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1aae5b1397` · **quoted from an earlier version** · 228.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4c1f48ee3e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4c1f48ee3e` · **quoted from an earlier version** · 0.27
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1822bd9b18"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1822bd9b18` · **quoted from an earlier version** · 4,248.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1c531c5e89"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1c531c5e89` · **quoted from an earlier version** · 3.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1ad22d9abc"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1ad22d9abc` · **quoted from an earlier version** · 0.516
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-78e0d6e329"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-78e0d6e329` · **quoted from an earlier version** · 71.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9ccbe5c122"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9ccbe5c122` · **quoted from an earlier version** · 5.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a2e5ee8468"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a2e5ee8468` · **quoted from an earlier version** · 0.618
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2c76c6b5b3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2c76c6b5b3` · **quoted from an earlier version** · 0.658
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ee1fca0f46"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ee1fca0f46` · **quoted from an earlier version** · 51.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a06a395a17"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a06a395a17` · **quoted from an earlier version** · 115
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a2c114fac1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a2c114fac1` · **quoted from an earlier version** · 211.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c20d405511"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c20d405511` · **quoted from an earlier version** · 27
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e13f18d45b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e13f18d45b` · **quoted from an earlier version** · 17.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-06f91dc419"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-06f91dc419` · **quoted from an earlier version** · 116.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4e6a1c5566"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4e6a1c5566` · **quoted from an earlier version** · 0.21
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-512afef935"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-512afef935` · **quoted from an earlier version** · 12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9d96c497c8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9d96c497c8` · **quoted from an earlier version** · 0.29
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b83956a783"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b83956a783` · **quoted from an earlier version** · 25,958
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-deeb8f289b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-deeb8f289b` · **quoted from an earlier version** · 59.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c5b4ead45b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c5b4ead45b` · **quoted from an earlier version** · 1,475
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-461686bb99"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-461686bb99` · **quoted from an earlier version** · 0.810
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-20a809f20d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-20a809f20d` · **quoted from an earlier version** · 72,413
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e7508812a8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e7508812a8` · **quoted from an earlier version** · 358
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-83bfbb156f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-83bfbb156f` · **quoted from an earlier version** · 0.019
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6221f1a030"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6221f1a030` · **quoted from an earlier version** · 127,348
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7fc473a720"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7fc473a720` · **quoted from an earlier version** · 114
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-755e432375"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-755e432375` · **quoted from an earlier version** · 93
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0dc9f513c5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0dc9f513c5` · **quoted from an earlier version** · 7.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b2e034910d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b2e034910d` · **quoted from an earlier version** · 3,811
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4b8bfc7195"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4b8bfc7195` · **quoted from an earlier version** · 10.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f5760d1624"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f5760d1624` · **quoted from an earlier version** · 6.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-36854b8c48"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-36854b8c48` · **quoted from an earlier version** · 175.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1e762df705"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1e762df705` · **quoted from an earlier version** · 554.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-06e74a6cb3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-06e74a6cb3` · **quoted from an earlier version** · 31
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3fc1c6d3d6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3fc1c6d3d6` · **quoted from an earlier version** · 26
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7e6de5f777"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7e6de5f777` · **quoted from an earlier version** · 0.766
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3104249ac0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3104249ac0` · **quoted from an earlier version** · 0.109
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c004de5d9e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c004de5d9e` · **quoted from an earlier version** · 2,600
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-fda8f1db4c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-fda8f1db4c` · **quoted from an earlier version** · 158.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a059ac3b79"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a059ac3b79` · **quoted from an earlier version** · 13,170
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ab5daefe46"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ab5daefe46` · **quoted from an earlier version** · 124.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bc687bf64b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bc687bf64b` · **quoted from an earlier version** · 10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ed540ba456"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ed540ba456` · **quoted from an earlier version** · 152,578
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1546645182"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1546645182` · **quoted from an earlier version** · 108,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7eb5aa8866"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7eb5aa8866` · **quoted from an earlier version** · 171
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ac681bc831"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ac681bc831` · **quoted from an earlier version** · 7.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-33471e4645"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-33471e4645` · **quoted from an earlier version** · 82
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c48c74b6c5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c48c74b6c5` · **quoted from an earlier version** · 10,465
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8f1936f08e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8f1936f08e` · **quoted from an earlier version** · 102,697
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2d424a8e69"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2d424a8e69` · **quoted from an earlier version** · 35
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-62fa69dd70"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-62fa69dd70` · **quoted from an earlier version** · 0.19
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-89c05be395"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-89c05be395` · **quoted from an earlier version** · 19.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3ecd67674e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3ecd67674e` · **quoted from an earlier version** · 0.790
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9378869ff2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9378869ff2` · **quoted from an earlier version** · 299
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f8424e43d1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f8424e43d1` · **quoted from an earlier version** · 75.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c67812e053"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c67812e053` · **quoted from an earlier version** · 0.288
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b7e33a1cc3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b7e33a1cc3` · **quoted from an earlier version** · 0.585
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4bf696c1e1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4bf696c1e1` · **quoted from an earlier version** · 310
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8c1b5ec0b8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8c1b5ec0b8` · **quoted from an earlier version** · 279.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ab7a35b7b4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ab7a35b7b4` · **quoted from an earlier version** · 64
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9f608a0c48"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9f608a0c48` · **quoted from an earlier version** · 201
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-092fe85fff"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-092fe85fff` · **quoted from an earlier version** · 0.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1492931a16"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1492931a16` · **quoted from an earlier version** · 1,835.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b860940972"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b860940972` · **quoted from an earlier version** · 0.844
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b21aa8968d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b21aa8968d` · **quoted from an earlier version** · 12,107
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f8e3e73533"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f8e3e73533` · **quoted from an earlier version** · 0.17
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-407cc05ab9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-407cc05ab9` · **quoted from an earlier version** · 10.6
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-49431ae530"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-49431ae530` · **quoted from an earlier version** · 103
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ab1bc32a91"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ab1bc32a91` · **quoted from an earlier version** · 12.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-95379ea5bb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-95379ea5bb` · **quoted from an earlier version** · 0.47
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f3c5101439"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f3c5101439` · **quoted from an earlier version** · 94,092
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c5abca23c9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c5abca23c9` · **quoted from an earlier version** · 0.178
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ccc8e0b973"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ccc8e0b973` · **quoted from an earlier version** · 45
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b03f7581cf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b03f7581cf` · **quoted from an earlier version** · 21
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6a911b79e6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6a911b79e6` · **quoted from an earlier version** · 1,766.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8d1a03fe0d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8d1a03fe0d` · **quoted from an earlier version** · 0.679
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-578d6463f3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-578d6463f3` · **quoted from an earlier version** · 119,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4327141053"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4327141053` · **quoted from an earlier version** · 1,880.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bd082e5b30"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bd082e5b30` · **quoted from an earlier version** · 236
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-150ca08ac4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-150ca08ac4` · **quoted from an earlier version** · 0.098
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d8f01ce3e3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d8f01ce3e3` · **quoted from an earlier version** · 0.050
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3b10f9a148"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3b10f9a148` · **quoted from an earlier version** · 18.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-19d2c6a39d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-19d2c6a39d` · **quoted from an earlier version** · 13.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0f57bd267d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0f57bd267d` · **quoted from an earlier version** · 0.625
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2f6c2d6ede"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2f6c2d6ede` · **quoted from an earlier version** · 77.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c00db079a9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c00db079a9` · **quoted from an earlier version** · 0.672
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3903bf77a1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3903bf77a1` · **quoted from an earlier version** · 8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-43686761d1"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-43686761d1` · **quoted from an earlier version** · 430
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7fed507583"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7fed507583` · **quoted from an earlier version** · 0.12
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-663919599d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-663919599d` · **quoted from an earlier version** · 549
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9ffab0a6c3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9ffab0a6c3` · **quoted from an earlier version** · 30
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-97b57483bf"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-97b57483bf` · **quoted from an earlier version** · 437.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3ef32a0071"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3ef32a0071` · **quoted from an earlier version** · 9,415
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-80f0552bee"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-80f0552bee` · **quoted from an earlier version** · 0.16
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7997a7d986"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7997a7d986` · **quoted from an earlier version** · 0.092
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-528a1983a2"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-528a1983a2` · **quoted from an earlier version** · 0.782
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f1a0889914"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f1a0889914` · **quoted from an earlier version** · 21.9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a5dbb59f0c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a5dbb59f0c` · **quoted from an earlier version** · 609.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4c929d805b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4c929d805b` · **quoted from an earlier version** · 15.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3cb5e600ba"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3cb5e600ba` · **quoted from an earlier version** · 6.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bd4c594ee4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bd4c594ee4` · **quoted from an earlier version** · 211.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c19e34d8b6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c19e34d8b6` · **quoted from an earlier version** · 119,877
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-14b9545114"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-14b9545114` · **quoted from an earlier version** · 4,631
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1d0705c12c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1d0705c12c` · **quoted from an earlier version** · 5.3
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-b049ff339e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-b049ff339e` · **quoted from an earlier version** · 0.050
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6d86668a2e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6d86668a2e` · **quoted from an earlier version** · 0.035
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a560867617"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a560867617` · **quoted from an earlier version** · 62
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-aded95b725"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-aded95b725` · **quoted from an earlier version** · 5.5
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bbfdd29e8a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bbfdd29e8a` · **quoted from an earlier version** · 164.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-62735c2dd6"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-62735c2dd6` · **quoted from an earlier version** · 128.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-3e34257dcb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-3e34257dcb` · **quoted from an earlier version** · 22,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7d3c3064ac"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7d3c3064ac` · **quoted from an earlier version** · 4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-190921c537"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-190921c537` · **quoted from an earlier version** · 225
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9dc95a60ed"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9dc95a60ed` · **quoted from an earlier version** · 65
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4807eb0843"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4807eb0843` · **quoted from an earlier version** · 9
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-96ba4daafa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-96ba4daafa` · **quoted from an earlier version** · 224,735
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-7641bafc5e"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-7641bafc5e` · **quoted from an earlier version** · 0.10
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e8c8bd11ca"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e8c8bd11ca` · **quoted from an earlier version** · 0.402
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a07a1825d8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a07a1825d8` · **quoted from an earlier version** · 0.039
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-aea2847b09"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-aea2847b09` · **quoted from an earlier version** · 686.8
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-eb0a74f8c8"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-eb0a74f8c8` · **quoted from an earlier version** · 118
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-dd97966b20"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-dd97966b20` · **quoted from an earlier version** · 1,313
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-5713a3b364"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-5713a3b364` · **quoted from an earlier version** · 117
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-922381c96a"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-922381c96a` · **quoted from an earlier version** · 37
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ed310c2003"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ed310c2003` · **quoted from an earlier version** · 63,476
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2b2253bfc5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2b2253bfc5` · **quoted from an earlier version** · 123
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-efd5657388"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-efd5657388` · **quoted from an earlier version** · 0.39
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-78e4b74b6f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-78e4b74b6f` · **quoted from an earlier version** · 419
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-9360e97dfb"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-9360e97dfb` · **quoted from an earlier version** · 0.531
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-f3af492557"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-f3af492557` · **quoted from an earlier version** · 0.136
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-36e1d57582"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-36e1d57582` · **quoted from an earlier version** · 497.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e5a12e42f4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e5a12e42f4` · **quoted from an earlier version** · 335
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2f53fe70c5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2f53fe70c5` · **quoted from an earlier version** · 30,000
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8acfad0fe5"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8acfad0fe5` · **quoted from an earlier version** · 38
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6900075777"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6900075777` · **quoted from an earlier version** · 51.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-45e43db92b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-45e43db92b` · **quoted from an earlier version** · 0.07
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e92b7556c4"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e92b7556c4` · **quoted from an earlier version** · 0.4
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-06a34f37d0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-06a34f37d0` · **quoted from an earlier version** · 138
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-8813f8118b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-8813f8118b` · **quoted from an earlier version** · 3,500
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-6f4d08f4aa"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-6f4d08f4aa` · **quoted from an earlier version** · 24,276
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-c33e805b05"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-c33e805b05` · **quoted from an earlier version** · 0.859
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e90afeff3d"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e90afeff3d` · **quoted from an earlier version** · 35.0
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-cda8ad774c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-cda8ad774c` · **quoted from an earlier version** · 0.023
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-0b42090e27"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-0b42090e27` · **quoted from an earlier version** · 43
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-bad593d32b"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-bad593d32b` · **quoted from an earlier version** · 10.2
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-4bd2477588"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-4bd2477588` · **quoted from an earlier version** · 20
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-e8a6ebd9b9"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-e8a6ebd9b9` · **quoted from an earlier version** · 0.118
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2886ef41e7"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2886ef41e7` · **quoted from an earlier version** · 0.151
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-d235bcc756"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-d235bcc756` · **quoted from an earlier version** · 204,688
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-376e45062f"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-376e45062f` · **quoted from an earlier version** · 0.830
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-ebae590cb3"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-ebae590cb3` · **quoted from an earlier version** · 161,990
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a4dc1545a0"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a4dc1545a0` · **quoted from an earlier version** · 772
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-2df03f3c20"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-2df03f3c20` · **quoted from an earlier version** · 267,612
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-34e4b3ea11"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-34e4b3ea11` · **quoted from an earlier version** · 10.7
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-1c6db12a1c"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-1c6db12a1c` · **quoted from an earlier version** · 0.50
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a2d9c9ecca"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a2d9c9ecca` · **quoted from an earlier version** · 578,019
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
-- **Used in:** [ARCHIVE.md](ARCHIVE.md)
-
-<a id="F-a1135d8276"></a>
-### As published at `00a157f` in `docs/AREAS.md`
-
-`F-a1135d8276` · **quoted from an earlier version** · 191
-
-- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
-- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
-- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
 <a id="F-17a476a7e4"></a>

@@ -103283,10 +103283,10 @@
   },
   "F-44b234c71f": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 692,
-    "line": 698,
-    "text": "    w(audit)\n    w(\"### And the estimator can return impossible values\\n\")\n    w(C(\"C-NI-NEGATIVE\", \"The monitoring register records, without a citation: \"\n        f\"{dl['estimator_pathology']} A residual whose error can exceed its own \"\n        \"signal is published to one decimal place with no error bar.\") + \"\\n\")\n    w(C(\"C-NI-DIFFUSE-BASIS\", \"Underneath it, by the same register's uncited figures: \"\n        f\"**{dl['stream_stations']} stream stations** covering \"\n        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is grab samples plus linear interpolation, and in all three streams of the \"\n        \"2018 validation study that method **always underestimated** — annual deviations \""
+    "file": "scripts/pages/sensing.py",
+    "first": 518,
+    "line": 524,
+    "text": "    w(\"\")\n    w(\"---\")\n    w(\"\")\n    w(\"## What this would and would not settle\")\n    w(\"\")\n    w(C(\"C-SS-W-WOULD\", \"**Would.** Whether the payload moves in events, where, how often, and \"\n        f\"in what season — across the whole country rather than at {stations} stream stations \"\n        \"sampled at fixed intervals. Whether the spreading window shows up in the water. Which \"\n        \"catchments are quiet and which are not, without a model in between.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -103366,8 +103366,8 @@
    "synthetic": false,
    "value": 240,
    "where": [
-    "scripts/nitrogen.py",
-    698
+    "scripts/pages/sensing.py",
+    524
    ]
   },
   "F-44b98e8a8d": {
@@ -296820,10 +296820,10 @@
   },
   "F-d90ee38f36": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 693,
-    "line": 699,
-    "text": "    w(\"### And the estimator can return impossible values\\n\")\n    w(C(\"C-NI-NEGATIVE\", \"The monitoring register records, without a citation: \"\n        f\"{dl['estimator_pathology']} A residual whose error can exceed its own \"\n        \"signal is published to one decimal place with no error bar.\") + \"\\n\")\n    w(C(\"C-NI-DIFFUSE-BASIS\", \"Underneath it, by the same register's uncited figures: \"\n        f\"**{dl['stream_stations']} stream stations** covering \"\n        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is grab samples plus linear interpolation, and in all three streams of the \"\n        \"2018 validation study that method **always underestimated** — annual deviations \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}%, monthly deviations \""
+    "file": "scripts/pages/sensing.py",
+    "first": 73,
+    "line": 79,
+    "text": "      C(\"C-SS-S-PURPOSE\", \"This page asks the harder version of the same question: **what \"\n        \"would it take to measure it everywhere**, so that no result anywhere has to be \"\n        \"extrapolated to a place nobody visited.\"))\n    w(\"\")\n    w(\"That is the whole point. \" +\n      C(\"C-SS-S-AREA\", f\"Denmark's diffuse load figure rests on catchment area that is \"\n        f\"{meas}% measured and {mod}% modelled ([NITROGEN.md](NITROGEN.md))\") + \", and \" +\n      C(\"C-SS-S-OBJECTION\", \"the objection this project keeps making is not that the model \"\n        \"is bad but that **a partition is not a measurement**. A network dense enough to have \"\n        \"a node on every stream that reaches the sea would end that argument by removing its \""
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -296903,8 +296903,8 @@
    "synthetic": false,
    "value": 49,
    "where": [
-    "scripts/nitrogen.py",
-    699
+    "scripts/pages/sensing.py",
+    79
    ]
   },
   "F-d9150221ae": {
@@ -317878,10 +317878,10 @@
   },
   "F-e986da2740": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 293,
-    "line": 299,
-    "text": "    w(\"| kind | **norm product** — counts × regulatory coefficients | **residual** — what is left \"\n      \"after naming what could be named |\")\n    w(\"| fails when | a norm changes with no change in any field | an unnamed source exists |\")\n    w(\"\")\n    w(C(\"C-NI-COUPLED\", \"They are coupled, which is why they get confused: **A is an input to \"\n        \"DK-QNP, and DK-QNP supplies B's river-transport term over the modelled \"\n        f\"{dl['area_modelled_pct']}% of the country.** So A partly determines the minuend of B. But \"\n        f\"the ~{agri:.0f}% itself is B.\") + \"\\n\")\n    w(\"### B, from its own methods note\\n\")\n    w(C(\"C-NI-MSFD-DEF\", \"The construction, in DCE's own words ([`MSFD notat 2-8`](https://dce.au.dk/\""
+    "file": "scripts/pages/sensing.py",
+    "first": 73,
+    "line": 79,
+    "text": "      C(\"C-SS-S-PURPOSE\", \"This page asks the harder version of the same question: **what \"\n        \"would it take to measure it everywhere**, so that no result anywhere has to be \"\n        \"extrapolated to a place nobody visited.\"))\n    w(\"\")\n    w(\"That is the whole point. \" +\n      C(\"C-SS-S-AREA\", f\"Denmark's diffuse load figure rests on catchment area that is \"\n        f\"{meas}% measured and {mod}% modelled ([NITROGEN.md](NITROGEN.md))\") + \", and \" +\n      C(\"C-SS-S-OBJECTION\", \"the objection this project keeps making is not that the model \"\n        \"is bad but that **a partition is not a measurement**. A network dense enough to have \"\n        \"a node on every stream that reaches the sea would end that argument by removing its \""
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -317961,8 +317961,8 @@
    "synthetic": false,
    "value": 51,
    "where": [
-    "scripts/nitrogen.py",
-    299
+    "scripts/pages/sensing.py",
+    79
    ]
   },
   "F-e98d356567": {

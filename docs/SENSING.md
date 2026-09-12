@@ -177,6 +177,18 @@ That is the whole point. <span class="claim" data-claim="C-SS-S-AREA">Denmark's 
 
 ---
 
+## What it becomes: a live picture, and the work as tasks
+
+<span class="claim" data-claim="C-SS-G-PICTURE">**The goal of digitising the collection is one live, shared picture.** Every node's readings flow into one open archive as they are taken and appear on one map, each carrying its node, its time, its calibration state and its last service date.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-PICTURE "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-SS-G-WATCH">**The picture is watched, not only stored.** A node that falls silent, drifts from its neighbours or passes its calibration date is flagged when it happens, not found at the end of a season.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-WATCH "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-SS-G-TASKS">**And the work the network needs is presented as tasks anyone can take:** a node to service, a sample to collect after a rain event, a calibration due, a stretch of water with no node at all - each with a place, a deadline and what it would add to the record.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-TASKS "What this claim rests on")</sup>
+
+<span class="claim" data-claim="C-SS-G-SHAPE">In shape this borrows from two kinds of system built outside science. Military command software fuses many sensors into one picture: Anduril's Lattice is described as a platform that classifies objects *by fusing data from disparate sensors*. Volunteer mapping gathers what no institution will: DeFlock *uses OpenStreetMap data to populate a map with crowdsourced locations* of licence-plate cameras. Pointed at the water, open, and with every reading traceable to the node that made it, the same shape is a crowdsourced platform for a scientific record.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-G-SHAPE "What this claim rests on")</sup>
+
+---
+
 ## What this would and would not settle
 
 <span class="claim" data-claim="C-SS-W-WOULD">**Would.** Whether the payload moves in events, where, how often, and in what season — across the whole country rather than at [240](SOURCES.md#F-44b234c71f) stream stations sampled at fixed intervals. Whether the spreading window shows up in the water. Which catchments are quiet and which are not, without a model in between.</span><sup class="claim-mark">[†](CLAIMS.md#C-SS-W-WOULD "What this claim rests on")</sup>

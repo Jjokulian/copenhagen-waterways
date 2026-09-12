@@ -493,6 +493,31 @@ def render():
     w("")
     w("---")
     w("")
+    w("## What it becomes: a live picture, and the work as tasks")
+    w("")
+    w(C("C-SS-G-PICTURE", "**The goal of digitising the collection is one live, shared picture.** "
+        "Every node's readings flow into one open archive as they are taken and appear on one map, "
+        "each carrying its node, its time, its calibration state and its last service date."))
+    w("")
+    w(C("C-SS-G-WATCH", "**The picture is watched, not only stored.** A node that falls silent, drifts "
+        "from its neighbours or passes its calibration date is flagged when it happens, not found at "
+        "the end of a season."))
+    w("")
+    w(C("C-SS-G-TASKS", "**And the work the network needs is presented as tasks anyone can take:** "
+        "a node to service, a sample to collect after a rain event, a calibration due, a stretch of "
+        "water with no node at all - each with a place, a deadline and what it would add to the "
+        "record."))
+    w("")
+    w(C("C-SS-G-SHAPE", "In shape this borrows from two kinds of system built outside science. "
+        "Military command software fuses many sensors into one picture: Anduril's Lattice is "
+        "described as a platform that classifies objects *by fusing data from disparate sensors*. "
+        "Volunteer mapping gathers what no institution will: DeFlock *uses OpenStreetMap data to "
+        "populate a map with crowdsourced locations* of licence-plate cameras. Pointed at the water, "
+        "open, and with every reading traceable to the node that made it, the same shape is a "
+        "crowdsourced platform for a scientific record."))
+    w("")
+    w("---")
+    w("")
     w("## What this would and would not settle")
     w("")
     w(C("C-SS-W-WOULD", "**Would.** Whether the payload moves in events, where, how often, and "

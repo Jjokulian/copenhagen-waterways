@@ -69404,6 +69404,120 @@ graph BT
 
 *Confirmed 2026-09-11 by* `agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
+<a id="C-SS-G-PICTURE"></a>
+### The goal of digitising the collection is one live, shared picture: every node's readings flow into one open archive as they are taken and appear on one map, each carrying its node, time, calibration state and last service date.
+
+`C-SS-G-PICTURE` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [SENSING.md](SENSING.md).
+
+**Why it follows:** It is what the data path and its rules add up to once many nodes run at once; stated as the goal so the pieces are built toward it.
+
+```mermaid
+graph BT
+  C-SS-G-PICTURE("The goal of digitising the collection is one live, shared ...")
+  C-SS-D-STACK("Broker, time-series store, raw dumps and a static site - t...")
+  X-SS-PAGES["The site's build · .github/workflows/pages.yml"]
+  E-SS-GHPAGES[("GitHub Docs: Pages is · free for public repositories")]
+  C-SS-D-R3("Every reading carries its calibration state and last servi...")
+  C-SS-D-STACK --> C-SS-G-PICTURE
+  X-SS-PAGES --> C-SS-D-STACK
+  E-SS-GHPAGES --> C-SS-D-STACK
+  C-SS-D-R3 --> C-SS-G-PICTURE
+  style C-SS-G-PICTURE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-SS-D-STACK fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-SS-PAGES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-SS-GHPAGES fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-SS-D-R3 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+```
+
+- **claim** — Broker, time-series store, raw dumps and a static site - the shape of this repository, built by scripts and hosted free - so software is not the constraint. ([`C-SS-D-STACK`](CLAIMS.md#C-SS-D-STACK))
+- **claim** — Every reading carries its calibration state and last service date, or it is not evidence. ([`C-SS-D-R3`](CLAIMS.md#C-SS-D-R3))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-SS-G-WATCH"></a>
+### The picture is watched, not only stored: a node that falls silent, drifts from its neighbours or passes its calibration date is flagged when it happens.
+
+`C-SS-G-WATCH` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [SENSING.md](SENSING.md).
+
+**Why it follows:** A reading is evidence only with its node's state, and a network of volunteers' nodes degrades unless someone sees it degrade.
+
+```mermaid
+graph BT
+  C-SS-G-WATCH("The picture is watched, not only stored: a node that falls...")
+  C-SS-D-R3("Every reading carries its calibration state and last servi...")
+  C-SS-D-R3 --> C-SS-G-WATCH
+  style C-SS-G-WATCH fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-SS-D-R3 fill:#173a26,stroke:#3fb950,color:#d7ffe4
+```
+
+- **claim** — Every reading carries its calibration state and last service date, or it is not evidence. ([`C-SS-D-R3`](CLAIMS.md#C-SS-D-R3))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-SS-G-TASKS"></a>
+### The work the network needs is presented as tasks anyone can take - a node to service, a sample after a rain event, a calibration due, a stretch of water with no node - each with a place, a deadline and what it would add to the record.
+
+`C-SS-G-TASKS` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [SENSING.md](SENSING.md).
+
+**Why it follows:** The network's shape is many people with one node each and a shared protocol; tasks are how many people share the work without one institution directing it.
+
+```mermaid
+graph BT
+  C-SS-G-TASKS("The work the network needs is presented as tasks anyone ca...")
+  C-SS-P-SHAPE("One person cannot cover a country, and the network removes...")
+  C-SS-P-SHARED("The build, the calibration protocol and the archive would ...")
+  C-SS-P-SHAPE --> C-SS-G-TASKS
+  C-SS-P-SHARED --> C-SS-G-TASKS
+  style C-SS-G-TASKS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-SS-P-SHAPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-SS-P-SHARED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+```
+
+- **claim** — One person cannot cover a country, and the network removes extrapolation only where somebody stood in the water, so its shape is many people with one node each and a shared protocol. ([`C-SS-P-SHAPE`](CLAIMS.md#C-SS-P-SHAPE))
+- **claim** — The build, the calibration protocol and the archive would have to be shared. ([`C-SS-P-SHARED`](CLAIMS.md#C-SS-P-SHARED))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-SS-G-SHAPE"></a>
+### In shape this borrows from military software that fuses many sensors into one picture and from volunteer mapping that crowdsources what no institution gathers; pointed at the water, open, and traceable to each node, it is a crowdsourced platform for a scientific record.
+
+`C-SS-G-SHAPE` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [SENSING.md](SENSING.md).
+
+**Why it follows:** The two descriptions are the pinned sources'; the rest is this project's design.
+
+```mermaid
+graph BT
+  C-SS-G-SHAPE("In shape this borrows from military software that fuses ma...")
+  E-SS-LATTICE[("Wikipedia on Anduril's Lattice")]
+  E-SS-DEFLOCK[("DeFlock's README")]
+  E-SS-LATTICE --> C-SS-G-SHAPE
+  E-SS-DEFLOCK --> C-SS-G-SHAPE
+  style C-SS-G-SHAPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-SS-LATTICE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-SS-DEFLOCK fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **external** — Wikipedia on Anduril's Lattice: “classify objects by fusing data from disparate sensors” ([`SS-WIKI-ANDURIL`](https://en.wikipedia.org/w/index.php?title=Anduril_Industries&action=raw), pinned). The encyclopedia's description of Lattice, Anduril's software platform.
+- **external** — DeFlock's README: “Uses OpenStreetMap data to populate a map with crowdsourced locations of ALPRs” ([`SS-DEFLOCK-README`](https://raw.githubusercontent.com/FoggedLens/deflock/master/README.md), pinned). The project's own description of its map of licence-plate cameras, from OpenStreetMap data.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
 ## SETTLE.md
 
 <a id="C-SS-T-LEAD"></a>

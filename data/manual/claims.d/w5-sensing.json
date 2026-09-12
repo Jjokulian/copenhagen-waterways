@@ -1,0 +1,129 @@
+{
+ "_what": "SENSING.md: the digitisation goal - a live picture, watched, with the work as tasks - as the owner set it on 2026-09-12, and the two systems it borrows its shape from.",
+ "sources": {
+  "SS-DEFLOCK-README": {
+   "title": "DeFlock, README (FoggedLens/deflock on GitHub)",
+   "url": "https://raw.githubusercontent.com/FoggedLens/deflock/master/README.md",
+   "retrieved": "2026-09-12",
+   "sha256": "3a45a79613a48f2a94f08d66ba3bc8e95e7e277271cfecee1974c79b8937a82c",
+   "checked": "2026-09-12",
+   "status": "unchanged since pinned"
+  },
+  "SS-WIKI-ANDURIL": {
+   "title": "Wikipedia, Anduril Industries (article source)",
+   "url": "https://en.wikipedia.org/w/index.php?title=Anduril_Industries&action=raw",
+   "retrieved": "2026-09-12",
+   "sha256": "e5b7366df43d0a9e39b38fcd3dfeb782851672ff46a43531e653e17db8cb89f7",
+   "checked": "2026-09-12",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "E-SS-DEFLOCK",
+   "kind": "external",
+   "label": "DeFlock's README",
+   "detail": "The project's own description of its map of licence-plate cameras, from OpenStreetMap data.",
+   "source": "SS-DEFLOCK-README",
+   "said": "Uses OpenStreetMap data to populate a map with crowdsourced locations of ALPRs"
+  },
+  {
+   "id": "E-SS-LATTICE",
+   "kind": "external",
+   "label": "Wikipedia on Anduril's Lattice",
+   "detail": "The encyclopedia's description of Lattice, Anduril's software platform.",
+   "source": "SS-WIKI-ANDURIL",
+   "said": "classify objects by fusing data from disparate sensors"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-SS-G-PICTURE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "SENSING.md",
+   "claim": "The goal of digitising the collection is one live, shared picture: every node's readings flow into one open archive as they are taken and appear on one map, each carrying its node, time, calibration state and last service date.",
+   "because": "It is what the data path and its rules add up to once many nodes run at once; stated as the goal so the pieces are built toward it.",
+   "rests_on": [
+    "C-SS-D-STACK",
+    "C-SS-D-R3"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on SENSING.md": "**The goal of digitising the collection is one live, shared picture.** Every node's readings flow into one open archive as they are taken and appear on one map, each carrying its node, its time, its calibration state and its last service date.",
+     "texts": "2da549cfedf223f0",
+     "rests on C-SS-D-STACK": "18827d8be200a50c",
+     "rests on C-SS-D-R3": "9d7f02e23d8876fc"
+    }
+   }
+  },
+  {
+   "id": "C-SS-G-WATCH",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "SENSING.md",
+   "claim": "The picture is watched, not only stored: a node that falls silent, drifts from its neighbours or passes its calibration date is flagged when it happens.",
+   "because": "A reading is evidence only with its node's state, and a network of volunteers' nodes degrades unless someone sees it degrade.",
+   "rests_on": [
+    "C-SS-D-R3"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on SENSING.md": "**The picture is watched, not only stored.** A node that falls silent, drifts from its neighbours or passes its calibration date is flagged when it happens, not found at the end of a season.",
+     "texts": "f799a8d4c2d7e247",
+     "rests on C-SS-D-R3": "9d7f02e23d8876fc"
+    }
+   }
+  },
+  {
+   "id": "C-SS-G-TASKS",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "SENSING.md",
+   "claim": "The work the network needs is presented as tasks anyone can take - a node to service, a sample after a rain event, a calibration due, a stretch of water with no node - each with a place, a deadline and what it would add to the record.",
+   "because": "The network's shape is many people with one node each and a shared protocol; tasks are how many people share the work without one institution directing it.",
+   "rests_on": [
+    "C-SS-P-SHAPE",
+    "C-SS-P-SHARED"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on SENSING.md": "**And the work the network needs is presented as tasks anyone can take:** a node to service, a sample to collect after a rain event, a calibration due, a stretch of water with no node at all - each with a place, a deadline and what it would add to the record.",
+     "texts": "7cfde969a5c1b52c",
+     "rests on C-SS-P-SHAPE": "92203e47f6845acf",
+     "rests on C-SS-P-SHARED": "809eb1f906cb2b65"
+    }
+   }
+  },
+  {
+   "id": "C-SS-G-SHAPE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "SENSING.md",
+   "claim": "In shape this borrows from military software that fuses many sensors into one picture and from volunteer mapping that crowdsources what no institution gathers; pointed at the water, open, and traceable to each node, it is a crowdsourced platform for a scientific record.",
+   "because": "The two descriptions are the pinned sources'; the rest is this project's design.",
+   "rests_on": [
+    "E-SS-LATTICE",
+    "E-SS-DEFLOCK"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (wrote the section as the owner directed on 2026-09-12: the digitisation goal - one live picture, watched, with the work as tasks - stated as this project's design; the two comparisons read from the pinned DeFlock README and Wikipedia's Anduril article, quoted as they stand. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on SENSING.md": "In shape this borrows from two kinds of system built outside science. Military command software fuses many sensors into one picture: Anduril's Lattice is described as a platform that classifies objects *by fusing data from disparate sensors*. Volunteer mapping gathers what no institution will: DeFlock *uses OpenStreetMap data to populate a map with crowdsourced locations* of licence-plate cameras. Pointed at the water, open, and with every reading traceable to the node that made it, the same shape is a crowdsourced platform for a scientific record.",
+     "texts": "925a258967844a18",
+     "node E-SS-LATTICE": "1f8bcc901523c70a",
+     "pinned SS-WIKI-ANDURIL": "e5b7366df43d0a9e",
+     "node E-SS-DEFLOCK": "ef6212a86e2b4aeb",
+     "pinned SS-DEFLOCK-README": "3a45a79613a48f2a"
+    }
+   }
+  }
+ ]
+}
