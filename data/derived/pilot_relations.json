@@ -1,0 +1,9764 @@
+{
+ "_what": "Pilot: relations and laws offered as first-layer nodes to a network predicting dissolved oxygen (mg/l) per ODA CTD measurement, against a plain network and water-body means, on whole stations held out.",
+ "_script": "scripts/pilot_relations.py",
+ "_library": {
+  "forms": "/home/user/projects/statistical-methods/relations/library.py",
+  "laws": "/home/user/projects/statistical-methods/relations/laws.py",
+  "torch_note": "library.py's _pos() calls xp.maximum(z, 0); torch.maximum refuses a scalar, so 9 of 17 forms fail with xp=torch. Run here with a shim whose maximum() accepts a scalar (torch_xp()); the library is unchanged."
+ },
+ "constructions": {
+  "target": {
+   "choice": "KorrigeretResultat of 'Oxygen indhold' (Enhed 'mg/l'); no fallback to OriginalResultat when it is empty",
+   "rows_corrected_differs_from_original": {
+    "t": 1280,
+    "o2": 1246631,
+    "s": 3926
+   },
+   "oxygen_rows_without_corrected_value": 0,
+   "sample_measurements_corrected_differs_from_original": 55320
+  },
+  "temperature_salinity": "KorrigeretResultat of 'Temperatur' (Enhed 'grader C') and 'Salinitet' (Enhed 'promille' only; other units skipped)",
+  "measurement": "rows sharing (ObservationsStedNr, Dato, Dybde (m) rounded to 1 mm) joined; complete = all three parameters present. Casts (station, date) are grouped as contiguous runs and a cast that reopens is counted (casts_reopened in parse.counts).",
+  "prefilter": "lines are kept for splitting only if they contain '\"Oxygen indhold\"', '\"Temperatur\"' or '\"Salinitet\"' - relies on every field being quoted (formats.py); rows with the wrong column count are counted and skipped, as formats.py requires",
+  "sample": "reservoir sample (Algorithm R, seed 0) of at most 400,000 complete measurements, drawn BEFORE the filters so each filter's effect is also counted on the whole population",
+  "filters_applied_in_order": [
+   {
+    "flag": "date_invalid",
+    "meaning": "Dato is not a valid YYYYMMDD calendar date",
+    "population": {
+     "flagged": 0,
+     "removed_in_order": 0
+    },
+    "sample": {
+     "flagged": 0,
+     "removed_in_order": 0
+    }
+   },
+   {
+    "flag": "qa_not_C",
+    "meaning": "a row of the measurement has QANiveau other than 'C, Faglig kontrol' (the other value seen is 'B, Elektronisk kontrol')",
+    "population": {
+     "flagged": 1438255,
+     "removed_in_order": 1438255
+    },
+    "sample": {
+     "flagged": 82518,
+     "removed_in_order": 82518
+    }
+   },
+   {
+    "flag": "kvalitet_not_godkendt",
+    "meaning": "a row has Kvalitet other than 'Godkendt' (the other value seen is 'Fagligt forbehold')",
+    "population": {
+     "flagged": 359599,
+     "removed_in_order": 359599
+    },
+    "sample": {
+     "flagged": 20948,
+     "removed_in_order": 20948
+    }
+   },
+   {
+    "flag": "attribut_not_equals",
+    "meaning": "a row has ResultatAttribut '<' or '>': a censored value, not a measurement",
+    "population": {
+     "flagged": 397,
+     "removed_in_order": 353
+    },
+    "sample": {
+     "flagged": 24,
+     "removed_in_order": 21
+    }
+   },
+   {
+    "flag": "factor_outside",
+    "meaning": "a row has KorrektionsFaktor outside 0.5-2.0 (the project's bound, surface_temp.py)",
+    "population": {
+     "flagged": 3340,
+     "removed_in_order": 2604
+    },
+    "sample": {
+     "flagged": 209,
+     "removed_in_order": 163
+    }
+   },
+   {
+    "flag": "conflicting_duplicate",
+    "meaning": "two rows for the same parameter at the same station, date and depth carry different corrected values",
+    "population": {
+     "flagged": 18392,
+     "removed_in_order": 11762
+    },
+    "sample": {
+     "flagged": 1043,
+     "removed_in_order": 667
+    }
+   },
+   {
+    "flag": "t_out_of_range",
+    "meaning": "temperature outside (-2.0, 30.0) C",
+    "population": {
+     "flagged": 362,
+     "removed_in_order": 1
+    },
+    "sample": {
+     "flagged": 26,
+     "removed_in_order": 0
+    }
+   },
+   {
+    "flag": "s_out_of_range",
+    "meaning": "salinity outside (0.0, 40.0) promille",
+    "population": {
+     "flagged": 12,
+     "removed_in_order": 0
+    },
+    "sample": {
+     "flagged": 0,
+     "removed_in_order": 0
+    }
+   },
+   {
+    "flag": "o2_out_of_range",
+    "meaning": "oxygen outside (0.0, 25.0) mg/l",
+    "population": {
+     "flagged": 3641,
+     "removed_in_order": 1009
+    },
+    "sample": {
+     "flagged": 219,
+     "removed_in_order": 54
+    }
+   },
+   {
+    "flag": "depth_negative",
+    "meaning": "Dybde (m) below zero",
+    "population": {
+     "flagged": 0,
+     "removed_in_order": 0
+    },
+    "sample": {
+     "flagged": 0,
+     "removed_in_order": 0
+    }
+   },
+   {
+    "flag": "position_outside",
+    "meaning": "no position, or Længde/Bredde outside lon (3.0, 16.0) lat (53.0, 59.0)",
+    "population": {
+     "flagged": 0,
+     "removed_in_order": 0
+    },
+    "sample": {
+     "flagged": 0,
+     "removed_in_order": 0
+    }
+   },
+   {
+    "flag": "no_water_body",
+    "meaning": "the CTD rows carry no Lokalitetsnavn (water body name)",
+    "population": {
+     "flagged": 0,
+     "removed_in_order": 0
+    },
+    "sample": {
+     "flagged": 0,
+     "removed_in_order": 0
+    }
+   }
+  ],
+  "filters_not_applied": [
+   {
+    "flag": "sonde_999",
+    "reason": "Not applied. 999 means the sonde is not recorded, not that the value is bad; the rows carrying it include the bottle-sampler ('Ketcher') history, so dropping them selects by era rather than by quality. Counted so the effect is visible.",
+    "population_would_remove": 1825885,
+    "sample_would_remove": 104342
+   },
+   {
+    "flag": "water_body_not_in_register",
+    "reason": "Not applied. The name is the extract's own water-body label for the station and serves as the group; it is counted so a reader sees how much rests on names the register does not confirm.",
+    "population_would_remove": 177737,
+    "sample_would_remove": 10132
+   }
+  ],
+  "years_where_a_flag_covers_half_or_more_of_the_sample": {
+   "_what": "share of the year's sampled complete measurements carrying the flag, listed only where it is 0.5 or more. qa_not_C is applied, so those years are largely absent from the data the models see.",
+   "qa_not_C": {
+    "2006": 0.95,
+    "2009": 0.775,
+    "2010": 0.806,
+    "2011": 0.933,
+    "2012": 0.888,
+    "2013": 0.895,
+    "2017": 0.967,
+    "2018": 0.945
+   },
+   "kvalitet_not_godkendt": {},
+   "sonde_999": {
+    "1971": 1.0,
+    "1972": 1.0,
+    "1973": 1.0,
+    "1974": 1.0,
+    "1975": 1.0,
+    "1976": 1.0,
+    "1977": 1.0,
+    "1978": 1.0,
+    "1979": 0.967,
+    "1980": 0.778,
+    "1981": 0.912,
+    "1982": 0.627,
+    "1983": 0.65,
+    "1984": 0.729,
+    "1987": 0.691,
+    "1988": 0.786,
+    "1989": 0.759,
+    "1990": 0.849,
+    "1991": 0.852,
+    "1992": 0.851,
+    "1993": 0.865,
+    "1994": 0.872,
+    "1995": 0.822,
+    "1996": 0.776,
+    "1997": 0.799,
+    "1998": 0.778,
+    "1999": 0.569,
+    "2000": 0.57,
+    "2005": 0.506
+   }
+  },
+  "population_after_filters": 5161245,
+  "sample_after_filters": 295629,
+  "law_outputs_not_finite_removed_from_sample": 0,
+  "sample_used": 295629,
+  "position": "Længde/Bredde of the oxygen row (the station's position in the extract)",
+  "water_body": {
+   "choice": "the CTD row's own Lokalitetsnavn (one per station), checked against the Vandomraade names of data/raw/oda/stations.csv",
+   "deviation_from_brief": "the brief named a join of ObservationsStedNr into stations.csv (ObservationsstedNr -> VandomraadeNr). That join finds few CTD stations - the two files are largely different station universes (scripts/cube.py documents 35 in both) - so it would have discarded most of the data. Counts in parse.station_join.",
+   "station_join": {
+    "ctd_stations_with_o2_t_or_s_rows": 1527,
+    "of_which_number_in_stations_csv": 35,
+    "of_which_Lokalitetsnavn_in_stations_csv_names": 1516,
+    "distinct_Lokalitetsnavn": 268,
+    "distinct_Lokalitetsnavn_in_register": 259
+   }
+  },
+  "split": {
+   "by": "station (whole stations held out)",
+   "seed": 0,
+   "shares_of_stations": {
+    "train": 0.7,
+    "validation": 0.1,
+    "test": 0.2
+   },
+   "stations": {
+    "train": 791,
+    "validation": 113,
+    "test": 226
+   },
+   "measurements": {
+    "train": 195285,
+    "validation": 24812,
+    "test": 75532
+   }
+  },
+  "inputs": {
+   "names": [
+    "temperature",
+    "salinity",
+    "depth",
+    "lat",
+    "lon",
+    "day_of_year",
+    "year"
+   ],
+   "day_of_year": "integer day of year from Dato, as given",
+   "year": "calendar year from Dato, as given",
+   "standardisation": "subtract the training-station mean, divide by the training-station standard deviation (inputs, law outputs and the target alike)"
+  },
+  "laws": {
+   "call": "laws.record_state(SP=salinity, t=temperature, depth, lon, lat) on raw values, float64, then standardised",
+   "nodes": [
+    "pressure",
+    "absolute_salinity",
+    "conservative_temperature",
+    "density",
+    "sigma0",
+    "oxygen_solubility"
+   ],
+   "assumption": "ODA 'promille' salinity read as PSS-78 Practical Salinity",
+   "oxygen_solubility_unit": "umol/kg, left unconverted: the next layer's weight absorbs the scale",
+   "share_in_teos10_funnel": 0.9999
+  },
+  "model_config": {
+   "first_layer_nodes": 64,
+   "hidden2": 32,
+   "lambda_gate_l1": 0.001,
+   "mu_next_layer_l2": 0.0005,
+   "_penalties": "loss = MSE(standardised) + lambda * sum|gate| over ALL first-layer nodes (ordinary units too) + mu * ||W2||^2 on the weights leaving the first layer. Node outputs are batch-normalised (no affine) before the gate, so a gate is the node's scale; the L2 on W2 stops the network from shrinking a gate and growing its outgoing weight instead (network slimming, Liu et al. 2017).",
+   "weight_decay": 0.0001,
+   "lr": 0.003,
+   "batch": 4096,
+   "max_epochs": 80,
+   "_max_epochs_note": "raised from 40 after a first round in which one plain run (seed 2) reached the cap with its best epoch at 37; all runs were then repeated at 80 so no network is cut off before early stopping",
+   "patience": 6,
+   "grad_clip_norm": 5.0,
+   "gate_init": 1.0,
+   "form_param_init": "1.0 + 0.1 * N(0,1) for every form constant",
+   "active_gate_threshold": 0.05
+  }
+ },
+ "parse": {
+  "rows_read": 53712716,
+  "whole_file_read": true,
+  "zcat_exit": 0,
+  "max_rows": 0,
+  "reservoir_seed": 0,
+  "cap": 400000,
+  "complete_measurements": 6974828,
+  "kept_in_sample": 400000,
+  "counts": {
+   "rows_o2": 7146792,
+   "rows_t": 7501201,
+   "rows_s": 7474425,
+   "duplicate_rows_s": 168209,
+   "duplicate_rows_t": 170196,
+   "duplicate_rows_o2": 153132,
+   "rows_t_factor_not_1": 1280,
+   "rows_o2_factor_not_1": 1253019,
+   "rows_s_factor_not_1": 3926,
+   "prefiltered_rows_wrong_column_count": 660,
+   "casts_reopened": 0
+  },
+  "units_skipped": {},
+  "rows_corrected_differs_from_original": {
+   "t": 1280,
+   "o2": 1246631,
+   "s": 3926
+  },
+  "incomplete_measurements_by_present": {
+   "o2+t": 15387,
+   "t+s": 326654,
+   "s": 2728,
+   "t": 14136,
+   "o2": 1439,
+   "o2+s": 2006
+  },
+  "casts": 155432,
+  "stations_register": {
+   "rows": 798574,
+   "bad_rows": 0,
+   "stations": 6288,
+   "water_bodies": 333,
+   "stations_with_several_water_bodies": 0
+  },
+  "station_join": {
+   "ctd_stations_with_o2_t_or_s_rows": 1527,
+   "of_which_number_in_stations_csv": 35,
+   "of_which_Lokalitetsnavn_in_stations_csv_names": 1516,
+   "distinct_Lokalitetsnavn": 268,
+   "distinct_Lokalitetsnavn_in_register": 259
+  },
+  "seconds": 1180.0
+ },
+ "variance": {
+  "_what": "share of oxygen variance lying WITHIN groups (sum of squares about the group's own mean over sum of squares about the overall mean); a group mean cannot express this part at all",
+  "within_water_body_all_stations": 0.879,
+  "within_water_body_by_month_all_stations": 0.5264,
+  "within_water_body_test_stations": 0.9141,
+  "within_station_all": 0.8341,
+  "total_variance_mg2_l2": 6.6738,
+  "water_bodies_in_sample": 250
+ },
+ "baselines": {
+  "water_body_mean": {
+   "r2": -0.0034,
+   "rmse_mg_l": 2.4045,
+   "n": 75532,
+   "test_measurements_whose_water_body_has_no_training_station": 8290,
+   "fallback": "training mean over all stations"
+  },
+  "water_body_by_month_mean": {
+   "r2": 0.2992,
+   "rmse_mg_l": 2.0095,
+   "n": 75532,
+   "test_measurements_without_training_cell": 12970,
+   "fallback": "the water body's mean, then the overall training mean"
+  },
+  "training_mean_everywhere": {
+   "r2": -0.0012,
+   "rmse_mg_l": 2.4018,
+   "n": 75532
+  }
+ },
+ "networks": {
+  "plain": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "test_r2_per_seed": [
+    0.7799,
+    0.7935,
+    0.7895,
+    0.7905,
+    0.786
+   ],
+   "test_rmse_per_seed": [
+    1.1262,
+    1.0907,
+    1.1014,
+    1.0986,
+    1.1103
+   ],
+   "test_r2_mean": 0.7879,
+   "test_r2_sd": 0.0052,
+   "test_rmse_mean": 1.1054,
+   "units_active_per_seed": [
+    55,
+    53,
+    51,
+    58,
+    64
+   ],
+   "n_params": 2689,
+   "nonfinite_runs": []
+  },
+  "relation": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "test_r2_per_seed": [
+    0.7827,
+    0.7932,
+    0.7909,
+    0.7877,
+    0.7872
+   ],
+   "test_rmse_per_seed": [
+    1.1188,
+    1.0915,
+    1.0976,
+    1.1059,
+    1.1074
+   ],
+   "test_r2_mean": 0.7883,
+   "test_r2_sd": 0.004,
+   "test_rmse_mean": 1.1042,
+   "units_active_per_seed": [
+    38,
+    35,
+    38,
+    33,
+    39
+   ],
+   "n_params": 2689,
+   "nonfinite_runs": []
+  }
+ },
+ "relation_gates": {
+  "_what": "|gate| of every relation and law node at the best validation epoch, ranked by the mean over seeds; rank 1 = largest. 'effective' is |gate| times the norm of the node's outgoing weights (node outputs are batch-normalised, so this is its scale of contribution).",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "ranked": [
+   {
+    "node": "form:inverse_square",
+    "gate_abs_per_seed": [
+     0.8396,
+     0.6812,
+     0.4568,
+     0.6826,
+     1.0534
+    ],
+    "gate_abs_mean": 0.7427,
+    "rank_per_seed": [
+     1,
+     2,
+     2,
+     1,
+     1
+    ],
+    "effective_per_seed": [
+     0.6312,
+     0.4576,
+     0.3028,
+     0.5081,
+     0.8359
+    ]
+   },
+   {
+    "node": "form:radial",
+    "gate_abs_per_seed": [
+     0.6539,
+     0.4259,
+     0.448,
+     0.497,
+     0.3341
+    ],
+    "gate_abs_mean": 0.4718,
+    "rank_per_seed": [
+     5,
+     7,
+     3,
+     4,
+     11
+    ],
+    "effective_per_seed": [
+     0.4181,
+     0.27,
+     0.2959,
+     0.3302,
+     0.181
+    ]
+   },
+   {
+    "node": "form:product",
+    "gate_abs_per_seed": [
+     0.6764,
+     0.5287,
+     0.3166,
+     0.4279,
+     0.3164
+    ],
+    "gate_abs_mean": 0.4532,
+    "rank_per_seed": [
+     3,
+     4,
+     8,
+     5,
+     12
+    ],
+    "effective_per_seed": [
+     0.4393,
+     0.358,
+     0.1837,
+     0.2375,
+     0.1381
+    ]
+   },
+   {
+    "node": "form:ratio",
+    "gate_abs_per_seed": [
+     0.4493,
+     0.5317,
+     0.0838,
+     0.6205,
+     0.5786
+    ],
+    "gate_abs_mean": 0.4528,
+    "rank_per_seed": [
+     8,
+     3,
+     10,
+     2,
+     3
+    ],
+    "effective_per_seed": [
+     0.1616,
+     0.2656,
+     0.0256,
+     0.3358,
+     0.2921
+    ]
+   },
+   {
+    "node": "form:periodic",
+    "gate_abs_per_seed": [
+     0.6832,
+     0.7083,
+     0.0004,
+     0.2534,
+     0.2999
+    ],
+    "gate_abs_mean": 0.389,
+    "rank_per_seed": [
+     2,
+     1,
+     19,
+     9,
+     13
+    ],
+    "effective_per_seed": [
+     0.3705,
+     0.5305,
+     0.0001,
+     0.1273,
+     0.1406
+    ]
+   },
+   {
+    "node": "form:square",
+    "gate_abs_per_seed": [
+     0.4264,
+     0.2423,
+     0.4275,
+     0.4189,
+     0.4095
+    ],
+    "gate_abs_mean": 0.3849,
+    "rank_per_seed": [
+     10,
+     11,
+     4,
+     6,
+     8
+    ],
+    "effective_per_seed": [
+     0.2447,
+     0.1208,
+     0.2733,
+     0.2294,
+     0.2443
+    ]
+   },
+   {
+    "node": "law:oxygen_solubility",
+    "gate_abs_per_seed": [
+     0.4923,
+     0.3841,
+     0.4832,
+     0.0026,
+     0.4766
+    ],
+    "gate_abs_mean": 0.3678,
+    "rank_per_seed": [
+     7,
+     9,
+     1,
+     14,
+     5
+    ],
+    "effective_per_seed": [
+     0.213,
+     0.1784,
+     0.2757,
+     0.0005,
+     0.208
+    ]
+   },
+   {
+    "node": "form:decay",
+    "gate_abs_per_seed": [
+     0.2335,
+     0.0003,
+     0.3445,
+     0.4996,
+     0.3591
+    ],
+    "gate_abs_mean": 0.2874,
+    "rank_per_seed": [
+     16,
+     21,
+     6,
+     3,
+     9
+    ],
+    "effective_per_seed": [
+     0.0952,
+     0.0001,
+     0.1684,
+     0.2706,
+     0.1678
+    ]
+   },
+   {
+    "node": "law:conservative_temperature",
+    "gate_abs_per_seed": [
+     0.6596,
+     0.1726,
+     0.0009,
+     0.1027,
+     0.4766
+    ],
+    "gate_abs_mean": 0.2825,
+    "rank_per_seed": [
+     4,
+     12,
+     14,
+     13,
+     6
+    ],
+    "effective_per_seed": [
+     0.3067,
+     0.0628,
+     0.0002,
+     0.035,
+     0.1893
+    ]
+   },
+   {
+    "node": "form:softmin",
+    "gate_abs_per_seed": [
+     0.4279,
+     0.3856,
+     0.3863,
+     0.1518,
+     0.0007
+    ],
+    "gate_abs_mean": 0.2705,
+    "rank_per_seed": [
+     9,
+     8,
+     5,
+     12,
+     18
+    ],
+    "effective_per_seed": [
+     0.1869,
+     0.174,
+     0.182,
+     0.0632,
+     0.0001
+    ]
+   },
+   {
+    "node": "form:gaussian",
+    "gate_abs_per_seed": [
+     0.2628,
+     0.0008,
+     0.2487,
+     0.001,
+     0.6381
+    ],
+    "gate_abs_mean": 0.2303,
+    "rank_per_seed": [
+     14,
+     19,
+     9,
+     17,
+     2
+    ],
+    "effective_per_seed": [
+     0.083,
+     0.0002,
+     0.1255,
+     0.0001,
+     0.352
+    ]
+   },
+   {
+    "node": "form:power",
+    "gate_abs_per_seed": [
+     0.1175,
+     0.0003,
+     0.0008,
+     0.3651,
+     0.5156
+    ],
+    "gate_abs_mean": 0.1999,
+    "rank_per_seed": [
+     18,
+     23,
+     15,
+     7,
+     4
+    ],
+    "effective_per_seed": [
+     0.0427,
+     0.0001,
+     0.0001,
+     0.1644,
+     0.2883
+    ]
+   },
+   {
+    "node": "form:growth",
+    "gate_abs_per_seed": [
+     0.0016,
+     0.0004,
+     0.3436,
+     0.2673,
+     0.3439
+    ],
+    "gate_abs_mean": 0.1914,
+    "rank_per_seed": [
+     22,
+     20,
+     7,
+     8,
+     10
+    ],
+    "effective_per_seed": [
+     0.0004,
+     0.0001,
+     0.1951,
+     0.1096,
+     0.1404
+    ]
+   },
+   {
+    "node": "form:arrhenius",
+    "gate_abs_per_seed": [
+     0.1628,
+     0.4993,
+     0.0019,
+     0.1611,
+     0.0922
+    ],
+    "gate_abs_mean": 0.1835,
+    "rank_per_seed": [
+     17,
+     6,
+     13,
+     10,
+     16
+    ],
+    "effective_per_seed": [
+     0.0506,
+     0.3146,
+     0.0003,
+     0.0609,
+     0.0333
+    ]
+   },
+   {
+    "node": "law:pressure",
+    "gate_abs_per_seed": [
+     0.0995,
+     0.5048,
+     0.0529,
+     0.0006,
+     0.1167
+    ],
+    "gate_abs_mean": 0.1549,
+    "rank_per_seed": [
+     19,
+     5,
+     11,
+     18,
+     15
+    ],
+    "effective_per_seed": [
+     0.0313,
+     0.1703,
+     0.0165,
+     0.0002,
+     0.0313
+    ]
+   },
+   {
+    "node": "form:logistic",
+    "gate_abs_per_seed": [
+     0.3351,
+     0.0023,
+     0.0,
+     0.0017,
+     0.2449
+    ],
+    "gate_abs_mean": 0.1168,
+    "rank_per_seed": [
+     12,
+     16,
+     23,
+     15,
+     14
+    ],
+    "effective_per_seed": [
+     0.1632,
+     0.0006,
+     0.0,
+     0.0002,
+     0.0843
+    ]
+   },
+   {
+    "node": "form:saturation",
+    "gate_abs_per_seed": [
+     0.4139,
+     0.1603,
+     0.0002,
+     0.0001,
+     0.0002
+    ],
+    "gate_abs_mean": 0.115,
+    "rank_per_seed": [
+     11,
+     13,
+     21,
+     21,
+     23
+    ],
+    "effective_per_seed": [
+     0.1788,
+     0.0795,
+     0.0,
+     0.0,
+     0.0001
+    ]
+   },
+   {
+    "node": "form:log",
+    "gate_abs_per_seed": [
+     0.2638,
+     0.1358,
+     0.0003,
+     0.1534,
+     0.0006
+    ],
+    "gate_abs_mean": 0.1108,
+    "rank_per_seed": [
+     13,
+     14,
+     20,
+     11,
+     19
+    ],
+    "effective_per_seed": [
+     0.1031,
+     0.0501,
+     0.0001,
+     0.0588,
+     0.0001
+    ]
+   },
+   {
+    "node": "law:absolute_salinity",
+    "gate_abs_per_seed": [
+     0.5486,
+     0.0011,
+     0.0006,
+     0.0001,
+     0.0003
+    ],
+    "gate_abs_mean": 0.1101,
+    "rank_per_seed": [
+     6,
+     18,
+     17,
+     22,
+     20
+    ],
+    "effective_per_seed": [
+     0.2077,
+     0.0002,
+     0.0001,
+     0.0,
+     0.0001
+    ]
+   },
+   {
+    "node": "form:hinge",
+    "gate_abs_per_seed": [
+     0.2376,
+     0.2536,
+     0.0022,
+     0.0011,
+     0.0003
+    ],
+    "gate_abs_mean": 0.099,
+    "rank_per_seed": [
+     15,
+     10,
+     12,
+     16,
+     21
+    ],
+    "effective_per_seed": [
+     0.0854,
+     0.1031,
+     0.0001,
+     0.0001,
+     0.0001
+    ]
+   },
+   {
+    "node": "form:tanh",
+    "gate_abs_per_seed": [
+     0.0002,
+     0.0012,
+     0.0008,
+     0.0006,
+     0.4163
+    ],
+    "gate_abs_mean": 0.0838,
+    "rank_per_seed": [
+     23,
+     17,
+     16,
+     19,
+     7
+    ],
+    "effective_per_seed": [
+     0.0,
+     0.0002,
+     0.0001,
+     0.0001,
+     0.2434
+    ]
+   },
+   {
+    "node": "law:sigma0",
+    "gate_abs_per_seed": [
+     0.0537,
+     0.0768,
+     0.0001,
+     0.0005,
+     0.0017
+    ],
+    "gate_abs_mean": 0.0266,
+    "rank_per_seed": [
+     20,
+     15,
+     22,
+     20,
+     17
+    ],
+    "effective_per_seed": [
+     0.018,
+     0.0261,
+     0.0,
+     0.0001,
+     0.0004
+    ]
+   },
+   {
+    "node": "law:density",
+    "gate_abs_per_seed": [
+     0.0019,
+     0.0003,
+     0.0004,
+     0.0001,
+     0.0003
+    ],
+    "gate_abs_mean": 0.0006,
+    "rank_per_seed": [
+     21,
+     22,
+     18,
+     23,
+     22
+    ],
+    "effective_per_seed": [
+     0.0005,
+     0.0,
+     0.0001,
+     0.0,
+     0.0001
+    ]
+   }
+  ],
+  "spearman_between_seeds_gate_abs": {
+   "0-1": 0.629,
+   "0-2": 0.297,
+   "0-3": 0.417,
+   "0-4": 0.215,
+   "1-2": 0.317,
+   "1-3": 0.401,
+   "1-4": 0.092,
+   "2-3": 0.584,
+   "2-4": 0.532,
+   "3-4": 0.577
+  },
+  "spearman_between_seeds_effective": {
+   "0-1": 0.674,
+   "0-2": 0.348,
+   "0-3": 0.464,
+   "0-4": 0.204,
+   "1-2": 0.348,
+   "1-3": 0.464,
+   "1-4": 0.117,
+   "2-3": 0.637,
+   "2-4": 0.493,
+   "3-4": 0.584
+  },
+  "top5_common_to_all_seeds": [
+   "form:inverse_square"
+  ],
+  "top5_per_seed": {
+   "0": [
+    "form:inverse_square",
+    "form:periodic",
+    "form:product",
+    "law:conservative_temperature",
+    "form:radial"
+   ],
+   "1": [
+    "form:periodic",
+    "form:inverse_square",
+    "form:ratio",
+    "form:product",
+    "law:pressure"
+   ],
+   "2": [
+    "law:oxygen_solubility",
+    "form:inverse_square",
+    "form:radial",
+    "form:square",
+    "form:softmin"
+   ],
+   "3": [
+    "form:inverse_square",
+    "form:ratio",
+    "form:decay",
+    "form:radial",
+    "form:product"
+   ],
+   "4": [
+    "form:inverse_square",
+    "form:gaussian",
+    "form:ratio",
+    "form:power",
+    "law:oxygen_solubility"
+   ]
+  }
+ },
+ "runs": [
+  {
+   "kind": "plain",
+   "seed": 0,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 34,
+   "best_epoch": 27,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.43878,
+     0.30616
+    ],
+    [
+     0.30524,
+     0.24287
+    ],
+    [
+     0.25461,
+     0.21115
+    ],
+    [
+     0.22891,
+     0.20899
+    ],
+    [
+     0.21714,
+     0.2027
+    ],
+    [
+     0.20973,
+     0.20769
+    ],
+    [
+     0.20545,
+     0.20335
+    ],
+    [
+     0.20191,
+     0.20376
+    ],
+    [
+     0.19934,
+     0.1989
+    ],
+    [
+     0.19651,
+     0.20075
+    ],
+    [
+     0.19444,
+     0.20418
+    ],
+    [
+     0.19229,
+     0.19631
+    ],
+    [
+     0.19027,
+     0.2019
+    ],
+    [
+     0.1888,
+     0.19797
+    ],
+    [
+     0.18715,
+     0.19437
+    ],
+    [
+     0.18644,
+     0.19404
+    ],
+    [
+     0.18569,
+     0.19613
+    ],
+    [
+     0.18459,
+     0.19785
+    ],
+    [
+     0.18236,
+     0.19228
+    ],
+    [
+     0.18215,
+     0.19728
+    ],
+    [
+     0.18138,
+     0.19862
+    ],
+    [
+     0.18033,
+     0.19072
+    ],
+    [
+     0.18056,
+     0.19643
+    ],
+    [
+     0.17942,
+     0.1855
+    ],
+    [
+     0.17845,
+     0.19119
+    ],
+    [
+     0.17834,
+     0.1915
+    ],
+    [
+     0.17722,
+     0.19349
+    ],
+    [
+     0.17782,
+     0.18417
+    ],
+    [
+     0.17689,
+     0.19236
+    ],
+    [
+     0.17656,
+     0.18731
+    ],
+    [
+     0.17586,
+     0.19333
+    ],
+    [
+     0.17553,
+     0.18988
+    ],
+    [
+     0.17516,
+     0.19129
+    ],
+    [
+     0.17451,
+     0.18863
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8287,
+    "rmse_mg_l": 1.1293,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7799,
+    "rmse_mg_l": 1.1262,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": -0.00068,
+     "gate_abs": 0.00068,
+     "effective": 8e-05
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.59785,
+     "gate_abs": 0.59785,
+     "effective": 0.40607
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.05797,
+     "gate_abs": 0.05797,
+     "effective": 0.01702
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.37177,
+     "gate_abs": 0.37177,
+     "effective": 0.19281
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.35572,
+     "gate_abs": 0.35572,
+     "effective": 0.16999
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.21306,
+     "gate_abs": 0.21306,
+     "effective": 0.09517
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.3871,
+     "gate_abs": 0.3871,
+     "effective": 0.23981
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.38893,
+     "gate_abs": 0.38893,
+     "effective": 0.18143
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.45984,
+     "gate_abs": 0.45984,
+     "effective": 0.23895
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.41316,
+     "gate_abs": 0.41316,
+     "effective": 0.1941
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.14027,
+     "gate_abs": 0.14027,
+     "effective": 0.05408
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.42834,
+     "gate_abs": 0.42834,
+     "effective": 0.28297
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.3779,
+     "gate_abs": 0.3779,
+     "effective": 0.22607
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.57489,
+     "gate_abs": 0.57489,
+     "effective": 0.32811
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.23614,
+     "gate_abs": 0.23614,
+     "effective": 0.11193
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.41929,
+     "gate_abs": 0.41929,
+     "effective": 0.23485
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.47437,
+     "gate_abs": 0.47437,
+     "effective": 0.26941
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.56608,
+     "gate_abs": 0.56608,
+     "effective": 0.37728
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.0588,
+     "gate_abs": 0.0588,
+     "effective": 0.01553
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.45467,
+     "gate_abs": 0.45467,
+     "effective": 0.31715
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.54862,
+     "gate_abs": 0.54862,
+     "effective": 0.32226
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.40374,
+     "gate_abs": 0.40374,
+     "effective": 0.24524
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.00024,
+     "gate_abs": 0.00024,
+     "effective": 4e-05
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.54904,
+     "gate_abs": 0.54904,
+     "effective": 0.26766
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.00167,
+     "gate_abs": 0.00167,
+     "effective": 0.00021
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.68842,
+     "gate_abs": 0.68842,
+     "effective": 0.54079
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.001,
+     "gate_abs": 0.001,
+     "effective": 0.00017
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.44621,
+     "gate_abs": 0.44621,
+     "effective": 0.26497
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.92724,
+     "gate_abs": 0.92724,
+     "effective": 0.75562
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.00284,
+     "gate_abs": 0.00284,
+     "effective": 0.00047
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.22565,
+     "gate_abs": 0.22565,
+     "effective": 0.11059
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.49307,
+     "gate_abs": 0.49307,
+     "effective": 0.28482
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.15754,
+     "gate_abs": 0.15754,
+     "effective": 0.05993
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.06659,
+     "gate_abs": 0.06659,
+     "effective": 0.0193
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.84808,
+     "gate_abs": 0.84808,
+     "effective": 0.76918
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.28979,
+     "gate_abs": 0.28979,
+     "effective": 0.14493
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.3758,
+     "gate_abs": 0.3758,
+     "effective": 0.21488
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.26507,
+     "gate_abs": 0.26507,
+     "effective": 0.11841
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.10217,
+     "gate_abs": 0.10217,
+     "effective": 0.03287
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.17493,
+     "gate_abs": 0.17493,
+     "effective": 0.07188
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.53092,
+     "gate_abs": 0.53092,
+     "effective": 0.34071
+    },
+    {
+     "node": "unit_41",
+     "gate": 0.5542,
+     "gate_abs": 0.5542,
+     "effective": 0.3175
+    },
+    {
+     "node": "unit_42",
+     "gate": 0.27335,
+     "gate_abs": 0.27335,
+     "effective": 0.15345
+    },
+    {
+     "node": "unit_43",
+     "gate": 0.47903,
+     "gate_abs": 0.47903,
+     "effective": 0.27185
+    },
+    {
+     "node": "unit_44",
+     "gate": 0.52688,
+     "gate_abs": 0.52688,
+     "effective": 0.24992
+    },
+    {
+     "node": "unit_45",
+     "gate": 0.22422,
+     "gate_abs": 0.22422,
+     "effective": 0.11122
+    },
+    {
+     "node": "unit_46",
+     "gate": 0.00017,
+     "gate_abs": 0.00017,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_47",
+     "gate": 0.87922,
+     "gate_abs": 0.87922,
+     "effective": 0.69724
+    },
+    {
+     "node": "unit_48",
+     "gate": -0.00045,
+     "gate_abs": 0.00045,
+     "effective": 4e-05
+    },
+    {
+     "node": "unit_49",
+     "gate": 0.35935,
+     "gate_abs": 0.35935,
+     "effective": 0.21828
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.00016,
+     "gate_abs": 0.00016,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_51",
+     "gate": 0.23813,
+     "gate_abs": 0.23813,
+     "effective": 0.1201
+    },
+    {
+     "node": "unit_52",
+     "gate": 0.17713,
+     "gate_abs": 0.17713,
+     "effective": 0.08259
+    },
+    {
+     "node": "unit_53",
+     "gate": 0.21549,
+     "gate_abs": 0.21549,
+     "effective": 0.09018
+    },
+    {
+     "node": "unit_54",
+     "gate": 0.20384,
+     "gate_abs": 0.20384,
+     "effective": 0.08701
+    },
+    {
+     "node": "unit_55",
+     "gate": 0.27277,
+     "gate_abs": 0.27277,
+     "effective": 0.10664
+    },
+    {
+     "node": "unit_56",
+     "gate": -0.00155,
+     "gate_abs": 0.00155,
+     "effective": 0.00026
+    },
+    {
+     "node": "unit_57",
+     "gate": 0.45723,
+     "gate_abs": 0.45723,
+     "effective": 0.25391
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.30749,
+     "gate_abs": 0.30749,
+     "effective": 0.1533
+    },
+    {
+     "node": "unit_59",
+     "gate": 0.17655,
+     "gate_abs": 0.17655,
+     "effective": 0.06064
+    },
+    {
+     "node": "unit_60",
+     "gate": 0.5905,
+     "gate_abs": 0.5905,
+     "effective": 0.41499
+    },
+    {
+     "node": "unit_61",
+     "gate": 0.43833,
+     "gate_abs": 0.43833,
+     "effective": 0.25669
+    },
+    {
+     "node": "unit_62",
+     "gate": 0.25194,
+     "gate_abs": 0.25194,
+     "effective": 0.12396
+    },
+    {
+     "node": "unit_63",
+     "gate": 0.62238,
+     "gate_abs": 0.62238,
+     "effective": 0.45113
+    }
+   ],
+   "units_active": 55,
+   "units_total": 64,
+   "sum_abs_gate_units": 21.3258,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 77.9,
+   "file": "plain_seed0.json"
+  },
+  {
+   "kind": "plain",
+   "seed": 0,
+   "lambda_gate_l1": 0.0,
+   "epochs_run": 14,
+   "best_epoch": 7,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.43842,
+     0.30505
+    ],
+    [
+     0.30344,
+     0.24021
+    ],
+    [
+     0.25186,
+     0.21006
+    ],
+    [
+     0.22623,
+     0.2085
+    ],
+    [
+     0.21385,
+     0.20117
+    ],
+    [
+     0.20675,
+     0.208
+    ],
+    [
+     0.20232,
+     0.20198
+    ],
+    [
+     0.19751,
+     0.19759
+    ],
+    [
+     0.19426,
+     0.19864
+    ],
+    [
+     0.19252,
+     0.20476
+    ],
+    [
+     0.19068,
+     0.19892
+    ],
+    [
+     0.18764,
+     0.20092
+    ],
+    [
+     0.18513,
+     0.20516
+    ],
+    [
+     0.18379,
+     0.19908
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8163,
+    "rmse_mg_l": 1.1698,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7703,
+    "rmse_mg_l": 1.1503,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 1.02866,
+     "gate_abs": 1.02866,
+     "effective": 0.41672
+    },
+    {
+     "node": "unit_01",
+     "gate": 1.31559,
+     "gate_abs": 1.31559,
+     "effective": 0.98569
+    },
+    {
+     "node": "unit_02",
+     "gate": 1.05573,
+     "gate_abs": 1.05573,
+     "effective": 0.50051
+    },
+    {
+     "node": "unit_03",
+     "gate": 1.06351,
+     "gate_abs": 1.06351,
+     "effective": 0.47468
+    },
+    {
+     "node": "unit_04",
+     "gate": 1.00612,
+     "gate_abs": 1.00612,
+     "effective": 0.38234
+    },
+    {
+     "node": "unit_05",
+     "gate": 1.0096,
+     "gate_abs": 1.0096,
+     "effective": 0.40215
+    },
+    {
+     "node": "unit_06",
+     "gate": 1.01921,
+     "gate_abs": 1.01921,
+     "effective": 0.42287
+    },
+    {
+     "node": "unit_07",
+     "gate": 1.02088,
+     "gate_abs": 1.02088,
+     "effective": 0.37354
+    },
+    {
+     "node": "unit_08",
+     "gate": 1.07878,
+     "gate_abs": 1.07878,
+     "effective": 0.46575
+    },
+    {
+     "node": "unit_09",
+     "gate": 1.02584,
+     "gate_abs": 1.02584,
+     "effective": 0.39758
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.96377,
+     "gate_abs": 0.96377,
+     "effective": 0.32634
+    },
+    {
+     "node": "unit_11",
+     "gate": 1.00841,
+     "gate_abs": 1.00841,
+     "effective": 0.37078
+    },
+    {
+     "node": "unit_12",
+     "gate": 1.2769,
+     "gate_abs": 1.2769,
+     "effective": 0.72405
+    },
+    {
+     "node": "unit_13",
+     "gate": 1.16196,
+     "gate_abs": 1.16196,
+     "effective": 0.61514
+    },
+    {
+     "node": "unit_14",
+     "gate": 1.07598,
+     "gate_abs": 1.07598,
+     "effective": 0.53461
+    },
+    {
+     "node": "unit_15",
+     "gate": 1.0419,
+     "gate_abs": 1.0419,
+     "effective": 0.42542
+    },
+    {
+     "node": "unit_16",
+     "gate": 1.0835,
+     "gate_abs": 1.0835,
+     "effective": 0.56175
+    },
+    {
+     "node": "unit_17",
+     "gate": 1.21491,
+     "gate_abs": 1.21491,
+     "effective": 0.70721
+    },
+    {
+     "node": "unit_18",
+     "gate": 1.03208,
+     "gate_abs": 1.03208,
+     "effective": 0.44133
+    },
+    {
+     "node": "unit_19",
+     "gate": 1.30617,
+     "gate_abs": 1.30617,
+     "effective": 0.81302
+    },
+    {
+     "node": "unit_20",
+     "gate": 1.17462,
+     "gate_abs": 1.17462,
+     "effective": 0.6103
+    },
+    {
+     "node": "unit_21",
+     "gate": 1.07792,
+     "gate_abs": 1.07792,
+     "effective": 0.526
+    },
+    {
+     "node": "unit_22",
+     "gate": 1.03211,
+     "gate_abs": 1.03211,
+     "effective": 0.42614
+    },
+    {
+     "node": "unit_23",
+     "gate": 1.02317,
+     "gate_abs": 1.02317,
+     "effective": 0.42942
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.99228,
+     "gate_abs": 0.99228,
+     "effective": 0.36998
+    },
+    {
+     "node": "unit_25",
+     "gate": 1.05113,
+     "gate_abs": 1.05113,
+     "effective": 0.53077
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.96437,
+     "gate_abs": 0.96437,
+     "effective": 0.32318
+    },
+    {
+     "node": "unit_27",
+     "gate": 1.09953,
+     "gate_abs": 1.09953,
+     "effective": 0.6141
+    },
+    {
+     "node": "unit_28",
+     "gate": 1.37295,
+     "gate_abs": 1.37295,
+     "effective": 1.22639
+    },
+    {
+     "node": "unit_29",
+     "gate": 1.06027,
+     "gate_abs": 1.06027,
+     "effective": 0.45821
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.9299,
+     "gate_abs": 0.9299,
+     "effective": 0.34507
+    },
+    {
+     "node": "unit_31",
+     "gate": 1.22377,
+     "gate_abs": 1.22377,
+     "effective": 0.74993
+    },
+    {
+     "node": "unit_32",
+     "gate": 1.01094,
+     "gate_abs": 1.01094,
+     "effective": 0.40024
+    },
+    {
+     "node": "unit_33",
+     "gate": 1.00223,
+     "gate_abs": 1.00223,
+     "effective": 0.35744
+    },
+    {
+     "node": "unit_34",
+     "gate": 1.19314,
+     "gate_abs": 1.19314,
+     "effective": 0.73238
+    },
+    {
+     "node": "unit_35",
+     "gate": 1.04378,
+     "gate_abs": 1.04378,
+     "effective": 0.46542
+    },
+    {
+     "node": "unit_36",
+     "gate": 1.10738,
+     "gate_abs": 1.10738,
+     "effective": 0.60524
+    },
+    {
+     "node": "unit_37",
+     "gate": 1.04701,
+     "gate_abs": 1.04701,
+     "effective": 0.46571
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.97025,
+     "gate_abs": 0.97025,
+     "effective": 0.35005
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.94575,
+     "gate_abs": 0.94575,
+     "effective": 0.34665
+    },
+    {
+     "node": "unit_40",
+     "gate": 1.07119,
+     "gate_abs": 1.07119,
+     "effective": 0.61699
+    },
+    {
+     "node": "unit_41",
+     "gate": 1.10678,
+     "gate_abs": 1.10678,
+     "effective": 0.61072
+    },
+    {
+     "node": "unit_42",
+     "gate": 1.30246,
+     "gate_abs": 1.30246,
+     "effective": 0.84086
+    },
+    {
+     "node": "unit_43",
+     "gate": 1.21107,
+     "gate_abs": 1.21107,
+     "effective": 0.91269
+    },
+    {
+     "node": "unit_44",
+     "gate": 1.05112,
+     "gate_abs": 1.05112,
+     "effective": 0.46597
+    },
+    {
+     "node": "unit_45",
+     "gate": 1.17135,
+     "gate_abs": 1.17135,
+     "effective": 0.60976
+    },
+    {
+     "node": "unit_46",
+     "gate": 1.02222,
+     "gate_abs": 1.02222,
+     "effective": 0.38034
+    },
+    {
+     "node": "unit_47",
+     "gate": 1.21925,
+     "gate_abs": 1.21925,
+     "effective": 0.69989
+    },
+    {
+     "node": "unit_48",
+     "gate": 0.97398,
+     "gate_abs": 0.97398,
+     "effective": 0.33413
+    },
+    {
+     "node": "unit_49",
+     "gate": 1.11892,
+     "gate_abs": 1.11892,
+     "effective": 0.51013
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.97735,
+     "gate_abs": 0.97735,
+     "effective": 0.35898
+    },
+    {
+     "node": "unit_51",
+     "gate": 1.2557,
+     "gate_abs": 1.2557,
+     "effective": 0.66466
+    },
+    {
+     "node": "unit_52",
+     "gate": 1.14535,
+     "gate_abs": 1.14535,
+     "effective": 0.64083
+    },
+    {
+     "node": "unit_53",
+     "gate": 1.02721,
+     "gate_abs": 1.02721,
+     "effective": 0.41769
+    },
+    {
+     "node": "unit_54",
+     "gate": 1.04462,
+     "gate_abs": 1.04462,
+     "effective": 0.42483
+    },
+    {
+     "node": "unit_55",
+     "gate": 1.01171,
+     "gate_abs": 1.01171,
+     "effective": 0.39689
+    },
+    {
+     "node": "unit_56",
+     "gate": 0.95286,
+     "gate_abs": 0.95286,
+     "effective": 0.3082
+    },
+    {
+     "node": "unit_57",
+     "gate": 1.04809,
+     "gate_abs": 1.04809,
+     "effective": 0.48697
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.99518,
+     "gate_abs": 0.99518,
+     "effective": 0.37647
+    },
+    {
+     "node": "unit_59",
+     "gate": 1.01184,
+     "gate_abs": 1.01184,
+     "effective": 0.34739
+    },
+    {
+     "node": "unit_60",
+     "gate": 1.05299,
+     "gate_abs": 1.05299,
+     "effective": 0.54366
+    },
+    {
+     "node": "unit_61",
+     "gate": 1.38263,
+     "gate_abs": 1.38263,
+     "effective": 0.91614
+    },
+    {
+     "node": "unit_62",
+     "gate": 1.02405,
+     "gate_abs": 1.02405,
+     "effective": 0.39537
+    },
+    {
+     "node": "unit_63",
+     "gate": 1.15357,
+     "gate_abs": 1.15357,
+     "effective": 0.61071
+    }
+   ],
+   "units_active": 64,
+   "units_total": 64,
+   "sum_abs_gate_units": 69.4435,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 36.6,
+   "file": "plain_seed0_lam0.json"
+  },
+  {
+   "kind": "plain",
+   "seed": 1,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 29,
+   "best_epoch": 22,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.47935,
+     0.31443
+    ],
+    [
+     0.31709,
+     0.25151
+    ],
+    [
+     0.25915,
+     0.22248
+    ],
+    [
+     0.22754,
+     0.20865
+    ],
+    [
+     0.21334,
+     0.20339
+    ],
+    [
+     0.20492,
+     0.20613
+    ],
+    [
+     0.20056,
+     0.19977
+    ],
+    [
+     0.19631,
+     0.20283
+    ],
+    [
+     0.19493,
+     0.20368
+    ],
+    [
+     0.19096,
+     0.19296
+    ],
+    [
+     0.18957,
+     0.19834
+    ],
+    [
+     0.18761,
+     0.20115
+    ],
+    [
+     0.18606,
+     0.19135
+    ],
+    [
+     0.18411,
+     0.19361
+    ],
+    [
+     0.18419,
+     0.19206
+    ],
+    [
+     0.18278,
+     0.20155
+    ],
+    [
+     0.18273,
+     0.19757
+    ],
+    [
+     0.18137,
+     0.19055
+    ],
+    [
+     0.18185,
+     0.19146
+    ],
+    [
+     0.18014,
+     0.18821
+    ],
+    [
+     0.17973,
+     0.18877
+    ],
+    [
+     0.17891,
+     0.19052
+    ],
+    [
+     0.17873,
+     0.18269
+    ],
+    [
+     0.17878,
+     0.18921
+    ],
+    [
+     0.17773,
+     0.18639
+    ],
+    [
+     0.17701,
+     0.19058
+    ],
+    [
+     0.17579,
+     0.19036
+    ],
+    [
+     0.17619,
+     0.1854
+    ],
+    [
+     0.17456,
+     0.18607
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8301,
+    "rmse_mg_l": 1.1248,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7935,
+    "rmse_mg_l": 1.0907,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.42305,
+     "gate_abs": 0.42305,
+     "effective": 0.25384
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.41343,
+     "gate_abs": 0.41343,
+     "effective": 0.24227
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.23717,
+     "gate_abs": 0.23717,
+     "effective": 0.1109
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.00347,
+     "gate_abs": 0.00347,
+     "effective": 0.00093
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.00011,
+     "gate_abs": 0.00011,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.00118,
+     "gate_abs": 0.00118,
+     "effective": 0.00018
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.34977,
+     "gate_abs": 0.34977,
+     "effective": 0.18737
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.00067,
+     "gate_abs": 0.00067,
+     "effective": 0.00011
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.29207,
+     "gate_abs": 0.29207,
+     "effective": 0.1605
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.47961,
+     "gate_abs": 0.47961,
+     "effective": 0.31633
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.07715,
+     "gate_abs": 0.07715,
+     "effective": 0.02325
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.69863,
+     "gate_abs": 0.69863,
+     "effective": 0.42159
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.69537,
+     "gate_abs": 0.69537,
+     "effective": 0.41926
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.40959,
+     "gate_abs": 0.40959,
+     "effective": 0.18425
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.00431,
+     "gate_abs": 0.00431,
+     "effective": 0.00098
+    },
+    {
+     "node": "unit_15",
+     "gate": -0.0009,
+     "gate_abs": 0.0009,
+     "effective": 0.00012
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.42331,
+     "gate_abs": 0.42331,
+     "effective": 0.19151
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.00239,
+     "gate_abs": 0.00239,
+     "effective": 0.00047
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.62111,
+     "gate_abs": 0.62111,
+     "effective": 0.35345
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.29152,
+     "gate_abs": 0.29152,
+     "effective": 0.13055
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.85621,
+     "gate_abs": 0.85621,
+     "effective": 0.61408
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.36878,
+     "gate_abs": 0.36878,
+     "effective": 0.17333
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.33402,
+     "gate_abs": 0.33402,
+     "effective": 0.15411
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.69555,
+     "gate_abs": 0.69555,
+     "effective": 0.37523
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.3561,
+     "gate_abs": 0.3561,
+     "effective": 0.17689
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.26703,
+     "gate_abs": 0.26703,
+     "effective": 0.1189
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.36436,
+     "gate_abs": 0.36436,
+     "effective": 0.13754
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.29465,
+     "gate_abs": 0.29465,
+     "effective": 0.14264
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.38533,
+     "gate_abs": 0.38533,
+     "effective": 0.22175
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.00154,
+     "gate_abs": 0.00154,
+     "effective": 0.00021
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.18637,
+     "gate_abs": 0.18637,
+     "effective": 0.07836
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.17312,
+     "gate_abs": 0.17312,
+     "effective": 0.06414
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.48226,
+     "gate_abs": 0.48226,
+     "effective": 0.26798
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.56459,
+     "gate_abs": 0.56459,
+     "effective": 0.3789
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.29726,
+     "gate_abs": 0.29726,
+     "effective": 0.15587
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.49808,
+     "gate_abs": 0.49808,
+     "effective": 0.27929
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.18138,
+     "gate_abs": 0.18138,
+     "effective": 0.07189
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.38994,
+     "gate_abs": 0.38994,
+     "effective": 0.17893
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.27688,
+     "gate_abs": 0.27688,
+     "effective": 0.13991
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.46037,
+     "gate_abs": 0.46037,
+     "effective": 0.29206
+    },
+    {
+     "node": "unit_40",
+     "gate": -0.00068,
+     "gate_abs": 0.00068,
+     "effective": 4e-05
+    },
+    {
+     "node": "unit_41",
+     "gate": 0.57255,
+     "gate_abs": 0.57255,
+     "effective": 0.3173
+    },
+    {
+     "node": "unit_42",
+     "gate": 0.62474,
+     "gate_abs": 0.62474,
+     "effective": 0.35306
+    },
+    {
+     "node": "unit_43",
+     "gate": 0.35632,
+     "gate_abs": 0.35632,
+     "effective": 0.16963
+    },
+    {
+     "node": "unit_44",
+     "gate": 0.31644,
+     "gate_abs": 0.31644,
+     "effective": 0.15807
+    },
+    {
+     "node": "unit_45",
+     "gate": 0.32274,
+     "gate_abs": 0.32274,
+     "effective": 0.17457
+    },
+    {
+     "node": "unit_46",
+     "gate": 0.09721,
+     "gate_abs": 0.09721,
+     "effective": 0.03224
+    },
+    {
+     "node": "unit_47",
+     "gate": 0.78804,
+     "gate_abs": 0.78804,
+     "effective": 0.62605
+    },
+    {
+     "node": "unit_48",
+     "gate": 0.29492,
+     "gate_abs": 0.29492,
+     "effective": 0.1196
+    },
+    {
+     "node": "unit_49",
+     "gate": 0.6909,
+     "gate_abs": 0.6909,
+     "effective": 0.47146
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.20051,
+     "gate_abs": 0.20051,
+     "effective": 0.08817
+    },
+    {
+     "node": "unit_51",
+     "gate": 0.25208,
+     "gate_abs": 0.25208,
+     "effective": 0.10841
+    },
+    {
+     "node": "unit_52",
+     "gate": 0.19909,
+     "gate_abs": 0.19909,
+     "effective": 0.09181
+    },
+    {
+     "node": "unit_53",
+     "gate": 0.84067,
+     "gate_abs": 0.84067,
+     "effective": 0.7792
+    },
+    {
+     "node": "unit_54",
+     "gate": 0.37073,
+     "gate_abs": 0.37073,
+     "effective": 0.19346
+    },
+    {
+     "node": "unit_55",
+     "gate": 0.32568,
+     "gate_abs": 0.32568,
+     "effective": 0.16544
+    },
+    {
+     "node": "unit_56",
+     "gate": -0.00163,
+     "gate_abs": 0.00163,
+     "effective": 0.00033
+    },
+    {
+     "node": "unit_57",
+     "gate": 0.37642,
+     "gate_abs": 0.37642,
+     "effective": 0.21382
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.22701,
+     "gate_abs": 0.22701,
+     "effective": 0.10261
+    },
+    {
+     "node": "unit_59",
+     "gate": 0.32777,
+     "gate_abs": 0.32777,
+     "effective": 0.1864
+    },
+    {
+     "node": "unit_60",
+     "gate": -0.00026,
+     "gate_abs": 0.00026,
+     "effective": 4e-05
+    },
+    {
+     "node": "unit_61",
+     "gate": 1.10926,
+     "gate_abs": 1.10926,
+     "effective": 1.13549
+    },
+    {
+     "node": "unit_62",
+     "gate": 0.8681,
+     "gate_abs": 0.8681,
+     "effective": 0.7708
+    },
+    {
+     "node": "unit_63",
+     "gate": 0.35413,
+     "gate_abs": 0.35413,
+     "effective": 0.19767
+    }
+   ],
+   "units_active": 53,
+   "units_total": 64,
+   "sum_abs_gate_units": 22.3765,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 52.8,
+   "file": "plain_seed1.json"
+  },
+  {
+   "kind": "plain",
+   "seed": 2,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 44,
+   "best_epoch": 37,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.44763,
+     0.2934
+    ],
+    [
+     0.30032,
+     0.2385
+    ],
+    [
+     0.24811,
+     0.22345
+    ],
+    [
+     0.22628,
+     0.22085
+    ],
+    [
+     0.21537,
+     0.20865
+    ],
+    [
+     0.20832,
+     0.20979
+    ],
+    [
+     0.20359,
+     0.21297
+    ],
+    [
+     0.20009,
+     0.21223
+    ],
+    [
+     0.19758,
+     0.20806
+    ],
+    [
+     0.19518,
+     0.21425
+    ],
+    [
+     0.19447,
+     0.21611
+    ],
+    [
+     0.19295,
+     0.20908
+    ],
+    [
+     0.19128,
+     0.21223
+    ],
+    [
+     0.18906,
+     0.21373
+    ],
+    [
+     0.18799,
+     0.20586
+    ],
+    [
+     0.18696,
+     0.21085
+    ],
+    [
+     0.18641,
+     0.20475
+    ],
+    [
+     0.18566,
+     0.2125
+    ],
+    [
+     0.18517,
+     0.21564
+    ],
+    [
+     0.18344,
+     0.21112
+    ],
+    [
+     0.18413,
+     0.19741
+    ],
+    [
+     0.18208,
+     0.20623
+    ],
+    [
+     0.18132,
+     0.19877
+    ],
+    [
+     0.18063,
+     0.19701
+    ],
+    [
+     0.18101,
+     0.19734
+    ],
+    [
+     0.1799,
+     0.2134
+    ],
+    [
+     0.17879,
+     0.20659
+    ],
+    [
+     0.17794,
+     0.19811
+    ],
+    [
+     0.17714,
+     0.20679
+    ],
+    [
+     0.17706,
+     0.19558
+    ],
+    [
+     0.17706,
+     0.19796
+    ],
+    [
+     0.1764,
+     0.20052
+    ],
+    [
+     0.17614,
+     0.19656
+    ],
+    [
+     0.17521,
+     0.19731
+    ],
+    [
+     0.17515,
+     0.1954
+    ],
+    [
+     0.17431,
+     0.19577
+    ],
+    [
+     0.17444,
+     0.2005
+    ],
+    [
+     0.17457,
+     0.19093
+    ],
+    [
+     0.17447,
+     0.20003
+    ],
+    [
+     0.17347,
+     0.19389
+    ],
+    [
+     0.17399,
+     0.193
+    ],
+    [
+     0.1733,
+     0.19559
+    ],
+    [
+     0.17217,
+     0.19565
+    ],
+    [
+     0.17251,
+     0.199
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8224,
+    "rmse_mg_l": 1.1499,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7895,
+    "rmse_mg_l": 1.1014,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.29762,
+     "gate_abs": 0.29762,
+     "effective": 0.16995
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.54743,
+     "gate_abs": 0.54743,
+     "effective": 0.40705
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.38048,
+     "gate_abs": 0.38048,
+     "effective": 0.24056
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.25759,
+     "gate_abs": 0.25759,
+     "effective": 0.13148
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.45301,
+     "gate_abs": 0.45301,
+     "effective": 0.25719
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.25329,
+     "gate_abs": 0.25329,
+     "effective": 0.1346
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.4591,
+     "gate_abs": 0.4591,
+     "effective": 0.26384
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.49347,
+     "gate_abs": 0.49347,
+     "effective": 0.31257
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.33479,
+     "gate_abs": 0.33479,
+     "effective": 0.17187
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.21923,
+     "gate_abs": 0.21923,
+     "effective": 0.10577
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.24489,
+     "gate_abs": 0.24489,
+     "effective": 0.11193
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.14754,
+     "gate_abs": 0.14754,
+     "effective": 0.05483
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.21358,
+     "gate_abs": 0.21358,
+     "effective": 0.09726
+    },
+    {
+     "node": "unit_13",
+     "gate": -0.00017,
+     "gate_abs": 0.00017,
+     "effective": 2e-05
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.85545,
+     "gate_abs": 0.85545,
+     "effective": 0.7667
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.16038,
+     "gate_abs": 0.16038,
+     "effective": 0.0604
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.81847,
+     "gate_abs": 0.81847,
+     "effective": 0.70267
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.24328,
+     "gate_abs": 0.24328,
+     "effective": 0.12294
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.25867,
+     "gate_abs": 0.25867,
+     "effective": 0.13595
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.30729,
+     "gate_abs": 0.30729,
+     "effective": 0.17984
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.0759,
+     "gate_abs": 0.0759,
+     "effective": 0.02317
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.32536,
+     "gate_abs": 0.32536,
+     "effective": 0.17811
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.00035,
+     "gate_abs": 0.00035,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.57066,
+     "gate_abs": 0.57066,
+     "effective": 0.34266
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.49086,
+     "gate_abs": 0.49086,
+     "effective": 0.27254
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.17023,
+     "gate_abs": 0.17023,
+     "effective": 0.07502
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.29573,
+     "gate_abs": 0.29573,
+     "effective": 0.16397
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.34187,
+     "gate_abs": 0.34187,
+     "effective": 0.20583
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.6149,
+     "gate_abs": 0.6149,
+     "effective": 0.4908
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.3691,
+     "gate_abs": 0.3691,
+     "effective": 0.2183
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.27123,
+     "gate_abs": 0.27123,
+     "effective": 0.14703
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.47106,
+     "gate_abs": 0.47106,
+     "effective": 0.28538
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.00015,
+     "gate_abs": 0.00015,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.44184,
+     "gate_abs": 0.44184,
+     "effective": 0.27969
+    },
+    {
+     "node": "unit_34",
+     "gate": -0.00016,
+     "gate_abs": 0.00016,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.28567,
+     "gate_abs": 0.28567,
+     "effective": 0.15631
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.00032,
+     "gate_abs": 0.00032,
+     "effective": 2e-05
+    },
+    {
+     "node": "unit_37",
+     "gate": -0.00068,
+     "gate_abs": 0.00068,
+     "effective": 2e-05
+    },
+    {
+     "node": "unit_38",
+     "gate": -0.00022,
+     "gate_abs": 0.00022,
+     "effective": 3e-05
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.28735,
+     "gate_abs": 0.28735,
+     "effective": 0.15481
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.5759,
+     "gate_abs": 0.5759,
+     "effective": 0.34846
+    },
+    {
+     "node": "unit_41",
+     "gate": 0.25428,
+     "gate_abs": 0.25428,
+     "effective": 0.12273
+    },
+    {
+     "node": "unit_42",
+     "gate": 0.50216,
+     "gate_abs": 0.50216,
+     "effective": 0.31287
+    },
+    {
+     "node": "unit_43",
+     "gate": 0.00062,
+     "gate_abs": 0.00062,
+     "effective": 6e-05
+    },
+    {
+     "node": "unit_44",
+     "gate": 0.471,
+     "gate_abs": 0.471,
+     "effective": 0.3017
+    },
+    {
+     "node": "unit_45",
+     "gate": 0.08306,
+     "gate_abs": 0.08306,
+     "effective": 0.0241
+    },
+    {
+     "node": "unit_46",
+     "gate": 0.67842,
+     "gate_abs": 0.67842,
+     "effective": 0.4957
+    },
+    {
+     "node": "unit_47",
+     "gate": 0.605,
+     "gate_abs": 0.605,
+     "effective": 0.37372
+    },
+    {
+     "node": "unit_48",
+     "gate": 0.39773,
+     "gate_abs": 0.39773,
+     "effective": 0.24637
+    },
+    {
+     "node": "unit_49",
+     "gate": 0.38779,
+     "gate_abs": 0.38779,
+     "effective": 0.23814
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.00045,
+     "gate_abs": 0.00045,
+     "effective": 2e-05
+    },
+    {
+     "node": "unit_51",
+     "gate": 0.41216,
+     "gate_abs": 0.41216,
+     "effective": 0.25521
+    },
+    {
+     "node": "unit_52",
+     "gate": -0.00024,
+     "gate_abs": 0.00024,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_53",
+     "gate": -3e-05,
+     "gate_abs": 3e-05,
+     "effective": 0.0
+    },
+    {
+     "node": "unit_54",
+     "gate": 0.28446,
+     "gate_abs": 0.28446,
+     "effective": 0.14871
+    },
+    {
+     "node": "unit_55",
+     "gate": -0.00187,
+     "gate_abs": 0.00187,
+     "effective": 0.0001
+    },
+    {
+     "node": "unit_56",
+     "gate": 0.30083,
+     "gate_abs": 0.30083,
+     "effective": 0.16616
+    },
+    {
+     "node": "unit_57",
+     "gate": 0.64399,
+     "gate_abs": 0.64399,
+     "effective": 0.48491
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.13833,
+     "gate_abs": 0.13833,
+     "effective": 0.05366
+    },
+    {
+     "node": "unit_59",
+     "gate": 0.43526,
+     "gate_abs": 0.43526,
+     "effective": 0.2905
+    },
+    {
+     "node": "unit_60",
+     "gate": 0.08829,
+     "gate_abs": 0.08829,
+     "effective": 0.02693
+    },
+    {
+     "node": "unit_61",
+     "gate": 0.44318,
+     "gate_abs": 0.44318,
+     "effective": 0.26938
+    },
+    {
+     "node": "unit_62",
+     "gate": 0.00016,
+     "gate_abs": 0.00016,
+     "effective": 2e-05
+    },
+    {
+     "node": "unit_63",
+     "gate": 0.37049,
+     "gate_abs": 0.37049,
+     "effective": 0.17759
+    }
+   ],
+   "units_active": 51,
+   "units_total": 64,
+   "sum_abs_gate_units": 19.0351,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 77.5,
+   "file": "plain_seed2.json"
+  },
+  {
+   "kind": "plain",
+   "seed": 3,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 31,
+   "best_epoch": 24,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.4819,
+     0.30704
+    ],
+    [
+     0.31121,
+     0.24599
+    ],
+    [
+     0.25799,
+     0.23157
+    ],
+    [
+     0.23562,
+     0.21472
+    ],
+    [
+     0.22423,
+     0.20976
+    ],
+    [
+     0.21631,
+     0.2025
+    ],
+    [
+     0.21056,
+     0.20602
+    ],
+    [
+     0.20575,
+     0.20397
+    ],
+    [
+     0.20224,
+     0.20079
+    ],
+    [
+     0.1998,
+     0.2045
+    ],
+    [
+     0.19701,
+     0.20112
+    ],
+    [
+     0.19451,
+     0.19951
+    ],
+    [
+     0.19246,
+     0.19799
+    ],
+    [
+     0.1909,
+     0.19719
+    ],
+    [
+     0.18958,
+     0.19771
+    ],
+    [
+     0.18818,
+     0.1977
+    ],
+    [
+     0.18708,
+     0.19659
+    ],
+    [
+     0.18584,
+     0.19528
+    ],
+    [
+     0.18538,
+     0.19238
+    ],
+    [
+     0.18394,
+     0.19391
+    ],
+    [
+     0.18365,
+     0.1946
+    ],
+    [
+     0.1831,
+     0.18788
+    ],
+    [
+     0.18139,
+     0.19074
+    ],
+    [
+     0.18143,
+     0.18864
+    ],
+    [
+     0.18034,
+     0.186
+    ],
+    [
+     0.18069,
+     0.18965
+    ],
+    [
+     0.17994,
+     0.19023
+    ],
+    [
+     0.17913,
+     0.19058
+    ],
+    [
+     0.17883,
+     0.18946
+    ],
+    [
+     0.17791,
+     0.18851
+    ],
+    [
+     0.17806,
+     0.19049
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.827,
+    "rmse_mg_l": 1.1349,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7905,
+    "rmse_mg_l": 1.0986,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.68176,
+     "gate_abs": 0.68176,
+     "effective": 0.47138
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.36363,
+     "gate_abs": 0.36363,
+     "effective": 0.1816
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.23608,
+     "gate_abs": 0.23608,
+     "effective": 0.11117
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.29572,
+     "gate_abs": 0.29572,
+     "effective": 0.15141
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.36447,
+     "gate_abs": 0.36447,
+     "effective": 0.18855
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.00037,
+     "gate_abs": 0.00037,
+     "effective": 8e-05
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.00469,
+     "gate_abs": 0.00469,
+     "effective": 0.00131
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.21309,
+     "gate_abs": 0.21309,
+     "effective": 0.09791
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.5315,
+     "gate_abs": 0.5315,
+     "effective": 0.26618
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.35529,
+     "gate_abs": 0.35529,
+     "effective": 0.19789
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.57895,
+     "gate_abs": 0.57895,
+     "effective": 0.36069
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.39378,
+     "gate_abs": 0.39378,
+     "effective": 0.24076
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.252,
+     "gate_abs": 0.252,
+     "effective": 0.12507
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.07285,
+     "gate_abs": 0.07285,
+     "effective": 0.02574
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.35535,
+     "gate_abs": 0.35535,
+     "effective": 0.21721
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.29573,
+     "gate_abs": 0.29573,
+     "effective": 0.1448
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.33357,
+     "gate_abs": 0.33357,
+     "effective": 0.17594
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.60274,
+     "gate_abs": 0.60274,
+     "effective": 0.42097
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.34874,
+     "gate_abs": 0.34874,
+     "effective": 0.20045
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.34094,
+     "gate_abs": 0.34094,
+     "effective": 0.17871
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.50015,
+     "gate_abs": 0.50015,
+     "effective": 0.28149
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.33063,
+     "gate_abs": 0.33063,
+     "effective": 0.15536
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.40522,
+     "gate_abs": 0.40522,
+     "effective": 0.25415
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.60606,
+     "gate_abs": 0.60606,
+     "effective": 0.39229
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.70236,
+     "gate_abs": 0.70236,
+     "effective": 0.56509
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.75657,
+     "gate_abs": 0.75657,
+     "effective": 0.54863
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.45034,
+     "gate_abs": 0.45034,
+     "effective": 0.25732
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.00151,
+     "gate_abs": 0.00151,
+     "effective": 0.0002
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.36153,
+     "gate_abs": 0.36153,
+     "effective": 0.22339
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.15222,
+     "gate_abs": 0.15222,
+     "effective": 0.06084
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.00033,
+     "gate_abs": 0.00033,
+     "effective": 5e-05
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.20487,
+     "gate_abs": 0.20487,
+     "effective": 0.08315
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.28235,
+     "gate_abs": 0.28235,
+     "effective": 0.14966
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.12383,
+     "gate_abs": 0.12383,
+     "effective": 0.04731
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.73727,
+     "gate_abs": 0.73727,
+     "effective": 0.62327
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.30099,
+     "gate_abs": 0.30099,
+     "effective": 0.13455
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.29381,
+     "gate_abs": 0.29381,
+     "effective": 0.15787
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.06982,
+     "gate_abs": 0.06982,
+     "effective": 0.02233
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.00047,
+     "gate_abs": 0.00047,
+     "effective": 0.0001
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.56331,
+     "gate_abs": 0.56331,
+     "effective": 0.39531
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.33898,
+     "gate_abs": 0.33898,
+     "effective": 0.16847
+    },
+    {
+     "node": "unit_41",
+     "gate": 0.37098,
+     "gate_abs": 0.37098,
+     "effective": 0.2232
+    },
+    {
+     "node": "unit_42",
+     "gate": 0.58148,
+     "gate_abs": 0.58148,
+     "effective": 0.4482
+    },
+    {
+     "node": "unit_43",
+     "gate": 0.36206,
+     "gate_abs": 0.36206,
+     "effective": 0.14328
+    },
+    {
+     "node": "unit_44",
+     "gate": 0.5371,
+     "gate_abs": 0.5371,
+     "effective": 0.32803
+    },
+    {
+     "node": "unit_45",
+     "gate": 0.29254,
+     "gate_abs": 0.29254,
+     "effective": 0.13609
+    },
+    {
+     "node": "unit_46",
+     "gate": 0.63057,
+     "gate_abs": 0.63057,
+     "effective": 0.44013
+    },
+    {
+     "node": "unit_47",
+     "gate": 0.18868,
+     "gate_abs": 0.18868,
+     "effective": 0.08331
+    },
+    {
+     "node": "unit_48",
+     "gate": 0.40437,
+     "gate_abs": 0.40437,
+     "effective": 0.22481
+    },
+    {
+     "node": "unit_49",
+     "gate": 0.24246,
+     "gate_abs": 0.24246,
+     "effective": 0.10922
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.68516,
+     "gate_abs": 0.68516,
+     "effective": 0.44069
+    },
+    {
+     "node": "unit_51",
+     "gate": 0.53988,
+     "gate_abs": 0.53988,
+     "effective": 0.30582
+    },
+    {
+     "node": "unit_52",
+     "gate": 0.56255,
+     "gate_abs": 0.56255,
+     "effective": 0.32158
+    },
+    {
+     "node": "unit_53",
+     "gate": 0.4231,
+     "gate_abs": 0.4231,
+     "effective": 0.25814
+    },
+    {
+     "node": "unit_54",
+     "gate": 0.45171,
+     "gate_abs": 0.45171,
+     "effective": 0.29818
+    },
+    {
+     "node": "unit_55",
+     "gate": 0.74413,
+     "gate_abs": 0.74413,
+     "effective": 0.58041
+    },
+    {
+     "node": "unit_56",
+     "gate": 0.24037,
+     "gate_abs": 0.24037,
+     "effective": 0.11574
+    },
+    {
+     "node": "unit_57",
+     "gate": 0.98455,
+     "gate_abs": 0.98455,
+     "effective": 0.83447
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.28064,
+     "gate_abs": 0.28064,
+     "effective": 0.1353
+    },
+    {
+     "node": "unit_59",
+     "gate": 0.9153,
+     "gate_abs": 0.9153,
+     "effective": 0.90335
+    },
+    {
+     "node": "unit_60",
+     "gate": 0.48748,
+     "gate_abs": 0.48748,
+     "effective": 0.29964
+    },
+    {
+     "node": "unit_61",
+     "gate": -0.00071,
+     "gate_abs": 0.00071,
+     "effective": 0.0001
+    },
+    {
+     "node": "unit_62",
+     "gate": 0.39885,
+     "gate_abs": 0.39885,
+     "effective": 0.22286
+    },
+    {
+     "node": "unit_63",
+     "gate": 0.42425,
+     "gate_abs": 0.42425,
+     "effective": 0.23434
+    }
+   ],
+   "units_active": 58,
+   "units_total": 64,
+   "sum_abs_gate_units": 24.5528,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 37.1,
+   "file": "plain_seed3.json"
+  },
+  {
+   "kind": "plain",
+   "seed": 4,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 17,
+   "best_epoch": 10,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.46388,
+     0.30774
+    ],
+    [
+     0.30406,
+     0.2421
+    ],
+    [
+     0.24404,
+     0.21199
+    ],
+    [
+     0.22075,
+     0.20971
+    ],
+    [
+     0.21004,
+     0.19962
+    ],
+    [
+     0.20395,
+     0.19565
+    ],
+    [
+     0.19967,
+     0.19637
+    ],
+    [
+     0.19708,
+     0.1931
+    ],
+    [
+     0.19408,
+     0.19338
+    ],
+    [
+     0.19148,
+     0.19664
+    ],
+    [
+     0.19052,
+     0.19221
+    ],
+    [
+     0.18803,
+     0.19242
+    ],
+    [
+     0.1871,
+     0.19757
+    ],
+    [
+     0.18585,
+     0.20369
+    ],
+    [
+     0.18571,
+     0.19668
+    ],
+    [
+     0.18502,
+     0.193
+    ],
+    [
+     0.18366,
+     0.19261
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8213,
+    "rmse_mg_l": 1.1537,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.786,
+    "rmse_mg_l": 1.1103,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.39952,
+     "gate_abs": 0.39952,
+     "effective": 0.16948
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.5733,
+     "gate_abs": 0.5733,
+     "effective": 0.23679
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.68783,
+     "gate_abs": 0.68783,
+     "effective": 0.49237
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.69191,
+     "gate_abs": 0.69191,
+     "effective": 0.37209
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.50961,
+     "gate_abs": 0.50961,
+     "effective": 0.20068
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.33471,
+     "gate_abs": 0.33471,
+     "effective": 0.13917
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.51657,
+     "gate_abs": 0.51657,
+     "effective": 0.19712
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.37885,
+     "gate_abs": 0.37885,
+     "effective": 0.19722
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.4366,
+     "gate_abs": 0.4366,
+     "effective": 0.22871
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.87893,
+     "gate_abs": 0.87893,
+     "effective": 0.65499
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.40131,
+     "gate_abs": 0.40131,
+     "effective": 0.15896
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.59689,
+     "gate_abs": 0.59689,
+     "effective": 0.29011
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.5591,
+     "gate_abs": 0.5591,
+     "effective": 0.31216
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.23394,
+     "gate_abs": 0.23394,
+     "effective": 0.0768
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.45521,
+     "gate_abs": 0.45521,
+     "effective": 0.1966
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.53861,
+     "gate_abs": 0.53861,
+     "effective": 0.27724
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.40321,
+     "gate_abs": 0.40321,
+     "effective": 0.13627
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.45358,
+     "gate_abs": 0.45358,
+     "effective": 0.19295
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.88124,
+     "gate_abs": 0.88124,
+     "effective": 0.63755
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.72386,
+     "gate_abs": 0.72386,
+     "effective": 0.41055
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.7427,
+     "gate_abs": 0.7427,
+     "effective": 0.51011
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.6431,
+     "gate_abs": 0.6431,
+     "effective": 0.40168
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.40857,
+     "gate_abs": 0.40857,
+     "effective": 0.16609
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.7927,
+     "gate_abs": 0.7927,
+     "effective": 0.54505
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.49009,
+     "gate_abs": 0.49009,
+     "effective": 0.23196
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.6353,
+     "gate_abs": 0.6353,
+     "effective": 0.30823
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.80042,
+     "gate_abs": 0.80042,
+     "effective": 0.43599
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.55539,
+     "gate_abs": 0.55539,
+     "effective": 0.27308
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.66878,
+     "gate_abs": 0.66878,
+     "effective": 0.38704
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.59171,
+     "gate_abs": 0.59171,
+     "effective": 0.29923
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.33767,
+     "gate_abs": 0.33767,
+     "effective": 0.15305
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.22961,
+     "gate_abs": 0.22961,
+     "effective": 0.0793
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.76978,
+     "gate_abs": 0.76978,
+     "effective": 0.41332
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.4703,
+     "gate_abs": 0.4703,
+     "effective": 0.15045
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.90446,
+     "gate_abs": 0.90446,
+     "effective": 0.62215
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.4303,
+     "gate_abs": 0.4303,
+     "effective": 0.21542
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.63717,
+     "gate_abs": 0.63717,
+     "effective": 0.29382
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.4142,
+     "gate_abs": 0.4142,
+     "effective": 0.15206
+    },
+    {
+     "node": "unit_38",
+     "gate": 1.11735,
+     "gate_abs": 1.11735,
+     "effective": 1.04046
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.40982,
+     "gate_abs": 0.40982,
+     "effective": 0.21655
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.66361,
+     "gate_abs": 0.66361,
+     "effective": 0.27573
+    },
+    {
+     "node": "unit_41",
+     "gate": 0.12958,
+     "gate_abs": 0.12958,
+     "effective": 0.04523
+    },
+    {
+     "node": "unit_42",
+     "gate": 0.43621,
+     "gate_abs": 0.43621,
+     "effective": 0.24132
+    },
+    {
+     "node": "unit_43",
+     "gate": 0.61364,
+     "gate_abs": 0.61364,
+     "effective": 0.2857
+    },
+    {
+     "node": "unit_44",
+     "gate": 0.20289,
+     "gate_abs": 0.20289,
+     "effective": 0.07005
+    },
+    {
+     "node": "unit_45",
+     "gate": 1.06823,
+     "gate_abs": 1.06823,
+     "effective": 0.85621
+    },
+    {
+     "node": "unit_46",
+     "gate": 0.75046,
+     "gate_abs": 0.75046,
+     "effective": 0.35047
+    },
+    {
+     "node": "unit_47",
+     "gate": 0.45938,
+     "gate_abs": 0.45938,
+     "effective": 0.19533
+    },
+    {
+     "node": "unit_48",
+     "gate": 0.60801,
+     "gate_abs": 0.60801,
+     "effective": 0.34097
+    },
+    {
+     "node": "unit_49",
+     "gate": 0.58678,
+     "gate_abs": 0.58678,
+     "effective": 0.30138
+    },
+    {
+     "node": "unit_50",
+     "gate": 0.78254,
+     "gate_abs": 0.78254,
+     "effective": 0.56896
+    },
+    {
+     "node": "unit_51",
+     "gate": 0.86664,
+     "gate_abs": 0.86664,
+     "effective": 0.67963
+    },
+    {
+     "node": "unit_52",
+     "gate": 0.51346,
+     "gate_abs": 0.51346,
+     "effective": 0.29538
+    },
+    {
+     "node": "unit_53",
+     "gate": 0.83742,
+     "gate_abs": 0.83742,
+     "effective": 0.35911
+    },
+    {
+     "node": "unit_54",
+     "gate": 0.3372,
+     "gate_abs": 0.3372,
+     "effective": 0.14317
+    },
+    {
+     "node": "unit_55",
+     "gate": 0.42187,
+     "gate_abs": 0.42187,
+     "effective": 0.18971
+    },
+    {
+     "node": "unit_56",
+     "gate": 0.52391,
+     "gate_abs": 0.52391,
+     "effective": 0.21619
+    },
+    {
+     "node": "unit_57",
+     "gate": 0.66079,
+     "gate_abs": 0.66079,
+     "effective": 0.3812
+    },
+    {
+     "node": "unit_58",
+     "gate": 0.80775,
+     "gate_abs": 0.80775,
+     "effective": 0.54347
+    },
+    {
+     "node": "unit_59",
+     "gate": 0.5381,
+     "gate_abs": 0.5381,
+     "effective": 0.25921
+    },
+    {
+     "node": "unit_60",
+     "gate": 0.52569,
+     "gate_abs": 0.52569,
+     "effective": 0.21403
+    },
+    {
+     "node": "unit_61",
+     "gate": 0.38144,
+     "gate_abs": 0.38144,
+     "effective": 0.14659
+    },
+    {
+     "node": "unit_62",
+     "gate": 0.82493,
+     "gate_abs": 0.82493,
+     "effective": 0.5404
+    },
+    {
+     "node": "unit_63",
+     "gate": 0.21204,
+     "gate_abs": 0.21204,
+     "effective": 0.09022
+    }
+   ],
+   "units_active": 64,
+   "units_total": 64,
+   "sum_abs_gate_units": 36.4568,
+   "sum_abs_gate_relations": 0.0,
+   "seconds": 12.4,
+   "file": "plain_seed4.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 0,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 21,
+   "best_epoch": 14,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.47425,
+     0.31697
+    ],
+    [
+     0.31661,
+     0.24512
+    ],
+    [
+     0.26145,
+     0.21844
+    ],
+    [
+     0.23598,
+     0.21215
+    ],
+    [
+     0.22361,
+     0.2065
+    ],
+    [
+     0.21505,
+     0.20366
+    ],
+    [
+     0.2099,
+     0.20317
+    ],
+    [
+     0.20587,
+     0.19831
+    ],
+    [
+     0.20297,
+     0.19625
+    ],
+    [
+     0.20082,
+     0.19555
+    ],
+    [
+     0.1987,
+     0.19511
+    ],
+    [
+     0.19649,
+     0.19261
+    ],
+    [
+     0.19502,
+     0.19949
+    ],
+    [
+     0.19373,
+     0.19174
+    ],
+    [
+     0.19205,
+     0.19031
+    ],
+    [
+     0.19104,
+     0.19221
+    ],
+    [
+     0.19082,
+     0.19061
+    ],
+    [
+     0.18922,
+     0.19489
+    ],
+    [
+     0.18778,
+     0.19331
+    ],
+    [
+     0.18687,
+     0.19306
+    ],
+    [
+     0.18602,
+     0.19162
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.823,
+    "rmse_mg_l": 1.148,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7827,
+    "rmse_mg_l": 1.1188,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.43892,
+     "gate_abs": 0.43892,
+     "effective": 0.26017
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.42403,
+     "gate_abs": 0.42403,
+     "effective": 0.23354
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.49727,
+     "gate_abs": 0.49727,
+     "effective": 0.25147
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.50718,
+     "gate_abs": 0.50718,
+     "effective": 0.28676
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.4998,
+     "gate_abs": 0.4998,
+     "effective": 0.26139
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.37497,
+     "gate_abs": 0.37497,
+     "effective": 0.18988
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.66367,
+     "gate_abs": 0.66367,
+     "effective": 0.39254
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.56383,
+     "gate_abs": 0.56383,
+     "effective": 0.26675
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.27834,
+     "gate_abs": 0.27834,
+     "effective": 0.12706
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.32495,
+     "gate_abs": 0.32495,
+     "effective": 0.11887
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.72732,
+     "gate_abs": 0.72732,
+     "effective": 0.51034
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.00706,
+     "gate_abs": 0.00706,
+     "effective": 0.00204
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.76612,
+     "gate_abs": 0.76612,
+     "effective": 0.4931
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.39689,
+     "gate_abs": 0.39689,
+     "effective": 0.20471
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.27676,
+     "gate_abs": 0.27676,
+     "effective": 0.10681
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.44198,
+     "gate_abs": 0.44198,
+     "effective": 0.22166
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.61429,
+     "gate_abs": 0.61429,
+     "effective": 0.38728
+    },
+    {
+     "node": "unit_17",
+     "gate": 1.20527,
+     "gate_abs": 1.20527,
+     "effective": 1.14204
+    },
+    {
+     "node": "unit_18",
+     "gate": 1.08843,
+     "gate_abs": 1.08843,
+     "effective": 1.09021
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.52603,
+     "gate_abs": 0.52603,
+     "effective": 0.29852
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.44599,
+     "gate_abs": 0.44599,
+     "effective": 0.23067
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.51094,
+     "gate_abs": 0.51094,
+     "effective": 0.25879
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.84962,
+     "gate_abs": 0.84962,
+     "effective": 0.59
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.87173,
+     "gate_abs": 0.87173,
+     "effective": 0.69273
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.59081,
+     "gate_abs": 0.59081,
+     "effective": 0.28485
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.65187,
+     "gate_abs": 0.65187,
+     "effective": 0.43821
+    },
+    {
+     "node": "unit_26",
+     "gate": -3e-05,
+     "gate_abs": 3e-05,
+     "effective": 1e-05
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.62454,
+     "gate_abs": 0.62454,
+     "effective": 0.38242
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.14189,
+     "gate_abs": 0.14189,
+     "effective": 0.04636
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.14578,
+     "gate_abs": 0.14578,
+     "effective": 0.05916
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.36232,
+     "gate_abs": 0.36232,
+     "effective": 0.18743
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.92027,
+     "gate_abs": 0.92027,
+     "effective": 0.65936
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.57701,
+     "gate_abs": 0.57701,
+     "effective": 0.25008
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.62473,
+     "gate_abs": 0.62473,
+     "effective": 0.34682
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.90476,
+     "gate_abs": 0.90476,
+     "effective": 0.71977
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.3852,
+     "gate_abs": 0.3852,
+     "effective": 0.14057
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.33177,
+     "gate_abs": 0.33177,
+     "effective": 0.14299
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.51844,
+     "gate_abs": 0.51844,
+     "effective": 0.31012
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.00072,
+     "gate_abs": 0.00072,
+     "effective": 0.00018
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.71626,
+     "gate_abs": 0.71626,
+     "effective": 0.43836
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.46461,
+     "gate_abs": 0.46461,
+     "effective": 0.24169
+    },
+    {
+     "node": "form:product",
+     "gate": 0.67642,
+     "gate_abs": 0.67642,
+     "effective": 0.43928
+    },
+    {
+     "node": "form:ratio",
+     "gate": 0.44929,
+     "gate_abs": 0.44929,
+     "effective": 0.16164
+    },
+    {
+     "node": "form:square",
+     "gate": 0.42644,
+     "gate_abs": 0.42644,
+     "effective": 0.24475
+    },
+    {
+     "node": "form:radial",
+     "gate": 0.65388,
+     "gate_abs": 0.65388,
+     "effective": 0.41812
+    },
+    {
+     "node": "form:power",
+     "gate": 0.1175,
+     "gate_abs": 0.1175,
+     "effective": 0.04266
+    },
+    {
+     "node": "form:decay",
+     "gate": 0.2335,
+     "gate_abs": 0.2335,
+     "effective": 0.09518
+    },
+    {
+     "node": "form:growth",
+     "gate": -0.0016,
+     "gate_abs": 0.0016,
+     "effective": 0.00045
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.16275,
+     "gate_abs": 0.16275,
+     "effective": 0.05058
+    },
+    {
+     "node": "form:saturation",
+     "gate": 0.41394,
+     "gate_abs": 0.41394,
+     "effective": 0.17882
+    },
+    {
+     "node": "form:tanh",
+     "gate": -0.00017,
+     "gate_abs": 0.00017,
+     "effective": 4e-05
+    },
+    {
+     "node": "form:logistic",
+     "gate": 0.33512,
+     "gate_abs": 0.33512,
+     "effective": 0.16318
+    },
+    {
+     "node": "form:periodic",
+     "gate": 0.68321,
+     "gate_abs": 0.68321,
+     "effective": 0.37055
+    },
+    {
+     "node": "form:log",
+     "gate": 0.26383,
+     "gate_abs": 0.26383,
+     "effective": 0.1031
+    },
+    {
+     "node": "form:gaussian",
+     "gate": 0.26281,
+     "gate_abs": 0.26281,
+     "effective": 0.08304
+    },
+    {
+     "node": "form:hinge",
+     "gate": 0.23763,
+     "gate_abs": 0.23763,
+     "effective": 0.08543
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 0.83955,
+     "gate_abs": 0.83955,
+     "effective": 0.63121
+    },
+    {
+     "node": "form:softmin",
+     "gate": 0.42785,
+     "gate_abs": 0.42785,
+     "effective": 0.18689
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.0995,
+     "gate_abs": 0.0995,
+     "effective": 0.03131
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": 0.54862,
+     "gate_abs": 0.54862,
+     "effective": 0.20774
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 0.65956,
+     "gate_abs": 0.65956,
+     "effective": 0.30673
+    },
+    {
+     "node": "law:density",
+     "gate": 0.00188,
+     "gate_abs": 0.00188,
+     "effective": 0.00047
+    },
+    {
+     "node": "law:sigma0",
+     "gate": 0.05373,
+     "gate_abs": 0.05373,
+     "effective": 0.018
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": 0.49234,
+     "gate_abs": 0.49234,
+     "effective": 0.21299
+    }
+   ],
+   "units_active": 38,
+   "units_total": 41,
+   "sum_abs_gate_units": 21.2624,
+   "sum_abs_gate_relations": 8.0411,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.5953,
+     "rmse_mg_l": 1.527,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.1757,
+     "rmse_mg_l": 2.1792,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0728,
+       "salinity": -0.3456,
+       "depth": -0.2875,
+       "lat": -0.3348,
+       "lon": 0.4137,
+       "day_of_year": -0.1845,
+       "year": -0.3608
+      },
+      {
+       "temperature": 0.1778,
+       "salinity": 0.4472,
+       "depth": 0.2255,
+       "lat": 0.2121,
+       "lon": 0.1988,
+       "day_of_year": 0.2057,
+       "year": -0.3734
+      }
+     ],
+     "input_bias": [
+      0.2538,
+      0.2337
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.222,
+       "salinity": 0.4398,
+       "depth": 0.1726,
+       "lat": 0.2164,
+       "lon": -0.1728,
+       "day_of_year": 0.0936,
+       "year": -0.185
+      },
+      {
+       "temperature": 0.4939,
+       "salinity": -0.0268,
+       "depth": 0.2816,
+       "lat": -0.1698,
+       "lon": 0.109,
+       "day_of_year": 0.0178,
+       "year": 0.2333
+      }
+     ],
+     "input_bias": [
+      -0.259,
+      -0.0833
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2663,
+       "salinity": -0.5938,
+       "depth": -0.3207,
+       "lat": 0.4237,
+       "lon": 0.2928,
+       "day_of_year": 0.1457,
+       "year": 0.0532
+      }
+     ],
+     "input_bias": [
+      -0.2238
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2422,
+       "salinity": -0.1459,
+       "depth": -0.3236,
+       "lat": 0.32,
+       "lon": -0.3219,
+       "day_of_year": -0.3091,
+       "year": -0.3477
+      },
+      {
+       "temperature": 0.0781,
+       "salinity": 0.4225,
+       "depth": 0.1377,
+       "lat": -0.0202,
+       "lon": 0.151,
+       "day_of_year": 0.5947,
+       "year": -0.0642
+      }
+     ],
+     "input_bias": [
+      0.1981,
+      0.2828
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 1.0148,
+      "b": 0.9581
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2689,
+       "salinity": 0.3996,
+       "depth": 0.1731,
+       "lat": 0.2135,
+       "lon": -0.2403,
+       "day_of_year": 0.1474,
+       "year": -0.0961
+      }
+     ],
+     "input_bias": [
+      -0.1116
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.0855
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2409,
+       "salinity": -0.0645,
+       "depth": -0.1713,
+       "lat": 0.4137,
+       "lon": 0.2644,
+       "day_of_year": 0.1013,
+       "year": -0.341
+      }
+     ],
+     "input_bias": [
+      0.1801
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 0.9406
+     },
+     "input_weights": [
+      {
+       "temperature": 0.3171,
+       "salinity": 0.0944,
+       "depth": -0.1684,
+       "lat": 0.4116,
+       "lon": 0.1865,
+       "day_of_year": -0.1654,
+       "year": 0.0655
+      }
+     ],
+     "input_bias": [
+      0.3828
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 0.5417
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1539,
+       "salinity": 0.2472,
+       "depth": -0.252,
+       "lat": 0.0385,
+       "lon": 0.2284,
+       "day_of_year": 0.0204,
+       "year": -0.2335
+      }
+     ],
+     "input_bias": [
+      0.204
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 0.8373
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0135,
+       "salinity": 0.0196,
+       "depth": 0.0523,
+       "lat": 0.4727,
+       "lon": -0.0744,
+       "day_of_year": -0.1929,
+       "year": -0.0687
+      }
+     ],
+     "input_bias": [
+      0.3099
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 1.1342
+     },
+     "input_weights": [
+      {
+       "temperature": 0.1021,
+       "salinity": -0.2886,
+       "depth": 0.0223,
+       "lat": -0.1413,
+       "lon": -0.342,
+       "day_of_year": 0.2511,
+       "year": -0.2871
+      }
+     ],
+     "input_bias": [
+      0.2689
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 0.712,
+      "x0": 0.7335
+     },
+     "input_weights": [
+      {
+       "temperature": 0.3617,
+       "salinity": 0.1546,
+       "depth": -0.1883,
+       "lat": -0.0201,
+       "lon": 0.0582,
+       "day_of_year": -0.3187,
+       "year": -0.0663
+      }
+     ],
+     "input_bias": [
+      -0.0675
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 0.9609,
+      "phi": 1.055
+     },
+     "input_weights": [
+      {
+       "temperature": -0.3227,
+       "salinity": -0.3712,
+       "depth": 0.0009,
+       "lat": 0.5786,
+       "lon": -0.2442,
+       "day_of_year": 0.2567,
+       "year": -0.0331
+      }
+     ],
+     "input_bias": [
+      0.0802
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0247,
+       "salinity": -0.3409,
+       "depth": 0.3411,
+       "lat": 0.0949,
+       "lon": 0.3936,
+       "day_of_year": 0.2315,
+       "year": -0.1082
+      }
+     ],
+     "input_bias": [
+      0.3173
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 0.9043,
+      "s": 0.9731
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0346,
+       "salinity": 0.1331,
+       "depth": -0.3139,
+       "lat": -0.3019,
+       "lon": -0.4375,
+       "day_of_year": -0.1925,
+       "year": 0.0963
+      }
+     ],
+     "input_bias": [
+      -0.1763
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 1.6758
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0848,
+       "salinity": 0.0566,
+       "depth": -0.0358,
+       "lat": -0.5155,
+       "lon": -0.2205,
+       "day_of_year": -0.1803,
+       "year": 0.2371
+      }
+     ],
+     "input_bias": [
+      -0.2038
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": -0.1424
+     },
+     "input_weights": [
+      {
+       "temperature": 0.1028,
+       "salinity": 0.0116,
+       "depth": 0.2821,
+       "lat": -0.7182,
+       "lon": -0.3019,
+       "day_of_year": 0.1232,
+       "year": 0.0079
+      }
+     ],
+     "input_bias": [
+      0.3504
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.0752
+     },
+     "input_weights": [
+      {
+       "temperature": -0.3897,
+       "salinity": -0.145,
+       "depth": -0.2605,
+       "lat": 0.3363,
+       "lon": -0.0058,
+       "day_of_year": 0.233,
+       "year": 0.5237
+      },
+      {
+       "temperature": 0.1048,
+       "salinity": -0.0062,
+       "depth": -0.089,
+       "lat": -0.0478,
+       "lon": 0.0236,
+       "day_of_year": 0.1091,
+       "year": -0.3107
+      }
+     ],
+     "input_bias": [
+      0.2265,
+      0.0495
+     ]
+    }
+   ],
+   "seconds": 113.2,
+   "file": "relation_seed0.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 0,
+   "lambda_gate_l1": 0.0,
+   "epochs_run": 30,
+   "best_epoch": 23,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.47383,
+     0.31601
+    ],
+    [
+     0.31482,
+     0.24363
+    ],
+    [
+     0.25934,
+     0.21817
+    ],
+    [
+     0.23371,
+     0.21126
+    ],
+    [
+     0.22108,
+     0.20416
+    ],
+    [
+     0.21255,
+     0.20657
+    ],
+    [
+     0.20738,
+     0.20363
+    ],
+    [
+     0.20249,
+     0.19916
+    ],
+    [
+     0.19952,
+     0.19561
+    ],
+    [
+     0.19768,
+     0.20501
+    ],
+    [
+     0.19545,
+     0.19678
+    ],
+    [
+     0.19216,
+     0.20081
+    ],
+    [
+     0.19009,
+     0.20627
+    ],
+    [
+     0.18974,
+     0.19511
+    ],
+    [
+     0.18856,
+     0.19651
+    ],
+    [
+     0.18682,
+     0.19298
+    ],
+    [
+     0.18628,
+     0.2042
+    ],
+    [
+     0.18462,
+     0.19496
+    ],
+    [
+     0.1827,
+     0.19612
+    ],
+    [
+     0.18259,
+     0.19106
+    ],
+    [
+     0.1819,
+     0.19584
+    ],
+    [
+     0.18076,
+     0.20385
+    ],
+    [
+     0.18055,
+     0.20358
+    ],
+    [
+     0.1798,
+     0.19004
+    ],
+    [
+     0.17847,
+     0.19498
+    ],
+    [
+     0.17821,
+     0.19714
+    ],
+    [
+     0.1769,
+     0.20268
+    ],
+    [
+     0.17683,
+     0.19762
+    ],
+    [
+     0.17587,
+     0.19589
+    ],
+    [
+     0.17549,
+     0.20201
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8233,
+    "rmse_mg_l": 1.1472,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7884,
+    "rmse_mg_l": 1.1041,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 1.35725,
+     "gate_abs": 1.35725,
+     "effective": 0.68754
+    },
+    {
+     "node": "unit_01",
+     "gate": 1.24885,
+     "gate_abs": 1.24885,
+     "effective": 0.58465
+    },
+    {
+     "node": "unit_02",
+     "gate": 1.10832,
+     "gate_abs": 1.10832,
+     "effective": 0.40573
+    },
+    {
+     "node": "unit_03",
+     "gate": 1.24215,
+     "gate_abs": 1.24215,
+     "effective": 0.60872
+    },
+    {
+     "node": "unit_04",
+     "gate": 1.14634,
+     "gate_abs": 1.14634,
+     "effective": 0.47561
+    },
+    {
+     "node": "unit_05",
+     "gate": 1.19504,
+     "gate_abs": 1.19504,
+     "effective": 0.53157
+    },
+    {
+     "node": "unit_06",
+     "gate": 1.29705,
+     "gate_abs": 1.29705,
+     "effective": 0.63121
+    },
+    {
+     "node": "unit_07",
+     "gate": 1.07455,
+     "gate_abs": 1.07455,
+     "effective": 0.43826
+    },
+    {
+     "node": "unit_08",
+     "gate": 1.14615,
+     "gate_abs": 1.14615,
+     "effective": 0.45488
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.97984,
+     "gate_abs": 0.97984,
+     "effective": 0.30946
+    },
+    {
+     "node": "unit_10",
+     "gate": 1.26364,
+     "gate_abs": 1.26364,
+     "effective": 0.67586
+    },
+    {
+     "node": "unit_11",
+     "gate": 1.14001,
+     "gate_abs": 1.14001,
+     "effective": 0.47245
+    },
+    {
+     "node": "unit_12",
+     "gate": 1.24731,
+     "gate_abs": 1.24731,
+     "effective": 0.77043
+    },
+    {
+     "node": "unit_13",
+     "gate": 1.10164,
+     "gate_abs": 1.10164,
+     "effective": 0.4671
+    },
+    {
+     "node": "unit_14",
+     "gate": 1.01495,
+     "gate_abs": 1.01495,
+     "effective": 0.36084
+    },
+    {
+     "node": "unit_15",
+     "gate": 1.14326,
+     "gate_abs": 1.14326,
+     "effective": 0.49179
+    },
+    {
+     "node": "unit_16",
+     "gate": 1.37681,
+     "gate_abs": 1.37681,
+     "effective": 0.8096
+    },
+    {
+     "node": "unit_17",
+     "gate": 1.50976,
+     "gate_abs": 1.50976,
+     "effective": 1.24748
+    },
+    {
+     "node": "unit_18",
+     "gate": 1.69655,
+     "gate_abs": 1.69655,
+     "effective": 1.58556
+    },
+    {
+     "node": "unit_19",
+     "gate": 1.12936,
+     "gate_abs": 1.12936,
+     "effective": 0.49493
+    },
+    {
+     "node": "unit_20",
+     "gate": 1.30483,
+     "gate_abs": 1.30483,
+     "effective": 0.66683
+    },
+    {
+     "node": "unit_21",
+     "gate": 1.10352,
+     "gate_abs": 1.10352,
+     "effective": 0.51468
+    },
+    {
+     "node": "unit_22",
+     "gate": 1.35219,
+     "gate_abs": 1.35219,
+     "effective": 0.81842
+    },
+    {
+     "node": "unit_23",
+     "gate": 1.35108,
+     "gate_abs": 1.35108,
+     "effective": 0.97127
+    },
+    {
+     "node": "unit_24",
+     "gate": 1.05875,
+     "gate_abs": 1.05875,
+     "effective": 0.39849
+    },
+    {
+     "node": "unit_25",
+     "gate": 1.36305,
+     "gate_abs": 1.36305,
+     "effective": 0.793
+    },
+    {
+     "node": "unit_26",
+     "gate": 1.19513,
+     "gate_abs": 1.19513,
+     "effective": 0.47162
+    },
+    {
+     "node": "unit_27",
+     "gate": 1.19387,
+     "gate_abs": 1.19387,
+     "effective": 0.60232
+    },
+    {
+     "node": "unit_28",
+     "gate": 1.04192,
+     "gate_abs": 1.04192,
+     "effective": 0.36655
+    },
+    {
+     "node": "unit_29",
+     "gate": 1.07209,
+     "gate_abs": 1.07209,
+     "effective": 0.41856
+    },
+    {
+     "node": "unit_30",
+     "gate": 1.18488,
+     "gate_abs": 1.18488,
+     "effective": 0.57794
+    },
+    {
+     "node": "unit_31",
+     "gate": 1.32288,
+     "gate_abs": 1.32288,
+     "effective": 0.74483
+    },
+    {
+     "node": "unit_32",
+     "gate": 1.09452,
+     "gate_abs": 1.09452,
+     "effective": 0.39763
+    },
+    {
+     "node": "unit_33",
+     "gate": 1.14996,
+     "gate_abs": 1.14996,
+     "effective": 0.50017
+    },
+    {
+     "node": "unit_34",
+     "gate": 1.49931,
+     "gate_abs": 1.49931,
+     "effective": 1.2006
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.97506,
+     "gate_abs": 0.97506,
+     "effective": 0.3256
+    },
+    {
+     "node": "unit_36",
+     "gate": 1.1389,
+     "gate_abs": 1.1389,
+     "effective": 0.50531
+    },
+    {
+     "node": "unit_37",
+     "gate": 1.36824,
+     "gate_abs": 1.36824,
+     "effective": 0.81344
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.96898,
+     "gate_abs": 0.96898,
+     "effective": 0.24103
+    },
+    {
+     "node": "unit_39",
+     "gate": 1.21605,
+     "gate_abs": 1.21605,
+     "effective": 0.54309
+    },
+    {
+     "node": "unit_40",
+     "gate": 1.14986,
+     "gate_abs": 1.14986,
+     "effective": 0.50762
+    },
+    {
+     "node": "form:product",
+     "gate": 1.20243,
+     "gate_abs": 1.20243,
+     "effective": 0.61806
+    },
+    {
+     "node": "form:ratio",
+     "gate": 1.04705,
+     "gate_abs": 1.04705,
+     "effective": 0.35152
+    },
+    {
+     "node": "form:square",
+     "gate": 1.48691,
+     "gate_abs": 1.48691,
+     "effective": 0.75285
+    },
+    {
+     "node": "form:radial",
+     "gate": 1.26051,
+     "gate_abs": 1.26051,
+     "effective": 0.66074
+    },
+    {
+     "node": "form:power",
+     "gate": 1.03502,
+     "gate_abs": 1.03502,
+     "effective": 0.32726
+    },
+    {
+     "node": "form:decay",
+     "gate": 1.00092,
+     "gate_abs": 1.00092,
+     "effective": 0.32825
+    },
+    {
+     "node": "form:growth",
+     "gate": 1.17921,
+     "gate_abs": 1.17921,
+     "effective": 0.49313
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.87227,
+     "gate_abs": 0.87227,
+     "effective": 0.23815
+    },
+    {
+     "node": "form:saturation",
+     "gate": 1.01623,
+     "gate_abs": 1.01623,
+     "effective": 0.35117
+    },
+    {
+     "node": "form:tanh",
+     "gate": 0.91845,
+     "gate_abs": 0.91845,
+     "effective": 0.27211
+    },
+    {
+     "node": "form:logistic",
+     "gate": 1.1584,
+     "gate_abs": 1.1584,
+     "effective": 0.48118
+    },
+    {
+     "node": "form:periodic",
+     "gate": 1.13565,
+     "gate_abs": 1.13565,
+     "effective": 0.5183
+    },
+    {
+     "node": "form:log",
+     "gate": 1.00355,
+     "gate_abs": 1.00355,
+     "effective": 0.33118
+    },
+    {
+     "node": "form:gaussian",
+     "gate": 0.94811,
+     "gate_abs": 0.94811,
+     "effective": 0.26369
+    },
+    {
+     "node": "form:hinge",
+     "gate": 1.00843,
+     "gate_abs": 1.00843,
+     "effective": 0.3086
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 1.45081,
+     "gate_abs": 1.45081,
+     "effective": 0.91789
+    },
+    {
+     "node": "form:softmin",
+     "gate": 1.10468,
+     "gate_abs": 1.10468,
+     "effective": 0.39398
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.92913,
+     "gate_abs": 0.92913,
+     "effective": 0.28082
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": 0.99568,
+     "gate_abs": 0.99568,
+     "effective": 0.26643
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 1.02454,
+     "gate_abs": 1.02454,
+     "effective": 0.36274
+    },
+    {
+     "node": "law:density",
+     "gate": 0.9322,
+     "gate_abs": 0.9322,
+     "effective": 0.24354
+    },
+    {
+     "node": "law:sigma0",
+     "gate": 0.94726,
+     "gate_abs": 0.94726,
+     "effective": 0.27636
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": 1.04797,
+     "gate_abs": 1.04797,
+     "effective": 0.38289
+    }
+   ],
+   "units_active": 41,
+   "units_total": 41,
+   "sum_abs_gate_units": 49.5239,
+   "sum_abs_gate_relations": 24.7054,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.5613,
+     "rmse_mg_l": 1.5899,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.0388,
+     "rmse_mg_l": 2.3533,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0436,
+       "salinity": -0.2583,
+       "depth": -0.3116,
+       "lat": -0.3204,
+       "lon": 0.4017,
+       "day_of_year": -0.1225,
+       "year": -0.3927
+      },
+      {
+       "temperature": 0.1714,
+       "salinity": 0.402,
+       "depth": 0.1314,
+       "lat": 0.3182,
+       "lon": 0.2653,
+       "day_of_year": 0.0869,
+       "year": -0.4122
+      }
+     ],
+     "input_bias": [
+      0.2951,
+      0.2366
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.1899,
+       "salinity": 0.4845,
+       "depth": 0.1242,
+       "lat": 0.2069,
+       "lon": -0.1802,
+       "day_of_year": 0.1973,
+       "year": -0.1586
+      },
+      {
+       "temperature": 0.6626,
+       "salinity": 0.1273,
+       "depth": 0.1974,
+       "lat": -0.0375,
+       "lon": 0.0104,
+       "day_of_year": 0.064,
+       "year": 0.2887
+      }
+     ],
+     "input_bias": [
+      -0.2603,
+      -0.193
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2608,
+       "salinity": -0.5862,
+       "depth": -0.1436,
+       "lat": 0.5599,
+       "lon": 0.273,
+       "day_of_year": 0.2266,
+       "year": 0.0686
+      }
+     ],
+     "input_bias": [
+      -0.124
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2961,
+       "salinity": -0.0446,
+       "depth": -0.3022,
+       "lat": 0.3171,
+       "lon": -0.3495,
+       "day_of_year": -0.3014,
+       "year": -0.3112
+      },
+      {
+       "temperature": 0.139,
+       "salinity": 0.4897,
+       "depth": 0.1445,
+       "lat": 0.1055,
+       "lon": 0.1675,
+       "day_of_year": 0.5526,
+       "year": -0.1226
+      }
+     ],
+     "input_bias": [
+      0.1982,
+      0.2801
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 0.9421,
+      "b": 1.0352
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2292,
+       "salinity": 0.4505,
+       "depth": 0.1949,
+       "lat": 0.2646,
+       "lon": -0.278,
+       "day_of_year": 0.1455,
+       "year": 0.039
+      }
+     ],
+     "input_bias": [
+      -0.1749
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.2044
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2044,
+       "salinity": -0.0864,
+       "depth": -0.1944,
+       "lat": 0.5376,
+       "lon": 0.2702,
+       "day_of_year": 0.0902,
+       "year": -0.31
+      }
+     ],
+     "input_bias": [
+      0.2708
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 1.4066
+     },
+     "input_weights": [
+      {
+       "temperature": 0.4512,
+       "salinity": 0.2546,
+       "depth": -0.1916,
+       "lat": 0.5979,
+       "lon": 0.0923,
+       "day_of_year": -0.1604,
+       "year": 0.1545
+      }
+     ],
+     "input_bias": [
+      0.333
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 0.4442
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1528,
+       "salinity": 0.2307,
+       "depth": -0.2603,
+       "lat": 0.0138,
+       "lon": 0.2393,
+       "day_of_year": 0.0231,
+       "year": -0.2561
+      }
+     ],
+     "input_bias": [
+      0.2592
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 0.8727
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0113,
+       "salinity": -0.0319,
+       "depth": 0.0863,
+       "lat": 0.4705,
+       "lon": -0.0064,
+       "day_of_year": -0.2432,
+       "year": -0.0175
+      }
+     ],
+     "input_bias": [
+      0.2909
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 1.263
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0146,
+       "salinity": -0.1893,
+       "depth": -0.0043,
+       "lat": -0.115,
+       "lon": -0.4048,
+       "day_of_year": 0.3347,
+       "year": -0.346
+      }
+     ],
+     "input_bias": [
+      0.074
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 0.6793,
+      "x0": 0.6216
+     },
+     "input_weights": [
+      {
+       "temperature": 0.3408,
+       "salinity": 0.1191,
+       "depth": -0.1424,
+       "lat": -0.0734,
+       "lon": 0.1206,
+       "day_of_year": -0.3747,
+       "year": -0.0257
+      }
+     ],
+     "input_bias": [
+      0.0444
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 0.9848,
+      "phi": 1.0589
+     },
+     "input_weights": [
+      {
+       "temperature": -0.4298,
+       "salinity": -0.3973,
+       "depth": 0.0153,
+       "lat": 0.4915,
+       "lon": -0.2423,
+       "day_of_year": 0.2342,
+       "year": -0.017
+      }
+     ],
+     "input_bias": [
+      0.0839
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.021,
+       "salinity": -0.3406,
+       "depth": 0.3543,
+       "lat": 0.1122,
+       "lon": 0.4056,
+       "day_of_year": 0.3075,
+       "year": -0.1368
+      }
+     ],
+     "input_bias": [
+      0.7558
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 0.9299,
+      "s": 0.9098
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1139,
+       "salinity": 0.1595,
+       "depth": -0.2411,
+       "lat": -0.2624,
+       "lon": -0.4431,
+       "day_of_year": -0.2705,
+       "year": 0.108
+      }
+     ],
+     "input_bias": [
+      -0.2018
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 1.8065
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0793,
+       "salinity": 0.008,
+       "depth": -0.0297,
+       "lat": -0.542,
+       "lon": -0.3227,
+       "day_of_year": -0.1647,
+       "year": 0.2297
+      }
+     ],
+     "input_bias": [
+      -0.3344
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": -0.5015
+     },
+     "input_weights": [
+      {
+       "temperature": 0.1215,
+       "salinity": 0.0542,
+       "depth": 0.2057,
+       "lat": -0.7842,
+       "lon": -0.289,
+       "day_of_year": 0.2451,
+       "year": -0.001
+      }
+     ],
+     "input_bias": [
+      0.3272
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.1677
+     },
+     "input_weights": [
+      {
+       "temperature": -0.4306,
+       "salinity": -0.1692,
+       "depth": -0.2546,
+       "lat": 0.298,
+       "lon": 0.0102,
+       "day_of_year": 0.2166,
+       "year": 0.5314
+      },
+      {
+       "temperature": 0.1602,
+       "salinity": -0.0214,
+       "depth": -0.0415,
+       "lat": 0.0215,
+       "lon": 0.0523,
+       "day_of_year": 0.1502,
+       "year": -0.3066
+      }
+     ],
+     "input_bias": [
+      0.2382,
+      0.0378
+     ]
+    }
+   ],
+   "seconds": 159.1,
+   "file": "relation_seed0_lam0.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 1,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 29,
+   "best_epoch": 22,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.4947,
+     0.31501
+    ],
+    [
+     0.32137,
+     0.25727
+    ],
+    [
+     0.26517,
+     0.22911
+    ],
+    [
+     0.23647,
+     0.21243
+    ],
+    [
+     0.22227,
+     0.20327
+    ],
+    [
+     0.21406,
+     0.20629
+    ],
+    [
+     0.20891,
+     0.20098
+    ],
+    [
+     0.20437,
+     0.2078
+    ],
+    [
+     0.20216,
+     0.20849
+    ],
+    [
+     0.19881,
+     0.20003
+    ],
+    [
+     0.19761,
+     0.20474
+    ],
+    [
+     0.1963,
+     0.20786
+    ],
+    [
+     0.19461,
+     0.1971
+    ],
+    [
+     0.19307,
+     0.20006
+    ],
+    [
+     0.19298,
+     0.19588
+    ],
+    [
+     0.1913,
+     0.20018
+    ],
+    [
+     0.19056,
+     0.19527
+    ],
+    [
+     0.18989,
+     0.19328
+    ],
+    [
+     0.1896,
+     0.19296
+    ],
+    [
+     0.18861,
+     0.19316
+    ],
+    [
+     0.18734,
+     0.19044
+    ],
+    [
+     0.18662,
+     0.19469
+    ],
+    [
+     0.18759,
+     0.18479
+    ],
+    [
+     0.18616,
+     0.19404
+    ],
+    [
+     0.18587,
+     0.1856
+    ],
+    [
+     0.18461,
+     0.2002
+    ],
+    [
+     0.1837,
+     0.2025
+    ],
+    [
+     0.18394,
+     0.19153
+    ],
+    [
+     0.18288,
+     0.18901
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8282,
+    "rmse_mg_l": 1.1312,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7932,
+    "rmse_mg_l": 1.0915,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.36996,
+     "gate_abs": 0.36996,
+     "effective": 0.20609
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.59181,
+     "gate_abs": 0.59181,
+     "effective": 0.36207
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.35955,
+     "gate_abs": 0.35955,
+     "effective": 0.16512
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.39908,
+     "gate_abs": 0.39908,
+     "effective": 0.23852
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.31943,
+     "gate_abs": 0.31943,
+     "effective": 0.15897
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.54803,
+     "gate_abs": 0.54803,
+     "effective": 0.35161
+    },
+    {
+     "node": "unit_06",
+     "gate": -0.00121,
+     "gate_abs": 0.00121,
+     "effective": 0.00037
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.92206,
+     "gate_abs": 0.92206,
+     "effective": 0.84125
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.52846,
+     "gate_abs": 0.52846,
+     "effective": 0.30395
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.54527,
+     "gate_abs": 0.54527,
+     "effective": 0.36702
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.35425,
+     "gate_abs": 0.35425,
+     "effective": 0.18789
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.75516,
+     "gate_abs": 0.75516,
+     "effective": 0.49391
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.34697,
+     "gate_abs": 0.34697,
+     "effective": 0.20049
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.52945,
+     "gate_abs": 0.52945,
+     "effective": 0.31955
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.00261,
+     "gate_abs": 0.00261,
+     "effective": 0.00075
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.03396,
+     "gate_abs": 0.03396,
+     "effective": 0.00852
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.44351,
+     "gate_abs": 0.44351,
+     "effective": 0.24677
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.55758,
+     "gate_abs": 0.55758,
+     "effective": 0.34377
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.62951,
+     "gate_abs": 0.62951,
+     "effective": 0.35913
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.59138,
+     "gate_abs": 0.59138,
+     "effective": 0.36639
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.69281,
+     "gate_abs": 0.69281,
+     "effective": 0.36619
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.51787,
+     "gate_abs": 0.51787,
+     "effective": 0.25473
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.48168,
+     "gate_abs": 0.48168,
+     "effective": 0.23546
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.61724,
+     "gate_abs": 0.61724,
+     "effective": 0.34113
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.00071,
+     "gate_abs": 0.00071,
+     "effective": 9e-05
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.2509,
+     "gate_abs": 0.2509,
+     "effective": 0.1067
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.91413,
+     "gate_abs": 0.91413,
+     "effective": 0.76451
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.1342,
+     "gate_abs": 0.1342,
+     "effective": 0.05462
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.00089,
+     "gate_abs": 0.00089,
+     "effective": 0.00021
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.304,
+     "gate_abs": 0.304,
+     "effective": 0.14783
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.26179,
+     "gate_abs": 0.26179,
+     "effective": 0.13245
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.07877,
+     "gate_abs": 0.07877,
+     "effective": 0.0276
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.00108,
+     "gate_abs": 0.00108,
+     "effective": 0.00027
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.49553,
+     "gate_abs": 0.49553,
+     "effective": 0.31877
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.54879,
+     "gate_abs": 0.54879,
+     "effective": 0.33387
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.67236,
+     "gate_abs": 0.67236,
+     "effective": 0.43614
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.49476,
+     "gate_abs": 0.49476,
+     "effective": 0.29186
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.29509,
+     "gate_abs": 0.29509,
+     "effective": 0.12524
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.32849,
+     "gate_abs": 0.32849,
+     "effective": 0.15064
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.61788,
+     "gate_abs": 0.61788,
+     "effective": 0.4194
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.21377,
+     "gate_abs": 0.21377,
+     "effective": 0.09623
+    },
+    {
+     "node": "form:product",
+     "gate": 0.52872,
+     "gate_abs": 0.52872,
+     "effective": 0.35797
+    },
+    {
+     "node": "form:ratio",
+     "gate": 0.53172,
+     "gate_abs": 0.53172,
+     "effective": 0.26563
+    },
+    {
+     "node": "form:square",
+     "gate": 0.24231,
+     "gate_abs": 0.24231,
+     "effective": 0.12079
+    },
+    {
+     "node": "form:radial",
+     "gate": 0.42586,
+     "gate_abs": 0.42586,
+     "effective": 0.26999
+    },
+    {
+     "node": "form:power",
+     "gate": 0.00025,
+     "gate_abs": 0.00025,
+     "effective": 6e-05
+    },
+    {
+     "node": "form:decay",
+     "gate": -0.00035,
+     "gate_abs": 0.00035,
+     "effective": 8e-05
+    },
+    {
+     "node": "form:growth",
+     "gate": 0.00036,
+     "gate_abs": 0.00036,
+     "effective": 0.00011
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.4993,
+     "gate_abs": 0.4993,
+     "effective": 0.31458
+    },
+    {
+     "node": "form:saturation",
+     "gate": 0.16033,
+     "gate_abs": 0.16033,
+     "effective": 0.07952
+    },
+    {
+     "node": "form:tanh",
+     "gate": 0.00119,
+     "gate_abs": 0.00119,
+     "effective": 0.00019
+    },
+    {
+     "node": "form:logistic",
+     "gate": 0.00234,
+     "gate_abs": 0.00234,
+     "effective": 0.00055
+    },
+    {
+     "node": "form:periodic",
+     "gate": 0.70831,
+     "gate_abs": 0.70831,
+     "effective": 0.53048
+    },
+    {
+     "node": "form:log",
+     "gate": 0.13575,
+     "gate_abs": 0.13575,
+     "effective": 0.05007
+    },
+    {
+     "node": "form:gaussian",
+     "gate": -0.00081,
+     "gate_abs": 0.00081,
+     "effective": 0.00019
+    },
+    {
+     "node": "form:hinge",
+     "gate": 0.25364,
+     "gate_abs": 0.25364,
+     "effective": 0.10309
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 0.68121,
+     "gate_abs": 0.68121,
+     "effective": 0.45761
+    },
+    {
+     "node": "form:softmin",
+     "gate": 0.38563,
+     "gate_abs": 0.38563,
+     "effective": 0.17403
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.50482,
+     "gate_abs": 0.50482,
+     "effective": 0.17033
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": 0.00114,
+     "gate_abs": 0.00114,
+     "effective": 0.0002
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 0.17264,
+     "gate_abs": 0.17264,
+     "effective": 0.06276
+    },
+    {
+     "node": "law:density",
+     "gate": -0.0003,
+     "gate_abs": 0.0003,
+     "effective": 4e-05
+    },
+    {
+     "node": "law:sigma0",
+     "gate": 0.07683,
+     "gate_abs": 0.07683,
+     "effective": 0.02609
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": 0.3841,
+     "gate_abs": 0.3841,
+     "effective": 0.17841
+    }
+   ],
+   "units_active": 35,
+   "units_total": 41,
+   "sum_abs_gate_units": 16.752,
+   "sum_abs_gate_relations": 5.6979,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.4646,
+     "rmse_mg_l": 1.7564,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.2825,
+     "rmse_mg_l": 2.0332,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2994,
+       "salinity": -0.249,
+       "depth": 0.4534,
+       "lat": 0.1951,
+       "lon": 0.2765,
+       "day_of_year": -0.1683,
+       "year": 0.1421
+      },
+      {
+       "temperature": -0.4398,
+       "salinity": -0.2657,
+       "depth": -0.0967,
+       "lat": 0.1729,
+       "lon": -0.153,
+       "day_of_year": 0.0497,
+       "year": -0.0888
+      }
+     ],
+     "input_bias": [
+      -0.2045,
+      0.3709
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0619,
+       "salinity": -0.1274,
+       "depth": -0.0601,
+       "lat": -0.2092,
+       "lon": -0.1938,
+       "day_of_year": -0.3199,
+       "year": 0.3038
+      },
+      {
+       "temperature": 0.2622,
+       "salinity": 0.3029,
+       "depth": -0.0726,
+       "lat": 0.3794,
+       "lon": 0.1217,
+       "day_of_year": 0.1524,
+       "year": 0.5487
+      }
+     ],
+     "input_bias": [
+      0.2413,
+      -0.1524
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.1365,
+       "salinity": -0.5811,
+       "depth": 0.1812,
+       "lat": 0.0283,
+       "lon": -0.1447,
+       "day_of_year": 0.1293,
+       "year": -0.3202
+      }
+     ],
+     "input_bias": [
+      -0.1347
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.2378,
+       "salinity": -0.0614,
+       "depth": -0.1545,
+       "lat": 0.2717,
+       "lon": -0.1104,
+       "day_of_year": -0.7624,
+       "year": 0.035
+      },
+      {
+       "temperature": -0.0564,
+       "salinity": 0.0422,
+       "depth": 0.0977,
+       "lat": 0.1542,
+       "lon": -0.1297,
+       "day_of_year": -0.0045,
+       "year": -0.0643
+      }
+     ],
+     "input_bias": [
+      0.1017,
+      -0.0433
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 1.1018,
+      "b": 1.0053
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2729,
+       "salinity": 0.2385,
+       "depth": 0.1115,
+       "lat": 0.1034,
+       "lon": 0.0022,
+       "day_of_year": -0.1841,
+       "year": 0.0099
+      }
+     ],
+     "input_bias": [
+      0.2068
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.0735
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0136,
+       "salinity": -0.2326,
+       "depth": 0.3058,
+       "lat": -0.0274,
+       "lon": 0.3965,
+       "day_of_year": 0.0467,
+       "year": 0.2593
+      }
+     ],
+     "input_bias": [
+      0.165
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 0.9663
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0656,
+       "salinity": 0.2546,
+       "depth": 0.0159,
+       "lat": -0.298,
+       "lon": 0.0824,
+       "day_of_year": -0.4242,
+       "year": -0.2569
+      }
+     ],
+     "input_bias": [
+      -0.0794
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 1.2655
+     },
+     "input_weights": [
+      {
+       "temperature": 0.3646,
+       "salinity": 0.0711,
+       "depth": -0.0524,
+       "lat": 0.005,
+       "lon": 0.2391,
+       "day_of_year": -0.4592,
+       "year": -0.0183
+      }
+     ],
+     "input_bias": [
+      -0.1465
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 1.099
+     },
+     "input_weights": [
+      {
+       "temperature": -0.4106,
+       "salinity": 0.197,
+       "depth": -0.2583,
+       "lat": -0.0476,
+       "lon": -0.227,
+       "day_of_year": 0.4599,
+       "year": -0.0141
+      }
+     ],
+     "input_bias": [
+      0.2206
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 1.0929
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0166,
+       "salinity": 0.2682,
+       "depth": -0.1536,
+       "lat": -0.2241,
+       "lon": 0.1102,
+       "day_of_year": -0.0773,
+       "year": 0.0381
+      }
+     ],
+     "input_bias": [
+      0.2999
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 1.1439,
+      "x0": 1.1192
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0179,
+       "salinity": 0.0578,
+       "depth": 0.0742,
+       "lat": -0.3685,
+       "lon": 0.1861,
+       "day_of_year": -0.0003,
+       "year": 0.3624
+      }
+     ],
+     "input_bias": [
+      0.2321
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 1.0912,
+      "phi": 1.1534
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0149,
+       "salinity": 0.3489,
+       "depth": -0.333,
+       "lat": 0.6188,
+       "lon": 0.3618,
+       "day_of_year": 0.0461,
+       "year": -0.078
+      }
+     ],
+     "input_bias": [
+      0.2597
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.1859,
+       "salinity": -0.3871,
+       "depth": 0.0975,
+       "lat": 0.2088,
+       "lon": 0.4088,
+       "day_of_year": -0.1268,
+       "year": 0.3163
+      }
+     ],
+     "input_bias": [
+      0.2049
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 0.8728,
+      "s": 0.9958
+     },
+     "input_weights": [
+      {
+       "temperature": -0.3248,
+       "salinity": -0.3371,
+       "depth": 0.1331,
+       "lat": -0.1488,
+       "lon": 0.1405,
+       "day_of_year": -0.272,
+       "year": 0.3257
+      }
+     ],
+     "input_bias": [
+      0.0945
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 0.8964
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0807,
+       "salinity": 0.2333,
+       "depth": -0.1962,
+       "lat": -0.1153,
+       "lon": -0.0404,
+       "day_of_year": -0.156,
+       "year": -0.0303
+      }
+     ],
+     "input_bias": [
+      -0.0077
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": -0.9886
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0496,
+       "salinity": 0.1844,
+       "depth": 0.1016,
+       "lat": 0.1409,
+       "lon": -1.0804,
+       "day_of_year": 0.0907,
+       "year": 0.0051
+      }
+     ],
+     "input_bias": [
+      -0.8336
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.2675
+     },
+     "input_weights": [
+      {
+       "temperature": 0.1688,
+       "salinity": -0.2167,
+       "depth": 0.0153,
+       "lat": 0.071,
+       "lon": 0.3722,
+       "day_of_year": -0.1625,
+       "year": -0.064
+      },
+      {
+       "temperature": 0.4874,
+       "salinity": 0.2496,
+       "depth": 0.1875,
+       "lat": 0.2026,
+       "lon": -0.1395,
+       "day_of_year": 0.2885,
+       "year": -0.2893
+      }
+     ],
+     "input_bias": [
+      0.0385,
+      0.1849
+     ]
+    }
+   ],
+   "seconds": 143.0,
+   "file": "relation_seed1.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 2,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 31,
+   "best_epoch": 24,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.44178,
+     0.30218
+    ],
+    [
+     0.2995,
+     0.22835
+    ],
+    [
+     0.24926,
+     0.21141
+    ],
+    [
+     0.23207,
+     0.2073
+    ],
+    [
+     0.22051,
+     0.20261
+    ],
+    [
+     0.21338,
+     0.20151
+    ],
+    [
+     0.20806,
+     0.20213
+    ],
+    [
+     0.20369,
+     0.1988
+    ],
+    [
+     0.19976,
+     0.19846
+    ],
+    [
+     0.19681,
+     0.20062
+    ],
+    [
+     0.19441,
+     0.19476
+    ],
+    [
+     0.1932,
+     0.19344
+    ],
+    [
+     0.19161,
+     0.19664
+    ],
+    [
+     0.18932,
+     0.19879
+    ],
+    [
+     0.18835,
+     0.19932
+    ],
+    [
+     0.18688,
+     0.19648
+    ],
+    [
+     0.18667,
+     0.19264
+    ],
+    [
+     0.18536,
+     0.19138
+    ],
+    [
+     0.18432,
+     0.2043
+    ],
+    [
+     0.18379,
+     0.18753
+    ],
+    [
+     0.18402,
+     0.18747
+    ],
+    [
+     0.18293,
+     0.18623
+    ],
+    [
+     0.1814,
+     0.18647
+    ],
+    [
+     0.18112,
+     0.19082
+    ],
+    [
+     0.18049,
+     0.18484
+    ],
+    [
+     0.17997,
+     0.20473
+    ],
+    [
+     0.17964,
+     0.1905
+    ],
+    [
+     0.17912,
+     0.1907
+    ],
+    [
+     0.17892,
+     0.18784
+    ],
+    [
+     0.1781,
+     0.18538
+    ],
+    [
+     0.17776,
+     0.18487
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8281,
+    "rmse_mg_l": 1.1314,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7909,
+    "rmse_mg_l": 1.0976,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.32492,
+     "gate_abs": 0.32492,
+     "effective": 0.18733
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.49531,
+     "gate_abs": 0.49531,
+     "effective": 0.28776
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.34613,
+     "gate_abs": 0.34613,
+     "effective": 0.16611
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.34219,
+     "gate_abs": 0.34219,
+     "effective": 0.14561
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.50733,
+     "gate_abs": 0.50733,
+     "effective": 0.28948
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.24905,
+     "gate_abs": 0.24905,
+     "effective": 0.129
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.34651,
+     "gate_abs": 0.34651,
+     "effective": 0.17472
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.29304,
+     "gate_abs": 0.29304,
+     "effective": 0.14603
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.44847,
+     "gate_abs": 0.44847,
+     "effective": 0.30244
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.26761,
+     "gate_abs": 0.26761,
+     "effective": 0.13463
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.13969,
+     "gate_abs": 0.13969,
+     "effective": 0.05726
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.85335,
+     "gate_abs": 0.85335,
+     "effective": 0.70257
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.84452,
+     "gate_abs": 0.84452,
+     "effective": 0.71546
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.29245,
+     "gate_abs": 0.29245,
+     "effective": 0.1244
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.38679,
+     "gate_abs": 0.38679,
+     "effective": 0.18622
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.34341,
+     "gate_abs": 0.34341,
+     "effective": 0.14463
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.99314,
+     "gate_abs": 0.99314,
+     "effective": 0.86968
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.79925,
+     "gate_abs": 0.79925,
+     "effective": 0.44969
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.47358,
+     "gate_abs": 0.47358,
+     "effective": 0.23934
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.40205,
+     "gate_abs": 0.40205,
+     "effective": 0.23288
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.30306,
+     "gate_abs": 0.30306,
+     "effective": 0.16649
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.3848,
+     "gate_abs": 0.3848,
+     "effective": 0.20666
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.6541,
+     "gate_abs": 0.6541,
+     "effective": 0.4912
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.12838,
+     "gate_abs": 0.12838,
+     "effective": 0.04055
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.37571,
+     "gate_abs": 0.37571,
+     "effective": 0.20043
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.79204,
+     "gate_abs": 0.79204,
+     "effective": 0.54014
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.40839,
+     "gate_abs": 0.40839,
+     "effective": 0.23515
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.81636,
+     "gate_abs": 0.81636,
+     "effective": 0.71033
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.58459,
+     "gate_abs": 0.58459,
+     "effective": 0.40169
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.2366,
+     "gate_abs": 0.2366,
+     "effective": 0.11327
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.43017,
+     "gate_abs": 0.43017,
+     "effective": 0.21932
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.0008,
+     "gate_abs": 0.0008,
+     "effective": 0.0002
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.41868,
+     "gate_abs": 0.41868,
+     "effective": 0.17519
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.88678,
+     "gate_abs": 0.88678,
+     "effective": 0.69335
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.33476,
+     "gate_abs": 0.33476,
+     "effective": 0.17979
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.20486,
+     "gate_abs": 0.20486,
+     "effective": 0.09459
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.27881,
+     "gate_abs": 0.27881,
+     "effective": 0.12304
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.00239,
+     "gate_abs": 0.00239,
+     "effective": 0.00052
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.39668,
+     "gate_abs": 0.39668,
+     "effective": 0.18583
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.4814,
+     "gate_abs": 0.4814,
+     "effective": 0.30464
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.00106,
+     "gate_abs": 0.00106,
+     "effective": 0.0003
+    },
+    {
+     "node": "form:product",
+     "gate": 0.31659,
+     "gate_abs": 0.31659,
+     "effective": 0.18369
+    },
+    {
+     "node": "form:ratio",
+     "gate": 0.08383,
+     "gate_abs": 0.08383,
+     "effective": 0.02564
+    },
+    {
+     "node": "form:square",
+     "gate": 0.4275,
+     "gate_abs": 0.4275,
+     "effective": 0.27331
+    },
+    {
+     "node": "form:radial",
+     "gate": 0.44798,
+     "gate_abs": 0.44798,
+     "effective": 0.29587
+    },
+    {
+     "node": "form:power",
+     "gate": 0.00082,
+     "gate_abs": 0.00082,
+     "effective": 0.00011
+    },
+    {
+     "node": "form:decay",
+     "gate": 0.34448,
+     "gate_abs": 0.34448,
+     "effective": 0.16839
+    },
+    {
+     "node": "form:growth",
+     "gate": 0.3436,
+     "gate_abs": 0.3436,
+     "effective": 0.19514
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.00193,
+     "gate_abs": 0.00193,
+     "effective": 0.00031
+    },
+    {
+     "node": "form:saturation",
+     "gate": -0.00018,
+     "gate_abs": 0.00018,
+     "effective": 3e-05
+    },
+    {
+     "node": "form:tanh",
+     "gate": -0.00082,
+     "gate_abs": 0.00082,
+     "effective": 9e-05
+    },
+    {
+     "node": "form:logistic",
+     "gate": -1e-05,
+     "gate_abs": 1e-05,
+     "effective": 0.0
+    },
+    {
+     "node": "form:periodic",
+     "gate": -0.0004,
+     "gate_abs": 0.0004,
+     "effective": 5e-05
+    },
+    {
+     "node": "form:log",
+     "gate": -0.00026,
+     "gate_abs": 0.00026,
+     "effective": 7e-05
+    },
+    {
+     "node": "form:gaussian",
+     "gate": 0.24867,
+     "gate_abs": 0.24867,
+     "effective": 0.12546
+    },
+    {
+     "node": "form:hinge",
+     "gate": 0.00225,
+     "gate_abs": 0.00225,
+     "effective": 0.00015
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 0.45682,
+     "gate_abs": 0.45682,
+     "effective": 0.30278
+    },
+    {
+     "node": "form:softmin",
+     "gate": 0.38633,
+     "gate_abs": 0.38633,
+     "effective": 0.18202
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.05288,
+     "gate_abs": 0.05288,
+     "effective": 0.01652
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": -0.00058,
+     "gate_abs": 0.00058,
+     "effective": 6e-05
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 0.00092,
+     "gate_abs": 0.00092,
+     "effective": 0.0002
+    },
+    {
+     "node": "law:density",
+     "gate": -0.00044,
+     "gate_abs": 0.00044,
+     "effective": 0.00011
+    },
+    {
+     "node": "law:sigma0",
+     "gate": -0.00011,
+     "gate_abs": 0.00011,
+     "effective": 2e-05
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": 0.48324,
+     "gate_abs": 0.48324,
+     "effective": 0.27574
+    }
+   ],
+   "units_active": 38,
+   "units_total": 41,
+   "sum_abs_gate_units": 17.2692,
+   "sum_abs_gate_relations": 3.6006,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.7003,
+     "rmse_mg_l": 1.3141,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.1806,
+     "rmse_mg_l": 2.1728,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.1087,
+       "salinity": 0.3142,
+       "depth": -0.3955,
+       "lat": 0.1791,
+       "lon": 0.3992,
+       "day_of_year": 0.1506,
+       "year": 0.0637
+      },
+      {
+       "temperature": -0.0284,
+       "salinity": -0.0232,
+       "depth": -0.1789,
+       "lat": 0.6396,
+       "lon": 0.0235,
+       "day_of_year": 0.3044,
+       "year": 0.0138
+      }
+     ],
+     "input_bias": [
+      -0.0542,
+      0.1593
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.371,
+       "salinity": -0.0744,
+       "depth": -0.1934,
+       "lat": 0.0605,
+       "lon": -0.1162,
+       "day_of_year": 0.2356,
+       "year": -0.3323
+      },
+      {
+       "temperature": 0.6612,
+       "salinity": 0.1202,
+       "depth": 0.1896,
+       "lat": 0.7805,
+       "lon": 0.2112,
+       "day_of_year": 0.2388,
+       "year": -0.3903
+      }
+     ],
+     "input_bias": [
+      0.2886,
+      -0.541
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.143,
+       "salinity": -0.4903,
+       "depth": -0.1948,
+       "lat": -0.1569,
+       "lon": 0.2249,
+       "day_of_year": 0.0055,
+       "year": 0.1358
+      }
+     ],
+     "input_bias": [
+      -0.1029
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.3483,
+       "salinity": -0.3417,
+       "depth": -0.2677,
+       "lat": -0.0101,
+       "lon": 0.1022,
+       "day_of_year": -0.3586,
+       "year": -0.0394
+      },
+      {
+       "temperature": 0.1893,
+       "salinity": -0.3509,
+       "depth": 0.1241,
+       "lat": -0.0735,
+       "lon": 0.1787,
+       "day_of_year": 0.2626,
+       "year": 0.0099
+      }
+     ],
+     "input_bias": [
+      -0.2599,
+      0.1918
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 0.9712,
+      "b": 0.7913
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0154,
+       "salinity": 0.0803,
+       "depth": 0.0681,
+       "lat": -0.3158,
+       "lon": -0.0346,
+       "day_of_year": -0.0937,
+       "year": -0.0041
+      }
+     ],
+     "input_bias": [
+      0.478
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.7282
+     },
+     "input_weights": [
+      {
+       "temperature": -0.7529,
+       "salinity": 0.1125,
+       "depth": 0.4396,
+       "lat": -0.4424,
+       "lon": 0.2289,
+       "day_of_year": 0.6711,
+       "year": 0.054
+      }
+     ],
+     "input_bias": [
+      0.1181
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 1.2843
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0432,
+       "salinity": 0.4029,
+       "depth": 0.0414,
+       "lat": 0.3127,
+       "lon": -0.548,
+       "day_of_year": 0.337,
+       "year": -0.3866
+      }
+     ],
+     "input_bias": [
+      -0.2109
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 0.6003
+     },
+     "input_weights": [
+      {
+       "temperature": 0.3408,
+       "salinity": 0.0223,
+       "depth": -0.0634,
+       "lat": -0.4601,
+       "lon": -0.0318,
+       "day_of_year": -0.0589,
+       "year": -0.0613
+      }
+     ],
+     "input_bias": [
+      0.1616
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 0.7658
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0834,
+       "salinity": 0.3966,
+       "depth": -0.2208,
+       "lat": -0.1079,
+       "lon": 0.4532,
+       "day_of_year": -0.2827,
+       "year": 0.1587
+      }
+     ],
+     "input_bias": [
+      0.0504
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 0.6085
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0682,
+       "salinity": -0.3108,
+       "depth": 0.108,
+       "lat": -0.0655,
+       "lon": -0.0453,
+       "day_of_year": 0.3058,
+       "year": -0.3362
+      }
+     ],
+     "input_bias": [
+      0.1339
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 1.0732,
+      "x0": 1.0269
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2507,
+       "salinity": -0.0648,
+       "depth": -0.1529,
+       "lat": 0.189,
+       "lon": 0.1307,
+       "day_of_year": -0.4525,
+       "year": -0.2102
+      }
+     ],
+     "input_bias": [
+      -0.3365
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 0.8229,
+      "phi": 0.7847
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1115,
+       "salinity": -0.0331,
+       "depth": 0.0206,
+       "lat": 0.1473,
+       "lon": -0.4398,
+       "day_of_year": 0.1853,
+       "year": -0.0137
+      }
+     ],
+     "input_bias": [
+      0.011
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.326,
+       "salinity": -0.2802,
+       "depth": 0.0658,
+       "lat": 0.1535,
+       "lon": -0.1332,
+       "day_of_year": -0.0081,
+       "year": 0.1679
+      }
+     ],
+     "input_bias": [
+      -0.2648
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 0.6203,
+      "s": 0.1817
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0115,
+       "salinity": 0.1342,
+       "depth": -0.1722,
+       "lat": 0.1776,
+       "lon": 0.3272,
+       "day_of_year": 0.1578,
+       "year": -0.8062
+      }
+     ],
+     "input_bias": [
+      0.4118
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 1.142
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2223,
+       "salinity": -0.2241,
+       "depth": 0.1271,
+       "lat": -0.0654,
+       "lon": -0.077,
+       "day_of_year": 0.0744,
+       "year": -0.1921
+      }
+     ],
+     "input_bias": [
+      0.0814
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": 0.4085
+     },
+     "input_weights": [
+      {
+       "temperature": -0.3101,
+       "salinity": -0.576,
+       "depth": -0.0084,
+       "lat": 0.0778,
+       "lon": -0.5737,
+       "day_of_year": -0.1492,
+       "year": 0.0537
+      }
+     ],
+     "input_bias": [
+      -0.1974
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.2071
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0604,
+       "salinity": 0.4207,
+       "depth": 0.0435,
+       "lat": 0.2631,
+       "lon": -0.2297,
+       "day_of_year": 0.3254,
+       "year": 0.0005
+      },
+      {
+       "temperature": 0.1635,
+       "salinity": -0.3227,
+       "depth": 0.2364,
+       "lat": -0.197,
+       "lon": 0.2407,
+       "day_of_year": -0.4523,
+       "year": -0.2331
+      }
+     ],
+     "input_bias": [
+      -0.3266,
+      -0.3118
+     ]
+    }
+   ],
+   "seconds": 175.5,
+   "file": "relation_seed2.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 3,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 31,
+   "best_epoch": 24,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.52277,
+     0.33461
+    ],
+    [
+     0.33027,
+     0.26026
+    ],
+    [
+     0.27305,
+     0.22948
+    ],
+    [
+     0.24202,
+     0.2124
+    ],
+    [
+     0.22253,
+     0.2038
+    ],
+    [
+     0.21133,
+     0.20184
+    ],
+    [
+     0.20567,
+     0.1987
+    ],
+    [
+     0.20169,
+     0.19932
+    ],
+    [
+     0.19947,
+     0.19472
+    ],
+    [
+     0.19722,
+     0.20062
+    ],
+    [
+     0.19483,
+     0.20032
+    ],
+    [
+     0.19408,
+     0.19607
+    ],
+    [
+     0.19222,
+     0.19341
+    ],
+    [
+     0.19072,
+     0.19047
+    ],
+    [
+     0.18927,
+     0.1921
+    ],
+    [
+     0.18864,
+     0.19283
+    ],
+    [
+     0.18764,
+     0.19149
+    ],
+    [
+     0.18658,
+     0.19395
+    ],
+    [
+     0.18499,
+     0.18999
+    ],
+    [
+     0.18413,
+     0.1926
+    ],
+    [
+     0.18408,
+     0.18737
+    ],
+    [
+     0.18243,
+     0.19202
+    ],
+    [
+     0.18166,
+     0.18606
+    ],
+    [
+     0.18134,
+     0.18823
+    ],
+    [
+     0.18021,
+     0.18143
+    ],
+    [
+     0.18092,
+     0.19153
+    ],
+    [
+     0.17985,
+     0.19116
+    ],
+    [
+     0.17975,
+     0.18447
+    ],
+    [
+     0.18016,
+     0.18411
+    ],
+    [
+     0.17822,
+     0.18642
+    ],
+    [
+     0.17804,
+     0.18778
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8313,
+    "rmse_mg_l": 1.1209,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7877,
+    "rmse_mg_l": 1.1059,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.61408,
+     "gate_abs": 0.61408,
+     "effective": 0.40444
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.02682,
+     "gate_abs": 0.02682,
+     "effective": 0.00837
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.49406,
+     "gate_abs": 0.49406,
+     "effective": 0.29241
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.49446,
+     "gate_abs": 0.49446,
+     "effective": 0.29111
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.00089,
+     "gate_abs": 0.00089,
+     "effective": 0.00022
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.00365,
+     "gate_abs": 0.00365,
+     "effective": 0.00083
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.55841,
+     "gate_abs": 0.55841,
+     "effective": 0.37247
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.00371,
+     "gate_abs": 0.00371,
+     "effective": 0.00095
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.54723,
+     "gate_abs": 0.54723,
+     "effective": 0.34098
+    },
+    {
+     "node": "unit_09",
+     "gate": 1.08345,
+     "gate_abs": 1.08345,
+     "effective": 1.09801
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.19499,
+     "gate_abs": 0.19499,
+     "effective": 0.06741
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.50364,
+     "gate_abs": 0.50364,
+     "effective": 0.3312
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.03903,
+     "gate_abs": 0.03903,
+     "effective": 0.01089
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.48027,
+     "gate_abs": 0.48027,
+     "effective": 0.29009
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.21366,
+     "gate_abs": 0.21366,
+     "effective": 0.09036
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.77765,
+     "gate_abs": 0.77765,
+     "effective": 0.55192
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.70826,
+     "gate_abs": 0.70826,
+     "effective": 0.44733
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.29464,
+     "gate_abs": 0.29464,
+     "effective": 0.15466
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.23798,
+     "gate_abs": 0.23798,
+     "effective": 0.11383
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.64733,
+     "gate_abs": 0.64733,
+     "effective": 0.37891
+    },
+    {
+     "node": "unit_20",
+     "gate": 1.07809,
+     "gate_abs": 1.07809,
+     "effective": 1.04907
+    },
+    {
+     "node": "unit_21",
+     "gate": -0.00184,
+     "gate_abs": 0.00184,
+     "effective": 0.00042
+    },
+    {
+     "node": "unit_22",
+     "gate": 0.32045,
+     "gate_abs": 0.32045,
+     "effective": 0.15183
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.53502,
+     "gate_abs": 0.53502,
+     "effective": 0.28619
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.66394,
+     "gate_abs": 0.66394,
+     "effective": 0.49119
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.39758,
+     "gate_abs": 0.39758,
+     "effective": 0.2244
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.37457,
+     "gate_abs": 0.37457,
+     "effective": 0.16647
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.2421,
+     "gate_abs": 0.2421,
+     "effective": 0.1218
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.00045,
+     "gate_abs": 0.00045,
+     "effective": 6e-05
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.0237,
+     "gate_abs": 0.0237,
+     "effective": 0.00716
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.16816,
+     "gate_abs": 0.16816,
+     "effective": 0.05947
+    },
+    {
+     "node": "unit_31",
+     "gate": 0.64665,
+     "gate_abs": 0.64665,
+     "effective": 0.35523
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.71828,
+     "gate_abs": 0.71828,
+     "effective": 0.44071
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.23607,
+     "gate_abs": 0.23607,
+     "effective": 0.09906
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.54763,
+     "gate_abs": 0.54763,
+     "effective": 0.37071
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.34469,
+     "gate_abs": 0.34469,
+     "effective": 0.15868
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.54427,
+     "gate_abs": 0.54427,
+     "effective": 0.38426
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.33515,
+     "gate_abs": 0.33515,
+     "effective": 0.15332
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.21615,
+     "gate_abs": 0.21615,
+     "effective": 0.09895
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.73279,
+     "gate_abs": 0.73279,
+     "effective": 0.48952
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.6487,
+     "gate_abs": 0.6487,
+     "effective": 0.38472
+    },
+    {
+     "node": "form:product",
+     "gate": 0.42793,
+     "gate_abs": 0.42793,
+     "effective": 0.23749
+    },
+    {
+     "node": "form:ratio",
+     "gate": 0.62048,
+     "gate_abs": 0.62048,
+     "effective": 0.33579
+    },
+    {
+     "node": "form:square",
+     "gate": 0.41893,
+     "gate_abs": 0.41893,
+     "effective": 0.22939
+    },
+    {
+     "node": "form:radial",
+     "gate": 0.49702,
+     "gate_abs": 0.49702,
+     "effective": 0.33019
+    },
+    {
+     "node": "form:power",
+     "gate": 0.36512,
+     "gate_abs": 0.36512,
+     "effective": 0.16437
+    },
+    {
+     "node": "form:decay",
+     "gate": 0.49957,
+     "gate_abs": 0.49957,
+     "effective": 0.27057
+    },
+    {
+     "node": "form:growth",
+     "gate": 0.26732,
+     "gate_abs": 0.26732,
+     "effective": 0.10957
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.16111,
+     "gate_abs": 0.16111,
+     "effective": 0.06087
+    },
+    {
+     "node": "form:saturation",
+     "gate": -0.00011,
+     "gate_abs": 0.00011,
+     "effective": 1e-05
+    },
+    {
+     "node": "form:tanh",
+     "gate": -0.00059,
+     "gate_abs": 0.00059,
+     "effective": 6e-05
+    },
+    {
+     "node": "form:logistic",
+     "gate": -0.00169,
+     "gate_abs": 0.00169,
+     "effective": 0.00022
+    },
+    {
+     "node": "form:periodic",
+     "gate": 0.25336,
+     "gate_abs": 0.25336,
+     "effective": 0.12727
+    },
+    {
+     "node": "form:log",
+     "gate": 0.15342,
+     "gate_abs": 0.15342,
+     "effective": 0.05885
+    },
+    {
+     "node": "form:gaussian",
+     "gate": 0.00103,
+     "gate_abs": 0.00103,
+     "effective": 0.00012
+    },
+    {
+     "node": "form:hinge",
+     "gate": 0.00109,
+     "gate_abs": 0.00109,
+     "effective": 0.00014
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 0.68257,
+     "gate_abs": 0.68257,
+     "effective": 0.50808
+    },
+    {
+     "node": "form:softmin",
+     "gate": 0.15178,
+     "gate_abs": 0.15178,
+     "effective": 0.0632
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.00061,
+     "gate_abs": 0.00061,
+     "effective": 0.0002
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": 5e-05,
+     "gate_abs": 5e-05,
+     "effective": 0.0
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 0.10266,
+     "gate_abs": 0.10266,
+     "effective": 0.03495
+    },
+    {
+     "node": "law:density",
+     "gate": 5e-05,
+     "gate_abs": 5e-05,
+     "effective": 1e-05
+    },
+    {
+     "node": "law:sigma0",
+     "gate": 0.00048,
+     "gate_abs": 0.00048,
+     "effective": 5e-05
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": -0.00259,
+     "gate_abs": 0.00259,
+     "effective": 0.00049
+    }
+   ],
+   "units_active": 33,
+   "units_total": 41,
+   "sum_abs_gate_units": 16.7005,
+   "sum_abs_gate_relations": 4.6096,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.6844,
+     "rmse_mg_l": 1.3484,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.0546,
+     "rmse_mg_l": 2.3339,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.1569,
+       "salinity": -0.3919,
+       "depth": -0.0939,
+       "lat": 0.1635,
+       "lon": -0.0667,
+       "day_of_year": -0.0762,
+       "year": 0.0182
+      },
+      {
+       "temperature": 0.0457,
+       "salinity": -0.3631,
+       "depth": 0.3616,
+       "lat": 0.4372,
+       "lon": 0.1521,
+       "day_of_year": -0.2482,
+       "year": 0.1133
+      }
+     ],
+     "input_bias": [
+      0.0528,
+      -0.1808
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0354,
+       "salinity": -0.0643,
+       "depth": 0.02,
+       "lat": 0.1734,
+       "lon": -0.4526,
+       "day_of_year": 0.1772,
+       "year": 0.0466
+      },
+      {
+       "temperature": -0.52,
+       "salinity": -0.2407,
+       "depth": -0.2564,
+       "lat": 0.5285,
+       "lon": -0.0084,
+       "day_of_year": -0.1082,
+       "year": -0.1934
+      }
+     ],
+     "input_bias": [
+      -0.2572,
+      -0.6815
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0839,
+       "salinity": -0.3003,
+       "depth": -0.2642,
+       "lat": 0.1856,
+       "lon": 0.3109,
+       "day_of_year": -0.2681,
+       "year": 0.0705
+      }
+     ],
+     "input_bias": [
+      -0.0944
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": 0.0754,
+       "salinity": 0.5301,
+       "depth": 0.0158,
+       "lat": 0.2104,
+       "lon": -0.0297,
+       "day_of_year": 0.0604,
+       "year": 0.054
+      },
+      {
+       "temperature": 0.3345,
+       "salinity": -0.4096,
+       "depth": -0.1846,
+       "lat": 0.579,
+       "lon": -0.031,
+       "day_of_year": -0.3052,
+       "year": -0.0435
+      }
+     ],
+     "input_bias": [
+      -0.0901,
+      -0.1868
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 0.9683,
+      "b": 1.2263
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0207,
+       "salinity": -0.1774,
+       "depth": 0.1523,
+       "lat": 0.0222,
+       "lon": -0.2282,
+       "day_of_year": -0.1709,
+       "year": 0.6644
+      }
+     ],
+     "input_bias": [
+      -0.1356
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.1684
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0019,
+       "salinity": -0.0167,
+       "depth": 0.5821,
+       "lat": -0.1261,
+       "lon": -0.0713,
+       "day_of_year": -0.1064,
+       "year": -0.0298
+      }
+     ],
+     "input_bias": [
+      -0.2706
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 1.5693
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2437,
+       "salinity": 0.1453,
+       "depth": 0.0244,
+       "lat": -0.146,
+       "lon": 0.2093,
+       "day_of_year": 0.1619,
+       "year": -0.4078
+      }
+     ],
+     "input_bias": [
+      -0.1187
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 0.819
+     },
+     "input_weights": [
+      {
+       "temperature": -0.413,
+       "salinity": -0.1956,
+       "depth": 0.1041,
+       "lat": 0.3612,
+       "lon": -0.0674,
+       "day_of_year": 0.2761,
+       "year": -0.2301
+      }
+     ],
+     "input_bias": [
+      0.1986
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 0.6405
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0965,
+       "salinity": -0.3701,
+       "depth": -0.066,
+       "lat": -0.1328,
+       "lon": -0.1482,
+       "day_of_year": 0.3787,
+       "year": -0.0743
+      }
+     ],
+     "input_bias": [
+      0.5
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 0.8806
+     },
+     "input_weights": [
+      {
+       "temperature": 0.02,
+       "salinity": -0.3603,
+       "depth": -0.0937,
+       "lat": 0.0702,
+       "lon": -0.2222,
+       "day_of_year": 0.2696,
+       "year": -0.1679
+      }
+     ],
+     "input_bias": [
+      0.2953
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 0.9931,
+      "x0": 1.0301
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2569,
+       "salinity": 0.0015,
+       "depth": 0.2179,
+       "lat": -0.1065,
+       "lon": -0.1811,
+       "day_of_year": -0.1279,
+       "year": 0.1955
+      }
+     ],
+     "input_bias": [
+      -0.3674
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 1.2725,
+      "phi": 1.0501
+     },
+     "input_weights": [
+      {
+       "temperature": -0.4076,
+       "salinity": 0.0801,
+       "depth": 0.0073,
+       "lat": -0.0562,
+       "lon": 0.1465,
+       "day_of_year": -0.5928,
+       "year": -0.1207
+      }
+     ],
+     "input_bias": [
+      -0.0778
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.3601,
+       "salinity": -0.206,
+       "depth": 0.3896,
+       "lat": 0.3076,
+       "lon": -0.268,
+       "day_of_year": -0.0537,
+       "year": 0.135
+      }
+     ],
+     "input_bias": [
+      -0.4141
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 1.1162,
+      "s": 0.7521
+     },
+     "input_weights": [
+      {
+       "temperature": 0.082,
+       "salinity": -0.0312,
+       "depth": -0.1759,
+       "lat": 0.1085,
+       "lon": 0.373,
+       "day_of_year": 0.3128,
+       "year": -0.0285
+      }
+     ],
+     "input_bias": [
+      -0.3237
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 0.993
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1641,
+       "salinity": -0.0171,
+       "depth": 0.2017,
+       "lat": 0.1089,
+       "lon": 0.1412,
+       "day_of_year": -0.1387,
+       "year": -0.2995
+      }
+     ],
+     "input_bias": [
+      0.1952
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": -0.7673
+     },
+     "input_weights": [
+      {
+       "temperature": -0.3056,
+       "salinity": -0.2254,
+       "depth": -0.0512,
+       "lat": -0.0405,
+       "lon": -0.0678,
+       "day_of_year": 0.8553,
+       "year": 0.0252
+      }
+     ],
+     "input_bias": [
+      0.361
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.1024
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2288,
+       "salinity": 0.0779,
+       "depth": 0.1285,
+       "lat": 0.4976,
+       "lon": 0.2393,
+       "day_of_year": -0.0265,
+       "year": 0.2385
+      },
+      {
+       "temperature": -0.0862,
+       "salinity": -0.2589,
+       "depth": 0.2147,
+       "lat": -0.2345,
+       "lon": -0.1909,
+       "day_of_year": 0.2377,
+       "year": -0.1039
+      }
+     ],
+     "input_bias": [
+      0.0459,
+      -0.2204
+     ]
+    }
+   ],
+   "seconds": 102.1,
+   "file": "relation_seed3.json"
+  },
+  {
+   "kind": "relation",
+   "seed": 4,
+   "lambda_gate_l1": 0.001,
+   "epochs_run": 23,
+   "best_epoch": 16,
+   "nonfinite_loss": false,
+   "history_train_mse_val_mse_standardised": [
+    [
+     0.45479,
+     0.31304
+    ],
+    [
+     0.29643,
+     0.24624
+    ],
+    [
+     0.25022,
+     0.21386
+    ],
+    [
+     0.22764,
+     0.21197
+    ],
+    [
+     0.215,
+     0.20185
+    ],
+    [
+     0.20821,
+     0.19948
+    ],
+    [
+     0.20367,
+     0.19948
+    ],
+    [
+     0.20069,
+     0.1968
+    ],
+    [
+     0.19852,
+     0.19556
+    ],
+    [
+     0.19643,
+     0.19686
+    ],
+    [
+     0.19558,
+     0.19534
+    ],
+    [
+     0.19308,
+     0.19563
+    ],
+    [
+     0.1924,
+     0.19846
+    ],
+    [
+     0.19103,
+     0.20286
+    ],
+    [
+     0.1906,
+     0.1982
+    ],
+    [
+     0.18987,
+     0.19428
+    ],
+    [
+     0.18826,
+     0.19212
+    ],
+    [
+     0.18772,
+     0.20454
+    ],
+    [
+     0.18689,
+     0.19512
+    ],
+    [
+     0.18717,
+     0.1929
+    ],
+    [
+     0.1849,
+     0.20054
+    ],
+    [
+     0.18495,
+     0.20102
+    ],
+    [
+     0.18316,
+     0.20115
+    ]
+   ],
+   "n_params": 2689,
+   "validation": {
+    "r2": 0.8213,
+    "rmse_mg_l": 1.1535,
+    "n": 24812
+   },
+   "test": {
+    "r2": 0.7872,
+    "rmse_mg_l": 1.1074,
+    "n": 75532
+   },
+   "nodes": [
+    {
+     "node": "unit_00",
+     "gate": 0.09039,
+     "gate_abs": 0.09039,
+     "effective": 0.02857
+    },
+    {
+     "node": "unit_01",
+     "gate": 0.50846,
+     "gate_abs": 0.50846,
+     "effective": 0.19926
+    },
+    {
+     "node": "unit_02",
+     "gate": 0.47669,
+     "gate_abs": 0.47669,
+     "effective": 0.28784
+    },
+    {
+     "node": "unit_03",
+     "gate": 0.6115,
+     "gate_abs": 0.6115,
+     "effective": 0.27863
+    },
+    {
+     "node": "unit_04",
+     "gate": 0.47769,
+     "gate_abs": 0.47769,
+     "effective": 0.17919
+    },
+    {
+     "node": "unit_05",
+     "gate": 0.54143,
+     "gate_abs": 0.54143,
+     "effective": 0.29194
+    },
+    {
+     "node": "unit_06",
+     "gate": 0.60378,
+     "gate_abs": 0.60378,
+     "effective": 0.32863
+    },
+    {
+     "node": "unit_07",
+     "gate": 0.00117,
+     "gate_abs": 0.00117,
+     "effective": 0.00026
+    },
+    {
+     "node": "unit_08",
+     "gate": 0.36995,
+     "gate_abs": 0.36995,
+     "effective": 0.1971
+    },
+    {
+     "node": "unit_09",
+     "gate": 0.41671,
+     "gate_abs": 0.41671,
+     "effective": 0.24552
+    },
+    {
+     "node": "unit_10",
+     "gate": 0.28592,
+     "gate_abs": 0.28592,
+     "effective": 0.14663
+    },
+    {
+     "node": "unit_11",
+     "gate": 0.46237,
+     "gate_abs": 0.46237,
+     "effective": 0.24534
+    },
+    {
+     "node": "unit_12",
+     "gate": 0.48674,
+     "gate_abs": 0.48674,
+     "effective": 0.30539
+    },
+    {
+     "node": "unit_13",
+     "gate": 0.44107,
+     "gate_abs": 0.44107,
+     "effective": 0.22312
+    },
+    {
+     "node": "unit_14",
+     "gate": 0.06786,
+     "gate_abs": 0.06786,
+     "effective": 0.01942
+    },
+    {
+     "node": "unit_15",
+     "gate": 0.63049,
+     "gate_abs": 0.63049,
+     "effective": 0.37826
+    },
+    {
+     "node": "unit_16",
+     "gate": 0.34195,
+     "gate_abs": 0.34195,
+     "effective": 0.13389
+    },
+    {
+     "node": "unit_17",
+     "gate": 0.62149,
+     "gate_abs": 0.62149,
+     "effective": 0.33977
+    },
+    {
+     "node": "unit_18",
+     "gate": 0.55305,
+     "gate_abs": 0.55305,
+     "effective": 0.30585
+    },
+    {
+     "node": "unit_19",
+     "gate": 0.97116,
+     "gate_abs": 0.97116,
+     "effective": 0.82288
+    },
+    {
+     "node": "unit_20",
+     "gate": 0.24047,
+     "gate_abs": 0.24047,
+     "effective": 0.10847
+    },
+    {
+     "node": "unit_21",
+     "gate": 0.61822,
+     "gate_abs": 0.61822,
+     "effective": 0.45949
+    },
+    {
+     "node": "unit_22",
+     "gate": 1.08211,
+     "gate_abs": 1.08211,
+     "effective": 0.97258
+    },
+    {
+     "node": "unit_23",
+     "gate": 0.50983,
+     "gate_abs": 0.50983,
+     "effective": 0.30336
+    },
+    {
+     "node": "unit_24",
+     "gate": 0.9333,
+     "gate_abs": 0.9333,
+     "effective": 0.75424
+    },
+    {
+     "node": "unit_25",
+     "gate": 0.69875,
+     "gate_abs": 0.69875,
+     "effective": 0.42797
+    },
+    {
+     "node": "unit_26",
+     "gate": 0.50541,
+     "gate_abs": 0.50541,
+     "effective": 0.20933
+    },
+    {
+     "node": "unit_27",
+     "gate": 0.70183,
+     "gate_abs": 0.70183,
+     "effective": 0.50655
+    },
+    {
+     "node": "unit_28",
+     "gate": 0.74249,
+     "gate_abs": 0.74249,
+     "effective": 0.4394
+    },
+    {
+     "node": "unit_29",
+     "gate": 0.61376,
+     "gate_abs": 0.61376,
+     "effective": 0.41625
+    },
+    {
+     "node": "unit_30",
+     "gate": 0.19147,
+     "gate_abs": 0.19147,
+     "effective": 0.07119
+    },
+    {
+     "node": "unit_31",
+     "gate": -0.00142,
+     "gate_abs": 0.00142,
+     "effective": 0.00037
+    },
+    {
+     "node": "unit_32",
+     "gate": 0.52565,
+     "gate_abs": 0.52565,
+     "effective": 0.2979
+    },
+    {
+     "node": "unit_33",
+     "gate": 0.46274,
+     "gate_abs": 0.46274,
+     "effective": 0.24078
+    },
+    {
+     "node": "unit_34",
+     "gate": 0.44447,
+     "gate_abs": 0.44447,
+     "effective": 0.23533
+    },
+    {
+     "node": "unit_35",
+     "gate": 0.50115,
+     "gate_abs": 0.50115,
+     "effective": 0.29631
+    },
+    {
+     "node": "unit_36",
+     "gate": 0.58349,
+     "gate_abs": 0.58349,
+     "effective": 0.27397
+    },
+    {
+     "node": "unit_37",
+     "gate": 0.31135,
+     "gate_abs": 0.31135,
+     "effective": 0.16888
+    },
+    {
+     "node": "unit_38",
+     "gate": 0.76188,
+     "gate_abs": 0.76188,
+     "effective": 0.51835
+    },
+    {
+     "node": "unit_39",
+     "gate": 0.39396,
+     "gate_abs": 0.39396,
+     "effective": 0.22059
+    },
+    {
+     "node": "unit_40",
+     "gate": 0.58362,
+     "gate_abs": 0.58362,
+     "effective": 0.31408
+    },
+    {
+     "node": "form:product",
+     "gate": 0.31639,
+     "gate_abs": 0.31639,
+     "effective": 0.13813
+    },
+    {
+     "node": "form:ratio",
+     "gate": 0.57864,
+     "gate_abs": 0.57864,
+     "effective": 0.29214
+    },
+    {
+     "node": "form:square",
+     "gate": 0.40946,
+     "gate_abs": 0.40946,
+     "effective": 0.24427
+    },
+    {
+     "node": "form:radial",
+     "gate": 0.33411,
+     "gate_abs": 0.33411,
+     "effective": 0.18102
+    },
+    {
+     "node": "form:power",
+     "gate": 0.51557,
+     "gate_abs": 0.51557,
+     "effective": 0.28827
+    },
+    {
+     "node": "form:decay",
+     "gate": 0.3591,
+     "gate_abs": 0.3591,
+     "effective": 0.16783
+    },
+    {
+     "node": "form:growth",
+     "gate": 0.34387,
+     "gate_abs": 0.34387,
+     "effective": 0.14039
+    },
+    {
+     "node": "form:arrhenius",
+     "gate": 0.09218,
+     "gate_abs": 0.09218,
+     "effective": 0.03334
+    },
+    {
+     "node": "form:saturation",
+     "gate": -0.00021,
+     "gate_abs": 0.00021,
+     "effective": 5e-05
+    },
+    {
+     "node": "form:tanh",
+     "gate": 0.41633,
+     "gate_abs": 0.41633,
+     "effective": 0.24339
+    },
+    {
+     "node": "form:logistic",
+     "gate": 0.24493,
+     "gate_abs": 0.24493,
+     "effective": 0.08426
+    },
+    {
+     "node": "form:periodic",
+     "gate": 0.29992,
+     "gate_abs": 0.29992,
+     "effective": 0.1406
+    },
+    {
+     "node": "form:log",
+     "gate": -0.0006,
+     "gate_abs": 0.0006,
+     "effective": 0.00012
+    },
+    {
+     "node": "form:gaussian",
+     "gate": 0.63808,
+     "gate_abs": 0.63808,
+     "effective": 0.35201
+    },
+    {
+     "node": "form:hinge",
+     "gate": 0.00029,
+     "gate_abs": 0.00029,
+     "effective": 6e-05
+    },
+    {
+     "node": "form:inverse_square",
+     "gate": 1.05343,
+     "gate_abs": 1.05343,
+     "effective": 0.83586
+    },
+    {
+     "node": "form:softmin",
+     "gate": 0.00068,
+     "gate_abs": 0.00068,
+     "effective": 9e-05
+    },
+    {
+     "node": "law:pressure",
+     "gate": 0.11672,
+     "gate_abs": 0.11672,
+     "effective": 0.03128
+    },
+    {
+     "node": "law:absolute_salinity",
+     "gate": -0.0003,
+     "gate_abs": 0.0003,
+     "effective": 8e-05
+    },
+    {
+     "node": "law:conservative_temperature",
+     "gate": 0.47659,
+     "gate_abs": 0.47659,
+     "effective": 0.18931
+    },
+    {
+     "node": "law:density",
+     "gate": 0.00027,
+     "gate_abs": 0.00027,
+     "effective": 7e-05
+    },
+    {
+     "node": "law:sigma0",
+     "gate": 0.00166,
+     "gate_abs": 0.00166,
+     "effective": 0.00043
+    },
+    {
+     "node": "law:oxygen_solubility",
+     "gate": 0.47662,
+     "gate_abs": 0.47662,
+     "effective": 0.20796
+    }
+   ],
+   "units_active": 39,
+   "units_total": 41,
+   "sum_abs_gate_units": 20.3672,
+   "sum_abs_gate_relations": 6.6759,
+   "test_ablation_without_retraining": {
+    "relations_and_laws_off": {
+     "r2": 0.4042,
+     "rmse_mg_l": 1.8528,
+     "n": 75532
+    },
+    "units_off": {
+     "r2": 0.3361,
+     "rmse_mg_l": 1.9558,
+     "n": 75532
+    }
+   },
+   "forms": [
+    {
+     "form": "product",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2957,
+       "salinity": -0.0976,
+       "depth": 0.0438,
+       "lat": 0.1716,
+       "lon": 0.3095,
+       "day_of_year": 0.2777,
+       "year": 0.0478
+      },
+      {
+       "temperature": 0.4114,
+       "salinity": -0.2498,
+       "depth": -0.0518,
+       "lat": 0.1418,
+       "lon": -0.0182,
+       "day_of_year": 0.0068,
+       "year": 0.0953
+      }
+     ],
+     "input_bias": [
+      -0.1329,
+      -0.2844
+     ]
+    },
+    {
+     "form": "ratio",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0597,
+       "salinity": 0.2747,
+       "depth": -0.2233,
+       "lat": 0.3266,
+       "lon": 0.3683,
+       "day_of_year": -0.1998,
+       "year": 0.0208
+      },
+      {
+       "temperature": -0.4585,
+       "salinity": 0.1748,
+       "depth": -0.1746,
+       "lat": -0.7387,
+       "lon": -0.4504,
+       "day_of_year": -0.0168,
+       "year": 0.0833
+      }
+     ],
+     "input_bias": [
+      0.3397,
+      -0.5324
+     ]
+    },
+    {
+     "form": "square",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2471,
+       "salinity": -0.2752,
+       "depth": -0.1761,
+       "lat": -0.5712,
+       "lon": 0.0893,
+       "day_of_year": 0.3991,
+       "year": 0.1742
+      }
+     ],
+     "input_bias": [
+      0.2111
+     ]
+    },
+    {
+     "form": "radial",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.0829,
+       "salinity": -0.6457,
+       "depth": 0.3249,
+       "lat": 0.1598,
+       "lon": 0.0517,
+       "day_of_year": 0.0587,
+       "year": 0.1855
+      },
+      {
+       "temperature": 0.0339,
+       "salinity": 0.1257,
+       "depth": -0.25,
+       "lat": -0.2997,
+       "lon": 0.1849,
+       "day_of_year": -0.5012,
+       "year": 0.1295
+      }
+     ],
+     "input_bias": [
+      0.0481,
+      -0.0665
+     ]
+    },
+    {
+     "form": "power",
+     "params": {
+      "a": 1.1164,
+      "b": 1.3298
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1628,
+       "salinity": -0.1374,
+       "depth": -0.0493,
+       "lat": 0.0614,
+       "lon": -0.0649,
+       "day_of_year": 0.6422,
+       "year": 0.0983
+      }
+     ],
+     "input_bias": [
+      -0.2897
+     ]
+    },
+    {
+     "form": "decay",
+     "params": {
+      "k": 1.009
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0261,
+       "salinity": 0.2195,
+       "depth": 0.1062,
+       "lat": -0.2648,
+       "lon": -0.1323,
+       "day_of_year": 0.437,
+       "year": -0.142
+      }
+     ],
+     "input_bias": [
+      0.0855
+     ]
+    },
+    {
+     "form": "growth",
+     "params": {
+      "k": 1.0855
+     },
+     "input_weights": [
+      {
+       "temperature": -0.4262,
+       "salinity": -0.5827,
+       "depth": 0.0844,
+       "lat": -0.4152,
+       "lon": 0.2449,
+       "day_of_year": -0.1251,
+       "year": -0.0571
+      }
+     ],
+     "input_bias": [
+      0.015
+     ]
+    },
+    {
+     "form": "arrhenius",
+     "params": {
+      "a": 1.6124
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2331,
+       "salinity": 0.3552,
+       "depth": -0.1953,
+       "lat": -0.1784,
+       "lon": 0.0965,
+       "day_of_year": -0.1424,
+       "year": 0.139
+      }
+     ],
+     "input_bias": [
+      -0.8874
+     ]
+    },
+    {
+     "form": "saturation",
+     "params": {
+      "K": 1.2102
+     },
+     "input_weights": [
+      {
+       "temperature": -0.2002,
+       "salinity": -0.1321,
+       "depth": -0.3077,
+       "lat": -0.1301,
+       "lon": 0.3391,
+       "day_of_year": 0.0637,
+       "year": 0.2834
+      }
+     ],
+     "input_bias": [
+      0.1398
+     ]
+    },
+    {
+     "form": "tanh",
+     "params": {
+      "a": 1.9452
+     },
+     "input_weights": [
+      {
+       "temperature": 0.2959,
+       "salinity": 0.5951,
+       "depth": -0.1327,
+       "lat": -0.4115,
+       "lon": -0.0198,
+       "day_of_year": -0.2931,
+       "year": 0.0606
+      }
+     ],
+     "input_bias": [
+      0.0415
+     ]
+    },
+    {
+     "form": "logistic",
+     "params": {
+      "k": 0.9994,
+      "x0": 1.0866
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0486,
+       "salinity": -0.2553,
+       "depth": -0.0202,
+       "lat": -0.305,
+       "lon": -0.3774,
+       "day_of_year": -0.1489,
+       "year": 0.1223
+      }
+     ],
+     "input_bias": [
+      0.3042
+     ]
+    },
+    {
+     "form": "periodic",
+     "params": {
+      "w": 1.432,
+      "phi": 1.0382
+     },
+     "input_weights": [
+      {
+       "temperature": 0.164,
+       "salinity": 0.4778,
+       "depth": -0.0486,
+       "lat": -0.3185,
+       "lon": 0.2447,
+       "day_of_year": 0.5023,
+       "year": 0.0595
+      }
+     ],
+     "input_bias": [
+      0.3459
+     ]
+    },
+    {
+     "form": "log",
+     "params": {},
+     "input_weights": [
+      {
+       "temperature": -0.2801,
+       "salinity": 0.1332,
+       "depth": -0.0458,
+       "lat": 0.1033,
+       "lon": -0.19,
+       "day_of_year": 0.4479,
+       "year": 0.2418
+      }
+     ],
+     "input_bias": [
+      0.0332
+     ]
+    },
+    {
+     "form": "gaussian",
+     "params": {
+      "mu": 0.8789,
+      "s": 0.96
+     },
+     "input_weights": [
+      {
+       "temperature": -0.1792,
+       "salinity": 0.1134,
+       "depth": 0.4972,
+       "lat": 0.3494,
+       "lon": 0.2541,
+       "day_of_year": 0.2436,
+       "year": 0.0634
+      }
+     ],
+     "input_bias": [
+      0.1186
+     ]
+    },
+    {
+     "form": "hinge",
+     "params": {
+      "x0": 1.092
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0688,
+       "salinity": 0.2551,
+       "depth": -0.0594,
+       "lat": -0.0459,
+       "lon": -0.1772,
+       "day_of_year": 0.2171,
+       "year": 0.5004
+      }
+     ],
+     "input_bias": [
+      -0.5058
+     ]
+    },
+    {
+     "form": "inverse_square",
+     "params": {
+      "c": -0.0934
+     },
+     "input_weights": [
+      {
+       "temperature": 0.0545,
+       "salinity": -0.3406,
+       "depth": -0.0819,
+       "lat": -0.1204,
+       "lon": 0.7715,
+       "day_of_year": -0.0908,
+       "year": -0.021
+      }
+     ],
+     "input_bias": [
+      0.8364
+     ]
+    },
+    {
+     "form": "softmin",
+     "params": {
+      "k": 1.0518
+     },
+     "input_weights": [
+      {
+       "temperature": -0.0196,
+       "salinity": -0.0002,
+       "depth": -0.2106,
+       "lat": -0.3447,
+       "lon": 0.1222,
+       "day_of_year": -0.3485,
+       "year": -0.1946
+      },
+      {
+       "temperature": -0.0767,
+       "salinity": -0.2479,
+       "depth": 0.2796,
+       "lat": -0.3064,
+       "lon": 0.0275,
+       "day_of_year": -0.0646,
+       "year": 0.1568
+      }
+     ],
+     "input_bias": [
+      0.2018,
+      -0.3762
+     ]
+    }
+   ],
+   "seconds": 135.2,
+   "file": "relation_seed4.json"
+  }
+ ],
+ "sensitivity_other_lambda": [
+  {
+   "file": "plain_seed0_lam0.json",
+   "kind": "plain",
+   "seed": 0,
+   "lambda_gate_l1": 0.0,
+   "test": {
+    "r2": 0.7703,
+    "rmse_mg_l": 1.1503,
+    "n": 75532
+   },
+   "units_active": 64
+  },
+  {
+   "file": "relation_seed0_lam0.json",
+   "kind": "relation",
+   "seed": 0,
+   "lambda_gate_l1": 0.0,
+   "test": {
+    "r2": 0.7884,
+    "rmse_mg_l": 1.1041,
+    "n": 75532
+   },
+   "units_active": 41
+  }
+ ]
+}
