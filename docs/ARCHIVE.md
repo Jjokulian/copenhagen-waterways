@@ -105,7 +105,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** History the reader does not need; the replacement states the finding - the nulls disagree - without it.
 
-**Replaced by:** [`C-AR-THREE-RANKINGS`](CLAIMS.md#C-AR-THREE-RANKINGS) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED) — each opens what it rests on.
 
 <a id="C-AR-OLD-CORRECTION-NOTE"></a>
 ### An earlier version's absence claim was false when checked against a wider corpus.
@@ -127,7 +127,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** Inexact: areas.py keeps only the largest distance per layer and area, not the distance of every assignment.
 
-**Replaced by:** [`C-AR-ASSIGN`](CLAIMS.md#C-AR-ASSIGN) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-ASSIGN`](CLAIMS.md#C-W4AR-ASSIGN) — each opens what it rests on.
 
 <a id="C-AR-OLD-FLUO"></a>
 ### Against matched blobs fluorescence goes negative: random blobs predict it better than the official partition.
@@ -138,7 +138,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs, so 'predict it better' is not shown.
 
-**Replaced by:** [`C-AR-REVERSAL`](CLAIMS.md#C-AR-REVERSAL) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-LS-FLUO`](CLAIMS.md#C-W4AR-LS-FLUO) — each opens what it rests on.
 
 <a id="C-AR-OLD-ICC"></a>
 ### The partition score is the intraclass correlation, on which zero means membership tells nothing.
@@ -149,7 +149,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** The statistic computed is the mean-square ratio MSB/(MSB+MSW), on which labels carrying no information score near one half; read as an intraclass correlation, every value in the table overstates what membership tells.
 
-**Replaced by:** [`C-AR-PART-STAT`](CLAIMS.md#C-AR-PART-STAT) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED) — each opens what it rests on.
 
 <a id="C-AR-OLD-LONGEST"></a>
 ### The list of what cannot be modelled is the longest column of each record, and that is the finding.
@@ -171,7 +171,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** The column is the name-matched flag, not the models.
 
-**Replaced by:** [`C-AR-TABLE-KEY`](CLAIMS.md#C-AR-TABLE-KEY) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-ONE-ROW`](CLAIMS.md#C-W4AR-ONE-ROW) — each opens what it rests on.
 
 <a id="C-AR-OLD-MODELLED"></a>
 ### A stated number of water bodies have a fitted load-to-indicator model.
@@ -226,7 +226,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** 'The only place' and 'the one pair' overstate, and the count is of areas with two or more bathing stations, not of all areas.
 
-**Replaced by:** [`C-AR-CUMHOC`](CLAIMS.md#C-AR-CUMHOC), [`C-AR-CUMHOC-DESIGN`](CLAIMS.md#C-AR-CUMHOC-DESIGN) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-CUMHOC`](CLAIMS.md#C-W4AR-CUMHOC), [`C-AR-CUMHOC-DESIGN`](CLAIMS.md#C-AR-CUMHOC-DESIGN) — each opens what it rests on.
 
 <a id="C-AR-OLD-PULS"></a>
 ### PULS appears to require a registered business or authority, so a private citizen cannot obtain it at all.
@@ -248,7 +248,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** History the reader does not need.
 
-**Replaced by:** [`C-AR-THREE-RANKINGS`](CLAIMS.md#C-AR-THREE-RANKINGS) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED) — each opens what it rests on.
 
 <a id="C-AR-OLD-REGISTER-COVERAGE"></a>
 ### Every water body contains a station from the ODA register, with stated counts lacking a long-visited one.
@@ -259,7 +259,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** its justification was not recorded properly: the counts were made over the whole register, including stations with no data, and the computation was never stored and cannot be reproduced. The replacement counts over the station series, which is stored.
 
-**Replaced by:** [`C-AR-SERIES-COVERAGE`](CLAIMS.md#C-AR-SERIES-COVERAGE) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-SERIES-COVERAGE`](CLAIMS.md#C-W4AR-SERIES-COVERAGE) — each opens what it rests on.
 
 <a id="C-AR-OLD-REQUIREMENT"></a>
 ### The water bodies with neither a fitted model nor a repeated observation still receive a requirement.
@@ -292,7 +292,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** Spatial smoothness was never measured; stated as fact, it is a reading.
 
-**Replaced by:** [`C-AR-READING`](CLAIMS.md#C-AR-READING) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES) — each opens what it rests on.
 
 <a id="C-AR-OLD-WIDTH"></a>
 ### The inner fjord's disagreement is nearly the whole width of the iltsvind threshold, and a large share of the seasonal signal.
@@ -315,6 +315,171 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** Superseded by the live computation in station_places.py, whose figures differ; what changed between the two is not recorded with the table.
 
 **Replaced by:** [`C-AR-ROSK-HALVES`](CLAIMS.md#C-AR-ROSK-HALVES) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-AREA-TABLE"></a>
+### A table with one row per water body: area, model flag, bathing stations and their years, their correlation, outfalls, treatment-plant load, and reasons it cannot be modelled.
+
+`C-W4AR-OLD-AREA-TABLE` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-AREA-TABLE">| km² | area | model | bath (years) | r | RBU | PE | gaps | |---:|---|:-:|---|---:|---:|---:|---:| | [4,248.6](SOURCES.md#F-1822bd9b18) | `Skagerrak, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [3,831.4](SOURCES.md#F-7941e979ab) | `Bornholm, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [3,703.1](SOURCES.md#F-26957ca8b8) | `Vesterhavet, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [2,495.8](SOURCES.md#F-4f1c6ae243) | `Nordlige Kattegat, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [1,880.8](SOURCES.md#F-4327141053) | `Østersøen, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [1,835.6](SOURCES.md#F-1492931a16) | Århus Bugt syd, Samsø og Nordlige Bælthav | · | [30](SOURCES.md#F-9ffab0a6c3) (1991–2018) | +[0.12](SOURCES.md#F-7fed507583) | [130](SOURCES.md#F-489988636b) | [72,413](SOURCES.md#F-20a809f20d) | [2](SOURCES.md#F-f3bba6a009) | | [1,766.8](SOURCES.md#F-6a911b79e6) | `Kattegat, SV 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [1,526.1](SOURCES.md#F-9ef046717d) | `Anholt, 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [1,315.8](SOURCES.md#F-061fe0b7fd) | `Kattegat, SØ 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [1,217.9](SOURCES.md#F-7775d61b1b) | Smålandsfarvandet, åbne del | · | [27](SOURCES.md#F-c20d405511) (1991–2018) | +[0.22](SOURCES.md#F-54f7a9fa96) | [64](SOURCES.md#F-ab7a35b7b4) | [43,945](SOURCES.md#F-888d1546e8) | [2](SOURCES.md#F-f3bba6a009) | | [1,148.6](SOURCES.md#F-ec1a790d4f) | Lillebælt, syd | ✓ | [26](SOURCES.md#F-3fc1c6d3d6) (1991–2018) | +[0.19](SOURCES.md#F-62fa69dd70) | [118](SOURCES.md#F-eb0a74f8c8) | [115,906](SOURCES.md#F-447ef9be1e) | [1](SOURCES.md#F-11513d1680) | | [1,052.5](SOURCES.md#F-1b40bd46be) | Kattegat, Aalborg Bugt | · | [14](SOURCES.md#F-70e62fe30c) (1991–2018) | +[0.36](SOURCES.md#F-e6fec48a4d) | [117](SOURCES.md#F-5713a3b364) | [88,955](SOURCES.md#F-4641049538) | [2](SOURCES.md#F-f3bba6a009) | | [990.7](SOURCES.md#F-4873f2cb30) | Skagerrak | · | [33](SOURCES.md#F-56ce949ad1) (1991–2018) | +[0.16](SOURCES.md#F-80f0552bee) | [419](SOURCES.md#F-78e4b74b6f) | [481,197](SOURCES.md#F-6e9ad496a7) | [2](SOURCES.md#F-f3bba6a009) | | [821.0](SOURCES.md#F-202bb174da) | Sejerø Bugt | · | [27](SOURCES.md#F-c20d405511) (1991–2018) | +[0.24](SOURCES.md#F-00a9cadc5b) | [104](SOURCES.md#F-badf0cefff) | [71,550](SOURCES.md#F-0b82dfabcf) | [2](SOURCES.md#F-f3bba6a009) | | [721.2](SOURCES.md#F-3a198d6e75) | Kattegat, Nordsjælland | · | [34](SOURCES.md#F-c3bdf108ec) (1991–2018) | +[0.27](SOURCES.md#F-4c1f48ee3e) | [295](SOURCES.md#F-7910c9c2e7) | [205,544](SOURCES.md#F-4d6e41e00a) | [2](SOURCES.md#F-f3bba6a009) | | [686.8](SOURCES.md#F-aea2847b09) | `Storebælt, nord 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [655.2](SOURCES.md#F-29fc9ba490) | Vesterhavet, syd | · | [12](SOURCES.md#F-d40cc0eb2e) (1991–2018) | — | [3](SOURCES.md#F-ad26c402bc) | — | [3](SOURCES.md#F-ad26c402bc) | | [609.4](SOURCES.md#F-a5dbb59f0c) | Kattegat, Læsø | · | [6](SOURCES.md#F-f3d1dbf36d) (1991–2018) | +[0.23](SOURCES.md#F-fd827fe0d5) | [6](SOURCES.md#F-f3d1dbf36d) | [3,860](SOURCES.md#F-0bcc506d81) | [2](SOURCES.md#F-f3bba6a009) | | [572.6](SOURCES.md#F-ecc65ddeb6) | `Storebælt, syd 12 sm` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [562.4](SOURCES.md#F-f01f225287) | Køge Bugt | · | [29](SOURCES.md#F-028b4ed780) (1991–2018) | +[0.21](SOURCES.md#F-4e6a1c5566) | [865](SOURCES.md#F-5c0d927ee8) | [681,555](SOURCES.md#F-393770e5cb) | [2](SOURCES.md#F-f3bba6a009) | | [554.6](SOURCES.md#F-1e762df705) | `Kattegat, Nordsjælland >20 m` | · | — | — | — | — | [4](SOURCES.md#F-7d3c3064ac) | | [551.0](SOURCES.md#F-0b89fa632f) | Fakse Bugt | · | [13](SOURCES.md#F-041337511d) (1991–2018) | +[0.18](SOURCES.md#F-798a163816) | [78](SOURCES.md#F-4008448e46) | [152,578](SOURCES.md#F-ed540ba456) | [2](SOURCES.md#F-f3bba6a009) | | [497.0](SOURCES.md#F-36e1d57582) | `Femerbælt, 12 sm` | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [482.2](SOURCES.md#F-62bcead372) | `Lillebælt, syd 12 sm` | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [459.5](SOURCES.md#F-87a7b8bf07) | Hevring Bugt | · | [17](SOURCES.md#F-2303a95e80) (1991–2018) | +[0.40](SOURCES.md#F-42de6d52cb) | [76](SOURCES.md#F-7784c3f0ee) | [165](SOURCES.md#F-c7a11a0d28) | [2](SOURCES.md#F-f3bba6a009) | | [458.4](SOURCES.md#F-a43fa9cb28) | Nordlige Kattegat, Ålbæk Bugt | · | [16](SOURCES.md#F-9fbf6e4cbf) (1991–2018) | +[0.12](SOURCES.md#F-7fed507583) | [310](SOURCES.md#F-4bf696c1e1) | [354,821](SOURCES.md#F-6c636628f2) | [2](SOURCES.md#F-f3bba6a009) | | [437.4](SOURCES.md#F-97b57483bf) | Det sydfynske Øhav | ✓ | [21](SOURCES.md#F-b03f7581cf) (1991–2018) | +[0.20](SOURCES.md#F-952ca66ee2) | [334](SOURCES.md#F-3c47af5ccd) | [72,370](SOURCES.md#F-5709466251) | [1](SOURCES.md#F-11513d1680) | | [407.5](SOURCES.md#F-110f7efcd5) | Løgstør Bredning | ✓ | — | — | [93](SOURCES.md#F-755e432375) | [161,500](SOURCES.md#F-a0d2776898) | [2](SOURCES.md#F-f3bba6a009) | | [355.7](SOURCES.md#F-45c2ede5af) | Nordlige Øresund | · | [32](SOURCES.md#F-b08d9333fc) (1991–2018) | +[0.17](SOURCES.md#F-f8e3e73533) | [1,418](SOURCES.md#F-0a209973a3) | [1,605,986](SOURCES.md#F-93f829ed3f) | [2](SOURCES.md#F-f3bba6a009) | | [343.4](SOURCES.md#F-dfdb599450) | Hjelm Bugt | ✓ | [9](SOURCES.md#F-4807eb0843) (1991–2018) | +[0.17](SOURCES.md#F-f8e3e73533) | [31](SOURCES.md#F-06e74a6cb3) | [27,545](SOURCES.md#F-66e3d6e240) | [1](SOURCES.md#F-11513d1680) | | [296.0](SOURCES.md#F-712b9819e4) | Kås Bredning og Venø Bugt | ✓ | — | — | [469](SOURCES.md#F-75beb8410e) | [282,480](SOURCES.md#F-d82a617d28) | [2](SOURCES.md#F-f3bba6a009) | | [290.4](SOURCES.md#F-256d75e8a3) | Jammerland Bugt og Musholm Bugt | · | [9](SOURCES.md#F-4807eb0843) (1991–2018) | +[0.28](SOURCES.md#F-2680c5aeae) | [127](SOURCES.md#F-90ee0eee68) | [189,830](SOURCES.md#F-fbd2bc0b4a) | [2](SOURCES.md#F-f3bba6a009) | | [288.1](SOURCES.md#F-cf0e72c504) | Lillebælt, Bredningen | · | [32](SOURCES.md#F-b08d9333fc) (1991–2018) | +[0.10](SOURCES.md#F-7641bafc5e) | [57](SOURCES.md#F-f8e59f0888) | [40,532](SOURCES.md#F-710807ec36) | [2](SOURCES.md#F-f3bba6a009) | | [279.4](SOURCES.md#F-8c1b5ec0b8) | Ringkøbing Fjord | ✓ | [9](SOURCES.md#F-4807eb0843) (1991–2018) | +[0.08](SOURCES.md#F-57268f2e22) | [236](SOURCES.md#F-bd082e5b30) | [161,990](SOURCES.md#F-ebae590cb3) | [1](SOURCES.md#F-11513d1680) | | [275.3](SOURCES.md#F-33476c4211) | Nordlige Lillebælt | ✓ | [20](SOURCES.md#F-4bd2477588) (1991–2018) | +[0.11](SOURCES.md#F-5130b4bea0) | [191](SOURCES.md#F-a1135d8276) | [15,150](SOURCES.md#F-0442a132c5) | [1](SOURCES.md#F-11513d1680) | | [247.1](SOURCES.md#F-343b73edfa) | Smålandsfarvandet, syd | · | [11](SOURCES.md#F-46e3ed0ff3) (1991–2018) | +[0.10](SOURCES.md#F-7641bafc5e) | [162](SOURCES.md#F-0d23fcbd4a) | [53,283](SOURCES.md#F-cbe080e000) | [2](SOURCES.md#F-f3bba6a009) | | [242.4](SOURCES.md#F-5157c60a12) | Rødsand og Bredningen | · | [6](SOURCES.md#F-f3d1dbf36d) (1991–2018) | +[0.28](SOURCES.md#F-2680c5aeae) | [115](SOURCES.md#F-a06a395a17) | [12,107](SOURCES.md#F-b21aa8968d) | [2](SOURCES.md#F-f3bba6a009) | | [238.2](SOURCES.md#F-88de237c1a) | Nissum Bredning | ✓ | — | — | [84](SOURCES.md#F-5ec392b512) | [114,015](SOURCES.md#F-54d4c736a0) | [2](SOURCES.md#F-f3bba6a009) | | [231.6](SOURCES.md#F-ab3a4b544c) | Århus Bugt og Begtrup Vig | ✓ | [20](SOURCES.md#F-4bd2477588) (1991–2018) | +[0.04](SOURCES.md#F-e2f582be5e) | [772](SOURCES.md#F-a4dc1545a0) | [578,019](SOURCES.md#F-a2d9c9ecca) | [1](SOURCES.md#F-11513d1680) | | [228.6](SOURCES.md#F-1aae5b1397) | Langelandssund | · | [20](SOURCES.md#F-4bd2477588) (1991–2018) | +[0.39](SOURCES.md#F-efd5657388) | [54](SOURCES.md#F-197ae07b86) | [119,500](SOURCES.md#F-578d6463f3) | [2](SOURCES.md#F-f3bba6a009) | | [227.9](SOURCES.md#F-f6ee6faa73) | Isefjord, ydre | ✓ | [26](SOURCES.md#F-3fc1c6d3d6) (1991–2018) | +[0.23](SOURCES.md#F-fd827fe0d5) | [71](SOURCES.md#F-3443bf4ffa) | [22,404](SOURCES.md#F-e7d4a5dddb) | [1](SOURCES.md#F-11513d1680) | | [222.1](SOURCES.md#F-b92b2789e2) | Bjørnholms Bugt, Riisgårde Bredning, Skive Fjord og Lovns Bredning | ✓ | [16](SOURCES.md#F-9fbf6e4cbf) (1991–2018) | +[0.12](SOURCES.md#F-7fed507583) | [299](SOURCES.md#F-9378869ff2) | [90,355](SOURCES.md#F-73f52b3c1f) | [1](SOURCES.md#F-11513d1680) | | [214.6](SOURCES.md#F-b7dcb2471e) | Vesterhavet, nord | · | [21](SOURCES.md#F-b03f7581cf) (1991–2018) | — | [48](SOURCES.md#F-c96d965f8f) | [430](SOURCES.md#F-43686761d1) | [3](SOURCES.md#F-ad26c402bc) | | [211.6](SOURCES.md#F-a2c114fac1) | Anholt | · | [1](SOURCES.md#F-11513d1680) (1991–2018) | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [211.4](SOURCES.md#F-bd4c594ee4) | Østersøen, Bornholm | · | [23](SOURCES.md#F-162c8705ba) (1991–2018) | +[0.16](SOURCES.md#F-80f0552bee) | [185](SOURCES.md#F-8b947a0c2f) | [102,697](SOURCES.md#F-8f1936f08e) | [2](SOURCES.md#F-f3bba6a009) | | [205.3](SOURCES.md#F-27402f17b4) | Lister Dyb | · | [1](SOURCES.md#F-11513d1680) (1991–2018) | — | [192](SOURCES.md#F-3510815ca6) | [56,105](SOURCES.md#F-c8ec26f195) | [3](SOURCES.md#F-ad26c402bc) | | [199.1](SOURCES.md#F-517d63d602) | Femerbælt | · | [9](SOURCES.md#F-4807eb0843) (1991–2018) | +[0.29](SOURCES.md#F-9d96c497c8) | [82](SOURCES.md#F-33471e4645) | [25,561](SOURCES.md#F-985e3cf7b5) | [2](SOURCES.md#F-f3bba6a009) | | [175.2](SOURCES.md#F-36854b8c48) | Djursland Øst | · | [10](SOURCES.md#F-97b3e98a8a) (1991–2018) | +[0.19](SOURCES.md#F-62fa69dd70) | [182](SOURCES.md#F-c30371f1c3) | [94,092](SOURCES.md#F-f3c5101439) | [2](SOURCES.md#F-f3bba6a009) | | [169.7](SOURCES.md#F-ce7390d99d) | `Øresund, 12 sm` | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [165.9](SOURCES.md#F-93035d0ba4) | Nibe Bredning og Langerak | ✓ | — | — | [896](SOURCES.md#F-8b89749685) | [336,244](SOURCES.md#F-e9b5c353bf) | [2](SOURCES.md#F-f3bba6a009) | | [164.0](SOURCES.md#F-bbfdd29e8a) | Storebælt, SV | · | [14](SOURCES.md#F-70e62fe30c) (1991–2018) | — | [35](SOURCES.md#F-2d424a8e69) | [84,575](SOURCES.md#F-784f91240e) | [3](SOURCES.md#F-ad26c402bc) | | [158.5](SOURCES.md#F-fda8f1db4c) | Knudedyb | · | — | — | [138](SOURCES.md#F-06a34f37d0) | [30,850](SOURCES.md#F-16753ba8ce) | [3](SOURCES.md#F-ad26c402bc) | | [151.0](SOURCES.md#F-484cc419a4) | Thisted Bredning | ✓ | — | — | [96](SOURCES.md#F-c9ff0949aa) | [97,876](SOURCES.md#F-90cf64d2ed) | [2](SOURCES.md#F-f3bba6a009) | | [149.9](SOURCES.md#F-7fcab95b52) | Flensborg Fjord, ydre | · | [14](SOURCES.md#F-70e62fe30c) (1991–2018) | +[0.10](SOURCES.md#F-7641bafc5e) | [103](SOURCES.md#F-49431ae530) | [10,465](SOURCES.md#F-c48c74b6c5) | [2](SOURCES.md#F-f3bba6a009) | | [131.8](SOURCES.md#F-7d60d19f84) | Stege Bugt | · | [5](SOURCES.md#F-5c65cbafad) (1991–2018) | +[0.10](SOURCES.md#F-7641bafc5e) | [43](SOURCES.md#F-0b42090e27) | [25,958](SOURCES.md#F-b83956a783) | [2](SOURCES.md#F-f3bba6a009) | | [128.0](SOURCES.md#F-62735c2dd6) | Juvre Dyb | · | — | — | [31](SOURCES.md#F-06e74a6cb3) | [1,475](SOURCES.md#F-c5b4ead45b) | [3](SOURCES.md#F-ad26c402bc) | | [124.0](SOURCES.md#F-ab5daefe46) | Grådyb | · | [8](SOURCES.md#F-3903bf77a1) (1991–2018) | +[0.26](SOURCES.md#F-5c0fcf505a) | [332](SOURCES.md#F-779c67501a) | [449,600](SOURCES.md#F-cb9d025902) | [2](SOURCES.md#F-f3bba6a009) | | [116.3](SOURCES.md#F-06f91dc419) | Storebælt, NV | ✓ | [12](SOURCES.md#F-d40cc0eb2e) (1991–2018) | — | [65](SOURCES.md#F-bea278c619) | [30,000](SOURCES.md#F-2f53fe70c5) | [2](SOURCES.md#F-f3bba6a009) | | [100.5](SOURCES.md#F-33a0e135a1) | Grønsund | · | [8](SOURCES.md#F-3903bf77a1) (1991–2018) | +[0.14](SOURCES.md#F-18b533727b) | [116](SOURCES.md#F-bce79bbf01) | [48,103](SOURCES.md#F-a3a4cd55c3) | [2](SOURCES.md#F-f3bba6a009) | | [92.0](SOURCES.md#F-04f497a3ab) | Vejle Fjord, ydre | · | [11](SOURCES.md#F-46e3ed0ff3) (1991–2018) | +[0.07](SOURCES.md#F-45e43db92b) | [108](SOURCES.md#F-263053b7e9) | [48,760](SOURCES.md#F-34183e48e5) | [2](SOURCES.md#F-f3bba6a009) | | [85.9](SOURCES.md#F-e7abde727a) | Isefjord, indre | · | [9](SOURCES.md#F-4807eb0843) (1991–2018) | +[0.17](SOURCES.md#F-f8e3e73533) | [280](SOURCES.md#F-9ca300ec28) | [119,877](SOURCES.md#F-c19e34d8b6) | [2](SOURCES.md#F-f3bba6a009) | | [84.5](SOURCES.md#F-e16cb077d7) | Ebeltoft Vig | · | [7](SOURCES.md#F-8e728f613e) (1991–2018) | — | [27](SOURCES.md#F-c20d405511) | — | [3](SOURCES.md#F-ad26c402bc) | | [77.7](SOURCES.md#F-2f6c2d6ede) | Kalø Vig | · | [6](SOURCES.md#F-f3d1dbf36d) (1991–2018) | +[0.26](SOURCES.md#F-5c0fcf505a) | [335](SOURCES.md#F-e5a12e42f4) | [24,276](SOURCES.md#F-6f4d08f4aa) | [2](SOURCES.md#F-f3bba6a009) | | [75.7](SOURCES.md#F-f8424e43d1) | Kalundborg Fjord | · | [11](SOURCES.md#F-46e3ed0ff3) (1991–2018) | +[0.04](SOURCES.md#F-e2f582be5e) | [80](SOURCES.md#F-063ab72c8a) | [2,600](SOURCES.md#F-c004de5d9e) | [2](SOURCES.md#F-f3bba6a009) | | [71.4](SOURCES.md#F-78e0d6e329) | Roskilde Fjord, ydre | · | [13](SOURCES.md#F-041337511d) (1991–2018) | +[0.13](SOURCES.md#F-411941f49a) | [358](SOURCES.md#F-e7508812a8) | [139,933](SOURCES.md#F-1ca807727c) | [2](SOURCES.md#F-f3bba6a009) | | [66.6](SOURCES.md#F-d3566c38dc) | Helnæs Bugt | · | [8](SOURCES.md#F-3903bf77a1) (1991–2018) | +[0.47](SOURCES.md#F-95379ea5bb) | [131](SOURCES.md#F-f69736413a) | [20,300](SOURCES.md#F-ae43edc06a) | [2](SOURCES.md#F-f3bba6a009) | | [65.7](SOURCES.md#F-d888749c9b) | `Lillebælt, Als-Ærø 12 sm` | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [59.7](SOURCES.md#F-deeb8f289b) | Lillebælt, Snævringen | · | — | — | [232](SOURCES.md#F-1c20552c49) | [580,100](SOURCES.md#F-a2d5576af8) | [3](SOURCES.md#F-ad26c402bc) | | [51.8](SOURCES.md#F-ee1fca0f46) | Roskilde Fjord, indre | ✓ | [7](SOURCES.md#F-8e728f613e) (1991–2018) | +[0.50](SOURCES.md#F-1c6db12a1c) | [393](SOURCES.md#F-053d08db08) | [217,960](SOURCES.md#F-de242b69ad) | [1](SOURCES.md#F-11513d1680) | | [51.2](SOURCES.md#F-6900075777) | Guldborgsund | · | [3](SOURCES.md#F-ad26c402bc) (1991–2018) | — | [149](SOURCES.md#F-08783dc68f) | [63,476](SOURCES.md#F-ed310c2003) | [3](SOURCES.md#F-ad26c402bc) | | [50.4](SOURCES.md#F-c6c578ffef) | Nakskov Fjord | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [117](SOURCES.md#F-5713a3b364) | [28,921](SOURCES.md#F-4320b75c16) | [3](SOURCES.md#F-ad26c402bc) | | [45.8](SOURCES.md#F-a37f1fcb3a) | Odense Fjord, ydre | ✓ | — | — | [37](SOURCES.md#F-922381c96a) | [20,000](SOURCES.md#F-5ef870127f) | [2](SOURCES.md#F-f3bba6a009) | | [45.6](SOURCES.md#F-3ccff3f417) | Horsens Fjord, indre | ✓ | [4](SOURCES.md#F-7d3c3064ac) (1991–2018) | +[0.21](SOURCES.md#F-4e6a1c5566) | [549](SOURCES.md#F-663919599d) | [267,612](SOURCES.md#F-2df03f3c20) | [1](SOURCES.md#F-11513d1680) | | [40.7](SOURCES.md#F-5616810c22) | Avnø Fjord | · | [1](SOURCES.md#F-11513d1680) (1991–2018) | — | [2](SOURCES.md#F-f3bba6a009) | — | [3](SOURCES.md#F-ad26c402bc) | | [35.0](SOURCES.md#F-e90afeff3d) | Als Fjord | · | [3](SOURCES.md#F-ad26c402bc) (1991–2018) | — | [47](SOURCES.md#F-de71bde5c2) | [171](SOURCES.md#F-7eb5aa8866) | [3](SOURCES.md#F-ad26c402bc) | | [32.6](SOURCES.md#F-27573db1f7) | Nissum Fjord, ydre | · | — | — | [22](SOURCES.md#F-b290d6b680) | [2,500](SOURCES.md#F-bc6f8e00ac) | [3](SOURCES.md#F-ad26c402bc) | | [32.6](SOURCES.md#F-27573db1f7) | Åbenrå Fjord | ✓ | [11](SOURCES.md#F-46e3ed0ff3) (1991–2018) | +[0.18](SOURCES.md#F-798a163816) | [229](SOURCES.md#F-1dd9092da3) | [87,500](SOURCES.md#F-10f18b755a) | [1](SOURCES.md#F-11513d1680) | | [32.6](SOURCES.md#F-27573db1f7) | Horsens Fjord, ydre | ✓ | [4](SOURCES.md#F-7d3c3064ac) (1991–2018) | — | [14](SOURCES.md#F-70e62fe30c) | [225](SOURCES.md#F-190921c537) | [2](SOURCES.md#F-f3bba6a009) | | [27.8](SOURCES.md#F-921ef602b6) | Mariager Fjord, ydre | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [114](SOURCES.md#F-7fc473a720) | [450](SOURCES.md#F-536d2b5134) | [3](SOURCES.md#F-ad26c402bc) | | [24.5](SOURCES.md#F-60c9c37325) | Hjarbæk Fjord | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [232](SOURCES.md#F-1c20552c49) | [108,500](SOURCES.md#F-1546645182) | [3](SOURCES.md#F-ad26c402bc) | | [21.9](SOURCES.md#F-f1a0889914) | Præstø Fjord | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [62](SOURCES.md#F-a560867617) | [13,170](SOURCES.md#F-a059ac3b79) | [3](SOURCES.md#F-ad26c402bc) | | [19.8](SOURCES.md#F-89c05be395) | Nissum Fjord, mellem | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [12](SOURCES.md#F-d40cc0eb2e) | — | [3](SOURCES.md#F-ad26c402bc) | | [18.9](SOURCES.md#F-3b10f9a148) | Østersøen, Christiansø | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [18.1](SOURCES.md#F-df1783acc1) | Randers Fjord, ydre | ✓ | [2](SOURCES.md#F-f3bba6a009) (1994–2018) | — | [45](SOURCES.md#F-ccc8e0b973) | [4,631](SOURCES.md#F-14b9545114) | [2](SOURCES.md#F-f3bba6a009) | | [17.6](SOURCES.md#F-53033ed442) | Mariager Fjord, indre | ✓ | [4](SOURCES.md#F-7d3c3064ac) (1991–2018) | — | [245](SOURCES.md#F-ef54ab569e) | [14,850](SOURCES.md#F-80992d9c6d) | [2](SOURCES.md#F-f3bba6a009) | | [17.0](SOURCES.md#F-e13f18d45b) | Dybsø Fjord | · | [1](SOURCES.md#F-11513d1680) (1991–2018) | — | [32](SOURCES.md#F-b08d9333fc) | [165](SOURCES.md#F-c7a11a0d28) | [3](SOURCES.md#F-ad26c402bc) | | [16.3](SOURCES.md#F-e9c9fbebd9) | Vejle Fjord, indre | ✓ | [7](SOURCES.md#F-8e728f613e) (1991–2018) | +[0.05](SOURCES.md#F-873095b0cb) | [728](SOURCES.md#F-73253d020c) | [224,735](SOURCES.md#F-96ba4daafa) | [1](SOURCES.md#F-11513d1680) | | [16.0](SOURCES.md#F-61fee8b5ab) | Stavns Fjord | · | — | — | [6](SOURCES.md#F-f3d1dbf36d) | [25](SOURCES.md#F-004819d2f5) | [3](SOURCES.md#F-ad26c402bc) | | [15.7](SOURCES.md#F-37407e2c0b) | Karrebæk Fjord | · | — | — | [188](SOURCES.md#F-d9797ee125) | [127,348](SOURCES.md#F-6221f1a030) | [3](SOURCES.md#F-ad26c402bc) | | [15.4](SOURCES.md#F-4c929d805b) | Odense Fjord, Seden Strand | ✓ | — | — | [565](SOURCES.md#F-53a05b30aa) | [491,620](SOURCES.md#F-aae9791d1c) | [2](SOURCES.md#F-f3bba6a009) | | [15.0](SOURCES.md#F-71d02fc6ff) | Augustenborg Fjord | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [77](SOURCES.md#F-6115768d23) | — | [3](SOURCES.md#F-ad26c402bc) | | [13.4](SOURCES.md#F-19d2c6a39d) | Halkær Bredning | · | — | — | [109](SOURCES.md#F-02bf94dcdf) | [71,475](SOURCES.md#F-64559f7198) | [3](SOURCES.md#F-ad26c402bc) | | [12.9](SOURCES.md#F-ab1bc32a91) | Flensborg Fjord, indre | ✓ | [6](SOURCES.md#F-f3d1dbf36d) (1991–2018) | +[0.07](SOURCES.md#F-45e43db92b) | [84](SOURCES.md#F-5ec392b512) | [97,035](SOURCES.md#F-ae1d86e3b5) | [1](SOURCES.md#F-11513d1680) | | [10.7](SOURCES.md#F-34e4b3ea11) | Faaborg Fjord | · | [3](SOURCES.md#F-ad26c402bc) (1991–2018) | — | [83](SOURCES.md#F-9809297546) | — | [3](SOURCES.md#F-ad26c402bc) | | [10.6](SOURCES.md#F-407cc05ab9) | Lunkebugten | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [13](SOURCES.md#F-041337511d) | — | [3](SOURCES.md#F-ad26c402bc) | | [10.4](SOURCES.md#F-4b8bfc7195) | Nissum Fjord, Felsted Kog | · | — | — | [34](SOURCES.md#F-c3bdf108ec) | [9,415](SOURCES.md#F-3ef32a0071) | [3](SOURCES.md#F-ad26c402bc) | | [10.2](SOURCES.md#F-bad593d32b) | Gamborg Fjord | · | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [38](SOURCES.md#F-8acfad0fe5) | [22,000](SOURCES.md#F-3e34257dcb) | [3](SOURCES.md#F-ad26c402bc) | | [10.1](SOURCES.md#F-76181005ae) | Kolding Fjord, ydre | · | [4](SOURCES.md#F-7d3c3064ac) (1991–2018) | — | [41](SOURCES.md#F-43f29318f3) | — | [3](SOURCES.md#F-ad26c402bc) | | [10.0](SOURCES.md#F-1ea29cbbc8) | Kløven | · | — | — | [13](SOURCES.md#F-041337511d) | [3,500](SOURCES.md#F-8813f8118b) | [3](SOURCES.md#F-ad26c402bc) | | [9.5](SOURCES.md#F-104d81168a) | Basnæs Nor | · | — | — | [5](SOURCES.md#F-5c65cbafad) | [250](SOURCES.md#F-3153f8b56b) | [3](SOURCES.md#F-ad26c402bc) | | [8.0](SOURCES.md#F-45456bdb02) | Nyborg Fjord | · | — | — | [56](SOURCES.md#F-7eae2ccdbd) | — | [3](SOURCES.md#F-ad26c402bc) | | [7.9](SOURCES.md#F-ac681bc831) | Nybøl Nor | · | — | — | [65](SOURCES.md#F-bea278c619) | [100](SOURCES.md#F-9697db6732) | [3](SOURCES.md#F-ad26c402bc) | | [7.8](SOURCES.md#F-0dc9f513c5) | Korsør Nor | · | — | — | [95](SOURCES.md#F-6fa89c01f1) | [2,000](SOURCES.md#F-81bd5af221) | [3](SOURCES.md#F-ad26c402bc) | | [7.4](SOURCES.md#F-5af1b8e578) | Knebel Vig | · | [1](SOURCES.md#F-11513d1680) (1992–2018) | — | [13](SOURCES.md#F-041337511d) | [3,811](SOURCES.md#F-b2e034910d) | [3](SOURCES.md#F-ad26c402bc) | | [7.1](SOURCES.md#F-768bc3ce9f) | Randers Fjord, indre | · | — | — | [417](SOURCES.md#F-de643f2e46) | [204,688](SOURCES.md#F-d235bcc756) | [3](SOURCES.md#F-ad26c402bc) | | [6.8](SOURCES.md#F-3cb5e600ba) | Lindelse Nor | · | — | — | [2](SOURCES.md#F-f3bba6a009) | — | [3](SOURCES.md#F-ad26c402bc) | | [6.5](SOURCES.md#F-f5760d1624) | Holsteinborg Nor | · | — | — | [60](SOURCES.md#F-2eaa6cf48f) | [13,595](SOURCES.md#F-fc7530c00a) | [3](SOURCES.md#F-ad26c402bc) | | [6.0](SOURCES.md#F-63d6ac56bd) | Lillestrand | · | — | — | — | — | [3](SOURCES.md#F-ad26c402bc) | | [5.5](SOURCES.md#F-aded95b725) | Als Sund | · | — | — | [38](SOURCES.md#F-8acfad0fe5) | [94,055](SOURCES.md#F-8e2db0fb92) | [3](SOURCES.md#F-ad26c402bc) | | [5.3](SOURCES.md#F-1d0705c12c) | Kertinge Nor | · | — | — | [98](SOURCES.md#F-49f1beb927) | [4,540](SOURCES.md#F-a83e29a688) | [3](SOURCES.md#F-ad26c402bc) | | [5.2](SOURCES.md#F-9b78951f37) | Skælskør Fjord og Nor | · | — | — | [85](SOURCES.md#F-22b8b497b9) | [38,230](SOURCES.md#F-c34c372a3a) | [3](SOURCES.md#F-ad26c402bc) | | [5.1](SOURCES.md#F-0ec3310d9d) | Haderslev Fjord | · | — | — | [201](SOURCES.md#F-9f608a0c48) | [106,666](SOURCES.md#F-558348ae49) | [3](SOURCES.md#F-ad26c402bc) | | [5.1](SOURCES.md#F-0ec3310d9d) | Stege Nor | · | — | — | [12](SOURCES.md#F-d40cc0eb2e) | — | [3](SOURCES.md#F-ad26c402bc) | | [5.0](SOURCES.md#F-9ccbe5c122) | Genner Bugt | · | [6](SOURCES.md#F-f3d1dbf36d) (1991–2018) | — | [16](SOURCES.md#F-9fbf6e4cbf) | [3,910](SOURCES.md#F-a5b7cd1011) | [3](SOURCES.md#F-ad26c402bc) | | [4.8](SOURCES.md#F-31e5045107) | Kolding Fjord, indre | ✓ | [2](SOURCES.md#F-f3bba6a009) (1991–2018) | — | [318](SOURCES.md#F-87bf7a10f0) | [35,085](SOURCES.md#F-08a43547a0) | [2](SOURCES.md#F-f3bba6a009) | | [4.8](SOURCES.md#F-31e5045107) | Nærå Strand | · | — | — | [42](SOURCES.md#F-aae13b1f8f) | — | [3](SOURCES.md#F-ad26c402bc) | | [3.3](SOURCES.md#F-1c531c5e89) | Kerteminde Fjord | · | — | — | [22](SOURCES.md#F-b290d6b680) | — | [3](SOURCES.md#F-ad26c402bc) | | [1.9](SOURCES.md#F-7dd57c02fb) | Hejlsminde Nor | · | — | — | [25](SOURCES.md#F-004819d2f5) | [30,000](SOURCES.md#F-2f53fe70c5) | [3](SOURCES.md#F-ad26c402bc) | | [1.8](SOURCES.md#F-9417565504) | Norsminde Fjord | · | — | — | [161](SOURCES.md#F-20d8cdb649) | [38,000](SOURCES.md#F-2a2d907f4c) | [3](SOURCES.md#F-ad26c402bc) | | [0.5](SOURCES.md#F-47929086bb) | Holckenhavn Fjord | · | — | — | [60](SOURCES.md#F-2eaa6cf48f) | [31,000](SOURCES.md#F-59e656a25a) | [3](SOURCES.md#F-ad26c402bc) | | [0.4](SOURCES.md#F-e92b7556c4) | Avnø Vig | · | — | — | [11](SOURCES.md#F-46e3ed0ff3) | — | [3](SOURCES.md#F-ad26c402bc) | | [0.3](SOURCES.md#F-092fe85fff) | Bredningen | · | — | — | [17](SOURCES.md#F-2303a95e80) | [2,800](SOURCES.md#F-603ec057ea) | [3](SOURCES.md#F-ad26c402bc) | | [0.2](SOURCES.md#F-ac29a891a1) | Aborg Minde Nor | · | — | — | [51](SOURCES.md#F-7306704635) | [17,800](SOURCES.md#F-96abbde9fc) | [3](SOURCES.md#F-ad26c402bc) |</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-AREA-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** A water body is a management unit, and by the coverage rule a family of rows computed the same way gets one representative, explained; the full record is published as a file. Its outfall and treatment-plant columns were also computed with a nearest-boundary search that stopped short of the stated distance east-west, and changed where plants or outfalls were reassigned.
+
+**Replaced by:** [`C-W4AR-ONE-ROW`](CLAIMS.md#C-W4AR-ONE-ROW), [`C-W4AR-DOWNLOAD`](CLAIMS.md#C-W4AR-DOWNLOAD) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-ASSIGN"></a>
+### Every layer was assigned to water bodies by nearest point on the marine boundary, one rule for all.
+
+`C-W4AR-OLD-ASSIGN` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-ASSIGN">Assignment is by nearest point on the marine boundary, one rule for every layer, with the largest distance kept for each layer in each area and anything beyond [20](SOURCES.md#F-79bbac6163) km dropped.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-ASSIGN "What this claim rests on")</sup>
+
+**Why it was retired:** Not true of every layer: bathing stations were never assigned by distance but by the water-body code their own record carries, and those whose code matched no marine water body were dropped without a count. The distance search itself stopped short of the stated distance east-west and could stop at a farther vertex; it now searches the full distance, and the cross-water-body correlations moved with it.
+
+**Replaced by:** [`C-W4AR-ASSIGN`](CLAIMS.md#C-W4AR-ASSIGN) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-CUMHOC"></a>
+### Water bodies give more units of replication than a national series, so an effect size can be estimated across them.
+
+`C-W4AR-OLD-CUMHOC` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-CUMHOC">A national time series has one unit of replication. The water bodies with two or more bathing stations number [65](SOURCES.md#F-c341a9943e), so an effect size can be estimated across them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-CUMHOC "What this claim rests on")</sup>
+
+**Why it was retired:** An effect size across water bodies treats each management unit as a unit a cause acts on. What can be said is that a correlation is computed across management units.
+
+**Replaced by:** [`C-W4AR-CUMHOC`](CLAIMS.md#C-W4AR-CUMHOC) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-CUMHOC-TABLE"></a>
+### The correlations of each sewage pressure against each bathing outcome across water bodies.
+
+`C-W4AR-OLD-CUMHOC-TABLE` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-CUMHOC-TABLE">| predictor | outcome | r | $R^2$ | areas | |---|---|---:|---:|---:| | `log10(1+outfalls_per_km2)` | sub_excellent | +[0.149](SOURCES.md#F-e97645f8e0) | [0.022](SOURCES.md#F-e76d8407a9) | [65](SOURCES.md#F-9dc95a60ed) | | `log10(1+outfalls_per_km2)` | mean_score | -[0.136](SOURCES.md#F-f3af492557) | [0.019](SOURCES.md#F-83bfbb156f) | [65](SOURCES.md#F-9dc95a60ed) | | `log10(1+pe_per_km2)` | sub_excellent | +[0.313](SOURCES.md#F-58d6d72058) | [0.098](SOURCES.md#F-150ca08ac4) | [65](SOURCES.md#F-9dc95a60ed) | | `log10(1+pe_per_km2)` | mean_score | -[0.288](SOURCES.md#F-c67812e053) | [0.083](SOURCES.md#F-00dd04793f) | [65](SOURCES.md#F-9dc95a60ed) | | `log10(1+basin_m3_per_km2)` | sub_excellent | +[0.139](SOURCES.md#F-e0aea50818) | [0.019](SOURCES.md#F-83bfbb156f) | [65](SOURCES.md#F-9dc95a60ed) | | `log10(1+basin_m3_per_km2)` | mean_score | -[0.151](SOURCES.md#F-2886ef41e7) | [0.023](SOURCES.md#F-cda8ad774c) | [65](SOURCES.md#F-9dc95a60ed) |</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-CUMHOC-TABLE "What this claim rests on")</sup>
+
+**Why it was retired:** Every value in it was computed with a nearest-boundary search that stopped short of the stated distance east-west; recomputed with the full search, every one moved. And by the coverage rule a family of numbers computed the same way gets one representative on the page, traced end to end; the rest are in the downloadable file.
+
+**Replaced by:** [`C-W4AR-CUMHOC-R`](CLAIMS.md#C-W4AR-CUMHOC-R) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-NOT"></a>
+### The page was the per-area ledger needed before a causal model per area.
+
+`C-W4AR-OLD-NOT` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-NOT">It is not a causal model per area. It is the ledger you need before you can build one: which areas have enough observation to support a claim, which have none, and over which years each stream exists — so that an analysis published in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader seeing the gap.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-NOT "What this claim rests on")</sup>
+
+**Why it was retired:** It framed the page as the ledger for a causal model per water body; a water body is a management unit, not the unit a cause is found in, and the ledger is now a file.
+
+**Replaced by:** [`C-W4AR-NOT`](CLAIMS.md#C-W4AR-NOT) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-NULLS"></a>
+### What the three random-basket nulls were, and which variable gained most against each.
+
+`C-W4AR-OLD-NULLS` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-NULLS">The three nulls answer three different questions. Shuffled permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure. Latitude stripes are equal-count horizontal bands, as many as there are real baskets, so they keep compactness and equal sizes but ignore hydrography. Size- and shape-matched baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, three times over, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.† Against the shuffle, salinity gains most, by a distance; against the stripes, surface oxygen saturation does.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-NULLS "What this claim rests on")</sup>
+
+**Why it was retired:** A random basket shares no cause, so which variable gains most against which random basket says how far a grouping beats noise, not whether its members share a cause. Retired with the comparison.
+
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-PART-STAT"></a>
+### The partition score, a ratio of mean squares within month, to be read only against a null.
+
+`C-W4AR-OLD-PART-STAT` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-PART-STAT">A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode. The statistic, computed within month by `scripts/partition_score.py`, is a ratio of mean squares: the between-basket mean square over the sum of the between- and within-basket mean squares. One means stations in the same basket agree completely. With labels that carry no information both mean squares estimate the same variance and the ratio sits near one half, not zero — so no value in the table below can be read on its own, only its difference from a null.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-PART-STAT "What this claim rests on")</sup>
+
+**Why it was retired:** A random basket shares no cause: its members are noise with respect to each other. Beating random baskets shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The statistic was computed as described and is retired with the comparison it served; the lines are now tested by whether stations move together at matched distance.
+
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-RANKINGS"></a>
+### Three nulls give three rankings of how well the water bodies predict each variable, with the table of scores.
+
+`C-W4AR-OLD-RANKINGS` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-RANKINGS">The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different rankings.† | variable | real | shuffled | latitude stripes | size- and shape-matched | lift over the last | spread of its three runs | |---|---:|---:|---:|---:|---:|---:| | surface oxygen saturation | [0.924](SOURCES.md#F-b02a3c9cbb) | [0.859](SOURCES.md#F-c33e805b05) | [0.516](SOURCES.md#F-1ad22d9abc) | [0.522](SOURCES.md#F-62b48526cf) | +[0.402](SOURCES.md#F-16654f6dbc) | [0.178](SOURCES.md#F-c5abca23c9) | | surface oxygen | [0.878](SOURCES.md#F-f4fd25c876) | [0.782](SOURCES.md#F-528a1983a2) | [0.550](SOURCES.md#F-ca32bdc330) | [0.595](SOURCES.md#F-4a27c76e37) | +[0.283](SOURCES.md#F-54bb3576eb) | [0.111](SOURCES.md#F-b7aaf3f215) | | bed oxygen saturation | [0.810](SOURCES.md#F-461686bb99) | [0.658](SOURCES.md#F-2c76c6b5b3) | [0.585](SOURCES.md#F-b7e33a1cc3) | [0.672](SOURCES.md#F-c00db079a9) | +[0.138](SOURCES.md#F-34db791e14) | [0.034](SOURCES.md#F-6b5fd21283) | | surface salinity | [0.968](SOURCES.md#F-0910df9394) | [0.531](SOURCES.md#F-9360e97dfb) | [0.679](SOURCES.md#F-8d1a03fe0d) | [0.844](SOURCES.md#F-b860940972) | +[0.124](SOURCES.md#F-d391a684b4) | [0.065](SOURCES.md#F-2a1d1cfdd4) | | bed salinity | [0.916](SOURCES.md#F-ffa1e649aa) | [0.538](SOURCES.md#F-6631a797e1) | [0.640](SOURCES.md#F-1d11c3005c) | [0.798](SOURCES.md#F-4bcc708811) | +[0.118](SOURCES.md#F-e8a6ebd9b9) | [0.035](SOURCES.md#F-6d86668a2e) | | surface temperature | [0.830](SOURCES.md#F-376e45062f) | [0.510](SOURCES.md#F-1c9e3d82fa) | [0.618](SOURCES.md#F-a2e5ee8468) | [0.734](SOURCES.md#F-4b9344929e) | +[0.096](SOURCES.md#F-69b813826e) | [0.039](SOURCES.md#F-a07a1825d8) | | bed oxygen | [0.790](SOURCES.md#F-3ecd67674e) | [0.639](SOURCES.md#F-cdceae6bf3) | [0.602](SOURCES.md#F-dbeea8773d) | [0.698](SOURCES.md#F-ad9da1fd73) | +[0.092](SOURCES.md#F-7997a7d986) | [0.012](SOURCES.md#F-96bb466f25) | | bed temperature | [0.810](SOURCES.md#F-461686bb99) | [0.523](SOURCES.md#F-a1004b2b33) | [0.625](SOURCES.md#F-0f57bd267d) | [0.766](SOURCES.md#F-7e6de5f777) | +[0.044](SOURCES.md#F-7651114acb) | [0.035](SOURCES.md#F-6d86668a2e) | | whole cast fluorescence (chlorophyll proxy) | [0.725](SOURCES.md#F-c0647f2814) | [0.404](SOURCES.md#F-1d4989405a) | [0.564](SOURCES.md#F-20f6ab824f) | [0.775](SOURCES.md#F-30942ca70b) | -[0.050](SOURCES.md#F-d8f01ce3e3) | [0.109](SOURCES.md#F-3104249ac0) |</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-RANKINGS "What this claim rests on")</sup>
+
+**Why it was retired:** A random basket shares no cause: its members are noise with respect to each other. Beating random baskets - shuffled, striped or shape-matched - shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The lines are now tested by whether stations move together at matched distance, with salinity as the physical control.
+
+**Replaced by:** [`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED), [`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-READING"></a>
+### A reading of the lifts - smooth salinity, rough oxygen - and a partition's value as its lift over its own shape.
+
+`C-W4AR-OLD-READING` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-READING">One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, any compact grouping predicts it well ([0.844](SOURCES.md#F-aa0148792b) from random blobs) and the real boundaries have little left to add; if oxygen is spatially rough, blobs do poorly and boundaries that follow enclosure carry real information.† A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-READING "What this claim rests on")</sup>
+
+**Why it was retired:** A partition's lift over random baskets of its own shape measures how far it beats noise; a random basket shares no cause, so the lift does not say whether its members share one. The rule it set is retired with the comparison; the co-movement test at matched distance replaces it.
+
+**Replaced by:** [`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-REVERSAL"></a>
+### Against shape-matched random baskets the ranking reversed, and for fluorescence the official partition did no better than random compact blobs.
+
+`C-W4AR-OLD-REVERSAL` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-REVERSAL">Against the matched blobs the ordering reverses: surface oxygen saturation gains most (+[0.402](SOURCES.md#F-e8c8bd11ca)), surface salinity little (+[0.124](SOURCES.md#F-c0ab2c44d4)), and fluorescence's lift is below zero (-[0.050](SOURCES.md#F-b049ff339e)) — but the three blob runs themselves spread by [0.109](SOURCES.md#F-e9d081e13a) for fluorescence, so for it the official partition does no better than random compact blobs, and whether it does worse is not shown.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-REVERSAL "What this claim rests on")</sup>
+
+**Why it was retired:** A random basket shares no cause: a ranking of lifts over random baskets orders groupings by how far they beat noise, not by whether their members share a cause. Retired with the comparison; the physical control is now salinity's co-movement, and fluorescence is now compared along a causal line.
+
+**Replaced by:** [`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES), [`C-W4AR-LS-FLUO`](CLAIMS.md#C-W4AR-LS-FLUO) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-SAMPLED"></a>
+### The partition scores were of the partition as sampled.
+
+`C-W4AR-OLD-SAMPLED` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-SAMPLED">One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-SAMPLED "What this claim rests on")</sup>
+
+**Why it was retired:** The limit bounded the random-basket table, which is retired: a random basket shares no cause, so beating it shows a grouping beats noise, not that its members share a cause.
+
+**Not replaced** — nothing that could be justified was found to say in its place.
+
+<a id="C-W4AR-OLD-SCOPE"></a>
+### The page kept one record per marine water body in its text: pressures, observation, the years of each stream, and what cannot be modelled.
+
+`C-W4AR-OLD-SCOPE` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-SCOPE">This page refuses the aggregate. One record per marine water body: what presses on it, what is observed in it, over which years each of those streams exists, and what cannot be modelled there.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-SCOPE "What this claim rests on")</sup>
+
+**Why it was retired:** A water body is a management unit, not a finding. The page no longer keeps one record per water body in its text: only the numbers a management question needs are shown, labelled administrative, and the record of each water body is published as a file.
+
+**Replaced by:** [`C-W4AR-UNITS`](CLAIMS.md#C-W4AR-UNITS), [`C-W4AR-DOWNLOAD`](CLAIMS.md#C-W4AR-DOWNLOAD) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-SERIES"></a>
+### The station series behind the partition tests, and the water bodies it reaches.
+
+`C-W4AR-OLD-SERIES` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-SERIES">The part of it this page can place in water bodies is the station series behind the partition tests below — [1,415](SOURCES.md#F-9eb5438b01) stations with a monthly record, [1,313](SOURCES.md#F-dd97966b20) of them inside a water body by point in polygon — and [119](SOURCES.md#F-4a24d288c0) of the [123](SOURCES.md#F-2b2253bfc5) water bodies contain at least one of those. Counted over that series: [4](SOURCES.md#F-9e0e59b040) water bodies contain no station with data in [2](SOURCES.md#F-4985d57c96) or more distinct years, [10](SOURCES.md#F-bc687bf64b) water bodies contain no station with data in [5](SOURCES.md#F-f545b0d648) or more distinct years, [12](SOURCES.md#F-512afef935) water bodies contain no station with data in [10](SOURCES.md#F-bc687bf64b) or more distinct years.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-SERIES "What this claim rests on")</sup>
+
+**Why it was retired:** It pointed to partition tests that are no longer on the page. The same station series and the same counts stand behind the co-movement tests that replace them, and are said with that pointer.
+
+**Replaced by:** [`C-W4AR-SERIES-COVERAGE`](CLAIMS.md#C-W4AR-SERIES-COVERAGE) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-TABLE-KEY"></a>
+### The key to the per-area table.
+
+`C-W4AR-OLD-TABLE-KEY` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-TABLE-KEY">`model` — a DHI statistical model, as described above (DCE fitted its statistical models on 1990–2012). `bath` — bathing stations, and the years they span. `r` — the mean correlation between the yearly classes of a water body's informative bathing stations, where there are three or more. `RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load. `gaps` — the number of written-out reasons this area cannot be modelled.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-TABLE-KEY "What this claim rests on")</sup>
+
+**Why it was retired:** The table it keyed is no longer on the page: see the retired per-area table.
+
+**Replaced by:** [`C-W4AR-ONE-ROW`](CLAIMS.md#C-W4AR-ONE-ROW) — each opens what it rests on.
+
+<a id="C-W4AR-OLD-WITHIN-MONTH"></a>
+### The partition score had to be computed within month, because every station shares a season.
+
+`C-W4AR-OLD-WITHIN-MONTH` · retired 2026-09-12 from [AREAS.md](AREAS.md) · as published in `00a157f`
+
+> <span class="claim" data-claim="C-W4AR-OLD-WITHIN-MONTH">Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.</span><sup class="claim-mark">[†](ARCHIVE.md#C-W4AR-OLD-WITHIN-MONTH "What this claim rests on")</sup>
+
+**Why it was retired:** Retired with the random-basket comparison it served: a random basket shares no cause, so beating it shows a grouping beats noise, not that its members share a cause. Its point, that a shared season must be removed first, is kept in the co-movement test, which removes each station's own seasonal cycle.
+
+**Replaced by:** [`C-W4AR-SYNC-METHOD`](CLAIMS.md#C-W4AR-SYNC-METHOD) — each opens what it rests on.
 
 ## CATEGORY.md
 
@@ -349,7 +514,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs.
 
-**Replaced by:** [`C-AR-REVERSAL`](CLAIMS.md#C-AR-REVERSAL) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-LS-FLUO`](CLAIMS.md#C-W4AR-LS-FLUO) — each opens what it rests on.
 
 <a id="C-AR-OLD-CAT-ICC"></a>
 ### The measurement is the intraclass correlation, on which zero means membership tells nothing.
@@ -371,7 +536,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** Spatial smoothness was never measured; stated as fact, it is a reading.
 
-**Replaced by:** [`C-AR-READING`](CLAIMS.md#C-AR-READING) — each opens what it rests on.
+**Replaced by:** [`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES) — each opens what it rests on.
 
 <a id="C-AR-OLD-CIRCLE"></a>
 ### Citing F_ST as evidence of distinct populations is reasoning in a circle: the number was manufactured by assuming them.
@@ -395,6 +560,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-AR-CITIZENSHIP`](CLAIMS.md#C-AR-CITIZENSHIP), [`C-AR-RACE`](CLAIMS.md#C-AR-RACE), [`C-AR-SPECIES`](CLAIMS.md#C-AR-SPECIES), [`C-AR-SECTOR`](CLAIMS.md#C-AR-SECTOR), [`C-AR-ICD`](CLAIMS.md#C-AR-ICD) — each opens what it rests on.
 
+<a id="C-AR-OLD-DIFFERENCE-ADDS"></a>
+### The difference between a partition's score and a shape-matched null's as measuring what the chosen partition adds.
+
+`C-AR-OLD-DIFFERENCE-ADDS` · retired 2026-09-12 from [CATEGORY.md](CATEGORY.md) · as published in `116c96a`
+
+> <span class="claim" data-claim="C-AR-OLD-DIFFERENCE-ADDS">A circular statistic compared against a *shape-matched null* stops being circular, because the null partitions were not chosen to be real. Each number separately depends on the assumption; the difference between them measures what the chosen partition adds. That is the argument for the exercise below, and it is why a single reported value — a bare $F_{\mathrm{ST}}$, a bare intraclass correlation, a bare $R^2$ between groups — cannot by itself say whether the groups are anything.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AR-OLD-DIFFERENCE-ADDS "What this claim rests on")</sup>
+
+**Why it was retired:** The owner's rule: a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - not what its members share. The replacement says what the difference measures.
+
+**Replaced by:** [`C-AR-DIFFERENCE`](CLAIMS.md#C-AR-DIFFERENCE) — each opens what it rests on.
+
 <a id="C-AR-OLD-HISTORY-FEW"></a>
 ### When these statistics were developed a study had three or four measurements, so the null was the only thing available.
 
@@ -406,6 +582,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-AR-SMALL-SPACE`](CLAIMS.md#C-AR-SMALL-SPACE) — each opens what it rests on.
 
+<a id="C-AR-OLD-LIFT-VALUE"></a>
+### A partition's value as how much better it predicts than its own shape alone would.
+
+`C-AR-OLD-LIFT-VALUE` · retired 2026-09-12 from [CATEGORY.md](CATEGORY.md) · as published in `116c96a`
+
+> <span class="claim" data-claim="C-AR-OLD-LIFT-VALUE">A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AR-OLD-LIFT-VALUE "What this claim rests on")</sup>
+
+**Why it was retired:** The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share.
+
+**Replaced by:** [`C-AR-LIFT-RULE`](CLAIMS.md#C-AR-LIFT-RULE) — each opens what it rests on.
+
 <a id="C-AR-OLD-NOBODY-SCORED"></a>
 ### The project's grouping of its mechanisms is a partition nobody has scored.
 
@@ -416,6 +603,28 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** An absence over no named corpus; what is known is that this project has not scored it.
 
 **Replaced by:** [`C-AR-SELF-APPLY`](CLAIMS.md#C-AR-SELF-APPLY) — each opens what it rests on.
+
+<a id="C-AR-OLD-READING-SMOOTH"></a>
+### A reading that boundaries add little for smooth salinity and carry information for rough oxygen.
+
+`C-AR-OLD-READING-SMOOTH` · retired 2026-09-12 from [CATEGORY.md](CATEGORY.md) · as published in `116c96a`
+
+> <span class="claim" data-claim="C-AR-OLD-READING-SMOOTH">One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, *any* compact grouping predicts it well and real boundaries have little left to add; if oxygen is rough, shape alone fails and boundaries that follow enclosure carry real information.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AR-OLD-READING-SMOOTH "What this claim rests on")</sup>
+
+**Why it was retired:** AREAS' co-movement test, at matched distance, finds the water-body lines add about as much for salinity as for bed oxygen, which the reading did not expect.
+
+**Replaced by:** [`C-AR-READING`](CLAIMS.md#C-AR-READING) — each opens what it rests on.
+
+<a id="C-AR-OLD-RESCUE"></a>
+### The shape-matched null as what rescues the measurement.
+
+`C-AR-OLD-RESCUE` · retired 2026-09-12 from [CATEGORY.md](CATEGORY.md) · as published in `116c96a`
+
+> <span class="claim" data-claim="C-AR-OLD-RESCUE">This is why the null is not a refinement. It is the thing that rescues the measurement.</span><sup class="claim-mark">[†](ARCHIVE.md#C-AR-OLD-RESCUE "What this claim rests on")</sup>
+
+**Why it was retired:** The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share. It makes the measurement fair, not meaningful.
+
+**Replaced by:** [`C-AR-RESCUE`](CLAIMS.md#C-AR-RESCUE) — each opens what it rests on.
 
 <a id="C-AR-OLD-REVERSED"></a>
 ### Measurement is now automatic and cumulative, so the stronger test is widely available.

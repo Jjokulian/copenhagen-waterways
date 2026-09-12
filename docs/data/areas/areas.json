@@ -6,30 +6,23 @@
    "t": "FjLSa-T17",
    "c": "Isefjord og roskilde fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 13,
    "bi": 10,
    "br": 0.13,
    "bsub": 0.192,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 358,
-   "vol": 31125,
-   "pe": 139933,
-   "rens": 19,
+   "rbu": 394,
+   "vol": 50040,
+   "pe": 220108,
+   "rens": 22,
    "hav": 0,
    "klap": 1,
    "rst": 0,
    "hz": 0,
    "hzy": null,
    "streams": [
-    {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
     {
      "stream": "Bathing water quality",
      "from": 1991,
@@ -39,6 +32,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -55,9 +49,9 @@
    "bsub": 0.21,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 393,
-   "vol": 8938,
-   "pe": 217960,
+   "rbu": 426,
+   "vol": 15154,
+   "pe": 277960,
    "rens": 23,
    "hav": 0,
    "klap": 0,
@@ -97,10 +91,10 @@
    "bsub": 0.351,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 1418,
-   "vol": 404402.38,
-   "pe": 1605986,
-   "rens": 17,
+   "rbu": 1506,
+   "vol": 474463.38,
+   "pe": 1609686,
+   "rens": 19,
    "hav": 0,
    "klap": 3,
    "rst": 3,
@@ -116,7 +110,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -133,7 +127,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 95,
+   "rbu": 96,
    "vol": 0,
    "pe": 2000,
    "rens": 1,
@@ -144,7 +138,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -173,7 +167,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -191,10 +185,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 60,
+   "rbu": 49,
    "vol": 0,
-   "pe": 13595,
-   "rens": 7,
+   "pe": 10595,
+   "rens": 6,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -202,7 +196,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -262,10 +256,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 85,
+   "rbu": 87,
    "vol": 0,
-   "pe": 38230,
-   "rens": 5,
+   "pe": 41230,
+   "rens": 6,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -273,7 +267,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -291,10 +285,10 @@
    "bsub": 0.291,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 104,
-   "vol": 6557,
-   "pe": 71550,
-   "rens": 14,
+   "rbu": 94,
+   "vol": 5120,
+   "pe": 71500,
+   "rens": 13,
    "hav": 0,
    "klap": 2,
    "rst": 0,
@@ -310,7 +304,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -327,8 +321,8 @@
    "bsub": 0.124,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 80,
-   "vol": 267,
+   "rbu": 81,
+   "vol": 284,
    "pe": 2600,
    "rens": 3,
    "hav": 1,
@@ -346,7 +340,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -363,10 +357,10 @@
    "bsub": 0.098,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 162,
+   "rbu": 157,
    "vol": 7821,
-   "pe": 53283,
-   "rens": 14,
+   "pe": 47116,
+   "rens": 12,
    "hav": 2,
    "klap": 1,
    "rst": 0,
@@ -382,7 +376,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -399,10 +393,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 188,
-   "vol": 2530,
-   "pe": 127348,
-   "rens": 10,
+   "rbu": 193,
+   "vol": 2600,
+   "pe": 126098,
+   "rens": 9,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -410,7 +404,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -428,8 +422,8 @@
    "bsub": 0.036,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 32,
-   "vol": 2140,
+   "rbu": 27,
+   "vol": 2070,
    "pe": 165,
    "rens": 1,
    "hav": 0,
@@ -447,7 +441,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -484,7 +478,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -502,10 +496,10 @@
    "bsub": 0.099,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 149,
+   "rbu": 148,
    "vol": 0,
-   "pe": 63476,
-   "rens": 7,
+   "pe": 63401,
+   "rens": 6,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -521,7 +515,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -532,14 +526,14 @@
    "t": "ØD2-T12",
    "c": "Østersøen",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 9,
    "bi": 9,
    "br": 0.168,
    "bsub": 0.325,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 31,
+   "rbu": 30,
    "vol": 2191,
    "pe": 27545,
    "rens": 10,
@@ -550,6 +544,13 @@
    "hzy": null,
    "streams": [
     {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    },
+    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -558,7 +559,6 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -594,7 +594,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -630,7 +630,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -659,7 +659,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -696,7 +696,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -724,7 +724,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -742,7 +742,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 42,
+   "rbu": 39,
    "vol": 708,
    "pe": 0,
    "rens": 0,
@@ -753,7 +753,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -782,7 +782,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -811,7 +811,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -840,7 +840,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -858,9 +858,9 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 17,
-   "vol": 1813,
-   "pe": 2800,
+   "rbu": 9,
+   "vol": 558,
+   "pe": 3800,
    "rens": 1,
    "hav": 0,
    "klap": 0,
@@ -869,7 +869,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -887,8 +887,8 @@
    "bsub": 0.071,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 38,
-   "vol": 5538,
+   "rbu": 40,
+   "vol": 6008,
    "pe": 22000,
    "rens": 1,
    "hav": 0,
@@ -906,7 +906,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -924,10 +924,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 51,
-   "vol": 350,
-   "pe": 17800,
-   "rens": 3,
+   "rbu": 15,
+   "vol": 0,
+   "pe": 0,
+   "rens": 0,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -935,7 +935,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -953,10 +953,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 60,
-   "vol": 1363,
-   "pe": 31000,
-   "rens": 2,
+   "rbu": 109,
+   "vol": 1243,
+   "pe": 39000,
+   "rens": 4,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -964,7 +964,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -993,7 +993,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1011,10 +1011,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 98,
-   "vol": 1808,
-   "pe": 4540,
-   "rens": 2,
+   "rbu": 80,
+   "vol": 1788,
+   "pe": 40,
+   "rens": 1,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -1022,7 +1022,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1051,7 +1051,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1069,8 +1069,8 @@
    "bsub": 0.113,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 131,
-   "vol": 9780,
+   "rbu": 134,
+   "vol": 10121,
    "pe": 20300,
    "rens": 3,
    "hav": 0,
@@ -1088,7 +1088,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -1124,7 +1124,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1142,7 +1142,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 37,
+   "rbu": 48,
    "vol": 2598,
    "pe": 20000,
    "rens": 2,
@@ -1178,10 +1178,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 565,
-   "vol": 54757,
-   "pe": 491620,
-   "rens": 7,
+   "rbu": 590,
+   "vol": 56461,
+   "pe": 494820,
+   "rens": 8,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -1233,7 +1233,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1244,7 +1244,7 @@
    "t": "BVuDLSe-T20",
    "c": "Storebælt",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 12,
    "bi": 1,
    "br": null,
@@ -1262,6 +1262,13 @@
    "hzy": null,
    "streams": [
     {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    },
+    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -1270,7 +1277,6 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1288,10 +1294,10 @@
    "bsub": 0.099,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 16,
+   "rbu": 36,
    "vol": 1690,
-   "pe": 3910,
-   "rens": 4,
+   "pe": 4670,
+   "rens": 5,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -1307,7 +1313,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1325,7 +1331,7 @@
    "bsub": 0.295,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 229,
+   "rbu": 233,
    "vol": 0,
    "pe": 87500,
    "rens": 2,
@@ -1386,7 +1392,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1415,7 +1421,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1452,7 +1458,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1470,10 +1476,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 201,
-   "vol": 16450,
-   "pe": 106666,
-   "rens": 4,
+   "rbu": 200,
+   "vol": 16730,
+   "pe": 109236,
+   "rens": 6,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -1481,7 +1487,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1499,7 +1505,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 31,
+   "rbu": 41,
    "vol": 570,
    "pe": 1475,
    "rens": 5,
@@ -1510,7 +1516,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1539,7 +1545,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1557,8 +1563,8 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 25,
-   "vol": 1018,
+   "rbu": 39,
+   "vol": 1828,
    "pe": 30000,
    "rens": 1,
    "hav": 0,
@@ -1568,7 +1574,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1597,7 +1603,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1615,10 +1621,10 @@
    "bsub": 0.036,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 192,
-   "vol": 583.333333,
-   "pe": 56105,
-   "rens": 8,
+   "rbu": 255,
+   "vol": 979.333333,
+   "pe": 66036,
+   "rens": 12,
    "hav": 0,
    "klap": 1,
    "rst": 0,
@@ -1634,7 +1640,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1652,7 +1658,7 @@
    "bsub": 0.241,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 84,
+   "rbu": 80,
    "vol": 0,
    "pe": 97035,
    "rens": 5,
@@ -1687,14 +1693,14 @@
    "t": "BVuDL-T23",
    "c": "Lillebælt/jylland",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 14,
    "bi": 8,
    "br": 0.101,
    "bsub": 0.158,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 103,
+   "rbu": 106,
    "vol": 800,
    "pe": 10465,
    "rens": 4,
@@ -1705,13 +1711,6 @@
    "hzy": null,
    "streams": [
     {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
-    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -1720,6 +1719,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -1741,8 +1741,8 @@
    "pe": 0,
    "rens": 0,
    "hav": 0,
-   "klap": 3,
-   "rst": 9,
+   "klap": 4,
+   "rst": 8,
    "hz": 0,
    "hzy": null,
    "streams": [
@@ -1755,7 +1755,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1773,7 +1773,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 138,
+   "rbu": 155,
    "vol": 2710,
    "pe": 30850,
    "rens": 5,
@@ -1784,7 +1784,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -1795,14 +1795,14 @@
    "t": "BDLSeSa-T22",
    "c": "Lillebælt/jylland",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 11,
    "bi": 5,
    "br": 0.066,
    "bsub": 0.108,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 108,
+   "rbu": 137,
    "vol": 4474,
    "pe": 48760,
    "rens": 4,
@@ -1813,13 +1813,6 @@
    "hzy": null,
    "streams": [
     {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
-    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -1828,6 +1821,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -1844,10 +1838,10 @@
    "bsub": 0.207,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 728,
-   "vol": 13269,
-   "pe": 224735,
-   "rens": 9,
+   "rbu": 705,
+   "vol": 12613,
+   "pe": 216985,
+   "rens": 7,
    "hav": 0,
    "klap": 1,
    "rst": 0,
@@ -1886,9 +1880,9 @@
    "bsub": 0.273,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 318,
-   "vol": 13300,
-   "pe": 35085,
+   "rbu": 305,
+   "vol": 11569,
+   "pe": 59935,
    "rens": 5,
    "hav": 0,
    "klap": 0,
@@ -1922,30 +1916,23 @@
    "t": "FjLSa-T17",
    "c": "Lillebælt/jylland",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 4,
    "bi": 2,
    "br": null,
    "bsub": 0.106,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 41,
-   "vol": 6313,
-   "pe": 0,
-   "rens": 0,
+   "rbu": 67,
+   "vol": 7323,
+   "pe": 2400,
+   "rens": 1,
    "hav": 1,
    "klap": 0,
    "rst": 0,
    "hz": 0,
    "hzy": null,
    "streams": [
-    {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
     {
      "stream": "Bathing water quality",
      "from": 1991,
@@ -1955,6 +1942,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2015,10 +2003,10 @@
    "bsub": 0.294,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 549,
-   "vol": 51904.999999,
-   "pe": 267612,
-   "rens": 5,
+   "rbu": 522,
+   "vol": 57822.999999,
+   "pe": 276112,
+   "rens": 7,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -2050,14 +2038,14 @@
    "t": "Vf1-T15",
    "c": "Nissum fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 0,
    "bi": 0,
    "br": null,
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 22,
+   "rbu": 16,
    "vol": 0,
    "pe": 2500,
    "rens": 1,
@@ -2066,16 +2054,9 @@
    "rst": 0,
    "hz": 0,
    "hzy": null,
-   "streams": [
-    {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    }
-   ],
+   "streams": [],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2086,32 +2067,25 @@
    "t": "Vf2-T26",
    "c": "Nissum fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 0,
    "bi": 0,
    "br": null,
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 34,
-   "vol": 35,
-   "pe": 9415,
-   "rens": 7,
+   "rbu": 40,
+   "vol": 80,
+   "pe": 9315,
+   "rens": 6,
    "hav": 0,
    "klap": 0,
    "rst": 0,
    "hz": 0,
    "hzy": null,
-   "streams": [
-    {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    }
-   ],
+   "streams": [],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2129,9 +2103,9 @@
    "bsub": 0.522,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 236,
-   "vol": 7049,
-   "pe": 161990,
+   "rbu": 267,
+   "vol": 7513,
+   "pe": 148540,
    "rens": 14,
    "hav": 2,
    "klap": 5,
@@ -2171,10 +2145,10 @@
    "bsub": 0.021,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 48,
-   "vol": 483,
-   "pe": 430,
-   "rens": 4,
+   "rbu": 75,
+   "vol": 599,
+   "pe": 18030,
+   "rens": 7,
    "hav": 0,
    "klap": 1,
    "rst": 1,
@@ -2190,7 +2164,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2201,32 +2175,25 @@
    "t": "FjFLSe1-T4",
    "c": "Randers fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 0,
    "bi": 0,
    "br": null,
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 417,
-   "vol": 23277.5,
-   "pe": 204688,
-   "rens": 12,
+   "rbu": 439,
+   "vol": 24727.5,
+   "pe": 205488,
+   "rens": 13,
    "hav": 0,
    "klap": 0,
    "rst": 0,
    "hz": 0,
    "hzy": null,
-   "streams": [
-    {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    }
-   ],
+   "streams": [],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2244,7 +2211,7 @@
    "bsub": 0.0,
    "bfy": 1994,
    "bly": 2018,
-   "rbu": 45,
+   "rbu": 51,
    "vol": 0,
    "pe": 4631,
    "rens": 1,
@@ -2287,10 +2254,10 @@
    "bsub": 0.242,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 76,
+   "rbu": 70,
    "vol": 2920,
-   "pe": 165,
-   "rens": 3,
+   "pe": 135,
+   "rens": 2,
    "hav": 0,
    "klap": 2,
    "rst": 0,
@@ -2306,7 +2273,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2342,7 +2309,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2360,10 +2327,10 @@
    "bsub": 0.093,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 182,
+   "rbu": 186,
    "vol": 5891,
-   "pe": 94092,
-   "rens": 6,
+   "pe": 94122,
+   "rens": 7,
    "hav": 0,
    "klap": 1,
    "rst": 18,
@@ -2379,7 +2346,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2415,7 +2382,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2444,7 +2411,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2481,7 +2448,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2499,8 +2466,8 @@
    "bsub": 0.271,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 335,
-   "vol": 12882,
+   "rbu": 345,
+   "vol": 13332,
    "pe": 24276,
    "rens": 9,
    "hav": 0,
@@ -2518,7 +2485,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2535,10 +2502,10 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 161,
+   "rbu": 199,
    "vol": 1500,
-   "pe": 38000,
-   "rens": 2,
+   "pe": 38015,
+   "rens": 3,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -2546,7 +2513,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2557,23 +2524,30 @@
    "t": "BDLSeSa-T22",
    "c": "Århus bugt",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 20,
    "bi": 5,
    "br": 0.042,
    "bsub": 0.092,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 772,
-   "vol": 10747,
-   "pe": 578019,
-   "rens": 13,
+   "rbu": 852,
+   "vol": 10297,
+   "pe": 598928,
+   "rens": 14,
    "hav": 0,
    "klap": 0,
    "rst": 15,
    "hz": 0,
    "hzy": null,
    "streams": [
+    {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    },
     {
      "stream": "Bathing water quality",
      "from": 1991,
@@ -2583,7 +2557,6 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2619,7 +2592,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2636,7 +2609,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 84,
+   "rbu": 79,
    "vol": 0,
    "pe": 114015,
    "rens": 4,
@@ -2672,8 +2645,8 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 896,
-   "vol": 9597.5,
+   "rbu": 837,
+   "vol": 7352.5,
    "pe": 336244,
    "rens": 8,
    "hav": 0,
@@ -2708,7 +2681,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 109,
+   "rbu": 140,
    "vol": 0,
    "pe": 71475,
    "rens": 7,
@@ -2719,7 +2692,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2737,10 +2710,10 @@
    "bsub": 0.229,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 299,
-   "vol": 16691.0,
-   "pe": 90355,
-   "rens": 10,
+   "rbu": 322,
+   "vol": 18997.0,
+   "pe": 104522,
+   "rens": 12,
    "hav": 0,
    "klap": 1,
    "rst": 0,
@@ -2779,9 +2752,9 @@
    "bsub": 0.218,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 232,
-   "vol": 61606.0,
-   "pe": 108500,
+   "rbu": 220,
+   "vol": 59919.5,
+   "pe": 98500,
    "rens": 10,
    "hav": 0,
    "klap": 0,
@@ -2798,7 +2771,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2816,10 +2789,10 @@
    "bsub": 0.167,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 245,
-   "vol": 9371.166666000001,
-   "pe": 14850,
-   "rens": 4,
+   "rbu": 234,
+   "vol": 8823.666666000001,
+   "pe": 10850,
+   "rens": 3,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -2852,14 +2825,14 @@
    "t": "Fj4-T25",
    "c": "Mariager fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 2,
    "bi": 0,
    "br": null,
    "bsub": 0.025,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 114,
+   "rbu": 103,
    "vol": 1250,
    "pe": 450,
    "rens": 2,
@@ -2870,13 +2843,6 @@
    "hzy": null,
    "streams": [
     {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
-    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -2885,6 +2851,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -2902,10 +2869,10 @@
    "bsub": 0.138,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 295,
-   "vol": 99480,
-   "pe": 205544,
-   "rens": 21,
+   "rbu": 209,
+   "vol": 25794,
+   "pe": 123369,
+   "rens": 17,
    "hav": 0,
    "klap": 3,
    "rst": 7,
@@ -2921,7 +2888,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2938,10 +2905,10 @@
    "bsub": 0.275,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 127,
-   "vol": 8674,
-   "pe": 189830,
-   "rens": 15,
+   "rbu": 152,
+   "vol": 8694,
+   "pe": 194780,
+   "rens": 17,
    "hav": 2,
    "klap": 1,
    "rst": 12,
@@ -2957,7 +2924,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -2985,7 +2952,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "555 km² described by 0 shore observations."
@@ -3023,7 +2990,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3040,10 +3007,10 @@
    "bsub": 0.075,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 117,
+   "rbu": 128,
    "vol": 0,
-   "pe": 28921,
-   "rens": 12,
+   "pe": 35088,
+   "rens": 14,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -3059,7 +3026,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3077,7 +3044,7 @@
    "bsub": 0.121,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 82,
+   "rbu": 78,
    "vol": 0,
    "pe": 25561,
    "rens": 24,
@@ -3096,7 +3063,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3115,8 +3082,8 @@
    "bly": 2018,
    "rbu": 115,
    "vol": 1118,
-   "pe": 12107,
-   "rens": 9,
+   "pe": 12182,
+   "rens": 10,
    "hav": 0,
    "klap": 0,
    "rst": 0,
@@ -3132,7 +3099,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3149,8 +3116,8 @@
    "bsub": 0.034,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 83,
-   "vol": 4557,
+   "rbu": 75,
+   "vol": 4382,
    "pe": 0,
    "rens": 0,
    "hav": 0,
@@ -3168,7 +3135,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3179,15 +3146,15 @@
    "t": "BD-T13",
    "c": "Det sydfynske øhav",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 21,
    "bi": 3,
    "br": 0.203,
    "bsub": 0.074,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 334,
-   "vol": 34961,
+   "rbu": 320,
+   "vol": 34761,
    "pe": 72370,
    "rens": 12,
    "hav": 0,
@@ -3197,6 +3164,13 @@
    "hzy": null,
    "streams": [
     {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    },
+    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -3205,7 +3179,6 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3233,7 +3206,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3270,7 +3243,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3287,8 +3260,8 @@
    "bsub": 0.071,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 419,
-   "vol": 64239,
+   "rbu": 426,
+   "vol": 65534,
    "pe": 481197,
    "rens": 12,
    "hav": 3,
@@ -3306,7 +3279,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3323,10 +3296,10 @@
    "bsub": 0.13,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 117,
-   "vol": 5560,
-   "pe": 88955,
-   "rens": 4,
+   "rbu": 126,
+   "vol": 5300,
+   "pe": 89525,
+   "rens": 5,
    "hav": 0,
    "klap": 8,
    "rst": 0,
@@ -3342,7 +3315,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3359,10 +3332,10 @@
    "bsub": 0.105,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 310,
-   "vol": 4159,
-   "pe": 354821,
-   "rens": 7,
+   "rbu": 353,
+   "vol": 5158,
+   "pe": 354909,
+   "rens": 8,
    "hav": 0,
    "klap": 6,
    "rst": 0,
@@ -3378,7 +3351,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3388,7 +3361,7 @@
    "t": "Vf1-T15",
    "c": "Nissum fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 2,
    "bi": 2,
    "br": null,
@@ -3406,13 +3379,6 @@
    "hzy": null,
    "streams": [
     {
-     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
-     "from": 1990,
-     "to": 2012,
-     "n": null,
-     "cadence": "fitted once, 1990-2012"
-    },
-    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -3421,6 +3387,7 @@
     }
    ],
    "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "Fewer than three bathing stations vary enough to correlate, so whether this area behaves as one unit cannot be tested.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3438,7 +3405,7 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 96,
+   "rbu": 101,
    "vol": 5978,
    "pe": 97876,
    "rens": 4,
@@ -3467,14 +3434,14 @@
    "t": "FjSa1-T19",
    "c": "Limfjorden",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 0,
    "bi": 0,
    "br": null,
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 469,
+   "rbu": 474,
    "vol": 12982.5,
    "pe": 282480,
    "rens": 7,
@@ -3483,9 +3450,16 @@
    "rst": 0,
    "hz": 0,
    "hzy": null,
-   "streams": [],
+   "streams": [
+    {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    }
+   ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3503,8 +3477,8 @@
    "bsub": null,
    "bfy": null,
    "bly": null,
-   "rbu": 93,
-   "vol": 1450,
+   "rbu": 92,
+   "vol": 2340,
    "pe": 161500,
    "rens": 4,
    "hav": 0,
@@ -3532,15 +3506,15 @@
    "t": "BDLSeSa-T22",
    "c": "Lillebælt/jylland",
    "cat": "Kystvand",
-   "m": 0,
+   "m": 1,
    "bs": 20,
    "bi": 15,
    "br": 0.112,
    "bsub": 0.18,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 191,
-   "vol": 5068,
+   "rbu": 161,
+   "vol": 3198,
    "pe": 15150,
    "rens": 5,
    "hav": 0,
@@ -3550,6 +3524,13 @@
    "hzy": null,
    "streams": [
     {
+     "stream": "DCE statistical model (TN/TP/Chl a/Kd)",
+     "from": 1990,
+     "to": 2012,
+     "n": null,
+     "cadence": "fitted once, 1990-2012"
+    },
+    {
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
@@ -3558,7 +3539,6 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3575,10 +3555,10 @@
    "bsub": 0.13,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 57,
-   "vol": 2350,
-   "pe": 40532,
-   "rens": 6,
+   "rbu": 111,
+   "vol": 3485,
+   "pe": 57332,
+   "rens": 9,
    "hav": 2,
    "klap": 0,
    "rst": 0,
@@ -3594,7 +3574,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3611,13 +3591,13 @@
    "bsub": 0.39,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 865,
-   "vol": 14377,
-   "pe": 681555,
-   "rens": 17,
+   "rbu": 837,
+   "vol": 8161,
+   "pe": 623435,
+   "rens": 20,
    "hav": 0,
    "klap": 3,
-   "rst": 12,
+   "rst": 15,
    "hz": 0,
    "hzy": null,
    "streams": [
@@ -3630,7 +3610,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3647,8 +3627,8 @@
    "bsub": 0.103,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 54,
-   "vol": 3756,
+   "rbu": 57,
+   "vol": 4236,
    "pe": 119500,
    "rens": 4,
    "hav": 0,
@@ -3666,7 +3646,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3676,20 +3656,56 @@
    "t": "FjLSa-T17",
    "c": "Isefjord og roskilde fjord",
    "cat": "Kystvand",
-   "m": 1,
+   "m": 0,
    "bs": 9,
    "bi": 5,
    "br": 0.165,
    "bsub": 0.14,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 280,
-   "vol": 16480,
-   "pe": 119877,
-   "rens": 19,
+   "rbu": 295,
+   "vol": 17880,
+   "pe": 119927,
+   "rens": 20,
    "hav": 0,
    "klap": 0,
    "rst": 0,
+   "hz": 0,
+   "hzy": null,
+   "streams": [
+    {
+     "stream": "Bathing water quality",
+     "from": 1991,
+     "to": 2018,
+     "n": 9,
+     "cadence": "annual class"
+    }
+   ],
+   "gaps": [
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
+    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
+   ]
+  },
+  "DKCOAST216": {
+   "n": "Lillebælt, syd",
+   "a": 1148.63,
+   "t": "BVuDL-T23",
+   "c": "Lillebælt/jylland",
+   "cat": "Kystvand",
+   "m": 1,
+   "bs": 26,
+   "bi": 14,
+   "br": 0.189,
+   "bsub": 0.147,
+   "bfy": 1991,
+   "bly": 2018,
+   "rbu": 117,
+   "vol": 6131,
+   "pe": 115906,
+   "rens": 15,
+   "hav": 0,
+   "klap": 3,
+   "rst": 10,
    "hz": 0,
    "hzy": null,
    "streams": [
@@ -3704,47 +3720,11 @@
      "stream": "Bathing water quality",
      "from": 1991,
      "to": 2018,
-     "n": 9,
-     "cadence": "annual class"
-    }
-   ],
-   "gaps": [
-    "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
-   ]
-  },
-  "DKCOAST216": {
-   "n": "Lillebælt, syd",
-   "a": 1148.63,
-   "t": "BVuDL-T23",
-   "c": "Lillebælt/jylland",
-   "cat": "Kystvand",
-   "m": 0,
-   "bs": 26,
-   "bi": 14,
-   "br": 0.189,
-   "bsub": 0.147,
-   "bfy": 1991,
-   "bly": 2018,
-   "rbu": 118,
-   "vol": 6131,
-   "pe": 115906,
-   "rens": 15,
-   "hav": 0,
-   "klap": 3,
-   "rst": 10,
-   "hz": 0,
-   "hzy": null,
-   "streams": [
-    {
-     "stream": "Bathing water quality",
-     "from": 1991,
-     "to": 2018,
      "n": 26,
      "cadence": "annual class"
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3780,7 +3760,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3816,7 +3796,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3833,10 +3813,10 @@
    "bsub": 0.341,
    "bfy": 1991,
    "bly": 2018,
-   "rbu": 332,
+   "rbu": 341,
    "vol": 1559,
-   "pe": 449600,
-   "rens": 4,
+   "pe": 451400,
+   "rens": 5,
    "hav": 0,
    "klap": 2,
    "rst": 0,
@@ -3852,7 +3832,7 @@
     }
    ],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
   },
@@ -3880,7 +3860,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "3,831 km² described by 0 shore observations."
@@ -3910,7 +3890,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3939,7 +3919,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -3968,7 +3948,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "2,496 km² described by 0 shore observations."
@@ -3998,7 +3978,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "687 km² described by 0 shore observations."
@@ -4028,7 +4008,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,526 km² described by 0 shore observations."
@@ -4058,7 +4038,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -4082,12 +4062,12 @@
    "rens": 0,
    "hav": 0,
    "klap": 2,
-   "rst": 9,
+   "rst": 6,
    "hz": 0,
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,881 km² described by 0 shore observations."
@@ -4111,13 +4091,13 @@
    "pe": 0,
    "rens": 0,
    "hav": 0,
-   "klap": 2,
+   "klap": 1,
    "rst": 27,
    "hz": 0,
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "3,703 km² described by 0 shore observations."
@@ -4147,7 +4127,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,767 km² described by 0 shore observations."
@@ -4172,12 +4152,12 @@
    "rens": 0,
    "hav": 0,
    "klap": 2,
-   "rst": 12,
+   "rst": 16,
    "hz": 0,
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "4,249 km² described by 0 shore observations."
@@ -4207,7 +4187,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "573 km² described by 0 shore observations."
@@ -4237,7 +4217,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies.",
     "1,316 km² described by 0 shore observations."
@@ -4267,7 +4247,7 @@
    "hzy": null,
    "streams": [],
    "gaps": [
-    "No fitted relation between nutrient load and any indicator exists for this area. Any coefficient applied here is transferred from a fjord.",
+    "No station-level statistical model relates nutrient load to an indicator here. Its requirement comes from DHI's mechanistic model, a meta-analysis, or neither: the requirement table of DHI's method report (Tabel 6) says which.",
     "No bathing station: there is no long, repeated observation of any marine variable here in the open data.",
     "No marine hazardous-substance monitoring point. The national layer sw_mfs_tilstand holds 256 points, all freshwater (152 lake, 104 river) and none marine, and carries no analyte or concentration. This gap applies to all 123 water bodies."
    ]
@@ -51699,43 +51679,43 @@
   {
    "predictor": "log10(1+outfalls_per_km2)",
    "outcome": "sub_excellent",
-   "r": 0.149,
-   "r2": 0.022,
+   "r": 0.135,
+   "r2": 0.018,
    "n": 65
   },
   {
    "predictor": "log10(1+outfalls_per_km2)",
    "outcome": "mean_score",
-   "r": -0.136,
-   "r2": 0.019,
+   "r": -0.124,
+   "r2": 0.015,
    "n": 65
   },
   {
    "predictor": "log10(1+pe_per_km2)",
    "outcome": "sub_excellent",
-   "r": 0.313,
-   "r2": 0.098,
+   "r": 0.28,
+   "r2": 0.078,
    "n": 65
   },
   {
    "predictor": "log10(1+pe_per_km2)",
    "outcome": "mean_score",
-   "r": -0.288,
-   "r2": 0.083,
+   "r": -0.255,
+   "r2": 0.065,
    "n": 65
   },
   {
    "predictor": "log10(1+basin_m3_per_km2)",
    "outcome": "sub_excellent",
-   "r": 0.139,
-   "r2": 0.019,
+   "r": 0.133,
+   "r2": 0.018,
    "n": 65
   },
   {
    "predictor": "log10(1+basin_m3_per_km2)",
    "outcome": "mean_score",
-   "r": -0.151,
-   "r2": 0.023,
+   "r": -0.147,
+   "r2": 0.022,
    "n": 65
   }
  ]

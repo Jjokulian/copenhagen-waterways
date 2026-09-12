@@ -350,56 +350,6 @@
    }
   },
   {
-   "id": "C-AR-SCOPE",
-   "kind": "code",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "The page keeps one record per marine water body: what presses on it, what is observed in it, over which years each stream exists, and what cannot be modelled there.",
-   "because": "scripts/areas.py writes each record with pressure, observation, streams and not_modelled, and the page prints them per water body.",
-   "rests_on": [
-    "X-AR-AREAS",
-    "D-AR-AREAS"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-LONGEST"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "This page refuses the aggregate. One record per marine water body: what presses on it, what is observed in it, **over which years each of those streams exists**, and what cannot be modelled there.",
-     "texts": "0458859c2ccc84ce",
-     "node X-AR-AREAS": "3d0aabbb33262dbe",
-     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
-    }
-   }
-  },
-  {
-   "id": "C-AR-ASSIGN",
-   "kind": "code",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Every layer is assigned to water bodies by nearest point on the marine boundary, one rule for all, with the largest distance kept per layer and area and anything beyond the maximum distance dropped.",
-   "because": "In scripts/areas.py each feature goes to the nearest boundary vertex within the maximum distance; the record keeps n and max_dist_km per layer, not the distance of each feature.",
-   "rests_on": [
-    "X-AR-AREAS"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-DISTANCE"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "Assignment is by nearest point on the marine boundary, one rule for every layer, with the largest distance kept for each layer in each area and anything beyond 20 km dropped.",
-     "texts": "9ebb3ba7d89a79a3",
-     "node X-AR-AREAS": "3d0aabbb33262dbe"
-    }
-   }
-  },
-  {
    "id": "C-AR-MODEL-MATCH",
    "kind": "code",
    "stance": "ours",
@@ -519,32 +469,6 @@
      "said on AREAS.md": "ODA's station register holds **6,258 positioned marine stations**.",
      "texts": "23e0fa2223733a7b",
      "node D-AR-REGISTER": "2c621058ec9e1adc"
-    }
-   }
-  },
-  {
-   "id": "C-AR-SERIES-COVERAGE",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Of the station series behind the partition tests, the page gives how many stations lie inside a water body and how many water bodies contain one, and how many contain none with data in two, five and ten or more distinct years.",
-   "because": "scripts/station_places.py counts the series' stations placed by point in polygon and, per water body, the most distinct years any of its stations carries data in; these are counts over that series, not over the register.",
-   "rests_on": [
-    "X-AR-STATIONPLACES",
-    "D-AR-STATIONS"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-REGISTER-COVERAGE"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "The part of it this page can place in water bodies is the station series behind the partition tests below — 1,415 stations with a monthly record, 1,313 of them inside a water body by point in polygon — and **119 of the 123 water bodies contain at least one of those.** Counted over that series: 4 water bodies contain no station with data in 2 or more distinct years, 10 water bodies contain no station with data in 5 or more distinct years, 12 water bodies contain no station with data in 10 or more distinct years.",
-     "texts": "b57020f27f2be015",
-     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
-     "node D-AR-STATIONS": "26623b56f73df40c"
     }
    }
   },
@@ -994,260 +918,6 @@
    }
   },
   {
-   "id": "C-AR-PART-STAT",
-   "kind": "code",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own.",
-   "because": "icc() in partition_score.py returns MSB/(MSB+MSW). Under random labels both mean squares estimate the same variance, so the ratio tends to one half; the file's own note says so. The name icc in the code is not the ANOVA intraclass correlation.",
-   "rests_on": [
-    "X-AR-PARTITION",
-    "D-AR-PARTITION"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-ICC"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode. The statistic, computed within month by `scripts/partition_score.py`, is a **ratio of mean squares**: the between-basket mean square over the sum of the between- and within-basket mean squares. One means stations in the same basket agree completely. With labels that carry no information both mean squares estimate the same variance and the ratio sits near one half, not zero — so no value in the table below can be read on its own, only its difference from a null.",
-     "texts": "2ef587bff9f917a0",
-     "node X-AR-PARTITION": "70f90507ef60ec40",
-     "node D-AR-PARTITION": "52530e963493f776"
-    }
-   }
-  },
-  {
-   "id": "C-AR-WITHIN-MONTH",
-   "kind": "argued",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "The score is computed within month, because pooling across months puts the shared season into the between-basket term and makes every partition look excellent.",
-   "because": "Every station shares the season; a common driver across baskets inflates the between term whatever the baskets are. partition_score.py groups by month before scoring.",
-   "rests_on": [
-    "X-AR-PARTITION"
-   ],
-   "basis": "assessed",
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.",
-     "texts": "b11425c7e881db06",
-     "node X-AR-PARTITION": "70f90507ef60ec40"
-    }
-   }
-  },
-  {
-   "id": "C-AR-THREE-RANKINGS",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "The ranking of variables depends almost entirely on the null it is compared against: three reasonable nulls give three different rankings.",
-   "because": "Ranking the variables by the real score minus each null's gives three different orders in partition_score.json.",
-   "rests_on": [
-    "D-AR-PARTITION"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-RANKING-NOTE",
-    "C-AR-OLD-CAUTION"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "**The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different rankings.**",
-     "texts": "e1cd7b436e84cb69",
-     "node D-AR-PARTITION": "52530e963493f776"
-    }
-   }
-  },
-  {
-   "id": "C-AR-NULLS",
-   "kind": "code",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Shuffled labels keep basket sizes and destroy geography; latitude stripes keep compactness and equal sizes and ignore hydrography; the matched blobs keep both sizes and compactness, grown from random seeds by nearest neighbour three times over - the only control that varies one thing at a time.",
-   "because": "Read from the three controls in partition_score.py.",
-   "rests_on": [
-    "X-AR-PARTITION"
-   ],
-   "basis": "assessed",
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "The three nulls answer three different questions. **Shuffled** permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure. **Latitude stripes** are equal-count horizontal bands, as many as there are real baskets, so they keep compactness and equal sizes but ignore hydrography. **Size- and shape-matched** baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, three times over, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.",
-     "texts": "cec175ec5d2f5a37",
-     "node X-AR-PARTITION": "70f90507ef60ec40"
-    }
-   }
-  },
-  {
-   "id": "C-AR-WINNERS",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Against the shuffle, salinity gains most by a distance; against the stripes, surface oxygen saturation does.",
-   "because": "The largest real-minus-null difference for each control, read from partition_score.json.",
-   "rests_on": [
-    "D-AR-PARTITION"
-   ],
-   "basis": "computed",
-   "said_on": [
-    "CATEGORY.md"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "Against the shuffle, salinity gains most, by a distance; against the stripes, surface oxygen saturation does.",
-     "said on CATEGORY.md": "The winners are read from the scores, and the first two disagree, not marginally: surface oxygen saturation gains **+0.065** over the shuffle and **+0.408** over the stripes, while against the shuffle salinity gains most.",
-     "texts": "a75a44822b1f3cbe",
-     "node D-AR-PARTITION": "52530e963493f776"
-    }
-   }
-  },
-  {
-   "id": "C-AR-REVERSAL",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
-   "because": "Lifts and the spread between the three runs are read from partition_score.json. With three runs, a lift smaller than the runs' spread cannot be told from zero.",
-   "rests_on": [
-    "D-AR-PARTITION",
-    "X-AR-PARTITION"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-FLUO",
-    "C-AR-OLD-CAT-FLUO"
-   ],
-   "said_on": [
-    "CATEGORY.md"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "Against the matched blobs the ordering **reverses**: surface oxygen saturation gains most (+0.402), surface salinity little (+0.124), and fluorescence's lift is below zero (-0.050) — but the three blob runs themselves spread by 0.109 for fluorescence, so for it the official partition does no better than random compact blobs, and whether it does worse is not shown.",
-     "said on CATEGORY.md": "Only the third varies one thing at a time, and against it the ordering from the first **reverses** — oxygen saturation gains most, salinity little — and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
-     "texts": "1445ea759d6b3410",
-     "node D-AR-PARTITION": "52530e963493f776",
-     "node X-AR-PARTITION": "70f90507ef60ec40"
-    }
-   }
-  },
-  {
-   "id": "C-AR-READING",
-   "kind": "provisional",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "One reading fits these numbers and is not tested: if salinity is spatially smooth, any compact grouping predicts it and real boundaries add little; if oxygen is rough, blobs do poorly and boundaries that follow enclosure carry information.",
-   "because": "The pattern of lifts is what that difference in smoothness would produce, but nothing here measures smoothness, so it stays a reading.",
-   "rests_on": [
-    "C-AR-REVERSAL",
-    "U-AR-SMOOTH"
-   ],
-   "basis": "assessed",
-   "replaces": [
-    "C-AR-OLD-SMOOTH",
-    "C-AR-OLD-CAT-SMOOTH"
-   ],
-   "said_on": [
-    "CATEGORY.md"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add; if oxygen is spatially rough, blobs do poorly and boundaries that follow enclosure carry real information.",
-     "said on CATEGORY.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, *any* compact grouping predicts it well and real boundaries have little left to add; if oxygen is rough, shape alone fails and boundaries that follow enclosure carry real information.",
-     "texts": "b2c095787bafdfe7",
-     "rests on C-AR-REVERSAL": "1445ea759d6b3410",
-     "node U-AR-SMOOTH": "2e52f10b0df32660"
-    }
-   }
-  },
-  {
-   "id": "C-AR-LIFT-RULE",
-   "kind": "argued",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.",
-   "because": "A compact grouping predicts any spatially structured variable to some degree whatever its lines, so only the excess over a same-shaped grouping can be credited to the lines.",
-   "rests_on": [
-    "C-AR-NULLS"
-   ],
-   "basis": "assessed",
-   "said_on": [
-    "CATEGORY.md"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "A partition's value is not how well it predicts, but **how much better it predicts than its own shape alone would**.",
-     "said on CATEGORY.md": "**A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.**",
-     "texts": "0f14397ffbde1421",
-     "rests on C-AR-NULLS": "cec175ec5d2f5a37"
-    }
-   }
-  },
-  {
-   "id": "C-AR-SAMPLED",
-   "kind": "argued",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "Stations are not placed at random and are denser in some baskets than others, so every score is of the partition as sampled, and cannot tell a well-drawn basket from one whose stations sit close together.",
-   "because": "Stated with the scores in partition_score.json; clustered stations raise agreement within a basket whatever the basket's merit.",
-   "rests_on": [
-    "A-AR-SAMPLED",
-    "D-AR-PARTITION"
-   ],
-   "basis": "assessed",
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.",
-     "texts": "b032c74eefe99329",
-     "node A-AR-SAMPLED": "e0fe2abad7eaa536",
-     "node D-AR-PARTITION": "52530e963493f776"
-    }
-   }
-  },
-  {
-   "id": "C-AR-CUMHOC",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "A national time series has one unit of replication; the water bodies with two or more bathing stations give more, so an effect size can be estimated across them.",
-   "because": "cum_hoc() in areas.py keeps the areas with two or more bathing stations and an area; the count is read from areas.json.",
-   "rests_on": [
-    "X-AR-AREAS",
-    "D-AR-AREAS"
-   ],
-   "basis": "computed",
-   "replaces": [
-    "C-AR-OLD-ONLY-PLACE"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "A national time series has one unit of replication. The water bodies with two or more bathing stations number 65, so an effect size can be estimated across them.",
-     "texts": "a97000ecda472aa4",
-     "node X-AR-AREAS": "3d0aabbb33262dbe",
-     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
-    }
-   }
-  },
-  {
    "id": "C-AR-CUMHOC-DESIGN",
    "kind": "code",
    "stance": "ours",
@@ -1269,35 +939,6 @@
    }
   },
   {
-   "id": "C-AR-TABLE-KEY",
-   "kind": "code",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "In the per-area table, model is DHI's statistical-model flag, bath the bathing stations and their years, r the mean correlation between informative stations' yearly classes, RBU the rain-conditioned outfalls, PE the approved treatment-plant load, and gaps the number of written-out reasons.",
-   "because": "Each column is read from the record's fields in areas.py; DCE fitted its models on data from 1990 to 2012.",
-   "rests_on": [
-    "X-AR-AREAS",
-    "E-AR-DCE-PERIOD",
-    "C-AR-MODEL-MATCH"
-   ],
-   "basis": "assessed",
-   "replaces": [
-    "C-AR-OLD-MODEL-KEY"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "`model` — a DHI statistical model, as described above (DCE fitted its statistical models on 1990–2012). `bath` — bathing stations, and the years they span. `r` — the mean correlation between the yearly classes of a water body's informative bathing stations, where there are three or more. `RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load. `gaps` — the number of written-out reasons this area cannot be modelled.",
-     "texts": "a0763ad3a96830fd",
-     "node X-AR-AREAS": "3d0aabbb33262dbe",
-     "node E-AR-DCE-PERIOD": "fb1d3c0e2ded567f",
-     "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
-     "rests on C-AR-MODEL-MATCH": "e0d2f7c66a4d4b3b"
-    }
-   }
-  },
-  {
    "id": "C-AR-RECORD",
    "kind": "code",
    "stance": "ours",
@@ -1315,24 +956,6 @@
      "said on AREAS.md": "The full record for each area — every pressure, every stream with its years, and the written-out list of what cannot be modelled there — is in `data/derived/areas.json`, which `scripts/areas.py` writes locally and the repository does not ship, and drawn with its timeline on [the map](areas.html).",
      "texts": "6a757362b8fec789",
      "node X-AR-AREAS": "3d0aabbb33262dbe"
-    }
-   }
-  },
-  {
-   "id": "C-AR-NOT",
-   "kind": "argued",
-   "stance": "ours",
-   "page": "AREAS.md",
-   "claim": "This is not a causal model per area but the ledger needed before one: which areas have enough observation to support a claim, which have none, and over which years each stream exists.",
-   "because": "The page counts and correlates; it fits no model of cause, and what it lists is what a model would need.",
-   "rests_on": [],
-   "basis": "assessed",
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on AREAS.md": "It is not a causal model per area. It is the ledger you need before you can build one: which areas have enough observation to support a claim, which have none, and over which years each stream exists — so that an analysis published in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader seeing the gap.",
-     "texts": "259597b28d557e3e"
     }
    }
   },
@@ -1487,19 +1110,19 @@
    "claim": "The intraclass correlation and its relatives measure how much more alike two members of one basket are than two picked without regard to basket; the scores this project computes are a relative on which no information reads near one half rather than zero.",
    "because": "For the intraclass correlation zero means membership tells nothing; the project's score is a mean-square ratio with chance at one half, as its producer states.",
    "rests_on": [
-    "C-AR-PART-STAT"
+    "X-AR-PARTITION"
    ],
    "basis": "assessed",
    "replaces": [
     "C-AR-OLD-CAT-ICC"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CATEGORY.md": "There is a standard family of statistics for this: the **intraclass correlation** and its relatives. Pick two members of the population at random. If they are in the same basket, how much more alike are they than two picked without regard to basket? For the intraclass correlation, one means membership tells you everything and zero means it tells you nothing. The scores this project computes are a relative — a ratio of mean squares, on which no information reads near one half rather than zero — which is one more reason to read only their difference from a null.",
-     "texts": "26f7abbea6d96083",
-     "rests on C-AR-PART-STAT": "2ef587bff9f917a0"
+     "texts": "6fda8577ab70fd76",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
     }
    }
   },
@@ -1511,16 +1134,16 @@
    "claim": "Such a statistic must be conditioned on what every member shares - the season for marine stations - or the shared driver lands in the between-basket term and every partition scores well.",
    "because": "The same argument as for within-month scoring on AREAS.",
    "rests_on": [
-    "C-AR-WITHIN-MONTH"
+    "X-AR-PARTITION"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CATEGORY.md": "**Condition on what everything shares.** Every marine station in Denmark experiences the same season. Pool across months and the seasonal signal lands in the between-basket term and *every* partition scores well — including a deliberately absurd one. The same applies wherever a common driver exists: compare within year, within cohort, within whatever the members hold in common regardless of basket.",
-     "texts": "604355eadce432d6",
-     "rests on C-AR-WITHIN-MONTH": "b11425c7e881db06"
+     "texts": "26a93a1723c4a1a3",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
     }
    }
   },
@@ -1532,16 +1155,16 @@
    "claim": "It must also be compared against a null that matches the basket's shape; skipping that is how a defensible number comes out backwards.",
    "because": "The worked example below shows the ranking reversing when the null is changed to one matching shape.",
    "rests_on": [
-    "C-AR-REVERSAL"
+    "D-AR-PARTITION"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved its support to the partition scores themselves: that a fair null must match the basket's shape, and that skipping it reverses the ranking, holds as the rule for building a floor; it claims nothing about a shared cause. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CATEGORY.md": "**Compare against a null that matches the basket's shape.** This is the part that gets skipped, and skipping it is how a defensible number comes out backwards.",
-     "texts": "f9381da00e5d7b90",
-     "rests on C-AR-REVERSAL": "1445ea759d6b3410"
+     "texts": "9bda39a60396c254",
+     "node D-AR-PARTITION": "52530e963493f776"
     }
    }
   },
@@ -1647,45 +1270,55 @@
    "kind": "argued",
    "stance": "ours",
    "page": "CATEGORY.md",
-   "claim": "The null is not a refinement; it is what rescues the measurement.",
+   "claim": "The null is not optional: without it the measurement cannot even show that the grouping beats noise, and beating noise is still not a shared cause.",
    "because": "Argued in the next claim.",
    "rests_on": [
-    "C-AR-DIFFERENCE"
+    "C-AR-DIFFERENCE",
+    "E-W4AR-SM-UNITS"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
     "saw": {
-     "said on CATEGORY.md": "**This is why the null is not a refinement. It is the thing that rescues the measurement.**",
-     "texts": "24fe17a12cf30440",
-     "rests on C-AR-DIFFERENCE": "a253888fa34a4bda"
+     "said on CATEGORY.md": "**This is why the null is not optional: without it the measurement cannot even show that the grouping beats noise - and beating noise is still not a shared cause.**",
+     "texts": "eea32ee2369de47e",
+     "rests on C-AR-DIFFERENCE": "52c0d10f145f96f0",
+     "node E-W4AR-SM-UNITS": "33b7074c9e365b72",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
     }
-   }
+   },
+   "replaces": [
+    "C-AR-OLD-RESCUE"
+   ]
   },
   {
    "id": "C-AR-DIFFERENCE",
    "kind": "argued",
    "stance": "ours",
    "page": "CATEGORY.md",
-   "claim": "Compared against a shape-matched null, the statistic stops being circular, because the null partitions were not chosen to be real; a single bare value cannot by itself say whether the groups are anything.",
-   "because": "Each score depends on the assumed partition; the difference from partitions nobody chose measures what the chosen one adds. A bare value has nothing to be read against.",
+   "claim": "Compared against a shape-matched null, the statistic stops rewarding a partition for its shape, and the difference says how far the chosen partition sits above noise of the same shape - a floor, not a test that its members share a cause; a single bare value cannot by itself say whether the groups are anything.",
+   "because": "A random basket shares no cause, so beating it shows only that a grouping beats noise (the owner's rule, statistical-methods section 6b). Each score depends on the assumed partition, and a bare value has nothing to be read against.",
    "rests_on": [
     "C-AR-FST-CIRCLE",
-    "C-AR-NULLS"
+    "E-W4AR-SM-UNITS",
+    "X-AR-PARTITION"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-AR-OLD-BARE"
+    "C-AR-OLD-BARE",
+    "C-AR-OLD-DIFFERENCE-ADDS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
     "saw": {
-     "said on CATEGORY.md": "A circular statistic compared against a *shape-matched null* stops being circular, because the null partitions were not chosen to be real. Each number separately depends on the assumption; the **difference** between them measures what the chosen partition adds. That is the argument for the exercise below, and it is why a single reported value — a bare $F_{\\mathrm{ST}}$, a bare intraclass correlation, a bare $R^2$ between groups — cannot by itself say whether the groups are anything.",
-     "texts": "a253888fa34a4bda",
+     "said on CATEGORY.md": "Compared against a *shape-matched null*, a circular statistic at least stops rewarding a partition for its shape: the **difference** says how far the chosen partition sits above noise of the same shape. That is a floor, not a test that its members share a cause - a random basket shares none, so beating it shows only that the grouping beats noise (statistical-methods, section 6b). It is also why a single reported value — a bare $F_{\\mathrm{ST}}$, a bare intraclass correlation, a bare $R^2$ between groups — cannot by itself say whether the groups are anything.",
+     "texts": "52c0d10f145f96f0",
      "rests on C-AR-FST-CIRCLE": "12a1e3e2cec9e468",
-     "rests on C-AR-NULLS": "cec175ec5d2f5a37"
+     "node E-W4AR-SM-UNITS": "33b7074c9e365b72",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
     }
    }
   },
@@ -2007,12 +1640,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after C-AR-DIFFERENCE under it was reworded: that a category with an unknown floor is used as data when it is a model holds as it stands; it claims a necessary minimum, not a sufficient one. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CATEGORY.md": "If the answer to the third is unknown, the category is being used as data when it is a model, and any figure computed inside it is a statement about the basket at least as much as about the world.",
      "texts": "87825fe87aa5074b",
-     "rests on C-AR-DIFFERENCE": "a253888fa34a4bda"
+     "rests on C-AR-DIFFERENCE": "52c0d10f145f96f0"
     }
    }
   },
@@ -2111,7 +1744,7 @@
     "why": "Inexact: areas.py keeps only the largest distance per layer and area, not the distance of every assignment."
    },
    "replaced_by": [
-    "C-AR-ASSIGN"
+    "C-W4AR-ASSIGN"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2224,7 +1857,7 @@
     "why": "its justification was not recorded properly: the counts were made over the whole register, including stations with no data, and the computation was never stored and cannot be reproduced. The replacement counts over the station series, which is stored."
    },
    "replaced_by": [
-    "C-AR-SERIES-COVERAGE"
+    "C-W4AR-SERIES-COVERAGE"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2420,7 +2053,7 @@
     "why": "The statistic computed is the mean-square ratio MSB/(MSB+MSW), on which labels carrying no information score near one half; read as an intraclass correlation, every value in the table overstates what membership tells."
    },
    "replaced_by": [
-    "C-AR-PART-STAT"
+    "C-W4AR-MATCHED"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2448,7 +2081,7 @@
     "why": "History the reader does not need."
    },
    "replaced_by": [
-    "C-AR-THREE-RANKINGS"
+    "C-W4AR-MATCHED"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2476,7 +2109,7 @@
     "why": "History the reader does not need; the replacement states the finding - the nulls disagree - without it."
    },
    "replaced_by": [
-    "C-AR-THREE-RANKINGS"
+    "C-W4AR-MATCHED"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2504,7 +2137,7 @@
     "why": "With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs, so 'predict it better' is not shown."
    },
    "replaced_by": [
-    "C-AR-REVERSAL"
+    "C-W4AR-LS-FLUO"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2532,7 +2165,7 @@
     "why": "Spatial smoothness was never measured; stated as fact, it is a reading."
    },
    "replaced_by": [
-    "C-AR-READING"
+    "C-W4AR-WATER-MASSES"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2560,7 +2193,7 @@
     "why": "'The only place' and 'the one pair' overstate, and the count is of areas with two or more bathing stations, not of all areas."
    },
    "replaced_by": [
-    "C-AR-CUMHOC",
+    "C-W4AR-CUMHOC",
     "C-AR-CUMHOC-DESIGN"
    ],
    "rests_on": [],
@@ -2589,7 +2222,7 @@
     "why": "The column is the name-matched flag, not the models."
    },
    "replaced_by": [
-    "C-AR-TABLE-KEY"
+    "C-W4AR-ONE-ROW"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2758,7 +2391,7 @@
     "why": "With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs."
    },
    "replaced_by": [
-    "C-AR-REVERSAL"
+    "C-W4AR-LS-FLUO"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2812,7 +2445,7 @@
     "why": "Spatial smoothness was never measured; stated as fact, it is a reading."
    },
    "replaced_by": [
-    "C-AR-READING"
+    "C-W4AR-WATER-MASSES"
    ],
    "rests_on": [],
    "confirmed": {
@@ -2965,6 +2598,231 @@
     "saw": {
      "said on ARCHIVE.md": "obvious self-application: this project sorts 165 mechanisms into 17 groups, which is a partition nobody has scored either",
      "texts": "675ccb74e9c38d2b"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-DIFFERENCE-ADDS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The difference between a partition's score and a shape-matched null's as measuring what the chosen partition adds.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "CATEGORY.md",
+    "commit": "116c96a",
+    "file": "docs/CATEGORY.md",
+    "begin": "A circular statistic compared against",
+    "end": "whether the groups are anything.",
+    "why": "The owner's rule: a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - not what its members share. The replacement says what the difference measures."
+   },
+   "replaced_by": [
+    "C-AR-DIFFERENCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A circular statistic compared against a *shape-matched null* stops being circular, because the null partitions were not chosen to be real. Each number separately depends on the assumption; the difference between them measures what the chosen partition adds. That is the argument for the exercise below, and it is why a single reported value — a bare $F_{\\mathrm{ST}}$, a bare intraclass correlation, a bare $R^2$ between groups — cannot by itself say whether the groups are anything.",
+     "texts": "bea283a7df60aa23"
+    }
+   }
+  },
+  {
+   "id": "C-AR-WINNERS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Against the shuffle, salinity gains most by a distance; against the stripes, surface oxygen saturation does.",
+   "because": "The largest real-minus-null difference for each control, read from partition_score.json.",
+   "rests_on": [
+    "D-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (restored for CATEGORY.md, where they had always been marked, after the AREAS clean-up removed them: they state which variables beat which random grouping and that the order reverses against same-shaped groups - facts about noise floors, read from partition_score.json, claiming nothing about a shared cause. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "The winners are read from the scores, and the first two disagree, not marginally: surface oxygen saturation gains **+0.065** over the shuffle and **+0.408** over the stripes, while against the shuffle salinity gains most.",
+     "texts": "270aff2b83492c27",
+     "node D-AR-PARTITION": "52530e963493f776"
+    }
+   }
+  },
+  {
+   "id": "C-AR-REVERSAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
+   "because": "Lifts and the spread between the three runs are read from partition_score.json. With three runs, a lift smaller than the runs' spread cannot be told from zero.",
+   "rests_on": [
+    "D-AR-PARTITION",
+    "X-AR-PARTITION"
+   ],
+   "basis": "computed",
+   "replaces": [
+    "C-AR-OLD-FLUO",
+    "C-AR-OLD-CAT-FLUO"
+   ],
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (restored for CATEGORY.md, where they had always been marked, after the AREAS clean-up removed them: they state which variables beat which random grouping and that the order reverses against same-shaped groups - facts about noise floors, read from partition_score.json, claiming nothing about a shared cause. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "Only the third varies one thing at a time, and against it the ordering from the first **reverses** — oxygen saturation gains most, salinity little — and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.",
+     "texts": "efb2f3dc775e1a54",
+     "node D-AR-PARTITION": "52530e963493f776",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
+    }
+   }
+  },
+  {
+   "id": "C-AR-LIFT-RULE",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "Beating its own shape is the least a partition must do: a grouping that predicts no better than random groups of the same shape adds nothing to its outline, and beating them is a floor, not proof that its members share a cause.",
+   "because": "A compact grouping predicts any spatially structured variable to some degree whatever its lines; and a random basket shares no cause, so beating one shows only that a grouping beats noise (statistical-methods section 6b).",
+   "rests_on": [
+    "C-AR-REVERSAL",
+    "E-W4AR-SM-UNITS",
+    "X-AR-PARTITION"
+   ],
+   "basis": "assessed",
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "replaces": [
+    "C-AR-OLD-LIFT-VALUE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "**Beating its own shape is the least a partition must do: a grouping that predicts no better than random groups of the same shape adds nothing to its outline. Beating them is a floor, not proof that its members share a cause.**",
+     "texts": "cc7464cb7e38f2e3",
+     "rests on C-AR-REVERSAL": "efb2f3dc775e1a54",
+     "node E-W4AR-SM-UNITS": "33b7074c9e365b72",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
+    }
+   }
+  },
+  {
+   "id": "C-AR-READING",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "CATEGORY.md",
+   "claim": "The smooth-versus-rough reading once offered here is not borne out: AREAS' co-movement test finds the water-body lines add about as much for salinity as for bed oxygen at matched distance, so they follow water masses.",
+   "because": "The reading predicted boundaries would matter for oxygen and little for smooth salinity; the matched-distance comparison on AREAS measures both and finds similar gains.",
+   "rests_on": [
+    "C-W4AR-WATER-MASSES"
+   ],
+   "basis": "assessed",
+   "replaces": [
+    "C-AR-OLD-READING-SMOOTH"
+   ],
+   "said_on": [
+    "CATEGORY.md"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (reworded on the owner's rule, statistical-methods 6b - beating same-shaped random groups is a floor, not a shared cause - and, for the reading, on AREAS' matched-distance co-movement result; the published wordings are archived. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on CATEGORY.md": "A reading was offered here: if salinity is spatially smooth, *any* compact grouping predicts it and real boundaries add little, while boundaries that follow enclosure carry information about oxygen. The co-movement test on [AREAS.md](AREAS.md) does not bear it out: at matched distance the water-body lines add about as much for salinity as for bed oxygen, so they follow water masses rather than separating an oxygen process.",
+     "texts": "b13def4ca348f04c",
+     "rests on C-W4AR-WATER-MASSES": "97518730e354af08"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-LIFT-VALUE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A partition's value as how much better it predicts than its own shape alone would.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "CATEGORY.md",
+    "commit": "116c96a",
+    "file": "docs/CATEGORY.md",
+    "begin": "A partition's value is not how well it predicts",
+    "end": "than its own shape alone would.",
+    "why": "The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share."
+   },
+   "replaced_by": [
+    "C-AR-LIFT-RULE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.",
+     "texts": "89b759b36d2ce756"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-RESCUE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The shape-matched null as what rescues the measurement.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "CATEGORY.md",
+    "commit": "116c96a",
+    "file": "docs/CATEGORY.md",
+    "begin": "This is why the null is not a refinement",
+    "end": "rescues the measurement.",
+    "why": "The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share. It makes the measurement fair, not meaningful."
+   },
+   "replaced_by": [
+    "C-AR-RESCUE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This is why the null is not a refinement. It is the thing that rescues the measurement.",
+     "texts": "817b0df57483580e"
+    }
+   }
+  },
+  {
+   "id": "C-AR-OLD-READING-SMOOTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A reading that boundaries add little for smooth salinity and carry information for rough oxygen.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "CATEGORY.md",
+    "commit": "116c96a",
+    "file": "docs/CATEGORY.md",
+    "begin": "One reading fits these numbers",
+    "end": "carry real information.",
+    "why": "AREAS' co-movement test, at matched distance, finds the water-body lines add about as much for salinity as for bed oxygen, which the reading did not expect."
+   },
+   "replaced_by": [
+    "C-AR-READING"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, *any* compact grouping predicts it well and real boundaries have little left to add; if oxygen is rough, shape alone fails and boundaries that follow enclosure carry real information.",
+     "texts": "3da76cc02734718b"
     }
    }
   }

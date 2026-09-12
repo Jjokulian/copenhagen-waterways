@@ -122,12 +122,14 @@ def main():
       "have moved more than twofold with the estimation method, the way estimates are combined "
       "across loci and the choice of loci. It is an aggregation function over a chosen metric, "
       "presented as an observable." + E + "\n")
-    w(C("C-AR-RESCUE", "**This is why the null is not a refinement. It is the thing that "
-        "rescues the measurement.**") + "\n")
-    w(B("C-AR-DIFFERENCE") + "A circular statistic compared against a *shape-matched null* "
-      "stops being circular, because the null partitions were not chosen to be real. Each "
-      "number separately depends on the assumption; the **difference** between them measures "
-      "what the chosen partition adds. That is the argument for the exercise below, and it is "
+    w(C("C-AR-RESCUE", "**This is why the null is not optional: without it the measurement "
+        "cannot even show that the grouping beats noise - and beating noise is still not a "
+        "shared cause.**") + "\n")
+    w(B("C-AR-DIFFERENCE") + "Compared against a *shape-matched null*, a circular statistic at "
+      "least stops rewarding a partition for its shape: the **difference** says how far the "
+      "chosen partition sits above noise of the same shape. That is a floor, not a test that "
+      "its members share a cause - a random basket shares none, so beating it shows only that "
+      "the grouping beats noise (statistical-methods, section 6b). It is also "
       "why a single reported value — a bare $F_{\\mathrm{ST}}$, a bare intraclass correlation, "
       "a bare $R^2$ between groups — cannot by itself say whether the groups are anything."
       + E + "\n")
@@ -152,12 +154,16 @@ def main():
       "inside the spread of the three blob runs, so for fluorescence the official partition "
       "does no better than random compact blobs." + E + "\n")
     w("The reading that survives is not about which variable matters:\n")
-    w("> " + C("C-AR-LIFT-RULE", "**A partition's value is not how well it predicts, but how "
-               "much better it predicts than its own shape alone would.**") + "\n")
-    w(C("C-AR-READING", "One reading fits these numbers, and it is not tested here: if "
-        "salinity is spatially smooth, *any* compact grouping predicts it well and real "
-        "boundaries have little left to add; if oxygen is rough, shape alone fails and "
-        "boundaries that follow enclosure carry real information.") + "\n")
+    w("> " + C("C-AR-LIFT-RULE", "**Beating its own shape is the least a partition must do: a "
+               "grouping that predicts no better than random groups of the same shape adds nothing "
+               "to its outline. Beating them is a floor, not proof that its members share a "
+               "cause.**") + "\n")
+    w(C("C-AR-READING", "A reading was offered here: if salinity is spatially smooth, *any* "
+        "compact grouping predicts it and real boundaries add little, while boundaries that "
+        "follow enclosure carry information about oxygen. The co-movement test on "
+        "[AREAS.md](AREAS.md) does not bear it out: at matched distance the water-body lines add "
+        "about as much for salinity as for bed oxygen, so they follow water masses rather than "
+        "separating an oxygen process.") + "\n")
     w("## Two methods, and the condition that chooses between them\n")
     w(C("C-AR-NULL-LIMIT", "The null comparison above is not the strongest test available. It "
         "is the strongest test available *when the feature space is small*.") + "\n")

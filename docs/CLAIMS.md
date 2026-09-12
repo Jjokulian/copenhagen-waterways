@@ -1316,66 +1316,6 @@ graph BT
 
 *Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
-<a id="C-AR-SCOPE"></a>
-### The page keeps one record per marine water body: what presses on it, what is observed in it, over which years each stream exists, and what cannot be modelled there.
-
-`C-AR-SCOPE` · **code** — what this project's code does, read from the code
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** scripts/areas.py writes each record with pressure, observation, streams and not_modelled, and the page prints them per water body.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-LONGEST): Rhetorical, and not a finding: on the stored records the gaps list averages about the same length as the list of pressures.
-
-```mermaid
-graph BT
-  C-AR-SCOPE("The page keeps one record per marine water body: what pres...")
-  X-AR-AREAS["areas.py"]
-  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
-  X-AR-AREAS --> C-AR-SCOPE
-  D-AR-AREAS --> C-AR-SCOPE
-  style C-AR-SCOPE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
-- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-ASSIGN"></a>
-### Every layer is assigned to water bodies by nearest point on the marine boundary, one rule for all, with the largest distance kept per layer and area and anything beyond the maximum distance dropped.
-
-`C-AR-ASSIGN` · **code** — what this project's code does, read from the code
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** In scripts/areas.py each feature goes to the nearest boundary vertex within the maximum distance; the record keeps n and max_dist_km per layer, not the distance of each feature.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-DISTANCE): Inexact: areas.py keeps only the largest distance per layer and area, not the distance of every assignment.
-
-```mermaid
-graph BT
-  C-AR-ASSIGN("Every layer is assigned to water bodies by nearest point o...")
-  X-AR-AREAS["areas.py"]
-  X-AR-AREAS --> C-AR-ASSIGN
-  style C-AR-ASSIGN fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
-```
-
-- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
 <a id="C-AR-MODEL-MATCH"></a>
 ### The model flag follows DHI's list of water bodies with a station-level statistical model, matched to this layer by DHI's number with every name read against the layer's; one of DHI's models covers five Limfjord bredninger together, and one water body it lists is not in the marine layer used here.
 
@@ -1515,38 +1455,6 @@ graph BT
 ```
 
 - **held** — ODA station register stations.json. docs/data/areas/stations.json: every ODA marine observation station with a position.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-SERIES-COVERAGE"></a>
-### Of the station series behind the partition tests, the page gives how many stations lie inside a water body and how many water bodies contain one, and how many contain none with data in two, five and ten or more distinct years.
-
-`C-AR-SERIES-COVERAGE` · **measured** — rests on measurement
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** scripts/station_places.py counts the series' stations placed by point in polygon and, per water body, the most distinct years any of its stations carries data in; these are counts over that series, not over the register.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-REGISTER-COVERAGE): its justification was not recorded properly: the counts were made over the whole register, including stations with no data, and the computation was never stored and cannot be reproduced. The replacement counts over the station series, which is stored.
-
-```mermaid
-graph BT
-  C-AR-SERIES-COVERAGE("Of the station series behind the partition tests, the page...")
-  X-AR-STATIONPLACES["station_places.py"]
-  D-AR-STATIONS[("Station facts · station_places.json")]
-  X-AR-STATIONPLACES --> C-AR-SERIES-COVERAGE
-  D-AR-STATIONS --> C-AR-SERIES-COVERAGE
-  style C-AR-SERIES-COVERAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-STATIONPLACES fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-STATIONS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **script** — station_places.py. The Roskilde spreads: per month with enough stations, the population standard deviation and the range across them, against the standard deviation of the monthly means.
-- **held** — Station facts station_places.json. data/derived/station_places.json, from the station series docs/data/areas/stations_series.* and the separate overlay station_waterbody_overlay.json: the Roskilde Fjord spreads, and how long each water body's longest station series runs.
 
 **Computed** — the chain is what was coded, and the script that computes it records how it counted.
 
@@ -2076,301 +1984,6 @@ graph BT
 
 *Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
-<a id="C-AR-PART-STAT"></a>
-### The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own.
-
-`C-AR-PART-STAT` · **code** — what this project's code does, read from the code
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** icc() in partition_score.py returns MSB/(MSB+MSW). Under random labels both mean squares estimate the same variance, so the ratio tends to one half; the file's own note says so. The name icc in the code is not the ANOVA intraclass correlation.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-ICC): The statistic computed is the mean-square ratio MSB/(MSB+MSW), on which labels carrying no information score near one half; read as an intraclass correlation, every value in the table overstates what membership tells.
-
-```mermaid
-graph BT
-  C-AR-PART-STAT("The partition score is a ratio of mean squares within mont...")
-  X-AR-PARTITION["partition_score.py"]
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  X-AR-PARTITION --> C-AR-PART-STAT
-  D-AR-PARTITION --> C-AR-PART-STAT
-  style C-AR-PART-STAT fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
-- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-WITHIN-MONTH"></a>
-### The score is computed within month, because pooling across months puts the shared season into the between-basket term and makes every partition look excellent.
-
-`C-AR-WITHIN-MONTH` · **argued** — follows by reasoning from what it rests on - the argument is given in full
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** Every station shares the season; a common driver across baskets inflates the between term whatever the baskets are. partition_score.py groups by month before scoring.
-
-```mermaid
-graph BT
-  C-AR-WITHIN-MONTH("The score is computed within month, because pooling across...")
-  X-AR-PARTITION["partition_score.py"]
-  X-AR-PARTITION --> C-AR-WITHIN-MONTH
-  style C-AR-WITHIN-MONTH fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-```
-
-- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-THREE-RANKINGS"></a>
-### The ranking of variables depends almost entirely on the null it is compared against: three reasonable nulls give three different rankings.
-
-`C-AR-THREE-RANKINGS` · **measured** — rests on measurement
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** Ranking the variables by the real score minus each null's gives three different orders in partition_score.json.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-RANKING-NOTE): History the reader does not need.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-CAUTION): History the reader does not need; the replacement states the finding - the nulls disagree - without it.
-
-```mermaid
-graph BT
-  C-AR-THREE-RANKINGS("The ranking of variables depends almost entirely on the nu...")
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  D-AR-PARTITION --> C-AR-THREE-RANKINGS
-  style C-AR-THREE-RANKINGS fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-NULLS"></a>
-### Shuffled labels keep basket sizes and destroy geography; latitude stripes keep compactness and equal sizes and ignore hydrography; the matched blobs keep both sizes and compactness, grown from random seeds by nearest neighbour three times over - the only control that varies one thing at a time.
-
-`C-AR-NULLS` · **code** — what this project's code does, read from the code
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** Read from the three controls in partition_score.py.
-
-```mermaid
-graph BT
-  C-AR-NULLS("Shuffled labels keep basket sizes and destroy geography; l...")
-  X-AR-PARTITION["partition_score.py"]
-  X-AR-PARTITION --> C-AR-NULLS
-  style C-AR-NULLS fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-```
-
-- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-WINNERS"></a>
-### Against the shuffle, salinity gains most by a distance; against the stripes, surface oxygen saturation does.
-
-`C-AR-WINNERS` · **measured** — rests on measurement
-
-Said on [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md).
-
-**Why it follows:** The largest real-minus-null difference for each control, read from partition_score.json.
-
-```mermaid
-graph BT
-  C-AR-WINNERS("Against the shuffle, salinity gains most by a distance; ag...")
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  D-AR-PARTITION --> C-AR-WINNERS
-  style C-AR-WINNERS fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-REVERSAL"></a>
-### Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.
-
-`C-AR-REVERSAL` · **measured** — rests on measurement
-
-Said on [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md).
-
-**Why it follows:** Lifts and the spread between the three runs are read from partition_score.json. With three runs, a lift smaller than the runs' spread cannot be told from zero.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-FLUO): With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs, so 'predict it better' is not shown.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-CAT-FLUO): With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs.
-
-```mermaid
-graph BT
-  C-AR-REVERSAL("Against the matched blobs the ordering reverses - surface ...")
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  X-AR-PARTITION["partition_score.py"]
-  D-AR-PARTITION --> C-AR-REVERSAL
-  X-AR-PARTITION --> C-AR-REVERSAL
-  style C-AR-REVERSAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-```
-
-- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
-- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-READING"></a>
-### One reading fits these numbers and is not tested: if salinity is spatially smooth, any compact grouping predicts it and real boundaries add little; if oxygen is rough, blobs do poorly and boundaries that follow enclosure carry information.
-
-`C-AR-READING` · **provisional** — unchecked - see the graph for what would check it
-
-Said on [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md).
-
-**Why it follows:** The pattern of lifts is what that difference in smoothness would produce, but nothing here measures smoothness, so it stays a reading.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-SMOOTH): Spatial smoothness was never measured; stated as fact, it is a reading.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-CAT-SMOOTH): Spatial smoothness was never measured; stated as fact, it is a reading.
-
-```mermaid
-graph BT
-  C-AR-READING("One reading fits these numbers and is not tested: if salin...")
-  C-AR-REVERSAL("Against the matched blobs the ordering reverses - surface ...")
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  X-AR-PARTITION["partition_score.py"]
-  U-AR-SMOOTH(("Trail ends: spatial smoothness · was never measured"))
-  C-AR-REVERSAL --> C-AR-READING
-  D-AR-PARTITION --> C-AR-REVERSAL
-  X-AR-PARTITION --> C-AR-REVERSAL
-  U-AR-SMOOTH --> C-AR-READING
-  style C-AR-READING fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-REVERSAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style U-AR-SMOOTH fill:#262626,stroke:#ff7b72,color:#e6edf3,stroke-dasharray:2 2
-```
-
-- **claim** — Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs. ([`C-AR-REVERSAL`](CLAIMS.md#C-AR-REVERSAL))
-- **trail ends here** — Trail ends: spatial smoothness was never measured. Searched scripts/ on 11 September 2026 for a variogram, Moran's I or any spatial autocorrelation of these variables: none exists. partition_score.py scores partitions; it does not measure how smooth a variable is in space.
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-LIFT-RULE"></a>
-### A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would.
-
-`C-AR-LIFT-RULE` · **argued** — follows by reasoning from what it rests on - the argument is given in full
-
-Said on [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md).
-
-**Why it follows:** A compact grouping predicts any spatially structured variable to some degree whatever its lines, so only the excess over a same-shaped grouping can be credited to the lines.
-
-```mermaid
-graph BT
-  C-AR-LIFT-RULE("A partition's value is not how well it predicts, but how m...")
-  C-AR-NULLS("Shuffled labels keep basket sizes and destroy geography; l...")
-  X-AR-PARTITION["partition_score.py"]
-  C-AR-NULLS --> C-AR-LIFT-RULE
-  X-AR-PARTITION --> C-AR-NULLS
-  style C-AR-LIFT-RULE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-NULLS fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-```
-
-- **claim** — Shuffled labels keep basket sizes and destroy geography; latitude stripes keep compactness and equal sizes and ignore hydrography; the matched blobs keep both sizes and compactness, grown from random seeds by nearest neighbour three times over - the only control that varies one thing at a time. ([`C-AR-NULLS`](CLAIMS.md#C-AR-NULLS))
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-SAMPLED"></a>
-### Stations are not placed at random and are denser in some baskets than others, so every score is of the partition as sampled, and cannot tell a well-drawn basket from one whose stations sit close together.
-
-`C-AR-SAMPLED` · **argued** — follows by reasoning from what it rests on - the argument is given in full
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** Stated with the scores in partition_score.json; clustered stations raise agreement within a basket whatever the basket's merit.
-
-```mermaid
-graph BT
-  C-AR-SAMPLED("Stations are not placed at random and are denser in some b...")
-  A-AR-SAMPLED{"Stations as sampled"}
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  A-AR-SAMPLED --> C-AR-SAMPLED
-  D-AR-PARTITION --> C-AR-SAMPLED
-  style C-AR-SAMPLED fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style A-AR-SAMPLED fill:#4a3a12,stroke:#e8a33d,color:#ffeccc,stroke-dasharray:3 2
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **assumption** — Stations as sampled. Stations are not placed at random and are denser in some baskets than others, so a score is of the partition as sampled.
-- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-CUMHOC"></a>
-### A national time series has one unit of replication; the water bodies with two or more bathing stations give more, so an effect size can be estimated across them.
-
-`C-AR-CUMHOC` · **measured** — rests on measurement
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** cum_hoc() in areas.py keeps the areas with two or more bathing stations and an area; the count is read from areas.json.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-ONLY-PLACE): 'The only place' and 'the one pair' overstate, and the count is of areas with two or more bathing stations, not of all areas.
-
-```mermaid
-graph BT
-  C-AR-CUMHOC("A national time series has one unit of replication; the wa...")
-  X-AR-AREAS["areas.py"]
-  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
-  X-AR-AREAS --> C-AR-CUMHOC
-  D-AR-AREAS --> C-AR-CUMHOC
-  style C-AR-CUMHOC fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-```
-
-- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
-- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
-
-**Computed** — the chain is what was coded, and the script that computes it records how it counted.
-
-*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
-
-*Confirmed 2026-09-11 by* `Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
 <a id="C-AR-CUMHOC-DESIGN"></a>
 ### The cross-area test sets bathing-water quality against sewage pressure - outfall, treatment-plant and basin density per area - and is cum hoc: a correlation across places at one time, with no control for coast type, flushing or population.
 
@@ -2390,47 +2003,6 @@ graph BT
 ```
 
 - **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
-
-**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
-
-*Confirmed 2026-09-11 by* `Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
-
-<a id="C-AR-TABLE-KEY"></a>
-### In the per-area table, model is DHI's statistical-model flag, bath the bathing stations and their years, r the mean correlation between informative stations' yearly classes, RBU the rain-conditioned outfalls, PE the approved treatment-plant load, and gaps the number of written-out reasons.
-
-`C-AR-TABLE-KEY` · **code** — what this project's code does, read from the code
-
-Said on [AREAS.md](AREAS.md).
-
-**Why it follows:** Each column is read from the record's fields in areas.py; DCE fitted its models on data from 1990 to 2012.
-
-**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-MODEL-KEY): The column is the name-matched flag, not the models.
-
-```mermaid
-graph BT
-  C-AR-TABLE-KEY("In the per-area table, model is DHI's statistical-model fl...")
-  X-AR-AREAS["areas.py"]
-  E-AR-DCE-PERIOD[("DCE: the models' · fitting period")]
-  C-AR-MODEL-MATCH("The model flag follows DHI's list of water bodies with a s...")
-  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
-  E-AR-DHI-TABLE[("DHI method report: · water bodies with · statistical models")]
-  X-AR-AREAS --> C-AR-TABLE-KEY
-  E-AR-DCE-PERIOD --> C-AR-TABLE-KEY
-  C-AR-MODEL-MATCH --> C-AR-TABLE-KEY
-  X-AR-AREAS --> C-AR-MODEL-MATCH
-  D-AR-AREAS --> C-AR-MODEL-MATCH
-  E-AR-DHI-TABLE --> C-AR-MODEL-MATCH
-  style C-AR-TABLE-KEY fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style E-AR-DCE-PERIOD fill:#3d3357,stroke:#a58cf0,color:#e6edf3
-  style C-AR-MODEL-MATCH fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-  style E-AR-DHI-TABLE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
-```
-
-- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
-- **external** — DCE: the models' fitting period: “I udviklingen af modellerne er der brugt data fra perioden” ([`DCE-STATMOD-2015`](https://dce.au.dk/fileadmin/dce.au.dk/Udgivelser/Notater_2015/Dokumentation_statistiske_modeller_metoder_del3_28042015.pdf), pinned)
-- **claim** — The model flag follows DHI's list of water bodies with a station-level statistical model, matched to this layer by DHI's number with every name read against the layer's; one of DHI's models covers five Limfjord bredninger together, and one water body it lists is not in the marine layer used here. ([`C-AR-MODEL-MATCH`](CLAIMS.md#C-AR-MODEL-MATCH))
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
@@ -2460,20 +2032,1215 @@ graph BT
 
 *Confirmed 2026-09-11 by* `Claude (re-read: the description of areas.py under this claim now says the model flag comes from DHI's list of water bodies with statistical models, as the code does since the flag fix, instead of a name match; nothing else under it changed. 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
-<a id="C-AR-NOT"></a>
-### This is not a causal model per area but the ledger needed before one: which areas have enough observation to support a claim, which have none, and over which years each stream exists.
+<a id="C-W4AR-UNITS"></a>
+### The marine water bodies are management units: they exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise.
 
-`C-AR-NOT` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+`C-W4AR-UNITS` · **argued** — follows by reasoning from what it rests on - the argument is given in full
 
 Said on [AREAS.md](AREAS.md).
 
-**Why it follows:** The page counts and correlates; it fits no model of cause, and what it lists is what a model would need.
+**Why it follows:** The water framework directive has member states set the location and boundaries of water bodies, and the method behind the water plans gives every one of them a requirement; the marine layer is a set of drawn boundaries whose author and basis the file does not record. The stations' own co-movement groups do not reproduce them. The owner's method reads such a grouping as administration until shown otherwise.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-SCOPE): A water body is a management unit, not a finding. The page no longer keeps one record per water body in its text: only the numbers a management question needs are shown, labelled administrative, and the record of each water body is published as a file.
+
+```mermaid
+graph BT
+  C-W4AR-UNITS("The marine water bodies are management units: they exist s...")
+  E-AR-SO-BASIS[("Second opinion: why · water bodies have · boundaries")]
+  E-AR-DHI-EVERY[("DHI method report: · every water body · given a requirement")]
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  C-W4AR-OWN-GROUPS("The groups the stations' co-movement draws do not follow t...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  E-AR-SO-BASIS --> C-W4AR-UNITS
+  E-AR-DHI-EVERY --> C-W4AR-UNITS
+  E-W4AR-SM-UNITS --> C-W4AR-UNITS
+  D-AR-AREAS --> C-W4AR-UNITS
+  C-W4AR-OWN-GROUPS --> C-W4AR-UNITS
+  D-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  X-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  style C-W4AR-UNITS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-AR-SO-BASIS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-AR-DHI-EVERY fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-OWN-GROUPS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **external** — Second opinion: why water bodies have boundaries: “angive overfladevandområders beliggenhed og grænser” ([`SO-BG-2024`](https://mgtp.dk/Media/638803057484281253/second-opinion-baggrundsanalyser.pdf), pinned). Quotes the water framework directive's annex: member states set the location and boundaries of surface water bodies.
+- **external** — DHI method report: every water body given a requirement: “vandområder, der indgår i Vandplan” ([`DHI-MODEL-DEL1-2015`](https://sgavmst.dk/media/hvomfapx/31-modeller-for-danske-fjorde-og-kystnaere-havomraader-del-1.pdf), pinned). The tools were applied to every water body of the second water plans to compute an indsatsbehov.
+- **external** — Methods section 6b: water bodies are management units: “exist so that someone can be made responsible” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned). The owner's method: the Danish water bodies exist so that someone can be made responsible for an area and given a target; a number per management unit is about the administration until shown otherwise.
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+- **claim** — The groups the stations' co-movement draws do not follow the water-body lines: joining every pair that moves together links the tested oxygen stations into one group; its communities are not contiguous, each spans several water bodies, some water bodies are split between them, and they partly sort by the years their stations were measured. ([`C-W4AR-OWN-GROUPS`](CLAIMS.md#C-W4AR-OWN-GROUPS))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-SYNC-METHOD"></a>
+### Only moving together over time is tested: each station's own seasonal cycle is removed, pairs are compared month by month with Kendall's tau, and chance is one series shifted against the other by whole years, which keeps each series and breaks only the tie in time. A pair moves together beyond chance when it beats its shifted copies at the stated level, so that share of pairs passes by chance alone.
+
+`C-W4AR-SYNC-METHOD` · **code** — what this project's code does, read from the code
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** synchrony.py subtracts each station's median for each calendar month, computes tau on shared months, recomputes it for every whole-year shift inside the pair's window, and takes p as the share of shifts at least as large; a pair is beyond chance at p no more than ALPHA, with no correction for many pairs.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-WITHIN-MONTH): Retired with the random-basket comparison it served: a random basket shares no cause, so beating it shows a grouping beats noise, not that its members share a cause. Its point, that a shared season must be removed first, is kept in the co-movement test, which removes each station's own seasonal cycle.
+
+```mermaid
+graph BT
+  C-W4AR-SYNC-METHOD("Only moving together over time is tested: each station's o...")
+  X-W4AR-SYNC["synchrony.py"]
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  E-W4AR-SM-COMOVE[("Methods section 6b: moving together, · not similar levels")]
+  X-W4AR-SYNC --> C-W4AR-SYNC-METHOD
+  D-W4AR-SYNC --> C-W4AR-SYNC-METHOD
+  E-W4AR-SM-COMOVE --> C-W4AR-SYNC-METHOD
+  style C-W4AR-SYNC-METHOD fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style E-W4AR-SM-COMOVE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **script** — synchrony.py. Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network.
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **external** — Methods section 6b: moving together, not similar levels: “Similar levels are not a shared cause; moving together is” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-SYNC-THIN"></a>
+### For bed oxygen the test can decide only the pairs whose shared window is long enough to shift; the rest are left undecided rather than forced.
+
+`C-W4AR-SYNC-THIN` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The counts in synchrony.json: decidable pairs, pairs too thin for the null, and the stations the decidable pairs involve.
+
+```mermaid
+graph BT
+  C-W4AR-SYNC-THIN("For bed oxygen the test can decide only the pairs whose sh...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  D-W4AR-SYNC --> C-W4AR-SYNC-THIN
+  X-W4AR-SYNC --> C-W4AR-SYNC-THIN
+  style C-W4AR-SYNC-THIN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **script** — synchrony.py. Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-NEAR-FAR"></a>
+### Stations near each other move together beyond chance far more often than stations far apart.
+
+`C-W4AR-NEAR-FAR` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** near_far in synchrony.json for bed oxygen: the share of decidable pairs beyond chance below the near cut against the share at or beyond it.
+
+```mermaid
+graph BT
+  C-W4AR-NEAR-FAR("Stations near each other move together beyond chance far m...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  D-W4AR-SYNC --> C-W4AR-NEAR-FAR
+  style C-W4AR-NEAR-FAR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-MATCHED"></a>
+### At the same distance apart, pairs of stations inside one water body move together more often than pairs across a water-body line, for bed oxygen; finer distance bins shrink the gain, so part of it is distance left over inside the bins.
+
+`C-W4AR-MATCHED` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** within_vs_across_matched_distance in synchrony.json: per distance bin, the share beyond chance for same-body pairs minus that for different-body pairs, pooled with the same-body counts as weights, with a leave-one-water-body-out standard error; and the same over finer bins. The owner's method tests a boundary this way.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-PART-STAT): A random basket shares no cause: its members are noise with respect to each other. Beating random baskets shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The statistic was computed as described and is retired with the comparison it served; the lines are now tested by whether stations move together at matched distance.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-RANKINGS): A random basket shares no cause: its members are noise with respect to each other. Beating random baskets - shuffled, striped or shape-matched - shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The lines are now tested by whether stations move together at matched distance, with salinity as the physical control.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-NULLS): A random basket shares no cause, so which variable gains most against which random basket says how far a grouping beats noise, not whether its members share a cause. Retired with the comparison.
+
+```mermaid
+graph BT
+  C-W4AR-MATCHED("At the same distance apart, pairs of stations inside one w...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  E-W4AR-SM-MATCHED[("Methods section 6b: a boundary is · tested at matched distance")]
+  D-W4AR-SYNC --> C-W4AR-MATCHED
+  X-W4AR-SYNC --> C-W4AR-MATCHED
+  E-W4AR-SM-MATCHED --> C-W4AR-MATCHED
+  style C-W4AR-MATCHED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-MATCHED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **script** — synchrony.py. Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network.
+- **external** — Methods section 6b: a boundary is tested at matched distance: “at the same distance apart, do members on the same side” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-WATER-MASSES"></a>
+### Bed salinity, which says nothing about an ailment, gains about as much from the lines as bed oxygen, and more in the size of the co-movement; so the lines follow differences in the water itself, and nothing here shows a shared ailment on top of shared water.
+
+`C-W4AR-WATER-MASSES` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** Salinity marks bodies of water, not a biological process. If the lines grouped a shared ailment, oxygen would gain from them beyond what salinity gains; it gains a similar amount in the share beyond chance and less in mean tau, by the same pair rule, bins and pooling.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-RANKINGS): A random basket shares no cause: its members are noise with respect to each other. Beating random baskets - shuffled, striped or shape-matched - shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The lines are now tested by whether stations move together at matched distance, with salinity as the physical control.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-REVERSAL): A random basket shares no cause: a ranking of lifts over random baskets orders groupings by how far they beat noise, not by whether their members share a cause. Retired with the comparison; the physical control is now salinity's co-movement, and fluorescence is now compared along a causal line.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-READING): A partition's lift over random baskets of its own shape measures how far it beats noise; a random basket shares no cause, so the lift does not say whether its members share one. The rule it set is retired with the comparison; the co-movement test at matched distance replaces it.
+
+```mermaid
+graph BT
+  C-W4AR-WATER-MASSES("Bed salinity, which says nothing about an ailment, gains a...")
+  C-W4AR-MATCHED("At the same distance apart, pairs of stations inside one w...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  E-W4AR-SM-MATCHED[("Methods section 6b: a boundary is · tested at matched distance")]
+  C-W4AR-MATCHED --> C-W4AR-WATER-MASSES
+  D-W4AR-SYNC --> C-W4AR-MATCHED
+  X-W4AR-SYNC --> C-W4AR-MATCHED
+  E-W4AR-SM-MATCHED --> C-W4AR-MATCHED
+  D-W4AR-SYNC --> C-W4AR-WATER-MASSES
+  style C-W4AR-WATER-MASSES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-MATCHED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-MATCHED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — At the same distance apart, pairs of stations inside one water body move together more often than pairs across a water-body line, for bed oxygen; finer distance bins shrink the gain, so part of it is distance left over inside the bins. ([`C-W4AR-MATCHED`](CLAIMS.md#C-W4AR-MATCHED))
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-SAME-DAY"></a>
+### Stations in one water body are mostly sampled on the same day. On months the two were sampled on different days, same-body pairs still move together more than pairs across a line at the same distance, for oxygen and for salinity, but for oxygen on far fewer pairs and with a larger standard error; with the wider day gap too few pairs remain to answer.
+
+`C-W4AR-SAME-DAY` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** same_day_sampling in synchrony.json: the share of pair-months sampled on the same day, within and across; the deciding test rerun with the same-day months removed pair by pair, and with the wider gap in days.
+
+```mermaid
+graph BT
+  C-W4AR-SAME-DAY("Stations in one water body are mostly sampled on the same ...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  D-W4AR-SYNC --> C-W4AR-SAME-DAY
+  X-W4AR-SYNC --> C-W4AR-SAME-DAY
+  style C-W4AR-SAME-DAY fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **script** — synchrony.py. Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-OWN-GROUPS"></a>
+### The groups the stations' co-movement draws do not follow the water-body lines: joining every pair that moves together links the tested oxygen stations into one group; its communities are not contiguous, each spans several water bodies, some water bodies are split between them, and they partly sort by the years their stations were measured.
+
+`C-W4AR-OWN-GROUPS` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** graph in synchrony.json: the connected components of the network of pairs beyond chance, and its Louvain communities weighted by tau, with a group contiguous when its stations connect through their nearest neighbours; and the median last year of each group's records.
+
+```mermaid
+graph BT
+  C-W4AR-OWN-GROUPS("The groups the stations' co-movement draws do not follow t...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  D-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  X-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  style C-W4AR-OWN-GROUPS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **script** — synchrony.py. Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-NATIONAL"></a>
+### Distance does not end co-movement: a share of far-apart oxygen pairs well above the chance rate moves together, and it stays with each station's yearly level removed and on months sampled on different days. What moves stations everywhere at once belongs to the whole population: a national signal, not a property of any place in it.
+
+`C-W4AR-NATIONAL` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** share_far_co_moving against the stated level; the same share in the within-year layer and on the different-day months. The owner's method reads what stays stable across the whole population as the ubiquitous part.
+
+```mermaid
+graph BT
+  C-W4AR-NATIONAL("Distance does not end co-movement: a share of far-apart ox...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  C-W4AR-SYNC-METHOD("Only moving together over time is tested: each station's o...")
+  X-W4AR-SYNC["synchrony.py"]
+  E-W4AR-SM-COMOVE[("Methods section 6b: moving together, · not similar levels")]
+  E-W4AR-SM-UBIQ[("Methods section 6b: what every · random basket shares")]
+  D-W4AR-SYNC --> C-W4AR-NATIONAL
+  C-W4AR-SYNC-METHOD --> C-W4AR-NATIONAL
+  X-W4AR-SYNC --> C-W4AR-SYNC-METHOD
+  D-W4AR-SYNC --> C-W4AR-SYNC-METHOD
+  E-W4AR-SM-COMOVE --> C-W4AR-SYNC-METHOD
+  E-W4AR-SM-UBIQ --> C-W4AR-NATIONAL
+  style C-W4AR-NATIONAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-SYNC-METHOD fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-COMOVE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-W4AR-SM-UBIQ fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+- **claim** — Only moving together over time is tested: each station's own seasonal cycle is removed, pairs are compared month by month with Kendall's tau, and chance is one series shifted against the other by whole years, which keeps each series and breaks only the tie in time. A pair moves together beyond chance when it beats its shifted copies at the stated level, so that share of pairs passes by chance alone. ([`C-W4AR-SYNC-METHOD`](CLAIMS.md#C-W4AR-SYNC-METHOD))
+- **external** — Methods section 6b: what every random basket shares: “As an estimator of the ubiquitous” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-WEATHER"></a>
+### Shared weather is the obvious candidate for that national signal; it is not tested here.
+
+`C-W4AR-WEATHER` · **provisional** — unchecked - see the graph for what would check it
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** Weather acts on all Danish waters in the same months and would survive the removal of each station's seasonal cycle and yearly level; no weather series enters the test.
+
+```mermaid
+graph BT
+  C-W4AR-WEATHER("Shared weather is the obvious candidate for that national ...")
+  G-W4AR-WEATHER{{"No weather series · in the co-movement test"}}
+  G-W4AR-WEATHER --> C-W4AR-WEATHER
+  style C-W4AR-WEATHER fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style G-W4AR-WEATHER fill:#5c2323,stroke:#ff7b72,color:#ffdcd7,stroke-dasharray:4 3
+```
+
+- **gap** — No weather series in the co-movement test. synchrony.py uses the stations' own series only. Whether the co-movement of far-apart stations follows the weather is not tested.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-READINGS"></a>
+### A grouping that does no better than random baskets has two readings: the grouping is bad, or the stations are alike, so that no grouping could do better and treating them as one kind drops nothing that matters. The spread among stations against the spread of one station measured again decides between them.
+
+`C-W4AR-READINGS` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The owner's method, section 6b of statistical-methods, pinned.
+
+```mermaid
+graph BT
+  C-W4AR-READINGS("A grouping that does no better than random baskets has two...")
+  E-W4AR-SM-READINGS[("Methods section 6b: two readings · of failing to beat noise")]
+  E-W4AR-SM-READINGS --> C-W4AR-READINGS
+  style C-W4AR-READINGS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-READINGS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **external** — Methods section 6b: two readings of failing to beat noise: “Failing to beat them has two readings” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-ALIKE"></a>
+### For summer bed oxygen, two stations in the same water body in the same month differ about as much as one station from one summer month to the next; any two stations differ more; and the stations' own summer medians spread far wider than they would if the stations were interchangeable.
+
+`C-W4AR-ALIKE` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** repeat_vs_between in livestock_baskets.json: absolute differences between consecutive summer months at one station, and between two stations in the same year-month, in one water body or any; and the interquartile range of station medians against that range when each year-month's values are shuffled among the stations measured then.
+
+```mermaid
+graph BT
+  C-W4AR-ALIKE("For summer bed oxygen, two stations in the same water body...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS["livestock_baskets.py"]
+  D-W4AR-LS --> C-W4AR-ALIKE
+  X-W4AR-LS --> C-W4AR-ALIKE
+  style C-W4AR-ALIKE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-READING-A"></a>
+### So the stations are not one kind: they differ beyond a station's own month-to-month change, and the differences sit between water bodies rather than within them. That is the first reading, a population that is not uniform, and for livestock the next section shows the grouping does not explain it. Oxygen saturation gives the same answer.
+
+`C-W4AR-READING-A` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** Stations in one water body differ about as much as one station a month apart, stations in general more, and the station medians spread beyond the interchangeability null; the livestock contrast does not beat the water-body floor; the readings in livestock_baskets.json give the same verdict for oxygen saturation.
+
+```mermaid
+graph BT
+  C-W4AR-READING-A("So the stations are not one kind: they differ beyond a sta...")
+  C-W4AR-ALIKE("For summer bed oxygen, two stations in the same water body...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS["livestock_baskets.py"]
+  C-W4AR-READINGS("A grouping that does no better than random baskets has two...")
+  E-W4AR-SM-READINGS[("Methods section 6b: two readings · of failing to beat noise")]
+  C-W4AR-LS-FLOOR("Counted as independent stations, the near-absent basket's ...")
+  C-W4AR-ALIKE --> C-W4AR-READING-A
+  D-W4AR-LS --> C-W4AR-ALIKE
+  X-W4AR-LS --> C-W4AR-ALIKE
+  C-W4AR-READINGS --> C-W4AR-READING-A
+  E-W4AR-SM-READINGS --> C-W4AR-READINGS
+  C-W4AR-LS-FLOOR --> C-W4AR-READING-A
+  D-W4AR-LS --> C-W4AR-LS-FLOOR
+  X-W4AR-LS --> C-W4AR-LS-FLOOR
+  D-W4AR-LS --> C-W4AR-READING-A
+  style C-W4AR-READING-A fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-ALIKE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-W4AR-READINGS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-READINGS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-W4AR-LS-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+```
+
+- **claim** — For summer bed oxygen, two stations in the same water body in the same month differ about as much as one station from one summer month to the next; any two stations differ more; and the stations' own summer medians spread far wider than they would if the stations were interchangeable. ([`C-W4AR-ALIKE`](CLAIMS.md#C-W4AR-ALIKE))
+- **claim** — A grouping that does no better than random baskets has two readings: the grouping is bad, or the stations are alike, so that no grouping could do better and treating them as one kind drops nothing that matters. The spread among stations against the spread of one station measured again decides between them. ([`C-W4AR-READINGS`](CLAIMS.md#C-W4AR-READINGS))
+- **claim** — Counted as independent stations, the near-absent basket's lead over the heavy basket is beyond every random basket of the same sizes; but the stations sit in far fewer water bodies and move with them, and when the densities are shuffled between whole water bodies every contrast falls inside the central band of the random results. For bed oxygen the livestock line does not beat the noise floor. ([`C-W4AR-LS-FLOOR`](CLAIMS.md#C-W4AR-LS-FLOOR))
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-NAIVE"></a>
+### Stations are grouped by the livestock on the land that drains to their water body: the first basket drawn along a causal line, and a naive one. The livestock is where herds are registered, not where manure is spread, counted in the regulatory unit DE rather than as nitrogen, in one register year against station records spanning decades; each catchment is linked to the water body it touches along the coast, a link built here, and an outer fjord does not inherit its inner fjord's land; and low-livestock land is not low-load land, since urban and sewage loads are not in the grouping. Livestock figures are totals over areas of land, never a single farm.
+
+`C-W4AR-LS-NAIVE` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The owner's method asks for baskets drawn along causal lines, livestock among them, as a naive first estimate; the caveats are the ones livestock_baskets.py records with its output, which holds area totals only, with totals from too few herds withheld.
+
+```mermaid
+graph BT
+  C-W4AR-LS-NAIVE("Stations are grouped by the livestock on the land that dra...")
+  E-W4AR-SM-CAUSAL[("Methods section 6b: baskets drawn · along a causal line")]
+  A-W4AR-LS-NAIVE{"Herd registrations stand · for livestock pressure"}
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  D-W4AR-CHR[("Herd register · chr_2024.json (sibling project)")]
+  X-W4AR-LS["livestock_baskets.py"]
+  E-W4AR-SM-CAUSAL --> C-W4AR-LS-NAIVE
+  A-W4AR-LS-NAIVE --> C-W4AR-LS-NAIVE
+  D-W4AR-LS --> C-W4AR-LS-NAIVE
+  D-W4AR-CHR --> C-W4AR-LS-NAIVE
+  X-W4AR-LS --> C-W4AR-LS-NAIVE
+  style C-W4AR-LS-NAIVE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-CAUSAL fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style A-W4AR-LS-NAIVE fill:#4a3a12,stroke:#e8a33d,color:#ffeccc,stroke-dasharray:3 2
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style D-W4AR-CHR fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **external** — Methods section 6b: baskets drawn along a causal line: “The comparison that tests a grouping draws baskets along causal lines” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+- **assumption** — Herd registrations stand for livestock pressure. Where a herd is registered stands for where its manure goes, the regulatory unit DE for nutrient, one register year for the decades the stations span, and a catchment's livestock reaches the water body it touches along the coast. Each is wrong in part; where it matters, the comparison is void.
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **held** — Herd register chr_2024.json (sibling project). The register of herd registrations with livestock units (DE), held by the sibling project danish-livestock at data/chr_2024.json. Read in memory by livestock_baskets.py; only area totals leave it.
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-ABSENT"></a>
+### Where livestock is near-absent was set before looking, as a catchment density below a fixed fraction of the national one. The largest such catchments are in north-east Zealand, around and north of Copenhagen; the rest are small.
+
+`C-W4AR-LS-ABSENT` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** near_absent_catchments in livestock_baskets.json: the rule, the threshold and the catchments meeting it with their land areas; the large ones are split from the rest at the widest gap in land area, and their location is read from their names.
+
+```mermaid
+graph BT
+  C-W4AR-LS-ABSENT("Where livestock is near-absent was set before looking, as ...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS["livestock_baskets.py"]
+  D-W4AR-LS --> C-W4AR-LS-ABSENT
+  X-W4AR-LS --> C-W4AR-LS-ABSENT
+  style C-W4AR-LS-ABSENT fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-BASKETS"></a>
+### Every station in a water body that land drains to, with enough summer months of bed oxygen, enters a basket: thirds of the stations by the density of the land behind their water body, with the near-absent end inside the low third.
+
+`C-W4AR-LS-BASKETS` · **code** — what this project's code does, read from the code
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** assign() cuts station-weighted tertiles over the basketable stations, whole water bodies moving together; near-absent is density below the threshold.
+
+```mermaid
+graph BT
+  C-W4AR-LS-BASKETS("Every station in a water body that land drains to, with en...")
+  X-W4AR-LS["livestock_baskets.py"]
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS --> C-W4AR-LS-BASKETS
+  D-W4AR-LS --> C-W4AR-LS-BASKETS
+  style C-W4AR-LS-BASKETS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-LEVELS"></a>
+### Summer bed oxygen barely differs in the middle between the heavy- and low-livestock baskets; the difference is in the low tail.
+
+`C-W4AR-LS-LEVELS` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** comparison_all_years for bed oxygen: the medians and tenth percentiles of the station summer medians in each basket.
+
+```mermaid
+graph BT
+  C-W4AR-LS-LEVELS("Summer bed oxygen barely differs in the middle between the...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  D-W4AR-LS --> C-W4AR-LS-LEVELS
+  style C-W4AR-LS-LEVELS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-FLOOR"></a>
+### Counted as independent stations, the near-absent basket's lead over the heavy basket is beyond every random basket of the same sizes; but the stations sit in far fewer water bodies and move with them, and when the densities are shuffled between whole water bodies every contrast falls inside the central band of the random results. For bed oxygen the livestock line does not beat the noise floor.
+
+`C-W4AR-LS-FLOOR` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** noise_floor in livestock_baskets.json: the station-level null permutes station values with the real basket sizes; the water-body null shuffles densities among water bodies, keeps each one's stations together and reruns the basket procedure; place() reads a contrast inside the central band as not beating the floor.
+
+```mermaid
+graph BT
+  C-W4AR-LS-FLOOR("Counted as independent stations, the near-absent basket's ...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS["livestock_baskets.py"]
+  D-W4AR-LS --> C-W4AR-LS-FLOOR
+  X-W4AR-LS --> C-W4AR-LS-FLOOR
+  style C-W4AR-LS-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-NOTHING"></a>
+### Two stations in different water bodies differ as much when they share a livestock basket as when they do not: the basket adds nothing to the difference.
+
+`C-W4AR-LS-NOTHING` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** repeat_vs_between for bed oxygen: the median absolute difference of same-month station pairs in different water bodies of one basket, and of pairs in different baskets.
+
+```mermaid
+graph BT
+  C-W4AR-LS-NOTHING("Two stations in different water bodies differ as much when...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  D-W4AR-LS --> C-W4AR-LS-NOTHING
+  style C-W4AR-LS-NOTHING fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-UBIQ"></a>
+### What every random basket shows is common to all the stations whatever the membership: bed oxygen bottoms out in August in every random basket, as in the real ones. Only the heavy basket's low tail is unusual, near the lowest any random basket of its size gave.
+
+`C-W4AR-LS-UBIQ` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** ubiquitous_seasonal_profile_bed_oxygen: the calendar month of the lowest median in each random basket and each real one; ubiquitous_part: the tenth percentile of random baskets of the heavy basket's size.
+
+```mermaid
+graph BT
+  C-W4AR-LS-UBIQ("What every random basket shows is common to all the statio...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  E-W4AR-SM-UBIQ[("Methods section 6b: what every · random basket shares")]
+  D-W4AR-LS --> C-W4AR-LS-UBIQ
+  E-W4AR-SM-UBIQ --> C-W4AR-LS-UBIQ
+  style C-W4AR-LS-UBIQ fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style E-W4AR-SM-UBIQ fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **external** — Methods section 6b: what every random basket shares: “As an estimator of the ubiquitous” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-STRATA"></a>
+### Within strata of bed salinity and depth, cut before looking, the gap between the heavy and low baskets grows in brackish, shallow and deep brackish water, reaching the edge of the water-body random band without clearly passing it, and reverses in salty bottom water; with recent summers only it shrinks.
+
+`C-W4AR-LS-STRATA` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** strata.results and sensitivity in livestock_baskets.json: the high-minus-low median contrast per stratum with its water-body floor verdict, and on summers from the sensitivity year.
+
+```mermaid
+graph BT
+  C-W4AR-LS-STRATA("Within strata of bed salinity and depth, cut before lookin...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  X-W4AR-LS["livestock_baskets.py"]
+  D-W4AR-LS --> C-W4AR-LS-STRATA
+  X-W4AR-LS --> C-W4AR-LS-STRATA
+  style C-W4AR-LS-STRATA fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **script** — livestock_baskets.py. Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-SALTY"></a>
+### A reading, not tested here: in salty bottom water oxygen is set more by the layering of the water and by inflow than by the land nearby.
+
+`C-W4AR-LS-SALTY` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** Salty bottom water in Danish waters sits beneath a lighter, fresher layer; what comes off the land nearby enters that upper layer and must cross the layering to reach the bottom, while the bottom water itself is renewed by inflow. Nothing on this page measures either.
 
 - **the argument alone** — nothing further is cited: the reasoning above is the whole of it, for the reader to judge
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-DOES"></a>
+### The livestock baskets show that heavy-livestock water has the worse low tail, and heavy-livestock land does not mean low oxygen everywhere. They do not show that livestock lowers bed oxygen: they compare levels, similar levels are not a shared cause, and the test of one - moving together along the line - has not yet been run for livestock.
+
+`C-W4AR-LS-DOES` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The contrasts and floors above; Ringkoebing Fjord's density and station median from the water_bodies table; the owner's method on levels and co-movement.
+
+```mermaid
+graph BT
+  C-W4AR-LS-DOES("The livestock baskets show that heavy-livestock water has ...")
+  C-W4AR-LS-LEVELS("Summer bed oxygen barely differs in the middle between the...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  C-W4AR-LS-FLOOR("Counted as independent stations, the near-absent basket's ...")
+  X-W4AR-LS["livestock_baskets.py"]
+  E-W4AR-SM-COMOVE[("Methods section 6b: moving together, · not similar levels")]
+  C-W4AR-LS-LEVELS --> C-W4AR-LS-DOES
+  D-W4AR-LS --> C-W4AR-LS-LEVELS
+  C-W4AR-LS-FLOOR --> C-W4AR-LS-DOES
+  D-W4AR-LS --> C-W4AR-LS-FLOOR
+  X-W4AR-LS --> C-W4AR-LS-FLOOR
+  D-W4AR-LS --> C-W4AR-LS-DOES
+  E-W4AR-SM-COMOVE --> C-W4AR-LS-DOES
+  style C-W4AR-LS-DOES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-LS-LEVELS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-LS-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-COMOVE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — Summer bed oxygen barely differs in the middle between the heavy- and low-livestock baskets; the difference is in the low tail. ([`C-W4AR-LS-LEVELS`](CLAIMS.md#C-W4AR-LS-LEVELS))
+- **claim** — Counted as independent stations, the near-absent basket's lead over the heavy basket is beyond every random basket of the same sizes; but the stations sit in far fewer water bodies and move with them, and when the densities are shuffled between whole water bodies every contrast falls inside the central band of the random results. For bed oxygen the livestock line does not beat the noise floor. ([`C-W4AR-LS-FLOOR`](CLAIMS.md#C-W4AR-LS-FLOOR))
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+- **external** — Methods section 6b: moving together, not similar levels: “Similar levels are not a shared cause; moving together is” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned)
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-FLUO"></a>
+### Fluorescence is the one measure the livestock baskets separate clearly, beyond the whole range of both kinds of random basket.
+
+`C-W4AR-LS-FLUO` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** comparison_all_years for fluorescence: the basket medians, the probability that a heavy station reads below a low one, and the verdicts of both floors.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-REVERSAL): A random basket shares no cause: a ranking of lifts over random baskets orders groupings by how far they beat noise, not by whether their members share a cause. Retired with the comparison; the physical control is now salinity's co-movement, and fluorescence is now compared along a causal line.
+
+```mermaid
+graph BT
+  C-W4AR-LS-FLUO("Fluorescence is the one measure the livestock baskets sepa...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  D-W4AR-LS --> C-W4AR-LS-FLUO
+  style C-W4AR-LS-FLUO fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-LS-FLUO-CAVEAT"></a>
+### It carries a caveat nobody has checked: the panel's fluorescence is a whole-cast value in relative units, so a difference between instruments or monitoring programmes could produce the same separation.
+
+`C-W4AR-LS-FLUO-CAVEAT` · **gap** — a statement that something cannot be established
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The panel stores fluorescence as a whole-cast relative value; no record of instrument or programme per station is held.
+
+```mermaid
+graph BT
+  C-W4AR-LS-FLUO-CAVEAT("It carries a caveat nobody has checked: the panel's fluore...")
+  G-W4AR-FLUO{{"Fluorescence instruments · not compared"}}
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  G-W4AR-FLUO --> C-W4AR-LS-FLUO-CAVEAT
+  D-W4AR-LS --> C-W4AR-LS-FLUO-CAVEAT
+  style C-W4AR-LS-FLUO-CAVEAT fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style G-W4AR-FLUO fill:#5c2323,stroke:#ff7b72,color:#ffdcd7,stroke-dasharray:4 3
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **gap** — Fluorescence instruments not compared. The panel's fluorescence is a whole-cast value in relative units. Whether instruments or monitoring programmes differ between the stations of the baskets has not been checked, and nothing held records it per station.
+- **held** — Livestock baskets livestock_baskets.json. data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-ADMIN"></a>
+### The numbers in this section are administrative: counts of management units and what stands behind the targets they are given, not findings about the sea.
+
+`C-W4AR-ADMIN` · **stipulated** — a rule this project sets itself, with its reason
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** A rule the page sets itself, following from water bodies being management units.
+
+```mermaid
+graph BT
+  C-W4AR-ADMIN("The numbers in this section are administrative: counts of ...")
+  C-W4AR-UNITS("The marine water bodies are management units: they exist s...")
+  E-AR-SO-BASIS[("Second opinion: why · water bodies have · boundaries")]
+  E-AR-DHI-EVERY[("DHI method report: · every water body · given a requirement")]
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  C-W4AR-OWN-GROUPS("The groups the stations' co-movement draws do not follow t...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  C-W4AR-UNITS --> C-W4AR-ADMIN
+  E-AR-SO-BASIS --> C-W4AR-UNITS
+  E-AR-DHI-EVERY --> C-W4AR-UNITS
+  E-W4AR-SM-UNITS --> C-W4AR-UNITS
+  D-AR-AREAS --> C-W4AR-UNITS
+  C-W4AR-OWN-GROUPS --> C-W4AR-UNITS
+  D-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  X-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  style C-W4AR-ADMIN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-UNITS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-AR-SO-BASIS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-AR-DHI-EVERY fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-OWN-GROUPS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **claim** — The marine water bodies are management units: they exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise. ([`C-W4AR-UNITS`](CLAIMS.md#C-W4AR-UNITS))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-SERIES-COVERAGE"></a>
+### The part of ODA's register this page can place in water bodies is the station series behind the co-movement tests and the livestock baskets; counted over that series, some water bodies contain no station with data in enough distinct years.
+
+`C-W4AR-SERIES-COVERAGE` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** station_places.py counts the stations of the series, those inside a water body by point in polygon, the water bodies with at least one, and per threshold of distinct years the water bodies with no station reaching it; synchrony.py and livestock_baskets.py read the same series and overlay.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-SERIES): It pointed to partition tests that are no longer on the page. The same station series and the same counts stand behind the co-movement tests that replace them, and are said with that pointer.
+
+```mermaid
+graph BT
+  C-W4AR-SERIES-COVERAGE("The part of ODA's register this page can place in water bo...")
+  D-AR-STATIONS[("Station facts · station_places.json")]
+  X-AR-STATIONPLACES["station_places.py"]
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  D-AR-STATIONS --> C-W4AR-SERIES-COVERAGE
+  X-AR-STATIONPLACES --> C-W4AR-SERIES-COVERAGE
+  D-W4AR-SYNC --> C-W4AR-SERIES-COVERAGE
+  style C-W4AR-SERIES-COVERAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-STATIONS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-AR-STATIONPLACES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Station facts station_places.json. data/derived/station_places.json, from the station series docs/data/areas/stations_series.* and the separate overlay station_waterbody_overlay.json: the Roskilde Fjord spreads, and how long each water body's longest station series runs.
+- **script** — station_places.py. The Roskilde spreads: per month with enough stations, the population standard deviation and the range across them, against the standard deviation of the monthly means.
+- **held** — Co-movement of stations synchrony.json. data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-ASSIGN"></a>
+### Pressures are placed in water bodies by nearest point on the marine boundary, searched to the maximum distance in every direction; bathing stations are not placed by distance but by the water-body code their own record carries, matched exactly, and those whose code matches no marine water body are left out and counted by reason.
+
+`C-W4AR-ASSIGN` · **code** — what this project's code does, read from the code
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** areas.py: Assigner.nearest() takes the nearest of every kept vertex in the cells reach() bounds; load_bathing() keeps a station's wbid only if it is an ov_id; bathing_match() counts the rest by the form of the code.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-ASSIGN): Not true of every layer: bathing stations were never assigned by distance but by the water-body code their own record carries, and those whose code matched no marine water body were dropped without a count. The distance search itself stopped short of the stated distance east-west and could stop at a farther vertex; it now searches the full distance, and the cross-water-body correlations moved with it.
+
+```mermaid
+graph BT
+  C-W4AR-ASSIGN("Pressures are placed in water bodies by nearest point on t...")
+  X-W4AR-AREAS-RULES["areas.py: the two rules"]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  X-W4AR-AREAS-RULES --> C-W4AR-ASSIGN
+  D-AR-AREAS --> C-W4AR-ASSIGN
+  style C-W4AR-ASSIGN fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-AREAS-RULES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **script** — areas.py: the two rules. Pressures go to the nearest kept boundary vertex within the maximum distance, searched to that distance in every direction; bathing stations go to the water body their own wbid names, exactly, and the rest are counted by reason. The cross-area correlation is repeated on each bathing-label period alone.
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-DOWNLOAD"></a>
+### A copy of the per-water-body record, trimmed to what the map draws, is published for download.
+
+`C-W4AR-DOWNLOAD` · **code** — what this project's code does, read from the code
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** areamap.py writes docs/data/areas/areas.json from data/derived/areas.json: per water body its pressures, bathing observation, streams and the reasons it cannot be modelled.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-SCOPE): A water body is a management unit, not a finding. The page no longer keeps one record per water body in its text: only the numbers a management question needs are shown, labelled administrative, and the record of each water body is published as a file.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-AREA-TABLE): A water body is a management unit, and by the coverage rule a family of rows computed the same way gets one representative, explained; the full record is published as a file. Its outfall and treatment-plant columns were also computed with a nearest-boundary search that stopped short of the stated distance east-west, and changed where plants or outfalls were reassigned.
+
+```mermaid
+graph BT
+  C-W4AR-DOWNLOAD("A copy of the per-water-body record, trimmed to what the m...")
+  X-W4AR-AREAMAP["areamap.py"]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  X-W4AR-AREAMAP --> C-W4AR-DOWNLOAD
+  D-AR-AREAS --> C-W4AR-DOWNLOAD
+  style C-W4AR-DOWNLOAD fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-AREAMAP fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **script** — areamap.py. Writes docs/data/areas/areas.json from data/derived/areas.json, trimmed to what the map draws: per water body its pressures, bathing observation, streams with their years and the reasons it cannot be modelled; and the cross-area tests.
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-ONE-ROW"></a>
+### One record read through - Roskilde Fjord indre: its area, its model flag, its bathing stations and the years they span, how their classes move together, the outfalls and approved treatment-plant capacity assigned to it, and the one reason its record gives that it cannot be modelled. Every other record is built the same way.
+
+`C-W4AR-ONE-ROW` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The record DKCOAST2 in areas.json, written by areas.py; approved capacity is godk_pe, a permitted figure, not a load; the hazardous-substance layer holds no marine point.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-TABLE-KEY): The table it keyed is no longer on the page: see the retired per-area table.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-AREA-TABLE): A water body is a management unit, and by the coverage rule a family of rows computed the same way gets one representative, explained; the full record is published as a file. Its outfall and treatment-plant columns were also computed with a nearest-boundary search that stopped short of the stated distance east-west, and changed where plants or outfalls were reassigned.
+
+```mermaid
+graph BT
+  C-W4AR-ONE-ROW("One record read through - Roskilde Fjord indre: its area, ...")
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  X-AR-AREAS["areas.py"]
+  X-W4AR-AREAS-RULES["areas.py: the two rules"]
+  D-AR-AREAS --> C-W4AR-ONE-ROW
+  X-AR-AREAS --> C-W4AR-ONE-ROW
+  X-W4AR-AREAS-RULES --> C-W4AR-ONE-ROW
+  style C-W4AR-ONE-ROW fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style X-W4AR-AREAS-RULES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
+- **script** — areas.py: the two rules. Pressures go to the nearest kept boundary vertex within the maximum distance, searched to that distance in every direction; bathing stations go to the water body their own wbid names, exactly, and the rest are counted by reason. The cross-area correlation is repeated on each bathing-label period alone.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-CUMHOC"></a>
+### Across the water bodies with two or more bathing stations a correlation can be computed, but it is a correlation across management units, each weighted alike whatever its size or number of stations, and not an effect of anything.
+
+`C-W4AR-CUMHOC` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** cum_hoc() keeps the water bodies with two or more bathing stations and an area and correlates across them, one point each; the water bodies are drawn for administration.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-CUMHOC): An effect size across water bodies treats each management unit as a unit a cause acts on. What can be said is that a correlation is computed across management units.
+
+```mermaid
+graph BT
+  C-W4AR-CUMHOC("Across the water bodies with two or more bathing stations ...")
+  X-AR-AREAS["areas.py"]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  C-W4AR-UNITS("The marine water bodies are management units: they exist s...")
+  E-AR-SO-BASIS[("Second opinion: why · water bodies have · boundaries")]
+  E-AR-DHI-EVERY[("DHI method report: · every water body · given a requirement")]
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
+  C-W4AR-OWN-GROUPS("The groups the stations' co-movement draws do not follow t...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  X-AR-AREAS --> C-W4AR-CUMHOC
+  D-AR-AREAS --> C-W4AR-CUMHOC
+  C-W4AR-UNITS --> C-W4AR-CUMHOC
+  E-AR-SO-BASIS --> C-W4AR-UNITS
+  E-AR-DHI-EVERY --> C-W4AR-UNITS
+  E-W4AR-SM-UNITS --> C-W4AR-UNITS
+  D-AR-AREAS --> C-W4AR-UNITS
+  C-W4AR-OWN-GROUPS --> C-W4AR-UNITS
+  D-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  X-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  style C-W4AR-CUMHOC fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-AR-AREAS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-UNITS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-AR-SO-BASIS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-AR-DHI-EVERY fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-W4AR-OWN-GROUPS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **script** — areas.py. Builds the water-body records: nearest-boundary assignment within a maximum distance, the model flag from DHI's list of water bodies with statistical models (data/manual/statistical_models.json), bathing observation, the knowledge sets and the cross-area correlations.
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+- **claim** — The marine water bodies are management units: they exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise. ([`C-W4AR-UNITS`](CLAIMS.md#C-W4AR-UNITS))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-CUMHOC-R"></a>
+### One pairing is traced end to end: the share of station-years classed below Excellent against log-scaled approved treatment-plant capacity per square kilometre of water body. The other pairings, computed the same way, are in the downloadable file.
+
+`C-W4AR-CUMHOC-R` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** cum_hoc.tests in areas.json; the traced one has its lineage in docs/data/lineage/cum_hoc_r.json; areamap.py copies all the tests into the downloadable file.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-CUMHOC-TABLE): Every value in it was computed with a nearest-boundary search that stopped short of the stated distance east-west; recomputed with the full search, every one moved. And by the coverage rule a family of numbers computed the same way gets one representative on the page, traced end to end; the rest are in the downloadable file.
+
+```mermaid
+graph BT
+  C-W4AR-CUMHOC-R("One pairing is traced end to end: the share of station-yea...")
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  D-W4AR-LINEAGE[("How r was made · cum_hoc_r.json")]
+  X-W4AR-AREAMAP["areamap.py"]
+  D-AR-AREAS --> C-W4AR-CUMHOC-R
+  D-W4AR-LINEAGE --> C-W4AR-CUMHOC-R
+  X-W4AR-AREAMAP --> C-W4AR-CUMHOC-R
+  style C-W4AR-CUMHOC-R fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style D-W4AR-LINEAGE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-AREAMAP fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+- **held** — How r was made cum_hoc_r.json. docs/data/lineage/cum_hoc_r.json, written by scripts/areas.py after areas.json: the records r rests on, each step with its code and reason, where each branch ends, the spread, and reruns with one choice changed each. The reader opens it from the number.
+- **script** — areamap.py. Writes docs/data/areas/areas.json from data/derived/areas.json, trimmed to what the map draws: per water body its pressures, bathing observation, streams with their years and the reasons it cannot be modelled; and the cross-area tests.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-POOLING"></a>
+### The bathing labels change in 2011 and the share pools both label sets; on each period alone, the same correlation is weaker under the newer labels than under the older.
+
+`C-W4AR-POOLING` · **measured** — rests on measurement
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** cum_hoc.by_period in areas.json: the years each label is used, read from the file, and every test repeated on each period's station-years.
+
+```mermaid
+graph BT
+  C-W4AR-POOLING("The bathing labels change in 2011 and the share pools both...")
+  X-W4AR-AREAS-RULES["areas.py: the two rules"]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  X-W4AR-AREAS-RULES --> C-W4AR-POOLING
+  D-AR-AREAS --> C-W4AR-POOLING
+  style C-W4AR-POOLING fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-AREAS-RULES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **script** — areas.py: the two rules. Pressures go to the nearest kept boundary vertex within the maximum distance, searched to that distance in every direction; bathing stations go to the water body their own wbid names, exactly, and the rest are counted by reason. The cross-area correlation is repeated on each bathing-label period alone.
+- **held** — Water-body records data/derived/areas.json. Written by scripts/areas.py: one record per polygon of the national marine layer marin_overordnet, with pressures, bathing observation, the years each stream spans, and the written-out reasons an area cannot be modelled.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-RERUNS"></a>
+### How r was made - the records, each step with its code and reason, where each branch ends - is in its How it was made view, with reruns that each change one choice.
+
+`C-W4AR-RERUNS` · **code** — what this project's code does, read from the code
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** docs/data/lineage/cum_hoc_r.json holds the steps and the reruns; the reader opens it from the number, keyed by its file and field.
+
+```mermaid
+graph BT
+  C-W4AR-RERUNS("How r was made - the records, each step with its code and ...")
+  D-W4AR-LINEAGE[("How r was made · cum_hoc_r.json")]
+  D-W4AR-LINEAGE --> C-W4AR-RERUNS
+  style C-W4AR-RERUNS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LINEAGE fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — How r was made cum_hoc_r.json. docs/data/lineage/cum_hoc_r.json, written by scripts/areas.py after areas.json: the records r rests on, each step with its code and reason, where each branch ends, the spread, and reruns with one choice changed each. The reader opens it from the number.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-W4AR-NOT"></a>
+### This page is not a causal model, and a water body is not the unit a cause is found in: water bodies are where responsibility sits, and the stations' co-movement draws a different map. A cause would show as stations moving together along its line; no causal line has yet been tested that way here.
+
+`C-W4AR-NOT` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [AREAS.md](AREAS.md).
+
+**Why it follows:** The co-movement results follow the water and a national signal; the livestock baskets compare levels only.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-W4AR-OLD-NOT): It framed the page as the ledger for a causal model per water body; a water body is a management unit, not the unit a cause is found in, and the ledger is now a file.
+
+```mermaid
+graph BT
+  C-W4AR-NOT("This page is not a causal model, and a water body is not t...")
+  C-W4AR-UNITS("The marine water bodies are management units: they exist s...")
+  E-AR-SO-BASIS[("Second opinion: why · water bodies have · boundaries")]
+  E-AR-DHI-EVERY[("DHI method report: · every water body · given a requirement")]
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
+  D-AR-AREAS[("Water-body records · data/derived/areas.json")]
+  C-W4AR-OWN-GROUPS("The groups the stations' co-movement draws do not follow t...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  C-W4AR-WATER-MASSES("Bed salinity, which says nothing about an ailment, gains a...")
+  C-W4AR-MATCHED("At the same distance apart, pairs of stations inside one w...")
+  E-W4AR-SM-MATCHED[("Methods section 6b: a boundary is · tested at matched distance")]
+  C-W4AR-LS-DOES("The livestock baskets show that heavy-livestock water has ...")
+  C-W4AR-LS-LEVELS("Summer bed oxygen barely differs in the middle between the...")
+  D-W4AR-LS[("Livestock baskets · livestock_baskets.json")]
+  C-W4AR-LS-FLOOR("Counted as independent stations, the near-absent basket's ...")
+  X-W4AR-LS["livestock_baskets.py"]
+  E-W4AR-SM-COMOVE[("Methods section 6b: moving together, · not similar levels")]
+  C-W4AR-UNITS --> C-W4AR-NOT
+  E-AR-SO-BASIS --> C-W4AR-UNITS
+  E-AR-DHI-EVERY --> C-W4AR-UNITS
+  E-W4AR-SM-UNITS --> C-W4AR-UNITS
+  D-AR-AREAS --> C-W4AR-UNITS
+  C-W4AR-OWN-GROUPS --> C-W4AR-UNITS
+  D-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  X-W4AR-SYNC --> C-W4AR-OWN-GROUPS
+  C-W4AR-WATER-MASSES --> C-W4AR-NOT
+  C-W4AR-MATCHED --> C-W4AR-WATER-MASSES
+  D-W4AR-SYNC --> C-W4AR-MATCHED
+  X-W4AR-SYNC --> C-W4AR-MATCHED
+  E-W4AR-SM-MATCHED --> C-W4AR-MATCHED
+  D-W4AR-SYNC --> C-W4AR-WATER-MASSES
+  C-W4AR-LS-DOES --> C-W4AR-NOT
+  C-W4AR-LS-LEVELS --> C-W4AR-LS-DOES
+  D-W4AR-LS --> C-W4AR-LS-LEVELS
+  C-W4AR-LS-FLOOR --> C-W4AR-LS-DOES
+  D-W4AR-LS --> C-W4AR-LS-FLOOR
+  X-W4AR-LS --> C-W4AR-LS-FLOOR
+  D-W4AR-LS --> C-W4AR-LS-DOES
+  E-W4AR-SM-COMOVE --> C-W4AR-LS-DOES
+  style C-W4AR-NOT fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-UNITS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-AR-SO-BASIS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-AR-DHI-EVERY fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style D-AR-AREAS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-OWN-GROUPS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-W4AR-WATER-MASSES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-MATCHED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-MATCHED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+  style C-W4AR-LS-DOES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-LS-LEVELS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-LS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style C-W4AR-LS-FLOOR fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style X-W4AR-LS fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-COMOVE fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — The marine water bodies are management units: they exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise. ([`C-W4AR-UNITS`](CLAIMS.md#C-W4AR-UNITS))
+- **claim** — Bed salinity, which says nothing about an ailment, gains about as much from the lines as bed oxygen, and more in the size of the co-movement; so the lines follow differences in the water itself, and nothing here shows a shared ailment on top of shared water. ([`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES))
+- **claim** — The livestock baskets show that heavy-livestock water has the worse low tail, and heavy-livestock land does not mean low oxygen everywhere. They do not show that livestock lowers bed oxygen: they compare levels, similar levels are not a shared cause, and the test of one - moving together along the line - has not yet been run for livestock. ([`C-W4AR-LS-DOES`](CLAIMS.md#C-W4AR-LS-DOES))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 ## CATEGORY.md
 
@@ -2649,23 +3416,17 @@ Said on [CATEGORY.md](CATEGORY.md).
 ```mermaid
 graph BT
   C-AR-ICC-FAMILY("The intraclass correlation and its relatives measure how m...")
-  C-AR-PART-STAT("The partition score is a ratio of mean squares within mont...")
   X-AR-PARTITION["partition_score.py"]
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  C-AR-PART-STAT --> C-AR-ICC-FAMILY
-  X-AR-PARTITION --> C-AR-PART-STAT
-  D-AR-PARTITION --> C-AR-PART-STAT
+  X-AR-PARTITION --> C-AR-ICC-FAMILY
   style C-AR-ICC-FAMILY fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-PART-STAT fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
 ```
 
-- **claim** — The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own. ([`C-AR-PART-STAT`](CLAIMS.md#C-AR-PART-STAT))
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-CONDITION"></a>
 ### Such a statistic must be conditioned on what every member shares - the season for marine stations - or the shared driver lands in the between-basket term and every partition scores well.
@@ -2679,20 +3440,17 @@ Said on [CATEGORY.md](CATEGORY.md).
 ```mermaid
 graph BT
   C-AR-CONDITION("Such a statistic must be conditioned on what every member ...")
-  C-AR-WITHIN-MONTH("The score is computed within month, because pooling across...")
   X-AR-PARTITION["partition_score.py"]
-  C-AR-WITHIN-MONTH --> C-AR-CONDITION
-  X-AR-PARTITION --> C-AR-WITHIN-MONTH
+  X-AR-PARTITION --> C-AR-CONDITION
   style C-AR-CONDITION fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-WITHIN-MONTH fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
 ```
 
-- **claim** — The score is computed within month, because pooling across months puts the shared season into the between-basket term and makes every partition look excellent. ([`C-AR-WITHIN-MONTH`](CLAIMS.md#C-AR-WITHIN-MONTH))
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-SHAPE-NULL"></a>
 ### It must also be compared against a null that matches the basket's shape; skipping that is how a defensible number comes out backwards.
@@ -2706,23 +3464,17 @@ Said on [CATEGORY.md](CATEGORY.md).
 ```mermaid
 graph BT
   C-AR-SHAPE-NULL("It must also be compared against a null that matches the b...")
-  C-AR-REVERSAL("Against the matched blobs the ordering reverses - surface ...")
   D-AR-PARTITION[("Partition scores · partition_score.json")]
-  X-AR-PARTITION["partition_score.py"]
-  C-AR-REVERSAL --> C-AR-SHAPE-NULL
-  D-AR-PARTITION --> C-AR-REVERSAL
-  X-AR-PARTITION --> C-AR-REVERSAL
+  D-AR-PARTITION --> C-AR-SHAPE-NULL
   style C-AR-SHAPE-NULL fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-REVERSAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
-  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
 ```
 
-- **claim** — Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs. ([`C-AR-REVERSAL`](CLAIMS.md#C-AR-REVERSAL))
+- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved its support to the partition scores themselves: that a fair null must match the basket's shape, and that skipping it reverses the ranking, holds as the rule for building a floor; it claims nothing about a shared cause. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-DEFECT"></a>
 ### The statistic has a defect that applies to every number on the page: it takes the partition as an input.
@@ -2828,7 +3580,7 @@ graph BT
 *Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-RESCUE"></a>
-### The null is not a refinement; it is what rescues the measurement.
+### The null is not optional: without it the measurement cannot even show that the grouping beats noise, and beating noise is still not a shared cause.
 
 `C-AR-RESCUE` · **argued** — follows by reasoning from what it rests on - the argument is given in full
 
@@ -2836,62 +3588,69 @@ Said on [CATEGORY.md](CATEGORY.md).
 
 **Why it follows:** Argued in the next claim.
 
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-AR-OLD-RESCUE): The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share. It makes the measurement fair, not meaningful.
+
 ```mermaid
 graph BT
-  C-AR-RESCUE("The null is not a refinement; it is what rescues the measu...")
+  C-AR-RESCUE("The null is not optional: without it the measurement canno...")
   C-AR-DIFFERENCE("Compared against a shape-matched null, the statistic stops...")
   C-AR-FST-CIRCLE("The intraclass correlation and F_ST take the partition as ...")
-  C-AR-NULLS("Shuffled labels keep basket sizes and destroy geography; l...")
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
   X-AR-PARTITION["partition_score.py"]
   C-AR-DIFFERENCE --> C-AR-RESCUE
   C-AR-FST-CIRCLE --> C-AR-DIFFERENCE
-  C-AR-NULLS --> C-AR-DIFFERENCE
-  X-AR-PARTITION --> C-AR-NULLS
+  E-W4AR-SM-UNITS --> C-AR-DIFFERENCE
+  X-AR-PARTITION --> C-AR-DIFFERENCE
+  E-W4AR-SM-UNITS --> C-AR-RESCUE
   style C-AR-RESCUE fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style C-AR-DIFFERENCE fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style C-AR-FST-CIRCLE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-NULLS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
 ```
 
-- **claim** — Compared against a shape-matched null, the statistic stops being circular, because the null partitions were not chosen to be real; a single bare value cannot by itself say whether the groups are anything. ([`C-AR-DIFFERENCE`](CLAIMS.md#C-AR-DIFFERENCE))
+- **claim** — Compared against a shape-matched null, the statistic stops rewarding a partition for its shape, and the difference says how far the chosen partition sits above noise of the same shape - a floor, not a test that its members share a cause; a single bare value cannot by itself say whether the groups are anything. ([`C-AR-DIFFERENCE`](CLAIMS.md#C-AR-DIFFERENCE))
+- **external** — Methods section 6b: water bodies are management units: “exist so that someone can be made responsible” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned). The owner's method: the Danish water bodies exist so that someone can be made responsible for an area and given a target; a number per management unit is about the administration until shown otherwise.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-DIFFERENCE"></a>
-### Compared against a shape-matched null, the statistic stops being circular, because the null partitions were not chosen to be real; a single bare value cannot by itself say whether the groups are anything.
+### Compared against a shape-matched null, the statistic stops rewarding a partition for its shape, and the difference says how far the chosen partition sits above noise of the same shape - a floor, not a test that its members share a cause; a single bare value cannot by itself say whether the groups are anything.
 
 `C-AR-DIFFERENCE` · **argued** — follows by reasoning from what it rests on - the argument is given in full
 
 Said on [CATEGORY.md](CATEGORY.md).
 
-**Why it follows:** Each score depends on the assumed partition; the difference from partitions nobody chose measures what the chosen one adds. A bare value has nothing to be read against.
+**Why it follows:** A random basket shares no cause, so beating it shows only that a grouping beats noise (the owner's rule, statistical-methods section 6b). Each score depends on the assumed partition, and a bare value has nothing to be read against.
 
 **Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-BARE): 'Almost no information' overstates: a bare value cannot be read on its own, which is what the replacement says.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-AR-OLD-DIFFERENCE-ADDS): The owner's rule: a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - not what its members share. The replacement says what the difference measures.
 
 ```mermaid
 graph BT
   C-AR-DIFFERENCE("Compared against a shape-matched null, the statistic stops...")
   C-AR-FST-CIRCLE("The intraclass correlation and F_ST take the partition as ...")
-  C-AR-NULLS("Shuffled labels keep basket sizes and destroy geography; l...")
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
   X-AR-PARTITION["partition_score.py"]
   C-AR-FST-CIRCLE --> C-AR-DIFFERENCE
-  C-AR-NULLS --> C-AR-DIFFERENCE
-  X-AR-PARTITION --> C-AR-NULLS
+  E-W4AR-SM-UNITS --> C-AR-DIFFERENCE
+  X-AR-PARTITION --> C-AR-DIFFERENCE
   style C-AR-DIFFERENCE fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style C-AR-FST-CIRCLE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-NULLS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
 ```
 
 - **claim** — The intraclass correlation and F_ST take the partition as an input - H_S cannot be computed until subpopulations are declared - so citing a value as evidence that the groups are distinct assumes what it sets out to show, unless it is set against partitions not chosen to be real. ([`C-AR-FST-CIRCLE`](CLAIMS.md#C-AR-FST-CIRCLE))
-- **claim** — Shuffled labels keep basket sizes and destroy geography; latitude stripes keep compactness and equal sizes and ignore hydrography; the matched blobs keep both sizes and compactness, grown from random seeds by nearest neighbour three times over - the only control that varies one thing at a time. ([`C-AR-NULLS`](CLAIMS.md#C-AR-NULLS))
+- **external** — Methods section 6b: water bodies are management units: “exist so that someone can be made responsible” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned). The owner's method: the Danish water bodies exist so that someone can be made responsible for an area and given a target; a number per management unit is about the administration until shown otherwise.
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-NULL-LIMIT"></a>
 ### The null comparison is the strongest test available when the feature space is small, not the strongest test available.
@@ -3227,24 +3986,24 @@ graph BT
   C-AR-DEMAND("If a category's lift over a same-shaped null is unknown, i...")
   C-AR-DIFFERENCE("Compared against a shape-matched null, the statistic stops...")
   C-AR-FST-CIRCLE("The intraclass correlation and F_ST take the partition as ...")
-  C-AR-NULLS("Shuffled labels keep basket sizes and destroy geography; l...")
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
   X-AR-PARTITION["partition_score.py"]
   C-AR-DIFFERENCE --> C-AR-DEMAND
   C-AR-FST-CIRCLE --> C-AR-DIFFERENCE
-  C-AR-NULLS --> C-AR-DIFFERENCE
-  X-AR-PARTITION --> C-AR-NULLS
+  E-W4AR-SM-UNITS --> C-AR-DIFFERENCE
+  X-AR-PARTITION --> C-AR-DIFFERENCE
   style C-AR-DEMAND fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style C-AR-DIFFERENCE fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style C-AR-FST-CIRCLE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-NULLS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
 ```
 
-- **claim** — Compared against a shape-matched null, the statistic stops being circular, because the null partitions were not chosen to be real; a single bare value cannot by itself say whether the groups are anything. ([`C-AR-DIFFERENCE`](CLAIMS.md#C-AR-DIFFERENCE))
+- **claim** — Compared against a shape-matched null, the statistic stops rewarding a partition for its shape, and the difference says how far the chosen partition sits above noise of the same shape - a floor, not a test that its members share a cause; a single bare value cannot by itself say whether the groups are anything. ([`C-AR-DIFFERENCE`](CLAIMS.md#C-AR-DIFFERENCE))
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after C-AR-DIFFERENCE under it was reworded: that a category with an unknown floor is used as data when it is a model holds as it stands; it claims a necessary minimum, not a sufficient one. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-AR-SELF-APPLY"></a>
 ### This project sorts its mechanisms into groups, which is a partition it has not scored either.
@@ -3273,6 +4032,143 @@ graph BT
 *The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
 
 *Confirmed 2026-09-11 by* `fork w1-ar (read each claim, its reasoning and what it rests on against the page wording; code claims against areas.py, partition_score.py and station_places.py; figures against areas.json, partition_score.json and station_places.json; others' claims against their pinned texts; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-AR-WINNERS"></a>
+### Against the shuffle, salinity gains most by a distance; against the stripes, surface oxygen saturation does.
+
+`C-AR-WINNERS` · **measured** — rests on measurement
+
+Said on [CATEGORY.md](CATEGORY.md).
+
+**Why it follows:** The largest real-minus-null difference for each control, read from partition_score.json.
+
+```mermaid
+graph BT
+  C-AR-WINNERS("Against the shuffle, salinity gains most by a distance; ag...")
+  D-AR-PARTITION[("Partition scores · partition_score.json")]
+  D-AR-PARTITION --> C-AR-WINNERS
+  style C-AR-WINNERS fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+```
+
+- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (restored for CATEGORY.md, where they had always been marked, after the AREAS clean-up removed them: they state which variables beat which random grouping and that the order reverses against same-shaped groups - facts about noise floors, read from partition_score.json, claiming nothing about a shared cause. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-AR-REVERSAL"></a>
+### Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs.
+
+`C-AR-REVERSAL` · **measured** — rests on measurement
+
+Said on [CATEGORY.md](CATEGORY.md).
+
+**Why it follows:** Lifts and the spread between the three runs are read from partition_score.json. With three runs, a lift smaller than the runs' spread cannot be told from zero.
+
+**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-FLUO): With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs, so 'predict it better' is not shown.
+
+**Replaces an earlier claim**, retired on 2026-09-11 to the [archive](ARCHIVE.md#C-AR-OLD-CAT-FLUO): With three runs of the matched null, fluorescence's negative lift lies inside the spread between runs.
+
+```mermaid
+graph BT
+  C-AR-REVERSAL("Against the matched blobs the ordering reverses - surface ...")
+  D-AR-PARTITION[("Partition scores · partition_score.json")]
+  X-AR-PARTITION["partition_score.py"]
+  D-AR-PARTITION --> C-AR-REVERSAL
+  X-AR-PARTITION --> C-AR-REVERSAL
+  style C-AR-REVERSAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
+```
+
+- **held** — Partition scores partition_score.json. docs/data/areas/partition_score.json: for each variable the real partition's score within month and the three nulls', with the matched-blob null run three times and the spread between its runs.
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
+
+**Computed** — the chain is what was coded, and the script that computes it records how it counted.
+
+*The script behind this does not yet record how it counted it. That is a gap in the justification, not a property of the number.*
+
+*Confirmed 2026-09-12 by* `Claude (restored for CATEGORY.md, where they had always been marked, after the AREAS clean-up removed them: they state which variables beat which random grouping and that the order reverses against same-shaped groups - facts about noise floors, read from partition_score.json, claiming nothing about a shared cause. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-AR-LIFT-RULE"></a>
+### Beating its own shape is the least a partition must do: a grouping that predicts no better than random groups of the same shape adds nothing to its outline, and beating them is a floor, not proof that its members share a cause.
+
+`C-AR-LIFT-RULE` · **argued** — follows by reasoning from what it rests on - the argument is given in full
+
+Said on [CATEGORY.md](CATEGORY.md).
+
+**Why it follows:** A compact grouping predicts any spatially structured variable to some degree whatever its lines; and a random basket shares no cause, so beating one shows only that a grouping beats noise (statistical-methods section 6b).
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-AR-OLD-LIFT-VALUE): The owner's rule (statistical-methods section 6b): a random basket, however well matched in shape, shares no cause, so beating it shows a grouping beats noise - a floor - and says nothing about what its members share.
+
+```mermaid
+graph BT
+  C-AR-LIFT-RULE("Beating its own shape is the least a partition must do: a ...")
+  C-AR-REVERSAL("Against the matched blobs the ordering reverses - surface ...")
+  D-AR-PARTITION[("Partition scores · partition_score.json")]
+  X-AR-PARTITION["partition_score.py"]
+  E-W4AR-SM-UNITS[("Methods section 6b: water bodies · are management units")]
+  C-AR-REVERSAL --> C-AR-LIFT-RULE
+  D-AR-PARTITION --> C-AR-REVERSAL
+  X-AR-PARTITION --> C-AR-REVERSAL
+  E-W4AR-SM-UNITS --> C-AR-LIFT-RULE
+  X-AR-PARTITION --> C-AR-LIFT-RULE
+  style C-AR-LIFT-RULE fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-AR-REVERSAL fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-UNITS fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — Against the matched blobs the ordering reverses - surface oxygen saturation gains most, salinity little - and fluorescence's lift is below zero but inside the spread of the three blob runs, so for fluorescence the official partition does no better than random compact blobs. ([`C-AR-REVERSAL`](CLAIMS.md#C-AR-REVERSAL))
+- **external** — Methods section 6b: water bodies are management units: “exist so that someone can be made responsible” ([`W4AR-SM-6B`](https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md), pinned). The owner's method: the Danish water bodies exist so that someone can be made responsible for an area and given a target; a number per management unit is about the administration until shown otherwise.
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+
+<a id="C-AR-READING"></a>
+### The smooth-versus-rough reading once offered here is not borne out: AREAS' co-movement test finds the water-body lines add about as much for salinity as for bed oxygen at matched distance, so they follow water masses.
+
+`C-AR-READING` · **provisional** — unchecked - see the graph for what would check it
+
+Said on [CATEGORY.md](CATEGORY.md).
+
+**Why it follows:** The reading predicted boundaries would matter for oxygen and little for smooth salinity; the matched-distance comparison on AREAS measures both and finds similar gains.
+
+**Replaces an earlier claim**, retired on 2026-09-12 to the [archive](ARCHIVE.md#C-AR-OLD-READING-SMOOTH): AREAS' co-movement test, at matched distance, finds the water-body lines add about as much for salinity as for bed oxygen, which the reading did not expect.
+
+```mermaid
+graph BT
+  C-AR-READING("The smooth-versus-rough reading once offered here is not b...")
+  C-W4AR-WATER-MASSES("Bed salinity, which says nothing about an ailment, gains a...")
+  C-W4AR-MATCHED("At the same distance apart, pairs of stations inside one w...")
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  X-W4AR-SYNC["synchrony.py"]
+  E-W4AR-SM-MATCHED[("Methods section 6b: a boundary is · tested at matched distance")]
+  C-W4AR-WATER-MASSES --> C-AR-READING
+  C-W4AR-MATCHED --> C-W4AR-WATER-MASSES
+  D-W4AR-SYNC --> C-W4AR-MATCHED
+  X-W4AR-SYNC --> C-W4AR-MATCHED
+  E-W4AR-SM-MATCHED --> C-W4AR-MATCHED
+  D-W4AR-SYNC --> C-W4AR-WATER-MASSES
+  style C-AR-READING fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-WATER-MASSES fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style C-W4AR-MATCHED fill:#173a26,stroke:#3fb950,color:#d7ffe4
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-W4AR-SYNC fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style E-W4AR-SM-MATCHED fill:#3d3357,stroke:#a58cf0,color:#e6edf3
+```
+
+- **claim** — Bed salinity, which says nothing about an ailment, gains about as much from the lines as bed oxygen, and more in the size of the co-movement; so the lines follow differences in the water itself, and nothing here shows a shared ailment on top of shared water. ([`C-W4AR-WATER-MASSES`](CLAIMS.md#C-W4AR-WATER-MASSES))
+
+**Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
+
+*Confirmed 2026-09-12 by* `Claude (reworded on the owner's rule, statistical-methods 6b - beating same-shaped random groups is a floor, not a shared cause - and, for the reading, on AREAS' matched-distance co-movement result; the published wordings are archived. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 ## CAUSATION.md
 
@@ -6337,23 +7233,17 @@ Said on [CONSTRUCTED.md](CONSTRUCTED.md).
 ```mermaid
 graph BT
   C-GC-C-RHO-R("On the mean-square ratio reported as an ICC, labels that c...")
-  C-AR-PART-STAT("The partition score is a ratio of mean squares within mont...")
   X-AR-PARTITION["partition_score.py"]
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  C-AR-PART-STAT --> C-GC-C-RHO-R
-  X-AR-PARTITION --> C-AR-PART-STAT
-  D-AR-PARTITION --> C-AR-PART-STAT
+  X-AR-PARTITION --> C-GC-C-RHO-R
   style C-GC-C-RHO-R fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-PART-STAT fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
 ```
 
-- **claim** — The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own. ([`C-AR-PART-STAT`](CLAIMS.md#C-AR-PART-STAT))
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-GC-C-RHO-V"></a>
 ### No raw value of that ratio is readable on its own.
@@ -6369,23 +7259,17 @@ Said on [CONSTRUCTED.md](CONSTRUCTED.md).
 ```mermaid
 graph BT
   C-GC-C-RHO-V("No raw value of that ratio is readable on its own....")
-  C-AR-PART-STAT("The partition score is a ratio of mean squares within mont...")
   X-AR-PARTITION["partition_score.py"]
-  D-AR-PARTITION[("Partition scores · partition_score.json")]
-  C-AR-PART-STAT --> C-GC-C-RHO-V
-  X-AR-PARTITION --> C-AR-PART-STAT
-  D-AR-PARTITION --> C-AR-PART-STAT
+  X-AR-PARTITION --> C-GC-C-RHO-V
   style C-GC-C-RHO-V fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-PART-STAT fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style X-AR-PARTITION fill:#21262d,stroke:#8b949e,color:#c9d1d9
-  style D-AR-PARTITION fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
 ```
 
-- **claim** — The partition score is a ratio of mean squares within month - the between-basket mean square over the sum of between and within - on which labels that carry no information score near one half, not zero, so no value in the table is readable on its own. ([`C-AR-PART-STAT`](CLAIMS.md#C-AR-PART-STAT))
+- **script** — partition_score.py. Scores a partition within month as the between-group mean square over the sum of between and within, against shuffled labels, latitude stripes and three runs of size-matched compact blobs.
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-GC-C-NB-R"></a>
 ### The Nørrebro sheet's confident flag measured the spread over the agreeing registration variants only.
@@ -47024,23 +47908,26 @@ Said on [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md).
 ```mermaid
 graph BT
   C-OP-16-AREAS("AREAS.md counts, for every water body, how many stations h...")
-  C-AR-SERIES-COVERAGE("Of the station series behind the partition tests, the page...")
-  X-AR-STATIONPLACES["station_places.py"]
+  C-W4AR-SERIES-COVERAGE("The part of ODA's register this page can place in water bo...")
   D-AR-STATIONS[("Station facts · station_places.json")]
-  C-AR-SERIES-COVERAGE --> C-OP-16-AREAS
-  X-AR-STATIONPLACES --> C-AR-SERIES-COVERAGE
-  D-AR-STATIONS --> C-AR-SERIES-COVERAGE
+  X-AR-STATIONPLACES["station_places.py"]
+  D-W4AR-SYNC[("Co-movement of stations · synchrony.json")]
+  C-W4AR-SERIES-COVERAGE --> C-OP-16-AREAS
+  D-AR-STATIONS --> C-W4AR-SERIES-COVERAGE
+  X-AR-STATIONPLACES --> C-W4AR-SERIES-COVERAGE
+  D-W4AR-SYNC --> C-W4AR-SERIES-COVERAGE
   style C-OP-16-AREAS fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style C-AR-SERIES-COVERAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
-  style X-AR-STATIONPLACES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style C-W4AR-SERIES-COVERAGE fill:#173a26,stroke:#3fb950,color:#d7ffe4
   style D-AR-STATIONS fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
+  style X-AR-STATIONPLACES fill:#21262d,stroke:#8b949e,color:#c9d1d9
+  style D-W4AR-SYNC fill:#1c4e70,stroke:#58a6ff,color:#e6edf3
 ```
 
-- **claim** — Of the station series behind the partition tests, the page gives how many stations lie inside a water body and how many water bodies contain one, and how many contain none with data in two, five and ten or more distinct years. ([`C-AR-SERIES-COVERAGE`](CLAIMS.md#C-AR-SERIES-COVERAGE))
+- **claim** — The part of ODA's register this page can place in water bodies is the station series behind the co-movement tests and the livestock baskets; counted over that series, some water bodies contain no station with data in enough distinct years. ([`C-W4AR-SERIES-COVERAGE`](CLAIMS.md#C-W4AR-SERIES-COVERAGE))
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-OP-17-CLOCK"></a>
 ### Every genuine water-chemistry row carries a clock value, but not always a time: filled-in defaults and suppliers of mixed convention cannot be placed against the sun.
@@ -57525,7 +58412,7 @@ graph BT
 
 **Assessed** — no script computes this. It is a reading or a judgement, assessed by a person.
 
-*Confirmed 2026-09-11 by* `fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
+*Confirmed 2026-09-12 by* `Claude (re-read after the AREAS search fix reassigned outfalls: only the numbers moved - Køge Bugt's registered basin volume is now 8,161 m3 across 837 outfalls, about 6 minutes of the design hour on Amager instead of about 10 - and 'a few minutes; basins postpone a spill, they do not store the rain' holds, more strongly. 2026-09-12; not yet read by the project owner)`. *If anything shown here changes, this claim is refused until it is read again.*
 
 <a id="C-PG-2-POSTPONE"></a>
 ### Postponement concentrates material: a basin fills and drains back through most rain, settling what it carried, and releases the accumulated store in the event that spills.

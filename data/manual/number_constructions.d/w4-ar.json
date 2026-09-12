@@ -1,0 +1,545 @@
+{
+ "constructions": [
+  {
+   "id": "K-W4AR-AREAS-RULES",
+   "title": "The two rules that put things into water bodies, and the bathing correlation by label period",
+   "covers": {
+    "file": "data/derived/areas.json",
+    "fields": {
+     "bathing_match.stations": {
+      "kind": "counted",
+      "is": "Rows of the bathing layer `badevand` with at least one year whose class is one of the scored labels: the bathing stations of the record."
+     },
+     "bathing_match.matched": {
+      "kind": "counted",
+      "is": "Of those stations, the ones whose `wbid` equals a marine water body's `ov_id` exactly."
+     },
+     "bathing_match.left_out": {
+      "kind": "counted",
+      "is": "Stations whose `wbid` equals no marine `ov_id`: left out of every water body."
+     },
+     "bathing_match.left_out_by_reason.*": {
+      "kind": "counted",
+      "is": "The left-out stations by the form of their `wbid` alone: a lake code (`DKLAKE`), a coastal code (`DKCOAST` and digits) that is not an `ov_id` of the marine layer, no code, or a code in another form."
+     },
+     "areas.*.observation.bathing.informative_stations": {
+      "kind": "counted",
+      "is": "Bathing stations of this water body with at least `3` classed years below Excellent: the ones whose classes vary enough to correlate."
+     },
+     "cum_hoc.by_period.periods.*.tests.*.r": {
+      "kind": "estimated",
+      "is": "The Pearson correlation of `cum_hoc.tests`, with the bathing outcome recomputed from the station-years of one label period only (`old_labels` up to the last year the layer uses Good or Sufficient, `new_labels` from the first year it uses Good and Sufficient apart), over the same water bodies and pressures."
+     },
+     "cum_hoc.by_period.periods.*.tests.*.n": {
+      "kind": "counted",
+      "is": "Water bodies with at least one classed station-year in the period."
+     },
+     "cum_hoc.by_period.periods.*.n_areas": {
+      "kind": "counted",
+      "is": "The same count, per period."
+     },
+     "cum_hoc.by_period.periods.*.from": {
+      "kind": "measured",
+      "is": "The first year of the period, read from the labels in the file."
+     },
+     "cum_hoc.by_period.periods.*.to": {
+      "kind": "measured",
+      "is": "The last year of the period, read from the labels in the file."
+     },
+     "assignment.change_against_ring_search.*.*": {
+      "kind": "counted",
+      "is": "For one pressure layer: its features, how many the full search assigns, and against the ring search it replaced how many are newly assigned, assigned to another water body, or newly dropped."
+     }
+    }
+   },
+   "what": "The rules by which pressures and bathing stations are put into water bodies, stated as the code applies them and with what each leaves out; and the cross-water-body correlation repeated on each bathing-label period alone.",
+   "model": "Pressure features go to the water body owning the nearest kept boundary vertex (every `STRIDE`-th) within `MAX_ASSIGN_KM`, by great-circle distance. `Assigner.reach()` bounds the grid cells searched from the haversine formula, so every vertex within that distance is examined east-west as well as north-south, and `Assigner.nearest()` takes the nearest of them. Bathing stations go to the water body whose `ov_id` equals their `wbid`, exactly, with no distance; `bathing_match()` counts what that keeps and leaves out. `by_period()` reads the years each label is used from the file, refuses a split where the two label sets overlap in time, and repeats each `cum_hoc` test on each period's station-years.",
+   "assumptions": [
+    "A bathing station's `wbid` names the water body it belongs to; the file does not say who set it or how.",
+    "The nearest kept boundary vertex identifies the water body a point on land discharges into.",
+    "The shares of each label period are comparable across water bodies, as the pooled share is assumed to be."
+   ],
+   "justified": [
+    {
+     "text": "The cells searched are bounded from the haversine formula with the far edge's cosine, so no vertex within the distance lies outside them.",
+     "ref": "scripts/areas.py:128"
+    },
+    {
+     "text": "The nearest vertex is chosen by great-circle distance over every vertex in those cells, with no early stop.",
+     "ref": "scripts/areas.py:141"
+    },
+    {
+     "text": "The bathing rule keeps a station's code only when it is a marine water body's code.",
+     "ref": "scripts/areas.py:214"
+    },
+    {
+     "text": "The drops are counted by the same test the loader applies, and the run stops if the two disagree.",
+     "ref": "scripts/areas.py:246"
+    },
+    {
+     "text": "The period split is read from the labels, and the run stops if the label sets overlap in time.",
+     "ref": "scripts/areas.py:545"
+    },
+    {
+     "text": "The later period's correlation for the traced test is checked against the lineage's rerun `R5`, computed separately.",
+     "ref": "scripts/areas.py:725"
+    }
+   ],
+   "gaps": [
+    "Why a station carries the `wbid` it does, and whether a lake or unmatched code is an error or an inland station, is not recorded in the file.",
+    "The rule behind the bathing classes, and what changed in it with the new labels, is not in the file or in this repository.",
+    "Nearest boundary vertex is not the drainage path or the receiving water named in a discharge permit."
+   ],
+   "void_if": [
+    "the bathing or marine layer is refetched and scripts/areas.py is not rerun",
+    "the label sets come to overlap in time"
+   ],
+   "licenses": "How many bathing stations the exact-code rule keeps and leaves out, by reason; the correlation of each label period beside the pooled one.",
+   "not_licensed": "That a left-out station is not a marine bathing site; that the classes of the two periods measure the same thing.",
+   "watches": [
+    "scripts/areas.py",
+    "data/raw/national/badevand.geojson",
+    "data/raw/national/marin_overordnet.geojson"
+   ],
+   "confirmed": {
+    "by": "fork w4-ar (read the declaration against scripts/areas.py as edited: reach() and nearest() at the lines cited, load_bathing(), bathing_match() and its reproduction check, by_period() and its overlap check, the R5 cross-check; the full search was also checked against a no-grid search over every kept vertex on all plants, dumping grounds and extraction areas and a seeded sample of outfalls, with no disagreement; 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "saw": {
+     "scripts/areas.py": "544c99d2dbc13949",
+     "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
+     "data/raw/national/marin_overordnet.geojson": "23d3a7ac969c9437"
+    }
+   }
+  },
+  {
+   "id": "K-W4AR-SYNC",
+   "title": "Do stations move together, by distance and across the water-body lines",
+   "covers": {
+    "file": "data/derived/synchrony.json",
+    "fields": {
+     "construction.alpha": {
+      "kind": "stipulated",
+      "is": "The level a pair's shift p-value must not exceed for the pair to count as moving together beyond chance (`ALPHA`)."
+     },
+     "construction.near_km": {
+      "kind": "stipulated",
+      "is": "The great-circle distance below which a pair counts as near (`NEAR_KM`), land ignored."
+     },
+     "construction.different_day_min_gap_days.*": {
+      "kind": "stipulated",
+      "is": "The day gaps between the two stations' nearest casts at or beyond which a pair-month is kept in the different-day reruns (`DIFF_DAY_GAPS`)."
+     },
+     "variables.*.counts.pairs_decidable": {
+      "kind": "counted",
+      "is": "Station pairs with at least `MIN_OVERLAP` shared anomaly months and at least `MIN_SHIFTS` whole-year shifts that keep `MIN_NULL_OVERLAP` shared months: the pairs the test can decide."
+     },
+     "variables.*.counts.pairs_too_thin_for_null": {
+      "kind": "counted",
+      "is": "Pairs with enough shared months but too few valid shifts: left undecided."
+     },
+     "variables.*.counts.stations_in_decidable_pairs": {
+      "kind": "counted",
+      "is": "Distinct stations in at least one decidable pair."
+     },
+     "variables.*.near_far.near_pairs": {
+      "kind": "counted",
+      "is": "Decidable pairs closer than `NEAR_KM`."
+     },
+     "variables.*.near_far.far_pairs": {
+      "kind": "counted",
+      "is": "Decidable pairs at `NEAR_KM` or farther apart."
+     },
+     "variables.*.near_far.share_near_co_moving": {
+      "kind": "share",
+      "is": "Of the near pairs, the share beyond chance."
+     },
+     "variables.*.near_far.share_far_co_moving": {
+      "kind": "share",
+      "is": "Of the far pairs, the share beyond chance."
+     },
+     "variables.*.within_vs_across_matched_distance.*.pooled_within_minus_across": {
+      "kind": "computed",
+      "is": "Per distance bin (`BINS`), the mean for pairs in one water body minus the mean for pairs in different water bodies - of the beyond-chance indicator (`share_beyond_chance`) or of tau (`mean_tau`) - pooled over the bins where both sides have `MIN_CELL` pairs, weighted by the same-body count. Pairs with a station outside every water body are left out."
+     },
+     "variables.*.within_vs_across_matched_distance.*.jackknife_se_leave_one_waterbody_out": {
+      "kind": "estimated",
+      "is": "The jackknife standard error of that pooled difference, recomputed leaving out every pair that touches one water body at a time."
+     },
+     "variables.*.within_vs_across_matched_distance.*.fine_bins_pooled_within_minus_across": {
+      "kind": "computed",
+      "is": "The same pooled difference over the finer bins `FINE_BINS`."
+     },
+     "variables.*.within_vs_across_matched_distance.*.pooled_weight_within_pairs": {
+      "kind": "counted",
+      "is": "The same-body pairs in the bins that entered the pooled figure."
+     },
+     "variables.*.within_year.near_far.share_far_co_moving": {
+      "kind": "share",
+      "is": "The far share beyond chance after each station's own median anomaly per year is also removed (years with `MIN_YEAR_MONTHS` anomaly months), so shared trends and year-to-year swings are gone."
+     },
+     "variables.*.same_day_sampling.how_common.same_day.*.share_same_day": {
+      "kind": "share",
+      "is": "For decidable pairs in one water body (`within_same_waterbody`) or across (`across_waterbodies`), the share of pair-months in which some cast at one station falls on the same day as some cast at the other; days recovered from the raw CTD file with the panel's own cast rules."
+     },
+     "variables.*.same_day_sampling.different_day.*.within_vs_across_matched_distance.*.pooled_within_minus_across": {
+      "kind": "computed",
+      "is": "The deciding difference recomputed after removing, pair by pair, the months whose nearest casts are closer than the gap in days; tau, shifts and decidability recomputed."
+     },
+     "variables.*.same_day_sampling.different_day.*.within_vs_across_matched_distance.*.jackknife_se_leave_one_waterbody_out": {
+      "kind": "estimated",
+      "is": "Its leave-one-water-body-out standard error."
+     },
+     "variables.*.same_day_sampling.different_day.*.within_vs_across_matched_distance.*.pooled_weight_within_pairs": {
+      "kind": "counted",
+      "is": "The same-body pairs that entered it."
+     },
+     "variables.*.same_day_sampling.different_day.*.counts.decidable_pairs_same_waterbody": {
+      "kind": "counted",
+      "is": "Same-body pairs still decidable once those months are removed."
+     },
+     "variables.*.same_day_sampling.different_day.*.near_far.share_far": {
+      "kind": "share",
+      "is": "The far share beyond chance on the months kept."
+     },
+     "variables.*.graph.n_nodes": {
+      "kind": "counted",
+      "is": "Stations in at least one decidable pair: the nodes of the network whose links are the pairs beyond chance."
+     },
+     "variables.*.graph.connected_components.summary.stations_in_largest_group": {
+      "kind": "counted",
+      "is": "Stations in the largest connected group of that network."
+     },
+     "variables.*.graph.louvain.summary.*": {
+      "kind": "counted",
+      "is": "For the Louvain communities of that network (weight tau, the first seed of `LOUVAIN_SEEDS` reported): the groups, how many are contiguous by the rule in `contiguity_rule`, the water bodies holding two or more of the network's stations, and how many of those are split between groups."
+     },
+     "variables.*.graph.louvain.groups.*.n_waterbodies": {
+      "kind": "counted",
+      "is": "Water bodies holding at least one station of the group."
+     },
+     "variables.*.graph.louvain.groups.*.median_last_year": {
+      "kind": "measured",
+      "is": "The median, over the group's stations, of the last year of each station's anomaly record."
+     }
+    }
+   },
+   "what": "Whether pairs of monitoring stations move together over time beyond a shift-in-time null, against their distance apart and against the official water-body lines; with the sampling day as a check, and the network of co-moving pairs as the data's own grouping.",
+   "model": "For each station and calendar month the station's median over years is subtracted where it has `MIN_YEARS` years of that month (`anomalies()`). For each pair with `MIN_OVERLAP` shared months, Kendall's tau of the two anomaly series; the null rotates one series by whole years inside the pair's window and recomputes tau, $p = (1 + \\#\\{\\tau_k \\ge \\tau_0\\}) / (1 + K)$ over the `K` valid shifts (`shift_p()`), and a pair is beyond chance when $p \\le$ `ALPHA`. Stations are placed in water bodies by the positional overlay. The deciding figure pools, over distance bins, the within-minus-across difference weighted by the within count (`pooled()`), with a leave-one-water-body-out jackknife (`jackknife()`). Groups: connected components and Louvain communities of the network of pairs beyond chance (`graph_part()`).",
+   "assumptions": [
+    "A station's register number is one place across its whole record.",
+    "Bed is the deepest quarter of each cast's sampled depths, so a single-depth cast counts as bed.",
+    "Water-body membership is the positional overlay of each station's own coordinates.",
+    "Pairs share stations, so pair counts are not independent; the standard error is by water body."
+   ],
+   "justified": [
+    {
+     "text": "Each station's own seasonal cycle is removed before pairs are compared, so a shared season cannot pass as co-movement.",
+     "ref": "scripts/synchrony.py:199"
+    },
+    {
+     "text": "The null shifts one series by whole years inside the pair's shared window, keeping each series intact and breaking only the tie in time.",
+     "ref": "scripts/synchrony.py:235"
+    },
+    {
+     "text": "A pair is decided only when enough shifted copies exist; the rest are counted as too thin, not forced.",
+     "ref": "scripts/synchrony.py:519"
+    },
+    {
+     "text": "Within against across is compared inside distance bins and pooled with the same-body counts as weights, so a difference in distance between the two groups cannot carry the result; the finer bins check what is left.",
+     "ref": "scripts/synchrony.py:252"
+    },
+    {
+     "text": "The standard error leaves out one water body at a time.",
+     "ref": "scripts/synchrony.py:267"
+    },
+    {
+     "text": "The different-day rerun removes, pair by pair, the months sampled within the gap and recomputes tau, shifts and decidability.",
+     "ref": "scripts/synchrony.py:880"
+    },
+    {
+     "text": "Only names are read from data/derived/areas.json, so how pressures are assigned to water bodies does not enter this file.",
+     "ref": "scripts/synchrony.py:976"
+    }
+   ],
+   "gaps": [
+    "No correction for testing many pairs in the main figures: at the `ALPHA` level that share of decidable pairs passes by chance alone.",
+    "Many pairs with enough shared months are too thin for the shift test and are left out; the decided pairs may not be typical.",
+    "The different-day result for bed oxygen rests on few same-body pairs.",
+    "Land is ignored in distances: two stations either side of a peninsula count as near.",
+    "Stations outside every water body are left out of the within-against-across comparison."
+   ],
+   "void_if": [
+    "the station panel or the overlay is rebuilt and scripts/synchrony.py is not rerun"
+   ],
+   "licenses": "Whether pairs of stations move together beyond a shift-in-time null, by distance; whether the official lines add to distance for a variable; the data's own co-movement groups.",
+   "not_licensed": "A shared cause from co-movement alone; anything about similar levels; a result for pairs too thin for the test.",
+   "watches": [
+    "scripts/synchrony.py",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/station_waterbody_overlay.json"
+   ],
+   "confirmed": {
+    "by": "fork w4-ar (read the declaration against scripts/synchrony.py: the constants, anomalies(), within_year(), shift_p(), pooled(), jackknife(), compare(), graph_part(), analyse_tau() near/far and decidability, robustness() same-day and different-day, and main()'s use of areas.json for names only; fields checked in data/derived/synchrony.json; 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "saw": {
+     "scripts/synchrony.py": "e883b64e8948235e",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "docs/data/areas/station_waterbody_overlay.json": "9cda52a744ee0a93"
+    }
+   }
+  },
+  {
+   "id": "K-W4AR-LIVESTOCK",
+   "title": "Stations grouped by the livestock on the land that drains to their water body",
+   "covers": {
+    "file": "data/derived/livestock_baskets.json",
+    "fields": {
+     "farms.national_density_DE_per_km2": {
+      "kind": "computed",
+      "is": "Livestock units (DE) of every herd record placed inside a coastal catchment, summed, over the summed catchment area from the geometry: one density for all catchments together."
+     },
+     "near_absent_catchments.threshold_DE_per_km2": {
+      "kind": "computed",
+      "is": "`NEAR_ABSENT_FRACTION` times the national density."
+     },
+     "near_absent_catchments.catchments.[len]": {
+      "kind": "counted",
+      "is": "Coastal catchments whose density is below the threshold."
+     },
+     "near_absent_catchments.catchments.*.area_km2": {
+      "kind": "computed",
+      "is": "The catchment's land area from its geometry, on an equal-area projection."
+     },
+     "construction_choices.near_absent_fraction_of_national": {
+      "kind": "stipulated",
+      "is": "The fraction of the national density below which a catchment counts as near-absent, set before looking."
+     },
+     "construction_choices.min_summer_station_months": {
+      "kind": "stipulated",
+      "is": "Summer station-months, June to September, a station needs to have a summer median."
+     },
+     "construction_choices.bed_salinity_cut": {
+      "kind": "stipulated",
+      "is": "The station summer median of bed salinity, in per mille, that separates brackish from salty strata, set before looking."
+     },
+     "construction_choices.depth_cut_m": {
+      "kind": "stipulated",
+      "is": "The bottom depth, in metres, that separates shallow from deep strata, set before looking."
+     },
+     "construction_choices.period_sensitivity_from": {
+      "kind": "stipulated",
+      "is": "The first year of the recent-summers sensitivity."
+     },
+     "baskets.definition_on_stations_with_summer_bed_oxygen.cuts_DE_per_km2.*": {
+      "kind": "computed",
+      "is": "The station-weighted tertile cut points of the density behind each basketable station's water body."
+     },
+     "baskets.definition_on_stations_with_summer_bed_oxygen.*.stations": {
+      "kind": "counted",
+      "is": "Stations with a summer bed-oxygen median in the basket."
+     },
+     "baskets.definition_on_stations_with_summer_bed_oxygen.*.water_bodies": {
+      "kind": "counted",
+      "is": "Water bodies those stations sit in."
+     },
+     "stations.basketable_with_summer_bed_oxygen": {
+      "kind": "counted",
+      "is": "Stations in a water body with at least one linked catchment and a summer bed-oxygen median."
+     },
+     "comparison_all_years.*.contrasts.*": {
+      "kind": "computed",
+      "is": "Between the station summer medians of two baskets: the difference of their medians (high minus low; near-absent minus high), or the probability that a high station reads below a low one, ties counted half."
+     },
+     "comparison_all_years.*.*.q10": {
+      "kind": "computed",
+      "is": "The tenth percentile of the basket's station summer medians."
+     },
+     "comparison_all_years.*.*.q50": {
+      "kind": "computed",
+      "is": "The median of the basket's station summer medians."
+     },
+     "comparison_all_years.*.noise_floor.*.*.draws": {
+      "kind": "counted",
+      "is": "Random draws of that null that gave a value."
+     },
+     "comparison_all_years.*.noise_floor.*.*.draws_at_or_above_real": {
+      "kind": "counted",
+      "is": "Draws at least as large as the real contrast."
+     },
+     "comparison_all_years.*.ubiquitous_part.by_basket_size.*.*.real_basket": {
+      "kind": "computed",
+      "is": "That quantile of the real basket's station medians."
+     },
+     "comparison_all_years.*.ubiquitous_part.by_basket_size.*.*.random_baskets.min": {
+      "kind": "computed",
+      "is": "The smallest value of that quantile across random station baskets of the basket's size."
+     },
+     "ubiquitous_seasonal_profile_bed_oxygen.month_of_minimum_across_random_baskets.*": {
+      "kind": "counted",
+      "is": "Random baskets, of the real basket sizes, whose median bed oxygen by calendar month is lowest in that month."
+     },
+     "ubiquitous_seasonal_profile_bed_oxygen.random_basket_count": {
+      "kind": "counted",
+      "is": "Random baskets drawn for the seasonal profile."
+     },
+     "strata.results.*.*.contrasts.median_high_minus_median_low": {
+      "kind": "computed",
+      "is": "The high-minus-low median contrast with the station set restricted to one stratum of bed salinity or depth, the baskets kept."
+     },
+     "sensitivity.*.contrasts.median_high_minus_median_low": {
+      "kind": "computed",
+      "is": "The same contrast on a restricted rerun: recent summers only, or water bodies whose links are all clean."
+     },
+     "water_bodies.*.DE_per_km2": {
+      "kind": "computed",
+      "is": "Summed livestock units of the water body's linked catchments over their summed area; withheld where fewer than `SUPPRESS_BELOW` herds contribute."
+     },
+     "water_bodies.*.median_summer_bed_oxygen_of_stations": {
+      "kind": "computed",
+      "is": "The median of the summer bed-oxygen medians of the water body's stations."
+     },
+     "repeat_vs_between.*.repeat_A_same_station_consecutive_summer_months_abs_diff.q50": {
+      "kind": "computed",
+      "is": "The median absolute difference between one station's values in consecutive months of the same summer."
+     },
+     "repeat_vs_between.*.between_B_two_stations_same_year_month_abs_diff.*.q50": {
+      "kind": "computed",
+      "is": "The median absolute difference between two stations' values in the same year-month: all pairs, pairs in one water body, pairs in different water bodies of one basket, or pairs in different baskets."
+     },
+     "repeat_vs_between.*.interchangeability_null_for_station_medians.by_set.*.observed_iqr_of_station_medians": {
+      "kind": "computed",
+      "is": "The interquartile range of the stations' summer medians."
+     },
+     "repeat_vs_between.*.interchangeability_null_for_station_medians.by_set.*.null_iqr_if_interchangeable.*": {
+      "kind": "computed",
+      "is": "Over `N_INTERCH` draws, each shuffling the summer values among the stations measured in the same year-month, the interquartile range of the recomputed station medians: its quantiles, and `n` the draws."
+     },
+     "repeat_vs_between.*.interchangeability_null_for_station_medians.by_set.*.draws_with_null_iqr_ge_observed": {
+      "kind": "counted",
+      "is": "Draws whose interquartile range reached the observed one."
+     }
+    }
+   },
+   "what": "Monitoring stations grouped by the livestock density of the land that drains to their water body and compared on their summer levels, against random baskets of stations and of whole water bodies; with salinity and depth strata, and the spread between stations against a station's own repeat spread.",
+   "model": "Herd records are placed in coastal catchments by point in polygon and their DE summed; a density is DE over catchment area. Each catchment is linked to the marine water body it touches most along the coast (`CELL_M`), and a water body's density is over all its linked catchments. Stations with `MIN_SUMMER_MONTHS` summer months get a summer median; basketable stations are cut into station-weighted tertiles of their water body's density (`assign()`), and near-absent is density below `NEAR_ABSENT_FRACTION` of the national. Contrasts are differences of basket medians and a common-language probability (`cles_less()`). Floors: station values permuted with the real basket sizes (`station_null()`), and densities permuted among water bodies with each one's stations kept whole and the basket procedure rerun (`block_null()`); `place()` names a contrast beyond the whole null range, outside its central band only, or inside it.",
+   "assumptions": [
+    "Where a herd is registered stands for where its manure goes.",
+    "DE stands for nutrient pressure.",
+    "The register year `2024` stands for the decades the stations span.",
+    "A catchment's livestock reaches the water body it touches along the coast."
+   ],
+   "justified": [
+    {
+     "text": "The national density is one ratio over all catchments together, not a mean of catchment densities.",
+     "ref": "scripts/livestock_baskets.py:420"
+    },
+    {
+     "text": "The near-absent threshold is a fixed fraction of the national density, set as a constant before the comparison runs.",
+     "ref": "scripts/livestock_baskets.py:566"
+    },
+    {
+     "text": "Baskets are station-weighted tertiles, with whole water bodies moving together.",
+     "ref": "scripts/livestock_baskets.py:686"
+    },
+    {
+     "text": "The water-body floor shuffles densities among water bodies and keeps each water body's stations together, so stations that move as a block are not counted as independent.",
+     "ref": "scripts/livestock_baskets.py:803"
+    },
+    {
+     "text": "A contrast is called beyond the floor only outside the null's whole range; outside its central band but inside the range is not clearly past it.",
+     "ref": "scripts/livestock_baskets.py:302"
+    },
+    {
+     "text": "The repeat spread and the between-station spread are taken from the same summer station-months.",
+     "ref": "scripts/livestock_baskets.py:983"
+    },
+    {
+     "text": "The interchangeability null shuffles values only among stations measured in the same year-month, so each station keeps its months and count.",
+     "ref": "scripts/livestock_baskets.py:1015"
+    },
+    {
+     "text": "The output holds area totals only; a catchment total from too few contributing herds is withheld.",
+     "ref": "scripts/livestock_baskets.py:558"
+    }
+   ],
+   "gaps": [
+    "Where a herd is registered is not where its manure is spread.",
+    "DE is a regulatory unit, not nitrogen or phosphorus.",
+    "The livestock is one register year against station records spanning decades.",
+    "The catchment-to-water-body link is built here from coastal adjacency; neither layer documents it as a code, though the catchment id equals the marine layer's `mst_id` in every case.",
+    "An outer fjord does not inherit its inner fjord's catchment.",
+    "Low-livestock land is not low-load land: urban and sewage loads are not in the grouping.",
+    "Levels only: moving together along the livestock line is not tested.",
+    "Fluorescence is whole-cast and in relative units; differences of instrument or programme between stations are not checked.",
+    "The repeat spread includes real change within a summer, so it overstates measurement noise."
+   ],
+   "void_if": [
+    "the herd register, the catchment layer or the station panel changes and scripts/livestock_baskets.py is not rerun"
+   ],
+   "licenses": "A naive first comparison of station summer levels by the livestock behind their water body, against noise floors at station and water-body level; whether the stations are interchangeable.",
+   "not_licensed": "An effect of livestock on oxygen; anything about a single farm; a shared cause from similar levels.",
+   "watches": [
+    "scripts/livestock_baskets.py",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "data/raw/national/vp3_2e2025_kystvand_opland_afg.geojson"
+   ],
+   "confirmed": {
+    "by": "fork w4-ar (read the declaration against scripts/livestock_baskets.py: density and national ratio, near-absent threshold, summer_medians(), assign(), basket_defs(), compare(), station_null(), block_null(), floor_report(), place(), profile, strata, sensitivity, repeat_vs_between and the interchangeability null; fields checked in data/derived/livestock_baskets.json; 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "saw": {
+     "scripts/livestock_baskets.py": "fa9930fce985cc26",
+     "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
+     "docs/data/areas/station_waterbody_overlay.json": "9cda52a744ee0a93",
+     "data/raw/national/vp3_2e2025_kystvand_opland_afg.geojson": "911920f6e5a8f2c0"
+    }
+   }
+  },
+  {
+   "id": "K-W4AR-LINEAGE",
+   "title": "Reruns of the traced cross-water-body correlation",
+   "covers": {
+    "file": "docs/data/lineage/cum_hoc_r.json",
+    "fields": {
+     "robustness.*.value": {
+      "kind": "computed",
+      "is": "The correlation `cum_hoc.tests` index `2` recomputed with the one choice named in the rerun's `imposed` changed."
+     },
+     "robustness.*.n": {
+      "kind": "counted",
+      "is": "Water bodies in that rerun."
+     }
+    }
+   },
+   "what": "Reruns of the traced correlation, each with one choice changed.",
+   "model": "`record_cum_hoc_r()` in scripts/areas.py, after areas.json is written, recomputes r from the run's own assignments and bathing records with one step changed at a time: the distance, the search, the transform, the outcome threshold, the label period, the station minimum, the kind of correlation, and the rows with zero pressure.",
+   "assumptions": [
+    "Each rerun changes one choice and keeps the rest."
+   ],
+   "justified": [
+    {
+     "text": "The later-period rerun is checked against the by-period test computed separately in the same run.",
+     "ref": "scripts/areas.py:725"
+    }
+   ],
+   "gaps": [
+    "The reruns change one choice at a time; interactions between choices are not explored."
+   ],
+   "void_if": [
+    "scripts/areas.py changes its steps and the lineage is not regenerated"
+   ],
+   "licenses": "How far r moves when one of its choices is changed.",
+   "not_licensed": "A confidence interval for r.",
+   "watches": [
+    "scripts/areas.py"
+   ],
+   "confirmed": {
+    "by": "fork w4-ar (read record_cum_hoc_r() in scripts/areas.py as edited: the reruns R1 to R8, R2 now the replaced ring search, and the R5 check against cum_hoc.by_period; values checked in docs/data/lineage/cum_hoc_r.json; 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "saw": {
+     "scripts/areas.py": "544c99d2dbc13949"
+    }
+   }
+  }
+ ]
+}

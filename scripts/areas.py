@@ -1,21 +1,34 @@
 #!/usr/bin/env python3
-"""There is no Denmark. There are 123 marine areas with different causes.
+"""One record per marine water body: a management unit, and what is held about it.
 
-Every published figure in this argument is a national aggregate: one share of the
-land-borne load, one indsatsbehov ladder. Aggregation is where the information goes:
-a number that is true of Denmark need not be true of any one place in it.
+The 123 marine water bodies are the units the water plans assign responsibility and
+targets to. Nothing in the data drew them. This script keeps one record per water
+body - what presses on it, what is observed in it, over which years each of those
+streams exists, and what cannot be modelled there and why - as an administrative
+ledger: numbers about management units, not findings about the sea.
 
-So this script refuses the aggregate and builds one record per marine water body:
-what presses on it, what is observed in it, over which years each of those streams
-exists, and - stated as plainly as the rest - what cannot be modelled there and why.
+Two rules put things into water bodies, and they are different rules.
 
-Assignment is by nearest point on the marine boundary, via a grid hash over the
-1.47 M boundary vertices, with the largest distance per layer and area recorded so a
-reader can see how firm the assignment is. Outfalls sit on land; bathing stations sit on the
-shore; dumping grounds sit in the water. One rule, one distance, no hidden choices.
+Pressures (outfalls, treatment plants, aquaculture, dumping grounds, extraction
+areas) go to the water body owning the nearest kept boundary vertex (every
+STRIDE-th vertex of the marine layer) within MAX_ASSIGN_KM, by great-circle
+distance, searching every grid cell that distance can reach east-west as well as
+north-south; beyond it a feature belongs to no water body. The largest distance per
+layer and area is recorded, and so is what the full search changed against the
+ring search it replaced (assignment.change_against_ring_search in areas.json).
 
-The cross-sectional estimate at the end is a cum hoc effect size and is labelled as
-one. It regresses a sewage-driven outcome (bathing quality) on sewage pressure
+Bathing stations are not assigned by distance. Each goes to the water body whose
+code equals the station's own `wbid` in the bathing layer, exactly; a station whose
+`wbid` matches no marine water body is left out, and the drops are counted by
+reason (bathing_match in areas.json).
+
+The bathing classes change label in 2011: to 2010 the layer has "Good or
+Sufficient", from 2011 "Good" and "Sufficient" apart. The shares below pool both
+periods; cum_hoc.by_period repeats every test on each period alone, so the effect
+of the pooling is stored beside the pooled result.
+
+The cross-sectional estimate at the end is a cum hoc correlation and is labelled
+as one. It sets a sewage-driven outcome (bathing quality) against sewage pressure
 (treatment-plant PE and rain-conditioned outfall density), across areas rather than
 across years, because the open data have more areas than they have years of
 comparable observation.
@@ -29,7 +42,10 @@ Usage:  scripts/heavy python3 scripts/areas.py
 import collections
 import math
 import os
+import re
 import sys
+
+import numpy as np
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_json
@@ -66,6 +82,10 @@ PRESSURES = [
 # What the lineage of cum_hoc.tests.2.r needs from the run, kept as the run reads
 # it (record_cum_hoc_r, at the end). Read-only: nothing here feeds areas.json.
 TRACE = {}
+# What the full nearest-vertex search changed against the ring search, per layer,
+# and what the bathing rule keeps and leaves out: both written into areas.json.
+CHANGE = {}
+BATH_MATCH = {}
 
 
 def haversine(la1, lo1, la2, lo2):
@@ -76,7 +96,14 @@ def haversine(la1, lo1, la2, lo2):
 
 
 class Assigner:
-    """Nearest marine water body, by boundary vertex, via a grid hash."""
+    """Nearest marine water body, by kept boundary vertex, within a distance.
+
+    The kept vertices (every STRIDE-th) sit in a grid hash of CELL-degree cells.
+    nearest() searches every cell a vertex max_km away could lie in - north-south
+    and, wider at these latitudes, east-west (reach()) - takes the great-circle
+    distance to every vertex there and keeps the nearest. nearest_rings() is the
+    search this replaced, kept only so each run can count what the full search
+    changed; nothing in areas.json is assigned by it."""
 
     def __init__(self, features):
         self.lat, self.lon, self.wb = [], [], []
@@ -90,9 +117,50 @@ class Assigner:
                         self.lon.append(x)
                         self.wb.append(i)
                         self.grid[(int(y / CELL), int(x / CELL))].append(n)
+        # the same vertices as arrays, one index array per cell, for the full search;
+        # peak is two float64 and one int64 per kept vertex
+        self.rlat = np.radians(np.array(self.lat, dtype=np.float64))
+        self.rlon = np.radians(np.array(self.lon, dtype=np.float64))
+        self.cells = {k: np.array(v, dtype=np.int64) for k, v in self.grid.items()}
         log(f"  index: {len(self.lat):,} boundary vertices in {len(self.grid):,} cells")
 
+    @staticmethod
+    def reach(lat, max_km):
+        """How many cells to search each way from a point's own cell. A vertex
+        within max_km lies within dlat of the point north-south, and within dlon
+        east-west, where sin(dlon/2) <= sin(max_km/2R) / sqrt(cos(lat) cos(lat+dlat)):
+        the haversine formula with its latitude term dropped and the far edge's
+        cosine. One more cell covers where the point sits inside its own."""
+        a = max_km / 6371.0
+        dlat = math.degrees(a)
+        s = math.sin(a / 2) / math.sqrt(math.cos(math.radians(lat))
+                                        * math.cos(math.radians(lat + dlat)))
+        dlon = math.degrees(2 * math.asin(min(1.0, s)))
+        return int(dlat / CELL) + 1, int(dlon / CELL) + 1
+
     def nearest(self, lat, lon, max_km=MAX_ASSIGN_KM):
+        cy, cx = int(lat / CELL), int(lon / CELL)
+        ry, rx = self.reach(lat, max_km)
+        got = [self.cells[k] for k in ((cy + dy, cx + dx) for dy in range(-ry, ry + 1)
+                                       for dx in range(-rx, rx + 1)) if k in self.cells]
+        if got:
+            idx = np.concatenate(got)
+            la, lo = math.radians(lat), math.radians(lon)
+            h = (np.sin((self.rlat[idx] - la) / 2) ** 2 + math.cos(la)
+                 * np.cos(self.rlat[idx]) * np.sin((self.rlon[idx] - lo) / 2) ** 2)
+            n = int(idx[int(np.argmin(h))])
+            d = haversine(lat, lon, self.lat[n], self.lon[n])
+            if d <= max_km:
+                return self.wb[n], d
+        return None, None
+
+    def nearest_rings(self, lat, lon, max_km=MAX_ASSIGN_KM):
+        """The search nearest() replaced, kept to count what changed. It walked
+        square rings of cells out from the point's own, int(max_km / (CELL * 111))
+        + 1 rings at most, and stopped after the first ring beyond its own cell in
+        which it met any vertex. A cell is CELL degrees of longitude wide, so
+        east-west those rings reached about 12 km at 56 N rather than max_km, and a
+        nearer vertex in an outer ring could lose to a farther one found first."""
         cy, cx = int(lat / CELL), int(lon / CELL)
         best, best_d = None, None
         rings = int(max_km / (CELL * 111.0)) + 1
@@ -131,6 +199,11 @@ def centroid(geom):
 
 
 def load_bathing(wb_ids):
+    """Bathing stations, each put in the water body its own `wbid` names.
+
+    The rule is the bathing layer's own category, matched exactly: a station goes to
+    the water body whose `ov_id` equals its `wbid`, and to none otherwise. No
+    distance is used. bathing_match() counts what this keeps and leaves out."""
     st = []
     doc = read_json(os.path.join(NAT, "badevand.geojson"))
     TRACE["badevand"] = doc
@@ -142,6 +215,44 @@ def load_bathing(wb_ids):
                        "name": p["name"], "lat": p["latitude"], "lon": p["longitude"],
                        "s": s})
     return st
+
+
+def bathing_match(wb_ids, st):
+    """What load_bathing's rule keeps and leaves out, counted by reason. A row of the
+    bathing layer with at least one scored year is a station; it is kept when its
+    `wbid` equals a marine `ov_id` exactly, and otherwise left out for one of four
+    reasons, told apart by the form of the code alone."""
+    rows = TRACE["badevand"]["features"]
+    why, codes, scored = collections.Counter(), collections.Counter(), 0
+    for p in (f["properties"] for f in rows):
+        if not any(p.get("quality_" + y) in SCORE for y in YEARS):
+            continue
+        scored += 1
+        w = p.get("wbid")
+        if w in wb_ids:
+            why["matched"] += 1
+            continue
+        if not w:
+            k = "no_wbid"
+        elif str(w).upper().startswith("DKLAKE"):
+            k = "lake_code"
+        elif re.fullmatch(r"DKCOAST\d+", str(w)):
+            k = "coastal_code_not_in_marine_layer"
+        else:
+            k = "code_in_another_form"
+        why[k] += 1
+        codes["DKLAKE…" if k == "lake_code" else (w or "(empty)")] += 1
+    if why["matched"] != sum(1 for s in st if s["wb"]):
+        raise RuntimeError("bathing_match does not reproduce load_bathing's matches")
+    return {"rule": "a station goes to the water body whose ov_id equals its own wbid "
+                    "exactly; no distance is used",
+            "rows_in_layer": len(rows), "rows_without_a_scored_year": len(rows) - scored,
+            "stations": scored, "matched": why["matched"],
+            "left_out": scored - why["matched"],
+            "left_out_by_reason": {k: why[k] for k in (
+                "lake_code", "coastal_code_not_in_marine_layer", "no_wbid",
+                "code_in_another_form")},
+            "left_out_codes": dict(codes.most_common())}
 
 
 def slope(pairs):
@@ -204,9 +315,14 @@ def build():
         if fn == "punkt_rens_udl":
             TRACE[key] = {"doc": doc, "got": []}
         far = 0
+        moved = collections.Counter()
         for f in feats:
             lat, lon = centroid(f["geometry"])
             w, d = A.nearest(lat, lon)
+            # what the ring search this replaced would have done: counted, not used
+            w0 = A.nearest_rings(lat, lon)[0]
+            moved["unchanged" if w0 == w else "newly_assigned" if w0 is None
+                  else "newly_dropped" if w is None else "reassigned"] += 1
             if key in TRACE:
                 TRACE[key]["got"].append((w, d))
             if w is None:
@@ -227,9 +343,17 @@ def build():
             if key == "raastof" and q.get("udlobsdato"):
                 r.setdefault("permits_expire", []).append(q["udlobsdato"][:4])
         log(f"  {key:8} {len(feats):>6,} features, {far:,} beyond {MAX_ASSIGN_KM:.0f} km")
+        CHANGE[key] = {"features": len(feats), "assigned": len(feats) - far,
+                       "newly_assigned": moved["newly_assigned"],
+                       "reassigned": moved["reassigned"],
+                       "newly_dropped": moved["newly_dropped"]}
+        log(f"           against the ring search: {moved['newly_assigned']:,} newly assigned, "
+            f"{moved['reassigned']:,} to another water body, {moved['newly_dropped']:,} "
+            "newly dropped")
 
     # ---- observation: bathing water -------------------------------------
     st = load_bathing(wb_ids)
+    BATH_MATCH.update(bathing_match(wb_ids, st))
     per = collections.defaultdict(list)
     for s in st:
         if s["wb"]:
@@ -403,6 +527,45 @@ def cum_hoc(rec):
     return out
 
 
+def by_period(ch, per):
+    """The bathing label set changes in 2011: "Good or Sufficient" to 2010, "Good"
+    and "Sufficient" apart from 2011 - the layer's own labels; the rule behind them
+    is not in the file. cum_hoc pools both periods. Here every one of its tests is
+    repeated on each period alone, over the same water bodies and pressures, with
+    the outcome recomputed (and rounded, as cum_hoc rounds it) from that period's
+    station-years only, so the effect of the pooling is stored beside the result.
+    The split is read from the labels, and refused if the two sets overlap."""
+    ly = collections.defaultdict(set)
+    for p in (f["properties"] for f in TRACE["badevand"]["features"]):
+        for y in YEARS:
+            if p.get("quality_" + y) in SCORE:
+                ly[p["quality_" + y]].add(YEAR_NUM[y])
+    old_to, new_from = max(ly["Good or Sufficient"]), min(ly["Good"] | ly["Sufficient"])
+    if old_to >= new_from:
+        raise RuntimeError("the bathing label sets overlap in time: choose another split")
+    every = set().union(*ly.values())
+    out = {"label_years": {k: [min(v), max(v)] for k, v in sorted(ly.items())},
+           "periods": {}}
+    for lab, (a, b) in (("old_labels", (min(every), old_to)),
+                        ("new_labels", (new_from, max(every)))):
+        prow = []
+        for r in ch["rows"]:
+            v = [q for s in per[r["id"]] for y, q in s["s"].items() if a <= y <= b]
+            if v:
+                prow.append((r, round(sum(1 for q in v if q < 4) / len(v), 3),
+                             round(sum(v) / len(v), 3)))
+        tests = []
+        for pred in ("outfalls_per_km2", "pe_per_km2", "basin_m3_per_km2"):
+            x = [math.log10(1 + r[pred]) for r, _, _ in prow]
+            for outcome, j in (("sub_excellent", 1), ("mean_score", 2)):
+                c = pearson(x, [t[j] for t in prow])
+                if c is not None:
+                    tests.append({"predictor": "log10(1+%s)" % pred, "outcome": outcome,
+                                  "r": round(c, 3), "r2": round(c * c, 3), "n": len(prow)})
+        out["periods"][lab] = {"from": a, "to": b, "n_areas": len(prow), "tests": tests}
+    return out
+
+
 # ---- lineage: how cum_hoc.tests.2.r was made -------------------------------
 #
 # PROVENANCE_SPEC.md, its first number. Everything below READS what the run above
@@ -442,28 +605,6 @@ def _ranks(v):
             out[order[k]] = (i + j) / 2 + 1
         i = j + 1
     return out
-
-
-def _nearest_exhaustive(A, lat, lon, max_km):
-    """The rule as the docstring states it: the nearest kept boundary vertex within
-    max_km, searching every cell that reach needs east-west as well as north-south,
-    with no early stop. The vertex is picked on a local flat-earth distance and its
-    distance then taken by haversine, as Assigner.nearest reports it."""
-    ky = 111.2
-    kx = 111.2 * math.cos(math.radians(lat))
-    ry, rx = int(max_km / (CELL * ky)) + 1, int(max_km / (CELL * kx)) + 1
-    cy, cx = int(lat / CELL), int(lon / CELL)
-    best, bd = None, None
-    for dy in range(-ry, ry + 1):
-        for dx in range(-rx, rx + 1):
-            for n in A.grid.get((cy + dy, cx + dx), ()):
-                e = ((A.lat[n] - lat) * ky) ** 2 + ((A.lon[n] - lon) * kx) ** 2
-                if bd is None or e < bd:
-                    best, bd = n, e
-    if best is None:
-        return None, None
-    d = haversine(lat, lon, A.lat[best], A.lon[best])
-    return (A.wb[best], d) if d <= max_km else (None, None)
 
 
 def record_cum_hoc_r(rec, ch):
@@ -517,8 +658,8 @@ def record_cum_hoc_r(rec, ch):
     names = collections.Counter(f["properties"].get("pkt_navn") for f in plants)
     twice = sorted(n for n, c in names.items() if c > 1)
     ptypes = collections.Counter(f["properties"].get("pkt_type") for f in plants)
-    reach_ew = 4 * CELL * 111.2 * math.cos(math.radians(56.0))
-    rings = int(MAX_ASSIGN_KM / (CELL * 111.0)) + 1
+    reach_ew = 4 * CELL * 111.2 * math.cos(math.radians(56.0))   # the ring search, east-west
+    ry56, rx56 = A.reach(56.0, MAX_ASSIGN_KM)
 
     # ---- bathing: labels, matching, pooling
     label_n = collections.Counter()
@@ -561,9 +702,9 @@ def record_cum_hoc_r(rec, ch):
     R = {}
     g10 = [A.nearest(*centroid(f["geometry"]), max_km=10.0) for f in plants]
     R["R1"] = pearson([math.log10(1 + pe_by(g10).get(r["id"], 0) / r["area"]) for r in rows], y0)
-    gx = [_nearest_exhaustive(A, *centroid(f["geometry"]), MAX_ASSIGN_KM) for f in plants]
+    gx = [A.nearest_rings(*centroid(f["geometry"])) for f in plants]
     moved = sum(1 for a, b in zip(got, gx) if a[0] is not None and b[0] is not None and a[0] != b[0])
-    gained = sum(1 for a, b in zip(got, gx) if a[0] is None and b[0] is not None)
+    gained = sum(1 for a, b in zip(got, gx) if a[0] is not None and b[0] is None)
     lost10 = sum(1 for a, b in zip(got, g10) if a[0] is not None and b[0] is None)
     pex = pe_by(gx)
     R["R2"] = pearson([math.log10(1 + pex.get(r["id"], 0) / r["area"]) for r in rows], y0)
@@ -580,6 +721,8 @@ def record_cum_hoc_r(rec, ch):
     pos = [(x, y) for x, y in zip(x0, y0) if x > 0]
     R["R8"] = pearson([a for a, _ in pos], [b for _, b in pos])
     rr = {k: (None if v is None else round(v, 3)) for k, v in R.items()}
+    if rr["R5"] != ch["by_period"]["periods"]["new_labels"]["tests"][LINEAGE_TEST]["r"]:
+        raise RuntimeError("lineage: R5 and cum_hoc.by_period disagree on the 2011-on r")
     tested = lambda *ks: "; ".join(f"{k}: r = {rr[k]:+.3f}" for k in ks)
 
     L = lineage.Lineage("cum_hoc_r", number={
@@ -643,7 +786,7 @@ def record_cum_hoc_r(rec, ch):
                      f"({label_n.get('(empty)', 0)}) station-years are in the file; areas.py drops them."])
 
     # ---- the steps, from the records up to r
-    wq, wref = say("So this script refuses the aggregate", "exists, and - stated as plainly")
+    wq, wref = say("The 123 marine water bodies are the units", "ledger: numbers about management units")
     L.step("S1", "identity", "A water body is one feature of the marine layer",
            [lines(build, 'props = [f["properties"] for f in marine]', 'wb_ids = {p["ov_id"]'),
             lines(build, '"id": p["ov_id"], "name": p["ov_navn"], "area_km2": p["ov_stoe"],')],
@@ -664,24 +807,21 @@ def record_cum_hoc_r(rec, ch):
            inputs=[{"file": rel(P_RENS), "columns": ["godk_pe", "geometry"], "rows": len(plants)}],
            outputs={"plants": len(plants)}, branch="pressure", author=ME,
            counted_as_one="One treatment plant = one row of `punkt_rens_udl`: one point, one `godk_pe`.")
-    aq, aref = say("Assignment is by nearest point on the marine boundary",
-                     "shore; dumping grounds sit in the water. One rule")
+    aq, aref = say("Pressures (outfalls, treatment plants",
+                     "ring search it replaced (assignment.change_against_ring_search")
     L.step("S3", "grouping", "Each plant goes to the water body with the nearest boundary vertex, within 20 km",
            [src("CELL = 0.05", "MAX_ASSIGN_KM = 20.0"),
             lines(Assigner.__init__, "for x, y in ring[::STRIDE]:", "self.grid[(int(y / CELL)"),
+            lines(Assigner.reach, "a = max_km / 6371.0", "return int(dlat / CELL) + 1"),
             lines(Assigner.nearest, "cy, cx = int(lat / CELL)", "return None, None"),
             lines(build, "far = 0", "far += 1")],
            imposes=("A plant belongs to the water body owning the nearest kept boundary vertex "
-                    f"(every {STRIDE}th vertex, `STRIDE`; {len(A.lat):,} kept), and to none if no "
-                    f"vertex is found within `MAX_ASSIGN_KM` = {MAX_ASSIGN_KM:.0f} km. The search walks "
-                    f"square rings of {CELL}° grid cells out from the plant's cell, {rings} rings at "
-                    "most, and stops after the first ring beyond its own cell in which it met any "
-                    f"vertex. A cell is {CELL}° of longitude wide, so east–west the {rings} rings reach "
-                    f"about {reach_ew:.1f} km at 56° N, not {MAX_ASSIGN_KM:.0f}: a plant "
-                    f"{reach_ew:.0f}–{MAX_ASSIGN_KM:.0f} km east or west of the nearest boundary is "
-                    "dropped as if it were beyond 20 km, and a nearer vertex in an outer ring can "
-                    "lose to a farther one in an inner ring. What the plant discharges into is not "
-                    "read; the layer has no column for it."),
+                    f"(every {STRIDE}th vertex, `STRIDE`; {len(A.lat):,} kept), by great-circle "
+                    f"distance, and to none if no vertex lies within `MAX_ASSIGN_KM` = "
+                    f"{MAX_ASSIGN_KM:.0f} km. The search takes every vertex in the {CELL}° grid cells "
+                    f"that distance can reach: at 56° N, {ry56} cells each way north-south and {rx56} "
+                    "east-west, since a degree of longitude is shorter there. What the plant "
+                    "discharges into is not read; the layer has no column for it."),
            inputs=[{"file": rel(P_RENS), "columns": ["geometry"], "rows": len(plants)},
                    {"file": rel(P_MARINE), "columns": ["geometry"], "rows": len(marine),
                     "vertices_kept": len(A.lat)}],
@@ -689,13 +829,14 @@ def record_cum_hoc_r(rec, ch):
                     "water_bodies_with_a_plant": len({w for _, w, _ in assigned}),
                     "distance_km_of_assigned": _quart([d for _, _, d in assigned], 2),
                     "godk_pe_in_file": pe_file, "godk_pe_assigned": pe_kept,
-                    "godk_pe_dropped": pe_file - pe_kept},
+                    "godk_pe_dropped": pe_file - pe_kept,
+                    "against_the_ring_search": CHANGE["rens"]},
            branch="pressure", why=aq + " For the value 20 km itself: no reason recorded; its "
            "comment says only what it does (\"beyond this a point belongs to no marine area\").",
            why_ref=aref, author=ME,
            alternative="the receiving water named in each plant's discharge permit, or the "
-                       "drainage path to the sea; a shorter or longer distance; the exhaustive "
-                       "nearest-vertex search the docstring describes",
+                       "drainage path to the sea; a shorter or longer distance (R1); the ring "
+                       "search this replaced (R2)",
            tested=tested("R1", "R2"),
            counted_as_one="A plant belongs to the water body whose boundary is nearest to its point, "
                           "whatever its effluent reaches.")
@@ -718,8 +859,8 @@ def record_cum_hoc_r(rec, ch):
             lines(cum_hoc, 'rens = r["pressure"].get("rens", {})'),
             lines(cum_hoc, '"pe_per_km2": rens.get("pe", 0) / r["area_km2"],')],
            imposes="A plant with no `godk_pe` adds 0. A water body with no plant assigned gets a "
-                   "pressure of 0 - which is also what it gets if its plants sit 12-20 km "
-                   "east or west of the boundary (S3).",
+                   "pressure of 0 - whether no plant lies within 20 km of its boundary or the "
+                   "plants near it sit nearer another water body's (S3).",
            inputs=[{"file": rel(P_RENS), "columns": ["godk_pe"], "rows": len(plants)}],
            outputs={"plants_without_godk_pe": len(no_pe),
                     "of_them_assigned": sum(1 for i in no_pe if got[i][0] is not None),
@@ -762,7 +903,9 @@ def record_cum_hoc_r(rec, ch):
            imposes="The file's labels are used as they are written. \"Good or Sufficient\", which the "
                    f"file uses {span.get('Good or Sufficient', ['?', '?'])[0]}–"
                    f"{span.get('Good or Sufficient', ['?', '?'])[1]}, is scored 3, the same as "
-                   f"\"Good\", which appears from {span.get('Good', ['?'])[0]}.",
+                   f"\"Good\", which appears from {span.get('Good', ['?'])[0]}. The share pools both "
+                   "label sets; `cum_hoc.by_period` in areas.json repeats every test on each "
+                   "set's years alone (R5 is this test on the second).",
            inputs=[{"file": rel(P_BATH), "columns": ["quality_" + y for y in YEARS], "rows": len(bath)}],
            outputs={"score": SCORE, "label_years": span},
            branch="outcome", author="the labels: not recorded in the file or in this repository; "
@@ -774,13 +917,14 @@ def record_cum_hoc_r(rec, ch):
            [lines(load_bathing, '"wb": p.get("wbid") if p.get("wbid") in wb_ids else None,'),
             lines(build, "for s in st:", 'per[s["wb"]].append(s)')],
            imposes="A station belongs to the water body whose `ov_id` equals its `wbid` exactly; any "
-                   "other `wbid` - a lake code, a code spelt differently, a stray value - puts it in "
-                   "none. This is the dataset's own category, not the distance rule: the module "
-                   "docstring says bathing stations are assigned with the plants' rule (\"One rule, "
-                   "one distance\"), and the code does not do that.",
+                   "other `wbid` - a lake code, a coastal code not in this layer, a code in another "
+                   "form, or none - puts it in none, and `bathing_match` in areas.json counts those "
+                   "by reason. This is the dataset's own category, not the distance rule the plants "
+                   "get, and the module docstring says so.",
            inputs=[{"file": rel(P_BATH), "columns": ["wbid"], "rows": len(st)}],
            outputs={"stations_matched": n_matched, "stations_unmatched": len(st) - n_matched,
                     "unmatched_wbid": dict(unmatched.most_common()),
+                    "left_out_by_reason": BATH_MATCH["left_out_by_reason"],
                     "water_bodies_with_a_station": len(per)},
            branch="outcome", author="`wbid`: not recorded in the file; using it: " + ME,
            alternative="the distance rule used for the plants, or a spelling-tolerant match")
@@ -799,7 +943,7 @@ def record_cum_hoc_r(rec, ch):
            lines(build, 'allpairs = [(y, s["s"][y]) for s in v for y in s["s"]]'),
            imposes="All classed years of all stations in a water body, 1991–2018, go into one share; "
                    "a station classed in 28 years weighs 28 times a station classed once, and the two "
-                   "label regimes (S9) are pooled.",
+                   "label regimes (S9) are pooled; `cum_hoc.by_period` gives each regime alone.",
            inputs=[{"from": "S10", "stations": sum(len(per[i]) for i in ids)}],
            outputs={"station_years_in_test": sum(sy.values()),
                     "classed_years_per_station": _quart([len(s["s"]) for i in ids for s in per[i]], 1)},
@@ -901,11 +1045,13 @@ def record_cum_hoc_r(rec, ch):
     L.rerun("R1", f"maximum assignment distance {MAX_ASSIGN_KM:.0f} km → 10 km (same search)",
             {"step": "S3", "MAX_ASSIGN_KM": [MAX_ASSIGN_KM, 10.0]}, rr["R1"], len(rows), "S3",
             headline=True, note=f"{lost10} plants that were assigned at 20 km are assigned to none at 10 km.")
-    L.rerun("R2", "exhaustive nearest vertex within a true 20 km, east-west as well as north-south",
-            {"step": "S3", "search": ["rings stop early; ~12 km east-west", "every cell within 20 km"]},
+    L.rerun("R2", "the ring search this replaced: rings of grid cells that stop at the first ring "
+            f"holding a vertex and reach about {reach_ew:.0f} km east-west",
+            {"step": "S3", "search": ["every cell within 20 km",
+                                      f"rings stop early; ~{reach_ew:.0f} km east-west"]},
             rr["R2"], len(rows), "S3",
-            note=f"{gained} plants dropped by the search are within 20 km of a boundary; {moved} "
-                 "assigned plants change water body.")
+            note=f"{gained} plants the full search assigns were dropped by the ring search; "
+                 f"{moved} plants it assigned went to another water body.")
     L.rerun("R3", "no log transform: x = pe_per_km2", {"step": "S14"}, rr["R3"], len(rows), "S14")
     L.rerun("R4", "outcome threshold moved: share of station-years \"Poor\"", {"step": "S11"},
             rr["R4"], len(rows), "S11")
@@ -929,8 +1075,16 @@ def record_cum_hoc_r(rec, ch):
 def main():
     props, rec = build()
     ch = cum_hoc(rec)
-    write_json(OUT_JSON, {"assignment": {"rule": "nearest marine boundary vertex",
-                                         "max_km": MAX_ASSIGN_KM},
+    ch["by_period"] = by_period(ch, TRACE["per"])
+    write_json(OUT_JSON, {"assignment": {
+                              "rule": "nearest marine boundary vertex", "max_km": MAX_ASSIGN_KM,
+                              "search": "every kept boundary vertex within max_km, by great-circle "
+                                        "distance; the cells searched reach max_km east-west as "
+                                        "well as north-south",
+                              "vertex_stride": STRIDE, "applies_to": list(CHANGE),
+                              "not_applied_to": "bathing stations: see bathing_match",
+                              "change_against_ring_search": CHANGE},
+                          "bathing_match": BATH_MATCH,
                           "summary": summarize(rec), "hazardous_layer": hazardous_layer(),
                           "cum_hoc": ch, "areas": rec})
     # after areas.json is written, so the record of how it was made cannot alter it

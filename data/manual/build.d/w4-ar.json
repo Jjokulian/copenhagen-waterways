@@ -1,0 +1,70 @@
+{
+ "steps": [
+  {
+   "script": "scripts/synchrony.py",
+   "inputs": [
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "data/derived/areas.json",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/synchrony.json"
+   ]
+  },
+  {
+   "script": "scripts/livestock_baskets.py",
+   "inputs": [
+    "/home/user/projects/danish-livestock/data/chr_2024.json",
+    "data/raw/national/vp3_2e2025_kystvand_opland_afg.geojson",
+    "data/raw/national/marin_overordnet.geojson",
+    "docs/data/areas/station_waterbody_overlay.json",
+    "docs/data/areas/stations_series.json",
+    "docs/data/areas/stations_series.bin",
+    "data/raw/oda/maaledybde.csv.gz",
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/livestock_baskets.json"
+   ]
+  },
+  {
+   "script": "scripts/areamap.py",
+   "inputs": [
+    "data/derived/areas.json",
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/national/badevand.geojson"
+   ],
+   "outputs": [
+    "docs/data/areas/areas.json",
+    "docs/areas.html"
+   ]
+  },
+  {
+   "script": "scripts/pages/areas.py",
+   "inputs": [
+    "data/derived/synchrony.json",
+    "data/derived/livestock_baskets.json",
+    "docs/data/lineage/cum_hoc_r.json",
+    "data/manual/claims.d/w4-ar.json",
+    "data/manual/number_constructions.d/w4-ar.json",
+    "data/derived/pins/W4AR-SM-6B.txt"
+   ],
+   "outputs": [
+    "docs/AREAS.md"
+   ]
+  },
+  {
+   "script": "scripts/claims.py",
+   "inputs": [
+    "data/manual/claims.d/w4-ar.json",
+    "data/derived/pins/W4AR-SM-6B.txt"
+   ],
+   "outputs": [
+    "docs/CLAIMS.md",
+    "docs/ARCHIVE.md"
+   ]
+  }
+ ]
+}

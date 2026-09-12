@@ -1,0 +1,1427 @@
+{
+ "_what": "Fork w4-ar: AREAS.md rewritten on the co-movement and livestock results - water bodies as management units, what the stations' own behaviour supports, whether the stations are alike, a first grouping along a causal line, administrative water-body numbers, and the cross-water-body correlation as a correlation across management units. With what the rewrite retired.",
+ "sources": {
+  "W4AR-SM-6B": {
+   "title": "Jjokulian, statistical-methods, README: 6b, a grouping claims a shared cause",
+   "url": "https://raw.githubusercontent.com/Jjokulian/statistical-methods/eddf48d/README.md",
+   "retrieved": "2026-09-12",
+   "sha256": "e4dd69209ff9dcef2ba0cf697d8fd6ee0b7bb4d2ac46dc6e794000c4d13d49f1",
+   "checked": "2026-09-12",
+   "status": "unchanged since pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "D-W4AR-SYNC",
+   "kind": "held",
+   "label": "Co-movement of stations\\nsynchrony.json",
+   "detail": "data/derived/synchrony.json, written by scripts/synchrony.py from the station panel docs/data/areas/stations_series.* and the positional overlay station_waterbody_overlay.json, with sampling days recovered from the raw CTD file: for each pair of stations, whether their seasonal remainders move together beyond a shift-in-time null, by distance and against the water-body lines."
+  },
+  {
+   "id": "X-W4AR-SYNC",
+   "kind": "script",
+   "label": "synchrony.py",
+   "detail": "Removes each station's own seasonal cycle, compares pairs with Kendall's tau, judges chance by shifting one series by whole years, pools within-minus-across water-body differences over distance bins weighted by the within-pair counts with a leave-one-water-body-out standard error, and groups stations by Louvain communities of the co-movement network."
+  },
+  {
+   "id": "D-W4AR-LS",
+   "kind": "held",
+   "label": "Livestock baskets\\nlivestock_baskets.json",
+   "detail": "data/derived/livestock_baskets.json, written by scripts/livestock_baskets.py from the herd register, the coastal catchment layer, the marine layer and the station panel: stations grouped by the livestock density of the catchments that touch their water body, with random-basket floors at station and water-body level, salinity and depth strata, and repeat-against-between spreads. Area totals only."
+  },
+  {
+   "id": "X-W4AR-LS",
+   "kind": "script",
+   "label": "livestock_baskets.py",
+   "detail": "Places herd records in coastal catchments, links each catchment to the water body it touches along the coast, cuts stations into thirds by the density behind their water body, compares summer medians, and builds the noise floors by shuffling stations and by shuffling whole water bodies."
+  },
+  {
+   "id": "D-W4AR-CHR",
+   "kind": "held",
+   "label": "Herd register\\nchr_2024.json (sibling project)",
+   "detail": "The register of herd registrations with livestock units (DE), held by the sibling project danish-livestock at data/chr_2024.json. Read in memory by livestock_baskets.py; only area totals leave it."
+  },
+  {
+   "id": "A-W4AR-LS-NAIVE",
+   "kind": "assumption",
+   "label": "Herd registrations stand\\nfor livestock pressure",
+   "detail": "Where a herd is registered stands for where its manure goes, the regulatory unit DE for nutrient, one register year for the decades the stations span, and a catchment's livestock reaches the water body it touches along the coast. Each is wrong in part; where it matters, the comparison is void."
+  },
+  {
+   "id": "G-W4AR-FLUO",
+   "kind": "gap",
+   "label": "Fluorescence instruments\\nnot compared",
+   "detail": "The panel's fluorescence is a whole-cast value in relative units. Whether instruments or monitoring programmes differ between the stations of the baskets has not been checked, and nothing held records it per station."
+  },
+  {
+   "id": "G-W4AR-WEATHER",
+   "kind": "gap",
+   "label": "No weather series\\nin the co-movement test",
+   "detail": "synchrony.py uses the stations' own series only. Whether the co-movement of far-apart stations follows the weather is not tested."
+  },
+  {
+   "id": "D-W4AR-LINEAGE",
+   "kind": "held",
+   "label": "How r was made\\ncum_hoc_r.json",
+   "detail": "docs/data/lineage/cum_hoc_r.json, written by scripts/areas.py after areas.json: the records r rests on, each step with its code and reason, where each branch ends, the spread, and reruns with one choice changed each. The reader opens it from the number."
+  },
+  {
+   "id": "X-W4AR-AREAS-RULES",
+   "kind": "script",
+   "label": "areas.py: the two rules",
+   "detail": "Pressures go to the nearest kept boundary vertex within the maximum distance, searched to that distance in every direction; bathing stations go to the water body their own wbid names, exactly, and the rest are counted by reason. The cross-area correlation is repeated on each bathing-label period alone."
+  },
+  {
+   "id": "X-W4AR-AREAMAP",
+   "kind": "script",
+   "label": "areamap.py",
+   "detail": "Writes docs/data/areas/areas.json from data/derived/areas.json, trimmed to what the map draws: per water body its pressures, bathing observation, streams with their years and the reasons it cannot be modelled; and the cross-area tests."
+  },
+  {
+   "id": "E-W4AR-SM-UNITS",
+   "kind": "external",
+   "label": "Methods section 6b: water bodies\\nare management units",
+   "source": "W4AR-SM-6B",
+   "said": "exist so that someone can be made responsible",
+   "detail": "The owner's method: the Danish water bodies exist so that someone can be made responsible for an area and given a target; a number per management unit is about the administration until shown otherwise."
+  },
+  {
+   "id": "E-W4AR-SM-NOCAUSE",
+   "kind": "external",
+   "label": "Methods section 6b: a random\\nbasket shares no cause",
+   "source": "W4AR-SM-6B",
+   "said": "a random basket shares no cause"
+  },
+  {
+   "id": "E-W4AR-SM-COMOVE",
+   "kind": "external",
+   "label": "Methods section 6b: moving together,\\nnot similar levels",
+   "source": "W4AR-SM-6B",
+   "said": "Similar levels are not a shared cause; moving together is"
+  },
+  {
+   "id": "E-W4AR-SM-MATCHED",
+   "kind": "external",
+   "label": "Methods section 6b: a boundary is\\ntested at matched distance",
+   "source": "W4AR-SM-6B",
+   "said": "at the same distance apart, do members on the same side"
+  },
+  {
+   "id": "E-W4AR-SM-READINGS",
+   "kind": "external",
+   "label": "Methods section 6b: two readings\\nof failing to beat noise",
+   "source": "W4AR-SM-6B",
+   "said": "Failing to beat them has two readings"
+  },
+  {
+   "id": "E-W4AR-SM-CAUSAL",
+   "kind": "external",
+   "label": "Methods section 6b: baskets drawn\\nalong a causal line",
+   "source": "W4AR-SM-6B",
+   "said": "The comparison that tests a grouping draws baskets along causal lines"
+  },
+  {
+   "id": "E-W4AR-SM-UBIQ",
+   "kind": "external",
+   "label": "Methods section 6b: what every\\nrandom basket shares",
+   "source": "W4AR-SM-6B",
+   "said": "As an estimator of the ubiquitous"
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-W4AR-UNITS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "The marine water bodies are management units: they exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise.",
+   "because": "The water framework directive has member states set the location and boundaries of water bodies, and the method behind the water plans gives every one of them a requirement; the marine layer is a set of drawn boundaries whose author and basis the file does not record. The stations' own co-movement groups do not reproduce them. The owner's method reads such a grouping as administration until shown otherwise.",
+   "rests_on": [
+    "E-AR-SO-BASIS",
+    "E-AR-DHI-EVERY",
+    "E-W4AR-SM-UNITS",
+    "D-AR-AREAS",
+    "C-W4AR-OWN-GROUPS"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-SCOPE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The 123 marine water bodies are management units.** They exist so that an authority can be made responsible for an area of sea and given a target for it. Nothing in the data discovered them, and a number computed per water body is a number about the administration until something shows otherwise.",
+     "texts": "5c6596c28b39d480",
+     "node E-AR-SO-BASIS": "cdff68d7c5a67736",
+     "pinned SO-BG-2024": "8d12fc4d97151adc",
+     "node E-AR-DHI-EVERY": "c89a401a2b3a423a",
+     "pinned DHI-MODEL-DEL1-2015": "c4721f1e56c58b7f",
+     "node E-W4AR-SM-UNITS": "33b7074c9e365b72",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "rests on C-W4AR-OWN-GROUPS": "4acb3ffe43ceb7dd"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-SYNC-METHOD",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Only moving together over time is tested: each station's own seasonal cycle is removed, pairs are compared month by month with Kendall's tau, and chance is one series shifted against the other by whole years, which keeps each series and breaks only the tie in time. A pair moves together beyond chance when it beats its shifted copies at the stated level, so that share of pairs passes by chance alone.",
+   "because": "synchrony.py subtracts each station's median for each calendar month, computes tau on shared months, recomputes it for every whole-year shift inside the pair's window, and takes p as the share of shifts at least as large; a pair is beyond chance at p no more than ALPHA, with no correction for many pairs.",
+   "rests_on": [
+    "X-W4AR-SYNC",
+    "D-W4AR-SYNC",
+    "E-W4AR-SM-COMOVE"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-WITHIN-MONTH"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Only moving together over time is tested here, never similar levels. Each station's own seasonal cycle is removed - its median for each calendar month - and each pair of stations is compared month by month on what is left (Kendall's tau). Chance is one station's series shifted against the other's by whole years, which keeps each series intact and breaks only the tie in time. A pair moves together beyond chance when it beats its shifted copies at the 5% level, so that share of pairs passes by chance alone. Distances are straight lines between stations; land is ignored.",
+     "texts": "d2ad0faa27b8c534",
+     "node X-W4AR-SYNC": "04e51814f9f45f9d",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "node E-W4AR-SM-COMOVE": "cb9cf290ad2673fa",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-SYNC-THIN",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "For bed oxygen the test can decide only the pairs whose shared window is long enough to shift; the rest are left undecided rather than forced.",
+   "because": "The counts in synchrony.json: decidable pairs, pairs too thin for the null, and the stations the decidable pairs involve.",
+   "rests_on": [
+    "D-W4AR-SYNC",
+    "X-W4AR-SYNC"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "For bed oxygen, 15,630 pairs of stations share a window long enough for the test, involving 215 stations; another 16,394 pairs overlap too briefly to be shifted, and are left undecided.",
+     "texts": "2ba3bd4f96210d01",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "node X-W4AR-SYNC": "04e51814f9f45f9d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-NEAR-FAR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Stations near each other move together beyond chance far more often than stations far apart.",
+   "because": "near_far in synchrony.json for bed oxygen: the share of decidable pairs beyond chance below the near cut against the share at or beyond it.",
+   "rests_on": [
+    "D-W4AR-SYNC"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Stations near each other move together far more often than stations far apart.** Of the 515 bed-oxygen pairs less than 20 km apart, 80.8% move together beyond chance; of the 15,115 pairs farther apart, 32.3%.",
+     "texts": "1d65f9963ca30dcd",
+     "node D-W4AR-SYNC": "bf76305bb3e819de"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-MATCHED",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "At the same distance apart, pairs of stations inside one water body move together more often than pairs across a water-body line, for bed oxygen; finer distance bins shrink the gain, so part of it is distance left over inside the bins.",
+   "because": "within_vs_across_matched_distance in synchrony.json: per distance bin, the share beyond chance for same-body pairs minus that for different-body pairs, pooled with the same-body counts as weights, with a leave-one-water-body-out standard error; and the same over finer bins. The owner's method tests a boundary this way.",
+   "rests_on": [
+    "D-W4AR-SYNC",
+    "X-W4AR-SYNC",
+    "E-W4AR-SM-MATCHED"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-PART-STAT",
+    "C-W4AR-OLD-RANKINGS",
+    "C-W4AR-OLD-NULLS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**At the same distance apart, pairs inside one water body move together more often than pairs across a line.** For bed oxygen, the share moving together beyond chance is higher inside by 12.3 percentage points, pooled over distance bins (standard error 4.2, leaving out one water body at a time). With finer bins the gain is 9.4 points: part of it was distance left over inside the bins.",
+     "texts": "46bf08e02265a562",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "node X-W4AR-SYNC": "04e51814f9f45f9d",
+     "node E-W4AR-SM-MATCHED": "43106c8e02aad80f",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-WATER-MASSES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "Bed salinity, which says nothing about an ailment, gains about as much from the lines as bed oxygen, and more in the size of the co-movement; so the lines follow differences in the water itself, and nothing here shows a shared ailment on top of shared water.",
+   "because": "Salinity marks bodies of water, not a biological process. If the lines grouped a shared ailment, oxygen would gain from them beyond what salinity gains; it gains a similar amount in the share beyond chance and less in mean tau, by the same pair rule, bins and pooling.",
+   "rests_on": [
+    "C-W4AR-MATCHED",
+    "D-W4AR-SYNC"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-RANKINGS",
+    "C-W4AR-OLD-REVERSAL",
+    "C-W4AR-OLD-READING"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**But bed salinity, which says nothing about an ailment, gains about as much** - 10.7 points (standard error 5.1) - and in the average size of the co-movement it gains more than oxygen: a tau 0.148 higher inside, against 0.096 for oxygen. So the lines follow differences in the water itself, the kind a sill or a fjord mouth makes, and the oxygen gain is no larger than the water's. Nothing here shows a shared ailment on top of shared water.",
+     "texts": "97518730e354af08",
+     "rests on C-W4AR-MATCHED": "46bf08e02265a562",
+     "node D-W4AR-SYNC": "bf76305bb3e819de"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-SAME-DAY",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Stations in one water body are mostly sampled on the same day. On months the two were sampled on different days, same-body pairs still move together more than pairs across a line at the same distance, for oxygen and for salinity, but for oxygen on far fewer pairs and with a larger standard error; with the wider day gap too few pairs remain to answer.",
+   "because": "same_day_sampling in synchrony.json: the share of pair-months sampled on the same day, within and across; the deciding test rerun with the same-day months removed pair by pair, and with the wider gap in days.",
+   "rests_on": [
+    "D-W4AR-SYNC",
+    "X-W4AR-SYNC"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Part of that could be the sampling trip.** Stations in one water body share a sampling day in 75.8% of their pair-months for bed oxygen, pairs across a line in 24.5%. On months the two stations were sampled on different days, same-body pairs still move together more often than pairs across a line at the same distance - by 21.3 percentage points for oxygen (standard error 10.1) and 15.2 for salinity (standard error 5.3). The gain persists, but for oxygen it now rests on 48 same-body pairs, where the full test had 229. With samples at least 5 days apart, only 10 same-body oxygen pairs remain: too few to answer.",
+     "texts": "62330d31ca10a2ac",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "node X-W4AR-SYNC": "04e51814f9f45f9d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OWN-GROUPS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "The groups the stations' co-movement draws do not follow the water-body lines: joining every pair that moves together links the tested oxygen stations into one group; its communities are not contiguous, each spans several water bodies, some water bodies are split between them, and they partly sort by the years their stations were measured.",
+   "because": "graph in synchrony.json: the connected components of the network of pairs beyond chance, and its Louvain communities weighted by tau, with a group contiguous when its stations connect through their nearest neighbours; and the median last year of each group's records.",
+   "rests_on": [
+    "D-W4AR-SYNC",
+    "X-W4AR-SYNC"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The groups the stations draw for themselves do not follow the lines.** Joining every pair that moves together beyond chance links 215 of the 215 tested oxygen stations into one group. Split into communities by the strength of their co-movement (Louvain), they form 5 groups, each spanning between 5 and 58 water bodies; 0 of them form a contiguous patch of sea. Of the 44 water bodies with two or more tested stations, 15 are split between groups. And the groups partly sort by when their stations were measured: one group's records end, at the median, in 2014, the largest group's in 2026.",
+     "texts": "4acb3ffe43ceb7dd",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "node X-W4AR-SYNC": "04e51814f9f45f9d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-NATIONAL",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Distance does not end co-movement: a share of far-apart oxygen pairs well above the chance rate moves together, and it stays with each station's yearly level removed and on months sampled on different days. What moves stations everywhere at once belongs to the whole population: a national signal, not a property of any place in it.",
+   "because": "share_far_co_moving against the stated level; the same share in the within-year layer and on the different-day months. The owner's method reads what stays stable across the whole population as the ubiquitous part.",
+   "rests_on": [
+    "D-W4AR-SYNC",
+    "C-W4AR-SYNC-METHOD",
+    "E-W4AR-SM-UBIQ"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**And distance does not end it.** 32.3% of bed-oxygen pairs 20 km or more apart move together beyond chance, where chance alone gives 5%. With each station's own yearly level also removed, 30.1% still do; on months the two were sampled on different days, 29.9%. What moves stations everywhere at once is common to the whole population: a national signal, not a property of any place in it.",
+     "texts": "66061777553edb66",
+     "node D-W4AR-SYNC": "bf76305bb3e819de",
+     "rests on C-W4AR-SYNC-METHOD": "d2ad0faa27b8c534",
+     "node E-W4AR-SM-UBIQ": "edfff95be816f770",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-WEATHER",
+   "kind": "provisional",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "Shared weather is the obvious candidate for that national signal; it is not tested here.",
+   "because": "Weather acts on all Danish waters in the same months and would survive the removal of each station's seasonal cycle and yearly level; no weather series enters the test.",
+   "rests_on": [
+    "G-W4AR-WEATHER"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Shared weather is the obvious candidate; it is not tested here.",
+     "texts": "3966172a073cecfa",
+     "node G-W4AR-WEATHER": "e92afc2290f6eae9"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-READINGS",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "A grouping that does no better than random baskets has two readings: the grouping is bad, or the stations are alike, so that no grouping could do better and treating them as one kind drops nothing that matters. The spread among stations against the spread of one station measured again decides between them.",
+   "because": "The owner's method, section 6b of statistical-methods, pinned.",
+   "rests_on": [
+    "E-W4AR-SM-READINGS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A grouping that does no better than random baskets has two readings. The grouping may be bad; or the stations may be alike, so that no grouping could do better and treating them as one kind drops nothing that matters. One comparison decides between them: the spread among stations against the spread of one station measured again.",
+     "texts": "d526168c4b535a6a",
+     "node E-W4AR-SM-READINGS": "4f56b761666c41f8",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-ALIKE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "For summer bed oxygen, two stations in the same water body in the same month differ about as much as one station from one summer month to the next; any two stations differ more; and the stations' own summer medians spread far wider than they would if the stations were interchangeable.",
+   "because": "repeat_vs_between in livestock_baskets.json: absolute differences between consecutive summer months at one station, and between two stations in the same year-month, in one water body or any; and the interquartile range of station medians against that range when each year-month's values are shuffled among the stations measured then.",
+   "rests_on": [
+    "D-W4AR-LS",
+    "X-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "For summer bed oxygen, one station changes by a median of 1.00 mg/l from one summer month to the next - more than its measurement noise alone, since that includes real change within a summer. Two stations in the same water body, in the same month, differ by 1.01: about as much. Any two stations differ by 1.85. And the stations' own summer medians spread over an interquartile range of 2.27 mg/l, where shuffling which station measured what, among the stations measured in the same month, gives 0.65; 0 of 500 shuffles reached the real spread.",
+     "texts": "9fa761b7c51e3a85",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node X-W4AR-LS": "5850a110e64ac798"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-READING-A",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "So the stations are not one kind: they differ beyond a station's own month-to-month change, and the differences sit between water bodies rather than within them. That is the first reading, a population that is not uniform, and for livestock the next section shows the grouping does not explain it. Oxygen saturation gives the same answer.",
+   "because": "Stations in one water body differ about as much as one station a month apart, stations in general more, and the station medians spread beyond the interchangeability null; the livestock contrast does not beat the water-body floor; the readings in livestock_baskets.json give the same verdict for oxygen saturation.",
+   "rests_on": [
+    "C-W4AR-ALIKE",
+    "C-W4AR-READINGS",
+    "C-W4AR-LS-FLOOR",
+    "D-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**So the stations are not one kind.** They differ beyond a station's own month-to-month change, and the differences sit between water bodies rather than within them. That is the first reading: the population is not uniform, and a grouping has to explain the differences between water bodies - which, for livestock, the next section shows it does not. Oxygen saturation gives the same answer.",
+     "texts": "7ba4a99321bb4c80",
+     "rests on C-W4AR-ALIKE": "9fa761b7c51e3a85",
+     "rests on C-W4AR-READINGS": "d526168c4b535a6a",
+     "rests on C-W4AR-LS-FLOOR": "fd71d284613425a1",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-NAIVE",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "Stations are grouped by the livestock on the land that drains to their water body: the first basket drawn along a causal line, and a naive one. The livestock is where herds are registered, not where manure is spread, counted in the regulatory unit DE rather than as nitrogen, in one register year against station records spanning decades; each catchment is linked to the water body it touches along the coast, a link built here, and an outer fjord does not inherit its inner fjord's land; and low-livestock land is not low-load land, since urban and sewage loads are not in the grouping. Livestock figures are totals over areas of land, never a single farm.",
+   "because": "The owner's method asks for baskets drawn along causal lines, livestock among them, as a naive first estimate; the caveats are the ones livestock_baskets.py records with its output, which holds area totals only, with totals from too few herds withheld.",
+   "rests_on": [
+    "E-W4AR-SM-CAUSAL",
+    "A-W4AR-LS-NAIVE",
+    "D-W4AR-LS",
+    "D-W4AR-CHR",
+    "X-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Stations are grouped here by the livestock on the land that drains to their water body: the first basket drawn along a causal line, and **a naive one**. The livestock is where herds are registered, in the 2024 register, not where their manure is spread, counted in the regulatory unit DE rather than as nitrogen, against station records that span decades. Each catchment is linked to the water body it touches along the coast, a link built here, and an outer fjord does not inherit its inner fjord's land. And low-livestock land is not low-load land: urban and sewage loads are not in this grouping. Livestock figures on this page are totals over areas of land, never a single farm.",
+     "texts": "7993ad8cd6fa646d",
+     "node E-W4AR-SM-CAUSAL": "21210b8c2bbd2fc1",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef",
+     "node A-W4AR-LS-NAIVE": "61788e3915d2cddb",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node D-W4AR-CHR": "96cee979add927a2",
+     "node X-W4AR-LS": "5850a110e64ac798"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-ABSENT",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Where livestock is near-absent was set before looking, as a catchment density below a fixed fraction of the national one. The largest such catchments are in north-east Zealand, around and north of Copenhagen; the rest are small.",
+   "because": "near_absent_catchments in livestock_baskets.json: the rule, the threshold and the catchments meeting it with their land areas; the large ones are split from the rest at the widest gap in land area, and their location is read from their names.",
+   "rests_on": [
+    "D-W4AR-LS",
+    "X-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Where livestock is near-absent was set before looking:** a catchment with less than 20% of the national density of 57.2 DE per km², that is below 11.4. 17 catchments meet it. The largest of them, from 377 to 874 km² of land, are in north-east Zealand, around and north of Copenhagen: Køge Bugt; Roskilde Fjord, ydre; Nordlige Øresund; Roskilde Fjord, indre; Kattegat, Nordsjælland. The rest are small, none over 118 km²: islands, nors, and small fjords and bays.",
+     "texts": "dda08059d7b0c51b",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node X-W4AR-LS": "5850a110e64ac798"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-BASKETS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Every station in a water body that land drains to, with enough summer months of bed oxygen, enters a basket: thirds of the stations by the density of the land behind their water body, with the near-absent end inside the low third.",
+   "because": "assign() cuts station-weighted tertiles over the basketable stations, whole water bodies moving together; near-absent is density below the threshold.",
+   "rests_on": [
+    "X-W4AR-LS",
+    "D-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Every station in a water body that land drains to, with at least 4 summer months of bed oxygen, enters a basket: thirds of the stations by the density of the land behind their water body - low up to 27.7 DE per km², high above 54.8 - with the near-absent end inside the low third. That is 643 stations in 105 water bodies; 69 of them sit in the 16 near-absent water bodies.",
+     "texts": "0373684bdf4d5e95",
+     "node X-W4AR-LS": "5850a110e64ac798",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-LEVELS",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Summer bed oxygen barely differs in the middle between the heavy- and low-livestock baskets; the difference is in the low tail.",
+   "because": "comparison_all_years for bed oxygen: the medians and tenth percentiles of the station summer medians in each basket.",
+   "rests_on": [
+    "D-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Summer bed oxygen barely differs in the middle:** the heavy basket's median station is 0.23 mg/l below the low basket's. The difference is in the low tail: the heavy basket's tenth percentile is 3.10 mg/l, the low basket's 5.13.",
+     "texts": "817b0a7f43efdc68",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-FLOOR",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Counted as independent stations, the near-absent basket's lead over the heavy basket is beyond every random basket of the same sizes; but the stations sit in far fewer water bodies and move with them, and when the densities are shuffled between whole water bodies every contrast falls inside the central band of the random results. For bed oxygen the livestock line does not beat the noise floor.",
+   "because": "noise_floor in livestock_baskets.json: the station-level null permutes station values with the real basket sizes; the water-body null shuffles densities among water bodies, keeps each one's stations together and reruns the basket procedure; place() reads a contrast inside the central band as not beating the floor.",
+   "rests_on": [
+    "D-W4AR-LS",
+    "X-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Counted as independent stations, livestock looks strong.** The near-absent basket's median station has 0.77 mg/l more bed oxygen than the heavy basket's, and 0 of 10,000 random baskets of the same sizes reached that. But the 643 stations sit in only 105 water bodies and move with them. Shuffling the densities between whole water bodies instead, each keeping its stations together, puts every contrast inside the central 95% of the random results: 656 of 10,000 draws gave a near-absent lead at least as large. **For bed oxygen the livestock line does not beat the noise floor.**",
+     "texts": "fd71d284613425a1",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node X-W4AR-LS": "5850a110e64ac798"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-NOTHING",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Two stations in different water bodies differ as much when they share a livestock basket as when they do not: the basket adds nothing to the difference.",
+   "because": "repeat_vs_between for bed oxygen: the median absolute difference of same-month station pairs in different water bodies of one basket, and of pairs in different baskets.",
+   "rests_on": [
+    "D-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "Nor does the basket add to the difference between stations: two stations in different water bodies, in the same month, differ by 1.90 mg/l when they share a basket and 1.85 when they do not.",
+     "texts": "f6f83040881e9aeb",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-UBIQ",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "What every random basket shows is common to all the stations whatever the membership: bed oxygen bottoms out in August in every random basket, as in the real ones. Only the heavy basket's low tail is unusual, near the lowest any random basket of its size gave.",
+   "because": "ubiquitous_seasonal_profile_bed_oxygen: the calendar month of the lowest median in each random basket and each real one; ubiquitous_part: the tenth percentile of random baskets of the heavy basket's size.",
+   "rests_on": [
+    "D-W4AR-LS",
+    "E-W4AR-SM-UBIQ"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "What every random basket shows is common to all the stations, whatever the membership: bed oxygen bottoms out in August in 3,000 of 3,000 random baskets, and in the real ones. Only the heavy basket's low tail is unusual: its tenth percentile, 3.10 mg/l, is near the lowest any random basket of its size gave, 3.04.",
+     "texts": "8525539b1fcf7d85",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node E-W4AR-SM-UBIQ": "edfff95be816f770",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-STRATA",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Within strata of bed salinity and depth, cut before looking, the gap between the heavy and low baskets grows in brackish, shallow and deep brackish water, reaching the edge of the water-body random band without clearly passing it, and reverses in salty bottom water; with recent summers only it shrinks.",
+   "because": "strata.results and sensitivity in livestock_baskets.json: the high-minus-low median contrast per stratum with its water-body floor verdict, and on summers from the sensitivity year.",
+   "rests_on": [
+    "D-W4AR-LS",
+    "X-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Within strata, cut before looking at a bed salinity of 20‰ and a depth of 10 m,** the heavy basket's median falls further below the low basket's: in brackish water by 0.75 mg/l, in shallow water by 0.56, in deep brackish water by 2.12. There it reaches the edge of the water-body random band - outside its central 95%, inside its full range - and never clearly past it. In salty bottom water it reverses: the heavy basket's median is 0.97 mg/l above the low one's. Using only summers from 2010, closer to the 2024 register, the gap shrinks to 0.14 mg/l.",
+     "texts": "ff66c17c96845890",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node X-W4AR-LS": "5850a110e64ac798"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-SALTY",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "A reading, not tested here: in salty bottom water oxygen is set more by the layering of the water and by inflow than by the land nearby.",
+   "because": "Salty bottom water in Danish waters sits beneath a lighter, fresher layer; what comes off the land nearby enters that upper layer and must cross the layering to reach the bottom, while the bottom water itself is renewed by inflow. Nothing on this page measures either.",
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A reading, not tested here: in salty bottom water oxygen is set more by the layering of the water and by inflow than by the land nearby.",
+     "texts": "3163ac70f41c06db"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-DOES",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "The livestock baskets show that heavy-livestock water has the worse low tail, and heavy-livestock land does not mean low oxygen everywhere. They do not show that livestock lowers bed oxygen: they compare levels, similar levels are not a shared cause, and the test of one - moving together along the line - has not yet been run for livestock.",
+   "because": "The contrasts and floors above; Ringkoebing Fjord's density and station median from the water_bodies table; the owner's method on levels and co-movement.",
+   "rests_on": [
+    "C-W4AR-LS-LEVELS",
+    "C-W4AR-LS-FLOOR",
+    "D-W4AR-LS",
+    "E-W4AR-SM-COMOVE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (re-read: only formatting changed - a methods reference written '6b' now reads 'section 6b', so the compiler reads it as a section reference, not a quantity; no wording changed. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**What this shows, and what it does not.** Heavy-livestock water has the worse low tail. Heavy-livestock land does not mean low oxygen everywhere: Ringkøbing Fjord has 76 DE per km² behind it and a median summer bed oxygen of 9.25 mg/l across its stations, above the 7.80 of all basketed stations. It does not show that livestock lowers bed oxygen: it compares levels, and similar levels are not a shared cause. The test of one is whether stations move together along the line, and that has not yet been run for livestock.",
+     "texts": "6be447163c061822",
+     "rests on C-W4AR-LS-LEVELS": "817b0a7f43efdc68",
+     "rests on C-W4AR-LS-FLOOR": "fd71d284613425a1",
+     "node D-W4AR-LS": "75c5fb746c446328",
+     "node E-W4AR-SM-COMOVE": "cb9cf290ad2673fa",
+     "pinned W4AR-SM-6B": "e4dd69209ff9dcef"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-FLUO",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Fluorescence is the one measure the livestock baskets separate clearly, beyond the whole range of both kinds of random basket.",
+   "because": "comparison_all_years for fluorescence: the basket medians, the probability that a heavy station reads below a low one, and the verdicts of both floors.",
+   "rests_on": [
+    "D-W4AR-LS"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-REVERSAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Fluorescence is the one measure the livestock baskets separate clearly.** The heavy basket's median station reads 3.90, the low basket's 1.39; a heavy station reads below a low one in 11% of pairs; and the contrast lies outside the whole range of both kinds of random basket.",
+     "texts": "081bb77e49488214",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-LS-FLUO-CAVEAT",
+   "kind": "gap",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "It carries a caveat nobody has checked: the panel's fluorescence is a whole-cast value in relative units, so a difference between instruments or monitoring programmes could produce the same separation.",
+   "because": "The panel stores fluorescence as a whole-cast relative value; no record of instrument or programme per station is held.",
+   "rests_on": [
+    "G-W4AR-FLUO",
+    "D-W4AR-LS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "It carries a caveat nobody has checked: the panel's fluorescence is a whole-cast value in relative units, so a difference between instruments or monitoring programmes could produce the same separation.",
+     "texts": "84dc5212aee38f24",
+     "node G-W4AR-FLUO": "4bb19011e3936458",
+     "node D-W4AR-LS": "75c5fb746c446328"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-ADMIN",
+   "kind": "stipulated",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "The numbers in this section are administrative: counts of management units and what stands behind the targets they are given, not findings about the sea.",
+   "because": "A rule the page sets itself, following from water bodies being management units.",
+   "rests_on": [
+    "C-W4AR-UNITS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**The numbers in this section are administrative:** counts of management units, and what stands behind the targets they are given - not findings about the sea.",
+     "texts": "41701775f3ee281e",
+     "rests on C-W4AR-UNITS": "5c6596c28b39d480"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-SERIES-COVERAGE",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "The part of ODA's register this page can place in water bodies is the station series behind the co-movement tests and the livestock baskets; counted over that series, some water bodies contain no station with data in enough distinct years.",
+   "because": "station_places.py counts the stations of the series, those inside a water body by point in polygon, the water bodies with at least one, and per threshold of distinct years the water bodies with no station reaching it; synchrony.py and livestock_baskets.py read the same series and overlay.",
+   "rests_on": [
+    "D-AR-STATIONS",
+    "X-AR-STATIONPLACES",
+    "D-W4AR-SYNC"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-SERIES"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The part of it this page can place in water bodies is the station series behind the co-movement tests and the livestock baskets above — 1,415 stations with a monthly record, 1,313 of them inside a water body by point in polygon — and **119 of the 123 water bodies contain at least one of those.** Counted over that series: 4 water bodies contain no station with data in 2 or more distinct years, 10 water bodies contain no station with data in 5 or more distinct years, 12 water bodies contain no station with data in 10 or more distinct years.",
+     "texts": "298822d585406021",
+     "node D-AR-STATIONS": "26623b56f73df40c",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-W4AR-SYNC": "bf76305bb3e819de"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-ASSIGN",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "Pressures are placed in water bodies by nearest point on the marine boundary, searched to the maximum distance in every direction; bathing stations are not placed by distance but by the water-body code their own record carries, matched exactly, and those whose code matches no marine water body are left out and counted by reason.",
+   "because": "areas.py: Assigner.nearest() takes the nearest of every kept vertex in the cells reach() bounds; load_bathing() keeps a station's wbid only if it is an ov_id; bathing_match() counts the rest by the form of the code.",
+   "rests_on": [
+    "X-W4AR-AREAS-RULES",
+    "D-AR-AREAS"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-ASSIGN"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**Pressures are put into water bodies by nearest point on the marine boundary:** each outfall, treatment plant, aquaculture outlet, dumping ground and extraction area goes to the water body owning the nearest boundary vertex within 20 km, searched to that distance in every direction, and to none beyond it. **Bathing stations are not placed by distance:** each goes to the water body its own record names, its `wbid`, matched exactly to the marine layer's code. Of 1,018 bathing stations with a classed year, 791 are placed and 227 left out: 103 carry a lake code, 111 a coastal code the marine layer does not hold, 10 no code, and 3 a code written another way.",
+     "texts": "ff3d014efef16563",
+     "node X-W4AR-AREAS-RULES": "aa72d95e9b1da9ca",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-DOWNLOAD",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "A copy of the per-water-body record, trimmed to what the map draws, is published for download.",
+   "because": "areamap.py writes docs/data/areas/areas.json from data/derived/areas.json: per water body its pressures, bathing observation, streams and the reasons it cannot be modelled.",
+   "rests_on": [
+    "X-W4AR-AREAMAP",
+    "D-AR-AREAS"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-SCOPE",
+    "C-W4AR-OLD-AREA-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "A copy trimmed to what the map draws - each water body's pressures, bathing observation, streams with their years, and the reasons it cannot be modelled - is published for download as [areas.json](data/areas/areas.json).",
+     "texts": "5c3efe9145227588",
+     "node X-W4AR-AREAMAP": "dc1c863472a03e2c",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-ONE-ROW",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "One record read through - Roskilde Fjord indre: its area, its model flag, its bathing stations and the years they span, how their classes move together, the outfalls and approved treatment-plant capacity assigned to it, and the one reason its record gives that it cannot be modelled. Every other record is built the same way.",
+   "because": "The record DKCOAST2 in areas.json, written by areas.py; approved capacity is godk_pe, a permitted figure, not a load; the hazardous-substance layer holds no marine point.",
+   "rests_on": [
+    "D-AR-AREAS",
+    "X-AR-AREAS",
+    "X-W4AR-AREAS-RULES"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-TABLE-KEY",
+    "C-W4AR-OLD-AREA-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "**One record, read through.** `DKCOAST2`, Roskilde Fjord, indre, is 51.8 km² of water and one of the water bodies with a DHI statistical model. It holds 7 bathing stations classed between 1991 and 2018; of those, the 3 whose classes vary enough to correlate have yearly classes that correlate, pair by pair, at 0.50 on average. By nearest boundary it is assigned 426 rain-conditioned outfalls and 277,960 approved person-equivalents of treatment-plant capacity - a permitted figure, not a load. And its record gives 1 written-out reason it cannot be modelled: it has no marine hazardous-substance monitoring point, which no water body has. Every other record in the file is built the same way.",
+     "texts": "033ce4db27846b70",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node X-W4AR-AREAS-RULES": "aa72d95e9b1da9ca"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-CUMHOC",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "Across the water bodies with two or more bathing stations a correlation can be computed, but it is a correlation across management units, each weighted alike whatever its size or number of stations, and not an effect of anything.",
+   "because": "cum_hoc() keeps the water bodies with two or more bathing stations and an area and correlates across them, one point each; the water bodies are drawn for administration.",
+   "rests_on": [
+    "X-AR-AREAS",
+    "D-AR-AREAS",
+    "C-W4AR-UNITS"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-CUMHOC"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The water bodies with two or more bathing stations number 65, and a correlation can be computed across them - across management units, each weighted alike whatever its size or number of stations. That is not an effect of anything.",
+     "texts": "25d644c1d081fbcd",
+     "node X-AR-AREAS": "3d0aabbb33262dbe",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "rests on C-W4AR-UNITS": "5c6596c28b39d480"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-CUMHOC-R",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "One pairing is traced end to end: the share of station-years classed below Excellent against log-scaled approved treatment-plant capacity per square kilometre of water body. The other pairings, computed the same way, are in the downloadable file.",
+   "because": "cum_hoc.tests in areas.json; the traced one has its lineage in docs/data/lineage/cum_hoc_r.json; areamap.py copies all the tests into the downloadable file.",
+   "rests_on": [
+    "D-AR-AREAS",
+    "D-W4AR-LINEAGE",
+    "X-W4AR-AREAMAP"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-CUMHOC-TABLE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "One pairing is traced end to end: the share of station-years classed below \"Excellent\" against approved treatment-plant capacity per km² of water body, log-scaled, **r = +0.280** across the 65 water bodies. The other pairings, computed the same way, are in the downloadable file.",
+     "texts": "13e186284e53882b",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1",
+     "node D-W4AR-LINEAGE": "e7fc7a9d592cb239",
+     "node X-W4AR-AREAMAP": "dc1c863472a03e2c"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-POOLING",
+   "kind": "measured",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "The bathing labels change in 2011 and the share pools both label sets; on each period alone, the same correlation is weaker under the newer labels than under the older.",
+   "because": "cum_hoc.by_period in areas.json: the years each label is used, read from the file, and every test repeated on each period's station-years.",
+   "rests_on": [
+    "X-W4AR-AREAS-RULES",
+    "D-AR-AREAS"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "The bathing labels change in 2011: to 2010 the file has \"Good or Sufficient\", from 2011 \"Good\" and \"Sufficient\" apart, and the share pools both. On each period alone the same correlation is +0.323 for 1991–2010 and +0.136 for 2011–2018: weaker under the newer labels.",
+     "texts": "4fcf2f128e401dea",
+     "node X-W4AR-AREAS-RULES": "aa72d95e9b1da9ca",
+     "node D-AR-AREAS": "ce16cd6de1d1cbe1"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-RERUNS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "computed",
+   "claim": "How r was made - the records, each step with its code and reason, where each branch ends - is in its How it was made view, with reruns that each change one choice.",
+   "because": "docs/data/lineage/cum_hoc_r.json holds the steps and the reruns; the reader opens it from the number, keyed by its file and field.",
+   "rests_on": [
+    "D-W4AR-LINEAGE"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "How r was made - the records it rests on in their own words, each step with its code and the reason given for it, and where each branch ends - is in its \"How it was made\" view: open the number's menu. Reruns there each change one choice, and move r between +0.136 and +0.313.",
+     "texts": "a1b9f3767266277f",
+     "node D-W4AR-LINEAGE": "e7fc7a9d592cb239"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-NOT",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "AREAS.md",
+   "basis": "assessed",
+   "claim": "This page is not a causal model, and a water body is not the unit a cause is found in: water bodies are where responsibility sits, and the stations' co-movement draws a different map. A cause would show as stations moving together along its line; no causal line has yet been tested that way here.",
+   "because": "The co-movement results follow the water and a national signal; the livestock baskets compare levels only.",
+   "rests_on": [
+    "C-W4AR-UNITS",
+    "C-W4AR-WATER-MASSES",
+    "C-W4AR-LS-DOES"
+   ],
+   "replaces": [
+    "C-W4AR-OLD-NOT"
+   ],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "fork w4-ar (read each new claim as AREAS.md words it against its reasoning and what it rests on: the synchrony.json and livestock_baskets.json fields it prints, areas.json bathing_match and cum_hoc.by_period, the lineage reruns, the pinned statistical-methods 6b phrases and the kept w1-ar nodes; and each retired claim's passage read out of git at 00a157f against its reason and replacement - first confirmation of the retired ones; 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on AREAS.md": "This page is not a causal model, and a water body is not the unit a cause is found in: water bodies are where responsibility sits, and the stations' co-movement draws a different map. A cause would show as stations moving together along its line; no causal line has yet been tested that way here.",
+     "texts": "c147f584a1e18ed4",
+     "rests on C-W4AR-UNITS": "5c6596c28b39d480",
+     "rests on C-W4AR-WATER-MASSES": "97518730e354af08",
+     "rests on C-W4AR-LS-DOES": "6be447163c061822"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-SCOPE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The page kept one record per marine water body in its text: pressures, observation, the years of each stream, and what cannot be modelled.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "This page refuses the aggregate.",
+    "end": "what cannot be modelled there.",
+    "why": "A water body is a management unit, not a finding. The page no longer keeps one record per water body in its text: only the numbers a management question needs are shown, labelled administrative, and the record of each water body is published as a file."
+   },
+   "replaced_by": [
+    "C-W4AR-UNITS",
+    "C-W4AR-DOWNLOAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "This page refuses the aggregate. One record per marine water body: what presses on it, what is observed in it, over which years each of those streams exists, and what cannot be modelled there.",
+     "texts": "fd793d139c818087"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-ASSIGN",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Every layer was assigned to water bodies by nearest point on the marine boundary, one rule for all.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "Assignment is by nearest point on the marine boundary, one rule",
+    "end": "km dropped.",
+    "why": "Not true of every layer: bathing stations were never assigned by distance but by the water-body code their own record carries, and those whose code matched no marine water body were dropped without a count. The distance search itself stopped short of the stated distance east-west and could stop at a farther vertex; it now searches the full distance, and the cross-water-body correlations moved with it."
+   },
+   "replaced_by": [
+    "C-W4AR-ASSIGN"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Assignment is by nearest point on the marine boundary, one rule for every layer, with the largest distance kept for each layer in each area and anything beyond 20 km dropped.",
+     "texts": "33d13b51caf638df"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-SERIES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The station series behind the partition tests, and the water bodies it reaches.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "The part of it this page can place in water bodies",
+    "end": "or more distinct years.",
+    "why": "It pointed to partition tests that are no longer on the page. The same station series and the same counts stand behind the co-movement tests that replace them, and are said with that pointer."
+   },
+   "replaced_by": [
+    "C-W4AR-SERIES-COVERAGE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The part of it this page can place in water bodies is the station series behind the partition tests below — 1,415 stations with a monthly record, 1,313 of them inside a water body by point in polygon — and 119 of the 123 water bodies contain at least one of those. Counted over that series: 4 water bodies contain no station with data in 2 or more distinct years, 10 water bodies contain no station with data in 5 or more distinct years, 12 water bodies contain no station with data in 10 or more distinct years.",
+     "texts": "7f694d72704d760c"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-PART-STAT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The partition score, a ratio of mean squares within month, to be read only against a null.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "A partition is not right or wrong in general",
+    "end": "only its difference from a null.",
+    "why": "A random basket shares no cause: its members are noise with respect to each other. Beating random baskets shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The statistic was computed as described and is retired with the comparison it served; the lines are now tested by whether stations move together at matched distance."
+   },
+   "replaced_by": [
+    "C-W4AR-MATCHED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode. The statistic, computed within month by `scripts/partition_score.py`, is a ratio of mean squares: the between-basket mean square over the sum of the between- and within-basket mean squares. One means stations in the same basket agree completely. With labels that carry no information both mean squares estimate the same variance and the ratio sits near one half, not zero — so no value in the table below can be read on its own, only its difference from a null.",
+     "texts": "f215d2b78b9f8c7c"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-WITHIN-MONTH",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The partition score had to be computed within month, because every station shares a season.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "Within month is essential.",
+    "end": "including an absurd one.",
+    "why": "Retired with the random-basket comparison it served: a random basket shares no cause, so beating it shows a grouping beats noise, not that its members share a cause. Its point, that a shared season must be removed first, is kept in the co-movement test, which removes each station's own seasonal cycle."
+   },
+   "replaced_by": [
+    "C-W4AR-SYNC-METHOD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.",
+     "texts": "3a06a97d3d02af8b"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-RANKINGS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Three nulls give three rankings of how well the water bodies predict each variable, with the table of scores.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "The result depends almost entirely on what it is compared against",
+    "end": "(SOURCES.md#F-ff5c44079f) |",
+    "why": "A random basket shares no cause: its members are noise with respect to each other. Beating random baskets - shuffled, striped or shape-matched - shows a grouping is better than noise, which almost any grouping with spatial structure is; it says nothing about whether its members share a cause. The lines are now tested by whether stations move together at matched distance, with salinity as the physical control."
+   },
+   "replaced_by": [
+    "C-W4AR-MATCHED",
+    "C-W4AR-WATER-MASSES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different rankings.† | variable | real | shuffled | latitude stripes | size- and shape-matched | lift over the last | spread of its three runs | |---|---:|---:|---:|---:|---:|---:| | surface oxygen saturation | 0.924 | 0.859 | 0.516 | 0.522 | +0.402 | 0.178 | | surface oxygen | 0.878 | 0.782 | 0.550 | 0.595 | +0.283 | 0.111 | | bed oxygen saturation | 0.810 | 0.658 | 0.585 | 0.672 | +0.138 | 0.034 | | surface salinity | 0.968 | 0.531 | 0.679 | 0.844 | +0.124 | 0.065 | | bed salinity | 0.916 | 0.538 | 0.640 | 0.798 | +0.118 | 0.035 | | surface temperature | 0.830 | 0.510 | 0.618 | 0.734 | +0.096 | 0.039 | | bed oxygen | 0.790 | 0.639 | 0.602 | 0.698 | +0.092 | 0.012 | | bed temperature | 0.810 | 0.523 | 0.625 | 0.766 | +0.044 | 0.035 | | whole cast fluorescence (chlorophyll proxy) | 0.725 | 0.404 | 0.564 | 0.775 | -0.050 | 0.109 |",
+     "texts": "9a7c59b8d03f69b6"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-NULLS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What the three random-basket nulls were, and which variable gained most against each.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "The three nulls answer three different questions.",
+    "end": "surface oxygen saturation does.",
+    "why": "A random basket shares no cause, so which variable gains most against which random basket says how far a grouping beats noise, not whether its members share a cause. Retired with the comparison."
+   },
+   "replaced_by": [
+    "C-W4AR-MATCHED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "The three nulls answer three different questions. Shuffled permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure. Latitude stripes are equal-count horizontal bands, as many as there are real baskets, so they keep compactness and equal sizes but ignore hydrography. Size- and shape-matched baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, three times over, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.† Against the shuffle, salinity gains most, by a distance; against the stripes, surface oxygen saturation does.",
+     "texts": "247dcad09910844e"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-REVERSAL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Against shape-matched random baskets the ranking reversed, and for fluorescence the official partition did no better than random compact blobs.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "Against the matched blobs the ordering",
+    "end": "and whether it does worse is not shown.",
+    "why": "A random basket shares no cause: a ranking of lifts over random baskets orders groupings by how far they beat noise, not by whether their members share a cause. Retired with the comparison; the physical control is now salinity's co-movement, and fluorescence is now compared along a causal line."
+   },
+   "replaced_by": [
+    "C-W4AR-WATER-MASSES",
+    "C-W4AR-LS-FLUO"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "Against the matched blobs the ordering reverses: surface oxygen saturation gains most (+0.402), surface salinity little (+0.124), and fluorescence's lift is below zero (-0.050) — but the three blob runs themselves spread by 0.109 for fluorescence, so for it the official partition does no better than random compact blobs, and whether it does worse is not shown.",
+     "texts": "67f62b22d3edf8e2"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-READING",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A reading of the lifts - smooth salinity, rough oxygen - and a partition's value as its lift over its own shape.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "One reading fits these numbers, and it is not tested here",
+    "end": "than its own shape alone would",
+    "why": "A partition's lift over random baskets of its own shape measures how far it beats noise; a random basket shares no cause, so the lift does not say whether its members share one. The rule it set is retired with the comparison; the co-movement test at matched distance replaces it."
+   },
+   "replaced_by": [
+    "C-W4AR-WATER-MASSES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add; if oxygen is spatially rough, blobs do poorly and boundaries that follow enclosure carry real information.† A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would",
+     "texts": "6ecf6550ee1e6baa"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-SAMPLED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The partition scores were of the partition as sampled.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "One further limit bounding every row",
+    "end": "happen to sit close together.",
+    "why": "The limit bounded the random-basket table, which is retired: a random basket shares no cause, so beating it shows a grouping beats noise, not that its members share a cause."
+   },
+   "replaced_by": [],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.",
+     "texts": "970c47103deaa190"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-CUMHOC",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "Water bodies give more units of replication than a national series, so an effect size can be estimated across them.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "A national time series has one unit of replication.",
+    "end": "so an effect size can be estimated across them.",
+    "why": "An effect size across water bodies treats each management unit as a unit a cause acts on. What can be said is that a correlation is computed across management units."
+   },
+   "replaced_by": [
+    "C-W4AR-CUMHOC"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "A national time series has one unit of replication. The water bodies with two or more bathing stations number 65, so an effect size can be estimated across them.",
+     "texts": "65fd988aa3b47f4d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-CUMHOC-TABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The correlations of each sewage pressure against each bathing outcome across water bodies.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "| predictor | outcome | r |",
+    "end": "(SOURCES.md#F-72a7d54930) |",
+    "why": "Every value in it was computed with a nearest-boundary search that stopped short of the stated distance east-west; recomputed with the full search, every one moved. And by the coverage rule a family of numbers computed the same way gets one representative on the page, traced end to end; the rest are in the downloadable file."
+   },
+   "replaced_by": [
+    "C-W4AR-CUMHOC-R"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| predictor | outcome | r | $R^2$ | areas | |---|---|---:|---:|---:| | `log10(1+outfalls_per_km2)` | sub_excellent | +0.149 | 0.022 | 65 | | `log10(1+outfalls_per_km2)` | mean_score | -0.136 | 0.019 | 65 | | `log10(1+pe_per_km2)` | sub_excellent | +0.313 | 0.098 | 65 | | `log10(1+pe_per_km2)` | mean_score | -0.288 | 0.083 | 65 | | `log10(1+basin_m3_per_km2)` | sub_excellent | +0.139 | 0.019 | 65 | | `log10(1+basin_m3_per_km2)` | mean_score | -0.151 | 0.023 | 65 |",
+     "texts": "1682d593bb4e289d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-TABLE-KEY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The key to the per-area table.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "`model` — a DHI statistical model, as described above",
+    "end": "this area cannot be modelled.",
+    "why": "The table it keyed is no longer on the page: see the retired per-area table."
+   },
+   "replaced_by": [
+    "C-W4AR-ONE-ROW"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "`model` — a DHI statistical model, as described above (DCE fitted its statistical models on 1990–2012). `bath` — bathing stations, and the years they span. `r` — the mean correlation between the yearly classes of a water body's informative bathing stations, where there are three or more. `RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load. `gaps` — the number of written-out reasons this area cannot be modelled.",
+     "texts": "27403048988a347d"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-AREA-TABLE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "A table with one row per water body: area, model flag, bathing stations and their years, their correlation, outfalls, treatment-plant load, and reasons it cannot be modelled.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "| km² | area | model | bath (years) |",
+    "end": "(SOURCES.md#F-07575ea4ee) |",
+    "why": "A water body is a management unit, and by the coverage rule a family of rows computed the same way gets one representative, explained; the full record is published as a file. Its outfall and treatment-plant columns were also computed with a nearest-boundary search that stopped short of the stated distance east-west, and changed where plants or outfalls were reassigned."
+   },
+   "replaced_by": [
+    "C-W4AR-ONE-ROW",
+    "C-W4AR-DOWNLOAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "| km² | area | model | bath (years) | r | RBU | PE | gaps | |---:|---|:-:|---|---:|---:|---:|---:| | 4,248.6 | `Skagerrak, 12 sm` | · | — | — | — | — | 4 | | 3,831.4 | `Bornholm, 12 sm` | · | — | — | — | — | 4 | | 3,703.1 | `Vesterhavet, 12 sm` | · | — | — | — | — | 4 | | 2,495.8 | `Nordlige Kattegat, 12 sm` | · | — | — | — | — | 4 | | 1,880.8 | `Østersøen, 12 sm` | · | — | — | — | — | 4 | | 1,835.6 | Århus Bugt syd, Samsø og Nordlige Bælthav | · | 30 (1991–2018) | +0.12 | 130 | 72,413 | 2 | | 1,766.8 | `Kattegat, SV 12 sm` | · | — | — | — | — | 4 | | 1,526.1 | `Anholt, 12 sm` | · | — | — | — | — | 4 | | 1,315.8 | `Kattegat, SØ 12 sm` | · | — | — | — | — | 4 | | 1,217.9 | Smålandsfarvandet, åbne del | · | 27 (1991–2018) | +0.22 | 64 | 43,945 | 2 | | 1,148.6 | Lillebælt, syd | ✓ | 26 (1991–2018) | +0.19 | 118 | 115,906 | 1 | | 1,052.5 | Kattegat, Aalborg Bugt | · | 14 (1991–2018) | +0.36 | 117 | 88,955 | 2 | | 990.7 | Skagerrak | · | 33 (1991–2018) | +0.16 | 419 | 481,197 | 2 | | 821.0 | Sejerø Bugt | · | 27 (1991–2018) | +0.24 | 104 | 71,550 | 2 | | 721.2 | Kattegat, Nordsjælland | · | 34 (1991–2018) | +0.27 | 295 | 205,544 | 2 | | 686.8 | `Storebælt, nord 12 sm` | · | — | — | — | — | 4 | | 655.2 | Vesterhavet, syd | · | 12 (1991–2018) | — | 3 | — | 3 | | 609.4 | Kattegat, Læsø | · | 6 (1991–2018) | +0.23 | 6 | 3,860 | 2 | | 572.6 | `Storebælt, syd 12 sm` | · | — | — | — | — | 4 | | 562.4 | Køge Bugt | · | 29 (1991–2018) | +0.21 | 865 | 681,555 | 2 | | 554.6 | `Kattegat, Nordsjælland >20 m` | · | — | — | — | — | 4 | | 551.0 | Fakse Bugt | · | 13 (1991–2018) | +0.18 | 78 | 152,578 | 2 | | 497.0 | `Femerbælt, 12 sm` | · | — | — | — | — | 3 | | 482.2 | `Lillebælt, syd 12 sm` | · | — | — | — | — | 3 | | 459.5 | Hevring Bugt | · | 17 (1991–2018) | +0.40 | 76 | 165 | 2 | | 458.4 | Nordlige Kattegat, Ålbæk Bugt | · | 16 (1991–2018) | +0.12 | 310 | 354,821 | 2 | | 437.4 | Det sydfynske Øhav | ✓ | 21 (1991–2018) | +0.20 | 334 | 72,370 | 1 | | 407.5 | Løgstør Bredning | ✓ | — | — | 93 | 161,500 | 2 | | 355.7 | Nordlige Øresund | · | 32 (1991–2018) | +0.17 | 1,418 | 1,605,986 | 2 | | 343.4 | Hjelm Bugt | ✓ | 9 (1991–2018) | +0.17 | 31 | 27,545 | 1 | | 296.0 | Kås Bredning og Venø Bugt | ✓ | — | — | 469 | 282,480 | 2 | | 290.4 | Jammerland Bugt og Musholm Bugt | · | 9 (1991–2018) | +0.28 | 127 | 189,830 | 2 | | 288.1 | Lillebælt, Bredningen | · | 32 (1991–2018) | +0.10 | 57 | 40,532 | 2 | | 279.4 | Ringkøbing Fjord | ✓ | 9 (1991–2018) | +0.08 | 236 | 161,990 | 1 | | 275.3 | Nordlige Lillebælt | ✓ | 20 (1991–2018) | +0.11 | 191 | 15,150 | 1 | | 247.1 | Smålandsfarvandet, syd | · | 11 (1991–2018) | +0.10 | 162 | 53,283 | 2 | | 242.4 | Rødsand og Bredningen | · | 6 (1991–2018) | +0.28 | 115 | 12,107 | 2 | | 238.2 | Nissum Bredning | ✓ | — | — | 84 | 114,015 | 2 | | 231.6 | Århus Bugt og Begtrup Vig | ✓ | 20 (1991–2018) | +0.04 | 772 | 578,019 | 1 | | 228.6 | Langelandssund | · | 20 (1991–2018) | +0.39 | 54 | 119,500 | 2 | | 227.9 | Isefjord, ydre | ✓ | 26 (1991–2018) | +0.23 | 71 | 22,404 | 1 | | 222.1 | Bjørnholms Bugt, Riisgårde Bredning, Skive Fjord og Lovns Bredning | ✓ | 16 (1991–2018) | +0.12 | 299 | 90,355 | 1 | | 214.6 | Vesterhavet, nord | · | 21 (1991–2018) | — | 48 | 430 | 3 | | 211.6 | Anholt | · | 1 (1991–2018) | — | — | — | 3 | | 211.4 | Østersøen, Bornholm | · | 23 (1991–2018) | +0.16 | 185 | 102,697 | 2 | | 205.3 | Lister Dyb | · | 1 (1991–2018) | — | 192 | 56,105 | 3 | | 199.1 | Femerbælt | · | 9 (1991–2018) | +0.29 | 82 | 25,561 | 2 | | 175.2 | Djursland Øst | · | 10 (1991–2018) | +0.19 | 182 | 94,092 | 2 | | 169.7 | `Øresund, 12 sm` | · | — | — | — | — | 3 | | 165.9 | Nibe Bredning og Langerak | ✓ | — | — | 896 | 336,244 | 2 | | 164.0 | Storebælt, SV | · | 14 (1991–2018) | — | 35 | 84,575 | 3 | | 158.5 | Knudedyb | · | — | — | 138 | 30,850 | 3 | | 151.0 | Thisted Bredning | ✓ | — | — | 96 | 97,876 | 2 | | 149.9 | Flensborg Fjord, ydre | · | 14 (1991–2018) | +0.10 | 103 | 10,465 | 2 | | 131.8 | Stege Bugt | · | 5 (1991–2018) | +0.10 | 43 | 25,958 | 2 | | 128.0 | Juvre Dyb | · | — | — | 31 | 1,475 | 3 | | 124.0 | Grådyb | · | 8 (1991–2018) | +0.26 | 332 | 449,600 | 2 | | 116.3 | Storebælt, NV | ✓ | 12 (1991–2018) | — | 65 | 30,000 | 2 | | 100.5 | Grønsund | · | 8 (1991–2018) | +0.14 | 116 | 48,103 | 2 | | 92.0 | Vejle Fjord, ydre | · | 11 (1991–2018) | +0.07 | 108 | 48,760 | 2 | | 85.9 | Isefjord, indre | · | 9 (1991–2018) | +0.17 | 280 | 119,877 | 2 | | 84.5 | Ebeltoft Vig | · | 7 (1991–2018) | — | 27 | — | 3 | | 77.7 | Kalø Vig | · | 6 (1991–2018) | +0.26 | 335 | 24,276 | 2 | | 75.7 | Kalundborg Fjord | · | 11 (1991–2018) | +0.04 | 80 | 2,600 | 2 | | 71.4 | Roskilde Fjord, ydre | · | 13 (1991–2018) | +0.13 | 358 | 139,933 | 2 | | 66.6 | Helnæs Bugt | · | 8 (1991–2018) | +0.47 | 131 | 20,300 | 2 | | 65.7 | `Lillebælt, Als-Ærø 12 sm` | · | — | — | — | — | 3 | | 59.7 | Lillebælt, Snævringen | · | — | — | 232 | 580,100 | 3 | | 51.8 | Roskilde Fjord, indre | ✓ | 7 (1991–2018) | +0.50 | 393 | 217,960 | 1 | | 51.2 | Guldborgsund | · | 3 (1991–2018) | — | 149 | 63,476 | 3 | | 50.4 | Nakskov Fjord | · | 2 (1991–2018) | — | 117 | 28,921 | 3 | | 45.8 | Odense Fjord, ydre | ✓ | — | — | 37 | 20,000 | 2 | | 45.6 | Horsens Fjord, indre | ✓ | 4 (1991–2018) | +0.21 | 549 | 267,612 | 1 | | 40.7 | Avnø Fjord | · | 1 (1991–2018) | — | 2 | — | 3 | | 35.0 | Als Fjord | · | 3 (1991–2018) | — | 47 | 171 | 3 | | 32.6 | Nissum Fjord, ydre | · | — | — | 22 | 2,500 | 3 | | 32.6 | Åbenrå Fjord | ✓ | 11 (1991–2018) | +0.18 | 229 | 87,500 | 1 | | 32.6 | Horsens Fjord, ydre | ✓ | 4 (1991–2018) | — | 14 | 225 | 2 | | 27.8 | Mariager Fjord, ydre | · | 2 (1991–2018) | — | 114 | 450 | 3 | | 24.5 | Hjarbæk Fjord | · | 2 (1991–2018) | — | 232 | 108,500 | 3 | | 21.9 | Præstø Fjord | · | 2 (1991–2018) | — | 62 | 13,170 | 3 | | 19.8 | Nissum Fjord, mellem | · | 2 (1991–2018) | — | 12 | — | 3 | | 18.9 | Østersøen, Christiansø | · | — | — | — | — | 3 | | 18.1 | Randers Fjord, ydre | ✓ | 2 (1994–2018) | — | 45 | 4,631 | 2 | | 17.6 | Mariager Fjord, indre | ✓ | 4 (1991–2018) | — | 245 | 14,850 | 2 | | 17.0 | Dybsø Fjord | · | 1 (1991–2018) | — | 32 | 165 | 3 | | 16.3 | Vejle Fjord, indre | ✓ | 7 (1991–2018) | +0.05 | 728 | 224,735 | 1 | | 16.0 | Stavns Fjord | · | — | — | 6 | 25 | 3 | | 15.7 | Karrebæk Fjord | · | — | — | 188 | 127,348 | 3 | | 15.4 | Odense Fjord, Seden Strand | ✓ | — | — | 565 | 491,620 | 2 | | 15.0 | Augustenborg Fjord | · | 2 (1991–2018) | — | 77 | — | 3 | | 13.4 | Halkær Bredning | · | — | — | 109 | 71,475 | 3 | | 12.9 | Flensborg Fjord, indre | ✓ | 6 (1991–2018) | +0.07 | 84 | 97,035 | 1 | | 10.7 | Faaborg Fjord | · | 3 (1991–2018) | — | 83 | — | 3 | | 10.6 | Lunkebugten | · | 2 (1991–2018) | — | 13 | — | 3 | | 10.4 | Nissum Fjord, Felsted Kog | · | — | — | 34 | 9,415 | 3 | | 10.2 | Gamborg Fjord | · | 2 (1991–2018) | — | 38 | 22,000 | 3 | | 10.1 | Kolding Fjord, ydre | · | 4 (1991–2018) | — | 41 | — | 3 | | 10.0 | Kløven | · | — | — | 13 | 3,500 | 3 | | 9.5 | Basnæs Nor | · | — | — | 5 | 250 | 3 | | 8.0 | Nyborg Fjord | · | — | — | 56 | — | 3 | | 7.9 | Nybøl Nor | · | — | — | 65 | 100 | 3 | | 7.8 | Korsør Nor | · | — | — | 95 | 2,000 | 3 | | 7.4 | Knebel Vig | · | 1 (1992–2018) | — | 13 | 3,811 | 3 | | 7.1 | Randers Fjord, indre | · | — | — | 417 | 204,688 | 3 | | 6.8 | Lindelse Nor | · | — | — | 2 | — | 3 | | 6.5 | Holsteinborg Nor | · | — | — | 60 | 13,595 | 3 | | 6.0 | Lillestrand | · | — | — | — | — | 3 | | 5.5 | Als Sund | · | — | — | 38 | 94,055 | 3 | | 5.3 | Kertinge Nor | · | — | — | 98 | 4,540 | 3 | | 5.2 | Skælskør Fjord og Nor | · | — | — | 85 | 38,230 | 3 | | 5.1 | Haderslev Fjord | · | — | — | 201 | 106,666 | 3 | | 5.1 | Stege Nor | · | — | — | 12 | — | 3 | | 5.0 | Genner Bugt | · | 6 (1991–2018) | — | 16 | 3,910 | 3 | | 4.8 | Kolding Fjord, indre | ✓ | 2 (1991–2018) | — | 318 | 35,085 | 2 | | 4.8 | Nærå Strand | · | — | — | 42 | — | 3 | | 3.3 | Kerteminde Fjord | · | — | — | 22 | — | 3 | | 1.9 | Hejlsminde Nor | · | — | — | 25 | 30,000 | 3 | | 1.8 | Norsminde Fjord | · | — | — | 161 | 38,000 | 3 | | 0.5 | Holckenhavn Fjord | · | — | — | 60 | 31,000 | 3 | | 0.4 | Avnø Vig | · | — | — | 11 | — | 3 | | 0.3 | Bredningen | · | — | — | 17 | 2,800 | 3 | | 0.2 | Aborg Minde Nor | · | — | — | 51 | 17,800 | 3 |",
+     "texts": "0e75bbf7ccfbb708"
+    }
+   }
+  },
+  {
+   "id": "C-W4AR-OLD-NOT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The page was the per-area ledger needed before a causal model per area.",
+   "retired": {
+    "on": "2026-09-12",
+    "from": "AREAS.md",
+    "commit": "00a157f",
+    "file": "docs/AREAS.md",
+    "begin": "It is not a causal model per area.",
+    "end": "without a reader seeing the gap.",
+    "why": "It framed the page as the ledger for a causal model per water body; a water body is a management unit, not the unit a cause is found in, and the ledger is now a file."
+   },
+   "replaced_by": [
+    "C-W4AR-NOT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-12",
+    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "saw": {
+     "said on ARCHIVE.md": "It is not a causal model per area. It is the ledger you need before you can build one: which areas have enough observation to support a claim, which have none, and over which years each stream exists — so that an analysis published in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader seeing the gap.",
+     "texts": "ecb3a3aaa432f45e"
+    }
+   }
+  }
+ ]
+}

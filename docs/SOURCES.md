@@ -125,3394 +125,6 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [AREAS.md](AREAS.md)
 
-<a id="F-eab4737c04"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.n_gaps`
-
-`F-eab4737c04` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e6caeb34a8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.observation.bathing.first_year`
-
-`F-e6caeb34a8` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9fd0288ff5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.observation.bathing.internal_r`
-
-`F-9fd0288ff5` · **read from data** · 0.13
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-07f55dff70"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.observation.bathing.last_year`
-
-`F-07f55dff70` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dc11aaf8bd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.observation.bathing.stations`
-
-`F-dc11aaf8bd` · **read from data** · 13
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7a3c536b84"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.pressure.rbu.n`
-
-`F-7a3c536b84` · **read from data** · 358
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d449197625"></a>
-### `data/derived/areas.json` › `areas.DKCOAST1.pressure.rens.pe`
-
-`F-d449197625` · **read from data** · 139,933
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3ab2d9d671"></a>
-### `data/derived/areas.json` › `areas.DKCOAST100.area_km2`
-
-`F-3ab2d9d671` · **read from data** · 482.19
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-578cc934be"></a>
-### `data/derived/areas.json` › `areas.DKCOAST100.n_gaps`
-
-`F-578cc934be` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-90bbbc17ec"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.area_km2`
-
-`F-90bbbc17ec` · **read from data** · 5.01
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2d9f08b807"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.n_gaps`
-
-`F-2d9f08b807` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9085f6644c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.observation.bathing.first_year`
-
-`F-9085f6644c` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ae251ea08e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.observation.bathing.last_year`
-
-`F-ae251ea08e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3ed6983c41"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.observation.bathing.stations`
-
-`F-3ed6983c41` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5c6e2b2431"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.pressure.rbu.n`
-
-`F-5c6e2b2431` · **read from data** · 16
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dbfc32a8ce"></a>
-### `data/derived/areas.json` › `areas.DKCOAST101.pressure.rens.pe`
-
-`F-dbfc32a8ce` · **read from data** · 3,910
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c31ff870fd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.area_km2`
-
-`F-c31ff870fd` · **read from data** · 32.62
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a591c7c59d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.n_gaps`
-
-`F-a591c7c59d` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fc2334d5f5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.observation.bathing.first_year`
-
-`F-fc2334d5f5` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fe0c05c977"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.observation.bathing.internal_r`
-
-`F-fe0c05c977` · **read from data** · 0.185
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a49b76ea55"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.observation.bathing.last_year`
-
-`F-a49b76ea55` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c0315df8d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.observation.bathing.stations`
-
-`F-c0315df8d2` · **read from data** · 11
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b9f6179496"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.pressure.rbu.n`
-
-`F-b9f6179496` · **read from data** · 229
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-61600813dd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST102.pressure.rens.pe`
-
-`F-61600813dd` · **read from data** · 87,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-76b8eb76e1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.area_km2`
-
-`F-76b8eb76e1` · **read from data** · 34.99
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b5f2e4e9c0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.n_gaps`
-
-`F-b5f2e4e9c0` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-147a6df6ef"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.observation.bathing.first_year`
-
-`F-147a6df6ef` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3f91a355d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.observation.bathing.last_year`
-
-`F-3f91a355d2` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8d71c177ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.observation.bathing.stations`
-
-`F-8d71c177ad` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cc426277ae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.pressure.rbu.n`
-
-`F-cc426277ae` · **read from data** · 47
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3261220470"></a>
-### `data/derived/areas.json` › `areas.DKCOAST103.pressure.rens.pe`
-
-`F-3261220470` · **read from data** · 171
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-12b97af15b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST104.area_km2`
-
-`F-12b97af15b` · **read from data** · 5.54
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9d33ed579a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST104.n_gaps`
-
-`F-9d33ed579a` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8926c2a546"></a>
-### `data/derived/areas.json` › `areas.DKCOAST104.pressure.rbu.n`
-
-`F-8926c2a546` · **read from data** · 38
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fc14314437"></a>
-### `data/derived/areas.json` › `areas.DKCOAST104.pressure.rens.pe`
-
-`F-fc14314437` · **read from data** · 94,055
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-807631fe98"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.area_km2`
-
-`F-807631fe98` · **read from data** · 15.03
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0afdcd8023"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.n_gaps`
-
-`F-0afdcd8023` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c5071b5cb9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.observation.bathing.first_year`
-
-`F-c5071b5cb9` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-62596dc941"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.observation.bathing.last_year`
-
-`F-62596dc941` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1955dbb2dc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.observation.bathing.stations`
-
-`F-1955dbb2dc` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2ba02ea291"></a>
-### `data/derived/areas.json` › `areas.DKCOAST105.pressure.rbu.n`
-
-`F-2ba02ea291` · **read from data** · 77
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-14b14200d3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST106.area_km2`
-
-`F-14b14200d3` · **read from data** · 5.13
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c2e559d842"></a>
-### `data/derived/areas.json` › `areas.DKCOAST106.n_gaps`
-
-`F-c2e559d842` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-94cb3e50eb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST106.pressure.rbu.n`
-
-`F-94cb3e50eb` · **read from data** · 201
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c6b6abb7ea"></a>
-### `data/derived/areas.json` › `areas.DKCOAST106.pressure.rens.pe`
-
-`F-c6b6abb7ea` · **read from data** · 106,666
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6920010406"></a>
-### `data/derived/areas.json` › `areas.DKCOAST107.area_km2`
-
-`F-6920010406` · **read from data** · 127.95
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ad2e07f8cf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST107.n_gaps`
-
-`F-ad2e07f8cf` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-56230ea669"></a>
-### `data/derived/areas.json` › `areas.DKCOAST107.pressure.rbu.n`
-
-`F-56230ea669` · **read from data** · 31
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0eec7387cf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST107.pressure.rens.pe`
-
-`F-0eec7387cf` · **read from data** · 1,475
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6872d0b3a5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST108.area_km2`
-
-`F-6872d0b3a5` · **read from data** · 0.36
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d85c1af2db"></a>
-### `data/derived/areas.json` › `areas.DKCOAST108.n_gaps`
-
-`F-d85c1af2db` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4d99c2a449"></a>
-### `data/derived/areas.json` › `areas.DKCOAST108.pressure.rbu.n`
-
-`F-4d99c2a449` · **read from data** · 11
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c6ac9ce33f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST109.area_km2`
-
-`F-c6ac9ce33f` · **read from data** · 1.92
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3b361ca563"></a>
-### `data/derived/areas.json` › `areas.DKCOAST109.n_gaps`
-
-`F-3b361ca563` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b25edc7d41"></a>
-### `data/derived/areas.json` › `areas.DKCOAST109.pressure.rbu.n`
-
-`F-b25edc7d41` · **read from data** · 25
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-faca56e68a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST109.pressure.rens.pe`
-
-`F-faca56e68a` · **read from data** · 30,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-651fa4f8b3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST11.area_km2`
-
-`F-651fa4f8b3` · **read from data** · 169.67
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0a8e2a4c8e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST11.n_gaps`
-
-`F-0a8e2a4c8e` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-16874c697e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST110.area_km2`
-
-`F-16874c697e` · **read from data** · 7.9
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bfe3b596dd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST110.n_gaps`
-
-`F-bfe3b596dd` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-74faa37b00"></a>
-### `data/derived/areas.json` › `areas.DKCOAST110.pressure.rbu.n`
-
-`F-74faa37b00` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4e0286ec8f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST110.pressure.rens.pe`
-
-`F-4e0286ec8f` · **read from data** · 100
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5659c5eda8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.area_km2`
-
-`F-5659c5eda8` · **read from data** · 205.34
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-402504d942"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.n_gaps`
-
-`F-402504d942` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-16fa564d16"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.observation.bathing.first_year`
-
-`F-16fa564d16` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ccc233dcfc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.observation.bathing.last_year`
-
-`F-ccc233dcfc` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f86024b997"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.observation.bathing.stations`
-
-`F-f86024b997` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bdd2b4d756"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.pressure.rbu.n`
-
-`F-bdd2b4d756` · **read from data** · 192
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a751cf127e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST111.pressure.rens.pe`
-
-`F-a751cf127e` · **read from data** · 56,105
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a19ba29d9e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.area_km2`
-
-`F-a19ba29d9e` · **read from data** · 12.89
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7cc5b36dfa"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.n_gaps`
-
-`F-7cc5b36dfa` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-53a3f77a00"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.observation.bathing.first_year`
-
-`F-53a3f77a00` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bc0285eec7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.observation.bathing.internal_r`
-
-`F-bc0285eec7` · **read from data** · 0.072
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7dd999833e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.observation.bathing.last_year`
-
-`F-7dd999833e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5075647a71"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.observation.bathing.stations`
-
-`F-5075647a71` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cfeaa96aca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.pressure.rbu.n`
-
-`F-cfeaa96aca` · **read from data** · 84
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ec27261fbf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST113.pressure.rens.pe`
-
-`F-ec27261fbf` · **read from data** · 97,035
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-22b0ad107b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.area_km2`
-
-`F-22b0ad107b` · **read from data** · 149.87
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ef6a2c6101"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.n_gaps`
-
-`F-ef6a2c6101` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3f338bb582"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.observation.bathing.first_year`
-
-`F-3f338bb582` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3e8d16e4e0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.observation.bathing.internal_r`
-
-`F-3e8d16e4e0` · **read from data** · 0.101
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d1853be164"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.observation.bathing.last_year`
-
-`F-d1853be164` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-acd5126bf7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.observation.bathing.stations`
-
-`F-acd5126bf7` · **read from data** · 14
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-739482a3d0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.pressure.rbu.n`
-
-`F-739482a3d0` · **read from data** · 103
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c8351e6bea"></a>
-### `data/derived/areas.json` › `areas.DKCOAST114.pressure.rens.pe`
-
-`F-c8351e6bea` · **read from data** · 10,465
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a6d089a405"></a>
-### `data/derived/areas.json` › `areas.DKCOAST116.area_km2`
-
-`F-a6d089a405` · **read from data** · 65.66
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fca1c11b4e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST116.n_gaps`
-
-`F-fca1c11b4e` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-be0db542b0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.area_km2`
-
-`F-be0db542b0` · **read from data** · 655.2
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4ba9821398"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.n_gaps`
-
-`F-4ba9821398` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-42d311bdcd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.observation.bathing.first_year`
-
-`F-42d311bdcd` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-70fbad4ff7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.observation.bathing.last_year`
-
-`F-70fbad4ff7` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cac136a22a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.observation.bathing.stations`
-
-`F-cac136a22a` · **read from data** · 12
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b37abf1c5b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST119.pressure.rbu.n`
-
-`F-b37abf1c5b` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ce1b9ec31e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST120.area_km2`
-
-`F-ce1b9ec31e` · **read from data** · 158.49
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-94bcb6529b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST120.n_gaps`
-
-`F-94bcb6529b` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-89b6a720bb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST120.pressure.rbu.n`
-
-`F-89b6a720bb` · **read from data** · 138
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4a91addfa7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST120.pressure.rens.pe`
-
-`F-4a91addfa7` · **read from data** · 30,850
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c443108ba6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.area_km2`
-
-`F-c443108ba6` · **read from data** · 124.04
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-838ae05827"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.n_gaps`
-
-`F-838ae05827` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d5a8151c9b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.observation.bathing.first_year`
-
-`F-d5a8151c9b` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dc5d1c7365"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.observation.bathing.internal_r`
-
-`F-dc5d1c7365` · **read from data** · 0.263
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-25438da147"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.observation.bathing.last_year`
-
-`F-25438da147` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b6ebd1b6c3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.observation.bathing.stations`
-
-`F-b6ebd1b6c3` · **read from data** · 8
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-97efca6d67"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.pressure.rbu.n`
-
-`F-97efca6d67` · **read from data** · 332
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a18082de97"></a>
-### `data/derived/areas.json` › `areas.DKCOAST121.pressure.rens.pe`
-
-`F-a18082de97` · **read from data** · 449,600
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e592742b06"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.area_km2`
-
-`F-e592742b06` · **read from data** · 91.99
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-02529998d3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.n_gaps`
-
-`F-02529998d3` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8dd2d84a97"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.observation.bathing.first_year`
-
-`F-8dd2d84a97` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-816b23acbe"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.observation.bathing.internal_r`
-
-`F-816b23acbe` · **read from data** · 0.066
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2a1cdc2739"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.observation.bathing.last_year`
-
-`F-2a1cdc2739` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4674aa4ec5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.observation.bathing.stations`
-
-`F-4674aa4ec5` · **read from data** · 11
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-088067473f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.pressure.rbu.n`
-
-`F-088067473f` · **read from data** · 108
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5c215d41b2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST122.pressure.rens.pe`
-
-`F-5c215d41b2` · **read from data** · 48,760
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7bb93e742c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.area_km2`
-
-`F-7bb93e742c` · **read from data** · 16.27
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-58ac164868"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.n_gaps`
-
-`F-58ac164868` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1d5a8de638"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.observation.bathing.first_year`
-
-`F-1d5a8de638` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f9a4624349"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.observation.bathing.internal_r`
-
-`F-f9a4624349` · **read from data** · 0.049
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f882618bed"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.observation.bathing.last_year`
-
-`F-f882618bed` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4b8acd5b66"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.observation.bathing.stations`
-
-`F-4b8acd5b66` · **read from data** · 7
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fedf977641"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.pressure.rbu.n`
-
-`F-fedf977641` · **read from data** · 728
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-874f1ba072"></a>
-### `data/derived/areas.json` › `areas.DKCOAST123.pressure.rens.pe`
-
-`F-874f1ba072` · **read from data** · 224,735
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e84e65c966"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.area_km2`
-
-`F-e84e65c966` · **read from data** · 4.83
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-33cda837e3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.n_gaps`
-
-`F-33cda837e3` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5a2f78161c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.observation.bathing.first_year`
-
-`F-5a2f78161c` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4a3bd9d9f1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.observation.bathing.last_year`
-
-`F-4a3bd9d9f1` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6fb5e86437"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.observation.bathing.stations`
-
-`F-6fb5e86437` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f4460c0938"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.pressure.rbu.n`
-
-`F-f4460c0938` · **read from data** · 318
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e4d3b629dc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST124.pressure.rens.pe`
-
-`F-e4d3b629dc` · **read from data** · 35,085
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ee5faa6a0e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.area_km2`
-
-`F-ee5faa6a0e` · **read from data** · 10.09
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1d47dab422"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.n_gaps`
-
-`F-1d47dab422` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-554cf26141"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.observation.bathing.first_year`
-
-`F-554cf26141` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ce5e45e176"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.observation.bathing.last_year`
-
-`F-ce5e45e176` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-97fb709e80"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.observation.bathing.stations`
-
-`F-97fb709e80` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-91929505a9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST125.pressure.rbu.n`
-
-`F-91929505a9` · **read from data** · 41
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f5ae196887"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.area_km2`
-
-`F-f5ae196887` · **read from data** · 32.57
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9d7c13be2c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.n_gaps`
-
-`F-9d7c13be2c` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e934af64ce"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.observation.bathing.first_year`
-
-`F-e934af64ce` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b1ea9449a9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.observation.bathing.last_year`
-
-`F-b1ea9449a9` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a48059abd6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.observation.bathing.stations`
-
-`F-a48059abd6` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-21b1e0db70"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.pressure.rbu.n`
-
-`F-21b1e0db70` · **read from data** · 14
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7845496fed"></a>
-### `data/derived/areas.json` › `areas.DKCOAST127.pressure.rens.pe`
-
-`F-7845496fed` · **read from data** · 225
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3f04f8b5ed"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.area_km2`
-
-`F-3f04f8b5ed` · **read from data** · 45.6
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f2b475ea64"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.n_gaps`
-
-`F-f2b475ea64` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-60571585ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.observation.bathing.first_year`
-
-`F-60571585ad` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a389d1901f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.observation.bathing.internal_r`
-
-`F-a389d1901f` · **read from data** · 0.213
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e9b0be01cf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.observation.bathing.last_year`
-
-`F-e9b0be01cf` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d32ee48c94"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.observation.bathing.stations`
-
-`F-d32ee48c94` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f45520587d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.pressure.rbu.n`
-
-`F-f45520587d` · **read from data** · 549
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fddad08417"></a>
-### `data/derived/areas.json` › `areas.DKCOAST128.pressure.rens.pe`
-
-`F-fddad08417` · **read from data** · 267,612
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e16fb3f1fe"></a>
-### `data/derived/areas.json` › `areas.DKCOAST129.area_km2`
-
-`F-e16fb3f1fe` · **read from data** · 32.65
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-12a0a038b0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST129.n_gaps`
-
-`F-12a0a038b0` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-271fa14364"></a>
-### `data/derived/areas.json` › `areas.DKCOAST129.pressure.rbu.n`
-
-`F-271fa14364` · **read from data** · 22
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-de50920417"></a>
-### `data/derived/areas.json` › `areas.DKCOAST129.pressure.rens.pe`
-
-`F-de50920417` · **read from data** · 2,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5b3899bfaa"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.area_km2`
-
-`F-5b3899bfaa` · **read from data** · 19.78
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e59272eb38"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.n_gaps`
-
-`F-e59272eb38` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bcc481a358"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.observation.bathing.first_year`
-
-`F-bcc481a358` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4d034c4d02"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.observation.bathing.last_year`
-
-`F-4d034c4d02` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-09b9ac0130"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.observation.bathing.stations`
-
-`F-09b9ac0130` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0a10880793"></a>
-### `data/derived/areas.json` › `areas.DKCOAST130.pressure.rbu.n`
-
-`F-0a10880793` · **read from data** · 12
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2acacc4a10"></a>
-### `data/derived/areas.json` › `areas.DKCOAST131.area_km2`
-
-`F-2acacc4a10` · **read from data** · 10.41
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e25a29161c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST131.n_gaps`
-
-`F-e25a29161c` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-621d594d75"></a>
-### `data/derived/areas.json` › `areas.DKCOAST131.pressure.rbu.n`
-
-`F-621d594d75` · **read from data** · 34
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-56f424451a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST131.pressure.rens.pe`
-
-`F-56f424451a` · **read from data** · 9,415
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-af158c4608"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.area_km2`
-
-`F-af158c4608` · **read from data** · 279.39
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fe4b993414"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.n_gaps`
-
-`F-fe4b993414` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d2ea5a1f21"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.observation.bathing.first_year`
-
-`F-d2ea5a1f21` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-27231a1eff"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.observation.bathing.internal_r`
-
-`F-27231a1eff` · **read from data** · 0.077
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-acf82a279e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.observation.bathing.last_year`
-
-`F-acf82a279e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-40176d2a92"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.observation.bathing.stations`
-
-`F-40176d2a92` · **read from data** · 9
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-aa3e321669"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.pressure.rbu.n`
-
-`F-aa3e321669` · **read from data** · 236
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-26b5d2e41d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST132.pressure.rens.pe`
-
-`F-26b5d2e41d` · **read from data** · 161,990
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-15ed56906d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.area_km2`
-
-`F-15ed56906d` · **read from data** · 214.57
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-460b4e9597"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.n_gaps`
-
-`F-460b4e9597` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-317f3d53e0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.observation.bathing.first_year`
-
-`F-317f3d53e0` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fb0081bc43"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.observation.bathing.last_year`
-
-`F-fb0081bc43` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c739822c27"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.observation.bathing.stations`
-
-`F-c739822c27` · **read from data** · 21
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-effe785043"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.pressure.rbu.n`
-
-`F-effe785043` · **read from data** · 48
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-38357e7732"></a>
-### `data/derived/areas.json` › `areas.DKCOAST133.pressure.rens.pe`
-
-`F-38357e7732` · **read from data** · 430
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-56a0babb72"></a>
-### `data/derived/areas.json` › `areas.DKCOAST136.area_km2`
-
-`F-56a0babb72` · **read from data** · 7.13
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5c94baed4e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST136.n_gaps`
-
-`F-5c94baed4e` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-315ce8fd35"></a>
-### `data/derived/areas.json` › `areas.DKCOAST136.pressure.rbu.n`
-
-`F-315ce8fd35` · **read from data** · 417
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-823d777b1d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST136.pressure.rens.pe`
-
-`F-823d777b1d` · **read from data** · 204,688
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9f850604d9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.area_km2`
-
-`F-9f850604d9` · **read from data** · 18.1
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6a3832a2bd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.n_gaps`
-
-`F-6a3832a2bd` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8a2cd5eafd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.observation.bathing.first_year`
-
-`F-8a2cd5eafd` · **read from data** · 1,994
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-db5eea9170"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.observation.bathing.last_year`
-
-`F-db5eea9170` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9a0226931c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.observation.bathing.stations`
-
-`F-9a0226931c` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0aefda7af9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.pressure.rbu.n`
-
-`F-0aefda7af9` · **read from data** · 45
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-73a5c93607"></a>
-### `data/derived/areas.json` › `areas.DKCOAST137.pressure.rens.pe`
-
-`F-73a5c93607` · **read from data** · 4,631
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cae1e649bb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.area_km2`
-
-`F-cae1e649bb` · **read from data** · 459.5
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f754801883"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.n_gaps`
-
-`F-f754801883` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e636ae8001"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.observation.bathing.first_year`
-
-`F-e636ae8001` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b23cf10063"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.observation.bathing.internal_r`
-
-`F-b23cf10063` · **read from data** · 0.4
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-868684365d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.observation.bathing.last_year`
-
-`F-868684365d` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6ffce0145a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.observation.bathing.stations`
-
-`F-6ffce0145a` · **read from data** · 17
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ecf5cbeb3c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.pressure.rbu.n`
-
-`F-ecf5cbeb3c` · **read from data** · 76
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c2c6591852"></a>
-### `data/derived/areas.json` › `areas.DKCOAST138.pressure.rens.pe`
-
-`F-c2c6591852` · **read from data** · 165
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a4b0d8605f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST139.area_km2`
-
-`F-a4b0d8605f` · **read from data** · 211.58
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b6f88413b7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST139.n_gaps`
-
-`F-b6f88413b7` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7d4dfb8ee1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST139.observation.bathing.first_year`
-
-`F-7d4dfb8ee1` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c7e9bf1b70"></a>
-### `data/derived/areas.json` › `areas.DKCOAST139.observation.bathing.last_year`
-
-`F-c7e9bf1b70` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-972f4d9c83"></a>
-### `data/derived/areas.json` › `areas.DKCOAST139.observation.bathing.stations`
-
-`F-972f4d9c83` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a42ca4395c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.area_km2`
-
-`F-a42ca4395c` · **read from data** · 175.22
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0583be9bc0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.n_gaps`
-
-`F-0583be9bc0` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0d42bbfb0f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.observation.bathing.first_year`
-
-`F-0d42bbfb0f` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ca0d458d7e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.observation.bathing.internal_r`
-
-`F-ca0d458d7e` · **read from data** · 0.192
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1fb7d2cf53"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.observation.bathing.last_year`
-
-`F-1fb7d2cf53` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ad0e34bd38"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.observation.bathing.stations`
-
-`F-ad0e34bd38` · **read from data** · 10
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e8d0339621"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.pressure.rbu.n`
-
-`F-e8d0339621` · **read from data** · 182
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ea807bc4f8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST140.pressure.rens.pe`
-
-`F-ea807bc4f8` · **read from data** · 94,092
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d733dce9ef"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.area_km2`
-
-`F-d733dce9ef` · **read from data** · 84.51
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4ba059efb5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.n_gaps`
-
-`F-4ba059efb5` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-25c9e97670"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.observation.bathing.first_year`
-
-`F-25c9e97670` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-140d6ff80c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.observation.bathing.last_year`
-
-`F-140d6ff80c` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d82fc0b602"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.observation.bathing.stations`
-
-`F-d82fc0b602` · **read from data** · 7
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e007df34ac"></a>
-### `data/derived/areas.json` › `areas.DKCOAST141.pressure.rbu.n`
-
-`F-e007df34ac` · **read from data** · 27
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2649153ee2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST142.area_km2`
-
-`F-2649153ee2` · **read from data** · 16.03
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-79834b42e8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST142.n_gaps`
-
-`F-79834b42e8` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-19fd5b89a3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST142.pressure.rbu.n`
-
-`F-19fd5b89a3` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-92bdfa9b58"></a>
-### `data/derived/areas.json` › `areas.DKCOAST142.pressure.rens.pe`
-
-`F-92bdfa9b58` · **read from data** · 25
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b7a53397f6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.area_km2`
-
-`F-b7a53397f6` · **read from data** · 7.42
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4a956058cb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.n_gaps`
-
-`F-4a956058cb` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b3dc94cd36"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.observation.bathing.first_year`
-
-`F-b3dc94cd36` · **read from data** · 1,992
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0f0bfbb801"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.observation.bathing.last_year`
-
-`F-0f0bfbb801` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6d0eba298c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.observation.bathing.stations`
-
-`F-6d0eba298c` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-955a628dd3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.pressure.rbu.n`
-
-`F-955a628dd3` · **read from data** · 13
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-de9c9d2765"></a>
-### `data/derived/areas.json` › `areas.DKCOAST144.pressure.rens.pe`
-
-`F-de9c9d2765` · **read from data** · 3,811
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-27443bd085"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.area_km2`
-
-`F-27443bd085` · **read from data** · 77.74
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-df5e98ac4e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.n_gaps`
-
-`F-df5e98ac4e` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f172e257ac"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.observation.bathing.first_year`
-
-`F-f172e257ac` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d8a1da3d00"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.observation.bathing.internal_r`
-
-`F-d8a1da3d00` · **read from data** · 0.261
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5d1276ced2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.observation.bathing.last_year`
-
-`F-5d1276ced2` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-68149be601"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.observation.bathing.stations`
-
-`F-68149be601` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a104cebb04"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.pressure.rbu.n`
-
-`F-a104cebb04` · **read from data** · 335
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9856005ee6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST145.pressure.rens.pe`
-
-`F-9856005ee6` · **read from data** · 24,276
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-50b89464a5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST146.area_km2`
-
-`F-50b89464a5` · **read from data** · 1.79
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f4065f53ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST146.n_gaps`
-
-`F-f4065f53ad` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0abc8a765f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST146.pressure.rbu.n`
-
-`F-0abc8a765f` · **read from data** · 161
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-98d1747d5b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST146.pressure.rens.pe`
-
-`F-98d1747d5b` · **read from data** · 38,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2b5353997b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.area_km2`
-
-`F-2b5353997b` · **read from data** · 231.61
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-60dc9ad0ae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.n_gaps`
-
-`F-60dc9ad0ae` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-511551d2ac"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.observation.bathing.first_year`
-
-`F-511551d2ac` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1d25cbf0b9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.observation.bathing.internal_r`
-
-`F-1d25cbf0b9` · **read from data** · 0.042
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f9abcf0a17"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.observation.bathing.last_year`
-
-`F-f9abcf0a17` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-04c170b66b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.observation.bathing.stations`
-
-`F-04c170b66b` · **read from data** · 20
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2dee39d2ae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.pressure.rbu.n`
-
-`F-2dee39d2ae` · **read from data** · 772
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-226a213e70"></a>
-### `data/derived/areas.json` › `areas.DKCOAST147.pressure.rens.pe`
-
-`F-226a213e70` · **read from data** · 578,019
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9018aba9fe"></a>
-### `data/derived/areas.json` › `areas.DKCOAST148.area_km2`
-
-`F-9018aba9fe` · **read from data** · 1526.14
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-272d173325"></a>
-### `data/derived/areas.json` › `areas.DKCOAST148.n_gaps`
-
-`F-272d173325` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-aa153172fb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.area_km2`
-
-`F-aa153172fb` · **read from data** · 609.35
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4e8c929cd3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.n_gaps`
-
-`F-4e8c929cd3` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7d318cecf4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.observation.bathing.first_year`
-
-`F-7d318cecf4` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7c92f9c8c7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.observation.bathing.internal_r`
-
-`F-7c92f9c8c7` · **read from data** · 0.226
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-588ced5716"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.observation.bathing.last_year`
-
-`F-588ced5716` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6f3b07a0ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.observation.bathing.stations`
-
-`F-6f3b07a0ad` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fabc26375b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.pressure.rbu.n`
-
-`F-fabc26375b` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1322134adf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST154.pressure.rens.pe`
-
-`F-1322134adf` · **read from data** · 3,860
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7a07415954"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.area_km2`
-
-`F-7a07415954` · **read from data** · 222.09
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a175a0ff4d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.n_gaps`
-
-`F-a175a0ff4d` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0e65010d04"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.observation.bathing.first_year`
-
-`F-0e65010d04` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-44da21a57a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.observation.bathing.internal_r`
-
-`F-44da21a57a` · **read from data** · 0.125
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-14d769b383"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.observation.bathing.last_year`
-
-`F-14d769b383` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-18cb0326d3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.observation.bathing.stations`
-
-`F-18cb0326d3` · **read from data** · 16
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-90d7f6533b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.pressure.rbu.n`
-
-`F-90d7f6533b` · **read from data** · 299
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bbd6325432"></a>
-### `data/derived/areas.json` › `areas.DKCOAST157.pressure.rens.pe`
-
-`F-bbd6325432` · **read from data** · 90,355
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4555c1371b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.area_km2`
-
-`F-4555c1371b` · **read from data** · 24.48
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f35eafade9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.n_gaps`
-
-`F-f35eafade9` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3b06bc9c96"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.observation.bathing.first_year`
-
-`F-3b06bc9c96` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4bd259afca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.observation.bathing.last_year`
-
-`F-4bd259afca` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-04cf4194a8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.observation.bathing.stations`
-
-`F-04cf4194a8` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6bdc7c1c7a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.pressure.rbu.n`
-
-`F-6bdc7c1c7a` · **read from data** · 232
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9078d7acd3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST158.pressure.rens.pe`
-
-`F-9078d7acd3` · **read from data** · 108,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2642c11e36"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.area_km2`
-
-`F-2642c11e36` · **read from data** · 17.6
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8551365ac6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.n_gaps`
-
-`F-8551365ac6` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-40d66d741a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.observation.bathing.first_year`
-
-`F-40d66d741a` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-aa09e8285d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.observation.bathing.last_year`
-
-`F-aa09e8285d` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7729c14501"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.observation.bathing.stations`
-
-`F-7729c14501` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-11c85280c9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.pressure.rbu.n`
-
-`F-11c85280c9` · **read from data** · 245
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e5f26f7f4a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST159.pressure.rens.pe`
-
-`F-e5f26f7f4a` · **read from data** · 14,850
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5d4bcd36fb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST16.area_km2`
-
-`F-5d4bcd36fb` · **read from data** · 7.79
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b3a863a5ab"></a>
-### `data/derived/areas.json` › `areas.DKCOAST16.n_gaps`
-
-`F-b3a863a5ab` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-49a2ebc6da"></a>
-### `data/derived/areas.json` › `areas.DKCOAST16.pressure.rbu.n`
-
-`F-49a2ebc6da` · **read from data** · 95
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b6aa6b84ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST16.pressure.rens.pe`
-
-`F-b6aa6b84ad` · **read from data** · 2,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4029f32c4f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.area_km2`
-
-`F-4029f32c4f` · **read from data** · 27.83
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8bdf5c9632"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.n_gaps`
-
-`F-8bdf5c9632` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-954a948d50"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.observation.bathing.first_year`
-
-`F-954a948d50` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4e29a4b09b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.observation.bathing.last_year`
-
-`F-4e29a4b09b` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-57262a9528"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.observation.bathing.stations`
-
-`F-57262a9528` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a2ebea45f6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.pressure.rbu.n`
-
-`F-a2ebea45f6` · **read from data** · 114
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6ef5158b10"></a>
-### `data/derived/areas.json` › `areas.DKCOAST160.pressure.rens.pe`
-
-`F-6ef5158b10` · **read from data** · 450
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6d20afeaaa"></a>
-### `data/derived/areas.json` › `areas.DKCOAST163.area_km2`
-
-`F-6d20afeaaa` · **read from data** · 2495.78
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-989705c015"></a>
-### `data/derived/areas.json` › `areas.DKCOAST163.n_gaps`
-
-`F-989705c015` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6712cfc633"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.area_km2`
-
-`F-6712cfc633` · **read from data** · 85.87
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-528503028c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.n_gaps`
-
-`F-528503028c` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c77b714983"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.observation.bathing.first_year`
-
-`F-c77b714983` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9d774a39b9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.observation.bathing.internal_r`
-
-`F-9d774a39b9` · **read from data** · 0.165
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c4a091cee9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.observation.bathing.last_year`
-
-`F-c4a091cee9` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8a94cdaea4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.observation.bathing.stations`
-
-`F-8a94cdaea4` · **read from data** · 9
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6fe1d13c4c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.pressure.rbu.n`
-
-`F-6fe1d13c4c` · **read from data** · 280
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a9ebefda6d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST165.pressure.rens.pe`
-
-`F-a9ebefda6d` · **read from data** · 119,877
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b63a80b750"></a>
-### `data/derived/areas.json` › `areas.DKCOAST17.area_km2`
-
-`F-b63a80b750` · **read from data** · 9.46
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b9b85c2a1c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST17.n_gaps`
-
-`F-b9b85c2a1c` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0b4e6bbd96"></a>
-### `data/derived/areas.json` › `areas.DKCOAST17.pressure.rbu.n`
-
-`F-0b4e6bbd96` · **read from data** · 5
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-75fbc1e512"></a>
-### `data/derived/areas.json` › `areas.DKCOAST17.pressure.rens.pe`
-
-`F-75fbc1e512` · **read from data** · 250
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3e65e85ad6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST18.area_km2`
-
-`F-3e65e85ad6` · **read from data** · 6.47
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f9545078cd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST18.n_gaps`
-
-`F-f9545078cd` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-96a809764e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST18.pressure.rbu.n`
-
-`F-96a809764e` · **read from data** · 60
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2d5f36218e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST18.pressure.rens.pe`
-
-`F-2d5f36218e` · **read from data** · 13,595
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
 <a id="F-721904d9f2"></a>
 ### `data/derived/areas.json` › `areas.DKCOAST2.area_km2`
 
@@ -3542,6 +154,17 @@
 
 - **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
 - **What this field is:** The first year any of those stations carries a quality class.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-efbc6da623"></a>
+### `data/derived/areas.json` › `areas.DKCOAST2.observation.bathing.informative_stations`
+
+`F-efbc6da623` · **read from data** · 3
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** Bathing stations of this water body with at least `3` classed years below Excellent: the ones whose classes vary enough to correlate.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [AREAS.md](AREAS.md)
@@ -3582,7 +205,7 @@
 <a id="F-76b1708a27"></a>
 ### `data/derived/areas.json` › `areas.DKCOAST2.pressure.rbu.n`
 
-`F-76b1708a27` · **read from data** · 393
+`F-76b1708a27` · **read from data** · 426
 
 - **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
 - **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
@@ -3593,4165 +216,7 @@
 <a id="F-3e1b6dfe25"></a>
 ### `data/derived/areas.json` › `areas.DKCOAST2.pressure.rens.pe`
 
-`F-3e1b6dfe25` · **read from data** · 217,960
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-56d9298e7f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.area_km2`
-
-`F-56d9298e7f` · **read from data** · 721.22
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-212c007fb3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.n_gaps`
-
-`F-212c007fb3` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-858ccce2e7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.observation.bathing.first_year`
-
-`F-858ccce2e7` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7e039d8a55"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.observation.bathing.internal_r`
-
-`F-7e039d8a55` · **read from data** · 0.272
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a3c769164d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.observation.bathing.last_year`
-
-`F-a3c769164d` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-250c04048a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.observation.bathing.stations`
-
-`F-250c04048a` · **read from data** · 34
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-056c4aef7a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.pressure.rbu.n`
-
-`F-056c4aef7a` · **read from data** · 295
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fc5f73d7d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST200.pressure.rens.pe`
-
-`F-fc5f73d7d2` · **read from data** · 205,544
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f69595c6a0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.area_km2`
-
-`F-f69595c6a0` · **read from data** · 562.38
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d45be695c7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.n_gaps`
-
-`F-d45be695c7` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-35fcb6174d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.observation.bathing.first_year`
-
-`F-35fcb6174d` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-98cbdd5b71"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.observation.bathing.internal_r`
-
-`F-98cbdd5b71` · **read from data** · 0.212
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c685677615"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.observation.bathing.last_year`
-
-`F-c685677615` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-44b4adf60f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.observation.bathing.stations`
-
-`F-44b4adf60f` · **read from data** · 29
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6906d249f7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.pressure.rbu.n`
-
-`F-6906d249f7` · **read from data** · 865
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-24a98b598c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST201.pressure.rens.pe`
-
-`F-24a98b598c` · **read from data** · 681,555
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-518507dfac"></a>
-### `data/derived/areas.json` › `areas.DKCOAST202.area_km2`
-
-`F-518507dfac` · **read from data** · 1315.75
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a4c3c8d89e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST202.n_gaps`
-
-`F-a4c3c8d89e` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d4518dd39e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST203.area_km2`
-
-`F-d4518dd39e` · **read from data** · 686.77
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-afad03bdb9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST203.n_gaps`
-
-`F-afad03bdb9` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-12684b76ae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.area_km2`
-
-`F-12684b76ae` · **read from data** · 290.36
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6a80dd6998"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.n_gaps`
-
-`F-6a80dd6998` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a072a3b741"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.observation.bathing.first_year`
-
-`F-a072a3b741` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f799c0f630"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.observation.bathing.internal_r`
-
-`F-f799c0f630` · **read from data** · 0.28
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-827d0e8507"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.observation.bathing.last_year`
-
-`F-827d0e8507` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-07fda903ed"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.observation.bathing.stations`
-
-`F-07fda903ed` · **read from data** · 9
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-452aa3d395"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.pressure.rbu.n`
-
-`F-452aa3d395` · **read from data** · 127
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-98554cd483"></a>
-### `data/derived/areas.json` › `areas.DKCOAST204.pressure.rens.pe`
-
-`F-98554cd483` · **read from data** · 189,830
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2ac86e62f5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST205.area_km2`
-
-`F-2ac86e62f5` · **read from data** · 554.63
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5b2fc3cbb2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST205.n_gaps`
-
-`F-5b2fc3cbb2` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a4e89261d4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.area_km2`
-
-`F-a4e89261d4` · **read from data** · 1217.93
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b35512e4b6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.n_gaps`
-
-`F-b35512e4b6` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-66e869ad1a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.observation.bathing.first_year`
-
-`F-66e869ad1a` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-19e2393656"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.observation.bathing.internal_r`
-
-`F-19e2393656` · **read from data** · 0.218
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0bc06dbf5f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.observation.bathing.last_year`
-
-`F-0bc06dbf5f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0c82f2ec2d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.observation.bathing.stations`
-
-`F-0c82f2ec2d` · **read from data** · 27
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e80f8305d7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.pressure.rbu.n`
-
-`F-e80f8305d7` · **read from data** · 64
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-88ce2ee6ed"></a>
-### `data/derived/areas.json` › `areas.DKCOAST206.pressure.rens.pe`
-
-`F-88ce2ee6ed` · **read from data** · 43,945
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1e29b842f4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.area_km2`
-
-`F-1e29b842f4` · **read from data** · 50.35
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fedf551afb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.n_gaps`
-
-`F-fedf551afb` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bf21c69122"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.observation.bathing.first_year`
-
-`F-bf21c69122` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a32d4ff7cd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.observation.bathing.last_year`
-
-`F-a32d4ff7cd` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-29bbc1900d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.observation.bathing.stations`
-
-`F-29bbc1900d` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5f59372879"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.pressure.rbu.n`
-
-`F-5f59372879` · **read from data** · 117
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b47d06bff1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST207.pressure.rens.pe`
-
-`F-b47d06bff1` · **read from data** · 28,921
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-537b449039"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.area_km2`
-
-`F-537b449039` · **read from data** · 199.08
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ffd689056b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.n_gaps`
-
-`F-ffd689056b` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3cca40d4b2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.observation.bathing.first_year`
-
-`F-3cca40d4b2` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-74a2b3a326"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.observation.bathing.internal_r`
-
-`F-74a2b3a326` · **read from data** · 0.295
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-657e03faf0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.observation.bathing.last_year`
-
-`F-657e03faf0` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9ddaeb3bef"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.observation.bathing.stations`
-
-`F-9ddaeb3bef` · **read from data** · 9
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a5f387cd87"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.pressure.rbu.n`
-
-`F-a5f387cd87` · **read from data** · 82
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-db4cc72283"></a>
-### `data/derived/areas.json` › `areas.DKCOAST208.pressure.rens.pe`
-
-`F-db4cc72283` · **read from data** · 25,561
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2c3bee8d0f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.area_km2`
-
-`F-2c3bee8d0f` · **read from data** · 242.36
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-05591f26e7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.n_gaps`
-
-`F-05591f26e7` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-619c40f2b8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.observation.bathing.first_year`
-
-`F-619c40f2b8` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-affb36629f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.observation.bathing.internal_r`
-
-`F-affb36629f` · **read from data** · 0.276
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e09765823e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.observation.bathing.last_year`
-
-`F-e09765823e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f65e6739b2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.observation.bathing.stations`
-
-`F-f65e6739b2` · **read from data** · 6
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5544e003d4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.pressure.rbu.n`
-
-`F-5544e003d4` · **read from data** · 115
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-36111c0e79"></a>
-### `data/derived/areas.json` › `areas.DKCOAST209.pressure.rens.pe`
-
-`F-36111c0e79` · **read from data** · 12,107
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-196b469973"></a>
-### `data/derived/areas.json` › `areas.DKCOAST210.area_km2`
-
-`F-196b469973` · **read from data** · 496.99
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ed6cec4110"></a>
-### `data/derived/areas.json` › `areas.DKCOAST210.n_gaps`
-
-`F-ed6cec4110` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6e1226f9e8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST211.area_km2`
-
-`F-6e1226f9e8` · **read from data** · 1880.81
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2b40ae5fae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST211.n_gaps`
-
-`F-2b40ae5fae` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b7bdd56bdf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.area_km2`
-
-`F-b7bdd56bdf` · **read from data** · 10.65
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-76e0147dda"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.n_gaps`
-
-`F-76e0147dda` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dd1aaf19d0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.observation.bathing.first_year`
-
-`F-dd1aaf19d0` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-86b76284a7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.observation.bathing.last_year`
-
-`F-86b76284a7` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ce31f62887"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.observation.bathing.stations`
-
-`F-ce31f62887` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-59bffc8184"></a>
-### `data/derived/areas.json` › `areas.DKCOAST212.pressure.rbu.n`
-
-`F-59bffc8184` · **read from data** · 83
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2d9babd860"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.area_km2`
-
-`F-2d9babd860` · **read from data** · 437.44
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fa82cac290"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.n_gaps`
-
-`F-fa82cac290` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c8477d1c37"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.observation.bathing.first_year`
-
-`F-c8477d1c37` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-19c3ed8c30"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.observation.bathing.internal_r`
-
-`F-19c3ed8c30` · **read from data** · 0.203
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d9ab168547"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.observation.bathing.last_year`
-
-`F-d9ab168547` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-24df87eeaf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.observation.bathing.stations`
-
-`F-24df87eeaf` · **read from data** · 21
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6c44503518"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.pressure.rbu.n`
-
-`F-6c44503518` · **read from data** · 334
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9075649eba"></a>
-### `data/derived/areas.json` › `areas.DKCOAST214.pressure.rens.pe`
-
-`F-9075649eba` · **read from data** · 72,370
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e46cabcaf9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST215.area_km2`
-
-`F-e46cabcaf9` · **read from data** · 572.63
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1134d5760c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST215.n_gaps`
-
-`F-1134d5760c` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dd2579cfad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.area_km2`
-
-`F-dd2579cfad` · **read from data** · 1148.63
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-38cc4be05e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.n_gaps`
-
-`F-38cc4be05e` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8015c878af"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.observation.bathing.first_year`
-
-`F-8015c878af` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-826f500c05"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.observation.bathing.internal_r`
-
-`F-826f500c05` · **read from data** · 0.189
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5bf06b223e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.observation.bathing.last_year`
-
-`F-5bf06b223e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-15db563a3d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.observation.bathing.stations`
-
-`F-15db563a3d` · **read from data** · 26
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d771fb714f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.pressure.rbu.n`
-
-`F-d771fb714f` · **read from data** · 118
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-01b8949ec7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST216.pressure.rens.pe`
-
-`F-01b8949ec7` · **read from data** · 115,906
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-19fa8f026a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.area_km2`
-
-`F-19fa8f026a` · **read from data** · 288.1
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-980339a1ec"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.n_gaps`
-
-`F-980339a1ec` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a2296ed9df"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.observation.bathing.first_year`
-
-`F-a2296ed9df` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-470192b9e6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.observation.bathing.internal_r`
-
-`F-470192b9e6` · **read from data** · 0.098
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ca2a02e498"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.observation.bathing.last_year`
-
-`F-ca2a02e498` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4541973b51"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.observation.bathing.stations`
-
-`F-4541973b51` · **read from data** · 32
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-588c3b8490"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.pressure.rbu.n`
-
-`F-588c3b8490` · **read from data** · 57
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-34cf8ccec8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST217.pressure.rens.pe`
-
-`F-34cf8ccec8` · **read from data** · 40,532
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e4234f8dfe"></a>
-### `data/derived/areas.json` › `areas.DKCOAST218.area_km2`
-
-`F-e4234f8dfe` · **read from data** · 3703.08
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f8339549bd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST218.n_gaps`
-
-`F-f8339549bd` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3cf1ad9c3c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.area_km2`
-
-`F-3cf1ad9c3c` · **read from data** · 1835.6
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8ca60961a2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.n_gaps`
-
-`F-8ca60961a2` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-380e712b11"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.observation.bathing.first_year`
-
-`F-380e712b11` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-212917e9aa"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.observation.bathing.internal_r`
-
-`F-212917e9aa` · **read from data** · 0.115
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d137780f08"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.observation.bathing.last_year`
-
-`F-d137780f08` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-adfa4f3a7d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.observation.bathing.stations`
-
-`F-adfa4f3a7d` · **read from data** · 30
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6c926708d6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.pressure.rbu.n`
-
-`F-6c926708d6` · **read from data** · 130
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c42948a3ac"></a>
-### `data/derived/areas.json` › `areas.DKCOAST219.pressure.rens.pe`
-
-`F-c42948a3ac` · **read from data** · 72,413
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-96983cf6da"></a>
-### `data/derived/areas.json` › `areas.DKCOAST220.area_km2`
-
-`F-96983cf6da` · **read from data** · 1766.79
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-71c169e68b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST220.n_gaps`
-
-`F-71c169e68b` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-59f8d6acc9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.area_km2`
-
-`F-59f8d6acc9` · **read from data** · 990.7
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-43678b520c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.n_gaps`
-
-`F-43678b520c` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-65cca367fc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.observation.bathing.first_year`
-
-`F-65cca367fc` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b7b5b760e3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.observation.bathing.internal_r`
-
-`F-b7b5b760e3` · **read from data** · 0.163
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fbfdfe19d0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.observation.bathing.last_year`
-
-`F-fbfdfe19d0` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f183ce2ba4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.observation.bathing.stations`
-
-`F-f183ce2ba4` · **read from data** · 33
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e177fb46b0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.pressure.rbu.n`
-
-`F-e177fb46b0` · **read from data** · 419
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-78b2e12011"></a>
-### `data/derived/areas.json` › `areas.DKCOAST221.pressure.rens.pe`
-
-`F-78b2e12011` · **read from data** · 481,197
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c4be50dbeb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.area_km2`
-
-`F-c4be50dbeb` · **read from data** · 1052.52
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5327159e3a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.n_gaps`
-
-`F-5327159e3a` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7a69212f02"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.observation.bathing.first_year`
-
-`F-7a69212f02` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cf43a3e967"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.observation.bathing.internal_r`
-
-`F-cf43a3e967` · **read from data** · 0.358
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1fc7d631c2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.observation.bathing.last_year`
-
-`F-1fc7d631c2` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9d1d22de87"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.observation.bathing.stations`
-
-`F-9d1d22de87` · **read from data** · 14
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dbe3739a74"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.pressure.rbu.n`
-
-`F-dbe3739a74` · **read from data** · 117
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ed5c16c2d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST222.pressure.rens.pe`
-
-`F-ed5c16c2d2` · **read from data** · 88,955
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b73a7c4615"></a>
-### `data/derived/areas.json` › `areas.DKCOAST223.area_km2`
-
-`F-b73a7c4615` · **read from data** · 4248.61
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-73bc0bf242"></a>
-### `data/derived/areas.json` › `areas.DKCOAST223.n_gaps`
-
-`F-73bc0bf242` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-965be8ebf7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.area_km2`
-
-`F-965be8ebf7` · **read from data** · 275.3
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-320a75093c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.n_gaps`
-
-`F-320a75093c` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8001170d28"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.observation.bathing.first_year`
-
-`F-8001170d28` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-625551e888"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.observation.bathing.internal_r`
-
-`F-625551e888` · **read from data** · 0.112
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-268e8ee934"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.observation.bathing.last_year`
-
-`F-268e8ee934` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ccd53c0fa9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.observation.bathing.stations`
-
-`F-ccd53c0fa9` · **read from data** · 20
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ca633e9ba4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.pressure.rbu.n`
-
-`F-ca633e9ba4` · **read from data** · 191
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-566b1526ba"></a>
-### `data/derived/areas.json` › `areas.DKCOAST224.pressure.rens.pe`
-
-`F-566b1526ba` · **read from data** · 15,150
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a15b8e4dbd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.area_km2`
-
-`F-a15b8e4dbd` · **read from data** · 458.44
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-13107e614f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.n_gaps`
-
-`F-13107e614f` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5801dd7dcd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.observation.bathing.first_year`
-
-`F-5801dd7dcd` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e467d8ad5d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.observation.bathing.internal_r`
-
-`F-e467d8ad5d` · **read from data** · 0.117
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9a453dd6a1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.observation.bathing.last_year`
-
-`F-9a453dd6a1` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b0d296b3b7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.observation.bathing.stations`
-
-`F-b0d296b3b7` · **read from data** · 16
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a125b7687d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.pressure.rbu.n`
-
-`F-a125b7687d` · **read from data** · 310
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ab65b70d49"></a>
-### `data/derived/areas.json` › `areas.DKCOAST225.pressure.rens.pe`
-
-`F-ab65b70d49` · **read from data** · 354,821
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b71a5e59fc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST231.area_km2`
-
-`F-b71a5e59fc` · **read from data** · 59.72
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-15f7fb35d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST231.n_gaps`
-
-`F-15f7fb35d2` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-09489af559"></a>
-### `data/derived/areas.json` › `areas.DKCOAST231.pressure.rbu.n`
-
-`F-09489af559` · **read from data** · 232
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-731b26d856"></a>
-### `data/derived/areas.json` › `areas.DKCOAST231.pressure.rens.pe`
-
-`F-731b26d856` · **read from data** · 580,100
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-aafb63be20"></a>
-### `data/derived/areas.json` › `areas.DKCOAST232.area_km2`
-
-`F-aafb63be20` · **read from data** · 238.16
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-424ab017ff"></a>
-### `data/derived/areas.json` › `areas.DKCOAST232.n_gaps`
-
-`F-424ab017ff` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9bd5ead715"></a>
-### `data/derived/areas.json` › `areas.DKCOAST232.pressure.rbu.n`
-
-`F-9bd5ead715` · **read from data** · 84
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a5f9ec83e2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST232.pressure.rens.pe`
-
-`F-a5f9ec83e2` · **read from data** · 114,015
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-96de685e2e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST233.area_km2`
-
-`F-96de685e2e` · **read from data** · 295.99
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-063498a015"></a>
-### `data/derived/areas.json` › `areas.DKCOAST233.n_gaps`
-
-`F-063498a015` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e54501614e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST233.pressure.rbu.n`
-
-`F-e54501614e` · **read from data** · 469
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e96e954306"></a>
-### `data/derived/areas.json` › `areas.DKCOAST233.pressure.rens.pe`
-
-`F-e96e954306` · **read from data** · 282,480
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7f774ee08b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST234.area_km2`
-
-`F-7f774ee08b` · **read from data** · 407.46
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2bd88b2d60"></a>
-### `data/derived/areas.json` › `areas.DKCOAST234.n_gaps`
-
-`F-2bd88b2d60` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d3864f978e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST234.pressure.rbu.n`
-
-`F-d3864f978e` · **read from data** · 93
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-db8f71454a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST234.pressure.rens.pe`
-
-`F-db8f71454a` · **read from data** · 161,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2f507db94e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST235.area_km2`
-
-`F-2f507db94e` · **read from data** · 165.89
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5adb356365"></a>
-### `data/derived/areas.json` › `areas.DKCOAST235.n_gaps`
-
-`F-5adb356365` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ff61f5c8e6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST235.pressure.rbu.n`
-
-`F-ff61f5c8e6` · **read from data** · 896
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4e680b4dc4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST235.pressure.rens.pe`
-
-`F-4e680b4dc4` · **read from data** · 336,244
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f5c41bb63f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST236.area_km2`
-
-`F-f5c41bb63f` · **read from data** · 150.99
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c4bbae34c3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST236.n_gaps`
-
-`F-c4bbae34c3` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-54b3d72a65"></a>
-### `data/derived/areas.json` › `areas.DKCOAST236.pressure.rbu.n`
-
-`F-54b3d72a65` · **read from data** · 96
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fee7db990f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST236.pressure.rens.pe`
-
-`F-fee7db990f` · **read from data** · 97,876
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8d2d14b5ef"></a>
-### `data/derived/areas.json` › `areas.DKCOAST238.area_km2`
-
-`F-8d2d14b5ef` · **read from data** · 13.39
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a0a06c09c6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST238.n_gaps`
-
-`F-a0a06c09c6` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cc2ab12b77"></a>
-### `data/derived/areas.json` › `areas.DKCOAST238.pressure.rbu.n`
-
-`F-cc2ab12b77` · **read from data** · 109
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c3fe3c1391"></a>
-### `data/derived/areas.json` › `areas.DKCOAST238.pressure.rens.pe`
-
-`F-c3fe3c1391` · **read from data** · 71,475
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8e08f98b7a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.area_km2`
-
-`F-8e08f98b7a` · **read from data** · 227.88
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-34777a4516"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.n_gaps`
-
-`F-34777a4516` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-427aaf1d7a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.observation.bathing.first_year`
-
-`F-427aaf1d7a` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-825bbb3688"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.observation.bathing.internal_r`
-
-`F-825bbb3688` · **read from data** · 0.225
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a8e0471ece"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.observation.bathing.last_year`
-
-`F-a8e0471ece` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-01b6a9adbe"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.observation.bathing.stations`
-
-`F-01b6a9adbe` · **read from data** · 26
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d380679b78"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.pressure.rbu.n`
-
-`F-d380679b78` · **read from data** · 71
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d688e2ab73"></a>
-### `data/derived/areas.json` › `areas.DKCOAST24.pressure.rens.pe`
-
-`F-d688e2ab73` · **read from data** · 22,404
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9919c46f55"></a>
-### `data/derived/areas.json` › `areas.DKCOAST25.area_km2`
-
-`F-9919c46f55` · **read from data** · 5.2
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-59222c9d93"></a>
-### `data/derived/areas.json` › `areas.DKCOAST25.n_gaps`
-
-`F-59222c9d93` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f3f181aacb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST25.pressure.rbu.n`
-
-`F-f3f181aacb` · **read from data** · 85
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-380eb37cee"></a>
-### `data/derived/areas.json` › `areas.DKCOAST25.pressure.rens.pe`
-
-`F-380eb37cee` · **read from data** · 38,230
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5dd41f3aab"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.area_km2`
-
-`F-5dd41f3aab` · **read from data** · 821
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-169413903d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.n_gaps`
-
-`F-169413903d` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2c4bbde906"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.observation.bathing.first_year`
-
-`F-2c4bbde906` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5819f87119"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.observation.bathing.internal_r`
-
-`F-5819f87119` · **read from data** · 0.241
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-efa0a2bfb9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.observation.bathing.last_year`
-
-`F-efa0a2bfb9` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-aa26728fb3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.observation.bathing.stations`
-
-`F-aa26728fb3` · **read from data** · 27
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9a01c9d36a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.pressure.rbu.n`
-
-`F-9a01c9d36a` · **read from data** · 104
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-224396de14"></a>
-### `data/derived/areas.json` › `areas.DKCOAST28.pressure.rens.pe`
-
-`F-224396de14` · **read from data** · 71,550
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-64128d1f9c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.area_km2`
-
-`F-64128d1f9c` · **read from data** · 75.72
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-741770d51f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.n_gaps`
-
-`F-741770d51f` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8af351f216"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.observation.bathing.first_year`
-
-`F-8af351f216` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0e9cfd45a8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.observation.bathing.internal_r`
-
-`F-0e9cfd45a8` · **read from data** · 0.037
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-74a827691b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.observation.bathing.last_year`
-
-`F-74a827691b` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8afba65fca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.observation.bathing.stations`
-
-`F-8afba65fca` · **read from data** · 11
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2ed15934b5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.pressure.rbu.n`
-
-`F-2ed15934b5` · **read from data** · 80
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0e0466701c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST29.pressure.rens.pe`
-
-`F-0e0466701c` · **read from data** · 2,600
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c445ed53d8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.area_km2`
-
-`F-c445ed53d8` · **read from data** · 247.05
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-90c845c063"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.n_gaps`
-
-`F-90c845c063` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3b95b68b78"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.observation.bathing.first_year`
-
-`F-3b95b68b78` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1148239c98"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.observation.bathing.internal_r`
-
-`F-1148239c98` · **read from data** · 0.099
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c47cefcccc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.observation.bathing.last_year`
-
-`F-c47cefcccc` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ba2596f34d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.observation.bathing.stations`
-
-`F-ba2596f34d` · **read from data** · 11
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1483adb9d3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.pressure.rbu.n`
-
-`F-1483adb9d3` · **read from data** · 162
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4787c11cd7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST34.pressure.rens.pe`
-
-`F-4787c11cd7` · **read from data** · 53,283
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1c7f0b8184"></a>
-### `data/derived/areas.json` › `areas.DKCOAST35.area_km2`
-
-`F-1c7f0b8184` · **read from data** · 15.73
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-56a5bc6dfc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST35.n_gaps`
-
-`F-56a5bc6dfc` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-67f07799d4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST35.pressure.rbu.n`
-
-`F-67f07799d4` · **read from data** · 188
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ffcc8446f3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST35.pressure.rens.pe`
-
-`F-ffcc8446f3` · **read from data** · 127,348
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6c575b149f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.area_km2`
-
-`F-6c575b149f` · **read from data** · 17.04
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8d2e0d7c9b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.n_gaps`
-
-`F-8d2e0d7c9b` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-782266c47e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.observation.bathing.first_year`
-
-`F-782266c47e` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5db791c405"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.observation.bathing.last_year`
-
-`F-5db791c405` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e703c1a27e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.observation.bathing.stations`
-
-`F-e703c1a27e` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-44be0a4220"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.pressure.rbu.n`
-
-`F-44be0a4220` · **read from data** · 32
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bc2ed64b63"></a>
-### `data/derived/areas.json` › `areas.DKCOAST36.pressure.rens.pe`
-
-`F-bc2ed64b63` · **read from data** · 165
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8d1816a0fc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.area_km2`
-
-`F-8d1816a0fc` · **read from data** · 40.71
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-564b4586e7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.n_gaps`
-
-`F-564b4586e7` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2323e260ad"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.observation.bathing.first_year`
-
-`F-2323e260ad` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7b9aee3a8f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.observation.bathing.last_year`
-
-`F-7b9aee3a8f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3b3e9b3874"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.observation.bathing.stations`
-
-`F-3b3e9b3874` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-63eba85885"></a>
-### `data/derived/areas.json` › `areas.DKCOAST37.pressure.rbu.n`
-
-`F-63eba85885` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d3221fbe53"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.area_km2`
-
-`F-d3221fbe53` · **read from data** · 51.25
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-27331766cc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.n_gaps`
-
-`F-27331766cc` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b3558b2548"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.observation.bathing.first_year`
-
-`F-b3558b2548` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-bebe3ef17e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.observation.bathing.last_year`
-
-`F-bebe3ef17e` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4145c5f205"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.observation.bathing.stations`
-
-`F-4145c5f205` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-113ed7a61f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.pressure.rbu.n`
-
-`F-113ed7a61f` · **read from data** · 149
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cb2767f7c2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST38.pressure.rens.pe`
-
-`F-cb2767f7c2` · **read from data** · 63,476
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c170c723bd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.area_km2`
-
-`F-c170c723bd` · **read from data** · 343.37
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3de8e04ec6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.n_gaps`
-
-`F-3de8e04ec6` · **read from data** · 1
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c7869ecaf3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.observation.bathing.first_year`
-
-`F-c7869ecaf3` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c5ace9a614"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.observation.bathing.internal_r`
-
-`F-c5ace9a614` · **read from data** · 0.168
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-de11e5b1d1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.observation.bathing.last_year`
-
-`F-de11e5b1d1` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-227a6b205d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.observation.bathing.stations`
-
-`F-227a6b205d` · **read from data** · 9
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fced79b3ae"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.pressure.rbu.n`
-
-`F-fced79b3ae` · **read from data** · 31
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-860606d4eb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST44.pressure.rens.pe`
-
-`F-860606d4eb` · **read from data** · 27,545
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a0daec83b7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.area_km2`
-
-`F-a0daec83b7` · **read from data** · 100.5
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e5311c47cb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.n_gaps`
-
-`F-e5311c47cb` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-49c3afe238"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.observation.bathing.first_year`
-
-`F-49c3afe238` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-900dcdd2d9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.observation.bathing.internal_r`
-
-`F-900dcdd2d9` · **read from data** · 0.142
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-41e4a4a71c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.observation.bathing.last_year`
-
-`F-41e4a4a71c` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6092dd94eb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.observation.bathing.stations`
-
-`F-6092dd94eb` · **read from data** · 8
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3bf63864b7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.pressure.rbu.n`
-
-`F-3bf63864b7` · **read from data** · 116
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-958d343289"></a>
-### `data/derived/areas.json` › `areas.DKCOAST45.pressure.rens.pe`
-
-`F-958d343289` · **read from data** · 48,103
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-96e840f379"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.area_km2`
-
-`F-96e840f379` · **read from data** · 551.04
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8749acc620"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.n_gaps`
-
-`F-8749acc620` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3436dcb95b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.observation.bathing.first_year`
-
-`F-3436dcb95b` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1bb6e6f838"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.observation.bathing.internal_r`
-
-`F-1bb6e6f838` · **read from data** · 0.179
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c7fc83979f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.observation.bathing.last_year`
-
-`F-c7fc83979f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-67ae6c68bf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.observation.bathing.stations`
-
-`F-67ae6c68bf` · **read from data** · 13
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0563d7c9c0"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.pressure.rbu.n`
-
-`F-0563d7c9c0` · **read from data** · 78
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ff35593b02"></a>
-### `data/derived/areas.json` › `areas.DKCOAST46.pressure.rens.pe`
-
-`F-ff35593b02` · **read from data** · 152,578
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ff50848321"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.area_km2`
-
-`F-ff50848321` · **read from data** · 21.85
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a84c382f1a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.n_gaps`
-
-`F-a84c382f1a` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7e81b78c42"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.observation.bathing.first_year`
-
-`F-7e81b78c42` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-03f6c1330f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.observation.bathing.last_year`
-
-`F-03f6c1330f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fea4514751"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.observation.bathing.stations`
-
-`F-fea4514751` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1dc0718471"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.pressure.rbu.n`
-
-`F-1dc0718471` · **read from data** · 62
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-df0b8c7b4e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST47.pressure.rens.pe`
-
-`F-df0b8c7b4e` · **read from data** · 13,170
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-61130d0ff7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.area_km2`
-
-`F-61130d0ff7` · **read from data** · 131.8
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-571db259f5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.n_gaps`
-
-`F-571db259f5` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7607a74df1"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.observation.bathing.first_year`
-
-`F-7607a74df1` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8de5043814"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.observation.bathing.internal_r`
-
-`F-8de5043814` · **read from data** · 0.105
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e650e2ce13"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.observation.bathing.last_year`
-
-`F-e650e2ce13` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3b874fc681"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.observation.bathing.stations`
-
-`F-3b874fc681` · **read from data** · 5
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f7f7989b2a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.pressure.rbu.n`
-
-`F-f7f7989b2a` · **read from data** · 43
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-065b714aa4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST48.pressure.rens.pe`
-
-`F-065b714aa4` · **read from data** · 25,958
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-412d473ad5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST49.area_km2`
-
-`F-412d473ad5` · **read from data** · 5.1
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ab55244012"></a>
-### `data/derived/areas.json` › `areas.DKCOAST49.n_gaps`
-
-`F-ab55244012` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3eb43e36f3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST49.pressure.rbu.n`
-
-`F-3eb43e36f3` · **read from data** · 12
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-134a5fa970"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.area_km2`
-
-`F-134a5fa970` · **read from data** · 211.38
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-523eb5cd8f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.n_gaps`
-
-`F-523eb5cd8f` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-68f6a08452"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.observation.bathing.first_year`
-
-`F-68f6a08452` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7af23f0fca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.observation.bathing.internal_r`
-
-`F-7af23f0fca` · **read from data** · 0.161
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c9257bc411"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.observation.bathing.last_year`
-
-`F-c9257bc411` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4ac511e9c2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.observation.bathing.stations`
-
-`F-4ac511e9c2` · **read from data** · 23
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-96243fac36"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.pressure.rbu.n`
-
-`F-96243fac36` · **read from data** · 185
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0f74c8b112"></a>
-### `data/derived/areas.json` › `areas.DKCOAST56.pressure.rens.pe`
-
-`F-0f74c8b112` · **read from data** · 102,697
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-053008ded6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST57.area_km2`
-
-`F-053008ded6` · **read from data** · 18.87
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f6f3df237a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST57.n_gaps`
-
-`F-f6f3df237a` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7c6dd4e4f9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST58.area_km2`
-
-`F-7c6dd4e4f9` · **read from data** · 3831.36
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-69633e23d4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST58.n_gaps`
-
-`F-69633e23d4` · **read from data** · 4
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c85e5d749e"></a>
-### `data/derived/areas.json` › `areas.DKCOAST59.area_km2`
-
-`F-c85e5d749e` · **read from data** · 4.78
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-77ffafc4f5"></a>
-### `data/derived/areas.json` › `areas.DKCOAST59.n_gaps`
-
-`F-77ffafc4f5` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9d59482dcd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST59.pressure.rbu.n`
-
-`F-9d59482dcd` · **read from data** · 42
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0fbfce9fca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.area_km2`
-
-`F-0fbfce9fca` · **read from data** · 355.68
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-821c87b9ec"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.n_gaps`
-
-`F-821c87b9ec` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f0b3417c81"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.observation.bathing.first_year`
-
-`F-f0b3417c81` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-332621ccbb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.observation.bathing.internal_r`
-
-`F-332621ccbb` · **read from data** · 0.174
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-023e8a127f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.observation.bathing.last_year`
-
-`F-023e8a127f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7ae459292b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.observation.bathing.stations`
-
-`F-7ae459292b` · **read from data** · 32
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5e8e6fd046"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.pressure.rbu.n`
-
-`F-5e8e6fd046` · **read from data** · 1,418
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-efd951c6b6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST6.pressure.rens.pe`
-
-`F-efd951c6b6` · **read from data** · 1,605,986
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b6e400c30b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST62.area_km2`
-
-`F-b6e400c30b` · **read from data** · 6.05
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-887dddcd76"></a>
-### `data/derived/areas.json` › `areas.DKCOAST62.n_gaps`
-
-`F-887dddcd76` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f9ba815935"></a>
-### `data/derived/areas.json` › `areas.DKCOAST68.area_km2`
-
-`F-f9ba815935` · **read from data** · 6.84
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9dbe2086c7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST68.n_gaps`
-
-`F-9dbe2086c7` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0ab5c167e8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST68.pressure.rbu.n`
-
-`F-0ab5c167e8` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b9a923bf42"></a>
-### `data/derived/areas.json` › `areas.DKCOAST72.area_km2`
-
-`F-b9a923bf42` · **read from data** · 10.03
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-c1550b9b47"></a>
-### `data/derived/areas.json` › `areas.DKCOAST72.n_gaps`
-
-`F-c1550b9b47` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1f51b82131"></a>
-### `data/derived/areas.json` › `areas.DKCOAST72.pressure.rbu.n`
-
-`F-1f51b82131` · **read from data** · 13
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2282d94128"></a>
-### `data/derived/areas.json` › `areas.DKCOAST72.pressure.rens.pe`
-
-`F-2282d94128` · **read from data** · 3,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-20e73a18b2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST74.area_km2`
-
-`F-20e73a18b2` · **read from data** · 0.26
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2f7b91135c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST74.n_gaps`
-
-`F-2f7b91135c` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-089d4ab0b9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST74.pressure.rbu.n`
-
-`F-089d4ab0b9` · **read from data** · 17
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a72f7ed840"></a>
-### `data/derived/areas.json` › `areas.DKCOAST74.pressure.rens.pe`
-
-`F-a72f7ed840` · **read from data** · 2,800
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-09d6f1277a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.area_km2`
-
-`F-09d6f1277a` · **read from data** · 10.24
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-63c84075a4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.n_gaps`
-
-`F-63c84075a4` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-715c090fa9"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.observation.bathing.first_year`
-
-`F-715c090fa9` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-11eb2a824f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.observation.bathing.last_year`
-
-`F-11eb2a824f` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-287170aa03"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.observation.bathing.stations`
-
-`F-287170aa03` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fcbb961e63"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.pressure.rbu.n`
-
-`F-fcbb961e63` · **read from data** · 38
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-18138badaf"></a>
-### `data/derived/areas.json` › `areas.DKCOAST80.pressure.rens.pe`
-
-`F-18138badaf` · **read from data** · 22,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f50d13da2a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST82.area_km2`
-
-`F-f50d13da2a` · **read from data** · 0.17
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-07575ea4ee"></a>
-### `data/derived/areas.json` › `areas.DKCOAST82.n_gaps`
-
-`F-07575ea4ee` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0e7621b527"></a>
-### `data/derived/areas.json` › `areas.DKCOAST82.pressure.rbu.n`
-
-`F-0e7621b527` · **read from data** · 51
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3592394393"></a>
-### `data/derived/areas.json` › `areas.DKCOAST82.pressure.rens.pe`
-
-`F-3592394393` · **read from data** · 17,800
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-effa4c95c6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST83.area_km2`
-
-`F-effa4c95c6` · **read from data** · 0.54
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ba56f224b7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST83.n_gaps`
-
-`F-ba56f224b7` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7e50397557"></a>
-### `data/derived/areas.json` › `areas.DKCOAST83.pressure.rbu.n`
-
-`F-7e50397557` · **read from data** · 60
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5eec43fb25"></a>
-### `data/derived/areas.json` › `areas.DKCOAST83.pressure.rens.pe`
-
-`F-5eec43fb25` · **read from data** · 31,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5b13bfa91c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST84.area_km2`
-
-`F-5b13bfa91c` · **read from data** · 3.31
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5a48ac1115"></a>
-### `data/derived/areas.json` › `areas.DKCOAST84.n_gaps`
-
-`F-5a48ac1115` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d58ddc5951"></a>
-### `data/derived/areas.json` › `areas.DKCOAST84.pressure.rbu.n`
-
-`F-d58ddc5951` · **read from data** · 22
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1d412d0863"></a>
-### `data/derived/areas.json` › `areas.DKCOAST85.area_km2`
-
-`F-1d412d0863` · **read from data** · 5.34
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-fa05184efd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST85.n_gaps`
-
-`F-fa05184efd` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-071b053759"></a>
-### `data/derived/areas.json` › `areas.DKCOAST85.pressure.rbu.n`
-
-`F-071b053759` · **read from data** · 98
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0dab8b2a42"></a>
-### `data/derived/areas.json` › `areas.DKCOAST85.pressure.rens.pe`
-
-`F-0dab8b2a42` · **read from data** · 4,540
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8633a14e1d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST86.area_km2`
-
-`F-8633a14e1d` · **read from data** · 7.97
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-556245c261"></a>
-### `data/derived/areas.json` › `areas.DKCOAST86.n_gaps`
-
-`F-556245c261` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-499a64a701"></a>
-### `data/derived/areas.json` › `areas.DKCOAST86.pressure.rbu.n`
-
-`F-499a64a701` · **read from data** · 56
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9007989879"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.area_km2`
-
-`F-9007989879` · **read from data** · 66.63
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0f52b9f209"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.n_gaps`
-
-`F-0f52b9f209` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8d9de6cd55"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.observation.bathing.first_year`
-
-`F-8d9de6cd55` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-55ca2b7518"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.observation.bathing.internal_r`
-
-`F-55ca2b7518` · **read from data** · 0.473
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-9e44f32e79"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.observation.bathing.last_year`
-
-`F-9e44f32e79` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0d0d6fdb6c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.observation.bathing.stations`
-
-`F-0d0d6fdb6c` · **read from data** · 8
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6bae385d30"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.pressure.rbu.n`
-
-`F-6bae385d30` · **read from data** · 131
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ab71fe284d"></a>
-### `data/derived/areas.json` › `areas.DKCOAST87.pressure.rens.pe`
-
-`F-ab71fe284d` · **read from data** · 20,300
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-413be6fc10"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.area_km2`
-
-`F-413be6fc10` · **read from data** · 10.61
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-2c321401f8"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.n_gaps`
-
-`F-2c321401f8` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-40903fe537"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.observation.bathing.first_year`
-
-`F-40903fe537` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8ee309869a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.observation.bathing.last_year`
-
-`F-8ee309869a` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f4a2f73f32"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.observation.bathing.stations`
-
-`F-f4a2f73f32` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-399b4bb75c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST89.pressure.rbu.n`
-
-`F-399b4bb75c` · **read from data** · 13
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a350941cc3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.area_km2`
-
-`F-a350941cc3` · **read from data** · 228.56
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e7d836f84a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.n_gaps`
-
-`F-e7d836f84a` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b4bc655d20"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.observation.bathing.first_year`
-
-`F-b4bc655d20` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dd998868f3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.observation.bathing.internal_r`
-
-`F-dd998868f3` · **read from data** · 0.394
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The mean Pearson correlation between the yearly quality scores of every pair of informative stations that share enough years - how far the stations of one water body move together.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1c93ace2d2"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.observation.bathing.last_year`
-
-`F-1c93ace2d2` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b204e911d7"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.observation.bathing.stations`
-
-`F-b204e911d7` · **read from data** · 20
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4ea8b250cd"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.pressure.rbu.n`
-
-`F-4ea8b250cd` · **read from data** · 54
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0563e89655"></a>
-### `data/derived/areas.json` › `areas.DKCOAST90.pressure.rens.pe`
-
-`F-0563e89655` · **read from data** · 119,500
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0d25947079"></a>
-### `data/derived/areas.json` › `areas.DKCOAST92.area_km2`
-
-`F-0d25947079` · **read from data** · 45.81
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-87d85f3109"></a>
-### `data/derived/areas.json` › `areas.DKCOAST92.n_gaps`
-
-`F-87d85f3109` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0975e2665a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST92.pressure.rbu.n`
-
-`F-0975e2665a` · **read from data** · 37
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4519add06a"></a>
-### `data/derived/areas.json` › `areas.DKCOAST92.pressure.rens.pe`
-
-`F-4519add06a` · **read from data** · 20,000
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e8c2218f37"></a>
-### `data/derived/areas.json` › `areas.DKCOAST93.area_km2`
-
-`F-e8c2218f37` · **read from data** · 15.36
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f8aa26cccc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST93.n_gaps`
-
-`F-f8aa26cccc` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f119b8b4c6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST93.pressure.rbu.n`
-
-`F-f119b8b4c6` · **read from data** · 565
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-630358d450"></a>
-### `data/derived/areas.json` › `areas.DKCOAST93.pressure.rens.pe`
-
-`F-630358d450` · **read from data** · 491,620
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d3fe745eec"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.area_km2`
-
-`F-d3fe745eec` · **read from data** · 164.02
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-abc0b287f3"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.n_gaps`
-
-`F-abc0b287f3` · **read from data** · 3
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-0ebf122e7f"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.observation.bathing.first_year`
-
-`F-0ebf122e7f` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f7be4b9a9b"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.observation.bathing.last_year`
-
-`F-f7be4b9a9b` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7cf82fd9a6"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.observation.bathing.stations`
-
-`F-7cf82fd9a6` · **read from data** · 14
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-66600f3afb"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.pressure.rbu.n`
-
-`F-66600f3afb` · **read from data** · 35
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-084ff253ca"></a>
-### `data/derived/areas.json` › `areas.DKCOAST95.pressure.rens.pe`
-
-`F-084ff253ca` · **read from data** · 84,575
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-dbffe30e02"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.area_km2`
-
-`F-dbffe30e02` · **read from data** · 116.3
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The water body's area as the layer states it (`ov_stoe`), not recomputed from its geometry.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-4eb1634793"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.n_gaps`
-
-`F-4eb1634793` · **read from data** · 2
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The number of written-out reasons, in `not_modelled`, that this water body cannot be modelled.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-53d9b595f4"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.observation.bathing.first_year`
-
-`F-53d9b595f4` · **read from data** · 1,991
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The first year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-6877637fdc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.observation.bathing.last_year`
-
-`F-6877637fdc` · **read from data** · 2,018
-
-- **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The last year any of those stations carries a quality class.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-75c4331838"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.observation.bathing.stations`
-
-`F-75c4331838` · **read from data** · 12
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Bathing stations the bathing layer itself assigns to this water body through its `wbid` field, counting each station with at least one scored year.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a7a468a8dc"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.pressure.rbu.n`
-
-`F-a7a468a8dc` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** Rain-conditioned outfalls whose nearest marine boundary vertex, within `assignment.max_km`, belongs to this water body.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-13a756e82c"></a>
-### `data/derived/areas.json` › `areas.DKCOAST96.pressure.rens.pe`
-
-`F-13a756e82c` · **read from data** · 30,000
+`F-3e1b6dfe25` · **read from data** · 277,960
 
 - **Kind:** measured · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
 - **What this field is:** The summed approved person-equivalent load (`godk_pe`) of the treatment plants assigned to this water body: a permitted capacity, not a measured load.
@@ -7770,6 +235,149 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [AREAS.md](AREAS.md)
 
+<a id="F-d6112048e9"></a>
+### `data/derived/areas.json` › `bathing_match.left_out`
+
+`F-d6112048e9` · **read from data** · 227
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** Stations whose `wbid` equals no marine `ov_id`: left out of every water body.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-87c9e4ad36"></a>
+### `data/derived/areas.json` › `bathing_match.left_out_by_reason.coastal_code_not_in_marine_layer`
+
+`F-87c9e4ad36` · **read from data** · 111
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The left-out stations by the form of their `wbid` alone: a lake code (`DKLAKE`), a coastal code (`DKCOAST` and digits) that is not an `ov_id` of the marine layer, no code, or a code in another form.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-0438c9b8d4"></a>
+### `data/derived/areas.json` › `bathing_match.left_out_by_reason.code_in_another_form`
+
+`F-0438c9b8d4` · **read from data** · 3
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The left-out stations by the form of their `wbid` alone: a lake code (`DKLAKE`), a coastal code (`DKCOAST` and digits) that is not an `ov_id` of the marine layer, no code, or a code in another form.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-348916b63a"></a>
+### `data/derived/areas.json` › `bathing_match.left_out_by_reason.lake_code`
+
+`F-348916b63a` · **read from data** · 103
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The left-out stations by the form of their `wbid` alone: a lake code (`DKLAKE`), a coastal code (`DKCOAST` and digits) that is not an `ov_id` of the marine layer, no code, or a code in another form.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-015f60b23b"></a>
+### `data/derived/areas.json` › `bathing_match.left_out_by_reason.no_wbid`
+
+`F-015f60b23b` · **read from data** · 10
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The left-out stations by the form of their `wbid` alone: a lake code (`DKLAKE`), a coastal code (`DKCOAST` and digits) that is not an `ov_id` of the marine layer, no code, or a code in another form.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2486a832d8"></a>
+### `data/derived/areas.json` › `bathing_match.matched`
+
+`F-2486a832d8` · **read from data** · 791
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** Of those stations, the ones whose `wbid` equals a marine water body's `ov_id` exactly.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-4f576f59a3"></a>
+### `data/derived/areas.json` › `bathing_match.stations`
+
+`F-4f576f59a3` · **read from data** · 1,018
+
+- **Kind:** counted · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** Rows of the bathing layer `badevand` with at least one year whose class is one of the scored labels: the bathing stations of the record.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-1f75a18d1d"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.new_labels.from`
+
+`F-1f75a18d1d` · **read from data** · 2,011
+
+- **Kind:** measured · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The first year of the period, read from the labels in the file.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-17faad604d"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.new_labels.tests.2.r`
+
+`F-17faad604d` · **read from data** · 0.136
+
+- **Kind:** estimated · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The Pearson correlation of `cum_hoc.tests`, with the bathing outcome recomputed from the station-years of one label period only (`old_labels` up to the last year the layer uses Good or Sufficient, `new_labels` from the first year it uses Good and Sufficient apart), over the same water bodies and pressures.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-3659f796ed"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.new_labels.to`
+
+`F-3659f796ed` · **read from data** · 2,018
+
+- **Kind:** measured · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The last year of the period, read from the labels in the file.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2ba48eb7ae"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.old_labels.from`
+
+`F-2ba48eb7ae` · **read from data** · 1,991
+
+- **Kind:** measured · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The first year of the period, read from the labels in the file.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-3c2fdbfc27"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.old_labels.tests.2.r`
+
+`F-3c2fdbfc27` · **read from data** · 0.323
+
+- **Kind:** estimated · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The Pearson correlation of `cum_hoc.tests`, with the bathing outcome recomputed from the station-years of one label period only (`old_labels` up to the last year the layer uses Good or Sufficient, `new_labels` from the first year it uses Good and Sufficient apart), over the same water bodies and pressures.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-58afdf5921"></a>
+### `data/derived/areas.json` › `cum_hoc.by_period.periods.old_labels.to`
+
+`F-58afdf5921` · **read from data** · 2,010
+
+- **Kind:** measured · made by [`K-W4AR-AREAS-RULES`](#K-W4AR-AREAS-RULES)
+- **What this field is:** The last year of the period, read from the labels in the file.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-d528968118"></a>
 ### `data/derived/areas.json` › `cum_hoc.n_areas`
 
@@ -7777,72 +385,6 @@
 
 - **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
 - **What this field is:** Water bodies with more than one bathing station and a nonzero area: the rows of the cross-sectional test.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b5121e8ca6"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.0.n`
-
-`F-b5121e8ca6` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8a62874e74"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.0.r`
-
-`F-8a62874e74` · **read from data** · 0.149
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-71f8882397"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.0.r2`
-
-`F-71f8882397` · **read from data** · 0.022
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8253263535"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.1.n`
-
-`F-8253263535` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-24c05f444c"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.1.r`
-
-`F-24c05f444c` · **read from data** · -0.136
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-693b29e24c"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.1.r2`
-
-`F-693b29e24c` · **read from data** · 0.019
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [AREAS.md](AREAS.md)
@@ -7861,120 +403,10 @@
 <a id="F-00f9f19776"></a>
 ### `data/derived/areas.json` › `cum_hoc.tests.2.r`
 
-`F-00f9f19776` · **read from data** · 0.313
+`F-00f9f19776` · **read from data** · 0.28
 
 - **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
 - **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f69837d6e1"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.2.r2`
-
-`F-f69837d6e1` · **read from data** · 0.098
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5c4f399df5"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.3.n`
-
-`F-5c4f399df5` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-28bf1f6f27"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.3.r`
-
-`F-28bf1f6f27` · **read from data** · -0.288
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e25ec24bc4"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.3.r2`
-
-`F-e25ec24bc4` · **read from data** · 0.083
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-1988d87992"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.4.n`
-
-`F-1988d87992` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a4495c34ea"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.4.r`
-
-`F-a4495c34ea` · **read from data** · 0.139
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7407ebe8ef"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.4.r2`
-
-`F-7407ebe8ef` · **read from data** · 0.019
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-72a7d54930"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.5.n`
-
-`F-72a7d54930` · **read from data** · 65
-
-- **Kind:** counted · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The rows the correlation is computed over, the same water bodies as `cum_hoc.n_areas`.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b35f1263ec"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.5.r`
-
-`F-b35f1263ec` · **read from data** · -0.151
-
-- **Kind:** estimated · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The Pearson correlation across water bodies between a log-transformed sewage pressure per square kilometre and a bathing outcome.
-- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-da419af304"></a>
-### `data/derived/areas.json` › `cum_hoc.tests.5.r2`
-
-`F-da419af304` · **read from data** · 0.023
-
-- **Kind:** computed · made by [`K-AREAS-LEDGER`](#K-AREAS-LEDGER)
-- **What this field is:** The square of `r`.
 - **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [AREAS.md](AREAS.md)
@@ -22502,6 +14934,567 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-cf4618bdfe"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.cuts_DE_per_km2.0`
+
+`F-cf4618bdfe` · **read from data** · 27.6758
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The station-weighted tertile cut points of the density behind each basketable station's water body.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-c7f3456ff6"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.cuts_DE_per_km2.1`
+
+`F-c7f3456ff6` · **read from data** · 54.8482
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The station-weighted tertile cut points of the density behind each basketable station's water body.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-d32f845111"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.high.water_bodies`
+
+`F-d32f845111` · **read from data** · 35
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Water bodies those stations sit in.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2d6aece43a"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.low.water_bodies`
+
+`F-2d6aece43a` · **read from data** · 36
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Water bodies those stations sit in.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-fc1646ff7b"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.mid.water_bodies`
+
+`F-fc1646ff7b` · **read from data** · 34
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Water bodies those stations sit in.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-9c22f0162b"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.near_absent.stations`
+
+`F-9c22f0162b` · **read from data** · 69
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Stations with a summer bed-oxygen median in the basket.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-7d586bd238"></a>
+### `data/derived/livestock_baskets.json` › `baskets.definition_on_stations_with_summer_bed_oxygen.near_absent.water_bodies`
+
+`F-7d586bd238` · **read from data** · 16
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Water bodies those stations sit in.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-1e6b7bb783"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.fluo.contrasts.P(high station < low station)`
+
+`F-1e6b7bb783` · **read from data** · 0.1054
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Between the station summer medians of two baskets: the difference of their medians (high minus low; near-absent minus high), or the probability that a high station reads below a low one, ties counted half.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-a47be7eb8f"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.fluo.high.q50`
+
+`F-a47be7eb8f` · **read from data** · 3.9
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median of the basket's station summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-37626a308d"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.fluo.low.q50`
+
+`F-37626a308d` · **read from data** · 1.3946
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median of the basket's station summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-252b5c0f8e"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.all_basketed.q50`
+
+`F-252b5c0f8e` · **read from data** · 7.8
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median of the basket's station summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-f029874e0f"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.contrasts.median_high_minus_median_low`
+
+`F-f029874e0f` · **read from data** · -0.2268
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Between the station summer medians of two baskets: the difference of their medians (high minus low; near-absent minus high), or the probability that a high station reads below a low one, ties counted half.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-836559ed99"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.contrasts.median_near_absent_minus_median_high`
+
+`F-836559ed99` · **read from data** · 0.7682
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Between the station summer medians of two baskets: the difference of their medians (high minus low; near-absent minus high), or the probability that a high station reads below a low one, ties counted half.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-da907f9a64"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.high.q10`
+
+`F-da907f9a64` · **read from data** · 3.1
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The tenth percentile of the basket's station summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-f495d52af7"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.low.q10`
+
+`F-f495d52af7` · **read from data** · 5.1339
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The tenth percentile of the basket's station summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-b587604f8e"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.noise_floor.station_level.median_near_absent_minus_median_high.draws`
+
+`F-b587604f8e` · **read from data** · 10,000
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Random draws of that null that gave a value.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-615a188d4a"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.noise_floor.station_level.median_near_absent_minus_median_high.draws_at_or_above_real`
+
+`F-615a188d4a` · **read from data** · 0
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Draws at least as large as the real contrast.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-9624a1ccda"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.noise_floor.water_body_block_level.median_near_absent_minus_median_high.draws`
+
+`F-9624a1ccda` · **read from data** · 10,000
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Random draws of that null that gave a value.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-8081f0ed9a"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.noise_floor.water_body_block_level.median_near_absent_minus_median_high.draws_at_or_above_real`
+
+`F-8081f0ed9a` · **read from data** · 656
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Draws at least as large as the real contrast.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-b937c262dd"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.ubiquitous_part.by_basket_size.high.q10.random_baskets.min`
+
+`F-b937c262dd` · **read from data** · 3.045
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The smallest value of that quantile across random station baskets of the basket's size.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-18233556b3"></a>
+### `data/derived/livestock_baskets.json` › `comparison_all_years.oxy_bed.ubiquitous_part.by_basket_size.high.q10.real_basket`
+
+`F-18233556b3` · **read from data** · 3.1
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** That quantile of the real basket's station medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-e01ce40d1f"></a>
+### `data/derived/livestock_baskets.json` › `construction_choices.bed_salinity_cut`
+
+`F-e01ce40d1f` · **read from data** · 20
+
+- **Kind:** stipulated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The station summer median of bed salinity, in per mille, that separates brackish from salty strata, set before looking.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-34dd0a10bb"></a>
+### `data/derived/livestock_baskets.json` › `construction_choices.depth_cut_m`
+
+`F-34dd0a10bb` · **read from data** · 10
+
+- **Kind:** stipulated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The bottom depth, in metres, that separates shallow from deep strata, set before looking.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-29d6cc5359"></a>
+### `data/derived/livestock_baskets.json` › `construction_choices.min_summer_station_months`
+
+`F-29d6cc5359` · **read from data** · 4
+
+- **Kind:** stipulated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Summer station-months, June to September, a station needs to have a summer median.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2c1b17fad8"></a>
+### `data/derived/livestock_baskets.json` › `construction_choices.near_absent_fraction_of_national`
+
+`F-2c1b17fad8` · **read from data** · 0.2
+
+- **Kind:** stipulated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The fraction of the national density below which a catchment counts as near-absent, set before looking.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-4a7f758f04"></a>
+### `data/derived/livestock_baskets.json` › `construction_choices.period_sensitivity_from`
+
+`F-4a7f758f04` · **read from data** · 2,010
+
+- **Kind:** stipulated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The first year of the recent-summers sensitivity.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-1001dc7a5c"></a>
+### `data/derived/livestock_baskets.json` › `farms.national_density_DE_per_km2`
+
+`F-1001dc7a5c` · **read from data** · 57.2231
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Livestock units (DE) of every herd record placed inside a coastal catchment, summed, over the summed catchment area from the geometry: one density for all catchments together.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-bfcb797d8c"></a>
+### `data/derived/livestock_baskets.json` › `near_absent_catchments.catchments.12.area_km2`
+
+`F-bfcb797d8c` · **read from data** · 117.912
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The catchment's land area from its geometry, on an equal-area projection.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-3fb2e0a13e"></a>
+### `data/derived/livestock_baskets.json` › `near_absent_catchments.catchments.13.area_km2`
+
+`F-3fb2e0a13e` · **read from data** · 873.884
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The catchment's land area from its geometry, on an equal-area projection.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-a4697d53ad"></a>
+### `data/derived/livestock_baskets.json` › `near_absent_catchments.catchments.16.area_km2`
+
+`F-a4697d53ad` · **read from data** · 377.469
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The catchment's land area from its geometry, on an equal-area projection.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-065ff768af"></a>
+### `data/derived/livestock_baskets.json` › `near_absent_catchments.catchments.[len]`
+
+`F-065ff768af` · **read from data** · 17
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Coastal catchments whose density is below the threshold.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-b525193686"></a>
+### `data/derived/livestock_baskets.json` › `near_absent_catchments.threshold_DE_per_km2`
+
+`F-b525193686` · **read from data** · 11.4446
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** `NEAR_ABSENT_FRACTION` times the national density.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-60aeacd796"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.between_B_two_stations_same_year_month_abs_diff.all_pairs.q50`
+
+`F-60aeacd796` · **read from data** · 1.85
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median absolute difference between two stations' values in the same year-month: all pairs, pairs in one water body, pairs in different water bodies of one basket, or pairs in different baskets.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-68eda10e83"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.between_B_two_stations_same_year_month_abs_diff.different_basket.q50`
+
+`F-68eda10e83` · **read from data** · 1.85
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median absolute difference between two stations' values in the same year-month: all pairs, pairs in one water body, pairs in different water bodies of one basket, or pairs in different baskets.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-c6b52bc4e5"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.between_B_two_stations_same_year_month_abs_diff.different_water_body_same_basket.q50`
+
+`F-c6b52bc4e5` · **read from data** · 1.9
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median absolute difference between two stations' values in the same year-month: all pairs, pairs in one water body, pairs in different water bodies of one basket, or pairs in different baskets.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-9934e73a43"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.between_B_two_stations_same_year_month_abs_diff.same_water_body.q50`
+
+`F-9934e73a43` · **read from data** · 1.0079
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median absolute difference between two stations' values in the same year-month: all pairs, pairs in one water body, pairs in different water bodies of one basket, or pairs in different baskets.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-a8ba92472b"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.interchangeability_null_for_station_medians.by_set.all.draws_with_null_iqr_ge_observed`
+
+`F-a8ba92472b` · **read from data** · 0
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Draws whose interquartile range reached the observed one.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-60fb865592"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.interchangeability_null_for_station_medians.by_set.all.null_iqr_if_interchangeable.n`
+
+`F-60fb865592` · **read from data** · 500
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Over `N_INTERCH` draws, each shuffling the summer values among the stations measured in the same year-month, the interquartile range of the recomputed station medians: its quantiles, and `n` the draws.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2f8f0105e8"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.interchangeability_null_for_station_medians.by_set.all.null_iqr_if_interchangeable.q50`
+
+`F-2f8f0105e8` · **read from data** · 0.65
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Over `N_INTERCH` draws, each shuffling the summer values among the stations measured in the same year-month, the interquartile range of the recomputed station medians: its quantiles, and `n` the draws.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-62495bc121"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.interchangeability_null_for_station_medians.by_set.all.observed_iqr_of_station_medians`
+
+`F-62495bc121` · **read from data** · 2.2741
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The interquartile range of the stations' summer medians.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-5715a4bf95"></a>
+### `data/derived/livestock_baskets.json` › `repeat_vs_between.oxy_bed.repeat_A_same_station_consecutive_summer_months_abs_diff.q50`
+
+`F-5715a4bf95` · **read from data** · 1
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median absolute difference between one station's values in consecutive months of the same summer.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-ff46ab7f71"></a>
+### `data/derived/livestock_baskets.json` › `sensitivity.oxy_bed_summers_from_2010.contrasts.median_high_minus_median_low`
+
+`F-ff46ab7f71` · **read from data** · -0.1407
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The same contrast on a restricted rerun: recent summers only, or water bodies whose links are all clean.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-b9535433e0"></a>
+### `data/derived/livestock_baskets.json` › `stations.basketable_with_summer_bed_oxygen`
+
+`F-b9535433e0` · **read from data** · 643
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Stations in a water body with at least one linked catchment and a summer bed-oxygen median.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-e6b88a8658"></a>
+### `data/derived/livestock_baskets.json` › `strata.results.brackish_bed_salinity_lt_20 & deep_depth_gt_10m.oxy_bed.contrasts.median_high_minus_median_low`
+
+`F-e6b88a8658` · **read from data** · -2.125
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The high-minus-low median contrast with the station set restricted to one stratum of bed salinity or depth, the baskets kept.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-bdd5dd5294"></a>
+### `data/derived/livestock_baskets.json` › `strata.results.brackish_bed_salinity_lt_20.oxy_bed.contrasts.median_high_minus_median_low`
+
+`F-bdd5dd5294` · **read from data** · -0.75
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The high-minus-low median contrast with the station set restricted to one stratum of bed salinity or depth, the baskets kept.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-b46b22e0f0"></a>
+### `data/derived/livestock_baskets.json` › `strata.results.marine_bed_salinity_ge_20.oxy_bed.contrasts.median_high_minus_median_low`
+
+`F-b46b22e0f0` · **read from data** · 0.975
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The high-minus-low median contrast with the station set restricted to one stratum of bed salinity or depth, the baskets kept.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-cc377e7080"></a>
+### `data/derived/livestock_baskets.json` › `strata.results.shallow_depth_le_10m.oxy_bed.contrasts.median_high_minus_median_low`
+
+`F-cc377e7080` · **read from data** · -0.5576
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The high-minus-low median contrast with the station set restricted to one stratum of bed salinity or depth, the baskets kept.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-40118d852e"></a>
+### `data/derived/livestock_baskets.json` › `ubiquitous_seasonal_profile_bed_oxygen.month_of_minimum_across_random_baskets.8`
+
+`F-40118d852e` · **read from data** · 3,000
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Random baskets, of the real basket sizes, whose median bed oxygen by calendar month is lowest in that month.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-138a08a633"></a>
+### `data/derived/livestock_baskets.json` › `ubiquitous_seasonal_profile_bed_oxygen.random_basket_count`
+
+`F-138a08a633` · **read from data** · 3,000
+
+- **Kind:** counted · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Random baskets drawn for the seasonal profile.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-2552d27913"></a>
+### `data/derived/livestock_baskets.json` › `water_bodies.83.DE_per_km2`
+
+`F-2552d27913` · **read from data** · 76.3063
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** Summed livestock units of the water body's linked catchments over their summed area; withheld where fewer than `SUPPRESS_BELOW` herds contribute.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-9343e08642"></a>
+### `data/derived/livestock_baskets.json` › `water_bodies.83.median_summer_bed_oxygen_of_stations`
+
+`F-9343e08642` · **read from data** · 9.2475
+
+- **Kind:** computed · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **What this field is:** The median of the summer bed-oxygen medians of the water body's stations.
+- **Produced by:** [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-803fdcaebd"></a>
 ### `data/derived/manure.json` › `animal_units_on_matched`
 
@@ -35185,6 +28178,424 @@
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-02321a7cb1"></a>
+### `data/derived/synchrony.json` › `construction.alpha`
+
+`F-02321a7cb1` · **read from data** · 0.05
+
+- **Kind:** stipulated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The level a pair's shift p-value must not exceed for the pair to count as moving together beyond chance (`ALPHA`).
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-27e9fb02ee"></a>
+### `data/derived/synchrony.json` › `construction.different_day_min_gap_days.1`
+
+`F-27e9fb02ee` · **read from data** · 5
+
+- **Kind:** stipulated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The day gaps between the two stations' nearest casts at or beyond which a pair-month is kept in the different-day reruns (`DIFF_DAY_GAPS`).
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-07cd695a12"></a>
+### `data/derived/synchrony.json` › `construction.near_km`
+
+`F-07cd695a12` · **read from data** · 20
+
+- **Kind:** stipulated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The great-circle distance below which a pair counts as near (`NEAR_KM`), land ignored.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-8350a1fecc"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.counts.pairs_decidable`
+
+`F-8350a1fecc` · **read from data** · 15,630
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Station pairs with at least `MIN_OVERLAP` shared anomaly months and at least `MIN_SHIFTS` whole-year shifts that keep `MIN_NULL_OVERLAP` shared months: the pairs the test can decide.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-ebca1e975e"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.counts.pairs_too_thin_for_null`
+
+`F-ebca1e975e` · **read from data** · 16,394
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Pairs with enough shared months but too few valid shifts: left undecided.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-a86ec435c5"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.counts.stations_in_decidable_pairs`
+
+`F-a86ec435c5` · **read from data** · 215
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Distinct stations in at least one decidable pair.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-8d30be2804"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.connected_components.summary.stations_in_largest_group`
+
+`F-8d30be2804` · **read from data** · 215
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Stations in the largest connected group of that network.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-12b934b105"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.groups.0.median_last_year`
+
+`F-12b934b105` · **read from data** · 2026
+
+- **Kind:** measured · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The median, over the group's stations, of the last year of each station's anomaly record.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-814d269e42"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.groups.0.n_waterbodies`
+
+`F-814d269e42` · **read from data** · 58
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Water bodies holding at least one station of the group.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-871e13a63c"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.groups.2.median_last_year`
+
+`F-871e13a63c` · **read from data** · 2014
+
+- **Kind:** measured · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The median, over the group's stations, of the last year of each station's anomaly record.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-ffd9266804"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.groups.4.n_waterbodies`
+
+`F-ffd9266804` · **read from data** · 5
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Water bodies holding at least one station of the group.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-3b6385747d"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.summary.groups_2plus_contiguous`
+
+`F-3b6385747d` · **read from data** · 0
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For the Louvain communities of that network (weight tau, the first seed of `LOUVAIN_SEEDS` reported): the groups, how many are contiguous by the rule in `contiguity_rule`, the water bodies holding two or more of the network's stations, and how many of those are split between groups.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-563f40a9d6"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.summary.n_groups`
+
+`F-563f40a9d6` · **read from data** · 5
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For the Louvain communities of that network (weight tau, the first seed of `LOUVAIN_SEEDS` reported): the groups, how many are contiguous by the rule in `contiguity_rule`, the water bodies holding two or more of the network's stations, and how many of those are split between groups.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-5f316e5b67"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.summary.waterbodies_split_across_2plus_groups`
+
+`F-5f316e5b67` · **read from data** · 15
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For the Louvain communities of that network (weight tau, the first seed of `LOUVAIN_SEEDS` reported): the groups, how many are contiguous by the rule in `contiguity_rule`, the water bodies holding two or more of the network's stations, and how many of those are split between groups.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-7114aae485"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.louvain.summary.waterbodies_with_2plus_stations`
+
+`F-7114aae485` · **read from data** · 44
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For the Louvain communities of that network (weight tau, the first seed of `LOUVAIN_SEEDS` reported): the groups, how many are contiguous by the rule in `contiguity_rule`, the water bodies holding two or more of the network's stations, and how many of those are split between groups.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-a16bc60f71"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.graph.n_nodes`
+
+`F-a16bc60f71` · **read from data** · 215
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Stations in at least one decidable pair: the nodes of the network whose links are the pairs beyond chance.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-5d944a6f3d"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.near_far.far_pairs`
+
+`F-5d944a6f3d` · **read from data** · 15,115
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Decidable pairs at `NEAR_KM` or farther apart.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-0028df42f4"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.near_far.near_pairs`
+
+`F-0028df42f4` · **read from data** · 515
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Decidable pairs closer than `NEAR_KM`.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-508010d69e"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.near_far.share_far_co_moving`
+
+`F-508010d69e` · **read from data** · 0.3229
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Of the far pairs, the share beyond chance.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-ed0a6c3436"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.near_far.share_near_co_moving`
+
+`F-ed0a6c3436` · **read from data** · 0.8078
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Of the near pairs, the share beyond chance.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-13372a21e5"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.different_day.gap_ge_1_days.near_far.share_far`
+
+`F-13372a21e5` · **read from data** · 0.2986
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The far share beyond chance on the months kept.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-8b72900a62"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.different_day.gap_ge_1_days.within_vs_across_matched_distance.share_beyond_chance.jackknife_se_leave_one_waterbody_out`
+
+`F-8b72900a62` · **read from data** · 0.1007
+
+- **Kind:** estimated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Its leave-one-water-body-out standard error.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-29807014de"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.different_day.gap_ge_1_days.within_vs_across_matched_distance.share_beyond_chance.pooled_weight_within_pairs`
+
+`F-29807014de` · **read from data** · 48
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The same-body pairs that entered it.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-dec30bdcae"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.different_day.gap_ge_1_days.within_vs_across_matched_distance.share_beyond_chance.pooled_within_minus_across`
+
+`F-dec30bdcae` · **read from data** · 0.2132
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The deciding difference recomputed after removing, pair by pair, the months whose nearest casts are closer than the gap in days; tau, shifts and decidability recomputed.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-5d2beae577"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.different_day.gap_ge_5_days.counts.decidable_pairs_same_waterbody`
+
+`F-5d2beae577` · **read from data** · 10
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Same-body pairs still decidable once those months are removed.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-8c54886aa3"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.how_common.same_day.across_waterbodies.share_same_day`
+
+`F-8c54886aa3` · **read from data** · 0.2453
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For decidable pairs in one water body (`within_same_waterbody`) or across (`across_waterbodies`), the share of pair-months in which some cast at one station falls on the same day as some cast at the other; days recovered from the raw CTD file with the panel's own cast rules.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-de41d0d709"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.same_day_sampling.how_common.same_day.within_same_waterbody.share_same_day`
+
+`F-de41d0d709` · **read from data** · 0.7583
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** For decidable pairs in one water body (`within_same_waterbody`) or across (`across_waterbodies`), the share of pair-months in which some cast at one station falls on the same day as some cast at the other; days recovered from the raw CTD file with the panel's own cast rules.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-535ce55740"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_vs_across_matched_distance.mean_tau.pooled_within_minus_across`
+
+`F-535ce55740` · **read from data** · 0.096
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Per distance bin (`BINS`), the mean for pairs in one water body minus the mean for pairs in different water bodies - of the beyond-chance indicator (`share_beyond_chance`) or of tau (`mean_tau`) - pooled over the bins where both sides have `MIN_CELL` pairs, weighted by the same-body count. Pairs with a station outside every water body are left out.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-0b5db7ad3b"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_vs_across_matched_distance.share_beyond_chance.fine_bins_pooled_within_minus_across`
+
+`F-0b5db7ad3b` · **read from data** · 0.0938
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The same pooled difference over the finer bins `FINE_BINS`.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-fffe961438"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_vs_across_matched_distance.share_beyond_chance.jackknife_se_leave_one_waterbody_out`
+
+`F-fffe961438` · **read from data** · 0.0421
+
+- **Kind:** estimated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The jackknife standard error of that pooled difference, recomputed leaving out every pair that touches one water body at a time.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-9cf5db7d4a"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_vs_across_matched_distance.share_beyond_chance.pooled_weight_within_pairs`
+
+`F-9cf5db7d4a` · **read from data** · 229
+
+- **Kind:** counted · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The same-body pairs in the bins that entered the pooled figure.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-5f47c287a9"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_vs_across_matched_distance.share_beyond_chance.pooled_within_minus_across`
+
+`F-5f47c287a9` · **read from data** · 0.123
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Per distance bin (`BINS`), the mean for pairs in one water body minus the mean for pairs in different water bodies - of the beyond-chance indicator (`share_beyond_chance`) or of tau (`mean_tau`) - pooled over the bins where both sides have `MIN_CELL` pairs, weighted by the same-body count. Pairs with a station outside every water body are left out.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-cca56b105d"></a>
+### `data/derived/synchrony.json` › `variables.oxy_bed.within_year.near_far.share_far_co_moving`
+
+`F-cca56b105d` · **read from data** · 0.3008
+
+- **Kind:** share · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The far share beyond chance after each station's own median anomaly per year is also removed (years with `MIN_YEAR_MONTHS` anomaly months), so shared trends and year-to-year swings are gone.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-476ea980b1"></a>
+### `data/derived/synchrony.json` › `variables.sal_bed.same_day_sampling.different_day.gap_ge_1_days.within_vs_across_matched_distance.share_beyond_chance.jackknife_se_leave_one_waterbody_out`
+
+`F-476ea980b1` · **read from data** · 0.0528
+
+- **Kind:** estimated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Its leave-one-water-body-out standard error.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-d5a3cc3bff"></a>
+### `data/derived/synchrony.json` › `variables.sal_bed.same_day_sampling.different_day.gap_ge_1_days.within_vs_across_matched_distance.share_beyond_chance.pooled_within_minus_across`
+
+`F-d5a3cc3bff` · **read from data** · 0.1516
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The deciding difference recomputed after removing, pair by pair, the months whose nearest casts are closer than the gap in days; tau, shifts and decidability recomputed.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-156fbb13cd"></a>
+### `data/derived/synchrony.json` › `variables.sal_bed.within_vs_across_matched_distance.mean_tau.pooled_within_minus_across`
+
+`F-156fbb13cd` · **read from data** · 0.1477
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Per distance bin (`BINS`), the mean for pairs in one water body minus the mean for pairs in different water bodies - of the beyond-chance indicator (`share_beyond_chance`) or of tau (`mean_tau`) - pooled over the bins where both sides have `MIN_CELL` pairs, weighted by the same-body count. Pairs with a station outside every water body are left out.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-57c1b29bda"></a>
+### `data/derived/synchrony.json` › `variables.sal_bed.within_vs_across_matched_distance.share_beyond_chance.jackknife_se_leave_one_waterbody_out`
+
+`F-57c1b29bda` · **read from data** · 0.051
+
+- **Kind:** estimated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** The jackknife standard error of that pooled difference, recomputed leaving out every pair that touches one water body at a time.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-aff5aac133"></a>
+### `data/derived/synchrony.json` › `variables.sal_bed.within_vs_across_matched_distance.share_beyond_chance.pooled_within_minus_across`
+
+`F-aff5aac133` · **read from data** · 0.1071
+
+- **Kind:** computed · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **What this field is:** Per distance bin (`BINS`), the mean for pairs in one water body minus the mean for pairs in different water bodies - of the beyond-chance indicator (`share_beyond_chance`) or of tau (`mean_tau`) - pooled over the bins where both sides have `MIN_CELL` pairs, weighted by the same-body count. Pairs with a station outside every water body are left out.
+- **Produced by:** [`scripts/synchrony.py`](../scripts/synchrony.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-761714cb53"></a>
 ### `data/derived/terraincheck.json` › `sheets.amager.windows.50.background_below_local_pct`
 
@@ -40743,20 +34154,22 @@
 <a id="F-bb3f91aa8f"></a>
 ### `docs/data/areas/areas.json` › `areas.DKCOAST201.rbu`
 
-`F-bb3f91aa8f` · **read from data** · 865
+`F-bb3f91aa8f` · **read from data** · 837
 
 - **Kind:** counted · made by [`K-POLITICS-AREAS`](#K-POLITICS-AREAS)
 - **What this field is:** Points of the national rain-conditioned outfall register `punkt_rbu_udl` that `scripts/areas.py` assigns to the water body.
+- **Produced by:** [`scripts/areamap.py`](../scripts/areamap.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
 <a id="F-1626ff4988"></a>
 ### `docs/data/areas/areas.json` › `areas.DKCOAST201.vol`
 
-`F-1626ff4988` · **read from data** · 14,377
+`F-1626ff4988` · **read from data** · 8,161
 
 - **Kind:** calculated · made by [`K-POLITICS-AREAS`](#K-POLITICS-AREAS)
 - **What this field is:** The registered basin volume `vol_sb` summed over those points, in m³. Registered, so a floor: a basin nobody entered is not here.
+- **Produced by:** [`scripts/areamap.py`](../scripts/areamap.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
@@ -40788,17 +34201,7 @@
 - **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
 - **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md)
-
-<a id="F-07a23e44f0"></a>
-### `docs/data/areas/partition_score.json` › `results.0.lift_over_compact`
-
-`F-07a23e44f0` · **read from data** · 0.402
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
+- **Used in:** [CATEGORY.md](CATEGORY.md)
 
 <a id="F-16c2345f41"></a>
 ### `docs/data/areas/partition_score.json` › `results.0.shuffled.icc`
@@ -40808,27 +34211,7 @@
 - **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
 - **What this field is:** The same ratio with station labels permuted, basket sizes kept.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md)
-
-<a id="F-79ea3f3d8b"></a>
-### `docs/data/areas/partition_score.json` › `results.0.size_matched_compact.icc`
-
-`F-79ea3f3d8b` · **read from data** · 0.522
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-367e7923a3"></a>
-### `docs/data/areas/partition_score.json` › `results.0.size_matched_compact.spread`
-
-`F-367e7923a3` · **read from data** · 0.178
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
+- **Used in:** [CATEGORY.md](CATEGORY.md)
 
 <a id="F-84e0d969dc"></a>
 ### `docs/data/areas/partition_score.json` › `results.0.water_bodies.icc`
@@ -40838,487 +34221,7 @@
 - **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
 - **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
 - *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md), [CATEGORY.md](CATEGORY.md)
-
-<a id="F-3ad7cf08ad"></a>
-### `docs/data/areas/partition_score.json` › `results.1.latitude_bands.icc`
-
-`F-3ad7cf08ad` · **read from data** · 0.55
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-762c44fd5a"></a>
-### `docs/data/areas/partition_score.json` › `results.1.lift_over_compact`
-
-`F-762c44fd5a` · **read from data** · 0.283
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cee7ebfa77"></a>
-### `docs/data/areas/partition_score.json` › `results.1.shuffled.icc`
-
-`F-cee7ebfa77` · **read from data** · 0.782
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8c10e0dec3"></a>
-### `docs/data/areas/partition_score.json` › `results.1.size_matched_compact.icc`
-
-`F-8c10e0dec3` · **read from data** · 0.595
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-94175d81f2"></a>
-### `docs/data/areas/partition_score.json` › `results.1.size_matched_compact.spread`
-
-`F-94175d81f2` · **read from data** · 0.111
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-590ee5e995"></a>
-### `docs/data/areas/partition_score.json` › `results.1.water_bodies.icc`
-
-`F-590ee5e995` · **read from data** · 0.878
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-71d71bd1e8"></a>
-### `docs/data/areas/partition_score.json` › `results.2.latitude_bands.icc`
-
-`F-71d71bd1e8` · **read from data** · 0.585
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-8e00c4cf21"></a>
-### `docs/data/areas/partition_score.json` › `results.2.lift_over_compact`
-
-`F-8e00c4cf21` · **read from data** · 0.138
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-232e185773"></a>
-### `docs/data/areas/partition_score.json` › `results.2.shuffled.icc`
-
-`F-232e185773` · **read from data** · 0.658
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-22e943a48d"></a>
-### `docs/data/areas/partition_score.json` › `results.2.size_matched_compact.icc`
-
-`F-22e943a48d` · **read from data** · 0.672
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-409db0a298"></a>
-### `docs/data/areas/partition_score.json` › `results.2.size_matched_compact.spread`
-
-`F-409db0a298` · **read from data** · 0.034
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f7b2e1a4fa"></a>
-### `docs/data/areas/partition_score.json` › `results.2.water_bodies.icc`
-
-`F-f7b2e1a4fa` · **read from data** · 0.81
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-496efe7461"></a>
-### `docs/data/areas/partition_score.json` › `results.3.latitude_bands.icc`
-
-`F-496efe7461` · **read from data** · 0.679
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e6d5c2a74c"></a>
-### `docs/data/areas/partition_score.json` › `results.3.lift_over_compact`
-
-`F-e6d5c2a74c` · **read from data** · 0.124
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-d71c87a4f4"></a>
-### `docs/data/areas/partition_score.json` › `results.3.shuffled.icc`
-
-`F-d71c87a4f4` · **read from data** · 0.531
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-885a40a1da"></a>
-### `docs/data/areas/partition_score.json` › `results.3.size_matched_compact.icc`
-
-`F-885a40a1da` · **read from data** · 0.844
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-35608bf406"></a>
-### `docs/data/areas/partition_score.json` › `results.3.size_matched_compact.spread`
-
-`F-35608bf406` · **read from data** · 0.065
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5ce0fee6c4"></a>
-### `docs/data/areas/partition_score.json` › `results.3.water_bodies.icc`
-
-`F-5ce0fee6c4` · **read from data** · 0.968
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3cf0afbde5"></a>
-### `docs/data/areas/partition_score.json` › `results.4.latitude_bands.icc`
-
-`F-3cf0afbde5` · **read from data** · 0.64
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-add0bbbcb6"></a>
-### `docs/data/areas/partition_score.json` › `results.4.lift_over_compact`
-
-`F-add0bbbcb6` · **read from data** · 0.118
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-691dfb3ce4"></a>
-### `docs/data/areas/partition_score.json` › `results.4.shuffled.icc`
-
-`F-691dfb3ce4` · **read from data** · 0.538
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7c9db35890"></a>
-### `docs/data/areas/partition_score.json` › `results.4.size_matched_compact.icc`
-
-`F-7c9db35890` · **read from data** · 0.798
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-50a74e83b8"></a>
-### `docs/data/areas/partition_score.json` › `results.4.size_matched_compact.spread`
-
-`F-50a74e83b8` · **read from data** · 0.035
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-91998d2471"></a>
-### `docs/data/areas/partition_score.json` › `results.4.water_bodies.icc`
-
-`F-91998d2471` · **read from data** · 0.916
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f5cd0daea2"></a>
-### `docs/data/areas/partition_score.json` › `results.5.latitude_bands.icc`
-
-`F-f5cd0daea2` · **read from data** · 0.618
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-abeed1146d"></a>
-### `docs/data/areas/partition_score.json` › `results.5.lift_over_compact`
-
-`F-abeed1146d` · **read from data** · 0.096
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ea3df9177b"></a>
-### `docs/data/areas/partition_score.json` › `results.5.shuffled.icc`
-
-`F-ea3df9177b` · **read from data** · 0.51
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-7c691e8b74"></a>
-### `docs/data/areas/partition_score.json` › `results.5.size_matched_compact.icc`
-
-`F-7c691e8b74` · **read from data** · 0.734
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ab45155aae"></a>
-### `docs/data/areas/partition_score.json` › `results.5.size_matched_compact.spread`
-
-`F-ab45155aae` · **read from data** · 0.039
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b2932ac6ef"></a>
-### `docs/data/areas/partition_score.json` › `results.5.water_bodies.icc`
-
-`F-b2932ac6ef` · **read from data** · 0.83
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-210db587aa"></a>
-### `docs/data/areas/partition_score.json` › `results.6.latitude_bands.icc`
-
-`F-210db587aa` · **read from data** · 0.602
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-537255f5da"></a>
-### `docs/data/areas/partition_score.json` › `results.6.lift_over_compact`
-
-`F-537255f5da` · **read from data** · 0.092
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e42d5e560f"></a>
-### `docs/data/areas/partition_score.json` › `results.6.shuffled.icc`
-
-`F-e42d5e560f` · **read from data** · 0.639
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-a3026ee6de"></a>
-### `docs/data/areas/partition_score.json` › `results.6.size_matched_compact.icc`
-
-`F-a3026ee6de` · **read from data** · 0.698
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-19b9cf6395"></a>
-### `docs/data/areas/partition_score.json` › `results.6.size_matched_compact.spread`
-
-`F-19b9cf6395` · **read from data** · 0.012
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-018193d52a"></a>
-### `docs/data/areas/partition_score.json` › `results.6.water_bodies.icc`
-
-`F-018193d52a` · **read from data** · 0.79
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-f734066c97"></a>
-### `docs/data/areas/partition_score.json` › `results.7.latitude_bands.icc`
-
-`F-f734066c97` · **read from data** · 0.625
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b5301ea056"></a>
-### `docs/data/areas/partition_score.json` › `results.7.lift_over_compact`
-
-`F-b5301ea056` · **read from data** · 0.044
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-285ec7028f"></a>
-### `docs/data/areas/partition_score.json` › `results.7.shuffled.icc`
-
-`F-285ec7028f` · **read from data** · 0.523
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-e40d460a10"></a>
-### `docs/data/areas/partition_score.json` › `results.7.size_matched_compact.icc`
-
-`F-e40d460a10` · **read from data** · 0.766
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-5fcf411f30"></a>
-### `docs/data/areas/partition_score.json` › `results.7.size_matched_compact.spread`
-
-`F-5fcf411f30` · **read from data** · 0.035
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-cee008c3e3"></a>
-### `docs/data/areas/partition_score.json` › `results.7.water_bodies.icc`
-
-`F-cee008c3e3` · **read from data** · 0.81
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-81d0b42d8b"></a>
-### `docs/data/areas/partition_score.json` › `results.8.latitude_bands.icc`
-
-`F-81d0b42d8b` · **read from data** · 0.564
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio for equal-count latitude bands, as many as there are real baskets.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-db2387434e"></a>
-### `docs/data/areas/partition_score.json` › `results.8.lift_over_compact`
-
-`F-db2387434e` · **read from data** · -0.05
-
-- **Kind:** computed · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The real partition's ratio minus the compact null's.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-3ad24d5362"></a>
-### `docs/data/areas/partition_score.json` › `results.8.shuffled.icc`
-
-`F-3ad24d5362` · **read from data** · 0.404
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio with station labels permuted, basket sizes kept.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-90d7ddba77"></a>
-### `docs/data/areas/partition_score.json` › `results.8.size_matched_compact.icc`
-
-`F-90d7ddba77` · **read from data** · 0.775
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** The same ratio averaged over the compact null partitions: baskets of the real size distribution grown from random seeds by nearest neighbour.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-ff5c44079f"></a>
-### `docs/data/areas/partition_score.json` › `results.8.size_matched_compact.spread`
-
-`F-ff5c44079f` · **read from data** · 0.109
-
-- **Kind:** computed · made by [`K-AR-PARTITION-SPREAD`](#K-AR-PARTITION-SPREAD)
-- **What this field is:** For one variable, the largest minus the smallest of the mean-square ratios scored on the size-matched compact null partitions - one per random seed.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
-
-<a id="F-b6722468aa"></a>
-### `docs/data/areas/partition_score.json` › `results.8.water_bodies.icc`
-
-`F-b6722468aa` · **read from data** · 0.725
-
-- **Kind:** estimated · made by [`K-AREAS-PARTITION`](#K-AREAS-PARTITION)
-- **What this field is:** For one variable, the mean-square ratio $MSB/(MSB+MSW)$ within month for the real water-body partition. Chance here is one half, not zero.
-- *How this field was counted is not recorded by the script that wrote it.*
-- **Used in:** [AREAS.md](AREAS.md)
+- **Used in:** [CATEGORY.md](CATEGORY.md)
 
 <a id="F-8f9b6536e3"></a>
 ### `docs/data/areas/partition_score.json` › `results.[len]`
@@ -41607,6 +34510,28 @@
 - **Produced by:** [`scripts/export_flood.py`](../scripts/export_flood.py)
 - *How this field was counted is not recorded by the script that wrote it.*
 - **Used in:** [README.md](README.md)
+
+<a id="F-f66bd863fa"></a>
+### `docs/data/lineage/cum_hoc_r.json` › `robustness.1.value`
+
+`F-f66bd863fa` · **read from data** · 0.313
+
+- **Kind:** computed · made by [`K-W4AR-LINEAGE`](#K-W4AR-LINEAGE)
+- **What this field is:** The correlation `cum_hoc.tests` index `2` recomputed with the one choice named in the rerun's `imposed` changed.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
+
+<a id="F-80055aca24"></a>
+### `docs/data/lineage/cum_hoc_r.json` › `robustness.4.value`
+
+`F-80055aca24` · **read from data** · 0.136
+
+- **Kind:** computed · made by [`K-W4AR-LINEAGE`](#K-W4AR-LINEAGE)
+- **What this field is:** The correlation `cum_hoc.tests` index `2` recomputed with the one choice named in the rerun's `imposed` changed.
+- **Produced by:** [`scripts/areas.py`](../scripts/areas.py)
+- *How this field was counted is not recorded by the script that wrote it.*
+- **Used in:** [AREAS.md](AREAS.md)
 
 ## Calculated in a generator
 
@@ -42311,6 +35236,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [60424.3](SOURCES.md#F-6b6cfd2a59) * 100 = 6.04243e+06
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-10787db0ef"></a>
+### Calculated: 12.3
+
+`F-10787db0ef` · **calculated** · 12.3
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.123](SOURCES.md#F-5f47c287a9) * 100 = 12.3
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-10a113d93e"></a>
 ### Calculated: 80
@@ -43131,6 +36065,15 @@
 - **Calculation:** [0.55897](SOURCES.md#F-c35606359e) * 100 = 55.897
 - **Used in:** [AREAS.md](AREAS.md)
 
+<a id="F-268791d534"></a>
+### Calculated: 10.71
+
+`F-268791d534` · **calculated** · 10.71
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.1071](SOURCES.md#F-aff5aac133) * 100 = 10.71
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-26ab29fcaf"></a>
 ### Calculated: 300.396
 
@@ -43400,6 +36343,15 @@
 - **Kind:** calculated · made by [`K-FARM-DOCS`](#K-FARM-DOCS)
 - **Calculation:** [175](SOURCES.md#F-35790b9b7a) / [110](SOURCES.md#F-fe6cd4c3cd) = 1.59091
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-2d630874ba"></a>
+### Calculated: 0.75
+
+`F-2d630874ba` · **calculated** · 0.75
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** abs([-0.75](SOURCES.md#F-bdd5dd5294)) = 0.75
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-2d9e213f25"></a>
 ### Calculated: 1.96993
@@ -43887,6 +36839,15 @@
 - **Calculation:** [-9288.3](SOURCES.md#F-802e65bfa8) / [504.873](SOURCES.md#F-dcc7b0ded0) = -18.3973
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-3b2d20330e"></a>
+### Calculated: 5
+
+`F-3b2d20330e` · **calculated** · 5
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.05](SOURCES.md#F-02321a7cb1) * 100 = 5
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-3bd21a291a"></a>
 ### Calculated: 4.5296
 
@@ -44111,6 +37072,15 @@
 - **Kind:** calculated · made by [`K-POLITICS-LIVESTOCK`](#K-POLITICS-LIVESTOCK)
 - **Calculation:** [1.06552e+07](SOURCES.md#F-d6077e012b) / 1e+06 = 10.6552
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
+
+<a id="F-3fd7547b48"></a>
+### Calculated: 21.32
+
+`F-3fd7547b48` · **calculated** · 21.32
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.2132](SOURCES.md#F-dec30bdcae) * 100 = 21.32
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-40232ca31a"></a>
 ### Calculated: 0.09
@@ -45067,6 +38037,15 @@
 - **Calculation:** [275.983](SOURCES.md#F-efdc9c2857) / [14.007](SOURCES.md#F-06bb6065bb) = 19.7032
 - **Used in:** [NITROGEN.md](NITROGEN.md)
 
+<a id="F-5b2ee30ac8"></a>
+### Calculated: 15.16
+
+`F-5b2ee30ac8` · **calculated** · 15.16
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.1516](SOURCES.md#F-d5a3cc3bff) * 100 = 15.16
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-5b7739855f"></a>
 ### Calculated: 20
 
@@ -46011,6 +38990,15 @@
 - **Calculation:** [448,723,078](SOURCES.md#F-b047e411d7) / 1e+06 = 448.723
 - **Used in:** [C1.md](C1.md), [D1.md](D1.md)
 
+<a id="F-71e860dfb1"></a>
+### Calculated: 0.2268
+
+`F-71e860dfb1` · **calculated** · 0.2268
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** abs([-0.2268](SOURCES.md#F-f029874e0f)) = 0.2268
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-7270c02bc1"></a>
 ### Calculated: 42.8571
 
@@ -46344,6 +39332,15 @@
 - **Calculation:** [79.85](SOURCES.md#F-6587c0a1ae) / [3446.66](SOURCES.md#F-8255ecde08) = 0.0231674
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
 
+<a id="F-7c295b84b0"></a>
+### Calculated: 10.54
+
+`F-7c295b84b0` · **calculated** · 10.54
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** [0.1054](SOURCES.md#F-1e6b7bb783) * 100 = 10.54
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-7c4b90cc49"></a>
 ### Calculated: 3.9
 
@@ -46542,6 +39539,15 @@
 - **Calculation:** [0.35](SOURCES.md#F-9b04723d1f) * 100 = 35
 - **Used in:** [METHOD_LAB.md](METHOD_LAB.md)
 
+<a id="F-8134a06ef9"></a>
+### Calculated: 2.125
+
+`F-8134a06ef9` · **calculated** · 2.125
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** abs([-2.125](SOURCES.md#F-e6b88a8658)) = 2.125
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-81cc2fdcb9"></a>
 ### Calculated: 0.947368
 
@@ -46604,6 +39610,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [71390](SOURCES.md#F-e13ff7591d) / [77243.9](SOURCES.md#F-6194e49961) = 0.924215
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-82dd852570"></a>
+### Calculated: 5.1
+
+`F-82dd852570` · **calculated** · 5.1
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.051](SOURCES.md#F-57c1b29bda) * 100 = 5.1
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-8395352c72"></a>
 ### Calculated: 6.79753
@@ -46964,6 +39979,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE), [`K-INCIDENCE`](#K-INCIDENCE)
 - **Calculation:** [3.94439e+07](SOURCES.md#F-150faf31d9) / [2.62109e+06](SOURCES.md#F-f7b709b120) = 15.0487
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-8bf5caa91a"></a>
+### Calculated: 0.5576
+
+`F-8bf5caa91a` · **calculated** · 0.5576
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** abs([-0.5576](SOURCES.md#F-cc377e7080)) = 0.5576
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-8c1a3c886b"></a>
 ### Calculated: 304.825
@@ -47342,6 +40366,15 @@
 - **Kind:** share · made by [`K-SUBSET-SHARE`](#K-SUBSET-SHARE), [`K-FLOOD-SOLUTIONS`](#K-FLOOD-SOLUTIONS)
 - **Calculation:** [K-SUBSET-SHARE](#K-SUBSET-SHARE) applied to [90.7284](SOURCES.md#F-4e1a8131e8) = 90.7284
 - **Used in:** [SOLUTIONS.md](SOLUTIONS.md)
+
+<a id="F-945efa0a7b"></a>
+### Calculated: 32.29
+
+`F-945efa0a7b` · **calculated** · 32.29
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.3229](SOURCES.md#F-508010d69e) * 100 = 32.29
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-947e7046c7"></a>
 ### Calculated: 0.491239
@@ -47856,6 +40889,15 @@
 - **Calculation:** [238](SOURCES.md#F-e45c5b4954) / [1095](SOURCES.md#F-a00ea338ce) = 0.217352
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-a4bf90a242"></a>
+### Calculated: 0.1407
+
+`F-a4bf90a242` · **calculated** · 0.1407
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** abs([-0.1407](SOURCES.md#F-ff46ab7f71)) = 0.1407
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-a4d62aee29"></a>
 ### Calculated: 60
 
@@ -48064,12 +41106,12 @@
 - **Used in:** [POLITICS.md](POLITICS.md)
 
 <a id="F-ab0c89b5cb"></a>
-### Calculated: 0.17091
+### Calculated: 0.0970161
 
-`F-ab0c89b5cb` · **calculated** · 0.17091
+`F-ab0c89b5cb` · **calculated** · 0.0970161
 
 - **Kind:** calculated · made by [`K-POLITICS-AREAS`](#K-POLITICS-AREAS), [`K-POLITICS-PROGRAMME`](#K-POLITICS-PROGRAMME), [`K-POLITICS-STREAMS`](#K-POLITICS-STREAMS)
-- **Calculation:** [14,377](SOURCES.md#F-1626ff4988) / [84120.1](SOURCES.md#F-d2e8a0318f) = 0.17091
+- **Calculation:** [8,161](SOURCES.md#F-1626ff4988) / [84120.1](SOURCES.md#F-d2e8a0318f) = 0.0970161
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
 <a id="F-ab4ce1b6c3"></a>
@@ -48116,6 +41158,15 @@
 - **Kind:** calculated · made by [`K-FARM-INCIDENCE`](#K-FARM-INCIDENCE)
 - **Calculation:** [1,242](SOURCES.md#F-2ca32a8799) + [610](SOURCES.md#F-6cd485eb40) + [641](SOURCES.md#F-ce0a8908dc) + [118](SOURCES.md#F-694c00f2f5) + [52](SOURCES.md#F-2d95576a33) = 2,663
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
+
+<a id="F-ac53144651"></a>
+### Calculated: 80.78
+
+`F-ac53144651` · **calculated** · 80.78
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.8078](SOURCES.md#F-ed0a6c3436) * 100 = 80.78
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-aca9271c34"></a>
 ### Calculated: 105150
@@ -48459,6 +41510,15 @@
 - **Calculation:** [4,140](SOURCES.md#F-9c03f92b97) + [15,159](SOURCES.md#F-db2e05e3d9) = 19,299
 - **Used in:** [EXPERIMENTS.md](EXPERIMENTS.md), [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)
 
+<a id="F-b6a42a3593"></a>
+### Calculated: 29.86
+
+`F-b6a42a3593` · **calculated** · 29.86
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.2986](SOURCES.md#F-13372a21e5) * 100 = 29.86
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-b6ee96a3e7"></a>
 ### Calculated: 14.8649
 
@@ -48649,12 +41709,12 @@
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
 <a id="F-bc8fd7dcd2"></a>
-### Calculated: 10.2546
+### Calculated: 5.82097
 
-`F-bc8fd7dcd2` · **calculated** · 10.2546
+`F-bc8fd7dcd2` · **calculated** · 5.82097
 
 - **Kind:** calculated · made by [`K-POLITICS-AREAS`](#K-POLITICS-AREAS), [`K-POLITICS-PROGRAMME`](#K-POLITICS-PROGRAMME), [`K-POLITICS-STREAMS`](#K-POLITICS-STREAMS)
-- **Calculation:** [0.17091](SOURCES.md#F-ab0c89b5cb) * 60 = 10.2546
+- **Calculation:** [0.0970161](SOURCES.md#F-ab0c89b5cb) * 60 = 5.82097
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
 <a id="F-bca2b5453b"></a>
@@ -49026,6 +42086,15 @@
 - **Calculation:** [K-SCHEDULE-LOSS](#K-SCHEDULE-LOSS) applied to [77.4954](SOURCES.md#F-62e8c7f154) = 77.4954
 - **Used in:** [METHOD_LAB.md](METHOD_LAB.md)
 
+<a id="F-c3b0d186bb"></a>
+### Calculated: 20
+
+`F-c3b0d186bb` · **calculated** · 20
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** [0.2](SOURCES.md#F-2c1b17fad8) * 100 = 20
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-c40e14a609"></a>
 ### Calculated: 1
 
@@ -49277,6 +42346,15 @@
 - **Kind:** calculated · made by [`K-DETECTABLE`](#K-DETECTABLE)
 - **Calculation:** [0.636356](SOURCES.md#F-c5ef51d900) * 100 = 63.6356
 - **Used in:** [CLAIMS.md](CLAIMS.md), [METHOD_LAB.md](METHOD_LAB.md)
+
+<a id="F-c9991de63b"></a>
+### Calculated: 10.07
+
+`F-c9991de63b` · **calculated** · 10.07
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.1007](SOURCES.md#F-8b72900a62) * 100 = 10.07
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-c99ecb6f81"></a>
 ### Calculated: 1.18
@@ -49603,6 +42681,15 @@
 - **Kind:** calculated · made by [`K-FLOOD-GAP`](#K-FLOOD-GAP)
 - **Calculation:** [0.128](SOURCES.md#F-65c0d1a68b) * 100 = 12.8
 - **Used in:** [FLOOD_GAP.md](FLOOD_GAP.md)
+
+<a id="F-d3b1b1a9a6"></a>
+### Calculated: 9.38
+
+`F-d3b1b1a9a6` · **calculated** · 9.38
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.0938](SOURCES.md#F-0b5db7ad3b) * 100 = 9.38
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-d3c834800b"></a>
 ### Calculated: 1.8552e+06
@@ -50270,6 +43357,15 @@
 - **Calculation:** [0.947624](SOURCES.md#F-b9e1bc1fb7) * 100 = 94.7624
 - **Used in:** [TRIAGE.md](TRIAGE.md)
 
+<a id="F-e25ec7e41e"></a>
+### Calculated: 105
+
+`F-e25ec7e41e` · **calculated** · 105
+
+- **Kind:** calculated · made by [`K-W4AR-LIVESTOCK`](#K-W4AR-LIVESTOCK)
+- **Calculation:** [36](SOURCES.md#F-2d6aece43a) + [34](SOURCES.md#F-fc1646ff7b) + [35](SOURCES.md#F-d32f845111) = 105
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-e26a34154d"></a>
 ### Calculated: 0.33
 
@@ -50287,6 +43383,15 @@
 - **Kind:** calculated · made by [`K-AREAS-PLACES`](#K-AREAS-PLACES)
 - **Calculation:** [0.1276](SOURCES.md#F-30e1df7cce) * 100 = 12.76
 - **Used in:** [PLACES.md](PLACES.md)
+
+<a id="F-e2deeefc59"></a>
+### Calculated: 75.83
+
+`F-e2deeefc59` · **calculated** · 75.83
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.7583](SOURCES.md#F-de41d0d709) * 100 = 75.83
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-e2fcf0dde8"></a>
 ### Calculated: 38.4205
@@ -50387,6 +43492,15 @@
 - **Calculation:** [8.64103e+07](SOURCES.md#F-50cb05110b) / [2.43465e+06](SOURCES.md#F-837e6f5289) = 35.4919
 - **Used in:** [INCIDENCE.md](INCIDENCE.md)
 
+<a id="F-e56bd665f5"></a>
+### Calculated: 24.53
+
+`F-e56bd665f5` · **calculated** · 24.53
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.2453](SOURCES.md#F-8c54886aa3) * 100 = 24.53
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-e5da2fc513"></a>
 ### Calculated: 32.6
 
@@ -50449,6 +43563,15 @@
 - **Kind:** calculated · made by [`K-WATER-FETCH`](#K-WATER-FETCH)
 - **Calculation:** [6532.98](SOURCES.md#F-69cb82eaee) / 1,000 = 6.53298
 - **Used in:** [SEABED.md](SEABED.md)
+
+<a id="F-e7ba718071"></a>
+### Calculated: 5.28
+
+`F-e7ba718071` · **calculated** · 5.28
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.0528](SOURCES.md#F-476ea980b1) * 100 = 5.28
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-e7c15fb4e1"></a>
 ### Calculated: 63.6356
@@ -50669,6 +43792,15 @@
 - **Calculation:** [374,764](SOURCES.md#F-41e8cac78c) / 1,000 = 374.764
 - **Used in:** [PROGRAMME.md](PROGRAMME.md)
 
+<a id="F-eb140fce5f"></a>
+### Calculated: 4.21
+
+`F-eb140fce5f` · **calculated** · 4.21
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.0421](SOURCES.md#F-fffe961438) * 100 = 4.21
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-eb2ff0b192"></a>
 ### Calculated: 78.3986
 
@@ -50866,6 +43998,15 @@
 - **Kind:** calculated · made by [`K-STATED`](#K-STATED)
 - **Calculation:** [12.011](SOURCES.md#F-2a5bb03b37) + [4.032](SOURCES.md#F-9615c214f0) = 16.043
 - **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
+
+<a id="F-f185d8eb8f"></a>
+### Calculated: 30.08
+
+`F-f185d8eb8f` · **calculated** · 30.08
+
+- **Kind:** calculated · made by [`K-W4AR-SYNC`](#K-W4AR-SYNC)
+- **Calculation:** [0.3008](SOURCES.md#F-cca56b105d) * 100 = 30.08
+- **Used in:** [AREAS.md](AREAS.md)
 
 <a id="F-f1bd3174ea"></a>
 ### Calculated: …
@@ -73912,6 +67053,4196 @@ What this site said at a past commit. A quotation of the past is permanently tru
 - **Located by:** `Independence.** Of the … not cross-validate one.` - the value is read out of that text when the page is built, never typed
 - **Used in:** [ARCHIVE.md](ARCHIVE.md)
 
+<a id="F-54f7a9fa96"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54f7a9fa96` · **quoted from an earlier version** · 0.22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4985d57c96"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4985d57c96` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a1004b2b33"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a1004b2b33` · **quoted from an earlier version** · 0.523
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c3bdf108ec"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c3bdf108ec` · **quoted from an earlier version** · 34
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-411941f49a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-411941f49a` · **quoted from an earlier version** · 0.13
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-028b4ed780"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-028b4ed780` · **quoted from an earlier version** · 29
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b08d9333fc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b08d9333fc` · **quoted from an earlier version** · 32
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3153f8b56b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3153f8b56b` · **quoted from an earlier version** · 250
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0b89fa632f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b89fa632f` · **quoted from an earlier version** · 551.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c6c578ffef"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c6c578ffef` · **quoted from an earlier version** · 50.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9b5c353bf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9b5c353bf` · **quoted from an earlier version** · 336,244
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-710807ec36"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-710807ec36` · **quoted from an earlier version** · 40,532
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9c9fbebd9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9c9fbebd9` · **quoted from an earlier version** · 16.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-053d08db08"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-053d08db08` · **quoted from an earlier version** · 393
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-27573db1f7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-27573db1f7` · **quoted from an earlier version** · 32.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-27402f17b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-27402f17b4` · **quoted from an earlier version** · 205.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8b89749685"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8b89749685` · **quoted from an earlier version** · 896
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-56ce949ad1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-56ce949ad1` · **quoted from an earlier version** · 33
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ac29a891a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ac29a891a1` · **quoted from an earlier version** · 0.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dbeea8773d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dbeea8773d` · **quoted from an earlier version** · 0.602
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c96d965f8f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c96d965f8f` · **quoted from an earlier version** · 48
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-71d02fc6ff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-71d02fc6ff` · **quoted from an earlier version** · 15.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62bcead372"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62bcead372` · **quoted from an earlier version** · 482.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-42de6d52cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-42de6d52cb` · **quoted from an earlier version** · 0.40
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2a1d1cfdd4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2a1d1cfdd4` · **quoted from an earlier version** · 0.065
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e2f582be5e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e2f582be5e` · **quoted from an earlier version** · 0.04
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2d5576af8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2d5576af8` · **quoted from an earlier version** · 580,100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c30371f1c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c30371f1c3` · **quoted from an earlier version** · 182
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cdceae6bf3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cdceae6bf3` · **quoted from an earlier version** · 0.639
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-110f7efcd5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-110f7efcd5` · **quoted from an earlier version** · 407.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-69b813826e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-69b813826e` · **quoted from an earlier version** · 0.096
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-16753ba8ce"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-16753ba8ce` · **quoted from an earlier version** · 30,850
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e7d4a5dddb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7d4a5dddb` · **quoted from an earlier version** · 22,404
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5709466251"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5709466251` · **quoted from an earlier version** · 72,370
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5616810c22"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5616810c22` · **quoted from an earlier version** · 40.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-202bb174da"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-202bb174da` · **quoted from an earlier version** · 821.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f545b0d648"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f545b0d648` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-53a05b30aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-53a05b30aa` · **quoted from an earlier version** · 565
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b7dcb2471e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7dcb2471e` · **quoted from an earlier version** · 214.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-97b3e98a8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-97b3e98a8a` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d9797ee125"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d9797ee125` · **quoted from an earlier version** · 188
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e76d8407a9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e76d8407a9` · **quoted from an earlier version** · 0.022
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cbe080e000"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cbe080e000` · **quoted from an earlier version** · 53,283
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-00a9cadc5b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-00a9cadc5b` · **quoted from an earlier version** · 0.24
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4b9344929e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4b9344929e` · **quoted from an earlier version** · 0.734
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-104d81168a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-104d81168a` · **quoted from an earlier version** · 9.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34db791e14"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34db791e14` · **quoted from an earlier version** · 0.138
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-08783dc68f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-08783dc68f` · **quoted from an earlier version** · 149
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6b5fd21283"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6b5fd21283` · **quoted from an earlier version** · 0.034
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3a198d6e75"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3a198d6e75` · **quoted from an earlier version** · 721.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1d11c3005c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d11c3005c` · **quoted from an earlier version** · 0.640
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62b48526cf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62b48526cf` · **quoted from an earlier version** · 0.522
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-73f52b3c1f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-73f52b3c1f` · **quoted from an earlier version** · 90,355
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9809297546"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9809297546` · **quoted from an earlier version** · 83
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-75beb8410e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-75beb8410e` · **quoted from an earlier version** · 469
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bce79bbf01"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bce79bbf01` · **quoted from an earlier version** · 116
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c9e3d82fa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c9e3d82fa` · **quoted from an earlier version** · 0.510
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7306704635"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7306704635` · **quoted from an earlier version** · 51
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aae9791d1c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aae9791d1c` · **quoted from an earlier version** · 491,620
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5af1b8e578"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5af1b8e578` · **quoted from an earlier version** · 7.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3bba6a009"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3bba6a009` · **quoted from an earlier version** · 2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-90ee0eee68"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-90ee0eee68` · **quoted from an earlier version** · 127
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-80992d9c6d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-80992d9c6d` · **quoted from an earlier version** · 14,850
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7651114acb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7651114acb` · **quoted from an earlier version** · 0.044
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-76181005ae"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-76181005ae` · **quoted from an earlier version** · 10.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-985e3cf7b5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-985e3cf7b5` · **quoted from an earlier version** · 25,561
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-37407e2c0b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-37407e2c0b` · **quoted from an earlier version** · 15.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a43fa9cb28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a43fa9cb28` · **quoted from an earlier version** · 458.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4320b75c16"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4320b75c16` · **quoted from an earlier version** · 28,921
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a0d2776898"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a0d2776898` · **quoted from an earlier version** · 161,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a5b7cd1011"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a5b7cd1011` · **quoted from an earlier version** · 3,910
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-197ae07b86"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-197ae07b86` · **quoted from an earlier version** · 54
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-31e5045107"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-31e5045107` · **quoted from an earlier version** · 4.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9b78951f37"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9b78951f37` · **quoted from an earlier version** · 5.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1b40bd46be"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1b40bd46be` · **quoted from an earlier version** · 1,052.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e97645f8e0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e97645f8e0` · **quoted from an earlier version** · 0.149
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-263053b7e9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-263053b7e9` · **quoted from an earlier version** · 108
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-93035d0ba4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-93035d0ba4` · **quoted from an earlier version** · 165.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ccff3f417"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ccff3f417` · **quoted from an earlier version** · 45.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-952ca66ee2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-952ca66ee2` · **quoted from an earlier version** · 0.20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-20f6ab824f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20f6ab824f` · **quoted from an earlier version** · 0.564
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f69736413a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f69736413a` · **quoted from an earlier version** · 131
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-73253d020c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-73253d020c` · **quoted from an earlier version** · 728
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7fcab95b52"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fcab95b52` · **quoted from an earlier version** · 149.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ef046717d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ef046717d` · **quoted from an earlier version** · 1,526.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-16654f6dbc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-16654f6dbc` · **quoted from an earlier version** · 0.402
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8e59f0888"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8e59f0888` · **quoted from an earlier version** · 57
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2680c5aeae"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2680c5aeae` · **quoted from an earlier version** · 0.28
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bc6f8e00ac"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bc6f8e00ac` · **quoted from an earlier version** · 2,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6fa89c01f1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6fa89c01f1` · **quoted from an earlier version** · 95
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0bcc506d81"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0bcc506d81` · **quoted from an earlier version** · 3,860
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-779c67501a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-779c67501a` · **quoted from an earlier version** · 332
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0442a132c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0442a132c5` · **quoted from an earlier version** · 15,150
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d82a617d28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d82a617d28` · **quoted from an earlier version** · 282,480
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-49f1beb927"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-49f1beb927` · **quoted from an earlier version** · 98
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-57268f2e22"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-57268f2e22` · **quoted from an earlier version** · 0.08
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c65cbafad"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c65cbafad` · **quoted from an earlier version** · 5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a37f1fcb3a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a37f1fcb3a` · **quoted from an earlier version** · 45.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-343b73edfa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-343b73edfa` · **quoted from an earlier version** · 247.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-11513d1680"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-11513d1680` · **quoted from an earlier version** · 1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9697db6732"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9697db6732` · **quoted from an earlier version** · 100
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-22b8b497b9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-22b8b497b9` · **quoted from an earlier version** · 85
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7941e979ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7941e979ab` · **quoted from an earlier version** · 3,831.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c0ab2c44d4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c0ab2c44d4` · **quoted from an earlier version** · 0.124
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5157c60a12"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5157c60a12` · **quoted from an earlier version** · 242.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-484cc419a4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-484cc419a4` · **quoted from an earlier version** · 151.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-04f497a3ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-04f497a3ab` · **quoted from an earlier version** · 92.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ec1a790d4f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ec1a790d4f` · **quoted from an earlier version** · 1,148.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-921ef602b6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-921ef602b6` · **quoted from an earlier version** · 27.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2a2d907f4c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2a2d907f4c` · **quoted from an earlier version** · 38,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-df1783acc1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-df1783acc1` · **quoted from an earlier version** · 18.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ae43edc06a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ae43edc06a` · **quoted from an earlier version** · 20,300
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fd827fe0d5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fd827fe0d5` · **quoted from an earlier version** · 0.23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ca300ec28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ca300ec28` · **quoted from an earlier version** · 280
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-54d4c736a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54d4c736a0` · **quoted from an earlier version** · 114,015
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c341a9943e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c341a9943e` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `A national time series has one unit of replication. … so an effect size can be estimated across them.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-447ef9be1e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-447ef9be1e` · **quoted from an earlier version** · 115,906
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7dd57c02fb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7dd57c02fb` · **quoted from an earlier version** · 1.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-87bf7a10f0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-87bf7a10f0` · **quoted from an earlier version** · 318
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6631a797e1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6631a797e1` · **quoted from an earlier version** · 0.538
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e7abde727a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7abde727a` · **quoted from an earlier version** · 85.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e9d081e13a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e9d081e13a` · **quoted from an earlier version** · 0.109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-45c2ede5af"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45c2ede5af` · **quoted from an earlier version** · 355.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-33a0e135a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33a0e135a1` · **quoted from an earlier version** · 100.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ce7390d99d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ce7390d99d` · **quoted from an earlier version** · 169.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6c636628f2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6c636628f2` · **quoted from an earlier version** · 354,821
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a27c76e37"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4a27c76e37` · **quoted from an earlier version** · 0.595
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8e728f613e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8e728f613e` · **quoted from an earlier version** · 7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-08a43547a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-08a43547a0` · **quoted from an earlier version** · 35,085
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aae13b1f8f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aae13b1f8f` · **quoted from an earlier version** · 42
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-873095b0cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-873095b0cb` · **quoted from an earlier version** · 0.05
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4d6e41e00a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4d6e41e00a` · **quoted from an earlier version** · 205,544
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-29fc9ba490"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-29fc9ba490` · **quoted from an earlier version** · 655.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bea278c619"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bea278c619` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-20d8cdb649"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20d8cdb649` · **quoted from an earlier version** · 161
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-59e656a25a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-59e656a25a` · **quoted from an earlier version** · 31,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cb9d025902"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cb9d025902` · **quoted from an earlier version** · 449,600
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3510815ca6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3510815ca6` · **quoted from an earlier version** · 192
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f01f225287"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f01f225287` · **quoted from an earlier version** · 562.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ad9da1fd73"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ad9da1fd73` · **quoted from an earlier version** · 0.698
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-61fee8b5ab"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-61fee8b5ab` · **quoted from an earlier version** · 16.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-45456bdb02"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45456bdb02` · **quoted from an earlier version** · 8.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-66e3d6e240"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-66e3d6e240` · **quoted from an earlier version** · 27,545
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cf0e72c504"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cf0e72c504` · **quoted from an earlier version** · 288.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b02a3c9cbb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b02a3c9cbb` · **quoted from an earlier version** · 0.924
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3d1dbf36d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3d1dbf36d` · **quoted from an earlier version** · 6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de242b69ad"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de242b69ad` · **quoted from an earlier version** · 217,960
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96abbde9fc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96abbde9fc` · **quoted from an earlier version** · 17,800
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-90cf64d2ed"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-90cf64d2ed` · **quoted from an earlier version** · 97,876
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0b82dfabcf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b82dfabcf` · **quoted from an earlier version** · 71,550
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3c47af5ccd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3c47af5ccd` · **quoted from an earlier version** · 334
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ca807727c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ca807727c` · **quoted from an earlier version** · 139,933
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de71bde5c2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de71bde5c2` · **quoted from an earlier version** · 47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5ef870127f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5ef870127f` · **quoted from an earlier version** · 20,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e6fec48a4d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e6fec48a4d` · **quoted from an earlier version** · 0.36
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aa0148792b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aa0148792b` · **quoted from an earlier version** · 0.844
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `One reading fits these numbers, and it is not tested here … than its own shape alone would` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6e9ad496a7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6e9ad496a7` · **quoted from an earlier version** · 481,197
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f6ee6faa73"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f6ee6faa73` · **quoted from an earlier version** · 227.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1d4989405a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d4989405a` · **quoted from an earlier version** · 0.404
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-60c9c37325"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-60c9c37325` · **quoted from an earlier version** · 24.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a3a4cd55c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a3a4cd55c3` · **quoted from an earlier version** · 48,103
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-30942ca70b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-30942ca70b` · **quoted from an earlier version** · 0.775
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4008448e46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4008448e46` · **quoted from an earlier version** · 78
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a83e29a688"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a83e29a688` · **quoted from an earlier version** · 4,540
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-162c8705ba"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-162c8705ba` · **quoted from an earlier version** · 23
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-de643f2e46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-de643f2e46` · **quoted from an earlier version** · 417
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-79bbac6163"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-79bbac6163` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Assignment is by nearest point on the marine boundary, one rule … km dropped.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ad26c402bc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ad26c402bc` · **quoted from an earlier version** · 3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-712b9819e4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-712b9819e4` · **quoted from an earlier version** · 296.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9417565504"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9417565504` · **quoted from an earlier version** · 1.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ecc65ddeb6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ecc65ddeb6` · **quoted from an earlier version** · 572.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c0d927ee8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c0d927ee8` · **quoted from an earlier version** · 865
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d391a684b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d391a684b4` · **quoted from an earlier version** · 0.124
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-02bf94dcdf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-02bf94dcdf` · **quoted from an earlier version** · 109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4a24d288c0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4a24d288c0` · **quoted from an earlier version** · 119
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-58d6d72058"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-58d6d72058` · **quoted from an earlier version** · 0.313
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-768bc3ce9f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-768bc3ce9f` · **quoted from an earlier version** · 7.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b290d6b680"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b290d6b680` · **quoted from an earlier version** · 22
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-063ab72c8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-063ab72c8a` · **quoted from an earlier version** · 80
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d40cc0eb2e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d40cc0eb2e` · **quoted from an earlier version** · 12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fbd2bc0b4a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fbd2bc0b4a` · **quoted from an earlier version** · 189,830
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ea29cbbc8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ea29cbbc8` · **quoted from an earlier version** · 10.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4641049538"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4641049538` · **quoted from an earlier version** · 88,955
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fc7530c00a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fc7530c00a` · **quoted from an earlier version** · 13,595
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-888d1546e8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-888d1546e8` · **quoted from an earlier version** · 43,945
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f4fd25c876"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f4fd25c876` · **quoted from an earlier version** · 0.878
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43f29318f3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-43f29318f3` · **quoted from an earlier version** · 41
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-54bb3576eb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-54bb3576eb` · **quoted from an earlier version** · 0.283
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d3566c38dc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d3566c38dc` · **quoted from an earlier version** · 66.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2303a95e80"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2303a95e80` · **quoted from an earlier version** · 17
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ca32bdc330"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ca32bdc330` · **quoted from an earlier version** · 0.550
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0910df9394"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0910df9394` · **quoted from an earlier version** · 0.968
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-81bd5af221"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-81bd5af221` · **quoted from an earlier version** · 2,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-061fe0b7fd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-061fe0b7fd` · **quoted from an earlier version** · 1,315.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ae1d86e3b5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ae1d86e3b5` · **quoted from an earlier version** · 97,035
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7d60d19f84"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7d60d19f84` · **quoted from an earlier version** · 131.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-88de237c1a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-88de237c1a` · **quoted from an earlier version** · 238.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-10f18b755a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-10f18b755a` · **quoted from an earlier version** · 87,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-64559f7198"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-64559f7198` · **quoted from an earlier version** · 71,475
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5ec392b512"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5ec392b512` · **quoted from an earlier version** · 84
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab3a4b544c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab3a4b544c` · **quoted from an earlier version** · 231.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4873f2cb30"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4873f2cb30` · **quoted from an earlier version** · 990.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-004819d2f5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-004819d2f5` · **quoted from an earlier version** · 25
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7910c9c2e7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7910c9c2e7` · **quoted from an earlier version** · 295
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-256d75e8a3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-256d75e8a3` · **quoted from an earlier version** · 290.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b92b2789e2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b92b2789e2` · **quoted from an earlier version** · 222.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-47929086bb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-47929086bb` · **quoted from an earlier version** · 0.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c34c372a3a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c34c372a3a` · **quoted from an earlier version** · 38,230
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c0647f2814"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c0647f2814` · **quoted from an earlier version** · 0.725
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d888749c9b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d888749c9b` · **quoted from an earlier version** · 65.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-00dd04793f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-00dd04793f` · **quoted from an earlier version** · 0.083
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-041337511d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-041337511d` · **quoted from an earlier version** · 13
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-18b533727b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-18b533727b` · **quoted from an earlier version** · 0.14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6115768d23"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6115768d23` · **quoted from an earlier version** · 77
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2eaa6cf48f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2eaa6cf48f` · **quoted from an earlier version** · 60
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-63d6ac56bd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-63d6ac56bd` · **quoted from an earlier version** · 6.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e16cb077d7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e16cb077d7` · **quoted from an earlier version** · 84.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-87a7b8bf07"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-87a7b8bf07` · **quoted from an earlier version** · 459.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-53033ed442"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-53033ed442` · **quoted from an earlier version** · 17.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0d23fcbd4a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0d23fcbd4a` · **quoted from an earlier version** · 162
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ffa1e649aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ffa1e649aa` · **quoted from an earlier version** · 0.916
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7775d61b1b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7775d61b1b` · **quoted from an earlier version** · 1,217.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-784f91240e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-784f91240e` · **quoted from an earlier version** · 84,575
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-798a163816"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-798a163816` · **quoted from an earlier version** · 0.18
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4f1c6ae243"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4f1c6ae243` · **quoted from an earlier version** · 2,495.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7eae2ccdbd"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7eae2ccdbd` · **quoted from an earlier version** · 56
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-536d2b5134"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-536d2b5134` · **quoted from an earlier version** · 450
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-393770e5cb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-393770e5cb` · **quoted from an earlier version** · 681,555
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c20552c49"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c20552c49` · **quoted from an earlier version** · 232
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c7a11a0d28"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c7a11a0d28` · **quoted from an earlier version** · 165
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b7aaf3f215"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7aaf3f215` · **quoted from an earlier version** · 0.111
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-489988636b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-489988636b` · **quoted from an earlier version** · 130
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-46e3ed0ff3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-46e3ed0ff3` · **quoted from an earlier version** · 11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9fbf6e4cbf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9fbf6e4cbf` · **quoted from an earlier version** · 16
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96bb466f25"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96bb466f25` · **quoted from an earlier version** · 0.012
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ef54ab569e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ef54ab569e` · **quoted from an earlier version** · 245
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c8ec26f195"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c8ec26f195` · **quoted from an earlier version** · 56,105
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0ec3310d9d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0ec3310d9d` · **quoted from an earlier version** · 5.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-70e62fe30c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-70e62fe30c` · **quoted from an earlier version** · 14
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-93f829ed3f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-93f829ed3f` · **quoted from an earlier version** · 1,605,986
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8e2db0fb92"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8e2db0fb92` · **quoted from an earlier version** · 94,055
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5130b4bea0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5130b4bea0` · **quoted from an earlier version** · 0.11
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-517d63d602"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-517d63d602` · **quoted from an earlier version** · 199.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bcc708811"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bcc708811` · **quoted from an earlier version** · 0.798
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-603ec057ea"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-603ec057ea` · **quoted from an earlier version** · 2,800
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c9ff0949aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c9ff0949aa` · **quoted from an earlier version** · 96
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5c0fcf505a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5c0fcf505a` · **quoted from an earlier version** · 0.26
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dfdb599450"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dfdb599450` · **quoted from an earlier version** · 343.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-33476c4211"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33476c4211` · **quoted from an earlier version** · 275.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34183e48e5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34183e48e5` · **quoted from an earlier version** · 48,760
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0a209973a3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0a209973a3` · **quoted from an earlier version** · 1,418
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-26957ca8b8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-26957ca8b8` · **quoted from an earlier version** · 3,703.1
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1dd9092da3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1dd9092da3` · **quoted from an earlier version** · 229
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9e0e59b040"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9e0e59b040` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3443bf4ffa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3443bf4ffa` · **quoted from an earlier version** · 71
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-badf0cefff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-badf0cefff` · **quoted from an earlier version** · 104
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-558348ae49"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-558348ae49` · **quoted from an earlier version** · 106,666
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8b947a0c2f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8b947a0c2f` · **quoted from an earlier version** · 185
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7784c3f0ee"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7784c3f0ee` · **quoted from an earlier version** · 76
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9eb5438b01"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9eb5438b01` · **quoted from an earlier version** · 1,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e0aea50818"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e0aea50818` · **quoted from an earlier version** · 0.139
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1aae5b1397"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1aae5b1397` · **quoted from an earlier version** · 228.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4c1f48ee3e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4c1f48ee3e` · **quoted from an earlier version** · 0.27
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1822bd9b18"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1822bd9b18` · **quoted from an earlier version** · 4,248.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c531c5e89"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c531c5e89` · **quoted from an earlier version** · 3.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1ad22d9abc"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1ad22d9abc` · **quoted from an earlier version** · 0.516
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-78e0d6e329"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-78e0d6e329` · **quoted from an earlier version** · 71.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ccbe5c122"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ccbe5c122` · **quoted from an earlier version** · 5.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2e5ee8468"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2e5ee8468` · **quoted from an earlier version** · 0.618
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2c76c6b5b3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2c76c6b5b3` · **quoted from an earlier version** · 0.658
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ee1fca0f46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ee1fca0f46` · **quoted from an earlier version** · 51.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a06a395a17"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a06a395a17` · **quoted from an earlier version** · 115
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2c114fac1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2c114fac1` · **quoted from an earlier version** · 211.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c20d405511"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c20d405511` · **quoted from an earlier version** · 27
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e13f18d45b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e13f18d45b` · **quoted from an earlier version** · 17.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06f91dc419"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06f91dc419` · **quoted from an earlier version** · 116.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4e6a1c5566"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4e6a1c5566` · **quoted from an earlier version** · 0.21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-512afef935"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-512afef935` · **quoted from an earlier version** · 12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9d96c497c8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9d96c497c8` · **quoted from an earlier version** · 0.29
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b83956a783"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b83956a783` · **quoted from an earlier version** · 25,958
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-deeb8f289b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-deeb8f289b` · **quoted from an earlier version** · 59.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c5b4ead45b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c5b4ead45b` · **quoted from an earlier version** · 1,475
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-461686bb99"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-461686bb99` · **quoted from an earlier version** · 0.810
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-20a809f20d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-20a809f20d` · **quoted from an earlier version** · 72,413
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e7508812a8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e7508812a8` · **quoted from an earlier version** · 358
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-83bfbb156f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-83bfbb156f` · **quoted from an earlier version** · 0.019
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6221f1a030"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6221f1a030` · **quoted from an earlier version** · 127,348
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7fc473a720"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fc473a720` · **quoted from an earlier version** · 114
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-755e432375"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-755e432375` · **quoted from an earlier version** · 93
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0dc9f513c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0dc9f513c5` · **quoted from an earlier version** · 7.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b2e034910d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b2e034910d` · **quoted from an earlier version** · 3,811
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4b8bfc7195"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4b8bfc7195` · **quoted from an earlier version** · 10.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f5760d1624"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f5760d1624` · **quoted from an earlier version** · 6.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-36854b8c48"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-36854b8c48` · **quoted from an earlier version** · 175.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1e762df705"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1e762df705` · **quoted from an earlier version** · 554.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06e74a6cb3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06e74a6cb3` · **quoted from an earlier version** · 31
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3fc1c6d3d6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3fc1c6d3d6` · **quoted from an earlier version** · 26
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7e6de5f777"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7e6de5f777` · **quoted from an earlier version** · 0.766
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3104249ac0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3104249ac0` · **quoted from an earlier version** · 0.109
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c004de5d9e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c004de5d9e` · **quoted from an earlier version** · 2,600
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-fda8f1db4c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-fda8f1db4c` · **quoted from an earlier version** · 158.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a059ac3b79"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a059ac3b79` · **quoted from an earlier version** · 13,170
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab5daefe46"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab5daefe46` · **quoted from an earlier version** · 124.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bc687bf64b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bc687bf64b` · **quoted from an earlier version** · 10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ed540ba456"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ed540ba456` · **quoted from an earlier version** · 152,578
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1546645182"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1546645182` · **quoted from an earlier version** · 108,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7eb5aa8866"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7eb5aa8866` · **quoted from an earlier version** · 171
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ac681bc831"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ac681bc831` · **quoted from an earlier version** · 7.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-33471e4645"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-33471e4645` · **quoted from an earlier version** · 82
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c48c74b6c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c48c74b6c5` · **quoted from an earlier version** · 10,465
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8f1936f08e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8f1936f08e` · **quoted from an earlier version** · 102,697
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2d424a8e69"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2d424a8e69` · **quoted from an earlier version** · 35
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62fa69dd70"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62fa69dd70` · **quoted from an earlier version** · 0.19
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-89c05be395"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-89c05be395` · **quoted from an earlier version** · 19.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ecd67674e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ecd67674e` · **quoted from an earlier version** · 0.790
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9378869ff2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9378869ff2` · **quoted from an earlier version** · 299
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8424e43d1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8424e43d1` · **quoted from an earlier version** · 75.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c67812e053"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c67812e053` · **quoted from an earlier version** · 0.288
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b7e33a1cc3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b7e33a1cc3` · **quoted from an earlier version** · 0.585
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bf696c1e1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bf696c1e1` · **quoted from an earlier version** · 310
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8c1b5ec0b8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8c1b5ec0b8` · **quoted from an earlier version** · 279.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab7a35b7b4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab7a35b7b4` · **quoted from an earlier version** · 64
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9f608a0c48"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9f608a0c48` · **quoted from an earlier version** · 201
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-092fe85fff"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-092fe85fff` · **quoted from an earlier version** · 0.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1492931a16"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1492931a16` · **quoted from an earlier version** · 1,835.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b860940972"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b860940972` · **quoted from an earlier version** · 0.844
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b21aa8968d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b21aa8968d` · **quoted from an earlier version** · 12,107
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f8e3e73533"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f8e3e73533` · **quoted from an earlier version** · 0.17
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-407cc05ab9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-407cc05ab9` · **quoted from an earlier version** · 10.6
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-49431ae530"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-49431ae530` · **quoted from an earlier version** · 103
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ab1bc32a91"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ab1bc32a91` · **quoted from an earlier version** · 12.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-95379ea5bb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-95379ea5bb` · **quoted from an earlier version** · 0.47
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3c5101439"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3c5101439` · **quoted from an earlier version** · 94,092
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c5abca23c9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c5abca23c9` · **quoted from an earlier version** · 0.178
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ccc8e0b973"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ccc8e0b973` · **quoted from an earlier version** · 45
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b03f7581cf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b03f7581cf` · **quoted from an earlier version** · 21
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6a911b79e6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6a911b79e6` · **quoted from an earlier version** · 1,766.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8d1a03fe0d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8d1a03fe0d` · **quoted from an earlier version** · 0.679
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-578d6463f3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-578d6463f3` · **quoted from an earlier version** · 119,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4327141053"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4327141053` · **quoted from an earlier version** · 1,880.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd082e5b30"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bd082e5b30` · **quoted from an earlier version** · 236
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-150ca08ac4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-150ca08ac4` · **quoted from an earlier version** · 0.098
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d8f01ce3e3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d8f01ce3e3` · **quoted from an earlier version** · 0.050
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3b10f9a148"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3b10f9a148` · **quoted from an earlier version** · 18.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-19d2c6a39d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-19d2c6a39d` · **quoted from an earlier version** · 13.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0f57bd267d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0f57bd267d` · **quoted from an earlier version** · 0.625
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f6c2d6ede"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2f6c2d6ede` · **quoted from an earlier version** · 77.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c00db079a9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c00db079a9` · **quoted from an earlier version** · 0.672
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3903bf77a1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3903bf77a1` · **quoted from an earlier version** · 8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-43686761d1"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-43686761d1` · **quoted from an earlier version** · 430
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7fed507583"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7fed507583` · **quoted from an earlier version** · 0.12
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-663919599d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-663919599d` · **quoted from an earlier version** · 549
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9ffab0a6c3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9ffab0a6c3` · **quoted from an earlier version** · 30
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-97b57483bf"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-97b57483bf` · **quoted from an earlier version** · 437.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3ef32a0071"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3ef32a0071` · **quoted from an earlier version** · 9,415
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-80f0552bee"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-80f0552bee` · **quoted from an earlier version** · 0.16
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7997a7d986"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7997a7d986` · **quoted from an earlier version** · 0.092
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-528a1983a2"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-528a1983a2` · **quoted from an earlier version** · 0.782
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f1a0889914"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f1a0889914` · **quoted from an earlier version** · 21.9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a5dbb59f0c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a5dbb59f0c` · **quoted from an earlier version** · 609.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4c929d805b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4c929d805b` · **quoted from an earlier version** · 15.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3cb5e600ba"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3cb5e600ba` · **quoted from an earlier version** · 6.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bd4c594ee4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bd4c594ee4` · **quoted from an earlier version** · 211.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c19e34d8b6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c19e34d8b6` · **quoted from an earlier version** · 119,877
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-14b9545114"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-14b9545114` · **quoted from an earlier version** · 4,631
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1d0705c12c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1d0705c12c` · **quoted from an earlier version** · 5.3
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-b049ff339e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-b049ff339e` · **quoted from an earlier version** · 0.050
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6d86668a2e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6d86668a2e` · **quoted from an earlier version** · 0.035
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a560867617"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a560867617` · **quoted from an earlier version** · 62
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aded95b725"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aded95b725` · **quoted from an earlier version** · 5.5
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bbfdd29e8a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bbfdd29e8a` · **quoted from an earlier version** · 164.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-62735c2dd6"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-62735c2dd6` · **quoted from an earlier version** · 128.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-3e34257dcb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-3e34257dcb` · **quoted from an earlier version** · 22,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7d3c3064ac"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7d3c3064ac` · **quoted from an earlier version** · 4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-190921c537"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-190921c537` · **quoted from an earlier version** · 225
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9dc95a60ed"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9dc95a60ed` · **quoted from an earlier version** · 65
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4807eb0843"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4807eb0843` · **quoted from an earlier version** · 9
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-96ba4daafa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-96ba4daafa` · **quoted from an earlier version** · 224,735
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-7641bafc5e"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-7641bafc5e` · **quoted from an earlier version** · 0.10
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e8c8bd11ca"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e8c8bd11ca` · **quoted from an earlier version** · 0.402
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `Against the matched blobs the ordering … and whether it does worse is not shown.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a07a1825d8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a07a1825d8` · **quoted from an earlier version** · 0.039
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-aea2847b09"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-aea2847b09` · **quoted from an earlier version** · 686.8
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-eb0a74f8c8"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-eb0a74f8c8` · **quoted from an earlier version** · 118
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-dd97966b20"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-dd97966b20` · **quoted from an earlier version** · 1,313
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-5713a3b364"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-5713a3b364` · **quoted from an earlier version** · 117
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-922381c96a"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-922381c96a` · **quoted from an earlier version** · 37
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ed310c2003"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ed310c2003` · **quoted from an earlier version** · 63,476
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2b2253bfc5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2b2253bfc5` · **quoted from an earlier version** · 123
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The part of it this page can place in water bodies … or more distinct years.` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-efd5657388"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-efd5657388` · **quoted from an earlier version** · 0.39
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-78e4b74b6f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-78e4b74b6f` · **quoted from an earlier version** · 419
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-9360e97dfb"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-9360e97dfb` · **quoted from an earlier version** · 0.531
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-f3af492557"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-f3af492557` · **quoted from an earlier version** · 0.136
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-36e1d57582"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-36e1d57582` · **quoted from an earlier version** · 497.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e5a12e42f4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e5a12e42f4` · **quoted from an earlier version** · 335
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2f53fe70c5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2f53fe70c5` · **quoted from an earlier version** · 30,000
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8acfad0fe5"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8acfad0fe5` · **quoted from an earlier version** · 38
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6900075777"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6900075777` · **quoted from an earlier version** · 51.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-45e43db92b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-45e43db92b` · **quoted from an earlier version** · 0.07
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e92b7556c4"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e92b7556c4` · **quoted from an earlier version** · 0.4
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-06a34f37d0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-06a34f37d0` · **quoted from an earlier version** · 138
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-8813f8118b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-8813f8118b` · **quoted from an earlier version** · 3,500
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-6f4d08f4aa"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-6f4d08f4aa` · **quoted from an earlier version** · 24,276
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-c33e805b05"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-c33e805b05` · **quoted from an earlier version** · 0.859
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e90afeff3d"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e90afeff3d` · **quoted from an earlier version** · 35.0
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-cda8ad774c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-cda8ad774c` · **quoted from an earlier version** · 0.023
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-0b42090e27"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-0b42090e27` · **quoted from an earlier version** · 43
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-bad593d32b"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-bad593d32b` · **quoted from an earlier version** · 10.2
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-4bd2477588"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-4bd2477588` · **quoted from an earlier version** · 20
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-e8a6ebd9b9"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-e8a6ebd9b9` · **quoted from an earlier version** · 0.118
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2886ef41e7"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2886ef41e7` · **quoted from an earlier version** · 0.151
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| predictor | outcome | r | … (SOURCES.md#F-72a7d54930) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-d235bcc756"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-d235bcc756` · **quoted from an earlier version** · 204,688
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-376e45062f"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-376e45062f` · **quoted from an earlier version** · 0.830
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `The result depends almost entirely on what it is compared against … (SOURCES.md#F-ff5c44079f) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-ebae590cb3"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-ebae590cb3` · **quoted from an earlier version** · 161,990
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a4dc1545a0"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a4dc1545a0` · **quoted from an earlier version** · 772
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-2df03f3c20"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-2df03f3c20` · **quoted from an earlier version** · 267,612
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-34e4b3ea11"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-34e4b3ea11` · **quoted from an earlier version** · 10.7
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-1c6db12a1c"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-1c6db12a1c` · **quoted from an earlier version** · 0.50
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a2d9c9ecca"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a2d9c9ecca` · **quoted from an earlier version** · 578,019
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
+<a id="F-a1135d8276"></a>
+### As published at `00a157f` in `docs/AREAS.md`
+
+`F-a1135d8276` · **quoted from an earlier version** · 191
+
+- **Kind:** quoted · made by [`K-QUOTE`](#K-QUOTE)
+- **Where:** [`docs/AREAS.md` at `00a157f`](https://github.com/Jjokulian/copenhagen-waterways/blob/00a157f/docs/AREAS.md)
+- **Located by:** `| km² | area | model | bath (years) | … (SOURCES.md#F-07575ea4ee) |` - the value is read out of that text when the page is built, never typed
+- **Used in:** [ARCHIVE.md](ARCHIVE.md)
+
 <a id="F-17a476a7e4"></a>
 ### As published at `0288f8e` in `index.html`
 
@@ -79042,6 +76373,15 @@ Values chosen rather than measured - a threshold, a limit. They are shown as cho
 - **Why this value:** The thermochemical calorie is defined as exactly this many joules.
 - **Used in:** [HYPOTHESES.md](HYPOTHESES.md)
 
+<a id="F-8503421679"></a>
+### Stated: `w4ar_central_band_pct`
+
+`F-8503421679` · **stated, not measured** · 95
+
+- **Kind:** stipulated · made by [`K-STATED`](#K-STATED)
+- **Why this value:** The central band of a null distribution that livestock_baskets.py's place() counts as the noise floor: a contrast inside the band between the null's `0.025` and `0.975` quantiles does not beat it.
+- **Used in:** [AREAS.md](AREAS.md)
+
 <a id="F-26b7938f76"></a>
 ### Stated: `x14_sensor_error_pct`
 
@@ -79082,21 +76422,6 @@ Values chosen rather than measured - a threshold, a limit. They are shown as cho
 
 Where a number came from is not the same as why it should be believed. Each declaration below says what kind of numbers a script or a step produces, the model behind them, why that model is justified, what nothing justifies yet, when they would be void, and what they may and may not be used to claim. It is held in `data/manual/number_constructions.json`, and a change in any file it watches makes it stale until it is read again.
 
-<a id="K-AR-PARTITION-SPREAD"></a>
-### How far the matched-blob null moves between its runs
-
-`K-AR-PARTITION-SPREAD` · covers docs/data/areas/partition_score.json · **current** · read by fork w1-ar (read the compact-null loop and the spread computation in partition_score.py: one score per seed, spread = max minus min; 2026-09-11; not yet read by the project owner), 2026-09-11
-
-How much the compact null itself varies from one draw of blobs to another, beside the lift measured against its mean.
-
-- **Model:** `scripts/partition_score.py` grows one set of compact blobs per seed in its fixed list of seeds, scores each with `icc()`, and stores the mean as `size_matched_compact.icc`, the number of runs as `runs`, and the maximum minus the minimum as `spread`.
-- **Assumes:** The seeds are few - their number is stored as `runs` - so the spread is of those draws only, not an estimate of the null's full variability.
-- **Justified because:** The spread is computed from the same per-seed scores whose mean the lift is taken against, so a lift smaller than it is within the null's own variation. ([scripts/partition_score.py](../scripts/partition_score.py))
-- **Not justified by anything yet:** With so few runs the spread understates how far a single draw of blobs could fall; no standard error is computed.
-- **Void if:** partition_score.py changes its seeds or how it scores a partition and is not rerun
-- **May support:** Whether a lift over the compact null is larger than the null's own variation across the runs made.
-- **May not:** A confidence interval or a significance level for the lift.
-
 <a id="K-AREAS-HYPCOUNT"></a>
 ### The size of the hypothesis register
 
@@ -79114,23 +76439,24 @@ The number of mechanisms and groups in the hypothesis register, read as the leng
 <a id="K-AREAS-LEDGER"></a>
 ### One record per marine water body
 
-`K-AREAS-LEDGER` · covers data/derived/areas.json · **current** · read by Claude (re-read areas.py: the model flag now comes from the id list matched to DHI's Tabel 5 instead of a six-letter name match, and the gap text and docstring no longer say what the page retired; the declaration's model says so. The rerun changed no field but the flag and its gap. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-AREAS-LEDGER` · covers data/derived/areas.json · **current** · read by Claude (re-read areas.py after the search fix: nearest() now covers the full radius in both directions; the largest distance is stored per layer and water body, not per assignment; modelled status comes from statistical_models.json by id; bathing drops are counted; the label periods are scored separately. The declaration said otherwise in places and now matches the code. 2026-09-12; not yet read by the project owner), 2026-09-12
 
 Builds one record per marine water body in the national marine layer: what presses on it (outfalls, treatment plants, aquaculture, dumping and extraction), what is observed in it (bathing water), over which years, and what cannot be modelled there; then a cross-sectional correlation of sewage pressure against bathing quality, across water bodies.
 
-- **Model:** Every point layer is assigned to the water body with the nearest marine boundary vertex, through a grid hash over a thinned boundary (`STRIDE`), within `MAX_ASSIGN_KM`; distances are kept. Bathing stations are assigned by the bathing layer's own water-body field. A water body counts as modelled when its id is listed in `data/manual/statistical_models.json`, which matches DHI's list of water bodies with a station-level statistical model by number and name. The cross-sectional test correlates $\log_{10}(1 + x)$ of each pressure per square kilometre with the share of years below excellent and with the mean score.
+- **Model:** Every point layer is assigned to the water body with the nearest marine boundary vertex within `MAX_ASSIGN_KM`, through a grid hash over a thinned boundary (`STRIDE`): `nearest()` searches every grid cell the radius reaches, east-west as well as north-south, and takes the nearest vertex by great-circle distance. The largest assignment distance is kept per layer and water body. The earlier ring search, which reached well short of the radius east-west and could stop early, is kept as `nearest_rings()` only to count what changed. Bathing stations are assigned by the bathing layer's own water-body code, and the stations it drops are counted by reason. A water body counts as modelled when its id is listed in `data/manual/statistical_models.json`, which matches DHI's list of water bodies with a station-level statistical model by number and name. The cross-sectional test correlates $\log_{10}(1 + x)$ of each pressure per square kilometre with the share of years below excellent and with the mean score, pooled and per label period.
 - **Assumes:** The nearest boundary vertex identifies the water body a point on land discharges into.
 - **Assumes:** The layer's own `ov_stoe` area is the water body's area.
-- **Assumes:** Matching a water body's name against the model station areas finds exactly the water bodies the published models cover.
-- **Assumes:** Bathing quality classes are comparable across stations and years.
-- **Justified because:** One assignment rule and one distance for every layer, with the distance stored on each assignment so a reader can see how firm it is. ([scripts/areas.py:171](../scripts/areas.py))
+- **Assumes:** DHI's list, matched by id in `data/manual/statistical_models.json`, is exactly the set of water bodies with a published station-level model.
+- **Assumes:** Bathing quality classes are comparable across stations; the label set changes in 2011, so the periods are also scored separately.
+- **Justified because:** One assignment rule and one maximum distance for every point layer, with the largest distance per layer and water body stored so a reader can see how firm the assignments are. ([scripts/areas.py:171](../scripts/areas.py))
 - **Justified because:** Bathing stations are attributed by the layer's own water-body code rather than by distance. ([scripts/areas.py:133](../scripts/areas.py))
 - **Justified because:** The hazardous-substance layer is counted by its own water-type code, which is why no marine observation is claimed from it. ([scripts/areas.py:333](../scripts/areas.py))
 - **Justified because:** The cross-sectional estimate is labelled as a correlation across places at one time, not a causal estimate. ([scripts/areas.py:358](../scripts/areas.py))
-- **Not justified by anything yet:** Model coverage is decided by a substring match on names (`fold`), not by the models' own station list joined to the water-body codes; a renamed or ambiguously named water body would be misclassified.
 - **Not justified by anything yet:** The thresholds that make a bathing station informative and a water body testable are stipulated in the code, and nothing states why those values.
 - **Not justified by anything yet:** Nearest-vertex assignment puts an outfall into the nearest sea whatever the drainage actually does; the stored distance shows how far, not whether it is right.
 - **Not justified by anything yet:** The cross-sectional correlation has no control for coast type, flushing or population, and the approved person-equivalent capacity is not a load.
+- **Not justified by anything yet:** `data/manual/statistical_models.json` is matched by hand from DHI's table; a mismatch there would misclassify a water body.
+- **Not justified by anything yet:** Bathing stations whose water-body code the marine layer lacks are dropped, not placed by distance; the page states the rule and counts the drops.
 - **Void if:** a layer is refetched and `scripts/areas.py` is not rerun
 - **Void if:** the published statistical models change the areas they cover
 - **May support:** Counts of what is held per water body in these layers - pressures, bathing observation, model coverage - with their areas; and a correlation across water bodies at one time.
@@ -79158,7 +76484,7 @@ Scores the official water-body partition, per variable, by how much more alike t
 <a id="K-AREAS-PLACES"></a>
 ### Station facts for places: oxygen by region, the Roskilde spread, series length, sulphide
 
-`K-AREAS-PLACES` · covers data/derived/station_places.json · **current** · read by Claude (re-read: areas.json changed only in the model flag and its gap text, verified field by field against the copy taken before the rerun; station_places.py does not read the flag. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-AREAS-PLACES` · covers data/derived/station_places.json · **current** · read by Claude (re-read: station_places.py reads each water body's catchment name from areas.json, which areas.py takes from the marine layer's own ho_na field, not from point assignments; the search fix changed assignments only, so the region labels and every figure this declaration covers are unchanged. 2026-09-12; not yet read by the project owner), 2026-09-12
 
 Computes the station-level facts the place pages print: near-bed oxygen by region, the between-station spread in the two halves of Roskilde Fjord, how long each water body's longest series station runs, and where the hydrogen-sulphide record comes from.
 
@@ -80908,7 +78234,7 @@ Classifies the city's sewer catchments, counts the drainage structures in them, 
 <a id="K-POLITICS-AREAS"></a>
 ### Rain-conditioned outfalls and their basin volume, per coastal water body
 
-`K-POLITICS-AREAS` · covers docs/data/areas/areas.json · **current** · read by Claude (re-read: areas.py's assignment and volume sums are unchanged - the rerun changed no field but the model flag and its gap - so the outfall counts and basin volumes covered here are the same. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-AREAS` · covers docs/data/areas/areas.json · **current** · read by Claude (re-read: areas.py still assigns register points to water bodies and sums vol_sb, and areamap.py copies both into the slim record; after the search fix covered the full 20 km, the counts and volumes moved in the water bodies the fix reassigned, but the method this declaration describes is unchanged. 2026-09-12; not yet read by the project owner), 2026-09-12
 
 Carries each water body's outfall count and registered basin volume from the areas analysis into the published per-area file.
 
@@ -81091,7 +78417,7 @@ Adds the annual discharge volumes the statutory plan states, counting a figure s
 <a id="K-QUOTE"></a>
 ### Quoting this site's own past
 
-`K-QUOTE` · covers quote · **current** · read by Claude (re-read: the only change to live.py since the last reading is that excerpt() shows a chemical formula in an old passage as written, since it is part of what was said and may name a species the register does not hold; quantities are still quotations; verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-QUOTE` · covers quote · **current** · read by Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner), 2026-09-12
 
 What this site printed at an earlier commit.
 
@@ -81262,6 +78588,107 @@ How many stations of the held water-chemistry extract, in localities named for t
 - **Void if:** the prefixes or parameters in `scripts/pages/triage.py` change without the row's wording following
 - **May support:** That the held water-chemistry extract has total nitrogen, ortho-phosphate and silicon at the counted stations in localities named for the Belts and the Sound.
 - **May not:** That the series there are long or regular enough for a test, or anything about transport through the sections.
+
+<a id="K-W4AR-AREAS-RULES"></a>
+### The two rules that put things into water bodies, and the bathing correlation by label period
+
+`K-W4AR-AREAS-RULES` · covers data/derived/areas.json · **current** · read by fork w4-ar (read the declaration against scripts/areas.py as edited: reach() and nearest() at the lines cited, load_bathing(), bathing_match() and its reproduction check, by_period() and its overlap check, the R5 cross-check; the full search was also checked against a no-grid search over every kept vertex on all plants, dumping grounds and extraction areas and a seeded sample of outfalls, with no disagreement; 2026-09-12; not yet read by the project owner), 2026-09-12
+
+The rules by which pressures and bathing stations are put into water bodies, stated as the code applies them and with what each leaves out; and the cross-water-body correlation repeated on each bathing-label period alone.
+
+- **Model:** Pressure features go to the water body owning the nearest kept boundary vertex (every `STRIDE`-th) within `MAX_ASSIGN_KM`, by great-circle distance. `Assigner.reach()` bounds the grid cells searched from the haversine formula, so every vertex within that distance is examined east-west as well as north-south, and `Assigner.nearest()` takes the nearest of them. Bathing stations go to the water body whose `ov_id` equals their `wbid`, exactly, with no distance; `bathing_match()` counts what that keeps and leaves out. `by_period()` reads the years each label is used from the file, refuses a split where the two label sets overlap in time, and repeats each `cum_hoc` test on each period's station-years.
+- **Assumes:** A bathing station's `wbid` names the water body it belongs to; the file does not say who set it or how.
+- **Assumes:** The nearest kept boundary vertex identifies the water body a point on land discharges into.
+- **Assumes:** The shares of each label period are comparable across water bodies, as the pooled share is assumed to be.
+- **Justified because:** The cells searched are bounded from the haversine formula with the far edge's cosine, so no vertex within the distance lies outside them. ([scripts/areas.py:128](../scripts/areas.py))
+- **Justified because:** The nearest vertex is chosen by great-circle distance over every vertex in those cells, with no early stop. ([scripts/areas.py:141](../scripts/areas.py))
+- **Justified because:** The bathing rule keeps a station's code only when it is a marine water body's code. ([scripts/areas.py:214](../scripts/areas.py))
+- **Justified because:** The drops are counted by the same test the loader applies, and the run stops if the two disagree. ([scripts/areas.py:246](../scripts/areas.py))
+- **Justified because:** The period split is read from the labels, and the run stops if the label sets overlap in time. ([scripts/areas.py:545](../scripts/areas.py))
+- **Justified because:** The later period's correlation for the traced test is checked against the lineage's rerun `R5`, computed separately. ([scripts/areas.py:725](../scripts/areas.py))
+- **Not justified by anything yet:** Why a station carries the `wbid` it does, and whether a lake or unmatched code is an error or an inland station, is not recorded in the file.
+- **Not justified by anything yet:** The rule behind the bathing classes, and what changed in it with the new labels, is not in the file or in this repository.
+- **Not justified by anything yet:** Nearest boundary vertex is not the drainage path or the receiving water named in a discharge permit.
+- **Void if:** the bathing or marine layer is refetched and scripts/areas.py is not rerun
+- **Void if:** the label sets come to overlap in time
+- **May support:** How many bathing stations the exact-code rule keeps and leaves out, by reason; the correlation of each label period beside the pooled one.
+- **May not:** That a left-out station is not a marine bathing site; that the classes of the two periods measure the same thing.
+
+<a id="K-W4AR-LINEAGE"></a>
+### Reruns of the traced cross-water-body correlation
+
+`K-W4AR-LINEAGE` · covers docs/data/lineage/cum_hoc_r.json · **current** · read by fork w4-ar (read record_cum_hoc_r() in scripts/areas.py as edited: the reruns R1 to R8, R2 now the replaced ring search, and the R5 check against cum_hoc.by_period; values checked in docs/data/lineage/cum_hoc_r.json; 2026-09-12; not yet read by the project owner), 2026-09-12
+
+Reruns of the traced correlation, each with one choice changed.
+
+- **Model:** `record_cum_hoc_r()` in scripts/areas.py, after areas.json is written, recomputes r from the run's own assignments and bathing records with one step changed at a time: the distance, the search, the transform, the outcome threshold, the label period, the station minimum, the kind of correlation, and the rows with zero pressure.
+- **Assumes:** Each rerun changes one choice and keeps the rest.
+- **Justified because:** The later-period rerun is checked against the by-period test computed separately in the same run. ([scripts/areas.py:725](../scripts/areas.py))
+- **Not justified by anything yet:** The reruns change one choice at a time; interactions between choices are not explored.
+- **Void if:** scripts/areas.py changes its steps and the lineage is not regenerated
+- **May support:** How far r moves when one of its choices is changed.
+- **May not:** A confidence interval for r.
+
+<a id="K-W4AR-LIVESTOCK"></a>
+### Stations grouped by the livestock on the land that drains to their water body
+
+`K-W4AR-LIVESTOCK` · covers data/derived/livestock_baskets.json · **current** · read by fork w4-ar (read the declaration against scripts/livestock_baskets.py: density and national ratio, near-absent threshold, summer_medians(), assign(), basket_defs(), compare(), station_null(), block_null(), floor_report(), place(), profile, strata, sensitivity, repeat_vs_between and the interchangeability null; fields checked in data/derived/livestock_baskets.json; 2026-09-12; not yet read by the project owner), 2026-09-12
+
+Monitoring stations grouped by the livestock density of the land that drains to their water body and compared on their summer levels, against random baskets of stations and of whole water bodies; with salinity and depth strata, and the spread between stations against a station's own repeat spread.
+
+- **Model:** Herd records are placed in coastal catchments by point in polygon and their DE summed; a density is DE over catchment area. Each catchment is linked to the marine water body it touches most along the coast (`CELL_M`), and a water body's density is over all its linked catchments. Stations with `MIN_SUMMER_MONTHS` summer months get a summer median; basketable stations are cut into station-weighted tertiles of their water body's density (`assign()`), and near-absent is density below `NEAR_ABSENT_FRACTION` of the national. Contrasts are differences of basket medians and a common-language probability (`cles_less()`). Floors: station values permuted with the real basket sizes (`station_null()`), and densities permuted among water bodies with each one's stations kept whole and the basket procedure rerun (`block_null()`); `place()` names a contrast beyond the whole null range, outside its central band only, or inside it.
+- **Assumes:** Where a herd is registered stands for where its manure goes.
+- **Assumes:** DE stands for nutrient pressure.
+- **Assumes:** The register year `2024` stands for the decades the stations span.
+- **Assumes:** A catchment's livestock reaches the water body it touches along the coast.
+- **Justified because:** The national density is one ratio over all catchments together, not a mean of catchment densities. ([scripts/livestock_baskets.py:420](../scripts/livestock_baskets.py))
+- **Justified because:** The near-absent threshold is a fixed fraction of the national density, set as a constant before the comparison runs. ([scripts/livestock_baskets.py:566](../scripts/livestock_baskets.py))
+- **Justified because:** Baskets are station-weighted tertiles, with whole water bodies moving together. ([scripts/livestock_baskets.py:686](../scripts/livestock_baskets.py))
+- **Justified because:** The water-body floor shuffles densities among water bodies and keeps each water body's stations together, so stations that move as a block are not counted as independent. ([scripts/livestock_baskets.py:803](../scripts/livestock_baskets.py))
+- **Justified because:** A contrast is called beyond the floor only outside the null's whole range; outside its central band but inside the range is not clearly past it. ([scripts/livestock_baskets.py:302](../scripts/livestock_baskets.py))
+- **Justified because:** The repeat spread and the between-station spread are taken from the same summer station-months. ([scripts/livestock_baskets.py:983](../scripts/livestock_baskets.py))
+- **Justified because:** The interchangeability null shuffles values only among stations measured in the same year-month, so each station keeps its months and count. ([scripts/livestock_baskets.py:1015](../scripts/livestock_baskets.py))
+- **Justified because:** The output holds area totals only; a catchment total from too few contributing herds is withheld. ([scripts/livestock_baskets.py:558](../scripts/livestock_baskets.py))
+- **Not justified by anything yet:** Where a herd is registered is not where its manure is spread.
+- **Not justified by anything yet:** DE is a regulatory unit, not nitrogen or phosphorus.
+- **Not justified by anything yet:** The livestock is one register year against station records spanning decades.
+- **Not justified by anything yet:** The catchment-to-water-body link is built here from coastal adjacency; neither layer documents it as a code, though the catchment id equals the marine layer's `mst_id` in every case.
+- **Not justified by anything yet:** An outer fjord does not inherit its inner fjord's catchment.
+- **Not justified by anything yet:** Low-livestock land is not low-load land: urban and sewage loads are not in the grouping.
+- **Not justified by anything yet:** Levels only: moving together along the livestock line is not tested.
+- **Not justified by anything yet:** Fluorescence is whole-cast and in relative units; differences of instrument or programme between stations are not checked.
+- **Not justified by anything yet:** The repeat spread includes real change within a summer, so it overstates measurement noise.
+- **Void if:** the herd register, the catchment layer or the station panel changes and scripts/livestock_baskets.py is not rerun
+- **May support:** A naive first comparison of station summer levels by the livestock behind their water body, against noise floors at station and water-body level; whether the stations are interchangeable.
+- **May not:** An effect of livestock on oxygen; anything about a single farm; a shared cause from similar levels.
+
+<a id="K-W4AR-SYNC"></a>
+### Do stations move together, by distance and across the water-body lines
+
+`K-W4AR-SYNC` · covers data/derived/synchrony.json · **current** · read by fork w4-ar (read the declaration against scripts/synchrony.py: the constants, anomalies(), within_year(), shift_p(), pooled(), jackknife(), compare(), graph_part(), analyse_tau() near/far and decidability, robustness() same-day and different-day, and main()'s use of areas.json for names only; fields checked in data/derived/synchrony.json; 2026-09-12; not yet read by the project owner), 2026-09-12
+
+Whether pairs of monitoring stations move together over time beyond a shift-in-time null, against their distance apart and against the official water-body lines; with the sampling day as a check, and the network of co-moving pairs as the data's own grouping.
+
+- **Model:** For each station and calendar month the station's median over years is subtracted where it has `MIN_YEARS` years of that month (`anomalies()`). For each pair with `MIN_OVERLAP` shared months, Kendall's tau of the two anomaly series; the null rotates one series by whole years inside the pair's window and recomputes tau, $p = (1 + \#\{\tau_k \ge \tau_0\}) / (1 + K)$ over the `K` valid shifts (`shift_p()`), and a pair is beyond chance when $p \le$ `ALPHA`. Stations are placed in water bodies by the positional overlay. The deciding figure pools, over distance bins, the within-minus-across difference weighted by the within count (`pooled()`), with a leave-one-water-body-out jackknife (`jackknife()`). Groups: connected components and Louvain communities of the network of pairs beyond chance (`graph_part()`).
+- **Assumes:** A station's register number is one place across its whole record.
+- **Assumes:** Bed is the deepest quarter of each cast's sampled depths, so a single-depth cast counts as bed.
+- **Assumes:** Water-body membership is the positional overlay of each station's own coordinates.
+- **Assumes:** Pairs share stations, so pair counts are not independent; the standard error is by water body.
+- **Justified because:** Each station's own seasonal cycle is removed before pairs are compared, so a shared season cannot pass as co-movement. ([scripts/synchrony.py:199](../scripts/synchrony.py))
+- **Justified because:** The null shifts one series by whole years inside the pair's shared window, keeping each series intact and breaking only the tie in time. ([scripts/synchrony.py:235](../scripts/synchrony.py))
+- **Justified because:** A pair is decided only when enough shifted copies exist; the rest are counted as too thin, not forced. ([scripts/synchrony.py:519](../scripts/synchrony.py))
+- **Justified because:** Within against across is compared inside distance bins and pooled with the same-body counts as weights, so a difference in distance between the two groups cannot carry the result; the finer bins check what is left. ([scripts/synchrony.py:252](../scripts/synchrony.py))
+- **Justified because:** The standard error leaves out one water body at a time. ([scripts/synchrony.py:267](../scripts/synchrony.py))
+- **Justified because:** The different-day rerun removes, pair by pair, the months sampled within the gap and recomputes tau, shifts and decidability. ([scripts/synchrony.py:880](../scripts/synchrony.py))
+- **Justified because:** Only names are read from data/derived/areas.json, so how pressures are assigned to water bodies does not enter this file. ([scripts/synchrony.py:976](../scripts/synchrony.py))
+- **Not justified by anything yet:** No correction for testing many pairs in the main figures: at the `ALPHA` level that share of decidable pairs passes by chance alone.
+- **Not justified by anything yet:** Many pairs with enough shared months are too thin for the shift test and are left out; the decided pairs may not be typical.
+- **Not justified by anything yet:** The different-day result for bed oxygen rests on few same-body pairs.
+- **Not justified by anything yet:** Land is ignored in distances: two stations either side of a peninsula count as near.
+- **Not justified by anything yet:** Stations outside every water body are left out of the within-against-across comparison.
+- **Void if:** the station panel or the overlay is rebuilt and scripts/synchrony.py is not rerun
+- **May support:** Whether pairs of stations move together beyond a shift-in-time null, by distance; whether the official lines add to distance for a variable; the data's own co-movement groups.
+- **May not:** A shared cause from co-movement alone; anything about similar levels; a result for pairs too thin for the test.
 
 <a id="K-WATER-CURRENTS"></a>
 ### Currents in and around Køge Bugt from a coarse global model

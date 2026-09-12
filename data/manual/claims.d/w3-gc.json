@@ -5053,18 +5053,18 @@
    "claim": "On the mean-square ratio reported as an ICC, labels that carry no information score near one half, not zero.",
    "because": "AREAS.md's account of the statistic.",
    "rests_on": [
-    "C-AR-PART-STAT"
+    "X-AR-PARTITION"
    ],
    "replaces": [
     "C-GC-OLD-C-TABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CONSTRUCTED.md": "labels that carry no information score near one half, not zero",
-     "texts": "70226b7ac6ebe3a4",
-     "rests on C-AR-PART-STAT": "2ef587bff9f917a0"
+     "texts": "dd611746c30eb62a",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
     }
    }
   },
@@ -5076,18 +5076,18 @@
    "claim": "No raw value of that ratio is readable on its own.",
    "because": "Its null is not zero.",
    "rests_on": [
-    "C-AR-PART-STAT"
+    "X-AR-PARTITION"
    ],
    "replaces": [
     "C-GC-OLD-C-TABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on CONSTRUCTED.md": "no raw value is readable on its own",
-     "texts": "944c1850a30de5af",
-     "rests on C-AR-PART-STAT": "2ef587bff9f917a0"
+     "texts": "678c8111557ba39a",
+     "node X-AR-PARTITION": "70f90507ef60ec40"
     }
    }
   },

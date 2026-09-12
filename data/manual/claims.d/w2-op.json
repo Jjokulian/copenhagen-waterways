@@ -2132,18 +2132,18 @@
    "claim": "AREAS.md counts, for every water body, how many stations have data in two, five and ten or more distinct years, an absence reported as a count over a named corpus.",
    "because": "Its coverage claim reads the station series behind the partition tests.",
    "rests_on": [
-    "C-AR-SERIES-COVERAGE"
+    "C-W4AR-SERIES-COVERAGE"
    ],
    "replaces": [
     "C-OP-OLD-16-AREAS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS rewrite moved what they rest on: each states a fact about the mean-square ratio - its chance level of one half, the need to condition on season, that no raw value reads alone - or the per-water-body coverage count, and none depends on reading a beaten random basket as more than a noise floor; they now rest on the partition script and the rewritten coverage claim. 2026-09-12; not yet read by the project owner)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "[AREAS.md](AREAS.md) counts that gap: for every water body, how many stations have data in two, five and ten or more distinct years - an absence reported as a count over a named corpus, not as a share of the sea.",
-     "texts": "84cd71b9e2e5ed56",
-     "rests on C-AR-SERIES-COVERAGE": "b57020f27f2be015"
+     "texts": "04f7637593245f6d",
+     "rests on C-W4AR-SERIES-COVERAGE": "298822d585406021"
     }
    }
   },

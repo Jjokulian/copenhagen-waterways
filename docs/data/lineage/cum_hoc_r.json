@@ -2,11 +2,11 @@
  "number": {
   "file": "data/derived/areas.json",
   "path": "cum_hoc.tests.2.r",
-  "value": 0.313,
+  "value": 0.28,
   "n": 65,
   "predictor": "log10(1+pe_per_km2)",
   "outcome": "sub_excellent",
-  "unrounded": 0.31332302662509603,
+  "unrounded": 0.2797886308934807,
   "says": "The Pearson correlation, across the marine water bodies with two or more bathing stations, between log10(1 + approved treatment-plant person-equivalents per km² of water body) and the share of station-years whose bathing class is not \"Excellent\".",
   "producer": "scripts/areas.py",
   "page": "docs/AREAS.md",
@@ -527,24 +527,24 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 176,
-     "last": 177,
+     "first": 287,
+     "last": 288,
      "text": "    props = [f[\"properties\"] for f in marine]\n    wb_ids = {p[\"ov_id\"] for p in props}"
     },
     {
      "file": "scripts/areas.py",
-     "first": 188,
-     "last": 188,
+     "first": 299,
+     "last": 299,
      "text": "            \"id\": p[\"ov_id\"], \"name\": p[\"ov_navn\"], \"area_km2\": p[\"ov_stoe\"],"
     }
    ],
    "why": {
-    "reason": "So this script refuses the aggregate and builds one record per marine water body: what presses on it, what is observed in it, over which years each of those streams exists, and - stated as plainly as the rest - what cannot be modelled there and why.",
+    "reason": "The 123 marine water bodies are the units the water plans assign responsibility and targets to. Nothing in the data drew them. This script keeps one record per water body - what presses on it, what is observed in it, over which years each of those streams exists, and what cannot be modelled there and why - as an administrative ledger: numbers about management units, not findings about the sea.",
     "ref": {
      "file": "scripts/areas.py",
-     "first": 8,
-     "last": 10,
-     "text": "So this script refuses the aggregate and builds one record per marine water body:\nwhat presses on it, what is observed in it, over which years each of those streams\nexists, and - stated as plainly as the rest - what cannot be modelled there and why."
+     "first": 4,
+     "last": 8,
+     "text": "The 123 marine water bodies are the units the water plans assign responsibility and\ntargets to. Nothing in the data drew them. This script keeps one record per water\nbody - what presses on it, what is observed in it, over which years each of those\nstreams exists, and what cannot be modelled there and why - as an administrative\nledger: numbers about management units, not findings about the sea."
     },
     "author": "the partition: not recorded in the file; using it as the unit: this project, in scripts/areas.py"
    },
@@ -574,14 +574,14 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 60,
-     "last": 60,
+     "first": 76,
+     "last": 76,
      "text": "    (\"punkt_rens_udl\", \"rens\", \"wastewater treatment plants\", \"point\"),"
     },
     {
      "file": "scripts/areas.py",
-     "first": 207,
-     "last": 208,
+     "first": 319,
+     "last": 320,
      "text": "        for f in feats:\n            lat, lon = centroid(f[\"geometry\"])"
     }
    ],
@@ -601,7 +601,7 @@
    "kind": "grouping",
    "branch": "pressure",
    "title": "Each plant goes to the water body with the nearest boundary vertex, within 20 km",
-   "imposes": "A plant belongs to the water body owning the nearest kept boundary vertex (every 4th vertex, `STRIDE`; 368,981 kept), and to none if no vertex is found within `MAX_ASSIGN_KM` = 20 km. The search walks square rings of 0.05° grid cells out from the plant's cell, 4 rings at most, and stops after the first ring beyond its own cell in which it met any vertex. A cell is 0.05° of longitude wide, so east–west the 4 rings reach about 12.4 km at 56° N, not 20: a plant 12–20 km east or west of the nearest boundary is dropped as if it were beyond 20 km, and a nearer vertex in an outer ring can lose to a farther one in an inner ring. What the plant discharges into is not read; the layer has no column for it.",
+   "imposes": "A plant belongs to the water body owning the nearest kept boundary vertex (every 4th vertex, `STRIDE`; 368,981 kept), by great-circle distance, and to none if no vertex lies within `MAX_ASSIGN_KM` = 20 km. The search takes every vertex in the 0.05° grid cells that distance can reach: at 56° N, 4 cells each way north-south and 7 east-west, since a degree of longitude is shorter there. What the plant discharges into is not read; the layer has no column for it.",
    "counted_as_one": "A plant belongs to the water body whose boundary is nearest to its point, whatever its effluent reaches.",
    "inputs": [
     {
@@ -623,56 +623,69 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 41,
-     "last": 43,
+     "first": 57,
+     "last": 59,
      "text": "CELL = 0.05           # grid cell, degrees\nSTRIDE = 4            # keep every Nth boundary vertex; ~15 m spacing, ample at 20 km\nMAX_ASSIGN_KM = 20.0  # beyond this a point belongs to no marine area"
     },
     {
      "file": "scripts/areas.py",
-     "first": 87,
-     "last": 92,
+     "first": 114,
+     "last": 119,
      "text": "                    for x, y in ring[::STRIDE]:\n                        n = len(self.lat)\n                        self.lat.append(y)\n                        self.lon.append(x)\n                        self.wb.append(i)\n                        self.grid[(int(y / CELL), int(x / CELL))].append(n)"
     },
     {
      "file": "scripts/areas.py",
-     "first": 96,
-     "last": 115,
-     "text": "        cy, cx = int(lat / CELL), int(lon / CELL)\n        best, best_d = None, None\n        rings = int(max_km / (CELL * 111.0)) + 1\n        for r in range(rings + 1):\n            got = False\n            for dy in range(-r, r + 1):\n                for dx in range(-r, r + 1):\n                    if r and max(abs(dy), abs(dx)) != r:\n                        continue\n                    for n in self.grid.get((cy + dy, cx + dx), ()):\n                        got = True\n                        d = haversine(lat, lon, self.lat[n], self.lon[n])\n                        if best_d is None or d < best_d:\n                            best, best_d = self.wb[n], d\n            # one extra ring after the first hit, so a near-miss in the next cell wins\n            if best is not None and got and r > 0:\n                break\n        if best_d is not None and best_d <= max_km:\n            return best, best_d\n        return None, None"
+     "first": 134,
+     "last": 139,
+     "text": "        a = max_km / 6371.0\n        dlat = math.degrees(a)\n        s = math.sin(a / 2) / math.sqrt(math.cos(math.radians(lat))\n                                        * math.cos(math.radians(lat + dlat)))\n        dlon = math.degrees(2 * math.asin(min(1.0, s)))\n        return int(dlat / CELL) + 1, int(dlon / CELL) + 1"
     },
     {
      "file": "scripts/areas.py",
-     "first": 206,
-     "last": 213,
-     "text": "        far = 0\n        for f in feats:\n            lat, lon = centroid(f[\"geometry\"])\n            w, d = A.nearest(lat, lon)\n            if key in TRACE:\n                TRACE[key][\"got\"].append((w, d))\n            if w is None:\n                far += 1"
+     "first": 142,
+     "last": 155,
+     "text": "        cy, cx = int(lat / CELL), int(lon / CELL)\n        ry, rx = self.reach(lat, max_km)\n        got = [self.cells[k] for k in ((cy + dy, cx + dx) for dy in range(-ry, ry + 1)\n                                       for dx in range(-rx, rx + 1)) if k in self.cells]\n        if got:\n            idx = np.concatenate(got)\n            la, lo = math.radians(lat), math.radians(lon)\n            h = (np.sin((self.rlat[idx] - la) / 2) ** 2 + math.cos(la)\n                 * np.cos(self.rlat[idx]) * np.sin((self.rlon[idx] - lo) / 2) ** 2)\n            n = int(idx[int(np.argmin(h))])\n            d = haversine(lat, lon, self.lat[n], self.lon[n])\n            if d <= max_km:\n                return self.wb[n], d\n        return None, None"
+    },
+    {
+     "file": "scripts/areas.py",
+     "first": 317,
+     "last": 329,
+     "text": "        far = 0\n        moved = collections.Counter()\n        for f in feats:\n            lat, lon = centroid(f[\"geometry\"])\n            w, d = A.nearest(lat, lon)\n            # what the ring search this replaced would have done: counted, not used\n            w0 = A.nearest_rings(lat, lon)[0]\n            moved[\"unchanged\" if w0 == w else \"newly_assigned\" if w0 is None\n                  else \"newly_dropped\" if w is None else \"reassigned\"] += 1\n            if key in TRACE:\n                TRACE[key][\"got\"].append((w, d))\n            if w is None:\n                far += 1"
     }
    ],
    "why": {
-    "reason": "Assignment is by nearest point on the marine boundary, via a grid hash over the 1.47 M boundary vertices, with the largest distance per layer and area recorded so a reader can see how firm the assignment is. Outfalls sit on land; bathing stations sit on the shore; dumping grounds sit in the water. One rule, one distance, no hidden choices. For the value 20 km itself: no reason recorded; its comment says only what it does (\"beyond this a point belongs to no marine area\").",
+    "reason": "Pressures (outfalls, treatment plants, aquaculture, dumping grounds, extraction areas) go to the water body owning the nearest kept boundary vertex (every STRIDE-th vertex of the marine layer) within MAX_ASSIGN_KM, by great-circle distance, searching every grid cell that distance can reach east-west as well as north-south; beyond it a feature belongs to no water body. The largest distance per layer and area is recorded, and so is what the full search changed against the ring search it replaced (assignment.change_against_ring_search in areas.json). For the value 20 km itself: no reason recorded; its comment says only what it does (\"beyond this a point belongs to no marine area\").",
     "ref": {
      "file": "scripts/areas.py",
      "first": 12,
-     "last": 15,
-     "text": "Assignment is by nearest point on the marine boundary, via a grid hash over the\n1.47 M boundary vertices, with the largest distance per layer and area recorded so a\nreader can see how firm the assignment is. Outfalls sit on land; bathing stations sit on the\nshore; dumping grounds sit in the water. One rule, one distance, no hidden choices."
+     "last": 18,
+     "text": "Pressures (outfalls, treatment plants, aquaculture, dumping grounds, extraction\nareas) go to the water body owning the nearest kept boundary vertex (every\nSTRIDE-th vertex of the marine layer) within MAX_ASSIGN_KM, by great-circle\ndistance, searching every grid cell that distance can reach east-west as well as\nnorth-south; beyond it a feature belongs to no water body. The largest distance per\nlayer and area is recorded, and so is what the full search changed against the\nring search it replaced (assignment.change_against_ring_search in areas.json)."
     },
     "author": "this project, in scripts/areas.py"
    },
-   "alternative": "the receiving water named in each plant's discharge permit, or the drainage path to the sea; a shorter or longer distance; the exhaustive nearest-vertex search the docstring describes",
-   "tested": "R1: r = +0.250; R2: r = +0.280",
+   "alternative": "the receiving water named in each plant's discharge permit, or the drainage path to the sea; a shorter or longer distance (R1); the ring search this replaced (R2)",
+   "tested": "R1: r = +0.225; R2: r = +0.313",
    "outputs": {
-    "assigned": 656,
-    "dropped_no_vertex_found": 94,
+    "assigned": 680,
+    "dropped_no_vertex_found": 70,
     "water_bodies_with_a_plant": 91,
     "distance_km_of_assigned": {
-     "n": 656,
+     "n": 680,
      "min": 0.0,
-     "q1": 0.27,
-     "median": 1.8,
-     "q3": 7.71,
-     "max": 19.99
+     "q1": 0.28,
+     "median": 2.04,
+     "q3": 7.84,
+     "max": 19.86
     },
     "godk_pe_in_file": 11681853,
-    "godk_pe_assigned": 10653246,
-    "godk_pe_dropped": 1028607
+    "godk_pe_assigned": 10736886,
+    "godk_pe_dropped": 944967,
+    "against_the_ring_search": {
+     "features": 750,
+     "assigned": 680,
+     "newly_assigned": 24,
+     "reassigned": 27,
+     "newly_dropped": 0
+    }
    }
   },
   {
@@ -688,14 +701,14 @@
      "columns": [
       "godk_pe"
      ],
-     "rows": 656
+     "rows": 680
     }
    ],
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 222,
-     "last": 223,
+     "first": 338,
+     "last": 339,
      "text": "            if key == \"rens\":\n                r[\"pe\"] = r.get(\"pe\", 0) + (q.get(\"godk_pe\") or 0)"
     }
    ],
@@ -708,7 +721,7 @@
    "tested": "not tested",
    "outputs": {
     "water_bodies_with_pe_above_0": 91,
-    "of_the_test_rows": 58
+    "of_the_test_rows": 59
    }
   },
   {
@@ -716,7 +729,7 @@
    "kind": "filling in",
    "branch": "pressure",
    "title": "No value, or no plant, counts as zero",
-   "imposes": "A plant with no `godk_pe` adds 0. A water body with no plant assigned gets a pressure of 0 - which is also what it gets if its plants sit 12-20 km east or west of the boundary (S3).",
+   "imposes": "A plant with no `godk_pe` adds 0. A water body with no plant assigned gets a pressure of 0 - whether no plant lies within 20 km of its boundary or the plants near it sit nearer another water body's (S3).",
    "counted_as_one": "A missing `godk_pe`, and a water body with no plant assigned, both = zero pressure.",
    "inputs": [
     {
@@ -730,20 +743,20 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 223,
-     "last": 223,
+     "first": 339,
+     "last": 339,
      "text": "                r[\"pe\"] = r.get(\"pe\", 0) + (q.get(\"godk_pe\") or 0)"
     },
     {
      "file": "scripts/areas.py",
-     "first": 382,
-     "last": 382,
+     "first": 506,
+     "last": 506,
      "text": "        rens = r[\"pressure\"].get(\"rens\", {})"
     },
     {
      "file": "scripts/areas.py",
-     "first": 386,
-     "last": 386,
+     "first": 510,
+     "last": 510,
      "text": "            \"pe_per_km2\": rens.get(\"pe\", 0) / r[\"area_km2\"],"
     }
    ],
@@ -753,11 +766,11 @@
     "author": "this project, in scripts/areas.py"
    },
    "alternative": "leave such water bodies out (R8), or mark a missing `godk_pe` as unknown",
-   "tested": "R8: r = +0.291",
+   "tested": "R8: r = +0.258",
    "outputs": {
     "plants_without_godk_pe": 9,
     "of_them_assigned": 9,
-    "test_rows_with_zero_pressure": 7
+    "test_rows_with_zero_pressure": 6
    }
   },
   {
@@ -779,14 +792,14 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 188,
-     "last": 188,
+     "first": 299,
+     "last": 299,
      "text": "            \"id\": p[\"ov_id\"], \"name\": p[\"ov_navn\"], \"area_km2\": p[\"ov_stoe\"],"
     },
     {
      "file": "scripts/areas.py",
-     "first": 386,
-     "last": 386,
+     "first": 510,
+     "last": 510,
      "text": "            \"pe_per_km2\": rens.get(\"pe\", 0) / r[\"area_km2\"],"
     }
    ],
@@ -801,10 +814,10 @@
     "pe_per_km2": {
      "n": 65,
      "min": 0.0,
-     "q1": 49.95,
-     "median": 284.99,
-     "q3": 780.44,
-     "max": 13812.85
+     "q1": 69.83,
+     "median": 276.89,
+     "q3": 774.17,
+     "max": 13336.51
     }
    }
   },
@@ -829,8 +842,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 137,
-     "last": 144,
+     "first": 210,
+     "last": 217,
      "text": "    for p in (f[\"properties\"] for f in doc[\"features\"]):\n        s = {YEAR_NUM[y]: SCORE[p[\"quality_\" + y]]\n             for y in YEARS if p.get(\"quality_\" + y) in SCORE}\n        if s:\n            st.append({\"wb\": p.get(\"wbid\") if p.get(\"wbid\") in wb_ids else None,\n                       \"name\": p[\"name\"], \"lat\": p[\"latitude\"], \"lon\": p[\"longitude\"],\n                       \"s\": s})\n    return st"
     }
    ],
@@ -893,20 +906,20 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 45,
-     "last": 46,
+     "first": 61,
+     "last": 62,
      "text": "YEARS = [f\"{y:02d}\" for y in list(range(91, 100)) + list(range(0, 19))]\nYEAR_NUM = {y: (1900 + int(y) if int(y) >= 91 else 2000 + int(y)) for y in YEARS}"
     },
     {
      "file": "scripts/areas.py",
-     "first": 47,
-     "last": 47,
+     "first": 63,
+     "last": 63,
      "text": "SCORE = {\"Excellent\": 4, \"Good\": 3, \"Good or Sufficient\": 3, \"Sufficient\": 2, \"Poor\": 1}"
     },
     {
      "file": "scripts/areas.py",
-     "first": 138,
-     "last": 140,
+     "first": 211,
+     "last": 213,
      "text": "        s = {YEAR_NUM[y]: SCORE[p[\"quality_\" + y]]\n             for y in YEARS if p.get(\"quality_\" + y) in SCORE}\n        if s:"
     }
    ],
@@ -936,7 +949,7 @@
    "kind": "classification",
    "branch": "outcome",
    "title": "The labels, and the scores put on them",
-   "imposes": "The file's labels are used as they are written. \"Good or Sufficient\", which the file uses 1991–2010, is scored 3, the same as \"Good\", which appears from 2011.",
+   "imposes": "The file's labels are used as they are written. \"Good or Sufficient\", which the file uses 1991–2010, is scored 3, the same as \"Good\", which appears from 2011. The share pools both label sets; `cum_hoc.by_period` in areas.json repeats every test on each set's years alone (R5 is this test on the second).",
    "counted_as_one": "\"Good or Sufficient\" (to 2010) = \"Good\" (from 2011) = score 3.",
    "inputs": [
     {
@@ -977,8 +990,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 47,
-     "last": 47,
+     "first": 63,
+     "last": 63,
      "text": "SCORE = {\"Excellent\": 4, \"Good\": 3, \"Good or Sufficient\": 3, \"Sufficient\": 2, \"Poor\": 1}"
     }
    ],
@@ -988,7 +1001,7 @@
     "author": "the labels: not recorded in the file or in this repository; the scores: this project, in scripts/areas.py"
    },
    "alternative": "score each label regime on its own; use only 2011–2018, one label set (R5)",
-   "tested": "R5: r = +0.173",
+   "tested": "R5: r = +0.136",
    "outputs": {
     "score": {
      "Excellent": 4,
@@ -1030,7 +1043,7 @@
    "kind": "grouping",
    "branch": "outcome",
    "title": "Each station goes to the water body its own `wbid` names",
-   "imposes": "A station belongs to the water body whose `ov_id` equals its `wbid` exactly; any other `wbid` - a lake code, a code spelt differently, a stray value - puts it in none. This is the dataset's own category, not the distance rule: the module docstring says bathing stations are assigned with the plants' rule (\"One rule, one distance\"), and the code does not do that.",
+   "imposes": "A station belongs to the water body whose `ov_id` equals its `wbid` exactly; any other `wbid` - a lake code, a coastal code not in this layer, a code in another form, or none - puts it in none, and `bathing_match` in areas.json counts those by reason. This is the dataset's own category, not the distance rule the plants get, and the module docstring says so.",
    "counted_as_one": null,
    "inputs": [
     {
@@ -1044,14 +1057,14 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 141,
-     "last": 141,
+     "first": 214,
+     "last": 214,
      "text": "            st.append({\"wb\": p.get(\"wbid\") if p.get(\"wbid\") in wb_ids else None,"
     },
     {
      "file": "scripts/areas.py",
-     "first": 234,
-     "last": 236,
+     "first": 358,
+     "last": 360,
      "text": "    for s in st:\n        if s[\"wb\"]:\n            per[s[\"wb\"]].append(s)"
     }
    ],
@@ -1078,6 +1091,12 @@
      "DK_Coast34": 1,
      "DK_Coast9": 1
     },
+    "left_out_by_reason": {
+     "lake_code": 103,
+     "coastal_code_not_in_marine_layer": 111,
+     "no_wbid": 10,
+     "code_in_another_form": 3
+    },
     "water_bodies_with_a_station": 70
    }
   },
@@ -1097,8 +1116,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 261,
-     "last": 262,
+     "first": 385,
+     "last": 386,
      "text": "            \"sub_excellent_share\": round(\n                sum(1 for p in allpairs if p[1] < 4) / len(allpairs), 3),"
     }
    ],
@@ -1108,7 +1127,7 @@
     "author": "this project, in scripts/areas.py"
    },
    "alternative": "the share \"Poor\" (R4); the mean score (the page's next row, tests[3])",
-   "tested": "R4: r = +0.181",
+   "tested": "R4: r = +0.151",
    "outputs": {
     "sub_excellent": {
      "n": 65,
@@ -1125,7 +1144,7 @@
    "kind": "identity",
    "branch": "outcome",
    "title": "Station-years are pooled across stations and years",
-   "imposes": "All classed years of all stations in a water body, 1991–2018, go into one share; a station classed in 28 years weighs 28 times a station classed once, and the two label regimes (S9) are pooled.",
+   "imposes": "All classed years of all stations in a water body, 1991–2018, go into one share; a station classed in 28 years weighs 28 times a station classed once, and the two label regimes (S9) are pooled; `cum_hoc.by_period` gives each regime alone.",
    "counted_as_one": "One station-year = one member of a water body's share, every station and every year 1991–2018 pooled.",
    "inputs": [
     {
@@ -1136,8 +1155,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 240,
-     "last": 240,
+     "first": 364,
+     "last": 364,
      "text": "        allpairs = [(y, s[\"s\"][y]) for s in v for y in s[\"s\"]]"
     }
    ],
@@ -1176,8 +1195,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 378,
-     "last": 380,
+     "first": 502,
+     "last": 504,
      "text": "        b = r[\"observation\"].get(\"bathing\")\n        if not b or b[\"stations\"] < 2 or not r[\"area_km2\"]:\n            continue"
     }
    ],
@@ -1185,14 +1204,14 @@
     "reason": "This is a correlation across areas at one time, not a causal estimate, and the only reason to prefer it to the national aggregate is that it has one unit of replication per area with data (the count is stored with the result), where the aggregate has one. For the minimum of two stations: no reason recorded.",
     "ref": {
      "file": "scripts/areas.py",
-     "first": 372,
-     "last": 375,
+     "first": 496,
+     "last": 499,
      "text": "    This is a correlation across areas at one time, not a causal estimate, and the\n    only reason to prefer it to the national aggregate is that it has one unit of\n    replication per area with data (the count is stored with the result), where the\n    aggregate has one.\"\"\""
     },
     "author": "this project, in scripts/areas.py"
    },
    "alternative": "one station or more (R6); three informative stations",
-   "tested": "R6: r = +0.306",
+   "tested": "R6: r = +0.275",
    "outputs": {
     "water_bodies": 123,
     "no_bathing_station": 53,
@@ -1217,8 +1236,8 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 393,
-     "last": 394,
+     "first": 517,
+     "last": 518,
      "text": "    for pred in (\"outfalls_per_km2\", \"pe_per_km2\", \"basin_m3_per_km2\"):\n        x = [math.log10(1 + r[pred]) for r in rows]"
     }
    ],
@@ -1228,15 +1247,15 @@
     "author": "this project, in scripts/areas.py"
    },
    "alternative": "no transform (R3); ranks (R7); another offset",
-   "tested": "R3: r = +0.274; R7: r = +0.331",
+   "tested": "R3: r = +0.273; R7: r = +0.301",
    "outputs": {
     "x": {
      "n": 65,
      "min": 0.0,
-     "q1": 1.7072,
-     "median": 2.4564,
-     "q3": 2.8929,
-     "max": 4.1403
+     "q1": 1.8502,
+     "median": 2.4439,
+     "q3": 2.8894,
+     "max": 4.1251
     }
    }
   },
@@ -1256,33 +1275,33 @@
    "code": [
     {
      "file": "scripts/areas.py",
-     "first": 160,
-     "last": 169,
+     "first": 271,
+     "last": 280,
      "text": "def pearson(u, v):\n    n = len(u)\n    if n < 6:\n        return None\n    mu, mv = sum(u) / n, sum(v) / n\n    su = math.sqrt(sum((t - mu) ** 2 for t in u))\n    sv = math.sqrt(sum((t - mv) ** 2 for t in v))\n    if su == 0 or sv == 0:\n        return None\n    return sum((u[i] - mu) * (v[i] - mv) for i in range(n)) / (su * sv)"
     },
     {
      "file": "scripts/areas.py",
-     "first": 396,
-     "last": 401,
+     "first": 520,
+     "last": 525,
      "text": "            y = [r[outcome] for r in rows]\n            c = pearson(x, y)\n            if c is not None:\n                out[\"tests\"].append({\"predictor\": \"log10(1+%s)\" % pred,\n                                     \"outcome\": outcome, \"r\": round(c, 3),\n                                     \"r2\": round(c * c, 3), \"n\": len(rows)})"
     }
    ],
    "why": {
-    "reason": "The cross-sectional estimate at the end is a cum hoc effect size and is labelled as one. It regresses a sewage-driven outcome (bathing quality) on sewage pressure (treatment-plant PE and rain-conditioned outfall density), across areas rather than across years, because the open data have more areas than they have years of comparable observation.",
+    "reason": "The cross-sectional estimate at the end is a cum hoc correlation and is labelled as one. It sets a sewage-driven outcome (bathing quality) against sewage pressure (treatment-plant PE and rain-conditioned outfall density), across areas rather than across years, because the open data have more areas than they have years of comparable observation.",
     "ref": {
      "file": "scripts/areas.py",
-     "first": 17,
-     "last": 21,
-     "text": "The cross-sectional estimate at the end is a cum hoc effect size and is labelled as\none. It regresses a sewage-driven outcome (bathing quality) on sewage pressure\n(treatment-plant PE and rain-conditioned outfall density), across areas rather than\nacross years, because the open data have more areas than they have years of\ncomparable observation."
+     "first": 30,
+     "last": 34,
+     "text": "The cross-sectional estimate at the end is a cum hoc correlation and is labelled\nas one. It sets a sewage-driven outcome (bathing quality) against sewage pressure\n(treatment-plant PE and rain-conditioned outfall density), across areas rather than\nacross years, because the open data have more areas than they have years of\ncomparable observation."
     },
     "author": "this project, in scripts/areas.py"
    },
    "alternative": "rank correlation (R7); weighting by stations or area",
-   "tested": "R7: r = +0.331",
+   "tested": "R7: r = +0.301",
    "outputs": {
-    "r": 0.313,
-    "r_unrounded": 0.313323,
-    "r2": 0.098,
+    "r": 0.28,
+    "r_unrounded": 0.279789,
+    "r2": 0.078,
     "n": 65
    }
   }
@@ -1397,10 +1416,10 @@
   "x": {
    "n": 65,
    "min": 0.0,
-   "q1": 1.7072,
-   "median": 2.4564,
-   "q3": 2.8929,
-   "max": 4.1403
+   "q1": 1.8502,
+   "median": 2.4439,
+   "q3": 2.8894,
+   "max": 4.1251
   },
   "y": {
    "n": 65,
@@ -1410,14 +1429,14 @@
    "q3": 0.229,
    "max": 0.522
   },
-  "zero_x": 7,
+  "zero_x": 6,
   "tails": {
    "highest_x": [
     "DKCOAST123",
-    "DKCOAST113",
     "DKCOAST124",
+    "DKCOAST113",
     "DKCOAST128",
-    "DKCOAST6"
+    "DKCOAST2"
    ],
    "highest_y": [
     "DKCOAST132",
@@ -1443,7 +1462,7 @@
     "share_within": 0.646,
     "what": "Each station's own share of sub-excellent years, split into variance among the stations of one water body and variance between water bodies. r sees only one pooled share per water body."
    },
-   "line": "The line through the 65 pairs accounts for r² = 0.098 of the variance of their shares."
+   "line": "The line through the 65 pairs accounts for r² = 0.078 of the variance of their shares."
   },
   "where": {
    "place": "within against between water bodies, above",
@@ -1500,18 +1519,6 @@
     "y": 0.067
    },
    {
-    "id": "DKCOAST125",
-    "name": "Kolding Fjord, ydre",
-    "area_km2": 10.09,
-    "stations": 4,
-    "station_years": 94,
-    "plants": 0,
-    "pe": 0,
-    "pe_per_km2": 0.0,
-    "x": 0.0,
-    "y": 0.106
-   },
-   {
     "id": "DKCOAST105",
     "name": "Augustenborg Fjord",
     "area_km2": 15.03,
@@ -1541,23 +1548,11 @@
     "area_km2": 459.5,
     "stations": 17,
     "station_years": 467,
-    "plants": 3,
-    "pe": 165,
-    "pe_per_km2": 0.359,
-    "x": 0.1332,
+    "plants": 2,
+    "pe": 135,
+    "pe_per_km2": 0.294,
+    "x": 0.1119,
     "y": 0.242
-   },
-   {
-    "id": "DKCOAST133",
-    "name": "Vesterhavet, nord",
-    "area_km2": 214.57,
-    "stations": 21,
-    "station_years": 528,
-    "plants": 4,
-    "pe": 430,
-    "pe_per_km2": 2.004,
-    "x": 0.4777,
-    "y": 0.021
    },
    {
     "id": "DKCOAST103",
@@ -1649,10 +1644,10 @@
     "area_km2": 242.36,
     "stations": 6,
     "station_years": 162,
-    "plants": 9,
-    "pe": 12107,
-    "pe_per_km2": 49.955,
-    "x": 1.7072,
+    "plants": 10,
+    "pe": 12182,
+    "pe_per_km2": 50.264,
+    "x": 1.7098,
     "y": 0.185
    },
    {
@@ -1692,15 +1687,27 @@
     "y": 0.325
    },
    {
+    "id": "DKCOAST133",
+    "name": "Vesterhavet, nord",
+    "area_km2": 214.57,
+    "stations": 21,
+    "station_years": 528,
+    "plants": 7,
+    "pe": 18030,
+    "pe_per_km2": 84.029,
+    "x": 1.9296,
+    "y": 0.021
+   },
+   {
     "id": "DKCOAST222",
     "name": "Kattegat, Aalborg Bugt",
     "area_km2": 1052.52,
     "stations": 14,
     "station_years": 347,
-    "plants": 4,
-    "pe": 88955,
-    "pe_per_km2": 84.516,
-    "x": 1.932,
+    "plants": 5,
+    "pe": 89525,
+    "pe_per_km2": 85.058,
+    "x": 1.9348,
     "y": 0.13
    },
    {
@@ -1709,10 +1716,10 @@
     "area_km2": 821,
     "stations": 27,
     "station_years": 731,
-    "plants": 14,
-    "pe": 71550,
-    "pe_per_km2": 87.15,
-    "x": 1.9452,
+    "plants": 13,
+    "pe": 71500,
+    "pe_per_km2": 87.089,
+    "x": 1.9449,
     "y": 0.291
    },
    {
@@ -1752,18 +1759,6 @@
     "y": 0.121
    },
    {
-    "id": "DKCOAST217",
-    "name": "Lillebælt, Bredningen",
-    "area_km2": 288.1,
-    "stations": 32,
-    "station_years": 864,
-    "plants": 6,
-    "pe": 40532,
-    "pe_per_km2": 140.687,
-    "x": 2.1513,
-    "y": 0.13
-   },
-   {
     "id": "DKCOAST214",
     "name": "Det sydfynske Øhav",
     "area_km2": 437.44,
@@ -1774,6 +1769,30 @@
     "pe_per_km2": 165.44,
     "x": 2.2213,
     "y": 0.074
+   },
+   {
+    "id": "DKCOAST200",
+    "name": "Kattegat, Nordsjælland",
+    "area_km2": 721.22,
+    "stations": 34,
+    "station_years": 834,
+    "plants": 17,
+    "pe": 123369,
+    "pe_per_km2": 171.056,
+    "x": 2.2357,
+    "y": 0.138
+   },
+   {
+    "id": "DKCOAST34",
+    "name": "Smålandsfarvandet, syd",
+    "area_km2": 247.05,
+    "stations": 11,
+    "station_years": 265,
+    "plants": 12,
+    "pe": 47116,
+    "pe_per_km2": 190.714,
+    "x": 2.2827,
+    "y": 0.098
    },
    {
     "id": "DKCOAST48",
@@ -1788,16 +1807,28 @@
     "y": 0.114
    },
    {
-    "id": "DKCOAST34",
-    "name": "Smålandsfarvandet, syd",
-    "area_km2": 247.05,
-    "stations": 11,
-    "station_years": 265,
-    "plants": 14,
-    "pe": 53283,
-    "pe_per_km2": 215.677,
-    "x": 2.3358,
-    "y": 0.098
+    "id": "DKCOAST217",
+    "name": "Lillebælt, Bredningen",
+    "area_km2": 288.1,
+    "stations": 32,
+    "station_years": 864,
+    "plants": 9,
+    "pe": 57332,
+    "pe_per_km2": 199.0,
+    "x": 2.301,
+    "y": 0.13
+   },
+   {
+    "id": "DKCOAST125",
+    "name": "Kolding Fjord, ydre",
+    "area_km2": 10.09,
+    "stations": 4,
+    "station_years": 94,
+    "plants": 1,
+    "pe": 2400,
+    "pe_per_km2": 237.859,
+    "x": 2.3781,
+    "y": 0.106
    },
    {
     "id": "DKCOAST137",
@@ -1836,18 +1867,6 @@
     "y": 0.446
    },
    {
-    "id": "DKCOAST200",
-    "name": "Kattegat, Nordsjælland",
-    "area_km2": 721.22,
-    "stations": 34,
-    "station_years": 834,
-    "plants": 21,
-    "pe": 205544,
-    "pe_per_km2": 284.995,
-    "x": 2.4564,
-    "y": 0.138
-   },
-   {
     "id": "DKCOAST87",
     "name": "Helnæs Bugt",
     "area_km2": 66.63,
@@ -1877,10 +1896,10 @@
     "area_km2": 222.09,
     "stations": 16,
     "station_years": 432,
-    "plants": 10,
-    "pe": 90355,
-    "pe_per_km2": 406.84,
-    "x": 2.6105,
+    "plants": 12,
+    "pe": 104522,
+    "pe_per_km2": 470.629,
+    "x": 2.6736,
     "y": 0.229
    },
    {
@@ -1956,40 +1975,28 @@
     "y": 0.108
    },
    {
-    "id": "DKCOAST140",
-    "name": "Djursland Øst",
-    "area_km2": 175.22,
-    "stations": 10,
-    "station_years": 268,
-    "plants": 6,
-    "pe": 94092,
-    "pe_per_km2": 536.993,
-    "x": 2.7308,
-    "y": 0.093
-   },
-   {
-    "id": "DKCOAST207",
-    "name": "Nakskov Fjord",
-    "area_km2": 50.35,
-    "stations": 2,
-    "station_years": 53,
-    "plants": 12,
-    "pe": 28921,
-    "pe_per_km2": 574.399,
-    "x": 2.76,
-    "y": 0.075
-   },
-   {
     "id": "DKCOAST132",
     "name": "Ringkøbing Fjord",
     "area_km2": 279.39,
     "stations": 9,
     "station_years": 226,
     "plants": 14,
-    "pe": 161990,
-    "pe_per_km2": 579.799,
-    "x": 2.764,
+    "pe": 148540,
+    "pe_per_km2": 531.658,
+    "x": 2.7264,
     "y": 0.522
+   },
+   {
+    "id": "DKCOAST140",
+    "name": "Djursland Øst",
+    "area_km2": 175.22,
+    "stations": 10,
+    "station_years": 268,
+    "plants": 7,
+    "pe": 94122,
+    "pe_per_km2": 537.165,
+    "x": 2.7309,
+    "y": 0.093
    },
    {
     "id": "DKCOAST47",
@@ -2004,16 +2011,40 @@
     "y": 0.179
    },
    {
+    "id": "DKCOAST159",
+    "name": "Mariager Fjord, indre",
+    "area_km2": 17.6,
+    "stations": 4,
+    "station_years": 96,
+    "plants": 3,
+    "pe": 10850,
+    "pe_per_km2": 616.477,
+    "x": 2.7906,
+    "y": 0.167
+   },
+   {
     "id": "DKCOAST204",
     "name": "Jammerland Bugt og Musholm Bugt",
     "area_km2": 290.36,
     "stations": 9,
     "station_years": 240,
-    "plants": 15,
-    "pe": 189830,
-    "pe_per_km2": 653.775,
-    "x": 2.8161,
+    "plants": 17,
+    "pe": 194780,
+    "pe_per_km2": 670.822,
+    "x": 2.8273,
     "y": 0.275
+   },
+   {
+    "id": "DKCOAST207",
+    "name": "Nakskov Fjord",
+    "area_km2": 50.35,
+    "stations": 2,
+    "station_years": 53,
+    "plants": 14,
+    "pe": 35088,
+    "pe_per_km2": 696.882,
+    "x": 2.8438,
+    "y": 0.075
    },
    {
     "id": "DKCOAST225",
@@ -2021,10 +2052,10 @@
     "area_km2": 458.44,
     "stations": 16,
     "station_years": 447,
-    "plants": 7,
-    "pe": 354821,
-    "pe_per_km2": 773.975,
-    "x": 2.8893,
+    "plants": 8,
+    "pe": 354909,
+    "pe_per_km2": 774.167,
+    "x": 2.8894,
     "y": 0.105
    },
    {
@@ -2033,23 +2064,11 @@
     "area_km2": 5.01,
     "stations": 6,
     "station_years": 161,
-    "plants": 4,
-    "pe": 3910,
-    "pe_per_km2": 780.439,
-    "x": 2.8929,
+    "plants": 5,
+    "pe": 4670,
+    "pe_per_km2": 932.136,
+    "x": 2.9699,
     "y": 0.099
-   },
-   {
-    "id": "DKCOAST159",
-    "name": "Mariager Fjord, indre",
-    "area_km2": 17.6,
-    "stations": 4,
-    "station_years": 96,
-    "plants": 4,
-    "pe": 14850,
-    "pe_per_km2": 843.75,
-    "x": 2.9267,
-    "y": 0.167
    },
    {
     "id": "DKCOAST201",
@@ -2057,10 +2076,10 @@
     "area_km2": 562.38,
     "stations": 29,
     "station_years": 716,
-    "plants": 17,
-    "pe": 681555,
-    "pe_per_km2": 1211.912,
-    "x": 3.0838,
+    "plants": 20,
+    "pe": 623435,
+    "pe_per_km2": 1108.565,
+    "x": 3.0452,
     "y": 0.39
    },
    {
@@ -2069,10 +2088,10 @@
     "area_km2": 51.25,
     "stations": 3,
     "station_years": 81,
-    "plants": 7,
-    "pe": 63476,
-    "pe_per_km2": 1238.556,
-    "x": 3.0933,
+    "plants": 6,
+    "pe": 63401,
+    "pe_per_km2": 1237.093,
+    "x": 3.0928,
     "y": 0.099
    },
    {
@@ -2081,23 +2100,11 @@
     "area_km2": 85.87,
     "stations": 9,
     "station_years": 229,
-    "plants": 19,
-    "pe": 119877,
-    "pe_per_km2": 1396.029,
-    "x": 3.1452,
+    "plants": 20,
+    "pe": 119927,
+    "pe_per_km2": 1396.611,
+    "x": 3.1454,
     "y": 0.14
-   },
-   {
-    "id": "DKCOAST1",
-    "name": "Roskilde Fjord, ydre",
-    "area_km2": 71.37,
-    "stations": 13,
-    "station_years": 328,
-    "plants": 19,
-    "pe": 139933,
-    "pe_per_km2": 1960.67,
-    "x": 3.2926,
-    "y": 0.192
    },
    {
     "id": "DKCOAST80",
@@ -2117,10 +2124,10 @@
     "area_km2": 231.61,
     "stations": 20,
     "station_years": 487,
-    "plants": 13,
-    "pe": 578019,
-    "pe_per_km2": 2495.656,
-    "x": 3.3974,
+    "plants": 14,
+    "pe": 598928,
+    "pe_per_km2": 2585.933,
+    "x": 3.4128,
     "y": 0.092
    },
    {
@@ -2136,28 +2143,28 @@
     "y": 0.295
    },
    {
+    "id": "DKCOAST1",
+    "name": "Roskilde Fjord, ydre",
+    "area_km2": 71.37,
+    "stations": 13,
+    "station_years": 328,
+    "plants": 22,
+    "pe": 220108,
+    "pe_per_km2": 3084.041,
+    "x": 3.4893,
+    "y": 0.192
+   },
+   {
     "id": "DKCOAST121",
     "name": "Grådyb",
     "area_km2": 124.04,
     "stations": 8,
     "station_years": 164,
-    "plants": 4,
-    "pe": 449600,
-    "pe_per_km2": 3624.637,
-    "x": 3.5594,
+    "plants": 5,
+    "pe": 451400,
+    "pe_per_km2": 3639.149,
+    "x": 3.5611,
     "y": 0.341
-   },
-   {
-    "id": "DKCOAST2",
-    "name": "Roskilde Fjord, indre",
-    "area_km2": 51.78,
-    "stations": 7,
-    "station_years": 195,
-    "plants": 23,
-    "pe": 217960,
-    "pe_per_km2": 4209.347,
-    "x": 3.6243,
-    "y": 0.21
    },
    {
     "id": "DKCOAST158",
@@ -2166,9 +2173,9 @@
     "stations": 2,
     "station_years": 55,
     "plants": 10,
-    "pe": 108500,
-    "pe_per_km2": 4432.19,
-    "x": 3.6467,
+    "pe": 98500,
+    "pe_per_km2": 4023.693,
+    "x": 3.6047,
     "y": 0.218
    },
    {
@@ -2177,11 +2184,23 @@
     "area_km2": 355.68,
     "stations": 32,
     "station_years": 655,
-    "plants": 17,
-    "pe": 1605986,
-    "pe_per_km2": 4515.255,
-    "x": 3.6548,
+    "plants": 19,
+    "pe": 1609686,
+    "pe_per_km2": 4525.658,
+    "x": 3.6558,
     "y": 0.351
+   },
+   {
+    "id": "DKCOAST2",
+    "name": "Roskilde Fjord, indre",
+    "area_km2": 51.78,
+    "stations": 7,
+    "station_years": 195,
+    "plants": 23,
+    "pe": 277960,
+    "pe_per_km2": 5368.096,
+    "x": 3.7299,
+    "y": 0.21
    },
    {
     "id": "DKCOAST128",
@@ -2189,23 +2208,11 @@
     "area_km2": 45.6,
     "stations": 4,
     "station_years": 85,
-    "plants": 5,
-    "pe": 267612,
-    "pe_per_km2": 5868.684,
-    "x": 3.7686,
+    "plants": 7,
+    "pe": 276112,
+    "pe_per_km2": 6055.088,
+    "x": 3.7822,
     "y": 0.294
-   },
-   {
-    "id": "DKCOAST124",
-    "name": "Kolding Fjord, indre",
-    "area_km2": 4.83,
-    "stations": 2,
-    "station_years": 55,
-    "plants": 5,
-    "pe": 35085,
-    "pe_per_km2": 7263.975,
-    "x": 3.8612,
-    "y": 0.273
    },
    {
     "id": "DKCOAST113",
@@ -2220,15 +2227,27 @@
     "y": 0.241
    },
    {
+    "id": "DKCOAST124",
+    "name": "Kolding Fjord, indre",
+    "area_km2": 4.83,
+    "stations": 2,
+    "station_years": 55,
+    "plants": 5,
+    "pe": 59935,
+    "pe_per_km2": 12408.903,
+    "x": 4.0938,
+    "y": 0.273
+   },
+   {
     "id": "DKCOAST123",
     "name": "Vejle Fjord, indre",
     "area_km2": 16.27,
     "stations": 7,
     "station_years": 188,
-    "plants": 9,
-    "pe": 224735,
-    "pe_per_km2": 13812.846,
-    "x": 4.1403,
+    "plants": 7,
+    "pe": 216985,
+    "pe_per_km2": 13336.509,
+    "x": 4.1251,
     "y": 0.207
    }
   ]
@@ -2244,27 +2263,27 @@
      10.0
     ]
    },
-   "value": 0.25,
+   "value": 0.225,
    "n": 65,
    "step": "S3",
    "headline": true,
-   "note": "127 plants that were assigned at 20 km are assigned to none at 10 km."
+   "note": "133 plants that were assigned at 20 km are assigned to none at 10 km."
   },
   {
    "id": "R2",
-   "imposed": "exhaustive nearest vertex within a true 20 km, east-west as well as north-south",
+   "imposed": "the ring search this replaced: rings of grid cells that stop at the first ring holding a vertex and reach about 12 km east-west",
    "changed": {
     "step": "S3",
     "search": [
-     "rings stop early; ~12 km east-west",
-     "every cell within 20 km"
+     "every cell within 20 km",
+     "rings stop early; ~12 km east-west"
     ]
    },
-   "value": 0.28,
+   "value": 0.313,
    "n": 65,
    "step": "S3",
    "headline": false,
-   "note": "24 plants dropped by the search are within 20 km of a boundary; 27 assigned plants change water body."
+   "note": "24 plants the full search assigns were dropped by the ring search; 27 plants it assigned went to another water body."
   },
   {
    "id": "R3",
@@ -2272,7 +2291,7 @@
    "changed": {
     "step": "S14"
    },
-   "value": 0.274,
+   "value": 0.273,
    "n": 65,
    "step": "S14",
    "headline": false,
@@ -2284,7 +2303,7 @@
    "changed": {
     "step": "S11"
    },
-   "value": 0.181,
+   "value": 0.151,
    "n": 65,
    "step": "S11",
    "headline": false,
@@ -2296,7 +2315,7 @@
    "changed": {
     "step": "S9, S12"
    },
-   "value": 0.173,
+   "value": 0.136,
    "n": 65,
    "step": "S9",
    "headline": false,
@@ -2308,7 +2327,7 @@
    "changed": {
     "step": "S13"
    },
-   "value": 0.306,
+   "value": 0.275,
    "n": 70,
    "step": "S13",
    "headline": false,
@@ -2320,7 +2339,7 @@
    "changed": {
     "step": "S14, S15"
    },
-   "value": 0.331,
+   "value": 0.301,
    "n": 65,
    "step": "S15",
    "headline": false,
@@ -2332,8 +2351,8 @@
    "changed": {
     "step": "S5"
    },
-   "value": 0.291,
-   "n": 58,
+   "value": 0.258,
+   "n": 59,
    "step": "S5",
    "headline": false,
    "note": null

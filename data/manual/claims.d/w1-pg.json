@@ -4224,10 +4224,10 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-12",
+    "by": "Claude (re-read after the AREAS search fix reassigned outfalls: only the numbers moved - Køge Bugt's registered basin volume is now 8,161 m3 across 837 outfalls, about 6 minutes of the design hour on Amager instead of about 10 - and 'a few minutes; basins postpone a spill, they do not store the rain' holds, more strongly. 2026-09-12; not yet read by the project owner)",
     "saw": {
-     "said on PROGRAMME.md": "**So the basins retire.** A spare basin is an organ of the combined system: it exists to hold a mixture back until the plant can take it. Take the rain out and there is no mixture, the foul flow arrives at the rate it is produced, and the plant treats it as it comes. A basin then has nothing to buffer. It is not the instrument for the rain stream either, and the scale says why: the entire registered spare-basin volume on **Køge Bugt** — every basin in the water body, across 865 rain-conditioned outfalls — is **14,377 m³**. One hour of 10 mm of rain on Amager's 1,052 combined-sewered impervious hectares alone is about **84,120 m³** at a runoff coefficient of 0.8. The whole registered basin volume of the bay is about 10 minutes of that one hour, from one island. Basins were never storage for the rain; they are a device for postponing a spill.",
+     "said on PROGRAMME.md": "**So the basins retire.** A spare basin is an organ of the combined system: it exists to hold a mixture back until the plant can take it. Take the rain out and there is no mixture, the foul flow arrives at the rate it is produced, and the plant treats it as it comes. A basin then has nothing to buffer. It is not the instrument for the rain stream either, and the scale says why: the entire registered spare-basin volume on **Køge Bugt** — every basin in the water body, across 837 rain-conditioned outfalls — is **8,161 m³**. One hour of 10 mm of rain on Amager's 1,052 combined-sewered impervious hectares alone is about **84,120 m³** at a runoff coefficient of 0.8. The whole registered basin volume of the bay is about 6 minutes of that one hour, from one island. Basins were never storage for the rain; they are a device for postponing a spill.",
      "texts": "c68c90ffcf8bf9fd",
      "node D-PG-AREASDATA": "0e39df67bd7dc9e6",
      "node D-PG-STREAMS": "2cdb88e62f7fdbf5",

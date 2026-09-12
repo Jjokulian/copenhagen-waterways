@@ -89,16 +89,16 @@
     }
    },
    "what": "Builds one record per marine water body in the national marine layer: what presses on it (outfalls, treatment plants, aquaculture, dumping and extraction), what is observed in it (bathing water), over which years, and what cannot be modelled there; then a cross-sectional correlation of sewage pressure against bathing quality, across water bodies.",
-   "model": "Every point layer is assigned to the water body with the nearest marine boundary vertex, through a grid hash over a thinned boundary (`STRIDE`), within `MAX_ASSIGN_KM`; distances are kept. Bathing stations are assigned by the bathing layer's own water-body field. A water body counts as modelled when its id is listed in `data/manual/statistical_models.json`, which matches DHI's list of water bodies with a station-level statistical model by number and name. The cross-sectional test correlates $\\log_{10}(1 + x)$ of each pressure per square kilometre with the share of years below excellent and with the mean score.",
+   "model": "Every point layer is assigned to the water body with the nearest marine boundary vertex within `MAX_ASSIGN_KM`, through a grid hash over a thinned boundary (`STRIDE`): `nearest()` searches every grid cell the radius reaches, east-west as well as north-south, and takes the nearest vertex by great-circle distance. The largest assignment distance is kept per layer and water body. The earlier ring search, which reached well short of the radius east-west and could stop early, is kept as `nearest_rings()` only to count what changed. Bathing stations are assigned by the bathing layer's own water-body code, and the stations it drops are counted by reason. A water body counts as modelled when its id is listed in `data/manual/statistical_models.json`, which matches DHI's list of water bodies with a station-level statistical model by number and name. The cross-sectional test correlates $\\log_{10}(1 + x)$ of each pressure per square kilometre with the share of years below excellent and with the mean score, pooled and per label period.",
    "assumptions": [
     "The nearest boundary vertex identifies the water body a point on land discharges into.",
     "The layer's own `ov_stoe` area is the water body's area.",
-    "Matching a water body's name against the model station areas finds exactly the water bodies the published models cover.",
-    "Bathing quality classes are comparable across stations and years."
+    "DHI's list, matched by id in `data/manual/statistical_models.json`, is exactly the set of water bodies with a published station-level model.",
+    "Bathing quality classes are comparable across stations; the label set changes in 2011, so the periods are also scored separately."
    ],
    "justified": [
     {
-     "text": "One assignment rule and one distance for every layer, with the distance stored on each assignment so a reader can see how firm it is.",
+     "text": "One assignment rule and one maximum distance for every point layer, with the largest distance per layer and water body stored so a reader can see how firm the assignments are.",
      "ref": "scripts/areas.py:171"
     },
     {
@@ -115,10 +115,11 @@
     }
    ],
    "gaps": [
-    "Model coverage is decided by a substring match on names (`fold`), not by the models' own station list joined to the water-body codes; a renamed or ambiguously named water body would be misclassified.",
     "The thresholds that make a bathing station informative and a water body testable are stipulated in the code, and nothing states why those values.",
     "Nearest-vertex assignment puts an outfall into the nearest sea whatever the drainage actually does; the stored distance shows how far, not whether it is right.",
-    "The cross-sectional correlation has no control for coast type, flushing or population, and the approved person-equivalent capacity is not a load."
+    "The cross-sectional correlation has no control for coast type, flushing or population, and the approved person-equivalent capacity is not a load.",
+    "`data/manual/statistical_models.json` is matched by hand from DHI's table; a mismatch there would misclassify a water body.",
+    "Bathing stations whose water-body code the marine layer lacks are dropped, not placed by distance; the page states the rule and counts the drops."
    ],
    "void_if": [
     "a layer is refetched and `scripts/areas.py` is not rerun",
@@ -136,10 +137,10 @@
     "data/manual/statistical_models.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read the diff of areas.py: the change adds a read-only TRACE of what the run already loads - the geojson documents and the assignment results - and, after areas.json is written, lineage code that writes docs/data/lineage/cum_hoc_r.json; no computation feeding areas.json changed, and the build agent's before/after hash of areas.json matched. 2026-09-12; not yet read by the project owner)",
+    "by": "Claude (re-read areas.py after the search fix: nearest() now covers the full radius in both directions; the largest distance is stored per layer and water body, not per assignment; modelled status comes from statistical_models.json by id; bathing drops are counted; the label periods are scored separately. The declaration said otherwise in places and now matches the code. 2026-09-12; not yet read by the project owner)",
     "on": "2026-09-12",
     "saw": {
-     "scripts/areas.py": "7620dac1aa865d4e",
+     "scripts/areas.py": "544c99d2dbc13949",
      "data/raw/national/marin_overordnet.geojson": "23d3a7ac969c9437",
      "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
      "data/raw/national/punkt_rbu_udl.geojson": "0280cc777737f84c",
@@ -313,13 +314,13 @@
     "data/derived/areas.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read: areas.json changed only in the model flag and its gap text, verified field by field against the copy taken before the rerun; station_places.py does not read the flag. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (re-read: station_places.py reads each water body's catchment name from areas.json, which areas.py takes from the marine layer's own ho_na field, not from point assignments; the search fix changed assignments only, so the region labels and every figure this declaration covers are unchanged. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
     "saw": {
      "scripts/station_places.py": "00edfa1600b388c6",
      "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
      "docs/data/areas/station_waterbody_overlay.json": "9cda52a744ee0a93",
-     "data/derived/areas.json": "0c4855d5e9c6550f"
+     "data/derived/areas.json": "b47fb61c90f8d2fe"
     }
    }
   },

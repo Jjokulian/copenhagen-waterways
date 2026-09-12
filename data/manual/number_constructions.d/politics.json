@@ -573,10 +573,10 @@
     "scripts/areamap.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read the diff of areas.py: the change adds a read-only TRACE of what the run already loads - the geojson documents and the assignment results - and, after areas.json is written, lineage code that writes docs/data/lineage/cum_hoc_r.json; no computation feeding areas.json changed, and the build agent's before/after hash of areas.json matched. 2026-09-12; not yet read by the project owner)",
+    "by": "Claude (re-read: areas.py still assigns register points to water bodies and sums vol_sb, and areamap.py copies both into the slim record; after the search fix covered the full 20 km, the counts and volumes moved in the water bodies the fix reassigned, but the method this declaration describes is unchanged. 2026-09-12; not yet read by the project owner)",
     "on": "2026-09-12",
     "saw": {
-     "scripts/areas.py": "7620dac1aa865d4e",
+     "scripts/areas.py": "544c99d2dbc13949",
      "scripts/areamap.py": "ebf9d882df683da5"
     }
    }

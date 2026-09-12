@@ -14,7 +14,8 @@
     "data/manual/statistical_models.json"
    ],
    "outputs": [
-    "data/derived/areas.json"
+    "data/derived/areas.json",
+    "docs/data/lineage/cum_hoc_r.json"
    ]
   },
   {
@@ -36,7 +37,6 @@
    "inputs": [
     "data/derived/areas.json",
     "data/derived/station_places.json",
-    "docs/data/areas/partition_score.json",
     "docs/data/areas/stations.json",
     "data/manual/coverage_gaps.json",
     "data/derived/hypotheses.json",
