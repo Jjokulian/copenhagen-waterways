@@ -15748,6 +15748,7 @@
     "synthetic": false
    },
    "kind": "estimated",
+   "lineage": "data/lineage/cum_hoc_r.json",
    "producer": "scripts/areas.py",
    "rests_on": {
     "estimated": 1

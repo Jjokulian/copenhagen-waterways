@@ -387,6 +387,38 @@ a.figure::after{content:"\2299";font-size:.62em;vertical-align:super;color:var(-
 .justify-body a{color:var(--accent)}
 .justify-body a.ref{font-size:11.5px;white-space:nowrap}
 .justify-body .stepname{font-style:italic;color:var(--accent)}
+/* How it was made */
+.justify-body .lin-kind{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.02em;border-radius:4px;
+  padding:0 6px;margin-right:7px;vertical-align:1px;color:hsl(var(--h) 60% 30%);background:hsl(var(--h) 60% 50% / .12);
+  border:1px solid hsl(var(--h) 45% 45% / .5)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .justify-body .lin-kind{color:hsl(var(--h) 70% 74%)}}
+:root[data-theme="dark"] .justify-body .lin-kind{color:hsl(var(--h) 70% 74%)}
+.justify-body .lin-ref{font-size:10.5px;color:var(--muted);border:1px solid var(--rule);border-radius:4px;padding:0 4px;
+  text-decoration:none;white-space:nowrap}
+.justify-body .lin-none{color:var(--nv-warn);font-style:italic}
+.justify-body ul.lin-one li,.justify-body ul.lin-ends li{margin:4px 0}
+.justify-body .lin-branch{margin:18px 0 2px;font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.justify-body .lin-step{border-top:1px solid var(--rule);padding:9px 0 7px}
+.justify-body .lin-step p{margin:5px 0}
+.justify-body .lin-row{background:var(--sunk);border-radius:6px;padding:6px 9px;overflow-wrap:anywhere;line-height:1.7}
+.justify-body .lin-row code{font-size:11px;margin-right:3px}
+.justify-body details.lin-rec{border-top:1px solid var(--rule);padding:7px 0}
+.justify-body details.lin-rec summary,.justify-body details.lin-src summary{cursor:pointer;font-size:12px;color:var(--ink-2)}
+.justify-body details.lin-src{margin:4px 0}
+.justify-body details.lin-src pre.code{margin:4px 0}
+.justify-body table.lin-kv{margin-top:4px}
+.justify-body table.lin-kv td:first-child{width:38%;white-space:nowrap}
+.justify-body table.lin-rr td:nth-child(3){white-space:nowrap;font-weight:600}
+.justify-body .lin-end{font-size:10px;letter-spacing:.04em;border-radius:4px;padding:0 5px;border:1px solid var(--rule);margin-right:4px}
+.justify-body .lin-end.rec{color:var(--accent);border-color:var(--accent)}
+.justify-body .lin-end.con{color:var(--nv-warn);border-color:var(--nv-warn)}
+.justify-body svg.lin-sc{width:100%;height:auto;display:block;margin:6px 0;max-width:100%}
+.justify-body svg.lin-sc text{font-size:10px;fill:var(--muted)}
+.justify-body svg.lin-sc text.axis{font-size:11px;fill:var(--ink-2)}
+.justify-body svg.lin-sc .grid{stroke:var(--rule);stroke-width:1}
+.justify-body svg.lin-sc .fit{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:4 3}
+.justify-body svg.lin-sc .pt{fill:var(--accent);fill-opacity:.75;stroke:var(--surface);stroke-width:1}
+.justify-body svg.lin-sc .zero{fill:none;stroke:var(--accent);stroke-width:1.4}
 .chem{white-space:nowrap}
 .math{font-family:"IBM Plex Mono",monospace;font-size:.9em}
 .math[data-done]{font-family:inherit;font-size:inherit}
@@ -1614,6 +1646,7 @@ const NV_KIND = { leaf: "read from data", op: "calculated", nary: "calculated", 
 const NV_SYM = { "+": "+", "-": "−", "*": "×", "/": "÷", "//": "div", "%": "mod", "**": "^" };
 const NV_GH = "https://github.com/Jjokulian/copenhagen-waterways/blob/";
 const NV_VIEWS = [
+  ["lineage", "How it was made", "counted as one, the records, each step and why, where it ends, the spread, a rerun"],
   ["construction", "Construction and model", "what kind of number it is, the model behind it, why that is justified"],
   ["what", "Source and counting rule", "where it was read from, what was counted as one"],
   ["graph", "Dependency graph", "what it is built from, drawn"],
@@ -1752,8 +1785,121 @@ function mdParse(text) {
   return marked.parse(t, { gfm: true })
     .replace(/@@MATH(\d+)@@/g, (_, i) => nvMathSpan(math[+i][0], math[+i][1]));
 }
+/* How it was made. A number whose producer recorded its own making
+   (scripts/lineage.py, PROVENANCE_SPEC.md) carries e.lineage, a file under
+   docs/data/lineage. It reads top-down and looks backward from the number: what
+   was counted as one, the records in their own words, each step with its kind,
+   source lines and reason, where every branch ends, the spread under the
+   aggregate, and reruns with one imposed choice changed. */
+const nvLin = {};
+async function nvLinLoad(path) {
+  if (!path || path in nvLin) return;
+  try {
+    const r = await fetch(DOCS_DIR + path, { cache: "no-cache" });
+    nvLin[path] = r.ok ? await r.json() : null;
+  } catch (err) { nvLin[path] = null; }
+}
+const NV_KIND_HUE = { selection: 205, identity: 280, grouping: 145, classification: 35, convention: 350,
+  correction: 315, "filling in": 55, "functional form": 185, attribution: 15 };
+const NV_LIN_END = { record: "record", construction: "construction", "model output": "model output as data" };
+const nvKindBadge = k => `<span class="lin-kind" style="--h:${NV_KIND_HUE[k] ?? 210}" title="${nvEsc(k)}">${nvEsc(k)}</span>`;
+const nvSigned = v => v === null || v === undefined ? "…" : (v < 0 ? "−" : "+") + Math.abs(v).toFixed(3);
+const nvLinVal = v => v && typeof v === "object"
+  ? (Array.isArray(v) ? v.map(nvLinVal).join(", ") : Object.entries(v).map(([a, b]) => `${a} ${nvLinVal(b)}`).join(" · "))
+  : nvFmt(v);
+function nvLinCode(c, open) {
+  const ls = c.text.split("\n");
+  return `<details class="lin-src"${open ? " open" : ""}><summary><code>${nvEsc(c.file)}</code>, line${c.first === c.last ? ` ${c.first}` : `s ${c.first}–${c.last}`}</summary>`
+    + `<pre class="code">${ls.map((l, i) => `<span><i>${c.first + i}</i>${nvEsc(l)}</span>`).join("")}</pre>`
+    + `<a class="ref" href="${NV_GH}main/${nvEsc(c.file)}#L${c.first}-L${c.last}">on GitHub</a></details>`;
+}
+function nvLinScatter(sp) {
+  const W = 480, H = 280, m = { l: 46, r: 12, t: 12, b: 42 }, ps = sp.pairs || [];
+  if (!ps.length) return "";
+  const nice = x => { const p = 10 ** Math.floor(Math.log10(x)), f = x / p; return (f < 1.5 ? 1 : f < 3.5 ? 2 : f < 7.5 ? 5 : 10) * p; };
+  const xmax = Math.max(...ps.map(p => p.x)) * 1.04 || 1, ymax = Math.max(...ps.map(p => p.y)) * 1.06 || 1;
+  const X = v => m.l + v / xmax * (W - m.l - m.r), Y = v => H - m.b - v / ymax * (H - m.t - m.b);
+  const ticks = max => { const s = nice(max / 5), out = []; for (let v = 0; v <= max + 1e-9; v += s) out.push(+v.toFixed(6)); return out; };
+  let g = "";
+  for (const v of ticks(ymax)) g += `<line x1="${m.l}" x2="${W - m.r}" y1="${Y(v)}" y2="${Y(v)}" class="grid"/><text x="${m.l - 6}" y="${Y(v) + 3.5}" text-anchor="end">${v}</text>`;
+  for (const v of ticks(xmax)) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${m.t}" y2="${H - m.b}" class="grid"/><text x="${X(v)}" y="${H - m.b + 14}" text-anchor="middle">${v}</text>`;
+  // the straight line r measures against: least squares of y on x
+  const n = ps.length, mx = ps.reduce((a, p) => a + p.x, 0) / n, my = ps.reduce((a, p) => a + p.y, 0) / n;
+  const b = ps.reduce((a, p) => a + (p.x - mx) * (p.y - my), 0) / (ps.reduce((a, p) => a + (p.x - mx) ** 2, 0) || 1);
+  const x1 = Math.max(...ps.map(p => p.x));
+  g += `<line x1="${X(0)}" y1="${Y(my - b * mx)}" x2="${X(x1)}" y2="${Y(my + b * (x1 - mx))}" class="fit"/>`;
+  for (const p of ps)
+    g += `<circle cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="4" class="${p.x === 0 ? "zero" : "pt"}"><title>${nvEsc(p.name)} (${nvEsc(p.id)}): x ${p.x}, y ${p.y}; ${p.stations} stations, ${p.station_years} station-years; ${p.plants} plants, ${nvFmt(p.pe)} PE, ${nvFmt(p.area_km2)} km²</title></circle>`;
+  g += `<text x="${(m.l + W - m.r) / 2}" y="${H - 6}" text-anchor="middle" class="axis">${nvEsc(sp.x_label)}</text>`
+    + `<text transform="translate(12 ${(m.t + H - m.b) / 2}) rotate(-90)" text-anchor="middle" class="axis">${nvEsc(sp.y_label.split(":")[0])}</text>`;
+  return `<svg class="lin-sc" viewBox="0 0 ${W} ${H}" role="img" aria-label="${n} water bodies, ${nvEsc(sp.x_label)} against ${nvEsc(sp.y_label)}">${g}</svg>`;
+}
+function nvLineageHTML(e) {
+  const L = nvLin[e.lineage];
+  if (!L) return `<p class="simflag">The record of how this number was made could not be loaded (<code>docs/${nvEsc(e.lineage)}</code>).</p>`;
+  const N = L.number, sp = L.spread || {};
+  let h = `<p>${nvCode(N.says)}</p><p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
+    + `<a href="${NV_GH}main/docs/${nvEsc(e.lineage)}"><code>docs/${nvEsc(e.lineage)}</code></a>. It looks backward from `
+    + `<code>${nvEsc(N.path)}</code> to the records.</p>`;
+  h += `<h4>Counted as one</h4><ul class="lin-one">` + L.counted_as_one.map(c =>
+    `<li>${nvCode(c.what)} <a class="lin-ref" href="#lin-${nvEsc(c.step)}">${nvEsc(c.step)}</a></li>`).join("") + `</ul>`;
+  h += `<h4>The records, in their own words</h4>`;
+  L.records.forEach((R, k) => {
+    h += `<details class="lin-rec"${k === 0 ? " open" : ""}><summary><code>${nvEsc(R.file)}</code> · ${nvFmt(R.rows)} rows</summary>`
+      + `<p class="small muted">${nvEsc(R.published_by)}.${R.file_meta && R.file_meta.timeStamp ? ` Its <code>timeStamp</code> says ${nvEsc(R.file_meta.timeStamp)}.` : ""} Columns used: ${R.columns_used.map(c => `<code>${nvEsc(c)}</code>`).join(", ")}.</p>`
+      + R.sample.map(s => `<p class="lin-row small"><b>row ${s.row} says:</b> `
+        + Object.entries(s.fields).map(([a, v]) => `<code>${nvEsc(a)}=${nvEsc(typeof v === "string" ? `"${v}"` : JSON.stringify(v))}</code>`).join(" ")
+        + (s.where ? ` <span class="muted">· ${nvEsc(nvLinVal(s.where))}</span>` : "") + `</p>`).join("")
+      + (R.constructions_on_record.length ? `<h5>Constructions already on the record</h5><ul class="small">${R.constructions_on_record.map(x => `<li>${nvCode(x)}</li>`).join("")}</ul>` : "")
+      + `</details>`;
+  });
+  h += `<h4>Each step, from the records to the number</h4>`;
+  let br = null;
+  for (const s of L.steps) {
+    if (s.branch !== br) { br = s.branch; h += `<div class="lin-branch">${nvEsc(br || "")}</div>`; }
+    const none = s.why.reason === "no reason recorded";
+    h += `<div class="lin-step" id="lin-${nvEsc(s.id)}"><div>${nvKindBadge(s.kind)}<b>${nvEsc(s.title)}</b> <span class="lin-ref">${nvEsc(s.id)}</span></div>`
+      + `<p>${nvCode(s.imposes)}</p>`
+      + `<p class="small muted">In: ${s.inputs.map(i => nvEsc(nvLinVal(i))).join("; ")}</p>`
+      + s.code.map(c => nvLinCode(c, false)).join("")
+      + `<p class="small"><b>Why:</b> ${none ? `<span class="lin-none">no reason recorded</span>` : nvCode(s.why.reason)}`
+      + (s.why.ref ? ` <a class="ref" href="${NV_GH}main/${nvEsc(s.why.ref.file)}#L${s.why.ref.first}-L${s.why.ref.last}">${nvEsc(s.why.ref.file)}:${s.why.ref.first}</a>` : "")
+      + ` <span class="muted">— by ${nvEsc(s.why.author)}</span></p>`
+      + (s.alternative ? `<p class="small"><b>What else could have been chosen:</b> ${nvCode(s.alternative)}</p>` : "")
+      + `<p class="small"><b>Tested:</b> ${s.tested === "not tested" ? `<span class="lin-none">not tested</span>` : nvEsc(s.tested)}</p>`
+      + `<table class="ex lin-kv">${Object.entries(s.outputs).map(([a, v]) => `<tr><td><code>${nvEsc(a)}</code></td><td>${nvEsc(nvLinVal(v))}</td></tr>`).join("")}</table></div>`;
+  }
+  if (N.page_line) h += `<div class="lin-branch">the page</div><div class="lin-step"><p class="small">${nvEsc(N.page_note || "")}</p>${nvLinCode(N.page_line, false)}</div>`;
+  h += `<h4>Where the chain ends</h4><ul class="lin-ends">` + L.ends.map(x =>
+    `<li><span class="lin-end ${x.type === "record" ? "rec" : x.type === "construction" ? "con" : "mod"}">${nvEsc(NV_LIN_END[x.type] || x.type)}</span> `
+    + `${nvCode(x.what)}${x.record ? ` <span class="muted small">in <code>${nvEsc(x.record)}</code></span>` : ""}`
+    + ` <span class="muted small">— by ${nvEsc(x.author)}; ${x.steps.map(t => `<a class="lin-ref" href="#lin-${nvEsc(t)}">${nvEsc(t)}</a>`).join(" ")}</span></li>`).join("") + `</ul>`;
+  if (L.notes && L.notes.model_output) h += `<p class="small"><b>Model output presented as data:</b> ${nvCode(L.notes.model_output)}</p>`;
+  if (L.not_on_this_chain && L.not_on_this_chain.length)
+    h += `<h5>Read by the producer, not on this chain</h5><ul class="small">${L.not_on_this_chain.map(a => `<li>${nvCode(a.what)}: ${nvCode(a.why)}</li>`).join("")}</ul>`;
+  if (sp.pairs) {
+    const d = sp.dropped || {}, wb = d.within_between || {};
+    h += `<h4>The spread under it</h4><p class="small">${sp.n} water bodies, one point each. `
+      + `x: median ${sp.x.median}, from ${sp.x.min} to ${sp.x.max}; <b>${sp.zero_x}</b> sit at x = 0, no approved PE assigned (hollow). `
+      + `y: median ${sp.y.median}, from ${sp.y.min} to ${sp.y.max}. The dashed line is the straight line r measures against. Hover a point for its water body.</p>`
+      + nvLinScatter(sp)
+      + `<p class="small"><b>What it dropped.</b> ${d.water_bodies_left_out} water bodies are not in it (<a class="lin-ref" href="#lin-S13">S13</a>). `
+      + `${nvEsc(wb.what || "")} Within water bodies: <b>${wb.share_within}</b> of it, over ${wb.stations} stations. ${nvEsc(d.line || "")}</p>`
+      + `<p class="small"><b>Where the spread lives.</b> ${Object.entries(sp.where || {}).map(([a, v]) => `${nvEsc(a)}: ${nvEsc(v)}`).join("; ")}.</p>`
+      + `<details class="lin-rec"><summary>All ${sp.pairs.length} pairs</summary><table class="ex"><tr><td class="muted">water body</td><td class="muted">stations</td><td class="muted">PE / km²</td><td class="muted">x</td><td class="muted">y</td></tr>`
+      + sp.pairs.map(p => `<tr><td><code>${nvEsc(p.id)}</code> ${nvEsc(p.name)}</td><td>${p.stations}</td><td>${nvFmt(p.pe_per_km2)}</td><td>${p.x}</td><td>${p.y}</td></tr>`).join("")
+      + `</table></details>`;
+  }
+  if (L.robustness && L.robustness.length) {
+    h += `<h4>Rerun with one choice changed</h4><table class="ex lin-rr"><tr><td></td><td>as published</td><td><b>${nvSigned(N.value)}</b></td><td class="muted">n ${N.n}</td></tr>`
+      + L.robustness.map(x => `<tr class="${x.headline ? "hit" : ""}"><td><a class="lin-ref" href="#lin-${nvEsc(x.step || "")}">${nvEsc(x.id)}</a></td><td>${nvEsc(x.imposed)}${x.note ? `<br><span class="muted small">${nvEsc(x.note)}</span>` : ""}</td><td>${nvSigned(x.value)}</td><td class="muted">n ${x.n}</td></tr>`).join("")
+      + `</table>`;
+  }
+  return h;
+}
 function nvApplies(e, view) {
   const calc = nvKids(e.src).length > 0;
+  if (view === "lineage") return !!e.lineage;
   if (view === "what" || view === "construction") return true;
   if (view === "graph" || view === "depth" || view === "calc") return calc;
   if (view === "code") return !!(e.code || e.producer);
@@ -1765,7 +1911,9 @@ function nvRender(idx, id, view) {
   if (!e) return `<p>No entry for ${nvEsc(id)}.</p>`;
   const n = e.src, t = n[0];
   let h = `<div class="big">${nvEsc(nvFmt(e.value))}</div><div class="muted">${nvEsc(nvKindLabel(e))}</div>`;
-  if (view === "construction") {
+  if (view === "lineage") {
+    h += nvLineageHTML(e);
+  } else if (view === "construction") {
     const K = idx.constructions || {}, kinds = idx.kinds || {};
     if (e.synthetic)
       h += `<p class="simflag">Built on simulation. It can speak about what the method is able to see, not about the water - which is why the compiler allows it only on a method page.</p>`;
@@ -1933,6 +2081,7 @@ async function nvOpen(id, view, push) {
     .map(([v, lab]) => `<button type="button" data-view="${v}" aria-selected="${v === view}">${nvEsc(lab)}</button>`).join("");
   tabs.hidden = false;
   const body = panel.querySelector(".justify-body");
+  if (view === "lineage") await nvLinLoad(e.lineage);
   body.innerHTML = (nvState.stack.length ? `<button type="button" class="back">← back</button>` : "") + nvRender(idx, id, view);
   panel.hidden = false;
   body.scrollTop = 0;

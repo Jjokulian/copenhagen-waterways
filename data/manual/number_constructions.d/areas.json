@@ -136,10 +136,10 @@
     "data/manual/statistical_models.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read areas.py: the model flag now comes from the id list matched to DHI's Tabel 5 instead of a six-letter name match, and the gap text and docstring no longer say what the page retired; the declaration's model says so. The rerun changed no field but the flag and its gap. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (re-read the diff of areas.py: the change adds a read-only TRACE of what the run already loads - the geojson documents and the assignment results - and, after areas.json is written, lineage code that writes docs/data/lineage/cum_hoc_r.json; no computation feeding areas.json changed, and the build agent's before/after hash of areas.json matched. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
     "saw": {
-     "scripts/areas.py": "f5a559584f1bcf2c",
+     "scripts/areas.py": "7620dac1aa865d4e",
      "data/raw/national/marin_overordnet.geojson": "23d3a7ac969c9437",
      "data/raw/national/badevand.geojson": "fe37bb58e7734cf4",
      "data/raw/national/punkt_rbu_udl.geojson": "0280cc777737f84c",

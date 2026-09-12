@@ -429,10 +429,10 @@
     "scripts/live.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: the only change to live.py since the last reading is that excerpt() shows a chemical formula in an old passage as written, since it is part of what was said and may name a species the register does not hold; quantities are still quotations; verified by hashing the file with that change undone. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
     "saw": {
-     "scripts/live.py": "5e94526640ee2f45"
+     "scripts/live.py": "059dcc18e63d3104"
     }
    }
   },

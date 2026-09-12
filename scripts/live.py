@@ -950,10 +950,32 @@ def _window(text, needle, width=260):
     return {"text": re.sub(r"\s+", " ", text[a:b]).strip(), "mark": needle}
 
 
+LINEAGE = os.path.join(ROOT, "docs", "data", "lineage")
+
+
+def _lineages():
+    """The numbers whose producer recorded how they were made (scripts/lineage.py,
+    PROVENANCE_SPEC.md): (file, field) -> the lineage file, relative to docs/ as
+    the reader fetches it."""
+    out = {}
+    if os.path.isdir(LINEAGE):
+        for fn in sorted(os.listdir(LINEAGE)):
+            if not fn.endswith(".json"):
+                continue
+            try:
+                with open(os.path.join(LINEAGE, fn), encoding="utf-8") as f:
+                    num = json.load(f)["number"]
+                out[(num["file"], num["path"])] = "data/lineage/" + fn
+            except (ValueError, KeyError, TypeError):
+                continue
+    return out
+
+
 def _enrich_all(idx):
     """Everything the views need, stored with the entry so the reader - which
     cannot open data/derived on the published site - has it to hand."""
     prod, files, pins = _producers(), {}, os.path.join(ROOT, "data", "derived", "pins")
+    lin = _lineages()
     for i, e in idx["entries"].items():
         n = e["src"]
         t = n[0]
@@ -961,6 +983,8 @@ def _enrich_all(idx):
             file, path = n[1], n[2]
             if prod.get(file):
                 e["producer"] = prod[file]
+            if (file, path) in lin:
+                e["lineage"] = lin[(file, path)]
             full = os.path.join(ROOT, file)
             if file.startswith("data/") and os.path.exists(full) \
                     and os.path.getsize(full) <= 20_000_000:

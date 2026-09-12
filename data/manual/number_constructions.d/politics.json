@@ -573,10 +573,10 @@
     "scripts/areamap.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: areas.py's assignment and volume sums are unchanged - the rerun changed no field but the model flag and its gap - so the outfall counts and basin volumes covered here are the same. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (re-read the diff of areas.py: the change adds a read-only TRACE of what the run already loads - the geojson documents and the assignment results - and, after areas.json is written, lineage code that writes docs/data/lineage/cum_hoc_r.json; no computation feeding areas.json changed, and the build agent's before/after hash of areas.json matched. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-12",
     "saw": {
-     "scripts/areas.py": "f5a559584f1bcf2c",
+     "scripts/areas.py": "7620dac1aa865d4e",
      "scripts/areamap.py": "ebf9d882df683da5"
     }
    }
