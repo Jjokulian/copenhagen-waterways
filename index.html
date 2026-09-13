@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script>
+<script src="docs/static-async-data/sad.js"></script>
 <style>
   :root{
     --ground:#f4f6f8;--surface:#fcfdfe;--sunk:#eaeef3;
@@ -1777,21 +1778,56 @@ async function drawMermaid(root) {
    writes each time a page is built - so they work on the published site, which
    cannot open data/derived. The address bar carries ?n=<id>&view=<view>, so a
    view can be linked to, and opens itself when the page loads. */
-let nvIdx = null;
+/* The index is published as static-async-data shards (docs/static-async-data/numbers,
+   written by scripts/numbers_store.py): one small record per number, and what numbers
+   share - kinds, constructions, which script wrote a file, what a field is, which
+   table a cell sits in - once, in the store's meta. A click loads one shard of about
+   20 KB. Where the store cannot be loaded, the page falls back to the index file. */
+let nvIdx = null, nvStore = null;
 async function nvLoad() {
   if (nvIdx) return nvIdx;
-  let d = { entries: {}, docs: {} };
+  const d = { entries: {}, docs: {}, bySrc: new Map(), usedBy: {}, meta: null };
   try {
-    const r = await fetch(DOCS_DIR + "data/sources_index.json", { cache: "no-cache" });
-    if (r.ok) d = await r.json();
-  } catch (e) {}
-  d.bySrc = new Map();
-  for (const [id, e] of Object.entries(d.entries || {})) d.bySrc.set(JSON.stringify(e.src), id);
-  d.usedBy = {};
-  for (const [doc, ids] of Object.entries(d.docs || {}))
-    for (const i of ids) (d.usedBy[i] = d.usedBy[i] || []).push(doc);
+    if (typeof StaticStore === "undefined") throw new Error("no loader");
+    nvStore = new StaticStore(DOCS_DIR + "static-async-data");
+    const m = await nvStore.meta("numbers");
+    Object.assign(d, { meta: m, constructions: m.constructions || {}, kinds: m.kinds || {},
+                       method_pages: m.method_pages || [] });
+  } catch (err) {
+    nvStore = null;
+    try {
+      const r = await fetch(DOCS_DIR + "data/sources_index.json", { cache: "no-cache" });
+      if (r.ok) Object.assign(d, await r.json());
+    } catch (e) {}
+    for (const [id, e] of Object.entries(d.entries || {})) d.bySrc.set(JSON.stringify(e.src), id);
+    for (const [doc, ids] of Object.entries(d.docs || {}))
+      for (const i of ids) (d.usedBy[i] = d.usedBy[i] || []).push(doc);
+  }
   nvIdx = d;
   return d;
+}
+/* A number's record and everything it is built from, so that the views, which read
+   idx.entries as they draw, find them all. */
+async function nvEnsure(idx, id) {
+  if (!nvStore) return;
+  const m = idx.meta || {};
+  let want = [id];
+  for (let depth = 0; want.length && depth < 16; depth++) {
+    want = [...new Set(want)].filter(k => !(k in idx.entries));
+    if (!want.length) break;
+    const got = await nvStore.getMany("numbers", want);
+    const next = [];
+    for (const [k, r] of Object.entries(got)) {
+      idx.entries[k] = r || undefined;
+      if (!r) continue;
+      if (r.f) r.field = { is: (m.fields || {})[r.f] };
+      if (r.src[0] === "leaf" && (m.producers || {})[r.src[1]]) r.producer = m.producers[r.src[1]];
+      idx.bySrc.set(JSON.stringify(r.src), k);
+      if (r.u) idx.usedBy[k] = r.u.map(p => (m.pages || [])[p]);
+      next.push(...(r.ch || []));
+    }
+    want = next;
+  }
 }
 const nvEsc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const nvFmt = v => v === null || v === undefined ? "…" : typeof v === "number"
@@ -1819,7 +1855,6 @@ const NV_VIEWS = [
   ["graph", "Dependency graph", "what it is built from, drawn"],
   ["depth", "Derivation, all the way down", "every step to the data, with its value"],
   ["calc", "Calculation", "the arithmetic - with names, then with values"],
-  ["code", "Code that produced it", "the line that put it on the page"],
   ["data", "Data it was read from", "the rows around it, the used value highlighted"]
 ];
 function nvShort(n) {
@@ -2101,7 +2136,9 @@ function nvApplies(e, view) {
   if (view === "lineage") return !!e.lineage;
   if (view === "what" || view === "construction") return true;
   if (view === "graph" || view === "depth" || view === "calc") return calc;
-  if (view === "code") return !!(e.code || e.producer);
+  // the page generator's printing line is not how a number was made; the script
+  // that computed it is named under "Source and counting rule"
+  if (view === "code") return false;
   if (view === "data") return !!e.excerpt || calc;
   return false;
 }
@@ -2155,7 +2192,7 @@ function nvRender(idx, id, view) {
           h += `<h4>Excluded</h4><ul>${pv.excluded.map(x => `<li>${nvEsc(x.reason)} — ${nvFmt(x.n)}</li>`).join("")}</ul>`;
         if (pv.alternatives && pv.alternatives.length)
           h += `<h4>Other defensible definitions</h4><ul>${pv.alternatives.map(a => `<li>${nvEsc(a.definition)} → <b>${nvFmt(a.value)}</b></li>`).join("")}</ul>`;
-      } else h += `<p class="muted">How this field was counted is not recorded by the script that wrote it.</p>`;
+      }
     } else if (t === "reading") {
       const m = n[4] || {};
       h += `<h4>Read from</h4><p><a href="${nvEsc(m.url || "#")}">${nvEsc(m.title || n[1])}</a>, retrieved ${nvEsc(m.retrieved || "?")}</p>`
@@ -2171,6 +2208,19 @@ function nvRender(idx, id, view) {
     } else {
       h += `<h4>Calculation</h4>${nvMathSpan(nvTex(idx, n, e.value, false).t, true)}`
         + `<p class="muted">${nvDepth(n)} step(s) from this number down to the data. Click any operand to open it.</p>`;
+    }
+    // a table is made by one piece of code from one source: described once, for all its cells
+    for (const tid of e.t || []) {
+      const T = ((idx.meta || {}).tables || {})[tid], P = (idx.meta || {}).producers || {};
+      if (!T) continue;
+      const files = Object.entries(T.files || {});
+      h += `<h4>In a table</h4><p><a href="#${nvEsc(T.page)}">${nvEsc(T.page)}</a>${T.heading ? ` — ${nvEsc(T.heading)}` : ""}: `
+        + `${nvFmt(T.cells)} numbers${T.columns && T.columns.length ? ` in the columns ${T.columns.map(c => `<i>${nvEsc(c)}</i>`).join(", ")}` : ""}.</p>`
+        + (files.length ? `<p>Its cells are read from ${files.map(([f, ps]) => `<code>${nvEsc(f)}</code> (${ps.map(p => `<code>${nvEsc(p)}</code>`).join(", ")})`
+            + (P[f] ? `, written by <a href="${NV_GH}main/${nvEsc(P[f])}"><code>${nvEsc(P[f])}</code></a>` : "")).join("; ")}.</p>` : "")
+        + (T.documents && T.documents.length ? `<p>Read from pinned documents: ${T.documents.map(x => `<code>${nvEsc(x)}</code>`).join(", ")}.</p>` : "")
+        + (T.calculated ? `<p>${nvFmt(T.calculated)} of its numbers are calculated on the page.</p>` : "")
+        + `<p class="muted small">The table is described once: every cell in it is made the same way.</p>`;
     }
     const used = idx.usedBy[id] || [];
     if (used.length) h += `<h4>Used in</h4><p>${used.map(d => { const f = d.replace(/^docs\//, ""); return `<a href="#${nvEsc(f)}">${nvEsc(f)}</a>`; }).join(", ")}</p>`;
@@ -2268,7 +2318,9 @@ function nvSetURL(id, view) {
   history.replaceState(null, "", location.pathname + q + location.hash);
 }
 async function nvOpen(id, view, push) {
-  const idx = await nvLoad(), e = idx.entries[id];
+  const idx = await nvLoad();
+  await nvEnsure(idx, id);
+  const e = idx.entries[id];
   if (!e) return;
   // a figure whose making is recorded opens on that record, wherever it is printed
   if (!view || !nvApplies(e, view)) view = e.lineage ? "lineage" : "what";
@@ -2296,7 +2348,9 @@ function nvClose() {
 }
 const nvMenuClose = () => { document.getElementById("nummenu").hidden = true; };
 async function nvMenu(id, x, y, shown) {
-  const idx = await nvLoad(), e = idx.entries[id];
+  const idx = await nvLoad();
+  await nvEnsure(idx, id);
+  const e = idx.entries[id];
   if (!e) return;
   const m = document.getElementById("nummenu");
   const exact = nvFmt(e.value);

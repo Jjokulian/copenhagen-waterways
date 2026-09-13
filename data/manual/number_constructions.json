@@ -429,10 +429,10 @@
     "scripts/live.py"
    ],
    "confirmed": {
-    "by": "Claude (live.py changed only in how a recorded lineage is attached to index entries - _lineages/_lineage_for - not in how a quotation is read or checked; 2026-09-13)",
+    "by": "Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13)",
     "on": "2026-09-13",
     "saw": {
-     "scripts/live.py": "d82821255051fd2b"
+     "scripts/live.py": "2bb3ae52245607d7"
     }
    }
   },
