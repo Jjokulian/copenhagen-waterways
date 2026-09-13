@@ -335,6 +335,11 @@ body.mmd-open{overflow:hidden}
 .lin-enlarge{font:inherit;font-size:12px;padding:2px 10px;margin:2px 0 4px;border:1px solid var(--rule);border-radius:5px;background:transparent;color:var(--ink-2);cursor:pointer}
 .lin-detail{border-top:2px solid var(--rule);margin-top:8px;padding-top:6px;min-height:3em}
 .mmd-zoom .mmd-body{flex:1;display:flex;min-height:0}
+.mmd-zoom .mmd-legend{position:absolute;left:10px;bottom:10px;display:grid;grid-template-columns:auto 1fr;gap:3px 8px;align-items:center;
+  max-width:min(430px,70%);padding:8px 10px;background:rgba(13,17,23,.9);border:1px solid #30363d;border-radius:6px;color:#c9d1d9;font-size:12px;line-height:1.3}
+.mmd-zoom .mmd-legend svg{display:block}
+.mmd-zoom .mmd-key{text-align:center;font-size:14px}
+@media (max-width:700px){.mmd-zoom .mmd-legend{display:none}}
 .mmd-zoom .mmd-side{width:min(460px,42vw);flex:none;overflow:auto;background:var(--surface);color:var(--ink);padding:10px 16px 16px;border-left:1px solid #30363d}
 .mmd-zoom .mmd-side[hidden]{display:none}
 .mmd-zoom .mmd-side-close{float:right;position:sticky;top:0;font-size:20px;line-height:1;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
@@ -1636,11 +1641,7 @@ function mmdPrepare(src) {
   }
   return { src: lines.join("\n"), full, nozoom: /^\s*%% nozoom\s*$/m.test(src) };
 }
-function mmdFinish(host, full, nozoom) {
-  const svg = host.querySelector("svg");
-  if (!svg) return;
-  const vb = svg.viewBox && svg.viewBox.baseVal;
-  if (vb && vb.width) svg.style.minWidth = Math.round(vb.width * 0.8) + "px";
+function mmdTitles(svg, full) {
   for (const g of svg.querySelectorAll("g.node")) {
     const id = (g.id.match(/^flowchart-(.+)-\d+$/) || [])[1];
     const t = id && full.get(id);
@@ -1650,6 +1651,13 @@ function mmdFinish(host, full, nozoom) {
     g.prepend(tip);
     g.querySelectorAll("foreignObject div, foreignObject span").forEach(d => { d.title = t; });
   }
+}
+function mmdFinish(host, full, nozoom) {
+  const svg = host.querySelector("svg");
+  if (!svg) return;
+  const vb = svg.viewBox && svg.viewBox.baseVal;
+  if (vb && vb.width) svg.style.minWidth = Math.round(vb.width * 0.8) + "px";
+  mmdTitles(svg, full);
   if (nozoom) return;
   host.classList.add("zoomable");
   host.tabIndex = 0;
@@ -1664,11 +1672,30 @@ function mmdFinish(host, full, nozoom) {
 /* Click a diagram to open it full-screen: wheel or pinch to zoom, drag to move,
    Fit and 1:1 on the bar, Esc or × to close. The diagram itself moves into the
    view and back (a clone would duplicate the id its own styles are scoped to). */
+const MMD_SW = (shape, fill, stroke, dash) => `<svg width="24" height="15" viewBox="0 0 24 15" aria-hidden="true">${{
+  cyl: `<path d="M2 3.5a10 2.5 0 0 1 20 0v8a10 2.5 0 0 1-20 0z"/><path d="M2 3.5a10 2.5 0 0 0 20 0" fill="none"/>`,
+  hex: `<polygon points="5,1.5 19,1.5 23,7.5 19,13.5 5,13.5 1,7.5"/>`,
+  par: `<polygon points="6,1.5 23,1.5 18,13.5 1,13.5"/>`,
+  round: `<rect x="1.5" y="1.5" width="21" height="12" rx="5"/>`,
+  box: `<rect x="1.5" y="2.5" width="21" height="10"/>`,
+  area: `<rect x="1" y="1" width="22" height="13" rx="2"/>`,
+  circ: `<circle cx="12" cy="7.5" r="6"/>` }[shape].replace(/<(path|polygon|rect|circle)/g,
+  `<$1 fill="${fill}" stroke="${stroke}" stroke-width="1.2"${dash ? ' stroke-dasharray="3 2"' : ""}`).replace(/fill="[^"]*"( stroke="[^"]*" stroke-width="1.2"[^>]*) fill="none"/, 'fill="none"$1')}</svg>`;
+const MMD_LEGEND = `<div class="mmd-legend" aria-label="Key to the diagram">`
+  + [["cyl", "#1c4e70", "#58a6ff", "record: data as published or downloaded"],
+     ["hex", "#4a3a12", "#e8a33d", "construction: a map, a rule or a definition someone made"],
+     ["par", "#3d3357", "#a58cf0", "model output: computed by a model, not measured"],
+     ["round", "#173a26", "#3fb950", "result: computed by a step here"],
+     ["box", "#21262d", "#8b949e", "step: the script or method that makes one box from others"],
+     ["area", "#eef1f5", "#b9c2cc", "shaded area: the theory the steps inside it work within"],
+     ["circ", "#262626", "#8b949e", "not a record: what the records were taken from", true]]
+    .map(([sh, f, st, t, d]) => `<span>${MMD_SW(sh, f, st, d)}</span><span>${t}</span>`).join("")
+  + `<span class="mmd-key">▸</span><span>made by another step: click it to unfold how</span></div>`;
 function mmdZoom(host) {
-  const svg = host.querySelector("svg");
+  let svg = host.querySelector("svg");
   if (!svg || document.querySelector(".mmd-zoom")) return;
   const vb = svg.viewBox.baseVal, box = svg.getBBox();
-  const W = (vb && vb.width) || box.width, H = (vb && vb.height) || box.height;
+  let W = (vb && vb.width) || box.width, H = (vb && vb.height) || box.height;
   const keep = ["style", "width", "height"].map(a => [a, svg.getAttribute(a)]);
   const ov = document.createElement("div");
   ov.className = "mmd-zoom";
@@ -1679,7 +1706,7 @@ function mmdZoom(host) {
     + `<button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="fit">Fit</button>`
     + `<button type="button" data-z="one">1:1</button><span class="mmd-hint">drag to move · wheel or pinch to zoom · `
     + `hover a box for its full text · Esc to close</span><button type="button" data-z="close" aria-label="Close">×</button></div>`
-    + `<div class="mmd-body"><div class="mmd-stage"><div class="mmd-canvas"></div></div>`
+    + `<div class="mmd-body"><div class="mmd-stage"><div class="mmd-canvas"></div>${host.closest(".lin-graph") ? MMD_LEGEND : ""}</div>`
     + `<aside class="mmd-side justify-body" hidden></aside></div>`;
   const stage = ov.querySelector(".mmd-stage"), canvas = ov.querySelector(".mmd-canvas");
   const spot = document.createComment("diagram");
@@ -1702,6 +1729,17 @@ function mmdZoom(host) {
     s = Math.min(r.width / W, r.height / H, 3) * 0.95;
     x = (r.width - W * s) / 2; y = (r.height - H * s) / 2; apply();
   };
+  // a diagram drawn again while enlarged (a file unfolded) takes the old one's place
+  ov.mmdSwap = next => {
+    const v = next.viewBox && next.viewBox.baseVal;
+    W = (v && v.width) || W; H = (v && v.height) || H;
+    next.removeAttribute("style");
+    next.setAttribute("width", W);
+    next.setAttribute("height", H);
+    canvas.replaceChildren(next);
+    svg = next;
+    fit();
+  };
   const close = () => {
     document.removeEventListener("keydown", key, true);
     for (const [a, v] of keep) v === null ? svg.removeAttribute(a) : svg.setAttribute(a, v);
@@ -1709,6 +1747,7 @@ function mmdZoom(host) {
     ov.remove();
     document.body.classList.remove("mmd-open");
     host.focus();
+    if (typeof ov.afterClose === "function") ov.afterClose();
   };
   const key = e => {
     if (e.key === "Escape") { e.stopPropagation(); close(); }
@@ -2283,9 +2322,33 @@ function nvLinGraphDetail(L, key) {
     + `<p class="small"><b>Made by:</b> ${made.length ? made.map(edgeLink).join(", ") : "nothing on this chain: it is where the chain starts"}</p>`
     + (used.length ? `<p class="small"><b>Used by:</b> ${used.map(edgeLink).join(", ")}</p>` : "");
 }
+/* Unfold a file without leaving the enlarged view: the chain is drawn again with the
+   file opened, takes the old diagram's place, and the file opens in the right pane.
+   The side panel behind is drawn again when the enlarged view closes. */
+let nvLinBusy = false;
+async function nvLinUnfoldInPlace(ov, key) {
+  nvLinBusy = true;
+  try {
+    const idx = await nvLoad(), e = idx.entries[nvState.id];
+    nvAuto[nvState.id] = flChain(idx, e, nvAutoOpen[nvState.id]);
+    nvLinCur = nvAuto[nvState.id];
+    const prep = mmdPrepare(nvLinGraphSrc(nvLinCur));
+    const { svg } = await mermaid.render("mmdz" + Date.now(), prep.src);
+    const tmp = document.createElement("div");
+    tmp.innerHTML = svg;
+    const el = tmp.querySelector("svg");
+    mmdTitles(el, prep.full);
+    nvLinWireSvg(el);
+    ov.mmdSwap(el);
+    ov.afterClose = () => nvOpen(nvState.id, "lineage", false);
+  } finally { nvLinBusy = false; }
+  nvLinShow(key);
+}
 function nvLinWire(root) {
   const svg = root.querySelector(".lin-graph svg");
-  if (!svg) return;
+  if (svg) nvLinWireSvg(svg);
+}
+function nvLinWireSvg(svg) {
   for (const g of svg.querySelectorAll("g.node")) {
     const k = (g.id.match(/^flowchart-([NE]_[A-Za-z0-9_]+)-\d+$/) || [])[1];
     if (k) g.dataset.linKey = k;
@@ -2304,9 +2367,10 @@ function nvLinShow(key) {
   if (nvLinCur.auto && key.startsWith("N_")) {
     const n = nvLinCur.graph.nodes.find(x => x.id === key.slice(2));
     if (n && n.closed) {
+      if (nvLinBusy) return;
       (nvAutoOpen[nvState.id] = nvAutoOpen[nvState.id] || new Set()).add(n.file);
-      const z = document.querySelector(".mmd-zoom [data-z=close]");
-      if (z) z.click();
+      const ov = document.querySelector(".mmd-zoom");
+      if (ov && ov.mmdSwap) { nvLinUnfoldInPlace(ov, key); return; }
       nvOpen(nvState.id, "lineage", false).then(() => nvLinShow(key));
       return;
     }
@@ -2612,7 +2676,7 @@ async function nvOpen(id, view, push) {
   const e = idx.entries[id];
   if (!e) return;
   // a figure whose making is recorded opens on that record, wherever it is printed
-  if (!view || !nvApplies(e, view)) view = e.lineage ? "lineage" : "what";
+  if (!view || !nvApplies(e, view)) view = nvApplies(e, "lineage") ? "lineage" : "what";
   if (push && nvState.id) nvState.stack.push([nvState.id, nvState.view]);
   nvState.id = id; nvState.view = view;
   const panel = document.getElementById("justify");
