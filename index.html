@@ -334,6 +334,11 @@ body.mmd-open{overflow:hidden}
 .lin-mode button[aria-pressed="true"]{background:#1f6feb;color:#fff}
 .lin-enlarge{font:inherit;font-size:12px;padding:2px 10px;margin:2px 0 4px;border:1px solid var(--rule);border-radius:5px;background:transparent;color:var(--ink-2);cursor:pointer}
 .lin-detail{border-top:2px solid var(--rule);margin-top:8px;padding-top:6px;min-height:3em}
+.mmd-zoom .mmd-body{flex:1;display:flex;min-height:0}
+.mmd-zoom .mmd-side{width:min(460px,42vw);flex:none;overflow:auto;background:var(--surface);color:var(--ink);padding:10px 16px 16px;border-left:1px solid #30363d}
+.mmd-zoom .mmd-side[hidden]{display:none}
+.mmd-zoom .mmd-side-close{float:right;position:sticky;top:0;font-size:20px;line-height:1;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
+@media (max-width:700px){.mmd-zoom .mmd-body{flex-direction:column}.mmd-zoom .mmd-side{width:auto;max-height:55vh;border-left:0;border-top:1px solid #30363d}}
 [data-lin-key]{cursor:pointer}
 g.lin-sel > rect,g.lin-sel > polygon,g.lin-sel > path,g.lin-sel > circle,g.lin-sel > ellipse,g.lin-sel .label-container{stroke:#f0b429 !important;stroke-width:3px !important}
 /* A linked number, and the menu of views it opens. Every colour is a site token,
@@ -1674,7 +1679,8 @@ function mmdZoom(host) {
     + `<button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="fit">Fit</button>`
     + `<button type="button" data-z="one">1:1</button><span class="mmd-hint">drag to move · wheel or pinch to zoom · `
     + `hover a box for its full text · Esc to close</span><button type="button" data-z="close" aria-label="Close">×</button></div>`
-    + `<div class="mmd-stage"><div class="mmd-canvas"></div></div>`;
+    + `<div class="mmd-body"><div class="mmd-stage"><div class="mmd-canvas"></div></div>`
+    + `<aside class="mmd-side justify-body" hidden></aside></div>`;
   const stage = ov.querySelector(".mmd-stage"), canvas = ov.querySelector(".mmd-canvas");
   const spot = document.createComment("diagram");
   svg.replaceWith(spot);
@@ -1725,14 +1731,22 @@ function mmdZoom(host) {
   }, { passive: false });
   const pts = new Map();
   let pinch = 0;
+  // a press that does not move is a click on the box under it; one that moves drags
+  let tap = null;
   stage.addEventListener("pointerdown", e => {
-    stage.setPointerCapture(e.pointerId);
     pts.set(e.pointerId, [e.clientX, e.clientY]);
-    stage.classList.add("dragging");
+    const k = e.target.closest && e.target.closest("[data-lin-key]");
+    tap = pts.size === 1 ? { x: e.clientX, y: e.clientY, id: e.pointerId, key: k ? k.dataset.linKey : null } : null;
     if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = Math.hypot(a[0] - b[0], a[1] - b[1]); }
   });
   stage.addEventListener("pointermove", e => {
     if (!pts.has(e.pointerId)) return;
+    if (tap && tap.id === e.pointerId) {
+      if (Math.hypot(e.clientX - tap.x, e.clientY - tap.y) <= 4) return;
+      tap = null;
+      try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+      stage.classList.add("dragging");
+    }
     const [px, py] = pts.get(e.pointerId);
     pts.set(e.pointerId, [e.clientX, e.clientY]);
     if (pts.size === 1) { x += e.clientX - px; y += e.clientY - py; apply(); }
@@ -1743,8 +1757,12 @@ function mmdZoom(host) {
     }
   });
   const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = 0; if (!pts.size) stage.classList.remove("dragging"); };
-  stage.addEventListener("pointerup", up);
-  stage.addEventListener("pointercancel", up);
+  stage.addEventListener("pointerup", e => {
+    if (tap && tap.id === e.pointerId && tap.key && typeof nvLinShow === "function") nvLinShow(tap.key);
+    tap = null;
+    up(e);
+  });
+  stage.addEventListener("pointercancel", e => { tap = null; up(e); });
   fit();
   ov.querySelector('[data-z="close"]').focus();
 }
@@ -2169,12 +2187,21 @@ function nvLinWire(root) {
     if (k) g.dataset.linKey = k;
   }
 }
+/* What was clicked opens beside the diagram: under it in the side panel, and, when the
+   diagram is enlarged, in the enlarged view's own pane on the right. */
 function nvLinShow(key) {
+  if (!nvLinCur) return;
+  const html = nvLinGraphDetail(nvLinCur, key) || `<p class="muted small">Nothing recorded for ${nvEsc(key)}.</p>`;
   const d = document.querySelector("#justify .lin-detail");
-  if (!d || !nvLinCur) return;
-  d.innerHTML = nvLinGraphDetail(nvLinCur, key) || `<p class="muted small">Nothing recorded for ${nvEsc(key)}.</p>`;
+  if (d) d.innerHTML = html;
+  const side = document.querySelector(".mmd-zoom .mmd-side");
+  if (side) {
+    side.hidden = false;
+    side.innerHTML = `<button type="button" class="mmd-side-close" aria-label="Close">×</button>` + html;
+    side.scrollTop = 0;
+  }
   for (const el of document.querySelectorAll("[data-lin-key]")) el.classList.toggle("lin-sel", el.dataset.linKey === key);
-  if (!document.querySelector(".mmd-zoom")) d.scrollIntoView({ block: "nearest" });
+  if (!side && d) d.scrollIntoView({ block: "nearest" });
 }
 document.addEventListener("click", e => {
   const m = e.target.closest("[data-linmode]");
@@ -2185,6 +2212,8 @@ document.addEventListener("click", e => {
     nvOpen(nvState.id, "lineage", false);
     return;
   }
+  const sc = e.target.closest(".mmd-side-close");
+  if (sc) { sc.parentElement.hidden = true; return; }
   const en = e.target.closest(".lin-enlarge");
   if (en) { const host = en.parentElement.querySelector(".mermaid-fig"); if (host) mmdZoom(host); return; }
   const o = e.target.closest("[data-lin-open]");
