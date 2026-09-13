@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "by": "Claude (claims.py: retirement reasons stored once per retired claim, the counting gap as a flag, confirmation records stored once and shown on request; how a count or a phrase is read is unchanged; 2026-09-13)",
     "on": "2026-09-13",
     "saw": {
-     "scripts/claims.py": "e981c4615674dc4a"
+     "scripts/claims.py": "c49540aa0438e7bb"
     }
    }
   },
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "by": "Claude (claims.py: retirement reasons stored once per retired claim, the counting gap as a flag, confirmation records stored once and shown on request; how a count or a phrase is read is unchanged; 2026-09-13)",
     "on": "2026-09-13",
     "saw": {
-     "scripts/claims.py": "e981c4615674dc4a"
+     "scripts/claims.py": "c49540aa0438e7bb"
     }
    }
   },

@@ -44,22 +44,22 @@
 <a id="T-81f44d68"></a>
 ### [CONSTRUCTED.md](CONSTRUCTED.md) — The register
 
-18 numbers in the columns *construction*, *held against*, *result*, *verdict*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`, `summary.sets.all.n`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/light.json` (`secchi.bands.*.to`, `secchi.n_paired`), written by [`scripts/light.py`](../scripts/light.py). Read from `docs/data/architecture.json` (`structures.broend.total`, `structures.broend.type_field_empty_pct`, `structures.rist.total`, `structures.rist.type_field_empty_pct`). Read from `docs/data/areas/partition_subspace.json` (`results.*.derived_vs_official_lift`). Read from `docs/data/flood2012/manifest.json` (`sheets.norrebro.standard_error_m`), written by [`scripts/export_flood.py`](../scripts/export_flood.py). 4 calculated on the page, each with its arithmetic in its menu.
+18 numbers in the columns *construction*, *held against*, *result*, *verdict*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`, `summary.sets.all.n`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/light.json` (`secchi.bands.*.to`, `secchi.n_paired`), written by [`scripts/light.py`](../scripts/light.py). Read from `docs/data/architecture.json` (`structures.broend.total`, `structures.broend.type_field_empty_pct`, `structures.rist.total`, `structures.rist.type_field_empty_pct`), written by [`scripts/architecture.py`](../scripts/architecture.py). Read from `docs/data/areas/partition_subspace.json` (`results.*.derived_vs_official_lift`), written by [`scripts/partition_subspace.py`](../scripts/partition_subspace.py). Read from `docs/data/flood2012/manifest.json` (`sheets.norrebro.standard_error_m`), written by [`scripts/export_flood.py`](../scripts/export_flood.py). 4 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-1f9bc85c"></a>
 ### [CURRENTS.md](CURRENTS.md) — The result: Køge Bugt keeps its water longest
 
-46 numbers in the columns *Point*, *Mean speed*, *Residual*, *Residual heading*, *Residual ÷ mean speed*, *Flushing time over 20 km*. Read from `data/derived/currents_index.json` (`flush_distance_km`, `retention.aarhus_bugt.flush_days_20km`, `retention.aarhus_bugt.mean_speed_ms`, `retention.aarhus_bugt.residual_bearing_deg`, `retention.aarhus_bugt.residual_ms`, `retention.arkona.flush_days_20km`, `retention.arkona.mean_speed_ms`, `retention.arkona.residual_bearing_deg`, `retention.arkona.residual_ms`, `retention.drogden.flush_days_20km`, `retention.drogden.mean_speed_ms`, `retention.drogden.residual_bearing_deg`, `retention.drogden.residual_ms`, `retention.fehmarn.flush_days_20km`, `retention.fehmarn.mean_speed_ms`, `retention.fehmarn.residual_bearing_deg`, `retention.fehmarn.residual_ms`, `retention.koege_bugt.flush_days_20km`, `retention.koege_bugt.mean_speed_ms`, `retention.koege_bugt.residual_bearing_deg`, `retention.koege_bugt.residual_ms`, `retention.oresund_n.flush_days_20km`, `retention.oresund_n.mean_speed_ms`, `retention.oresund_n.residual_bearing_deg`, `retention.oresund_n.residual_ms`, `retention.oresund_s.flush_days_20km`, `retention.oresund_s.mean_speed_ms`, `retention.oresund_s.residual_bearing_deg`, `retention.oresund_s.residual_ms`, `retention.storebaelt.flush_days_20km`, `retention.storebaelt.mean_speed_ms`, `retention.storebaelt.residual_bearing_deg`, `retention.storebaelt.residual_ms`, `retention.sydfynske.flush_days_20km`, `retention.sydfynske.mean_speed_ms`, `retention.sydfynske.residual_bearing_deg`, `retention.sydfynske.residual_ms`). 9 calculated on the page, each with its arithmetic in its menu.
+46 numbers in the columns *Point*, *Mean speed*, *Residual*, *Residual heading*, *Residual ÷ mean speed*, *Flushing time over 20 km*. Read from `data/derived/currents_index.json` (`flush_distance_km`, `retention.aarhus_bugt.flush_days_20km`, `retention.aarhus_bugt.mean_speed_ms`, `retention.aarhus_bugt.residual_bearing_deg`, `retention.aarhus_bugt.residual_ms`, `retention.arkona.flush_days_20km`, `retention.arkona.mean_speed_ms`, `retention.arkona.residual_bearing_deg`, `retention.arkona.residual_ms`, `retention.drogden.flush_days_20km`, `retention.drogden.mean_speed_ms`, `retention.drogden.residual_bearing_deg`, `retention.drogden.residual_ms`, `retention.fehmarn.flush_days_20km`, `retention.fehmarn.mean_speed_ms`, `retention.fehmarn.residual_bearing_deg`, `retention.fehmarn.residual_ms`, `retention.koege_bugt.flush_days_20km`, `retention.koege_bugt.mean_speed_ms`, `retention.koege_bugt.residual_bearing_deg`, `retention.koege_bugt.residual_ms`, `retention.oresund_n.flush_days_20km`, `retention.oresund_n.mean_speed_ms`, `retention.oresund_n.residual_bearing_deg`, `retention.oresund_n.residual_ms`, `retention.oresund_s.flush_days_20km`, `retention.oresund_s.mean_speed_ms`, `retention.oresund_s.residual_bearing_deg`, `retention.oresund_s.residual_ms`, `retention.storebaelt.flush_days_20km`, `retention.storebaelt.mean_speed_ms`, `retention.storebaelt.residual_bearing_deg`, `retention.storebaelt.residual_ms`, `retention.sydfynske.flush_days_20km`, `retention.sydfynske.mean_speed_ms`, `retention.sydfynske.residual_bearing_deg`, `retention.sydfynske.residual_ms`), written by [`scripts/currents.py`](../scripts/currents.py). 9 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-2cfadf29"></a>
 ### [CURRENTS.md](CURRENTS.md) — First, what this data cannot do
 
-9 numbers in the columns *Point*, *Peak speed in the field*. Read from `data/derived/currents_validate.json` (`points.*.max_ms`).
+9 numbers in the columns *Point*, *Peak speed in the field*. Read from `data/derived/currents_validate.json` (`points.*.max_ms`), written by [`scripts/currents.py`](../scripts/currents.py).
 
 <a id="T-7d981998"></a>
 ### [CURRENTS.md](CURRENTS.md) — Does Copenhagen's overflow water go toward Køge Bugt?
 
-18 numbers in the columns *Hours after the event*, *Runs south*, *vs baseline*. Read from `data/derived/currents_transport.json` (`lag.*.lag_h`, `lag.*.southward_pct`, `lag.*.vs_baseline_pp`).
+18 numbers in the columns *Hours after the event*, *Runs south*, *vs baseline*. Read from `data/derived/currents_transport.json` (`lag.*.lag_h`, `lag.*.southward_pct`, `lag.*.vs_baseline_pp`), written by [`scripts/currents.py`](../scripts/currents.py).
 
 <a id="T-9d4cd9d1"></a>
 ### [CURRENTS.md](CURRENTS.md) — When overflows happen, and when the bed is lifted
@@ -69,12 +69,12 @@
 <a id="T-a07b182f"></a>
 ### [CURRENTS.md](CURRENTS.md) — Does Copenhagen's overflow water go toward Køge Bugt?
 
-16 numbers in the columns *6-hour rainfall*, *Hours*, *Runs south*, *vs baseline*. Read from `data/derived/currents_transport.json` (`bands.*.hours`, `bands.*.southward_pct`, `bands.*.vs_baseline_pp`, `rain_window_h`).
+16 numbers in the columns *6-hour rainfall*, *Hours*, *Runs south*, *vs baseline*. Read from `data/derived/currents_transport.json` (`bands.*.hours`, `bands.*.southward_pct`, `bands.*.vs_baseline_pp`, `rain_window_h`), written by [`scripts/currents.py`](../scripts/currents.py).
 
 <a id="T-e4208a6f"></a>
 ### [CURRENTS.md](CURRENTS.md) — When rain and southward transport coincide
 
-24 numbers in the columns *Month*, *Overflow-scale hours/yr*, *...of those, running south*. Read from `data/derived/currents_transport.json` (`by_month.Apr.and_southward_h_per_yr`, `by_month.Apr.overflow_scale_h_per_yr`, `by_month.Aug.and_southward_h_per_yr`, `by_month.Aug.overflow_scale_h_per_yr`, `by_month.Dec.and_southward_h_per_yr`, `by_month.Dec.overflow_scale_h_per_yr`, `by_month.Feb.and_southward_h_per_yr`, `by_month.Feb.overflow_scale_h_per_yr`, `by_month.Jan.and_southward_h_per_yr`, `by_month.Jan.overflow_scale_h_per_yr`, `by_month.Jul.and_southward_h_per_yr`, `by_month.Jul.overflow_scale_h_per_yr`, `by_month.Jun.and_southward_h_per_yr`, `by_month.Jun.overflow_scale_h_per_yr`, `by_month.Mar.and_southward_h_per_yr`, `by_month.Mar.overflow_scale_h_per_yr`, `by_month.May.and_southward_h_per_yr`, `by_month.May.overflow_scale_h_per_yr`, `by_month.Nov.and_southward_h_per_yr`, `by_month.Nov.overflow_scale_h_per_yr`, `by_month.Oct.and_southward_h_per_yr`, `by_month.Oct.overflow_scale_h_per_yr`, `by_month.Sep.and_southward_h_per_yr`, `by_month.Sep.overflow_scale_h_per_yr`).
+24 numbers in the columns *Month*, *Overflow-scale hours/yr*, *...of those, running south*. Read from `data/derived/currents_transport.json` (`by_month.Apr.and_southward_h_per_yr`, `by_month.Apr.overflow_scale_h_per_yr`, `by_month.Aug.and_southward_h_per_yr`, `by_month.Aug.overflow_scale_h_per_yr`, `by_month.Dec.and_southward_h_per_yr`, `by_month.Dec.overflow_scale_h_per_yr`, `by_month.Feb.and_southward_h_per_yr`, `by_month.Feb.overflow_scale_h_per_yr`, `by_month.Jan.and_southward_h_per_yr`, `by_month.Jan.overflow_scale_h_per_yr`, `by_month.Jul.and_southward_h_per_yr`, `by_month.Jul.overflow_scale_h_per_yr`, `by_month.Jun.and_southward_h_per_yr`, `by_month.Jun.overflow_scale_h_per_yr`, `by_month.Mar.and_southward_h_per_yr`, `by_month.Mar.overflow_scale_h_per_yr`, `by_month.May.and_southward_h_per_yr`, `by_month.May.overflow_scale_h_per_yr`, `by_month.Nov.and_southward_h_per_yr`, `by_month.Nov.overflow_scale_h_per_yr`, `by_month.Oct.and_southward_h_per_yr`, `by_month.Oct.overflow_scale_h_per_yr`, `by_month.Sep.and_southward_h_per_yr`, `by_month.Sep.overflow_scale_h_per_yr`), written by [`scripts/currents.py`](../scripts/currents.py).
 
 <a id="T-1c155cd7"></a>
 ### [DATA_QUEUE.md](DATA_QUEUE.md) — The fetch queue
@@ -89,12 +89,12 @@
 <a id="T-5c272505"></a>
 ### [DATA_SOURCES.md](DATA_SOURCES.md) — 2. Miljøstyrelsen MiljøGIS — Vandområdeplan (VP3) basisanalyse *(fetched)*
 
-8 numbers in the columns *Layer*, *Metro Copenhagen*, *Notes*. Read from `data/derived/meta_facts.json` (`vp3_rbu_kobenhavn`, `vp3_rbu_points`, `vp3_rbu_volume_m3`, `vp3_rbu_with_volume`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py). Read from `data/raw/_manifest.json` (`*.features`).
+8 numbers in the columns *Layer*, *Metro Copenhagen*, *Notes*. Read from `data/derived/meta_facts.json` (`vp3_rbu_kobenhavn`, `vp3_rbu_points`, `vp3_rbu_volume_m3`, `vp3_rbu_with_volume`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py). Read from `data/raw/_manifest.json` (`*.features`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-f39e6ff3"></a>
 ### [DATA_SOURCES.md](DATA_SOURCES.md) — 1. Københavns Kommune — Kbhkort WFS *(fetched)*
 
-14 numbers in the columns *Layer*, *What it is*, *Why it matters*. Read from `data/derived/meta_facts.json` (`dike_raw_mb`, `kbhkort_raw_mb`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py). Read from `data/raw/_manifest.json` (`*.features`).
+14 numbers in the columns *Layer*, *What it is*, *Why it matters*. Read from `data/derived/meta_facts.json` (`dike_raw_mb`, `kbhkort_raw_mb`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py). Read from `data/raw/_manifest.json` (`*.features`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-f12d194f"></a>
 ### [EXTERNALITY.md](EXTERNALITY.md) — A — Returnable and identifiable: the model works as written
@@ -414,7 +414,7 @@
 <a id="T-0f25b302"></a>
 ### [NITROGEN.md](NITROGEN.md) — Who can discharge sewage into the bay
 
-40 numbers in the columns *Municipality*, *Separate outfalls*, *Combined overflows*, *% separated*, *Basin m³*. Read from `data/raw/national/punkt_rbu_udl.geojson` (`koege.Brøndby.comb`, `koege.Brøndby.sep`, `koege.Brøndby.vol`, `koege.Greve.comb`, `koege.Greve.sep`, `koege.Greve.vol`, `koege.Hvidovre.comb`, `koege.Hvidovre.sep`, `koege.Hvidovre.vol`, `koege.Ishøj.comb`, `koege.Ishøj.sep`, `koege.Ishøj.vol`, `koege.København.comb`, `koege.København.sep`, `koege.København.vol`, `koege.Køge.comb`, `koege.Køge.sep`, `koege.Køge.vol`, `koege.Solrød.comb`, `koege.Solrød.sep`, `koege.Solrød.vol`, `koege.Stevns.comb`, `koege.Stevns.sep`, `koege.Stevns.vol`, `koege.Tårnby.comb`, `koege.Tårnby.sep`, `koege.Tårnby.vol`, `koege.Vallensbæk.comb`, `koege.Vallensbæk.sep`, `koege.Vallensbæk.vol`). 10 calculated on the page, each with its arithmetic in its menu.
+40 numbers in the columns *Municipality*, *Separate outfalls*, *Combined overflows*, *% separated*, *Basin m³*. Read from `data/raw/national/punkt_rbu_udl.geojson` (`koege.Brøndby.comb`, `koege.Brøndby.sep`, `koege.Brøndby.vol`, `koege.Greve.comb`, `koege.Greve.sep`, `koege.Greve.vol`, `koege.Hvidovre.comb`, `koege.Hvidovre.sep`, `koege.Hvidovre.vol`, `koege.Ishøj.comb`, `koege.Ishøj.sep`, `koege.Ishøj.vol`, `koege.København.comb`, `koege.København.sep`, `koege.København.vol`, `koege.Køge.comb`, `koege.Køge.sep`, `koege.Køge.vol`, `koege.Solrød.comb`, `koege.Solrød.sep`, `koege.Solrød.vol`, `koege.Stevns.comb`, `koege.Stevns.sep`, `koege.Stevns.vol`, `koege.Tårnby.comb`, `koege.Tårnby.sep`, `koege.Tårnby.vol`, `koege.Vallensbæk.comb`, `koege.Vallensbæk.sep`, `koege.Vallensbæk.vol`), written by [`scripts/fetch_national.py`](../scripts/fetch_national.py). 10 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-414ffcaa"></a>
 ### [NITROGEN.md](NITROGEN.md) — The prediction is checkable, and the check has been run
@@ -429,17 +429,17 @@
 <a id="T-577c50b1"></a>
 ### [NITROGEN.md](NITROGEN.md) — But "downstream" is a claim about water, and it has been tested
 
-9 numbers in the columns *southward transport in the southern Sound*. Read from `data/derived/currents_transport.json` (`bands.*.hours`, `bands.*.southward_pct`, `baseline_southward_pct`, `lag.*.lag_h`, `lag.*.southward_pct`, `lag.*.vs_baseline_pp`). 1 calculated on the page, each with its arithmetic in its menu.
+9 numbers in the columns *southward transport in the southern Sound*. Read from `data/derived/currents_transport.json` (`bands.*.hours`, `bands.*.southward_pct`, `baseline_southward_pct`, `lag.*.lag_h`, `lag.*.southward_pct`, `lag.*.vs_baseline_pp`), written by [`scripts/currents.py`](../scripts/currents.py). 1 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-8434af94"></a>
 ### [NITROGEN.md](NITROGEN.md) — 2c. Whose nitrogen is it, and can the ledger say?
 
-16 numbers in the columns *1990*, *2000*, *2010*, *2025*. Read from `data/derived/cropland.json` (`years.*.ceiling_pct`, `years.*.central_pct`, `years.*.direct_food_pct`, `years.*.floor_pct`).
+16 numbers in the columns *1990*, *2000*, *2010*, *2025*. Read from `data/derived/cropland.json` (`years.*.ceiling_pct`, `years.*.central_pct`, `years.*.direct_food_pct`, `years.*.floor_pct`), written by [`scripts/cropland.py`](../scripts/cropland.py).
 
 <a id="T-8bea447f"></a>
 ### [NITROGEN.md](NITROGEN.md) — Treatment capacity discharging to the bay
 
-7 numbers in the columns *Plant*, *PE*, *Municipality*. Read from `data/raw/national/punkt_rens_udl.geojson` (`features.*.properties.godk_pe`).
+7 numbers in the columns *Plant*, *PE*, *Municipality*. Read from `data/raw/national/punkt_rens_udl.geojson` (`features.*.properties.godk_pe`), written by [`scripts/fetch_national.py`](../scripts/fetch_national.py).
 
 <a id="T-955ebd7d"></a>
 ### [NITROGEN.md](NITROGEN.md) — 1. There is no denominator
@@ -534,7 +534,7 @@
 <a id="T-7bdabd8b"></a>
 ### [OXYGEN.md](OXYGEN.md) — 3. Eight combinations
 
-1 numbers in the columns *N loaded*, *O₂ low*, *life gone*, *what produces this state*, *do the indicators distinguish it?*. Read from `data/derived/currents_index.json` (`retention.koege_bugt.flush_days_20km`).
+1 numbers in the columns *N loaded*, *O₂ low*, *life gone*, *what produces this state*, *do the indicators distinguish it?*. Read from `data/derived/currents_index.json` (`retention.koege_bugt.flush_days_20km`), written by [`scripts/currents.py`](../scripts/currents.py).
 
 <a id="T-c18d2d66"></a>
 ### [OXYGEN.md](OXYGEN.md) — 2. The exchange rates
@@ -619,7 +619,7 @@
 <a id="T-32a766ec"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — How big, and the answer is: that depends on whether you store first
 
-20 numbers in the columns *Grain*, *Falls at*, *Pond area to catch it at the design hour*, *The same filter fed steadily all year*. Read from `data/derived/streams.json` (`ponds.*.area_ha_at_design_hour`, `ponds.*.grain_um`, `ponds.*.settling_m_per_h`). 5 calculated on the page, each with its arithmetic in its menu.
+20 numbers in the columns *Grain*, *Falls at*, *Pond area to catch it at the design hour*, *The same filter fed steadily all year*. Read from `data/derived/streams.json` (`ponds.*.area_ha_at_design_hour`, `ponds.*.grain_um`, `ponds.*.settling_m_per_h`), written by [`scripts/streams.py`](../scripts/streams.py). 5 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-4050e979"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — What it would cost to just try it
@@ -644,12 +644,12 @@
 <a id="T-b0ce9ede"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — 1. Rainwater rivers — and the alignments already exist
 
-21 numbers in the columns *sheet*, *placed by*, *flooded below local ground*, *streets below local ground*, *difference*. Read from `data/derived/terraincheck.json` (`sheets.amager.windows.*.background_below_local_pct`, `sheets.amager.windows.*.flooded_below_local_pct`, `sheets.amager.windows.*.lift_pct_points`, `sheets.bispebjerg.windows.*.background_below_local_pct`, `sheets.bispebjerg.windows.*.flooded_below_local_pct`, `sheets.bispebjerg.windows.*.lift_pct_points`, `sheets.indre-by.windows.*.background_below_local_pct`, `sheets.indre-by.windows.*.flooded_below_local_pct`, `sheets.indre-by.windows.*.lift_pct_points`, `sheets.kbhvest.windows.*.background_below_local_pct`, `sheets.kbhvest.windows.*.flooded_below_local_pct`, `sheets.kbhvest.windows.*.lift_pct_points`, `sheets.ladegaardsaaen.windows.*.background_below_local_pct`, `sheets.ladegaardsaaen.windows.*.flooded_below_local_pct`, `sheets.ladegaardsaaen.windows.*.lift_pct_points`, `sheets.norrebro.windows.*.background_below_local_pct`, `sheets.norrebro.windows.*.flooded_below_local_pct`, `sheets.norrebro.windows.*.lift_pct_points`, `sheets.osterbro.windows.*.background_below_local_pct`, `sheets.osterbro.windows.*.flooded_below_local_pct`, `sheets.osterbro.windows.*.lift_pct_points`).
+21 numbers in the columns *sheet*, *placed by*, *flooded below local ground*, *streets below local ground*, *difference*. Read from `data/derived/terraincheck.json` (`sheets.amager.windows.*.background_below_local_pct`, `sheets.amager.windows.*.flooded_below_local_pct`, `sheets.amager.windows.*.lift_pct_points`, `sheets.bispebjerg.windows.*.background_below_local_pct`, `sheets.bispebjerg.windows.*.flooded_below_local_pct`, `sheets.bispebjerg.windows.*.lift_pct_points`, `sheets.indre-by.windows.*.background_below_local_pct`, `sheets.indre-by.windows.*.flooded_below_local_pct`, `sheets.indre-by.windows.*.lift_pct_points`, `sheets.kbhvest.windows.*.background_below_local_pct`, `sheets.kbhvest.windows.*.flooded_below_local_pct`, `sheets.kbhvest.windows.*.lift_pct_points`, `sheets.ladegaardsaaen.windows.*.background_below_local_pct`, `sheets.ladegaardsaaen.windows.*.flooded_below_local_pct`, `sheets.ladegaardsaaen.windows.*.lift_pct_points`, `sheets.norrebro.windows.*.background_below_local_pct`, `sheets.norrebro.windows.*.flooded_below_local_pct`, `sheets.norrebro.windows.*.lift_pct_points`, `sheets.osterbro.windows.*.background_below_local_pct`, `sheets.osterbro.windows.*.flooded_below_local_pct`, `sheets.osterbro.windows.*.lift_pct_points`), written by [`scripts/terraincheck.py`](../scripts/terraincheck.py).
 
 <a id="T-b139413a"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — 2. An outlet that is not the sea
 
-8 numbers. Read from `data/derived/streams.json` (`rain_record.hours_per_year_at_or_above_mm.*`, `rain_record.max_hour_mm`, `rain_record.mean_annual_mm`, `rain_record.median_wet_hour_mm`, `rain_record.wet_hours_per_year`). 2 stated choices.
+8 numbers. Read from `data/derived/streams.json` (`rain_record.hours_per_year_at_or_above_mm.*`, `rain_record.max_hour_mm`, `rain_record.mean_annual_mm`, `rain_record.median_wet_hour_mm`, `rain_record.wet_hours_per_year`), written by [`scripts/streams.py`](../scripts/streams.py). 2 stated choices.
 
 <a id="T-b1911f3a"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — The four words people actually use
@@ -684,7 +684,7 @@
 <a id="T-f2aada85"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — Case two: Vestamager, which is the right shape
 
-1 numbers. Read from `docs/data/architecture.json` (`polder.ha`).
+1 numbers. Read from `docs/data/architecture.json` (`polder.ha`), written by [`scripts/architecture.py`](../scripts/architecture.py).
 
 <a id="T-fc999304"></a>
 ### [PROGRAMME.md](PROGRAMME.md) — 2. An outlet that is not the sea
@@ -699,7 +699,7 @@
 <a id="T-1987f9a6"></a>
 ### [REGISTER.md](REGISTER.md) — Treatment plants
 
-15 numbers in the columns *Plant*, *Capacity (PE)*, *Stage*, *discharge point lon, lat*. Read from `data/raw/vp3_basis_2019_punkt_rens_udl.geojson` (`features.*.geometry.coordinates.*`, `features.*.properties.godk_pe`).
+15 numbers in the columns *Plant*, *Capacity (PE)*, *Stage*, *discharge point lon, lat*. Read from `data/raw/vp3_basis_2019_punkt_rens_udl.geojson` (`features.*.geometry.coordinates.*`, `features.*.properties.godk_pe`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-33db320f"></a>
 ### [REGISTER.md](REGISTER.md) — Coverage
@@ -724,17 +724,17 @@
 <a id="T-d4312603"></a>
 ### [REGISTER.md](REGISTER.md) — Discharge and overflow points
 
-5 numbers in the columns *Code*, *Meaning*, *Points*. Read from `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson` (`n_by_bgv_type.OF`, `n_by_bgv_type.OS`, `n_by_bgv_type.OV`, `n_by_bgv_type.SE`, `n_by_bgv_type.SF`).
+5 numbers in the columns *Code*, *Meaning*, *Points*. Read from `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson` (`n_by_bgv_type.OF`, `n_by_bgv_type.OS`, `n_by_bgv_type.OV`, `n_by_bgv_type.SE`, `n_by_bgv_type.SF`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-d9ae2794"></a>
 ### [REGISTER.md](REGISTER.md) — Sewer catchments by system type
 
-9 numbers in the columns *System*, *Catchments*. Read from `data/raw/sp_kloakoplande.geojson` (`n_by_kloaksystem_status.3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand`, `n_by_kloaksystem_status.Fælleskloakeret`, `n_by_kloaksystem_status.Fælleskloakeret, vejvand til recipient`, `n_by_kloaksystem_status.Separat, dele af matriklen separat`, `n_by_kloaksystem_status.Separatkloakeret, tag- og vejvand til recipient`, `n_by_kloaksystem_status.Separatkloakeret, vejvand til recipient`, `n_by_kloaksystem_status.Separatkloakeretopland tilkoblet fællessystemet`, `n_by_kloaksystem_status.Spildevandskloakeret`, `n_by_kloaksystem_status.unspecified`).
+9 numbers in the columns *System*, *Catchments*. Read from `data/raw/sp_kloakoplande.geojson` (`n_by_kloaksystem_status.3-strenget separat kloaksystem med separat inddeling af husspildevand, tagvand og vejvand`, `n_by_kloaksystem_status.Fælleskloakeret`, `n_by_kloaksystem_status.Fælleskloakeret, vejvand til recipient`, `n_by_kloaksystem_status.Separat, dele af matriklen separat`, `n_by_kloaksystem_status.Separatkloakeret, tag- og vejvand til recipient`, `n_by_kloaksystem_status.Separatkloakeret, vejvand til recipient`, `n_by_kloaksystem_status.Separatkloakeretopland tilkoblet fællessystemet`, `n_by_kloaksystem_status.Spildevandskloakeret`, `n_by_kloaksystem_status.unspecified`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-dde4e860"></a>
 ### [REGISTER.md](REGISTER.md) — Discharge and overflow points
 
-60 numbers in the columns *Structure*, *Type*, *m3*, *Municipality*, *lon, lat*. Read from `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson` (`features.*.geometry.coordinates.*`, `features.*.properties.vol_sb`).
+60 numbers in the columns *Structure*, *Type*, *m3*, *Municipality*, *lon, lat*. Read from `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson` (`features.*.geometry.coordinates.*`, `features.*.properties.vol_sb`), written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py).
 
 <a id="T-fdee8ce0"></a>
 ### [REGISTER.md](REGISTER.md) — Stated annual discharge volumes
@@ -749,7 +749,7 @@
 <a id="T-3705235a"></a>
 ### [SEABED.md](SEABED.md) — By month
 
-36 numbers in the columns *Month*, *Live bed*, *Dead bed*, *Ratio*. Read from `data/derived/waves.json` (`by_depth.5.0.exceedance.dead bed (no biology).by_month.*`, `by_depth.5.0.exceedance.live bed (biofilm, fauna, eelgrass).by_month.*`). 12 calculated on the page, each with its arithmetic in its menu.
+36 numbers in the columns *Month*, *Live bed*, *Dead bed*, *Ratio*. Read from `data/derived/waves.json` (`by_depth.5.0.exceedance.dead bed (no biology).by_month.*`, `by_depth.5.0.exceedance.live bed (biofilm, fauna, eelgrass).by_month.*`), written by [`scripts/waves.py`](../scripts/waves.py). 12 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-6362f631"></a>
 ### [SEABED.md](SEABED.md) — Fetch by direction
@@ -759,12 +759,12 @@
 <a id="T-e2b2840b"></a>
 ### [SEABED.md](SEABED.md) — A live bed and a dead bed
 
-12 numbers in the columns *Depth*, *Live bed*, *Dead bed*, *Ratio*. Read from `data/derived/waves.json` (`by_depth.10.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.10.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `by_depth.3.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.3.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `by_depth.5.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.5.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `depths_m.*`). 3 calculated on the page, each with its arithmetic in its menu.
+12 numbers in the columns *Depth*, *Live bed*, *Dead bed*, *Ratio*. Read from `data/derived/waves.json` (`by_depth.10.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.10.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `by_depth.3.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.3.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `by_depth.5.0.exceedance.dead bed (no biology).hours_per_year`, `by_depth.5.0.exceedance.live bed (biofilm, fauna, eelgrass).hours_per_year`, `depths_m.*`), written by [`scripts/waves.py`](../scripts/waves.py). 3 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-fb6caa3b"></a>
 ### [SEABED.md](SEABED.md) — Which winds do the work
 
-24 numbers in the columns *Sector*, *Mean fetch*, *Hours/yr resuspending*, *Share*. Read from `data/derived/waves.json` (`by_sector.E.fetch_km`, `by_sector.E.hours_per_year`, `by_sector.E.share_of_resuspension_pct`, `by_sector.N.fetch_km`, `by_sector.N.hours_per_year`, `by_sector.N.share_of_resuspension_pct`, `by_sector.NE.fetch_km`, `by_sector.NE.hours_per_year`, `by_sector.NE.share_of_resuspension_pct`, `by_sector.NW.fetch_km`, `by_sector.NW.hours_per_year`, `by_sector.NW.share_of_resuspension_pct`, `by_sector.S.fetch_km`, `by_sector.S.hours_per_year`, `by_sector.S.share_of_resuspension_pct`, `by_sector.SE.fetch_km`, `by_sector.SE.hours_per_year`, `by_sector.SE.share_of_resuspension_pct`, `by_sector.SW.fetch_km`, `by_sector.SW.hours_per_year`, `by_sector.SW.share_of_resuspension_pct`, `by_sector.W.fetch_km`, `by_sector.W.hours_per_year`, `by_sector.W.share_of_resuspension_pct`).
+24 numbers in the columns *Sector*, *Mean fetch*, *Hours/yr resuspending*, *Share*. Read from `data/derived/waves.json` (`by_sector.E.fetch_km`, `by_sector.E.hours_per_year`, `by_sector.E.share_of_resuspension_pct`, `by_sector.N.fetch_km`, `by_sector.N.hours_per_year`, `by_sector.N.share_of_resuspension_pct`, `by_sector.NE.fetch_km`, `by_sector.NE.hours_per_year`, `by_sector.NE.share_of_resuspension_pct`, `by_sector.NW.fetch_km`, `by_sector.NW.hours_per_year`, `by_sector.NW.share_of_resuspension_pct`, `by_sector.S.fetch_km`, `by_sector.S.hours_per_year`, `by_sector.S.share_of_resuspension_pct`, `by_sector.SE.fetch_km`, `by_sector.SE.hours_per_year`, `by_sector.SE.share_of_resuspension_pct`, `by_sector.SW.fetch_km`, `by_sector.SW.hours_per_year`, `by_sector.SW.share_of_resuspension_pct`, `by_sector.W.fetch_km`, `by_sector.W.hours_per_year`, `by_sector.W.share_of_resuspension_pct`), written by [`scripts/waves.py`](../scripts/waves.py).
 
 <a id="T-e9458ac8"></a>
 ### [SETTLE.md](SETTLE.md) — 2. What the calendar does for us
@@ -849,7 +849,7 @@
 <a id="T-e08da21d"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — B. Oxygen demand that arrived already made
 
-1 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/outfalls.json` (`layers.separate_stormwater.n`).
+1 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/outfalls.json` (`layers.separate_stormwater.n`), written by [`scripts/fetch_spildevand.py`](../scripts/fetch_spildevand.py).
 
 <a id="T-eaab0650"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — J. Surface film, gel and the greasy water itself
@@ -877,11 +877,11 @@
 - `data/derived/clock_convention.json`, written by [`scripts/clockzone.py`](../scripts/clockzone.py) — 3 numbers.
 - `data/derived/constructed.json`, written by [`scripts/pages/constructed.py`](../scripts/pages/constructed.py) — 2 numbers.
 - `data/derived/conveyance.json`, written by [`scripts/conveyance.py`](../scripts/conveyance.py) — 11 numbers.
-- `data/derived/cropland.json` — 5 numbers.
-- `data/derived/currents_index.json` — 17 numbers.
+- `data/derived/cropland.json`, written by [`scripts/cropland.py`](../scripts/cropland.py) — 5 numbers.
+- `data/derived/currents_index.json`, written by [`scripts/currents.py`](../scripts/currents.py) — 17 numbers.
 - `data/derived/currents_rain.json`, written by [`scripts/currents.py`](../scripts/currents.py) — 10 numbers.
-- `data/derived/currents_transport.json` — 9 numbers.
-- `data/derived/currents_validate.json` — 2 numbers. The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
+- `data/derived/currents_transport.json`, written by [`scripts/currents.py`](../scripts/currents.py) — 9 numbers.
+- `data/derived/currents_validate.json`, written by [`scripts/currents.py`](../scripts/currents.py) — 2 numbers. The published peak current speed at a named point divided by the largest speed the held circulation field reaches there.
 - `data/derived/cycles.json`, written by [`scripts/cycles.py`](../scripts/cycles.py) — 9 numbers.
 - `data/derived/depth_clock.json`, written by [`scripts/depth_clock.py`](../scripts/depth_clock.py) — 2 numbers.
 - `data/derived/detectable.json`, written by [`scripts/detectable.py`](../scripts/detectable.py) — 11 numbers.
@@ -892,10 +892,10 @@
 - `data/derived/experiments.json`, written by [`scripts/experiments.py`](../scripts/experiments.py) — 7 numbers.
 - `data/derived/farm_documents.json`, written by [`scripts/farm_documents.py`](../scripts/farm_documents.py) — 18 numbers.
 - `data/derived/fetch_queue.json`, written by [`scripts/fetch_queue.py`](../scripts/fetch_queue.py) — 5 numbers.
-- `data/derived/floodalign.json` — 3 numbers.
+- `data/derived/floodalign.json`, written by [`scripts/floodalign.py`](../scripts/floodalign.py) — 3 numbers.
 - `data/derived/floodgap.json`, written by [`scripts/floodgap.py`](../scripts/floodgap.py) — 13 numbers.
-- `data/derived/floodmaps/_georef.json` — 7 numbers.
-- `data/derived/floodmaps/_sheets.json` — 4 numbers.
+- `data/derived/floodmaps/_georef.json`, written by [`scripts/floodmaps.py`](../scripts/floodmaps.py) — 7 numbers.
+- `data/derived/floodmaps/_sheets.json`, written by [`scripts/floodmaps.py`](../scripts/floodmaps.py) — 4 numbers.
 - `data/derived/grundlaget.json`, written by [`scripts/pages/grundlaget.py`](../scripts/pages/grundlaget.py) — 9 numbers.
 - `data/derived/hypodraft_b1.json`, written by [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py) — 26 numbers.
 - `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 25 numbers.
@@ -905,12 +905,12 @@
 - `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 5 numbers.
 - `data/derived/landing_facts.json`, written by [`scripts/landing_facts.py`](../scripts/landing_facts.py) — 9 numbers.
 - `data/derived/light.json`, written by [`scripts/light.py`](../scripts/light.py) — 65 numbers.
-- `data/derived/livestock.json` — 6 numbers.
+- `data/derived/livestock.json`, written by [`scripts/livestock.py`](../scripts/livestock.py) — 6 numbers.
 - `data/derived/livestock_baskets.json`, written by [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py) — 41 numbers.
 - `data/derived/manure.json`, written by [`scripts/manure.py`](../scripts/manure.py) — 5 numbers.
 - `data/derived/meta_facts.json`, written by [`scripts/meta_facts.py`](../scripts/meta_facts.py) — 27 numbers.
 - `data/derived/observing.json`, written by [`scripts/observing.py`](../scripts/observing.py) — 46 numbers.
-- `data/derived/outfalls.json` — 6 numbers.
+- `data/derived/outfalls.json`, written by [`scripts/fetch_spildevand.py`](../scripts/fetch_spildevand.py) — 6 numbers.
 - `data/derived/oxygen.json`, written by [`scripts/oxygen.py`](../scripts/oxygen.py) — 14 numbers.
 - `data/derived/politics.json`, written by [`scripts/politics.py`](../scripts/politics.py) — 25 numbers.
 - `data/derived/programme.json`, written by [`scripts/programme.py`](../scripts/programme.py) — 9 numbers.
@@ -922,24 +922,24 @@
 - `data/derived/socialcontext.json`, written by [`scripts/socialcontext.py`](../scripts/socialcontext.py) — 86 numbers.
 - `data/derived/solutions.json`, written by [`scripts/solutions.py`](../scripts/solutions.py) — 12 numbers.
 - `data/derived/station_places.json`, written by [`scripts/station_places.py`](../scripts/station_places.py) — 33 numbers.
-- `data/derived/streams.json` — 15 numbers.
+- `data/derived/streams.json`, written by [`scripts/streams.py`](../scripts/streams.py) — 15 numbers.
 - `data/derived/synchrony.json`, written by [`scripts/synchrony.py`](../scripts/synchrony.py) — 22 numbers.
-- `data/derived/terraincheck.json` — 4 numbers.
+- `data/derived/terraincheck.json`, written by [`scripts/terraincheck.py`](../scripts/terraincheck.py) — 4 numbers.
 - `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 94 numbers.
-- `data/derived/waves.json` — 11 numbers.
+- `data/derived/waves.json`, written by [`scripts/waves.py`](../scripts/waves.py) — 11 numbers.
 - `data/manual/monitoring.json` — 35 numbers.
 - `data/manual/nitrogen_constants.json` — 3 numbers.
 - `data/manual/nitrogen_pathways.json` — 6 numbers.
 - `data/manual/nitrogen_readings.json` — 15 numbers. A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator.
-- `data/raw/national/punkt_rbu_udl.geojson` — 2 numbers.
-- `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson` — 4 numbers.
+- `data/raw/national/punkt_rbu_udl.geojson`, written by [`scripts/fetch_national.py`](../scripts/fetch_national.py) — 2 numbers.
+- `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson`, written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py) — 4 numbers.
 - `data/raw/weather/fetch.json` — 4 numbers.
-- `docs/data/architecture.json` — 7 numbers.
+- `docs/data/architecture.json`, written by [`scripts/architecture.py`](../scripts/architecture.py) — 7 numbers.
 - `docs/data/areas/areas.json`, written by [`scripts/areamap.py`](../scripts/areamap.py) — 2 numbers.
-- `docs/data/areas/partition_contiguous.json` — 2 numbers.
-- `docs/data/areas/partition_score.json` — 1 numbers. The number of variables scored: one entry in `results` per variable.
-- `docs/data/areas/partition_subspace.json` — 3 numbers.
-- `docs/data/areas/stations.json` — 1 numbers. Stations in ODA's station register of type `Hav` with a usable UTM position, each station number counted once.
+- `docs/data/areas/partition_contiguous.json`, written by [`scripts/partition_contiguous.py`](../scripts/partition_contiguous.py) — 2 numbers.
+- `docs/data/areas/partition_score.json`, written by [`scripts/partition_score.py`](../scripts/partition_score.py) — 1 numbers. The number of variables scored: one entry in `results` per variable.
+- `docs/data/areas/partition_subspace.json`, written by [`scripts/partition_subspace.py`](../scripts/partition_subspace.py) — 3 numbers.
+- `docs/data/areas/stations.json`, written by [`scripts/stationmap.py`](../scripts/stationmap.py) — 1 numbers. Stations in ODA's station register of type `Hav` with a usable UTM position, each station number counted once.
 - `docs/data/flood2012/manifest.json`, written by [`scripts/export_flood.py`](../scripts/export_flood.py) — 6 numbers.
 - `docs/data/lineage/cum_hoc_r.json`, written by [`scripts/areas.py`](../scripts/areas.py) — 2 numbers. The correlation `cum_hoc.tests` index `2` recomputed with the one choice named in the rerun's `imposed` changed.
 
@@ -3171,7 +3171,7 @@ What this site printed at an earlier commit.
 <a id="K-READ-COUNT"></a>
 ### Counting a term in a pinned document
 
-`K-READ-COUNT` · covers reading-count · **current** · read by Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13), 2026-09-13
+`K-READ-COUNT` · covers reading-count · **current** · read by Claude (claims.py: retirement reasons stored once per retired claim, the counting gap as a flag, confirmation records stored once and shown on request; how a count or a phrase is read is unchanged; 2026-09-13), 2026-09-13
 
 The number of occurrences of a term in the pinned text of an external document.
 
@@ -3188,7 +3188,7 @@ The number of occurrences of a term in the pinned text of an external document.
 <a id="K-READ-PHRASE"></a>
 ### A value stated in a pinned document
 
-`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13), 2026-09-13
+`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (claims.py: retirement reasons stored once per retired claim, the counting gap as a flag, confirmation records stored once and shown on request; how a count or a phrase is read is unchanged; 2026-09-13), 2026-09-13
 
 A value as an external document states it, confirmed to be present in the document's pinned text.
 

@@ -1,0 +1,688 @@
+{
+ "_what": "Build steps read from the scripts' own code (an ast scan: paths built from ROOT, DERIVED, RAW, MANUAL, the script's folder and its own or imported path constants; a templated name expanded to the files that exist). It only adds: a script declared by hand keeps its declaration, and gains here only the files the scan found and the hand list lacked. unresolved_paths counts the file calls whose path is built at run time and could not be read from the code, so a step with a count above zero may name too few files.",
+ "steps": [
+  {
+   "script": "scripts/apply_offsets.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/floodmaps/_georef.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/architecture.py",
+   "inputs": [
+    "data/derived/streams.json",
+    "data/derived/viewer/basins.geojson",
+    "data/derived/viewer/coast.geojson",
+    "data/derived/viewer/discharge_points.geojson",
+    "data/manual/codelists.json",
+    "data/raw/havn.geojson",
+    "data/raw/osm/buildings.json",
+    "data/raw/osm/roads.json",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/structures/rist.json"
+   ],
+   "outputs": [
+    "docs/data/architecture.json"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/areas.py",
+   "inputs": [
+    "data/raw/national/hovedoplande.geojson",
+    "data/raw/national/ov_maalestation_soe.geojson",
+    "data/raw/national/ov_maalestation_vandl.geojson",
+    "data/raw/national/skaldyrvande.geojson",
+    "data/raw/national/vp3_2e2025_kystvand_opland_afg.geojson"
+   ],
+   "outputs": [],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/build_registry.py",
+   "inputs": [
+    "data/raw/dp_regnvandsafledning_f.geojson",
+    "data/raw/dp_regnvandsafledning_l.geojson",
+    "data/raw/dp_regnvandsafledning_p.geojson",
+    "data/raw/grundvand_pejlinger_2021.geojson",
+    "data/raw/grundvand_potentialelinjer_2021.geojson",
+    "data/raw/havn.geojson",
+    "data/raw/hmax263_dige.geojson",
+    "data/raw/hmax285_dige.geojson",
+    "data/raw/kbh_kysttyper.geojson",
+    "data/raw/lar_registreringer.geojson",
+    "data/raw/skp_deloplande.geojson",
+    "data/raw/skp_masterplaner_kk.geojson",
+    "data/raw/skp_skybrudsoplande.geojson",
+    "data/raw/skp_terraenaend.geojson",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/terraen_minus_gvs.geojson",
+    "data/raw/vand_oversigtskort.geojson",
+    "data/raw/vp3_basis_2019_punkt_ind_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_spredt_udl.geojson",
+    "data/raw/vp3_basis_2019_soe_overordnet.geojson",
+    "data/raw/vp3_basis_2019_vandloeb_overordnet.geojson",
+    "data/raw/vp3basis2019_badevand.geojson"
+   ],
+   "outputs": [],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/build_viewer_data.py",
+   "inputs": [
+    "data/derived/constructions.geojson",
+    "data/derived/floodgap.json",
+    "data/derived/floodmaps/amager.depth.png",
+    "data/derived/floodmaps/bispebjerg.depth.png",
+    "data/derived/floodmaps/indre-by.depth.png",
+    "data/derived/floodmaps/kbhvest.depth.png",
+    "data/derived/floodmaps/ladegaardsaaen.depth.png",
+    "data/derived/floodmaps/norrebro.depth.png",
+    "data/derived/floodmaps/osterbro.depth.png",
+    "data/raw/dp_regnvandsafledning_f.geojson",
+    "data/raw/dp_regnvandsafledning_l.geojson",
+    "data/raw/dp_regnvandsafledning_p.geojson",
+    "data/raw/grundvand_pejlinger_2021.geojson",
+    "data/raw/grundvand_potentialelinjer_2021.geojson",
+    "data/raw/havn.geojson",
+    "data/raw/hmax263_dige.geojson",
+    "data/raw/hmax285_dige.geojson",
+    "data/raw/kbh_kysttyper.geojson",
+    "data/raw/lar_registreringer.geojson",
+    "data/raw/skp_afsluttede_prj_kk.geojson",
+    "data/raw/skp_bassiner_pladser_kk.geojson",
+    "data/raw/skp_deloplande.geojson",
+    "data/raw/skp_igangsatte_prj_kk.geojson",
+    "data/raw/skp_masterplaner_kk.geojson",
+    "data/raw/skp_skybrudsoplande.geojson",
+    "data/raw/skp_terraenaend.geojson",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/terraen_minus_gvs.geojson",
+    "data/raw/vand_oversigtskort.geojson",
+    "data/raw/vp3_basis_2019_punkt_ind_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_spredt_udl.geojson",
+    "data/raw/vp3_basis_2019_soe_overordnet.geojson",
+    "data/raw/vp3_basis_2019_vandloeb_overordnet.geojson",
+    "data/raw/vp3basis2019_badevand.geojson"
+   ],
+   "outputs": [
+    "data/derived/viewer/basins.geojson",
+    "data/derived/viewer/buildings3d.geojson",
+    "data/derived/viewer/catchments.geojson",
+    "data/derived/viewer/coast.geojson",
+    "data/derived/viewer/coast3d.geojson",
+    "data/derived/viewer/constructions.geojson",
+    "data/derived/viewer/discharge_points.geojson",
+    "data/derived/viewer/flood_hotspots.geojson",
+    "data/derived/viewer/ground3d.geojson",
+    "data/derived/viewer/index.json",
+    "data/derived/viewer/lar.geojson",
+    "data/derived/viewer/rain_lines.geojson",
+    "data/derived/viewer/rivers3d.geojson",
+    "data/derived/viewer/roads3d.geojson",
+    "data/derived/viewer/sewer_catchments.geojson",
+    "data/derived/viewer/terrain_changes.geojson",
+    "data/derived/viewer/treatment_plants.geojson",
+    "data/derived/viewer/tunnels_roads.geojson",
+    "data/derived/viewer/water.geojson"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/cropland.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/cropland.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/cube.py",
+   "inputs": [
+    "data/derived/areas.json",
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/oda/stations.csv"
+   ],
+   "outputs": [
+    "docs/data/areas/cube.bin",
+    "docs/data/areas/cube.json",
+    "docs/data/areas/val_bottom.bin",
+    "docs/data/areas/val_kd.bin",
+    "docs/data/areas/val_secchi.bin"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/currents.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/currents_index.json",
+    "data/derived/currents_transport.json",
+    "data/derived/currents_validate.json",
+    "data/raw/marine/marine_aarhus_bugt.json",
+    "data/raw/marine/marine_arkona.json",
+    "data/raw/marine/marine_drogden.json",
+    "data/raw/marine/marine_fehmarn.json",
+    "data/raw/marine/marine_koege_bugt.json",
+    "data/raw/marine/marine_oresund_n.json",
+    "data/raw/marine/marine_oresund_s.json",
+    "data/raw/marine/marine_storebaelt.json",
+    "data/raw/marine/marine_sydfynske.json",
+    "data/raw/marine/wind_baltic_c.json",
+    "data/raw/marine/wind_baltic_n.json",
+    "data/raw/marine/wind_baltic_s.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/export_flood.py",
+   "inputs": [
+    "data/derived/floodmaps/amager.depth.png",
+    "data/derived/floodmaps/bispebjerg.depth.png",
+    "data/derived/floodmaps/indre-by.depth.png",
+    "data/derived/floodmaps/kbhvest.depth.png",
+    "data/derived/floodmaps/ladegaardsaaen.depth.png",
+    "data/derived/floodmaps/norrebro.depth.png",
+    "data/derived/floodmaps/osterbro.depth.png"
+   ],
+   "outputs": [
+    "docs/data/flood2012/amager.pgw",
+    "docs/data/flood2012/amager.prj",
+    "docs/data/flood2012/bispebjerg.pgw",
+    "docs/data/flood2012/bispebjerg.prj",
+    "docs/data/flood2012/indre-by.pgw",
+    "docs/data/flood2012/indre-by.prj",
+    "docs/data/flood2012/kbhvest.pgw",
+    "docs/data/flood2012/kbhvest.prj",
+    "docs/data/flood2012/ladegaardsaaen.pgw",
+    "docs/data/flood2012/ladegaardsaaen.prj",
+    "docs/data/flood2012/norrebro.pgw",
+    "docs/data/flood2012/norrebro.prj",
+    "docs/data/flood2012/osterbro.pgw",
+    "docs/data/flood2012/osterbro.prj"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/fetch_cmems.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/cmems/indicators/_manifest.json"
+   ],
+   "unresolved_paths": 6
+  },
+  {
+   "script": "scripts/fetch_national.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/national/badevand.geojson",
+    "data/raw/national/hovedoplande.geojson",
+    "data/raw/national/klappladser.geojson",
+    "data/raw/national/marin_overordnet.geojson",
+    "data/raw/national/ov_maalestation_soe.geojson",
+    "data/raw/national/ov_maalestation_vandl.geojson",
+    "data/raw/national/punkt_havdam_udl.geojson",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/national/punkt_rens_udl.geojson",
+    "data/raw/national/raastofomr.geojson",
+    "data/raw/national/skaldyrvande.geojson",
+    "data/raw/national/sw_mfs_tilstand.geojson",
+    "data/raw/national/vp3_2e2025_kystvand_opland_afg.geojson"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/fetch_oda.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/oda/ctd.csv.gz",
+    "data/raw/oda/ctd_stations.tsv",
+    "data/raw/oda/kemi.csv.gz",
+    "data/raw/oda/kemi_stations.tsv",
+    "data/raw/oda/lys.csv.gz",
+    "data/raw/oda/lys_stations.tsv",
+    "data/raw/oda/maaledybde.csv.gz",
+    "data/raw/oda/maaledybde_stations.tsv",
+    "data/raw/oda/stations_stations.tsv"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/fetch_plan_projects.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/plan_other_pages.json",
+    "data/raw/plan_projects.json"
+   ],
+   "unresolved_paths": 3
+  },
+  {
+   "script": "scripts/fetch_satellite.py",
+   "inputs": [
+    "data/derived/areas.json"
+   ],
+   "outputs": [
+    "data/raw/satellite/watercolour.json"
+   ],
+   "unresolved_paths": 4
+  },
+  {
+   "script": "scripts/fetch_spildevand.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/outfalls.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/fetch_wfs.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/_manifest.json",
+    "data/raw/dp_regnvandsafledning_f.geojson",
+    "data/raw/dp_regnvandsafledning_l.geojson",
+    "data/raw/dp_regnvandsafledning_p.geojson",
+    "data/raw/grundvand_pejlinger_2021.geojson",
+    "data/raw/grundvand_potentialelinjer_2021.geojson",
+    "data/raw/havn.geojson",
+    "data/raw/hmax263_dige.geojson",
+    "data/raw/hmax285_dige.geojson",
+    "data/raw/kbh_kysttyper.geojson",
+    "data/raw/lar_registreringer.geojson",
+    "data/raw/skp_afsluttede_prj_kk.geojson",
+    "data/raw/skp_bassiner_pladser_kk.geojson",
+    "data/raw/skp_deloplande.geojson",
+    "data/raw/skp_igangsatte_prj_kk.geojson",
+    "data/raw/skp_masterplaner_kk.geojson",
+    "data/raw/skp_skybrudsoplande.geojson",
+    "data/raw/skp_terraenaend.geojson",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/sp_kloakoplande.geojson",
+    "data/raw/terraen_minus_gvs.geojson",
+    "data/raw/vand_oversigtskort.geojson",
+    "data/raw/vp3_basis_2019_punkt_ind_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_spredt_udl.geojson",
+    "data/raw/vp3_basis_2019_soe_overordnet.geojson",
+    "data/raw/vp3_basis_2019_vandloeb_overordnet.geojson",
+    "data/raw/vp3basis2019_badevand.geojson"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/floodalign.py",
+   "inputs": [
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodmaps/_sheets.json",
+    "data/derived/floodmaps/amager.band.npy",
+    "data/derived/floodmaps/amager.render.png",
+    "data/derived/floodmaps/bispebjerg.band.npy",
+    "data/derived/floodmaps/bispebjerg.render.png",
+    "data/derived/floodmaps/indre-by.band.npy",
+    "data/derived/floodmaps/indre-by.render.png",
+    "data/derived/floodmaps/kbhvest.band.npy",
+    "data/derived/floodmaps/kbhvest.render.png",
+    "data/derived/floodmaps/ladegaardsaaen.band.npy",
+    "data/derived/floodmaps/ladegaardsaaen.render.png",
+    "data/derived/floodmaps/norrebro.band.npy",
+    "data/derived/floodmaps/norrebro.render.png",
+    "data/derived/floodmaps/osterbro.band.npy",
+    "data/derived/floodmaps/osterbro.render.png"
+   ],
+   "outputs": [
+    "data/derived/floodalign.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/floodmaps.py",
+   "inputs": [
+    "data/derived/floodmaps/amager.render.png",
+    "data/derived/floodmaps/bispebjerg.render.png",
+    "data/derived/floodmaps/indre-by.render.png",
+    "data/derived/floodmaps/kbhvest.render.png",
+    "data/derived/floodmaps/ladegaardsaaen.render.png",
+    "data/derived/floodmaps/norrebro.render.png",
+    "data/derived/floodmaps/osterbro.render.png",
+    "data/manual/floodmap_control.json",
+    "data/raw/floodmaps/amager.pdf",
+    "data/raw/floodmaps/bispebjerg.pdf",
+    "data/raw/floodmaps/indre-by.pdf",
+    "data/raw/floodmaps/kbhvest.pdf",
+    "data/raw/floodmaps/ladegaardsaaen.pdf",
+    "data/raw/floodmaps/norrebro.pdf",
+    "data/raw/floodmaps/osterbro.pdf"
+   ],
+   "outputs": [
+    "data/derived/floodmaps/_extract.json",
+    "data/derived/floodmaps/_georef.json",
+    "data/derived/floodmaps/_sheets.json",
+    "data/derived/floodmaps/amager.band.npy",
+    "data/derived/floodmaps/amager.check.jpg",
+    "data/derived/floodmaps/amager.depth.png",
+    "data/derived/floodmaps/amager.preview.jpg",
+    "data/derived/floodmaps/bispebjerg.band.npy",
+    "data/derived/floodmaps/bispebjerg.check.jpg",
+    "data/derived/floodmaps/bispebjerg.depth.png",
+    "data/derived/floodmaps/bispebjerg.preview.jpg",
+    "data/derived/floodmaps/indre-by.band.npy",
+    "data/derived/floodmaps/indre-by.check.jpg",
+    "data/derived/floodmaps/indre-by.depth.png",
+    "data/derived/floodmaps/indre-by.preview.jpg",
+    "data/derived/floodmaps/kbhvest.band.npy",
+    "data/derived/floodmaps/kbhvest.check.jpg",
+    "data/derived/floodmaps/kbhvest.depth.png",
+    "data/derived/floodmaps/kbhvest.preview.jpg",
+    "data/derived/floodmaps/ladegaardsaaen.band.npy",
+    "data/derived/floodmaps/ladegaardsaaen.check.jpg",
+    "data/derived/floodmaps/ladegaardsaaen.depth.png",
+    "data/derived/floodmaps/ladegaardsaaen.preview.jpg",
+    "data/derived/floodmaps/norrebro.band.npy",
+    "data/derived/floodmaps/norrebro.check.jpg",
+    "data/derived/floodmaps/norrebro.depth.png",
+    "data/derived/floodmaps/norrebro.preview.jpg",
+    "data/derived/floodmaps/osterbro.band.npy",
+    "data/derived/floodmaps/osterbro.check.jpg",
+    "data/derived/floodmaps/osterbro.depth.png",
+    "data/derived/floodmaps/osterbro.preview.jpg",
+    "data/raw/floodmaps/_urls.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/freshness.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/build.lock.json"
+   ],
+   "unresolved_paths": 3
+  },
+  {
+   "script": "scripts/hypo_glossary.py",
+   "inputs": [],
+   "outputs": [
+    "docs/data/hypo_glossary.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/livestock.py",
+   "inputs": [
+    "data/derived/cropland.json"
+   ],
+   "outputs": [
+    "data/derived/livestock.json"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/matchup.py",
+   "inputs": [
+    "data/raw/cmems/grid/transp__inner__1997.nc",
+    "data/raw/cmems/grid/transp__inner__1998.nc",
+    "data/raw/cmems/grid/transp__inner__1999.nc",
+    "data/raw/cmems/grid/transp__inner__2000.nc",
+    "data/raw/cmems/grid/transp__inner__2001.nc",
+    "data/raw/cmems/grid/transp__inner__2002.nc",
+    "data/raw/cmems/grid/transp__inner__2003.nc",
+    "data/raw/cmems/grid/transp__inner__2004.nc",
+    "data/raw/cmems/grid/transp__inner__2005.nc",
+    "data/raw/cmems/grid/transp__inner__2006.nc",
+    "data/raw/cmems/grid/transp__inner__2007.nc",
+    "data/raw/cmems/grid/transp__inner__2008.nc",
+    "data/raw/cmems/grid/transp__inner__2009.nc",
+    "data/raw/cmems/grid/transp__inner__2010.nc",
+    "data/raw/cmems/grid/transp__inner__2011.nc",
+    "data/raw/cmems/grid/transp__inner__2012.nc",
+    "data/raw/cmems/grid/transp__inner__2013.nc",
+    "data/raw/cmems/grid/transp__inner__2014.nc",
+    "data/raw/cmems/grid/transp__inner__2015.nc",
+    "data/raw/cmems/grid/transp__inner__2016.nc",
+    "data/raw/cmems/grid/transp__inner__2017.nc",
+    "data/raw/cmems/grid/transp__inner__2018.nc",
+    "data/raw/cmems/grid/transp__inner__2019.nc",
+    "data/raw/cmems/grid/transp__inner__2020.nc",
+    "data/raw/cmems/grid/transp__inner__2021.nc",
+    "data/raw/cmems/grid/transp__inner__2022.nc",
+    "data/raw/cmems/grid/transp__inner__2023.nc",
+    "data/raw/cmems/grid/transp__inner__2024.nc",
+    "data/raw/cmems/grid/transp__inner__2025.nc",
+    "data/raw/oda/lys.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/matchups.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/nitrogen.py",
+   "inputs": [],
+   "outputs": [
+    "data/raw/national/punkt_rbu_udl.geojson"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/partition_ceiling.py",
+   "inputs": [
+    "docs/data/areas/station_waterbody_overlay.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/stations_series.json"
+   ],
+   "outputs": [
+    "docs/data/areas/partition_ceiling.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/partition_complement.py",
+   "inputs": [],
+   "outputs": [
+    "docs/data/areas/partition_complement.json",
+    "docs/data/areas/partition_complement_5v.json",
+    "docs/data/areas/partition_complement_7v.json",
+    "docs/data/areas/partition_complement_permuted.json",
+    "docs/data/areas/partition_complement_permuted_5v.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/partition_contiguous.py",
+   "inputs": [
+    "data/raw/osm/coastline.json"
+   ],
+   "outputs": [
+    "docs/data/areas/partition_contiguous.json"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/partition_score.py",
+   "inputs": [
+    "docs/data/areas/station_waterbody_overlay.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/stations_series.json"
+   ],
+   "outputs": [
+    "docs/data/areas/partition_score.json"
+   ],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/partition_subspace.py",
+   "inputs": [],
+   "outputs": [
+    "docs/data/areas/partition_subspace.json",
+    "docs/data/areas/partition_subspace_permuted.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/pilot_relations.py",
+   "inputs": [
+    "data/raw/oda/stations.csv"
+   ],
+   "outputs": [
+    "data/derived/pilot_relations.json",
+    "data/derived/pilot_relations_extrap.json",
+    "data/derived/pilot_relations_parse.json",
+    "data/derived/pilot_relations_sample.npz"
+   ],
+   "unresolved_paths": 7
+  },
+  {
+   "script": "scripts/rivermap.py",
+   "inputs": [
+    "data/derived/floodmaps/_sheets.json",
+    "data/raw/sp_kloakoplande.geojson"
+   ],
+   "outputs": [],
+   "unresolved_paths": 2
+  },
+  {
+   "script": "scripts/rivers3d.py",
+   "inputs": [
+    "data/derived/rivermap.json",
+    "data/raw/national/punkt_rbu_udl.geojson",
+    "data/raw/osm/buildings.json",
+    "data/raw/osm/coastline.json",
+    "data/raw/osm/landcover.json",
+    "data/raw/osm/roads.json",
+    "data/raw/skp_veje_tunneller_kk.geojson"
+   ],
+   "outputs": [
+    "data/derived/viewer/buildings3d.geojson",
+    "data/derived/viewer/rivers3d.geojson"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/section3d.py",
+   "inputs": [
+    "data/derived/streams.json",
+    "docs/data/architecture.json"
+   ],
+   "outputs": [
+    "docs/data/section3d.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/series.py",
+   "inputs": [
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "docs/data/areas/series.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/solutions.py",
+   "inputs": [
+    "data/raw/dp_regnvandsafledning_f.geojson",
+    "data/raw/dp_regnvandsafledning_l.geojson",
+    "data/raw/dp_regnvandsafledning_p.geojson",
+    "data/raw/grundvand_pejlinger_2021.geojson",
+    "data/raw/grundvand_potentialelinjer_2021.geojson",
+    "data/raw/havn.geojson",
+    "data/raw/hmax263_dige.geojson",
+    "data/raw/hmax285_dige.geojson",
+    "data/raw/kbh_kysttyper.geojson",
+    "data/raw/skp_afsluttede_prj_kk.geojson",
+    "data/raw/skp_bassiner_pladser_kk.geojson",
+    "data/raw/skp_deloplande.geojson",
+    "data/raw/skp_igangsatte_prj_kk.geojson",
+    "data/raw/skp_masterplaner_kk.geojson",
+    "data/raw/skp_skybrudsoplande.geojson",
+    "data/raw/skp_terraenaend.geojson",
+    "data/raw/skp_veje_tunneller_kk.geojson",
+    "data/raw/terraen_minus_gvs.geojson",
+    "data/raw/vand_oversigtskort.geojson",
+    "data/raw/vp3_basis_2019_punkt_ind_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_rens_udl.geojson",
+    "data/raw/vp3_basis_2019_punkt_spredt_udl.geojson",
+    "data/raw/vp3_basis_2019_soe_overordnet.geojson",
+    "data/raw/vp3_basis_2019_vandloeb_overordnet.geojson",
+    "data/raw/vp3basis2019_badevand.geojson"
+   ],
+   "outputs": [],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/stationmap.py",
+   "inputs": [
+    "data/raw/oda/ctd_stations.tsv",
+    "data/raw/oda/kemi_stations.tsv",
+    "data/raw/oda/lys_stations.tsv",
+    "data/raw/oda/maaledybde_stations.tsv",
+    "data/raw/oda/stations.csv",
+    "data/raw/oda/stations_stations.tsv"
+   ],
+   "outputs": [
+    "docs/data/areas/stations.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/stations_series.py",
+   "inputs": [
+    "data/raw/oda/ctd.csv.gz"
+   ],
+   "outputs": [
+    "docs/data/areas/station_waterbody_overlay.json",
+    "docs/data/areas/stations_series.bin",
+    "docs/data/areas/stations_series.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/streams.py",
+   "inputs": [],
+   "outputs": [
+    "data/derived/streams.json"
+   ],
+   "unresolved_paths": 1
+  },
+  {
+   "script": "scripts/substrate.py",
+   "inputs": [
+    "data/raw/oda/lys.csv.gz"
+   ],
+   "outputs": [
+    "data/derived/substrate.json"
+   ],
+   "unresolved_paths": 0
+  },
+  {
+   "script": "scripts/terraincheck.py",
+   "inputs": [
+    "data/derived/viewer/floodmaps.json",
+    "data/raw/osm/roads.json"
+   ],
+   "outputs": [
+    "data/derived/terraincheck.json"
+   ],
+   "unresolved_paths": 7
+  },
+  {
+   "script": "scripts/waves.py",
+   "inputs": [
+    "data/raw/weather/fetch.json"
+   ],
+   "outputs": [
+    "data/derived/waves.json"
+   ],
+   "unresolved_paths": 1
+  }
+ ]
+}

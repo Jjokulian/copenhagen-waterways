@@ -1849,6 +1849,7 @@ async function nvEnsure(idx, id) {
       idx.entries[k] = r || undefined;
       if (!r) continue;
       if (r.f) r.field = { is: (m.fields || {})[r.f] };
+      if (r.src[0] === "reading" && r.src[4] && r.src[4].$d !== undefined) r.src[4] = (m.docmeta || [])[r.src[4].$d];
       if (r.src[0] === "leaf" && (m.producers || {})[r.src[1]]) r.producer = m.producers[r.src[1]];
       idx.bySrc.set(JSON.stringify(r.src), k);
       if (r.u) idx.usedBy[k] = r.u.map(p => (m.pages || [])[p]);
@@ -2601,16 +2602,21 @@ function clMarkdown(id, recs, nodes, meta) {
   if (c.th) L.push(`**Somebody else's claim**, held by ${c.h}.`, "");
   if (c.p && c.p.length) L.push("Said on " + c.p.map(p => `[${p}](${p})`).join(", ") + ".", "");
   if (c.b) L.push(`**${c.th ? "Their reasons" : "Why it follows"}:** ${c.b}`, "");
-  for (const [old, on, why] of c.rp || [])
-    L.push(`**Replaces an earlier claim**, retired on ${on} to the [archive](ARCHIVE.md#${old}): ${why || ""}`, "");
+  for (const [old, on] of c.rp || [])
+    L.push(`**Replaces an earlier claim**, retired on ${on} to the [archive](ARCHIVE.md#${old}): ${(meta.retired_why || {})[old] || ""}`, "");
   if ((c.r || []).length) {
     L.push("```mermaid", clGraph(id, recs, nodes, meta, 4), "```", "");
     for (const x of c.r) L.push(clBullet(x, recs, nodes, meta));
   } else L.push("- nothing further is cited: the reasoning above is the whole of it");
   L.push("");
+  if (c.jc) L.push("*How this was counted is not recorded by the script that computes it.*", "");
   if (c.j) L.push(c.j, "");
   if (c.n) L.push(`> ${c.n}`, "");
-  if (c.cf) L.push(`*Confirmed ${c.cf[0]} by ${c.cf[1]}.*`);
+  if (c.cf) {
+    L.push(`*Confirmed ${c.cf[0]} by ${c.cf[1]}.*`);
+    const read = (meta.confirmers || [])[c.cf[2]];
+    if (read && read !== c.cf[1]) L.push("", `<details class="small"><summary>What the confirmation covered</summary>${nvEsc(read)}</details>`);
+  }
   return L.join("\n");
 }
 const nvClaimText = {};

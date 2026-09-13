@@ -828,6 +828,11 @@ def _node_item(d, n, cache):
     return s + (f". {detail}" if detail else "")
 
 
+# a computed claim whose script does not record how it counted: a flag on the record,
+# worded once in the page, not a sentence repeated under every such claim
+NO_COUNTING = "§ no counting record §"
+
+
 def justification(d, cid, c, cache):
     out = []
     if c.get("basis") == "computed":
@@ -844,12 +849,8 @@ def justification(d, cid, c, cache):
             p = prov.get(".".join(_path(r)))
             if p:
                 provs.append((name, r, p))
-        out.append("**Computed** — the chain is what was coded, and the script that "
-                   "computes it records how it counted.")
         if not provs:
-            out += ["", "*The script behind this does not yet record how it counted "
-                    "it. That is a gap in the justification, not a property of the "
-                    "number.*"]
+            return [NO_COUNTING]
         for name, r, p in provs:
             out += ["", f"**`{name}`** — `{r['file']}` → `{'.'.join(_path(r))}`", ""]
             out.append(f"- **Counted as the same thing:** {p['counts_as']}")
@@ -933,6 +934,7 @@ def main(argv):
     import numbers_store
     SPLIT = "§§§ the records §§§"
     frag, recs, nrecs = [], {}, {}
+    rwhy, rwhy_put, cfkey = {}, set(), {}
 
     def put(key, field, md):
         frag.append(f"§§ `{key}` `{field}` §§\n{md}")
@@ -948,17 +950,24 @@ def main(argv):
             r["p"] = sorted(said)
         if c.get("because"):
             put(cid, "b", resolve(d, c["because"], cache)[0])
-        for k, old in enumerate(c.get("replaces", [])):
+        for old in c.get("replaces", []):
+            # why the old claim was retired belongs to it: stored once, however many
+            # claims replace it
             r.setdefault("rp", []).append([old, claims[old]["retired"]["on"]])
-            put(cid, f"rp{k}", resolve(d, claims[old]["retired"]["why"], cache)[0])
+            if old not in rwhy_put:
+                rwhy_put.add(old)
+                put(old, "w", resolve(d, claims[old]["retired"]["why"], cache)[0])
         j = justification(d, cid, c, cache)
-        if j:
-            put(cid, "j", "\n".join(j))
+        if j == [NO_COUNTING]:
+            r["jc"] = 1
+        elif j:
+            put(cid, "j", "\n".join(j).strip())
         if c.get("note"):
             put(cid, "n", resolve(d, c["note"], cache)[0])
         conf = c.get("confirmed") or {}
-        r["cf"] = [conf.get("on", "never"),
-                   (conf.get("by") or "nobody").split(" (")[0].replace("`", "'")]
+        # who confirmed it, and what they read: each distinct record once, pointed to
+        by = (conf.get("by") or "nobody").replace("`", "'")
+        r["cf"] = [conf.get("on", "never"), by.split(" (")[0], cfkey.setdefault(by, len(cfkey))]
         recs[cid] = r
     sources = {}
     for nid in sorted({x for c in live_claims.values() for x in c["rests_on"] if x in nodes}):
@@ -1043,17 +1052,18 @@ def main(argv):
     for key, field, md in zip(parts[1::3], parts[2::3], parts[3::3]):
         md = md.strip()
         if key in recs:
-            if field.startswith("rp"):
-                recs[key]["rp"][int(field[2:])].append(md)
-            else:
-                recs[key][field] = md
-        else:
+            recs[key][field] = md
+        elif key in nrecs:
             nrecs[key][field] = md
+        else:
+            rwhy[key] = md
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(head.rstrip("\n") + "\n")
     log(f"wrote {os.path.relpath(OUT, ROOT)}")
     ok = numbers_store.build("claims", recs, {"kind_note": KIND_NOTE, "shape": SHAPE,
-                                              "style": STYLE, "sources": sources},
+                                              "style": STYLE, "sources": sources,
+                                              "retired_why": rwhy,
+                                              "confirmers": sorted(cfkey, key=cfkey.get)},
                              20, "one record per claim on the site")
     ok = ok and numbers_store.build("claimnodes", nrecs, {}, 40,
                                     "one record per thing a claim rests on")

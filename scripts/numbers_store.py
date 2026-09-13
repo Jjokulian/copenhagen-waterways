@@ -36,7 +36,7 @@ HEAD = re.compile(r"^#{1,6}\s+(.*)")
 # not carried into a record: the page generator's printing line and where it sits
 # (string interpolation, not how the number was made), and the field description,
 # which goes to the shared meta once
-DROP = {"code", "where", "field"}
+DROP = {"code", "where", "field", "producer"}   # producer: from meta.producers by file
 
 
 def _plain(s):
@@ -134,9 +134,16 @@ def publish(idx, tt):
     for d, ids in idx.get("docs", {}).items():
         for i in ids:
             used.setdefault(i, []).append(pnum[d])
-    fields, fkey, records = {}, {}, {}
+    fields, fkey, records, docmeta, dkey = {}, {}, {}, [], {}
     for i, e in entries.items():
         r = {k: v for k, v in e.items() if k not in DROP}
+        # a document's details (title, link, hash, when checked) once, not on every reading of it
+        if r["src"][0] == "reading" and len(r["src"]) > 4 and isinstance(r["src"][4], dict):
+            key = json.dumps(r["src"][4], ensure_ascii=False)
+            if key not in dkey:
+                dkey[key] = len(docmeta)
+                docmeta.append(r["src"][4])
+            r["src"] = r["src"][:4] + [{"$d": dkey[key]}] + r["src"][5:]
         desc = (e.get("field") or {}).get("is")
         if desc:
             key = fkey.setdefault(desc, f"d{len(fkey)}")
@@ -154,7 +161,7 @@ def publish(idx, tt):
         records[i] = r
     meta = {"kinds": idx.get("kinds", {}), "constructions": idx.get("constructions", {}),
             "method_pages": idx.get("method_pages", []), "producers": live._producers(),
-            "fields": fields, "pages": pages, "tables": tabs}
+            "fields": fields, "pages": pages, "tables": tabs, "docmeta": docmeta}
     build("numbers", records, meta, 30, "one record per number on the site; shared text in meta")
 
 
