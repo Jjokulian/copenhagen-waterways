@@ -298,24 +298,25 @@
    "kind": "code",
    "stance": "ours",
    "page": "DATA_QUEUE.md",
-   "claim": "Tiers are keyword matches on the access text in a fixed order - an entry on disk, a Copernicus product, an ODA topic or a Dataforsyningen service is held - an entry matching nothing is blocked, an access text saying no login or registration is needed is counted as account, and the tiers have not been checked by hand.",
-   "because": "classify() as written: its held tests come first, and its account words, which include login and registration, are tested before its open words; no hand check is recorded.",
+   "claim": "Tiers are keyword matches on the access text in a fixed order - an entry on disk, a Copernicus product, an ODA topic or a Dataforsyningen service is held - account words count only where the text does not say none is needed, an entry matching nothing is blocked, and the tiers have not been checked by hand.",
+   "because": "classify() as written: its held tests come first; before its account words (which include login and registration) are tested, the phrases in NEGATED - no login, no registration, no key, without authentication and the like - are taken out of the text; no hand check is recorded.",
    "rests_on": [
     "X-DQ-QUEUE",
     "U-DQ-HANDCHECK"
    ],
    "confirmed": {
     "on": "2026-09-13",
-    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "by": "Claude (2026-09-13: Q-TIERS reread against classify() with NEGATED - no login, no registration, no key, without authentication taken out before the account test; Q-VALUE still holds, the tiers still read access text alone; OLD3-TIERS: passage located in docs/DATA_QUEUE.md at 1af4dc8, its reason checked by comparing the old and new classify() over all 183 sources - nineteen move from account to open, none otherwise)",
     "saw": {
-     "said on DATA_QUEUE.md": "Each entry's tier is read from its access text by keyword, in this order: an entry the register records as already on disk, a Copernicus Marine or Copernicus Data Space product, an ODA topic, or a source that names Dataforsyningen is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry.",
-     "texts": "fdd80194b7f049ae",
+     "said on DATA_QUEUE.md": "Each entry's tier is read from its access text by keyword, in this order: an entry the register records as already on disk, a Copernicus Marine or Copernicus Data Space product, an ODA topic, or a source that names Dataforsyningen is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*, unless the text says none is needed (no login, no registration, no key, without authentication); words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. The tiers have not been checked by hand entry by entry.",
+     "texts": "6218f86e2b42f680",
      "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node U-DQ-HANDCHECK": "2b631218a32b11d5"
     }
    },
    "replaces": [
-    "C-DQ-OLD2-TIERS"
+    "C-DQ-OLD2-TIERS",
+    "C-DQ-OLD3-TIERS"
    ]
   },
   {
@@ -671,11 +672,11 @@
    ],
    "confirmed": {
     "on": "2026-09-13",
-    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
+    "by": "Claude (2026-09-13: Q-TIERS reread against classify() with NEGATED - no login, no registration, no key, without authentication taken out before the account test; Q-VALUE still holds, the tiers still read access text alone; OLD3-TIERS: passage located in docs/DATA_QUEUE.md at 1af4dc8, its reason checked by comparing the old and new classify() over all 183 sources - nineteen move from account to open, none otherwise)",
     "saw": {
      "said on DATA_QUEUE.md": "Friction is not value. The tiers say what is easy to reach, and each register entry's hypotheses say what it would serve; they are different questions, and this page answers only the first.",
      "texts": "04bba09977285465",
-     "rests on C-DQ-Q-TIERS": "fdd80194b7f049ae"
+     "rests on C-DQ-Q-TIERS": "6218f86e2b42f680"
     }
    }
   },
@@ -1637,9 +1638,9 @@
    ],
    "confirmed": {
     "on": "2026-09-13",
-    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
+    "by": "Claude (2026-09-13: the sentence carries the live count of entries not classed open, which fell when classify() stopped counting 'no login'/'no registration' texts as account; the claim states no number and still holds: the count is the sum of held, account and blocked, and the slot tail is computed from the register)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "**112 entries are not classed open.** The ones a slot is filed under are marked **[slot]**; the other slots match no register entry or an entry in the open tier (`SPILDEVANDSDATA`).",
+     "said on IF_YOU_HAVE_THE_DATA.md": "**93 entries are not classed open.** The ones a slot is filed under are marked **[slot]**; the other slots match no register entry or an entry in the open tier (`SPILDEVANDSDATA`).",
      "texts": "438a3aa806d1b5af",
      "node D-DQ-QUEUE": "9372f34ce5858261",
      "node X-DQ-UNLOCK": "755fa9165ee58195",

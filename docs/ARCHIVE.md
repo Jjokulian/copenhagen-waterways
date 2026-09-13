@@ -1417,6 +1417,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-DQ-Q-CMEMS`](CLAIMS.md#C-DQ-Q-CMEMS), [`C-DQ-Q-CDSE`](CLAIMS.md#C-DQ-Q-CDSE) — each opens what it rests on.
 
+<a id="C-DQ-OLD3-TIERS"></a>
+### The queue counted an access text saying no login or no registration is needed as needing an account.
+
+`C-DQ-OLD3-TIERS` · retired 2026-09-13 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `1af4dc8`
+
+> <span class="claim" data-claim="C-DQ-OLD3-TIERS">Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD3-TIERS "What this claim rests on")</sup>
+
+**Why it was retired:** That was a fault in the sorting, not a property of the sources: the account test now ignores phrases that say no login, registration, key or authentication is needed, which moves nineteen open sources from account to open.
+
+**Replaced by:** [`C-DQ-Q-TIERS`](CLAIMS.md#C-DQ-Q-TIERS) — each opens what it rests on.
+
 ## DATA_SOURCES.md
 
 <a id="C-AU-OLD-CENSOR-COUNT"></a>

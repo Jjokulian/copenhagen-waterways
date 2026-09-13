@@ -50,6 +50,7 @@ Usage:  python3 scripts/fetch_queue.py
 import collections
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -143,6 +144,10 @@ def spatial_kind(src):
     return "unknown"
 
 
+NEGATED = re.compile(r"\b(?:no|needs no|without)\s+(?:api\s+)?(?:login|log-in|registration|key|"
+                     r"auth\w*|account|token|credentials?|sign[- ]?up)\b")
+
+
 def classify(src):
     a = (src.get("access") or "").lower()
     sid = (src.get("id") or "").lower()
@@ -166,8 +171,11 @@ def classify(src):
                             "no programmatic", "api layer unreachable",
                             "download mechanics")):
         return "blocked", None
-    if any(k in a for k in ("registration", "free account", "login", "api token",
-                            "cds account", "account required")):
+    # "no login", "no registration", "without authentication" say the opposite of the
+    # account words inside them, so they are taken out before the account test
+    need = NEGATED.sub(" ", a)
+    if any(k in need for k in ("registration", "free account", "login", "api token",
+                               "cds account", "account required")):
         return "account", None
     if any(k in a for k in ("open", "no key", "no login", "no auth", "direct get",
                             "direct download", "cc-by", "cc by")):
@@ -278,11 +286,10 @@ def main():
         "Copernicus Data Space product, an ODA topic, or a source that names Dataforsyningen is "
         "*held*; words for not public, request-only, FOI, provisioning, unverified or no "
         "download make it *blocked*; words for a registration, an account, a login or a token "
-        "make it *account*; words for an open or key-free download make it *open*; and an entry "
-        "that matches none of these is counted as *blocked*. Because the account words are "
-        "tested before the open ones, an access text saying that no login or no registration is "
-        "needed is counted as *account*. The tiers have not been checked by hand entry by "
-        "entry.") + "\n")
+        "make it *account*, unless the text says none is needed (no login, no registration, no "
+        "key, without authentication); words for an open or key-free download make it *open*; "
+        "and an entry that matches none of these is counted as *blocked*. The tiers have not "
+        "been checked by hand entry by entry.") + "\n")
     a("| tier | | sources |")
     a("|---|---|---:|")
     for t, label, _ in TIERS:

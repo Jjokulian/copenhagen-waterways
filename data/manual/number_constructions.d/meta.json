@@ -299,7 +299,7 @@
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-13: re-read unlock.py and fetch_queue.py after the held-data update. FILES now lists all three registers and n_sources counts them; classify() tests on-disk entries and the Copernicus Marine and Copernicus Data Space products as held before the other tiers; gated_sources() in unlock.py counts every source classify() does not class as open. The wording and watches now say so)",
+    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
     "on": "2026-09-13",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
@@ -311,7 +311,7 @@
      "scripts/daylight.py": "84c11f42cb7e2cab",
      "scripts/meta_facts.py": "eea330a720cf22c6",
      "scripts/unlock.py": "cb3c1906da393d74",
-     "scripts/fetch_queue.py": "97197ae484e5b5b9",
+     "scripts/fetch_queue.py": "d45cc3fd2ade07f0",
      "data/derived/light.json": "3bf11c218286e4c6"
     }
    }
@@ -1126,10 +1126,10 @@
     "data/manual/data_sources_3.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-13: re-read unlock.py and fetch_queue.py after the held-data update. FILES now lists all three registers and n_sources counts them; classify() tests on-disk entries and the Copernicus Marine and Copernicus Data Space products as held before the other tiers; gated_sources() in unlock.py counts every source classify() does not class as open. The wording and watches now say so)",
+    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
     "on": "2026-09-13",
     "saw": {
-     "scripts/fetch_queue.py": "97197ae484e5b5b9",
+     "scripts/fetch_queue.py": "d45cc3fd2ade07f0",
      "data/manual/data_sources.json": "bbcf3ff9710105f6",
      "data/manual/data_sources_2.json": "6d052e73fa896f81",
      "data/manual/data_sources_3.json": "06cef818e7a29730"

@@ -376,8 +376,8 @@
     "The layer's geometry is the plan's alignment. It says nothing about whether an alignment has been built."
    ],
    "confirmed": {
-    "by": "fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-13: the only change to scripts/figures.py since the last reading is a filter in _landing_prose, which skips code-like string literals when index.html is scanned; provenance(), the one function conveyance.py imports, is unchanged, so every field reads as declared)",
+    "on": "2026-09-13"
    },
    "covers": "data/derived/conveyance.json",
    "gaps": [
@@ -1434,8 +1434,8 @@
     "The Redfield ratio applies to the organic matter a nitrogen load could produce."
    ],
    "confirmed": {
-    "by": "agent w3-le (re-read the declaration against scripts/landbrug.py after its last page-text edit: the constants and the block that writes data/derived/landbrug.json are textually unchanged from HEAD, and the file it writes is byte-identical to before any edit (sha256 71eae2b6); the page also refuses to build if agri_pct differs from DANVA's pinned page. The declaration's model gives 12 / 32 where the code types 0.375, the same value; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared)",
+    "on": "2026-09-13"
    },
    "covers": "data/derived/landbrug.json",
    "gaps": [
@@ -1452,7 +1452,7 @@
    "licenses": "The counts and the arithmetic the page does with them.",
    "model": "The counts are taken over the pathway register as it stands at the build; the constants are `(106 * 12.011) / (16 * 14.007)` and `12 / 32` in the code's terms.",
    "not_licensed": "That the published share is right.",
-   "status": "stale: scripts/landbrug.py changed since it was read",
+   "status": "current",
    "title": "Counts and constants the Danish-language page derives itself",
    "void_if": [
     "the published share is revised"
@@ -2847,8 +2847,8 @@
     "One reference point stands for the city for the solstice examples."
    ],
    "confirmed": {
-    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
+    "on": "2026-09-13"
    },
    "covers": "data/derived/meta_facts.json",
    "gaps": [
@@ -2873,7 +2873,7 @@
    "licenses": "How many items the named files hold, and where the sun stands at the stated times.",
    "model": "`scripts/meta_facts.py` counts list items in the named files, and computes elevations with `solar_elevation` from `scripts/daylight.py`, converting the Danish legal clock time to UTC with `clock.offset`. The fat and carbohydrate figures are stoichiometry on a chosen reference compound - tripalmitin for fat, glucose for carbohydrate - with standard atomic masses; a real sewage fat is a mixture and would differ somewhat.",
    "not_licensed": "Anything about light under water, or a count of pathways nobody enumerated.",
-   "status": "stale: scripts/unlock.py changed since it was read",
+   "status": "current",
    "title": "Small counts and solstice elevations for the overview pages",
    "void_if": [
     "a counted file changes and the script is not rerun"
@@ -2888,6 +2888,7 @@
     "scripts/daylight.py",
     "scripts/meta_facts.py",
     "scripts/unlock.py",
+    "scripts/fetch_queue.py",
     "data/derived/light.json"
    ],
    "what": "Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them."
@@ -3044,8 +3045,8 @@
     "The keyword lists catch the phrasings the registers use."
    ],
    "confirmed": {
-    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
+    "on": "2026-09-13"
    },
    "covers": "data/derived/fetch_queue.json",
    "gaps": [
@@ -3062,7 +3063,7 @@
    "licenses": "How the registered sources divide by friction and by index, under the stated rules.",
    "model": "Both sortings are keyword rules over the free text of each register entry: the access text for the tier, the spatial and aggregation text for the index. The rules are in the script and are applied at every build.",
    "not_licensed": "How valuable a source is, or whether its access text is current.",
-   "status": "stale: scripts/fetch_queue.py changed since it was read",
+   "status": "current",
    "title": "How many registered sources there are, by friction and by what they are indexed by",
    "void_if": [
     "a register entry is edited and the queue is not rebuilt",
@@ -3071,7 +3072,8 @@
    "watches": [
     "scripts/fetch_queue.py",
     "data/manual/data_sources.json",
-    "data/manual/data_sources_2.json"
+    "data/manual/data_sources_2.json",
+    "data/manual/data_sources_3.json"
    ],
    "what": "Counts over the source registers, sorted by how hard each source is to reach and by whether it is indexed by a place something was measured or by a region."
   },
@@ -3618,8 +3620,8 @@
     "The pinned text is a faithful extraction of the document."
    ],
    "confirmed": {
-    "by": "Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-13: since the last reading the sources of claims.d/nitrogen.json gained six ids for the 17-step chain - DMU-AR245, MST-2023-MOF121, NKM2020, SR681, VJ-2018-N-VANDLOEB, VP3-2023 - and none was removed or changed, so every reading's source is still present and each field reads as declared)",
+    "on": "2026-09-13"
    },
    "covers": "data/manual/nitrogen_readings.json",
    "gaps": [
@@ -3645,7 +3647,7 @@
    "licenses": "That the named document prints the value, in the phrase shown.",
    "model": "Each entry names a source pinned by its sha256 in `data/manual/claims.d/nitrogen.json` and a phrase copied from it. `rv()` in `scripts/nitrogen.py` and in `scripts/pages/grundlaget.py` refuses to write the page unless the phrase, with whitespace collapsed and, for a web page, entities decoded and tags dropped, occurs in the pinned text. A table row is checked as the whole row in order, so a value cannot be taken from the wrong column without the row failing to match. The GRUNDLAGET generator also refuses a value that is not printed in its own phrase.",
    "not_licensed": "That the document's value is right, or that it means what the page's surrounding argument takes it to mean.",
-   "status": "stale: data/manual/claims.d/nitrogen.json#sources changed since it was read",
+   "status": "current",
    "title": "Values read out of pinned documents, each checked at its phrase",
    "void_if": [
     "a phrase matches by coincidence somewhere other than where the value was read",
@@ -13827,7 +13829,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -13853,7 +13855,7 @@
     "target": "gated_sources"
    },
    "field": {
-    "is": "Sources the source register does not class as open - the held, account and blocked tiers of `classify()` - as `gated_sources()` in `scripts/unlock.py` returns them. The held tier is reachable by this project: the ODA extracts on disk came through it.",
+    "is": "Sources the source register does not class as open - the held, account and blocked tiers of `classify()` in `scripts/fetch_queue.py` - as `gated_sources()` in `scripts/unlock.py` returns them. The held tier is reachable by this project: an ODA topic, a service behind the Dataforsyningen token, a Copernicus Marine or Copernicus Data Space product behind the credentials the fetch scripts read, or an entry already on disk.",
     "kind": "counted",
     "synthetic": false
    },
@@ -13868,7 +13870,7 @@
     "gated_sources"
    ],
    "synthetic": false,
-   "value": 112,
+   "value": 93,
    "where": [
     "scripts/pages/known_and_unknown.py",
     76
@@ -64817,10 +64819,10 @@
   },
   "F-27c64403ba": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 167,
-    "line": 173,
-    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 6\n    w(\"## 6. The unquantified nitrogen pathways\")\n    w()\n    w(C(\"C-OP-6-COUNT\", f\"Of the {meta['pathways_total']} enumerated pathways, \"\n        f\"{meta['pathways_unquantified']} carry no number.\") + \" Two could be measured:\")\n    w()\n    w(C(\"C-OP-6-A6\", f\"- **Submarine groundwater discharge** ({ref('A6')}) - measurable with radon and \"\n        \"radium tracers or seepage meters, and not a term in the Danish marine budget.\"))"
+    "file": "scripts/causation.py",
+    "first": 408,
+    "line": 414,
+    "text": "         \"on the land-based load, wind work over the stratified season, and the bottom-water \"\n         \"temperature anomaly. No published regression of this kind was found in the sources this \"\n         \"project holds.\")),\n        (\"Whether state-dependence is real\", C(\"C-PC-CA-T2\", \"The same regression with an interaction \"\n         \"term, or simply: does a given load produce more hypoxia now than in 1990, holding weather \"\n         \"constant?\")),\n        (\"Whether the denominator can be closed\", C(\"C-PC-CA-T3\", f\"Two of the {n_empty} empty rows \"\n         \"have established methods — submarine groundwater discharge by radon or radium tracers, \"\n         \"internal regeneration by benthic flux chambers — and both need new measurements.\")),\n        (\"Whether the potency term matters\", C(\"C-PC-CA-T4\", \"Weight existing load figures by season \""
    },
    "constructions": [
     "K-META-FACTS"
@@ -64909,8 +64911,8 @@
    "synthetic": false,
    "value": 10,
    "where": [
-    "scripts/pages/open_problems.py",
-    173
+    "scripts/causation.py",
+    414
    ]
   },
   "F-27c8f192a5": {
@@ -85918,7 +85920,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -87762,7 +87764,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -88581,12 +88583,12 @@
     ],
     [
      39,
-     26,
+     7,
      47
     ]
    ],
    "synthetic": false,
-   "value": 112,
+   "value": 93,
    "where": [
     "scripts/unlock.py",
     588
@@ -91947,7 +91949,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -105818,8 +105820,8 @@
   "F-46c5c33c27": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 324,
-    "line": 330,
+    "first": 331,
+    "line": 337,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -105830,7 +105832,7 @@
     "rows": [
      [
       "open",
-      "71"
+      "90"
      ],
      [
       "held",
@@ -105838,7 +105840,7 @@
      ],
      [
       "account",
-      "26"
+      "7"
      ],
      [
       "blocked",
@@ -105866,7 +105868,7 @@
    "value": 39,
    "where": [
     "scripts/fetch_queue.py",
-    330
+    337
    ]
   },
   "F-46ceb0a4e3": {
@@ -114249,7 +114251,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -116869,10 +116871,10 @@
   },
   "F-4f7a64285f": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 220,
-    "line": 226,
-    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 10\n    w(\"## 10. Fat, and everything else with no nitrogen in it\")\n    w()\n    w(C(\"C-OP-10-FAT\", f\"Taken as tripalmitin, a triglyceride is \"\n        f\"{meta['fat_n_frac_pct']:.0f}% nitrogen and carries {meta['fat_cod_g_per_g']:.1f} g of oxygen \"\n        f\"demand per gram ({ref('R1')}).\") + \" \" + C(\"C-OP-10-SEWERS\", \"Sewers accumulate fat, oil and \"\n                                                    \"grease as deposits - fedtpropper.\"))\n    w()"
+    "file": "scripts/causation.py",
+    "first": 227,
+    "line": 233,
+    "text": "        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \"\n        \"is nitrogen-dominated.\") + \"\\n\")\n    a(C(\"C-PC-CA-CEILINGS\", \"*Both columns are ceilings.* Not all COD is degradable on a relevant \"\n        \"timescale, and not all nitrogen is assimilated. The two overstatements run in the same \"\n        \"direction, so the **ratio** is the robust part; the absolute milligrams are not.\") + \"\\n\")\n    a(C(\"C-PC-CA-FAT\", f\"Part of what an overflow carries is fat, which contains \"\n        f\"**{meta['fat_n_frac_pct']:.0f}%** nitrogen and takes **~{meta['fat_cod_g_per_g']:.1f} g \"\n        f\"{O2} per g** to oxidise, against ~{meta['carbohydrate_cod_g_per_g']:.1f} for \"\n        \"carbohydrate: a nitrogen account cannot see it at all.\") + \"\\n\")\n    a(\"### Why the direct route acts differently\\n\")"
    },
    "constructions": [
     "K-META-FACTS"
@@ -116914,7 +116916,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -116957,8 +116959,8 @@
    "synthetic": false,
    "value": 2.873,
    "where": [
-    "scripts/pages/open_problems.py",
-    226
+    "scripts/causation.py",
+    233
    ]
   },
   "F-4f8159212c": {
@@ -123381,8 +123383,8 @@
   "F-542c824a5b": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 324,
-    "line": 330,
+    "first": 331,
+    "line": 337,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -123393,7 +123395,7 @@
     "rows": [
      [
       "open",
-      "71"
+      "90"
      ],
      [
       "held",
@@ -123401,7 +123403,7 @@
      ],
      [
       "account",
-      "26"
+      "7"
      ],
      [
       "blocked",
@@ -123426,10 +123428,10 @@
     "by_tier.account"
    ],
    "synthetic": false,
-   "value": 26,
+   "value": 7,
    "where": [
     "scripts/fetch_queue.py",
-    330
+    337
    ]
   },
   "F-542e5508f5": {
@@ -127930,7 +127932,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ]
     ],
     "target": "kbhkort_layers_fetched"
@@ -131421,10 +131423,10 @@
   },
   "F-5a36ae8ceb": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 166,
-    "line": 172,
-    "text": "    w()\n    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 6\n    w(\"## 6. The unquantified nitrogen pathways\")\n    w()\n    w(C(\"C-OP-6-COUNT\", f\"Of the {meta['pathways_total']} enumerated pathways, \"\n        f\"{meta['pathways_unquantified']} carry no number.\") + \" Two could be measured:\")\n    w()\n    w(C(\"C-OP-6-A6\", f\"- **Submarine groundwater discharge** ({ref('A6')}) - measurable with radon and \""
+    "file": "scripts/causation.py",
+    "first": 152,
+    "line": 158,
+    "text": "    a(\"|---|---|---|---|\")\n    a(f\"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | \"\n      + C(\"C-PC-CA-L1\", \"A residual: measured-plus-modelled total minus modelled point sources minus \"\n          f\"modelled background, with a retention uncertainty of {ret} percentage points in this \"\n          \"project's register, which gives no source for it.\") + \" |\")\n    a(\"| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | \"\n      + C(\"C-PC-CA-L2\", f\"{n_empty} of {n_paths} enumerated pathways carry no number, among them \"\n          \"deposition's organic fraction, submarine groundwater discharge and sediment \"\n          \"regeneration.\") + \" |\")\n    a(\"| Nitrogen at sea → the growth of the algae | no coefficient | **NOT COMPUTED** | \""
    },
    "constructions": [
     "K-META-FACTS"
@@ -131509,8 +131511,8 @@
    "synthetic": false,
    "value": 20,
    "where": [
-    "scripts/pages/open_problems.py",
-    172
+    "scripts/causation.py",
+    158
    ]
   },
   "F-5a40007fae": {
@@ -131698,8 +131700,8 @@
   "F-5a6aa3c0d7": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 353,
-    "line": 359,
+    "first": 360,
+    "line": 366,
     "text": "    kinds = q[\"by_spatial\"]\n    a(C(\"C-DQ-Q-INDEX\", \"Counted by that keyword reading of each entry's spatial and \"\n        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")"
    },
    "constructions": [
@@ -131746,7 +131748,7 @@
    "value": 81,
    "where": [
     "scripts/fetch_queue.py",
-    359
+    366
    ]
   },
   "F-5a731f2a63": {
@@ -137499,10 +137501,10 @@
   },
   "F-5ef28a7f0b": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 220,
-    "line": 226,
-    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 10\n    w(\"## 10. Fat, and everything else with no nitrogen in it\")\n    w()\n    w(C(\"C-OP-10-FAT\", f\"Taken as tripalmitin, a triglyceride is \"\n        f\"{meta['fat_n_frac_pct']:.0f}% nitrogen and carries {meta['fat_cod_g_per_g']:.1f} g of oxygen \"\n        f\"demand per gram ({ref('R1')}).\") + \" \" + C(\"C-OP-10-SEWERS\", \"Sewers accumulate fat, oil and \"\n                                                    \"grease as deposits - fedtpropper.\"))\n    w()"
+    "file": "scripts/causation.py",
+    "first": 227,
+    "line": 233,
+    "text": "        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \"\n        \"is nitrogen-dominated.\") + \"\\n\")\n    a(C(\"C-PC-CA-CEILINGS\", \"*Both columns are ceilings.* Not all COD is degradable on a relevant \"\n        \"timescale, and not all nitrogen is assimilated. The two overstatements run in the same \"\n        \"direction, so the **ratio** is the robust part; the absolute milligrams are not.\") + \"\\n\")\n    a(C(\"C-PC-CA-FAT\", f\"Part of what an overflow carries is fat, which contains \"\n        f\"**{meta['fat_n_frac_pct']:.0f}%** nitrogen and takes **~{meta['fat_cod_g_per_g']:.1f} g \"\n        f\"{O2} per g** to oxidise, against ~{meta['carbohydrate_cod_g_per_g']:.1f} for \"\n        \"carbohydrate: a nitrogen account cannot see it at all.\") + \"\\n\")\n    a(\"### Why the direct route acts differently\\n\")"
    },
    "constructions": [
     "K-META-FACTS"
@@ -137552,7 +137554,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -137595,8 +137597,8 @@
    "synthetic": false,
    "value": 0.0,
    "where": [
-    "scripts/pages/open_problems.py",
-    226
+    "scripts/causation.py",
+    233
    ]
   },
   "F-5ef6bf596b": {
@@ -169164,7 +169166,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -176819,8 +176821,8 @@
   "F-7dc131660c": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 344,
-    "line": 350,
+    "first": 351,
+    "line": 357,
     "text": "        \"source by what it is indexed by; it does not enforce the rule.\") + \"\\n\")\n    wb = obs[\"variance\"][\"share_between_wb\"] * 100\n    mr = obs[\"internal\"][\"mean_r\"]\n    a(C(\"C-DQ-Q-WHY\", \"The reason is in [OBSERVING.md](OBSERVING.md): in bathing-water \"\n        \"quality at stations with a long record, once the national year-to-year swing is \"\n        f\"removed, variation between water bodies is **{wb:.1f}%** of the whole, and between \"\n        f\"two stations in the same water body {mr * mr * 100:.1f}% of the wobble in one is \"\n        \"shared with the other. A source already summed into those polygons would carry the \"\n        \"unit back in, and everything computed from it would inherit it.\") + \"\\n\")\n    kinds = q[\"by_spatial\"]"
    },
    "constructions": [
@@ -176859,7 +176861,7 @@
    "value": 4.119559862524575,
    "where": [
     "scripts/fetch_queue.py",
-    350
+    357
    ]
   },
   "F-7dcbc91e91": {
@@ -184290,7 +184292,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -206373,8 +206375,8 @@
   "F-92d73d1d05": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 355,
-    "line": 361,
+    "first": 362,
+    "line": 368,
     "text": "        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")\n    a(C(\"C-DQ-Q-TILF\", \"A region-indexed source can still be the one to fetch: the monthly \""
    },
    "constructions": [
@@ -206421,7 +206423,7 @@
    "value": 16,
    "where": [
     "scripts/fetch_queue.py",
-    361
+    368
    ]
   },
   "F-92daab4a64": {
@@ -233436,8 +233438,8 @@
   "F-a7cb1a9012": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 324,
-    "line": 330,
+    "first": 331,
+    "line": 337,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -233448,7 +233450,7 @@
     "rows": [
      [
       "open",
-      "71"
+      "90"
      ],
      [
       "held",
@@ -233456,7 +233458,7 @@
      ],
      [
       "account",
-      "26"
+      "7"
      ],
      [
       "blocked",
@@ -233481,10 +233483,10 @@
     "by_tier.open"
    ],
    "synthetic": false,
-   "value": 71,
+   "value": 90,
    "where": [
     "scripts/fetch_queue.py",
-    330
+    337
    ]
   },
   "F-a7cf3306e4": {
@@ -254636,7 +254638,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -265583,8 +265585,8 @@
   "F-bfada8d583": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 260,
-    "line": 266,
+    "first": 268,
+    "line": 274,
     "text": "    a = o.append\n    a(\"# The fetch queue\\n\")\n    a(C(\"C-DQ-Q-PURPOSE\", \"The source register records what exists; this page sorts its \"\n        \"entries by friction: what can be downloaded now, what sits behind a credential this \"\n        \"project holds, what needs a registration it has not made, and what the register's \"\n        \"access text does not show to be reachable.\") + \"\\n\")\n    count = f\"**{q['n_sources']} sources**, from {read}.\"\n    if unread:\n        names = \" and \".join(f\"`{f}`\" for f in unread)\n        count += (f\" {names}, also part of the register, \""
    },
    "constructions": [
@@ -265621,7 +265623,7 @@
     "target": "n_sources"
    },
    "field": {
-    "is": "Distinct source ids across the source registers `fetch_queue.py` reads (its `FILES`: `data_sources.json` and `data_sources_2.json`); `data_sources_3.json` is not read, and the queue says so when it runs.",
+    "is": "Distinct source ids across the three source registers `fetch_queue.py` reads (its `FILES`: `data_sources.json`, `data_sources_2.json` and `data_sources_3.json`).",
     "kind": "counted",
     "synthetic": false
    },
@@ -265639,7 +265641,7 @@
    "value": 183,
    "where": [
     "scripts/fetch_queue.py",
-    266
+    274
    ]
   },
   "F-bfb5fe616d": {
@@ -274076,7 +274078,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -274617,7 +274619,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -289905,8 +289907,8 @@
   "F-d3261ec77b": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 324,
-    "line": 330,
+    "first": 331,
+    "line": 337,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -289917,7 +289919,7 @@
     "rows": [
      [
       "open",
-      "71"
+      "90"
      ],
      [
       "held",
@@ -289925,7 +289927,7 @@
      ],
      [
       "account",
-      "26"
+      "7"
      ],
      [
       "blocked",
@@ -289953,7 +289955,7 @@
    "value": 47,
    "where": [
     "scripts/fetch_queue.py",
-    330
+    337
    ]
   },
   "F-d32d88f033": {
@@ -296238,8 +296240,8 @@
   "F-d7cb543694": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 354,
-    "line": 360,
+    "first": 361,
+    "line": 367,
     "text": "    a(C(\"C-DQ-Q-INDEX\", \"Counted by that keyword reading of each entry's spatial and \"\n        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")"
    },
    "constructions": [
@@ -296286,7 +296288,7 @@
    "value": 23,
    "where": [
     "scripts/fetch_queue.py",
-    360
+    367
    ]
   },
   "F-d7d8e65001": {
@@ -298298,7 +298300,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -312043,7 +312045,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",
@@ -329632,8 +329634,8 @@
   "F-f2bd84c6b8": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 356,
-    "line": 362,
+    "first": 363,
+    "line": 369,
     "text": "        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")\n    a(C(\"C-DQ-Q-TILF\", \"A region-indexed source can still be the one to fetch: the monthly \"\n        \"nutrient input to the sea, `ODA-TILFOERSEL`, is given per marine reference polygon, \""
    },
    "constructions": [
@@ -329680,7 +329682,7 @@
    "value": 63,
    "where": [
     "scripts/fetch_queue.py",
-    362
+    369
    ]
   },
   "F-f2c10b2848": {
@@ -343442,7 +343444,7 @@
      ],
      [
       "gated_sources",
-      "112"
+      "93"
      ],
      [
       "gated_slots",

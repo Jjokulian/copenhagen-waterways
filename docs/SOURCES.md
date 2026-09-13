@@ -1333,7 +1333,7 @@ For each flood sheet, computes the meridian convergence at the sheet's centre, o
 <a id="K-CONVEYANCE"></a>
 ### Cloudburst plan alignment length by typology
 
-`K-CONVEYANCE` · covers data/derived/conveyance.json · **current** · read by fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-CONVEYANCE` · covers data/derived/conveyance.json · **current** · read by Claude (2026-09-13: the only change to scripts/figures.py since the last reading is a filter in _landing_prose, which skips code-like string literals when index.html is scanned; provenance(), the one function conveyance.py imports, is unchanged, so every field reads as declared), 2026-09-13
 
 Measures the length of every alignment in the city's cloudburst roads-and-pipes layer and splits it by the layer's own `typologi` attribute: water carried on the surface, in a pipe, or on a 'mix' alignment the layer does not break down.
 
@@ -1815,7 +1815,7 @@ Joins the sibling project's livestock register, declared field parcels, CVR mast
 <a id="K-FARM-LANDBRUG"></a>
 ### Counts and constants the Danish-language page derives itself
 
-`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **stale: scripts/landbrug.py changed since it was read** · read by agent w3-le (re-read the declaration against scripts/landbrug.py after its last page-text edit: the constants and the block that writes data/derived/landbrug.json are textually unchanged from HEAD, and the file it writes is byte-identical to before any edit (sha256 71eae2b6); the page also refuses to build if agri_pct differs from DANVA's pinned page. The declaration's model gives 12 / 32 where the code types 0.375, the same value; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared), 2026-09-13
 
 Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.
 
@@ -2478,7 +2478,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **stale: scripts/unlock.py changed since it was read** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code), 2026-09-13
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -2564,7 +2564,7 @@ Reads the public PULS extract's outfall layers and summarises them.
 <a id="K-META-QUEUE"></a>
 ### How many registered sources there are, by friction and by what they are indexed by
 
-`K-META-QUEUE` · covers data/derived/fetch_queue.json · **stale: scripts/fetch_queue.py changed since it was read** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-QUEUE` · covers data/derived/fetch_queue.json · **current** · read by Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code), 2026-09-13
 
 Counts over the source registers, sorted by how hard each source is to reach and by whether it is indexed by a place something was measured or by a region.
 
@@ -2835,7 +2835,7 @@ Every pathway of reactive nitrogen to Danish marine waters this project could en
 <a id="K-NITROGEN-READINGS"></a>
 ### Values read out of pinned documents, each checked at its phrase
 
-`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **stale: data/manual/claims.d/nitrogen.json#sources changed since it was read** · read by Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-13: since the last reading the sources of claims.d/nitrogen.json gained six ids for the 17-step chain - DMU-AR245, MST-2023-MOF121, NKM2020, SR681, VJ-2018-N-VANDLOEB, VP3-2023 - and none was removed or changed, so every reading's source is still present and each field reads as declared), 2026-09-13
 
 Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.
 

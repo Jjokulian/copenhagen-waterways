@@ -470,6 +470,34 @@
      "texts": "20d2c7dad01af711"
     }
    }
+  },
+  {
+   "id": "C-DQ-OLD3-TIERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The queue counted an access text saying no login or no registration is needed as needing an account.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "DATA_QUEUE.md",
+    "commit": "1af4dc8",
+    "file": "docs/DATA_QUEUE.md",
+    "begin": "Because the account words are tested before the open ones",
+    "end": "is counted as *account*.",
+    "why": "That was a fault in the sorting, not a property of the sources: the account test now ignores phrases that say no login, registration, key or authentication is needed, which moves nineteen open sources from account to open."
+   },
+   "replaced_by": [
+    "C-DQ-Q-TIERS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*.",
+     "texts": "c30c373560a368ad"
+    }
+   }
   }
  ]
 }
