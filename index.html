@@ -329,6 +329,7 @@ body.mmd-open{overflow:hidden}
 .lin-said-h{margin:10px 0 2px}
 .lin-settle{border-left:3px solid #3fb950;padding-left:8px}
 .lin-tw{overflow-x:auto}
+.justify-body h3.nv-sec{margin:18px 0 4px;font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:10px}
 .lin-mode{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:4px 0 10px}
 .lin-mode button{font:inherit;font-size:12.5px;padding:3px 14px;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
 .lin-mode button[aria-pressed="true"]{background:#1f6feb;color:#fff}
@@ -1916,15 +1917,17 @@ const NV_KIND = { leaf: "read from data", op: "calculated", nary: "calculated", 
   stated: "stated, not measured" };
 const NV_SYM = { "+": "+", "-": "−", "*": "×", "/": "÷", "//": "div", "%": "mod", "**": "^" };
 const NV_GH = "https://github.com/Jjokulian/copenhagen-waterways/blob/";
+/* Four tabs, one per part of a justification: the whole chain drawn; the data it rests
+   on; the theory it works within; the computation. Each shows everything the seven
+   earlier tabs showed for its part, one after the other; an old tab name in a link
+   opens the tab that now holds it. */
 const NV_VIEWS = [
-  ["lineage", "How it was made", "counted as one, the records, each step and why, where it ends, the spread, a rerun"],
-  ["construction", "Construction and model", "what kind of number it is, the model behind it, why that is justified"],
-  ["what", "Source and counting rule", "where it was read from, what was counted as one"],
-  ["graph", "Dependency graph", "what it is built from, drawn"],
-  ["depth", "Derivation, all the way down", "every step to the data, with its value"],
-  ["calc", "Calculation", "the arithmetic - with names, then with values"],
-  ["data", "Data it was read from", "the rows around it, the used value highlighted"]
+  ["lineage", "How it was made", "the whole chain, drawn: the data, the steps that compute it, the theory they work within"],
+  ["data", "Data", "where it was read from, what was counted as one, the rows around it"],
+  ["theory", "Theory", "what kind of number it is, the model behind it, why that is justified"],
+  ["comp", "Computation", "the arithmetic with names and values, every step down to the data, and the code"]
 ];
+const NV_OLD_VIEW = { what: "data", construction: "theory", graph: "comp", depth: "comp", calc: "comp", code: "comp" };
 function nvShort(n) {
   if (n[0] === "leaf") {
     // The field and whatever row it sits in: runs.4.imposed and runs.5.imposed
@@ -2153,6 +2156,15 @@ async function nvFlowLoad(e) {
     frontier = [...new Set(next)].filter(k => !(k in flCache));
   }
 }
+// the files a number's fields in file f are traced to (null: some field is not traced)
+function flTraced(e, f, r) {
+  if (!r.traced) return null;
+  const ps = (e.src[0] === "leaf" ? [e.src] : nvLeaves(e.src, [])).filter(n => n[0] === "leaf" && n[1] === f).map(n => nvGeneral(n[2]));
+  if (!ps.length) return null;
+  const out = new Set();
+  for (const p of ps) { const t = r.traced[p]; if (!t) return null; t.forEach(x => out.add(x)); }
+  return [...out];
+}
 const FL_TYPE = { raw: "record", register: "record", pinned: "record", sibling: "record", derived: "result", open: "construction" };
 const FL_WHAT = { raw: "Raw data, as downloaded.", register: "A register kept by hand in this project.",
   pinned: "A published document, pinned by its hash.", sibling: "Read in place from a sibling project.",
@@ -2186,6 +2198,10 @@ function flChain(idx, e, open) {
       return;
     }
     const s = r.by, S = flCache["S:" + s] || { in: [], K: [] }, sid = id("S:" + s + ">" + f);
+    // for the number's own file: the files its field is traced to in the code are the
+    // chain; the script's other data files are listed on the step, not drawn
+    const tr = depth === 0 ? flTraced(e, f, r) : null;
+    const drawIn = tr || (S.in || []), untraced = tr ? (S.in || []).filter(x => !tr.includes(x)) : [];
     const ks = [...(r.K || []), ...(S.K || [])].filter(k => K[k]);
     const own = nvLeafFiles(e).includes(f) && e.src[0] === "leaf" && r.impl ? r.impl[nvGeneral(e.src[2])] : null;
     if (ks.length) {
@@ -2194,19 +2210,20 @@ function flChain(idx, e, open) {
         theory: [K[k0].what, K[k0].model].filter(Boolean).join(" "),
         caveats: [...(K[k0].gaps || []), ...(K[k0].not_licensed ? ["Not licensed: " + K[k0].not_licensed] : [])] }).edges.push(sid);
     }
-    edges.push({ step: sid, noid: true, label: s.split("/").pop(), from: (S.in || []).map(x => id("F:" + x)), to: n.id });
+    edges.push({ step: sid, noid: true, label: s.split("/").pop(), from: drawIn.map(x => id("F:" + x)), to: n.id });
     steps.push({ id: sid, kind: r.k === "raw" ? "selection" : "computation", branch: null,
       title: `${s} ${r.k === "raw" ? "downloads" : "writes"} ${short(f)}`,
       imposes: (ks.length ? (K[ks[0]].what || "") : "No construction is declared for this step.")
+        + (untraced.length ? ` Also read by this script, not traced to this number in its code: ${untraced.map(short).join(", ")}.` : "")
         + ((S.text || []).length ? ` It also reads ${S.text.length} file(s) for its page's words, not as data: ${S.text.map(short).join(", ")}.` : ""),
-      inputs: (S.in || []).map(short),
+      inputs: drawIn.map(short),
       code: own ? [{ file: s, first: own[0], last: own[1], text: own[2] }] : [],
       said: [], why: { reason: ks.length && K[ks[0]].model ? K[ks[0]].model : "no reason recorded", ref: null,
                        author: ks.length ? ks.join(", ") : "not recorded" },
       alternative: null, tested: "not tested",
       settle: S.unres ? `The scan could not read ${S.unres} file path(s) this script builds at run time, so it may read more than is drawn here.` : null,
       outputs: {} });
-    for (const x of S.in || []) walk(x, depth + 1);
+    for (const x of drawIn) walk(x, depth + 1);
   };
   const files = nvLeafFiles(e);
   for (const f of files) walk(f, 0);
@@ -2487,19 +2504,45 @@ function nvLineageHTML(e) {
 function nvApplies(e, view) {
   const calc = nvKids(e.src).length > 0;
   if (view === "lineage") return !!e.lineage || (!!nvStore && nvLeafFiles(e).length > 0);
-  if (view === "what" || view === "construction") return true;
-  if (view === "graph" || view === "depth" || view === "calc") return calc;
-  // the page generator's printing line is not how a number was made; the script
-  // that computed it is named under "Source and counting rule"
-  if (view === "code") return false;
-  if (view === "data") return !!e.excerpt || calc;
+  if (view === "data" || view === "theory") return true;
+  if (view === "comp") return calc || e.src[0] === "leaf";
   return false;
 }
 function nvRender(idx, id, view) {
   const e = idx.entries[id];
   if (!e) return `<p>No entry for ${nvEsc(id)}.</p>`;
+  const calc = nvKids(e.src).length > 0, sec = t => `<h3 class="nv-sec">${t}</h3>`;
+  const h = `<div class="big">${nvEsc(nvFmt(e.value))}</div><div class="muted">${nvEsc(nvKindLabel(e))}</div>`;
+  const part = v => nvRenderPart(idx, id, v);
+  if (view === "lineage") return h + part("lineage");
+  if (view === "theory") return h + part("construction");
+  if (view === "data") {
+    const rows = part("data");
+    return h + part("what") + (rows ? sec("The data around it") + rows : "");
+  }
+  if (view === "comp") {
+    if (calc) return h + sec("The arithmetic") + part("calc") + sec("Every step down to the data") + part("depth")
+      + sec("Drawn") + part("graph");
+    return h + nvImplHTML(e);
+  }
+  return h + part(view);
+}
+// how a number read from a file is computed: the script that writes the file, and the
+// statement in it that computes the field (scripts/flows_store.py)
+function nvImplHTML(e) {
+  const f = e.src[1], r = flCache["F:" + f];
+  if (!r) return `<p class="muted">How this field is computed is not recorded.</p>`;
+  if (!r.by) return `<p>${nvEsc(FL_WHAT[r.k] || "")} Nothing in this project computes it: the number is read as the file gives it.</p>`;
+  const im = (r.impl || {})[nvGeneral(e.src[2])];
+  return `<h4>Computed by</h4><p><a href="${NV_GH}main/${nvEsc(r.by)}"><code>${nvEsc(r.by)}</code></a>, which writes <code>${nvEsc(f)}</code>.</p>`
+    + (im ? `<h4>The statement that computes this field</h4>` + nvLinCode({ file: r.by, first: im[0], last: im[1], text: im[2] }, true)
+          : `<p class="muted">The statement computing this field was not found by its name in the script; the whole script is linked above.</p>`)
+    + `<p class="small muted">The chain down to the data it is computed from is under “How it was made”.</p>`;
+}
+function nvRenderPart(idx, id, view) {
+  const e = idx.entries[id];
   const n = e.src, t = n[0];
-  let h = `<div class="big">${nvEsc(nvFmt(e.value))}</div><div class="muted">${nvEsc(nvKindLabel(e))}</div>`;
+  let h = "";
   if (view === "lineage") {
     h += nvLineageHTML(e);
   } else if (view === "construction") {
@@ -2665,7 +2708,7 @@ function nvRender(idx, id, view) {
   }
   return h;
 }
-const nvState = { id: null, view: "what", stack: [] };
+const nvState = { id: null, view: "data", stack: [] };
 function nvSetURL(id, view) {
   const q = id ? `?n=${encodeURIComponent(id)}&view=${encodeURIComponent(view)}` : "";
   history.replaceState(null, "", location.pathname + q + location.hash);
@@ -2676,7 +2719,8 @@ async function nvOpen(id, view, push) {
   const e = idx.entries[id];
   if (!e) return;
   // a figure whose making is recorded opens on that record, wherever it is printed
-  if (!view || !nvApplies(e, view)) view = nvApplies(e, "lineage") ? "lineage" : "what";
+  if (NV_OLD_VIEW[view]) view = NV_OLD_VIEW[view];
+  if (!view || !nvApplies(e, view)) view = nvApplies(e, "lineage") ? "lineage" : "data";
   if (push && nvState.id) nvState.stack.push([nvState.id, nvState.view]);
   nvState.id = id; nvState.view = view;
   const panel = document.getElementById("justify");
@@ -2687,6 +2731,7 @@ async function nvOpen(id, view, push) {
   tabs.hidden = false;
   const body = panel.querySelector(".justify-body");
   if (view === "lineage" && e.lineage) await nvLinLoad(e.lineage);
+  if (view === "comp" && e.src[0] === "leaf" && nvStore) { try { await flFetch(["F:" + e.src[1]]); } catch (err) {} }
   if (view === "lineage" && !e.lineage) {
     try { await nvFlowLoad(e); nvAuto[id] = flChain(idx, e, nvAutoOpen[id]); } catch (err) { nvAuto[id] = null; }
   }

@@ -31,6 +31,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import ROOT, load_build, log   # noqa: E402
+import io_trace                              # noqa: E402
 
 CONS = os.path.join(ROOT, "data", "manual", "number_constructions.json")
 # Files a script reads to write its page's words, not to compute a number: the claims
@@ -149,7 +150,7 @@ def build_flows(idx):
                     src[s] = open(os.path.join(ROOT, s), encoding="utf-8").read().split("\n")
                 except OSError:
                     src[s] = []
-            impl = {}
+            impl, traced = {}, {}
             for g in sorted(fields[f]):
                 key = [p for p in re.split(r"\.|\[|\]", g) if p and p != "*" and not p.isdigit()]
                 hit = None
@@ -161,12 +162,22 @@ def build_flows(idx):
                     continue
                 a, b = _statement(src[s], hit)
                 impl[g] = [a, b, "\n".join(src[s][a - 1:b])]
+                # which of the script's data files this field is traced to in its code;
+                # drawn as the chain, the others listed beside it (io_trace.py)
+                got = io_trace.field_files(s, key[-1])
+                if got:
+                    t = sorted(set(got) & set(ins.get(s, [])))
+                    if t and set(t) != set(ins.get(s, [])):
+                        traced[g] = t
             if impl:
                 r["impl"] = impl
+            if traced:
+                r["traced"] = traced
         recs["F:" + f] = r
     for s in scripts:
         recs["S:" + s] = {"in": ins.get(s, []), "text": text_ins.get(s, []), "out": outs.get(s, []),
                           "K": sorted(set(watches.get(s, []))), "unres": unres.get(s, 0)}
+    io_trace.save_cache()
     stats = {"files": len(files), "scripts": len(scripts), "by_kind": {},
              "open_ends": sorted(f for f, k in files.items() if k == "open"),
              "fields_without_a_found_line": missing_lines}
