@@ -78417,7 +78417,7 @@ Adds the annual discharge volumes the statutory plan states, counting a figure s
 <a id="K-QUOTE"></a>
 ### Quoting this site's own past
 
-`K-QUOTE` · covers quote · **current** · read by Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner), 2026-09-12
+`K-QUOTE` · covers quote · **stale: scripts/live.py changed since it was read** · read by Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner), 2026-09-12
 
 What this site printed at an earlier commit.
 

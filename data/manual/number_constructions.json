@@ -429,10 +429,10 @@
     "scripts/live.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner)",
-    "on": "2026-09-12",
+    "by": "Claude (live.py changed only in how a recorded lineage is attached to index entries - _lineages/_lineage_for - not in how a quotation is read or checked; 2026-09-13)",
+    "on": "2026-09-13",
     "saw": {
-     "scripts/live.py": "059dcc18e63d3104"
+     "scripts/live.py": "d82821255051fd2b"
     }
    }
   },

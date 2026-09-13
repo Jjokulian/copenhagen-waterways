@@ -4309,7 +4309,7 @@
    "model": "A quotation is a located reference: a commit, a file and a phrase from that text with a slot where the value stands. When the page is built the value is read out of `git show COMMIT:FILE` at the slot; a phrase that finds no place, or more than one, is refused. Nothing is typed. In the archive of retired claims a whole passage is read the same way, from a digit-free opening and closing phrase (`live.excerpt`), and every quantity in it is a quotation of that commit.",
    "not_licensed": "That what it said was right.",
    "produces": "quoted",
-   "status": "current",
+   "status": "stale: scripts/live.py changed since it was read",
    "title": "Quoting this site's own past",
    "void_if": [
     "the history is rewritten"
@@ -23082,6 +23082,7 @@
     "synthetic": false
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "producer": "scripts/landbrug.py",
    "rests_on": {
     "document": 1
@@ -37584,6 +37585,7 @@
     "text": "d from the indicator set* — only summer chlorophyll and summer Kd produce a requirement — because only intercalibrated quality elements were in scope. 3. In the **load accounting** that produces the [69.6](SOURCES.md#F-a6e4df0589)%, there is indeed no potency term of any kind. The model that could compute this does compute it. The answer is excluded by the indicator set, not by the physics. That is a"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -44233,6 +44235,7 @@
     "text": "d from the indicator set* — only summer chlorophyll and summer Kd produce a requirement — because only intercalibrated quality elements were in scope. 3. In the **load accounting** that produces the [69.6](SOURCES.md#F-a6e4df0589)%, there is indeed no potency term of any kind. The model that could compute this does compute it. The answer is excluded by the indicator set, not by the physics. That is a"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -136132,6 +136135,7 @@
     "text": "d from the indicator set* — only summer chlorophyll and summer Kd produce a requirement — because only intercalibrated quality elements were in scope. 3. In the **load accounting** that produces the [69.6](SOURCES.md#F-a6e4df0589)%, there is indeed no potency term of any kind. The model that could compute this does compute it. The answer is excluded by the indicator set, not by the physics. That is a"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -156036,6 +156040,7 @@
     "text": "The number behind it is a share of one term in one account. Between the two lie four links, and this document asks what coefficient each one has. ## 1. What the number is a share of The published [69.6](SOURCES.md#F-0666c7bdae)% is agriculture's share of the **land-based waterborne term** — nitrogen arriving at the coast through Danish streams and unmonitored catchments. Those are two rows of the ["
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -162081,6 +162086,7 @@
     "text": "r for en ganske pæn del af det”.&nbsp;</p> <p class=\"wp-block-paragraph\">Mere præcist viser de seneste tal, at landbruget står for <a class=\"pdf-link\" title=\"Dette link åbner en PDF-fil\" href=\"https://www.ft.dk/samling/20222/almdel/MOF/bilag/121/2657955.pdf\">69,6 % af kvælstoftilførslen til kystområderne</a>, mens den politiske regulering halter alvorligt bagud. Det er historien om politisk nøl og et industrielt landbrug, der fortsat får lov at forurene vores fælles hav uden konsekvenser.&nbsp;</p> <div class=\"wp-block-columns is-layout-flex wp-container-cor"
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },
@@ -167195,6 +167201,7 @@
     "text": "# There is no Denmark Every number in the national argument is an aggregate: one land-borne load, one 69.6%, one ladder of indsatsbehov, one 25% rule. Aggregation is where the information goes. Køge Bugt and Ringkøbing Fjord do not share a cause, a flushing time, a sediment, or a fix, and a figure true of"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -176963,6 +176970,7 @@
     "text": "e\" content=\"ie=edge\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <title>Udledningen af Kvælstof skyldes andre kilder end spildevand</title> <meta name=\"description\" content=\"Udledning af kv&#230;lstof fra landbrug udg&#248;r 69,6 %, mens udledningen fra spildevand, overl&#248;b og spredt bebyggelse bidrager med omkring 6 %.\" /> <meta name=\"robots\" content=\"index, follow\" /> <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" /> <link rel=\"canonical\" href=\"/nyheder/2024/kv"
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },
@@ -192943,6 +192951,7 @@
     "text": "committed and corrected once. **Done:** [GRUNDLAGET.md](GRUNDLAGET.md) audits the foundation documents; [POLITICS.md](POLITICS.md) the social frame; [NITROGEN.md](NITROGEN.md) establishes that the [69.6](SOURCES.md#F-ebdd70fc2e)% attribution is a residual over an area [51](SOURCES.md#F-637a6ce618)% modelled, not a measurement. **Outstanding:** GRUNDLAGET's items `F2`/`F3`/`F4`/`Q4` remain unverifie"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -208082,6 +208091,7 @@
     "text": "37906440%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=Yy33qTwEIpr%2FBjIWa7BXT50OH3s7%2FXlvxhDeOXn%2F5eg%3D&amp;reserved=0\" target=\"_blank\" rel=\"noopener noreferrer\">69,6 procent af det kvælstof, der udvaskes fra Danmark til havene</a>. Det kommer blandt andet fra spredning af gylle på markerne, som siver ned i søer, fjorde og kysterne.</p></div></div></div><figure class=\"hydra-article-body-figure hydra-article-body-figure--medium hydra-article-body-"
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },
@@ -228989,6 +228999,7 @@
     "text": "forlang ikke, at det ændres — forlang, at det bliver efterprøvet. --- ## In English This page argues, in Danish and to a Danish agricultural audience, that the evidential chain from the published [69.6](SOURCES.md#F-0666c7bdae)% figure to a quantified sector-specific reduction target has three missing links: there is no closed denominator ([10](SOURCES.md#F-10301e05f2) of [20](SOURCES.md#F-ed6addef"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -229426,6 +229437,7 @@
     "text": "s questioning arithmetic that was done correctly — which it was. --- ## The worked example Denmark requires its farms to cut nitrogen. The figure everyone quotes is that **agriculture accounts for 69.6% of nitrogen**. That figure is a residual. It is produced like this: > take the nitrogen measured and modelled arriving at the coast, subtract the modelled > contribution of sewage works and indust"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -246182,6 +246194,7 @@
     "text": "37906440%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=Yy33qTwEIpr%2FBjIWa7BXT50OH3s7%2FXlvxhDeOXn%2F5eg%3D&amp;reserved=0\" target=\"_blank\" rel=\"noopener noreferrer\">69,6 procent af det kvælstof, der udvaskes fra Danmark til havene</a>. Det kommer blandt andet fra spredning af gylle på markerne, som siver ned i søer, fjorde og kysterne.</p></div></div></div><figure class=\"hydra-article-body-figure hydra-article-body-figure--medium hydra-article-body-figur"
    },
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },
@@ -249115,6 +249128,7 @@
     "text": "ith current-year N load\") cannot be tested today: it needs catchment N flux per water body per month, and this project has none — see *Still blocked*. What **can** be tested is its precondition. The [69.6%](../SOURCES.md#F-6a4d1fdd48) is a residual, and a residual cannot be validated against itself ([`../RESIDUAL.md`](../RESIDUAL.md), which states the growth test at line [111](../SOURCES.md#F-9c471077"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -259455,6 +259469,7 @@
     "text": "s questioning arithmetic that was done correctly — which it was. --- ## The worked example Denmark requires its farms to cut nitrogen. The figure everyone quotes is that **agriculture accounts for 69.6% of nitrogen**. That figure is a residual. It is produced like this: > take the nitrogen measured and modelled arriving at the coast, subtract the modelled > contribution of sewage works and indust"
    },
    "kind": "quoted",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "quoted": 1
    },
@@ -309845,6 +309860,7 @@
     "K-READ-PHRASE"
    ],
    "kind": "document",
+   "lineage": "data/lineage/agri_share.json",
    "rests_on": {
     "document": 1
    },

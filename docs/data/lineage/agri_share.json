@@ -7,7 +7,33 @@
   "says": "Agriculture's share of the nitrogen carried by water from Danish land to Danish coastal waters in 2016-18, normalised to average runoff - as printed in Tabel 1 of Miljøstyrelsen's memo of 24 January 2023 to Folketinget. This project did not compute it and holds none of the stream records under it.",
   "note": "Each step below is theirs, shown in their words with an English translation. What this project adds is each step's kind, what it imposes, what else could have been chosen, whether it was tested, and what would settle it. No uncertainty is printed with the share in any document read. The memo took its table from the proposal for the third water plans; the final plans print 69.1% for the same years (rerun R2).",
   "producer": "scripts/agri_share_chain.py",
-  "page": "docs/NITROGEN.md"
+  "page": "docs/NITROGEN.md",
+  "also": [
+   [
+    "leaf",
+    "data/derived/landbrug.json",
+    "agri_pct"
+   ],
+   [
+    "reading",
+    "DANVA-2024",
+    69.6
+   ],
+   [
+    "reading",
+    "POL-DR-20260903",
+    69.6
+   ],
+   [
+    "reading",
+    "POL-GP-20260825",
+    69.6
+   ],
+   [
+    "quote",
+    69.6
+   ]
+  ]
  },
  "counted_as_one": [
   {

@@ -144,7 +144,16 @@ def main():
                 "uncertainty is printed with the share in any document read. The memo took "
                 "its table from the proposal for the third water plans; the final plans print "
                 f"{dk(vp3['landbrug'][4])}% for the same years (rerun R2).",
-        "producer": "scripts/agri_share_chain.py", "page": "docs/NITROGEN.md"})
+        "producer": "scripts/agri_share_chain.py", "page": "docs/NITROGEN.md",
+        # the same figure wherever else the site prints it, so that it opens this record
+        # there too: LANDBRUG's copy, the press and DANVA printing it, and this site's
+        # own past quoted in the archive (every quoted 69.6 there is this figure)
+        "also": [["leaf", "data/derived/landbrug.json", "agri_pct"],
+                 ["reading", "DANVA-2024", agri], ["reading", "POL-DR-20260903", agri],
+                 ["reading", "POL-GP-20260825", agri], ["quote", agri]]})
+    lb = json.load(open(os.path.join(ROOT, "data", "derived", "landbrug.json"), encoding="utf-8"))
+    if lb["agri_pct"] != agri:
+        raise SystemExit(f"LANDBRUG's copy holds {lb['agri_pct']}, Tabel 1 prints {agri}")
 
     MST = os.path.join(claims.PINS, "MST-2023-MOF121.txt")
     L.record("mst-tabel-1", MST, rows, ["Kilde", "Procentvis fordeling %"],

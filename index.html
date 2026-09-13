@@ -2270,7 +2270,8 @@ function nvSetURL(id, view) {
 async function nvOpen(id, view, push) {
   const idx = await nvLoad(), e = idx.entries[id];
   if (!e) return;
-  if (!nvApplies(e, view)) view = "what";
+  // a figure whose making is recorded opens on that record, wherever it is printed
+  if (!view || !nvApplies(e, view)) view = e.lineage ? "lineage" : "what";
   if (push && nvState.id) nvState.stack.push([nvState.id, nvState.view]);
   nvState.id = id; nvState.view = view;
   const panel = document.getElementById("justify");
@@ -2369,7 +2370,7 @@ document.addEventListener("click", e => {
     e.preventDefault();
     nvMenuClose();
     if (a.dataset.doc !== "SOURCES.md") { openClaim(a.dataset.claim, true); return; }
-    if (matchMedia("(max-width: 700px)").matches) { nvOpen(a.dataset.claim, "what", false); return; }
+    if (matchMedia("(max-width: 700px)").matches) { nvOpen(a.dataset.claim, "", false); return; }
     nvMenu(a.dataset.claim, e.clientX, e.clientY, a.textContent.trim());
     return;
   }
@@ -2393,7 +2394,7 @@ function openFromQuery() {
   if (q.get("c")) { openClaim(q.get("c"), false); return; }
   const id = q.get("n");
   if (!id) return;
-  if (q.get("view") !== "menu") { nvOpen(id, q.get("view") || "what", false); return; }
+  if (q.get("view") !== "menu") { nvOpen(id, q.get("view") || "", false); return; }
   // view=menu opens the menu beside the number itself, where a click would have put it.
   const a = [...document.querySelectorAll("a.figure")].find(x => x.dataset.claim === id);
   if (!a) return;

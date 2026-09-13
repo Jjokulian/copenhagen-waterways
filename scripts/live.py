@@ -954,10 +954,13 @@ LINEAGE = os.path.join(ROOT, "docs", "data", "lineage")
 
 
 def _lineages():
-    """The numbers whose producer recorded how they were made (scripts/lineage.py,
-    PROVENANCE_SPEC.md): (file, field) -> the lineage file, relative to docs/ as
-    the reader fetches it."""
-    out = {}
+    """The numbers whose making is recorded (scripts/lineage.py, PROVENANCE_SPEC.md),
+    as (matcher, lineage file relative to docs/ as the reader fetches it). A record
+    names its own number by file and field, and under "also" the other entries that
+    stand for the same figure - read from another file, printed in a pinned
+    document, or quoted from this site's past - so that one figure opens one record
+    wherever it is printed."""
+    out = []
     if os.path.isdir(LINEAGE):
         for fn in sorted(os.listdir(LINEAGE)):
             if not fn.endswith(".json"):
@@ -965,10 +968,36 @@ def _lineages():
             try:
                 with open(os.path.join(LINEAGE, fn), encoding="utf-8") as f:
                     num = json.load(f)["number"]
-                out[(num["file"], num["path"])] = "data/lineage/" + fn
+                rel = "data/lineage/" + fn
+                out.append((("leaf", num["file"], num["path"]), rel))
+                out.extend((tuple(m), rel) for m in num.get("also", []))
             except (ValueError, KeyError, TypeError):
                 continue
     return out
+
+
+def _same_value(a, b):
+    try:
+        return float(a) == float(b)
+    except (TypeError, ValueError):
+        return str(a) == str(b)
+
+
+def _lineage_for(lin, e):
+    """The record an entry opens: its own, or the one that names it as the same
+    figure - a leaf by file and field, a reading by document and value, a quotation
+    of this site's past by value."""
+    n = e["src"]
+    for m, rel in lin:
+        if m[0] != n[0]:
+            continue
+        if m[0] == "leaf" and (n[1], n[2]) == (m[1], m[2]):
+            return rel
+        if m[0] == "reading" and n[1] == m[1] and _same_value(e["value"], m[2]):
+            return rel
+        if m[0] == "quote" and _same_value(e["value"], m[1]):
+            return rel
+    return None
 
 
 def _enrich_all(idx):
@@ -979,12 +1008,13 @@ def _enrich_all(idx):
     for i, e in idx["entries"].items():
         n = e["src"]
         t = n[0]
+        rec = _lineage_for(lin, e)
+        if rec:
+            e["lineage"] = rec
         if t == "leaf":
             file, path = n[1], n[2]
             if prod.get(file):
                 e["producer"] = prod[file]
-            if (file, path) in lin:
-                e["lineage"] = lin[(file, path)]
             full = os.path.join(ROOT, file)
             if file.startswith("data/") and os.path.exists(full) \
                     and os.path.getsize(full) <= 20_000_000:
