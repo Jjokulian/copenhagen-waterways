@@ -781,10 +781,10 @@
     "data/manual/nitrogen_pathways.json"
    ],
    "confirmed": {
-    "by": "agent w3-le (re-read the declaration against scripts/landbrug.py after its last page-text edit: the constants and the block that writes data/derived/landbrug.json are textually unchanged from HEAD, and the file it writes is byte-identical to before any edit (sha256 71eae2b6); the page also refuses to build if agri_pct differs from DANVA's pinned page. The declaration's model gives 12 / 32 where the code types 0.375, the same value; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared)",
+    "on": "2026-09-13",
     "saw": {
-     "scripts/landbrug.py": "ec08d95e4bf54571",
+     "scripts/landbrug.py": "05718867466daf70",
      "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
     }
    }

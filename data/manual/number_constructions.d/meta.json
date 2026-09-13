@@ -245,7 +245,7 @@
      },
      "gated_sources": {
       "kind": "counted",
-      "is": "Sources the source register does not class as open - the held, account and blocked tiers of `classify()` - as `gated_sources()` in `scripts/unlock.py` returns them. The held tier is reachable by this project: the ODA extracts on disk came through it."
+      "is": "Sources the source register does not class as open - the held, account and blocked tiers of `classify()` in `scripts/fetch_queue.py` - as `gated_sources()` in `scripts/unlock.py` returns them. The held tier is reachable by this project: an ODA topic, a service behind the Dataforsyningen token, a Copernicus Marine or Copernicus Data Space product behind the credentials the fetch scripts read, or an entry already on disk."
      },
      "gated_slots": {
       "kind": "counted",
@@ -295,11 +295,12 @@
     "scripts/daylight.py",
     "scripts/meta_facts.py",
     "scripts/unlock.py",
+    "scripts/fetch_queue.py",
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-13: re-read unlock.py and fetch_queue.py after the held-data update. FILES now lists all three registers and n_sources counts them; classify() tests on-disk entries and the Copernicus Marine and Copernicus Data Space products as held before the other tiers; gated_sources() in unlock.py counts every source classify() does not class as open. The wording and watches now say so)",
+    "on": "2026-09-13",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
      "data/derived/hypotheses.json": "bf741395d16fdb52",
@@ -309,7 +310,8 @@
      "scripts/clock.py": "e2fb9cafe90c804b",
      "scripts/daylight.py": "84c11f42cb7e2cab",
      "scripts/meta_facts.py": "eea330a720cf22c6",
-     "scripts/unlock.py": "fcf535d055ad6f9d",
+     "scripts/unlock.py": "cb3c1906da393d74",
+     "scripts/fetch_queue.py": "97197ae484e5b5b9",
      "data/derived/light.json": "3bf11c218286e4c6"
     }
    }
@@ -1083,7 +1085,7 @@
     "fields": {
      "n_sources": {
       "kind": "counted",
-      "is": "Distinct source ids across the source registers `fetch_queue.py` reads (its `FILES`: `data_sources.json` and `data_sources_2.json`); `data_sources_3.json` is not read, and the queue says so when it runs."
+      "is": "Distinct source ids across the three source registers `fetch_queue.py` reads (its `FILES`: `data_sources.json`, `data_sources_2.json` and `data_sources_3.json`)."
      },
      "by_tier.*": {
       "kind": "counted",
@@ -1120,15 +1122,17 @@
    "watches": [
     "scripts/fetch_queue.py",
     "data/manual/data_sources.json",
-    "data/manual/data_sources_2.json"
+    "data/manual/data_sources_2.json",
+    "data/manual/data_sources_3.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-13: re-read unlock.py and fetch_queue.py after the held-data update. FILES now lists all three registers and n_sources counts them; classify() tests on-disk entries and the Copernicus Marine and Copernicus Data Space products as held before the other tiers; gated_sources() in unlock.py counts every source classify() does not class as open. The wording and watches now say so)",
+    "on": "2026-09-13",
     "saw": {
-     "scripts/fetch_queue.py": "cd1d8eb48e96e506",
+     "scripts/fetch_queue.py": "97197ae484e5b5b9",
      "data/manual/data_sources.json": "bbcf3ff9710105f6",
-     "data/manual/data_sources_2.json": "6d052e73fa896f81"
+     "data/manual/data_sources_2.json": "6d052e73fa896f81",
+     "data/manual/data_sources_3.json": "06cef818e7a29730"
     }
    }
   }

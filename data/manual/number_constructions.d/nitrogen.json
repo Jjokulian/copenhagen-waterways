@@ -50,11 +50,11 @@
     "scripts/pages/grundlaget.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read grundlaget.py after agent w3-gc's rewrite: rv() still refuses a nitrogen_readings.json value unless its phrase is in the pinned text of its source and the value is printed in the phrase, as the model says; the page also reads pins directly through rval(), which applies the same two checks. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-13: since the last reading the sources of claims.d/nitrogen.json gained six ids for the 17-step chain - DMU-AR245, MST-2023-MOF121, NKM2020, SR681, VJ-2018-N-VANDLOEB, VP3-2023 - and none was removed or changed, so every reading's source is still present and each field reads as declared)",
+    "on": "2026-09-13",
     "saw": {
      "data/manual/nitrogen_readings.json": "692d8b2ecde62cf7",
-     "data/manual/claims.d/nitrogen.json#sources": "5cbfcd49ac6a88ff",
+     "data/manual/claims.d/nitrogen.json#sources": "a8fadfa0a7e17b1c",
      "scripts/pages/grundlaget.py": "7b84287f07d1799d"
     }
    }

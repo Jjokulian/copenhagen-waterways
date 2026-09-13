@@ -659,11 +659,11 @@
     "scripts/rivermap.py"
    ],
    "confirmed": {
-    "by": "fork w2-cs (re-read solutions.py: compute() and every constant it uses are identical to the version last read, checked by comparing their syntax trees; only page() changed - rewritten for checked claims - and the unused commit constant was replaced by the path to outfalls.json. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-13: the only change to scripts/figures.py since the last reading is a filter in _landing_prose, which skips code-like string literals when index.html is scanned; provenance(), the one function conveyance.py imports, is unchanged, so every field reads as declared)",
+    "on": "2026-09-13",
     "saw": {
      "scripts/conveyance.py": "84c7ccecce69230f",
-     "scripts/figures.py": "ac3cebdb3d20ce7b",
+     "scripts/figures.py": "1ceee76c1c9c776f",
      "data/raw/skp_veje_tunneller_kk.geojson": "802de7e3314172f8",
      "scripts/solutions.py": "84338edb81d29722",
      "scripts/rivermap.py": "eae940ce0c09aa37"

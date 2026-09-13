@@ -161,9 +161,12 @@ def _landing_prose(html):
     html = re.sub(r"<!--.*?-->", "", html, flags=re.S)
     html = re.sub(r"(?m)^\s*//.*$", "", html)
     lits = re.findall(r'"((?:[^"\\]|\\.){30,400})"', html)
+    # nor is code: a diagram style (classDef ... dasharray:3 3), or the stretch
+    # between two string literals that the pattern above takes for one (a === b)
     return "\n".join(l for l in lits
                      if re.search(r"[a-z]{3,}\s+[a-z]{3,}", l)
-                     and "http" not in l and "{" not in l and ";" not in l)
+                     and "http" not in l and "{" not in l and ";" not in l
+                     and not re.search(r"classDef|===|\|\||&&", l))
 
 
 def _landing_accounted():
