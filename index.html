@@ -329,6 +329,13 @@ body.mmd-open{overflow:hidden}
 .lin-said-h{margin:10px 0 2px}
 .lin-settle{border-left:3px solid #3fb950;padding-left:8px}
 .lin-tw{overflow-x:auto}
+.lin-mode{display:inline-flex;border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin:4px 0 10px}
+.lin-mode button{font:inherit;font-size:12.5px;padding:3px 14px;border:0;background:transparent;color:var(--ink-2);cursor:pointer}
+.lin-mode button[aria-pressed="true"]{background:#1f6feb;color:#fff}
+.lin-enlarge{font:inherit;font-size:12px;padding:2px 10px;margin:2px 0 4px;border:1px solid var(--rule);border-radius:5px;background:transparent;color:var(--ink-2);cursor:pointer}
+.lin-detail{border-top:2px solid var(--rule);margin-top:8px;padding-top:6px;min-height:3em}
+[data-lin-key]{cursor:pointer}
+g.lin-sel > rect,g.lin-sel > polygon,g.lin-sel > path,g.lin-sel > circle,g.lin-sel > ellipse,g.lin-sel .label-container{stroke:#f0b429 !important;stroke-width:3px !important}
 /* A linked number, and the menu of views it opens. Every colour is a site token,
    so the menu and panel follow the reader's light or dark theme. */
 a.figure{color:inherit;text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
@@ -432,6 +439,8 @@ a.figure::after{content:"\2299";font-size:.62em;vertical-align:super;color:var(-
 .justify-body .lin-end{font-size:10px;letter-spacing:.04em;border-radius:4px;padding:0 5px;border:1px solid var(--rule);margin-right:4px}
 .justify-body .lin-end.rec{color:var(--accent);border-color:var(--accent)}
 .justify-body .lin-end.con{color:var(--nv-warn);border-color:var(--nv-warn)}
+.justify-body .lin-end.mod{color:#8a6fd1;border-color:#8a6fd1}
+.justify-body .lin-end.res{color:#2f9e44;border-color:#2f9e44}
 .justify-body svg.lin-sc{width:100%;height:auto;display:block;margin:6px 0;max-width:100%}
 .justify-body svg.lin-sc text{font-size:10px;fill:var(--muted)}
 .justify-body svg.lin-sc text.axis{font-size:11px;fill:var(--ink-2)}
@@ -1620,9 +1629,9 @@ function mmdPrepare(src) {
     if (!full.has(m[2])) full.set(m[2], m[4]);
     lines.push(`${m[1]}${m[2]}${m[3]}"${mmdWrap(m[4])}"${m[5]}`);
   }
-  return { src: lines.join("\n"), full };
+  return { src: lines.join("\n"), full, nozoom: /^\s*%% nozoom\s*$/m.test(src) };
 }
-function mmdFinish(host, full) {
+function mmdFinish(host, full, nozoom) {
   const svg = host.querySelector("svg");
   if (!svg) return;
   const vb = svg.viewBox && svg.viewBox.baseVal;
@@ -1636,6 +1645,7 @@ function mmdFinish(host, full) {
     g.prepend(tip);
     g.querySelectorAll("foreignObject div, foreignObject span").forEach(d => { d.title = t; });
   }
+  if (nozoom) return;
   host.classList.add("zoomable");
   host.tabIndex = 0;
   host.setAttribute("role", "button");
@@ -1756,7 +1766,7 @@ async function drawMermaid(root) {
       const prep = mmdPrepare(src);
       const { svg } = await mermaid.render("mmd" + (++n) + "-" + Date.now(), prep.src);
       host.innerHTML = svg;
-      mmdFinish(host, prep.full);
+      mmdFinish(host, prep.full, prep.nozoom);
     } catch (e) {
       host.innerHTML = '<pre class="mermaid-failed">' +
         src.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])) +
@@ -2056,19 +2066,149 @@ function nvLinSaid(said) {
   return h;
 }
 const nvLinNum = (N, v) => N.unit === "%" ? (v === null || v === undefined ? "…" : `${nvFmt(v)}%`) : nvSigned(v);
+/* The same record two ways, switched by a button and remembered. "Steps" is the
+   chain read in order. "Graph" is the owner's model of it: results as nodes, each
+   step as the edge that computes one result from others, and the theories the steps
+   work within as shaded regions - click any of them to open it below the diagram. */
+let nvLinCur = null, nvLinModeSet = null;
+function nvLinMode() {
+  if (nvLinModeSet) return nvLinModeSet;
+  const q = new URLSearchParams(location.search).get("lin");
+  if (q === "graph" || q === "steps") return (nvLinModeSet = q);
+  try { const m = localStorage.getItem("linMode"); if (m === "graph" || m === "steps") return m; } catch (err) {}
+  return "steps";
+}
+function nvLinStepHTML(s) {
+  const none = s.why.reason === "no reason recorded";
+  return `<div class="lin-step" id="lin-${nvEsc(s.id)}"><div>${nvKindBadge(s.kind)}<b>${nvEsc(s.title)}</b> <span class="lin-ref">${nvEsc(s.id)}</span></div>`
+    + `<p>${nvCode(s.imposes)}</p>`
+    + (s.inputs.length ? `<p class="small muted">In: ${s.inputs.map(i => nvEsc(nvLinVal(i))).join("; ")}</p>` : "")
+    + s.code.map(c => nvLinCode(c, false)).join("")
+    + nvLinSaid(s.said)
+    + `<p class="small"><b>Why:</b> ${none ? `<span class="lin-none">no reason recorded</span>` : nvCode(s.why.reason)}`
+    + (s.why.ref ? ` <a class="ref" href="${NV_GH}main/${nvEsc(s.why.ref.file)}#L${s.why.ref.first}-L${s.why.ref.last}">${nvEsc(s.why.ref.file)}:${s.why.ref.first}</a>` : "")
+    + (s.why.author && s.why.author !== "not recorded" ? ` <span class="muted">— by ${nvEsc(s.why.author)}</span>` : "") + `</p>`
+    + (s.alternative ? `<p class="small"><b>What else could have been chosen:</b> ${nvCode(s.alternative)}</p>` : "")
+    + `<p class="small"><b>Tested:</b> ${s.tested === "not tested" ? `<span class="lin-none">not tested</span>` : nvEsc(s.tested)}</p>`
+    + (s.settle ? `<p class="small lin-settle"><b>What would settle it:</b> ${nvCode(s.settle)}</p>` : "")
+    + (Object.keys(s.outputs || {}).length
+      ? `<table class="ex lin-kv">${Object.entries(s.outputs).map(([a, v]) => `<tr><td><code>${nvEsc(a)}</code></td><td>${nvEsc(nvLinVal(v))}</td></tr>`).join("")}</table>` : "")
+    + `</div>`;
+}
+const NV_NODE_SHAPE = { record: ['[("', '")]'], construction: ['{{"', '"}}'], "model output": ['[/"', '"/]'],
+  result: ['("', '")'], world: ['(("', '"))'] };
+const NV_NODE_TYPE = { record: ["rec", "record"], construction: ["con", "construction"],
+  "model output": ["mod", "model output"], result: ["res", "result"], world: ["con", "not a record"] };
+function nvLinGraphSrc(L) {
+  const G = L.graph, q = t => String(t).replace(/"/g, "'");
+  const cls = t => ({ "model output": "modelout" }[t] || t);
+  const lines = ["graph BT", "  %% nozoom"];
+  for (const r of G.regions) {
+    lines.push(`  subgraph R_${r.id}["${q(r.title)}"]`);
+    for (const n of G.nodes.filter(n => n.region === r.id)) {
+      const [o, c] = NV_NODE_SHAPE[n.type] || NV_NODE_SHAPE.result;
+      lines.push(`    N_${n.id}${o}${q(n.label)}${c}`);
+    }
+    for (const e of G.edges.filter(e => r.edges.includes(e.step))) lines.push(`    E_${e.step}["${e.step} · ${q(e.label)}"]`);
+    lines.push("  end");
+  }
+  for (const e of G.edges) {
+    for (const f of e.from) lines.push(`  N_${f} --> E_${e.step}`);
+    lines.push(`  E_${e.step} --> N_${e.to}`);
+  }
+  lines.push("  classDef record fill:#1c4e70,stroke:#58a6ff,color:#e6edf3",
+    "  classDef construction fill:#4a3a12,stroke:#e8a33d,color:#ffeccc",
+    "  classDef modelout fill:#3d3357,stroke:#a58cf0,color:#e6edf3",
+    "  classDef result fill:#173a26,stroke:#3fb950,color:#d7ffe4",
+    "  classDef world fill:#262626,stroke:#8b949e,color:#e6edf3,stroke-dasharray:3 3",
+    "  classDef comp fill:#21262d,stroke:#8b949e,color:#c9d1d9");
+  const byType = {};
+  for (const n of G.nodes) (byType[cls(n.type)] = byType[cls(n.type)] || []).push("N_" + n.id);
+  for (const [t, ids] of Object.entries(byType)) lines.push(`  class ${ids.join(",")} ${t}`);
+  lines.push(`  class ${G.edges.map(e => "E_" + e.step).join(",")} comp`);
+  // a theory is a background to the steps inside it, not another box
+  for (const r of G.regions) lines.push(`  style R_${r.id} fill:#eef1f5,stroke:#b9c2cc,color:#4a5561`);
+  return lines.join("\n");
+}
+function nvLinGraphDetail(L, key) {
+  const G = L.graph;
+  const nodeLink = id => { const n = G.nodes.find(x => x.id === id); return `<a href="#" data-lin-open="N_${nvEsc(id)}">${nvEsc(n ? n.label : id)}</a>`; };
+  const edgeLink = e => `<a href="#" data-lin-open="E_${nvEsc(e.step)}">${nvEsc(e.step)} · ${nvEsc(e.label)}</a>`;
+  const regLink = r => r ? `<a href="#" data-lin-open="R_${nvEsc(r.id)}">${nvEsc(r.title)}</a>` : "";
+  const cav = xs => xs && xs.length ? `<h5>Caveats</h5><ul class="small">${xs.map(x => `<li>${nvCode(x)}</li>`).join("")}</ul>` : "";
+  if (key.startsWith("E_")) {
+    const sid = key.slice(2), e = G.edges.find(x => x.step === sid), s = L.steps.find(x => x.id === sid);
+    const r = G.regions.find(x => x.edges.includes(sid));
+    if (!e || !s) return "";
+    return `<p class="small muted">A computation${r ? ` within ${regLink(r)}` : ""}: from ${e.from.map(nodeLink).join(", ")} to ${nodeLink(e.to)}.</p>` + nvLinStepHTML(s);
+  }
+  if (key.startsWith("R_")) {
+    const r = G.regions.find(x => x.id === key.slice(2));
+    if (!r) return "";
+    return `<h4>${nvEsc(r.title)}</h4><p class="small muted">A theory the steps inside it work within.</p><p>${nvCode(r.theory)}</p>${cav(r.caveats)}`
+      + `<p class="small"><b>Steps in it:</b> ${G.edges.filter(e => r.edges.includes(e.step)).map(edgeLink).join(", ")}</p>`;
+  }
+  const n = G.nodes.find(x => x.id === key.slice(2));
+  if (!n) return "";
+  const [c, lab] = NV_NODE_TYPE[n.type] || ["res", n.type];
+  const made = G.edges.filter(e => e.to === n.id), used = G.edges.filter(e => e.from.includes(n.id));
+  return `<h4>${nvEsc(n.label)}</h4><p><span class="lin-end ${c}">${nvEsc(lab)}</span> <span class="small muted">in ${regLink(G.regions.find(r => r.id === n.region))}</span></p>`
+    + `<p>${nvCode(n.what)}</p>${cav(n.caveats)}`
+    + `<p class="small"><b>Made by:</b> ${made.length ? made.map(edgeLink).join(", ") : "nothing on this chain: it is where the chain starts"}</p>`
+    + (used.length ? `<p class="small"><b>Used by:</b> ${used.map(edgeLink).join(", ")}</p>` : "");
+}
+function nvLinWire(root) {
+  const svg = root.querySelector(".lin-graph svg");
+  if (!svg) return;
+  for (const g of svg.querySelectorAll("g.node")) {
+    const k = (g.id.match(/^flowchart-([NE]_[A-Za-z0-9_]+)-\d+$/) || [])[1];
+    if (k) g.dataset.linKey = k;
+  }
+  for (const g of svg.querySelectorAll("g.cluster")) {
+    const k = (g.id.match(/(R_[A-Za-z0-9_]+)/) || [])[1];
+    if (k) g.dataset.linKey = k;
+  }
+}
+function nvLinShow(key) {
+  const d = document.querySelector("#justify .lin-detail");
+  if (!d || !nvLinCur) return;
+  d.innerHTML = nvLinGraphDetail(nvLinCur, key) || `<p class="muted small">Nothing recorded for ${nvEsc(key)}.</p>`;
+  for (const el of document.querySelectorAll("[data-lin-key]")) el.classList.toggle("lin-sel", el.dataset.linKey === key);
+  if (!document.querySelector(".mmd-zoom")) d.scrollIntoView({ block: "nearest" });
+}
+document.addEventListener("click", e => {
+  const m = e.target.closest("[data-linmode]");
+  if (m) {
+    e.preventDefault();
+    nvLinModeSet = m.dataset.linmode;
+    try { localStorage.setItem("linMode", nvLinModeSet); } catch (err) {}
+    nvOpen(nvState.id, "lineage", false);
+    return;
+  }
+  const en = e.target.closest(".lin-enlarge");
+  if (en) { const host = en.parentElement.querySelector(".mermaid-fig"); if (host) mmdZoom(host); return; }
+  const o = e.target.closest("[data-lin-open]");
+  if (o) { e.preventDefault(); nvLinShow(o.dataset.linOpen); return; }
+  const k = e.target.closest("[data-lin-key]");
+  if (k) nvLinShow(k.dataset.linKey);
+});
 function nvLineageHTML(e) {
   const L = nvLin[e.lineage];
   if (!L) return `<p class="simflag">The record of how this number was made could not be loaded (<code>docs/${nvEsc(e.lineage)}</code>).</p>`;
+  nvLinCur = L;
   const N = L.number, sp = L.spread || {};
   let h = `<p>${nvCode(N.says)}</p>` + (N.note ? `<p class="small">${nvCode(N.note)}</p>` : "")
     + `<p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
     + `<a href="${NV_GH}main/docs/${nvEsc(e.lineage)}"><code>docs/${nvEsc(e.lineage)}</code></a>. It looks backward from `
     + `<code>${nvEsc(N.path)}</code> to the records.</p>`;
-  h += `<h4>Counted as one</h4><ul class="lin-one">` + L.counted_as_one.map(c =>
-    `<li>${nvCode(c.what)} <a class="lin-ref" href="#lin-${nvEsc(c.step)}">${nvEsc(c.step)}</a></li>`).join("") + `</ul>`;
-  h += `<h4>The records, in their own words</h4>`;
+  const mode = L.graph ? nvLinMode() : "steps";
+  if (L.graph)
+    h += `<div class="lin-mode" role="group" aria-label="How to show it">`
+      + `<button type="button" data-linmode="graph" aria-pressed="${mode === "graph"}">Graph</button>`
+      + `<button type="button" data-linmode="steps" aria-pressed="${mode === "steps"}">Steps</button></div>`;
+  let records = `<h4>The records, in their own words</h4>`;
   L.records.forEach((R, k) => {
-    h += `<details class="lin-rec"${k === 0 ? " open" : ""}><summary><code>${nvEsc(R.file)}</code> · ${nvFmt(R.rows)} rows</summary>`
+    records += `<details class="lin-rec"${k === 0 && mode === "steps" ? " open" : ""}><summary><code>${nvEsc(R.file)}</code> · ${nvFmt(R.rows)} rows</summary>`
       + `<p class="small muted">${nvEsc(R.published_by)}.${R.file_meta && R.file_meta.timeStamp ? ` Its <code>timeStamp</code> says ${nvEsc(R.file_meta.timeStamp)}.` : ""} Columns used: ${R.columns_used.map(c => `<code>${nvEsc(c)}</code>`).join(", ")}.</p>`
       + R.sample.map(s => `<p class="lin-row small"><b>row ${s.row} says:</b> `
         + Object.entries(s.fields).map(([a, v]) => `<code>${nvEsc(a)}=${nvEsc(typeof v === "string" ? `"${v}"` : JSON.stringify(v))}</code>`).join(" ")
@@ -2076,34 +2216,32 @@ function nvLineageHTML(e) {
       + (R.constructions_on_record.length ? `<h5>Constructions already on the record</h5><ul class="small">${R.constructions_on_record.map(x => `<li>${nvCode(x)}</li>`).join("")}</ul>` : "")
       + `</details>`;
   });
-  h += `<h4>Each step, from the records to the number</h4>`;
-  let br = null;
-  for (const s of L.steps) {
-    if (s.branch !== br) { br = s.branch; h += `<div class="lin-branch">${nvEsc(br || "")}</div>`; }
-    const none = s.why.reason === "no reason recorded";
-    h += `<div class="lin-step" id="lin-${nvEsc(s.id)}"><div>${nvKindBadge(s.kind)}<b>${nvEsc(s.title)}</b> <span class="lin-ref">${nvEsc(s.id)}</span></div>`
-      + `<p>${nvCode(s.imposes)}</p>`
-      + (s.inputs.length ? `<p class="small muted">In: ${s.inputs.map(i => nvEsc(nvLinVal(i))).join("; ")}</p>` : "")
-      + s.code.map(c => nvLinCode(c, false)).join("")
-      + nvLinSaid(s.said)
-      + `<p class="small"><b>Why:</b> ${none ? `<span class="lin-none">no reason recorded</span>` : nvCode(s.why.reason)}`
-      + (s.why.ref ? ` <a class="ref" href="${NV_GH}main/${nvEsc(s.why.ref.file)}#L${s.why.ref.first}-L${s.why.ref.last}">${nvEsc(s.why.ref.file)}:${s.why.ref.first}</a>` : "")
-      + (s.why.author && s.why.author !== "not recorded" ? ` <span class="muted">— by ${nvEsc(s.why.author)}</span>` : "") + `</p>`
-      + (s.alternative ? `<p class="small"><b>What else could have been chosen:</b> ${nvCode(s.alternative)}</p>` : "")
-      + `<p class="small"><b>Tested:</b> ${s.tested === "not tested" ? `<span class="lin-none">not tested</span>` : nvEsc(s.tested)}</p>`
-      + (s.settle ? `<p class="small lin-settle"><b>What would settle it:</b> ${nvCode(s.settle)}</p>` : "")
-      + (Object.keys(s.outputs || {}).length
-        ? `<table class="ex lin-kv">${Object.entries(s.outputs).map(([a, v]) => `<tr><td><code>${nvEsc(a)}</code></td><td>${nvEsc(nvLinVal(v))}</td></tr>`).join("")}</table>` : "")
-      + `</div>`;
+  if (mode === "graph") {
+    h += `<div class="lin-graph"><p class="small muted">Rounded boxes are results; cylinders are records, hexagons constructions, `
+      + `slanted boxes model output. The small boxes between them are the steps that compute one from the other, and the `
+      + `shaded areas are the theories those steps work within. Click any of them to open it below.</p>`
+      + `<button type="button" class="lin-enlarge">Enlarge the diagram</button>`
+      + `<pre><code class="language-mermaid">${nvEsc(nvLinGraphSrc(L))}</code></pre></div>`
+      + `<div class="lin-detail" aria-live="polite"><p class="muted small">Click a box to open it here.</p></div>`
+      + records;
+  } else {
+    h += `<h4>Counted as one</h4><ul class="lin-one">` + L.counted_as_one.map(c =>
+      `<li>${nvCode(c.what)} <a class="lin-ref" href="#lin-${nvEsc(c.step)}">${nvEsc(c.step)}</a></li>`).join("") + `</ul>`;
+    h += records + `<h4>Each step, from the records to the number</h4>`;
+    let br = null;
+    for (const s of L.steps) {
+      if (s.branch !== br) { br = s.branch; h += `<div class="lin-branch">${nvEsc(br || "")}</div>`; }
+      h += nvLinStepHTML(s);
+    }
+    if (N.page_line) h += `<div class="lin-branch">the page</div><div class="lin-step"><p class="small">${nvEsc(N.page_note || "")}</p>${nvLinCode(N.page_line, false)}</div>`;
+    h += `<h4>Where the chain ends</h4><ul class="lin-ends">` + L.ends.map(x =>
+      `<li><span class="lin-end ${x.type === "record" ? "rec" : x.type === "construction" ? "con" : "mod"}">${nvEsc(NV_LIN_END[x.type] || x.type)}</span> `
+      + `${nvCode(x.what)}${x.record ? ` <span class="muted small">in <code>${nvEsc(x.record)}</code></span>` : ""}`
+      + ` <span class="muted small">— by ${nvEsc(x.author)}; ${x.steps.map(t => `<a class="lin-ref" href="#lin-${nvEsc(t)}">${nvEsc(t)}</a>`).join(" ")}</span></li>`).join("") + `</ul>`;
+    if (L.notes && L.notes.model_output) h += `<p class="small"><b>Model output presented as data:</b> ${nvCode(L.notes.model_output)}</p>`;
+    if (L.not_on_this_chain && L.not_on_this_chain.length)
+      h += `<h5>Read by the producer, not on this chain</h5><ul class="small">${L.not_on_this_chain.map(a => `<li>${nvCode(a.what)}: ${nvCode(a.why)}</li>`).join("")}</ul>`;
   }
-  if (N.page_line) h += `<div class="lin-branch">the page</div><div class="lin-step"><p class="small">${nvEsc(N.page_note || "")}</p>${nvLinCode(N.page_line, false)}</div>`;
-  h += `<h4>Where the chain ends</h4><ul class="lin-ends">` + L.ends.map(x =>
-    `<li><span class="lin-end ${x.type === "record" ? "rec" : x.type === "construction" ? "con" : "mod"}">${nvEsc(NV_LIN_END[x.type] || x.type)}</span> `
-    + `${nvCode(x.what)}${x.record ? ` <span class="muted small">in <code>${nvEsc(x.record)}</code></span>` : ""}`
-    + ` <span class="muted small">— by ${nvEsc(x.author)}; ${x.steps.map(t => `<a class="lin-ref" href="#lin-${nvEsc(t)}">${nvEsc(t)}</a>`).join(" ")}</span></li>`).join("") + `</ul>`;
-  if (L.notes && L.notes.model_output) h += `<p class="small"><b>Model output presented as data:</b> ${nvCode(L.notes.model_output)}</p>`;
-  if (L.not_on_this_chain && L.not_on_this_chain.length)
-    h += `<h5>Read by the producer, not on this chain</h5><ul class="small">${L.not_on_this_chain.map(a => `<li>${nvCode(a.what)}: ${nvCode(a.why)}</li>`).join("")}</ul>`;
   if (sp.table) {
     const t = sp.table;
     h += `<h4>The spread under it</h4><p class="small">${nvCode(sp.what || "")}</p><div class="lin-tw"><table class="ex">`
@@ -2338,6 +2476,7 @@ async function nvOpen(id, view, push) {
   panel.hidden = false;
   body.scrollTop = 0;
   await drawMermaid(body);
+  if (view === "lineage") nvLinWire(body);
   await nvMath(body);
   nvSetURL(id, view);
 }

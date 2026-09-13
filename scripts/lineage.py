@@ -180,6 +180,29 @@ class Lineage:
                                        "value": value, "n": n, "step": step,
                                        "headline": headline, "note": note, "code": code})
 
+    def graph(self, regions, nodes, edges):
+        """The same chain as nodes, edges and regions (the owner's model, 2026-09-13):
+        a node is a result, a record or a construction, with what it means and its
+        caveats; an edge is one recorded step - the computation from its inputs to its
+        output - so its method, reason and limits are the step's own, not repeated;
+        a region is the theory several steps work within, written once. Every step is
+        one edge in exactly one region, and every node an edge names exists."""
+        steps = [s["id"] for s in self.doc["steps"]]
+        ids = {n["id"] for n in nodes}
+        rids = {r["id"] for r in regions}
+        placed = [e for r in regions for e in r["edges"]]
+        drawn = [e["step"] for e in edges]
+        if sorted(placed) != sorted(steps) or sorted(drawn) != sorted(steps):
+            raise ValueError("lineage graph: every step must be one edge in exactly one region")
+        for e in edges:
+            for x in list(e["from"]) + [e["to"]]:
+                if x not in ids:
+                    raise ValueError(f"lineage graph: {e['step']} names {x!r}, which is no node")
+        for n in nodes:
+            if n["region"] not in rids:
+                raise ValueError(f"lineage graph: node {n['id']!r} is in no region")
+        self.doc["graph"] = _plain({"regions": regions, "nodes": nodes, "edges": edges})
+
     def aside(self, what, why):
         self.doc["not_on_this_chain"].append({"what": what, "why": why})
 

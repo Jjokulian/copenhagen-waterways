@@ -654,6 +654,202 @@ def main():
             "the same figure is printed on several pages and read from news articles and "
             "DANVA; this record is attached to NITROGEN's, read from the site's register")
 
+    # The same chain as a graph: results as nodes, the steps as the edges between them,
+    # and the theories the steps work within as regions, each written once. The steps'
+    # own method, reason and limits are what an edge shows; nothing here repeats them.
+    r1a = with_air(agri, land_t, air_all)
+    L.graph(
+        regions=[
+            {"id": "mon", "title": "Stream monitoring", "edges": ["S1", "S2", "S3", "S5"],
+             "theory": "The nitrogen a stream carries past a station is its discharge times its "
+                       "concentration, summed day by day. Discharge follows from a logged water "
+                       "level; concentration is sampled on some days, and the days between are "
+                       "filled in by a straight line.",
+             "caveats": ["What passes between two sampling days, a flood for instance, is known "
+                         "only through the line.",
+                         "A station is one fixed point on one stream."]},
+            {"id": "map", "title": "Catchment accounting", "edges": ["S4"],
+             "theory": "The land drawn upstream of a station on a catchment map is taken to be "
+                       "represented by it: what the station measures is what that land delivers.",
+             "caveats": ["The 'measured share of the country' is an area ratio on a map, not a "
+                         "share of anything sampled, and it moves as stations open and close."]},
+            {"id": "model", "title": "Modelling the land without stations",
+             "edges": ["S6", "S7", "S8", "S9", "S10"],
+             "theory": "Where no stream is gauged the load is computed: runoff from the national "
+                       "water model, a concentration from a regression fitted to gauged farm "
+                       "catchments, scaled to agree with the gauged stations of the same region, "
+                       "minus the nitrogen calculated to be removed in lakes, streams and wetlands.",
+             "caveats": ["The model's error in gauged land is assumed to be its error in ungauged "
+                         "land, which the method cannot check (S6).",
+                         "The regression is used partly outside its domain, by their own "
+                         "statement (S7).",
+                         "The national field surplus is one of its inputs, so the modelled load "
+                         "is partly the farm accounts themselves (S8)."]},
+            {"id": "reg", "title": "Point-source registers", "edges": ["S11"],
+             "theory": "Registered outlets - treatment plants, industry, fish farms, overflows - "
+                       "are counted from their own measurements or from unit loads, and a rule "
+                       "of distance decides which discharge straight to the sea.",
+             "caveats": ["Missing early years are filled with the earliest known value (S11)."]},
+            {"id": "acc", "title": "Load accounts", "edges": ["S12", "S13"],
+             "theory": "The land-based total is the measured load plus the modelled load plus "
+                       "the direct discharges; each year is then recomputed as if runoff had "
+                       "been average, and 2016-18 are averaged.",
+             "caveats": ["Only nitrogen carried from Danish land by water is in the total.",
+                         "The published tonnes are normalised: not what arrived in any year."]},
+            {"id": "res", "title": "Residual source apportionment",
+             "edges": ["S14", "S15", "S16", "S17"],
+             "theory": "A source's share is found by subtraction: what no register accounts for "
+                       "is diffuse; what of the diffuse is not the natural background is "
+                       "agriculture; agriculture over the land-based total is the share.",
+             "caveats": ["A remainder collects the errors of every step before it and every "
+                         "source that has no register.",
+                         "No uncertainty is published for the background or for the share."]},
+        ],
+        nodes=[
+            {"id": "stream", "label": "The stream itself", "type": "world", "region": "mon",
+             "what": "Not a record: what the samples are taken from. Everything above it is what "
+                     "was recorded of it, and what was computed from that.", "caveats": []},
+            {"id": "samples", "label": "Grab samples · total nitrogen", "type": "record",
+             "region": "mon",
+             "what": "Bottles of stream water analysed for total nitrogen at fixed stations, held "
+                     "in the national database (ODA).",
+             "caveats": ["Not held by this project.",
+                         "Results for 2009-2015 were corrected for a wrong analysis method (S1)."]},
+            {"id": "levels", "label": "Logged water levels · gaugings", "type": "record",
+             "region": "mon",
+             "what": "The water level logged at each gauge, and occasional direct measurements "
+                     "of flow.", "caveats": ["Not held by this project."]},
+            {"id": "discharge", "label": "Daily discharge per station", "type": "result",
+             "region": "mon", "what": "Water flow per day, from the logged level through a "
+                                      "relation between level and flow.",
+             "caveats": ["Largest relative uncertainty in small catchments (S2)."]},
+            {"id": "stationload", "label": "Nitrogen load per station per day", "type": "result",
+             "region": "mon",
+             "what": "The day's discharge times a concentration drawn in a straight line between "
+                     "two samples.",
+             "caveats": ["Always low against daily measurement in the three streams of the 2018 "
+                         "study (S3)."]},
+            {"id": "filled", "label": "Station series · gaps filled", "type": "model output",
+             "region": "mon",
+             "what": "Each station's series over the whole period, its months without samples "
+                     "computed.", "caveats": ["Most stations have no continuous record (S5)."]},
+            {"id": "id15", "label": "ID15 catchment map", "type": "construction", "region": "map",
+             "what": "Sub-catchments of about 15 km², drawn so that land can be assigned to "
+                     "stations and lakes.", "caveats": []},
+            {"id": "measured", "label": "Load from 'measured' land", "type": "result",
+             "region": "map",
+             "what": "The station loads, standing for all the land drawn upstream of the "
+                     "stations.",
+             "caveats": ["Nothing was sampled on that land itself (S4)."]},
+            {"id": "dkmodel", "label": "DK-model (GEUS)", "type": "model output", "region": "model",
+             "what": "The national hydrological model's runoff.", "caveats": []},
+            {"id": "runoff_u", "label": "Runoff · land without stations", "type": "model output",
+             "region": "model",
+             "what": "Monthly runoff for ungauged land, from the DK-model, corrected by region.",
+             "caveats": ["Where its error differs from gauged land cannot be identified (S6)."]},
+            {"id": "maps", "label": "Soil, farming, drainage · weather", "type": "record",
+             "region": "model",
+             "what": "The regression's explanatory variables: soil type, share cultivated, share "
+                     "drained, monthly rain and temperature.", "caveats": []},
+            {"id": "farm", "label": "Farm nitrogen accounts", "type": "construction",
+             "region": "model",
+             "what": "Nitrogen applied minus nitrogen harvested, computed from norms, not "
+                     "measured.", "caveats": []},
+            {"id": "surplus", "label": "National field surplus · one number a year",
+             "type": "construction", "region": "model",
+             "what": "The farm accounts as one national figure per year, the same for every "
+                     "ungauged catchment.",
+             "caveats": ["Carries the trend over time, not the differences between places "
+                         "(S8)."]},
+            {"id": "conc_u", "label": "Modelled concentration · land without stations",
+             "type": "model output", "region": "model",
+             "what": "The regression's monthly nitrogen concentration for each ungauged "
+                     "sub-catchment.",
+             "caveats": ["The fit explains less than half of what it was fitted to (S7)."]},
+            {"id": "conc_c", "label": "Concentration scaled to the region's stations",
+             "type": "model output", "region": "model",
+             "what": "The modelled concentration multiplied, month by month, by the ratio of "
+                     "measured to modelled at the region's full-series stations.",
+             "caveats": ["Follows the measured land's trend by construction (S9)."]},
+            {"id": "lakes", "label": "Lakes, streams, wetlands · literature rates",
+             "type": "construction", "region": "model",
+             "what": "Areas of water where nitrogen is removed, with removal rates per hectare "
+                     "averaged from the literature.", "caveats": []},
+            {"id": "net_u", "label": "Net load · land without stations", "type": "model output",
+             "region": "model", "what": "Runoff times concentration, minus the calculated "
+                                        "removal.",
+             "caveats": ["No numeric uncertainty is published for the removal (S10)."]},
+            {"id": "registers", "label": "Point-source registers", "type": "record",
+             "region": "reg",
+             "what": "Metered effluent from plants and industry; unit loads for scattered "
+                     "housing, overflows and some fish farms.",
+             "caveats": ["Part measured, part modelled (S11)."]},
+            {"id": "points", "label": "Point-source load", "type": "result", "region": "reg",
+             "what": "Nitrogen from the registered outlets.", "caveats": []},
+            {"id": "total", "label": "Land-based total", "type": "result", "region": "acc",
+             "what": "Measured load + modelled net load + direct discharges, per coastal section "
+                     "and year.",
+             "caveats": ["The only published uncertainty found is for the total, in the 2012 "
+                         "note (S12)."]},
+            {"id": "norm", "label": f"Normalised total 2016-18 · {land_t:,.0f} t",
+             "type": "model output", "region": "acc",
+             "what": "The yearly totals recomputed at average runoff, averaged over three years.",
+             "caveats": ["Not what arrived in any year (S13)."]},
+            {"id": "diffuse", "label": "Diffuse load", "type": "result", "region": "res",
+             "what": "The total minus the registered point sources: everything in the water that "
+                     "no register accounts for.",
+             "caveats": ["'Diffuse' means 'not in a register', not 'from fields' (S14)."]},
+            {"id": "natural", "label": "Near-natural streams", "type": "record", "region": "res",
+             "what": "Concentrations measured in a few streams with little farming, the "
+                     "stand-in for land without people.",
+             "caveats": ["Fewer streams in 2011 than in 2004-5, which weakens the statistics, "
+                         "by their own note."]},
+            {"id": "background", "label": "Natural background", "type": "model output",
+             "region": "res",
+             "what": "Background concentrations spread over the country on a grid by landscape "
+                     "type, times runoff.",
+             "caveats": ["Probably raised by nitrogen from the air, by their own note (S15)."]},
+            {"id": "agri", "label": "Agriculture", "type": "result", "region": "res",
+             "what": "The diffuse load minus the background: the remainder, named agriculture.",
+             "caveats": ["Holds the errors of every step before it and every source with no "
+                         "register (S16)."]},
+            {"id": "share", "label": f"{agri}% · agriculture's share", "type": "result",
+             "region": "res",
+             "what": "Agriculture over the normalised land-based total, as printed in Tabel 1 of "
+                     "Miljøstyrelsen's memo of 24 January 2023.",
+             "caveats": [f"The final water plans print {dk(vp3['landbrug'][4])}% for the same "
+                         f"years (R2).",
+                         f"Deposition from the air is not in the denominator; with it, "
+                         f"{r1a}% (R1a)."]},
+        ],
+        edges=[
+            {"step": "S1", "label": "sampled", "from": ["stream"], "to": "samples"},
+            {"step": "S2", "label": "level to flow", "from": ["levels"], "to": "discharge"},
+            {"step": "S3", "label": "straight line between samples",
+             "from": ["samples", "discharge"], "to": "stationload"},
+            {"step": "S5", "label": "gaps filled", "from": ["stationload"], "to": "filled"},
+            {"step": "S4", "label": "land assigned to stations", "from": ["filled", "id15"],
+             "to": "measured"},
+            {"step": "S6", "label": "model runoff", "from": ["dkmodel", "id15"], "to": "runoff_u"},
+            {"step": "S8", "label": "one surplus for every field", "from": ["farm"],
+             "to": "surplus"},
+            {"step": "S7", "label": "regression", "from": ["maps", "surplus"], "to": "conc_u"},
+            {"step": "S9", "label": "scaled to stations", "from": ["conc_u", "filled"],
+             "to": "conc_c"},
+            {"step": "S10", "label": "minus removal", "from": ["conc_c", "runoff_u", "lakes"],
+             "to": "net_u"},
+            {"step": "S11", "label": "registered outlets", "from": ["registers"], "to": "points"},
+            {"step": "S12", "label": "sum", "from": ["measured", "net_u", "points"], "to": "total"},
+            {"step": "S13", "label": "as if runoff were average", "from": ["total"], "to": "norm"},
+            {"step": "S14", "label": "minus point sources", "from": ["norm", "points"],
+             "to": "diffuse"},
+            {"step": "S15", "label": "background grid", "from": ["natural"], "to": "background"},
+            {"step": "S16", "label": "minus background", "from": ["diffuse", "background"],
+             "to": "agri"},
+            {"step": "S17", "label": "divided by the total", "from": ["agri", "norm"],
+             "to": "share"},
+        ])
+
     if MISSING:
         print(f"{len(MISSING)} quotation(s) not found in their pinned documents - nothing "
               "written:")
