@@ -2085,6 +2085,104 @@ function nvLinSaid(said) {
   return h;
 }
 const nvLinNum = (N, v) => N.unit === "%" ? (v === null || v === undefined ? "…" : `${nvFmt(v)}%`) : nvSigned(v);
+/* A number without a hand-made record still has a chain: the build list says which
+   script writes its file and what that script reads. The flows store holds each file
+   and each script once (scripts/flows_store.py); walking it from the number's file
+   draws the chain in the same Graph and Steps views - the construction covering a step
+   as its theory, the statement computing the field as its code, an open end as one. */
+let flStore = null;
+const flCache = {}, nvAuto = {}, nvAutoOpen = {};
+// a stable id for a file or step, so a graph unfolded further keeps the same boxes
+const flId = key => { let h = 5381; for (const ch of key) h = ((h * 33) ^ ch.charCodeAt(0)) >>> 0; return "n" + h.toString(36); };
+async function flFetch(keys) {
+  if (!flStore) flStore = new StaticStore(DOCS_DIR + "static-async-data");
+  const want = [...new Set(keys)].filter(k => !(k in flCache));
+  if (want.length) Object.assign(flCache, await flStore.getMany("flows", want));
+  return keys.map(k => flCache[k]);
+}
+const nvLeafFiles = e => [...new Set((e.src[0] === "leaf" ? [e.src] : nvLeaves(e.src, []).filter(n => n[0] === "leaf")).map(n => n[1]))];
+async function nvFlowLoad(e) {
+  let frontier = nvLeafFiles(e).map(f => "F:" + f);
+  for (let d = 0; frontier.length && d < 16; d++) {
+    const got = await flFetch(frontier), next = [];
+    frontier.forEach((k, i) => {
+      const r = got[i];
+      if (!r) return;
+      if (k.startsWith("F:") && r.by) next.push("S:" + r.by);
+      if (k.startsWith("S:")) next.push(...(r.in || []).map(f => "F:" + f));
+    });
+    frontier = [...new Set(next)].filter(k => !(k in flCache));
+  }
+}
+const FL_TYPE = { raw: "record", register: "record", pinned: "record", sibling: "record", derived: "result", open: "construction" };
+const FL_WHAT = { raw: "Raw data, as downloaded.", register: "A register kept by hand in this project.",
+  pinned: "A published document, pinned by its hash.", sibling: "Read in place from a sibling project.",
+  derived: "Written by a script of this project.",
+  open: "No script in this project writes this file, so the chain stops here: an open end." };
+function flChain(idx, e, open) {
+  const K = idx.constructions || {}, nodes = [], edges = [], steps = [], regions = {}, ends = [];
+  const id = flId;
+  const short = f => f.split("/").slice(-2).join("/");
+  const kid = k => "K_" + k.replace(/[^A-Za-z0-9]/g, "_");
+  const numK = (e.constructions || []).filter(k => K[k]);
+  nodes.push({ id: "num", label: `${nvFmt(e.value)} · this number`, type: "result", region: "",
+    what: (e.field && e.field.is) || `${nvKindLabel(e)}.`,
+    caveats: numK.map(k => K[k].not_licensed).filter(Boolean).map(x => `Not licensed: ${x}`) });
+  const seen = new Set();
+  const walk = (f, depth) => {
+    if (seen.has(f) || depth > 16) return;
+    seen.add(f);
+    const r = flCache["F:" + f] || { k: "open" };
+    // a file made by another script is drawn closed until it is clicked open
+    const closed = !!r.by && depth > 0 && !(open && open.has(f));
+    const n = { id: id("F:" + f), label: short(f) + (closed ? " ▸" : ""), type: FL_TYPE[r.k] || "result", region: "",
+      file: f, closed,
+      what: FL_WHAT[r.k] + (r.reg ? ` Registered as ${r.reg[1]} (${r.reg[0]}).` : "") + (r.doc ? ` ${r.doc[0]}.` : ""),
+      caveats: [], link: r.doc ? r.doc[1] : (f.startsWith("/") ? "" : `${NV_GH}main/${f}`), linkText: r.doc ? "the document" : f };
+    nodes.push(n);
+    if (closed) { n.what += ` ${r.k === "raw" ? "Downloaded" : "Written"} by ${r.by}. Click it to unfold how.`; return; }
+    if (!r.by) {
+      ends.push({ branch: "", type: r.k === "open" ? "open end" : "record", what: `\`${f}\` - ${FL_WHAT[r.k]}`, record: null,
+                  author: r.k === "open" ? "nobody in this project" : "its source", steps: [] });
+      return;
+    }
+    const s = r.by, S = flCache["S:" + s] || { in: [], K: [] }, sid = id("S:" + s + ">" + f);
+    const ks = [...(r.K || []), ...(S.K || [])].filter(k => K[k]);
+    const own = nvLeafFiles(e).includes(f) && e.src[0] === "leaf" && r.impl ? r.impl[nvGeneral(e.src[2])] : null;
+    if (ks.length) {
+      const k0 = ks[0], rid = kid(k0);
+      (regions[rid] = regions[rid] || { id: rid, title: K[k0].title || k0, edges: [],
+        theory: [K[k0].what, K[k0].model].filter(Boolean).join(" "),
+        caveats: [...(K[k0].gaps || []), ...(K[k0].not_licensed ? ["Not licensed: " + K[k0].not_licensed] : [])] }).edges.push(sid);
+    }
+    edges.push({ step: sid, noid: true, label: s.split("/").pop(), from: (S.in || []).map(x => id("F:" + x)), to: n.id });
+    steps.push({ id: sid, kind: r.k === "raw" ? "selection" : "computation", branch: null,
+      title: `${s} ${r.k === "raw" ? "downloads" : "writes"} ${short(f)}`,
+      imposes: (ks.length ? (K[ks[0]].what || "") : "No construction is declared for this step.")
+        + ((S.text || []).length ? ` It also reads ${S.text.length} file(s) for its page's words, not as data: ${S.text.map(short).join(", ")}.` : ""),
+      inputs: (S.in || []).map(short),
+      code: own ? [{ file: s, first: own[0], last: own[1], text: own[2] }] : [],
+      said: [], why: { reason: ks.length && K[ks[0]].model ? K[ks[0]].model : "no reason recorded", ref: null,
+                       author: ks.length ? ks.join(", ") : "not recorded" },
+      alternative: null, tested: "not tested",
+      settle: S.unres ? `The scan could not read ${S.unres} file path(s) this script builds at run time, so it may read more than is drawn here.` : null,
+      outputs: {} });
+    for (const x of S.in || []) walk(x, depth + 1);
+  };
+  const files = nvLeafFiles(e);
+  for (const f of files) walk(f, 0);
+  edges.push({ step: "read", noid: true, label: e.src[0] === "leaf" ? `field ${e.src[2]}` : "calculated on the page",
+               from: files.map(f => id("F:" + f)), to: "num" });
+  steps.push({ id: "read", kind: e.src[0] === "leaf" ? "selection" : "functional form",
+    title: e.src[0] === "leaf" ? `The number is the field ${e.src[2]}` : "The number is arithmetic on the page, over fields of these files",
+    imposes: e.src[0] === "leaf" ? `Read from \`${e.src[1]}\`.` : "See its Calculation view for the arithmetic.",
+    inputs: [], code: [], said: [], why: { reason: "no reason recorded", ref: null, author: "not recorded" },
+    alternative: null, tested: "not tested", settle: null, outputs: {} });
+  return { auto: true, number: { says: `${nvFmt(e.value)}: ${(e.field && e.field.is) || nvKindLabel(e)}`, value: e.value, unit: "", path: e.src[2] || "" },
+    counted_as_one: [], records: [], steps: steps.reverse(), ends, notes: {}, spread: null, robustness: [], not_on_this_chain: [],
+    graph: { regions: Object.values(regions), nodes, edges } };
+}
+const nvGeneral = p => String(p).split(".").map(x => /^\d+$/.test(x) ? "*" : x).join(".");
 /* The same record two ways, switched by a button and remembered. "Steps" is the
    chain read in order. "Graph" is the owner's model of it: results as nodes, each
    step as the edge that computes one result from others, and the theories the steps
@@ -2128,9 +2226,15 @@ function nvLinGraphSrc(L) {
       const [o, c] = NV_NODE_SHAPE[n.type] || NV_NODE_SHAPE.result;
       lines.push(`    N_${n.id}${o}${q(n.label)}${c}`);
     }
-    for (const e of G.edges.filter(e => r.edges.includes(e.step))) lines.push(`    E_${e.step}["${e.step} · ${q(e.label)}"]`);
+    for (const e of G.edges.filter(e => r.edges.includes(e.step))) lines.push(`    E_${e.step}["${e.noid ? "" : e.step + " · "}${q(e.label)}"]`);
     lines.push("  end");
   }
+  const inR = new Set(G.regions.map(r => r.id)), inRE = new Set(G.regions.flatMap(r => r.edges));
+  for (const n of G.nodes.filter(n => !inR.has(n.region))) {
+    const [o, c] = NV_NODE_SHAPE[n.type] || NV_NODE_SHAPE.result;
+    lines.push(`  N_${n.id}${o}${q(n.label)}${c}`);
+  }
+  for (const e of G.edges.filter(e => !inRE.has(e.step))) lines.push(`  E_${e.step}["${e.noid ? "" : e.step + " · "}${q(e.label)}"]`);
   for (const e of G.edges) {
     for (const f of e.from) lines.push(`  N_${f} --> E_${e.step}`);
     lines.push(`  E_${e.step} --> N_${e.to}`);
@@ -2152,7 +2256,7 @@ function nvLinGraphSrc(L) {
 function nvLinGraphDetail(L, key) {
   const G = L.graph;
   const nodeLink = id => { const n = G.nodes.find(x => x.id === id); return `<a href="#" data-lin-open="N_${nvEsc(id)}">${nvEsc(n ? n.label : id)}</a>`; };
-  const edgeLink = e => `<a href="#" data-lin-open="E_${nvEsc(e.step)}">${nvEsc(e.step)} · ${nvEsc(e.label)}</a>`;
+  const edgeLink = e => `<a href="#" data-lin-open="E_${nvEsc(e.step)}">${e.noid ? "" : nvEsc(e.step) + " · "}${nvEsc(e.label)}</a>`;
   const regLink = r => r ? `<a href="#" data-lin-open="R_${nvEsc(r.id)}">${nvEsc(r.title)}</a>` : "";
   const cav = xs => xs && xs.length ? `<h5>Caveats</h5><ul class="small">${xs.map(x => `<li>${nvCode(x)}</li>`).join("")}</ul>` : "";
   if (key.startsWith("E_")) {
@@ -2171,8 +2275,11 @@ function nvLinGraphDetail(L, key) {
   if (!n) return "";
   const [c, lab] = NV_NODE_TYPE[n.type] || ["res", n.type];
   const made = G.edges.filter(e => e.to === n.id), used = G.edges.filter(e => e.from.includes(n.id));
-  return `<h4>${nvEsc(n.label)}</h4><p><span class="lin-end ${c}">${nvEsc(lab)}</span> <span class="small muted">in ${regLink(G.regions.find(r => r.id === n.region))}</span></p>`
-    + `<p>${nvCode(n.what)}</p>${cav(n.caveats)}`
+  const reg = G.regions.find(r => r.id === n.region);
+  return `<h4>${nvEsc(n.label)}</h4><p><span class="lin-end ${c}">${nvEsc(lab)}</span>${reg ? ` <span class="small muted">in ${regLink(reg)}</span>` : ""}</p>`
+    + `<p>${nvCode(n.what)}</p>`
+    + (n.link ? `<p class="small"><a class="ref" href="${nvEsc(n.link)}">${nvEsc(n.linkText || n.link)}</a></p>` : "")
+    + cav(n.caveats)
     + `<p class="small"><b>Made by:</b> ${made.length ? made.map(edgeLink).join(", ") : "nothing on this chain: it is where the chain starts"}</p>`
     + (used.length ? `<p class="small"><b>Used by:</b> ${used.map(edgeLink).join(", ")}</p>` : "");
 }
@@ -2189,9 +2296,21 @@ function nvLinWire(root) {
   }
 }
 /* What was clicked opens beside the diagram: under it in the side panel, and, when the
-   diagram is enlarged, in the enlarged view's own pane on the right. */
+   diagram is enlarged, in the enlarged view's own pane on the right. A closed file in a
+   drawn chain unfolds instead: its script and what that reads are added, and the
+   diagram is drawn again with the same boxes. */
 function nvLinShow(key) {
   if (!nvLinCur) return;
+  if (nvLinCur.auto && key.startsWith("N_")) {
+    const n = nvLinCur.graph.nodes.find(x => x.id === key.slice(2));
+    if (n && n.closed) {
+      (nvAutoOpen[nvState.id] = nvAutoOpen[nvState.id] || new Set()).add(n.file);
+      const z = document.querySelector(".mmd-zoom [data-z=close]");
+      if (z) z.click();
+      nvOpen(nvState.id, "lineage", false).then(() => nvLinShow(key));
+      return;
+    }
+  }
   const html = nvLinGraphDetail(nvLinCur, key) || `<p class="muted small">Nothing recorded for ${nvEsc(key)}.</p>`;
   const d = document.querySelector("#justify .lin-detail");
   if (d) d.innerHTML = html;
@@ -2223,14 +2342,16 @@ document.addEventListener("click", e => {
   if (k) nvLinShow(k.dataset.linKey);
 });
 function nvLineageHTML(e) {
-  const L = nvLin[e.lineage];
-  if (!L) return `<p class="simflag">The record of how this number was made could not be loaded (<code>docs/${nvEsc(e.lineage)}</code>).</p>`;
+  const L = e.lineage ? nvLin[e.lineage] : nvAuto[nvState.id];
+  if (!L) return `<p class="simflag">The record of how this number was made could not be loaded${e.lineage ? ` (<code>docs/${nvEsc(e.lineage)}</code>)` : ""}.</p>`;
   nvLinCur = L;
   const N = L.number, sp = L.spread || {};
   let h = `<p>${nvCode(N.says)}</p>` + (N.note ? `<p class="small">${nvCode(N.note)}</p>` : "")
-    + `<p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
-    + `<a href="${NV_GH}main/docs/${nvEsc(e.lineage)}"><code>docs/${nvEsc(e.lineage)}</code></a>. It looks backward from `
-    + `<code>${nvEsc(N.path)}</code> to the records.</p>`;
+    + (L.auto ? `<p class="muted small">Drawn from the build list - which script writes each file, and what it reads - not written by hand. `
+        + `The theory of a step is the construction that covers it; the code is the statement that computes the field.</p>`
+      : `<p class="muted small">Recorded by <code>${nvEsc(N.producer)}</code> as it ran, in `
+        + `<a href="${NV_GH}main/docs/${nvEsc(e.lineage)}"><code>docs/${nvEsc(e.lineage)}</code></a>. It looks backward from `
+        + `<code>${nvEsc(N.path)}</code> to the records.</p>`);
   const mode = L.graph ? nvLinMode() : "steps";
   if (L.graph)
     h += `<div class="lin-mode" role="group" aria-label="How to show it">`
@@ -2301,7 +2422,7 @@ function nvLineageHTML(e) {
 }
 function nvApplies(e, view) {
   const calc = nvKids(e.src).length > 0;
-  if (view === "lineage") return !!e.lineage;
+  if (view === "lineage") return !!e.lineage || (!!nvStore && nvLeafFiles(e).length > 0);
   if (view === "what" || view === "construction") return true;
   if (view === "graph" || view === "depth" || view === "calc") return calc;
   // the page generator's printing line is not how a number was made; the script
@@ -2501,7 +2622,10 @@ async function nvOpen(id, view, push) {
     .map(([v, lab]) => `<button type="button" data-view="${v}" aria-selected="${v === view}">${nvEsc(lab)}</button>`).join("");
   tabs.hidden = false;
   const body = panel.querySelector(".justify-body");
-  if (view === "lineage") await nvLinLoad(e.lineage);
+  if (view === "lineage" && e.lineage) await nvLinLoad(e.lineage);
+  if (view === "lineage" && !e.lineage) {
+    try { await nvFlowLoad(e); nvAuto[id] = flChain(idx, e, nvAutoOpen[id]); } catch (err) { nvAuto[id] = null; }
+  }
   body.innerHTML = (nvState.stack.length ? `<button type="button" class="back">← back</button>` : "") + nvRender(idx, id, view);
   panel.hidden = false;
   body.scrollTop = 0;

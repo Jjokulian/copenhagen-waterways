@@ -429,10 +429,10 @@
     "scripts/live.py"
    ],
    "confirmed": {
-    "by": "Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13)",
+    "by": "Claude (live.py: render_sources also publishes the flows store, each data file and script once; how a quotation is read and checked is unchanged; 2026-09-13)",
     "on": "2026-09-13",
     "saw": {
-     "scripts/live.py": "2bb3ae52245607d7"
+     "scripts/live.py": "14bb7366109ef916"
     }
    }
   },

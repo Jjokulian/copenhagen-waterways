@@ -1169,6 +1169,8 @@ def render_sources(idx=None):
     idx = idx or load_index()
     tt = numbers_store.tables_and_text(idx["entries"])
     numbers_store.publish(idx, tt)
+    import flows_store          # each data file and script once: how every number was made
+    flows_store.publish(idx)
     w = numbers_store.sources_page(idx, tt)
     _constructions(w, idx)
     tmp = f"{SOURCES_MD}.{os.getpid()}"
