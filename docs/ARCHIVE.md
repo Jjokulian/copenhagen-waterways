@@ -1316,7 +1316,7 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Why it was retired:** What each registration asks was not recorded for the entries in the tier, and the tier is a keyword match on access text; some of its entries sit behind Copernicus credentials this project already holds.
 
-**Replaced by:** [`C-DQ-Q-ACCOUNT`](CLAIMS.md#C-DQ-Q-ACCOUNT), [`C-DQ-Q-UNCOUNTED`](CLAIMS.md#C-DQ-Q-UNCOUNTED) — each opens what it rests on.
+**Replaced by:** [`C-DQ-Q-ACCOUNT`](CLAIMS.md#C-DQ-Q-ACCOUNT), [`C-DQ-Q-CMEMS`](CLAIMS.md#C-DQ-Q-CMEMS), [`C-DQ-Q-CDSE`](CLAIMS.md#C-DQ-Q-CDSE) — each opens what it rests on.
 
 <a id="C-DQ-OLD-FRICTION"></a>
 ### The queue is the same information as the register, sorted by friction, and its last tier is what is genuinely closed, behind free registrations nobody has made.
@@ -1372,6 +1372,50 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** No script in this repository calls an orthophoto WMS, and no record of a check was found; the token is used for the elevation model's WCS.
 
 **Replaced by:** [`C-DQ-Q-DF`](CLAIMS.md#C-DQ-Q-DF) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-COUNT"></a>
+### The queue read two of the three register files, and said the third was in no tier.
+
+`C-DQ-OLD2-COUNT` · retired 2026-09-13 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-COUNT">`data_sources_3.json`, also part of the register, is not read by this queue, so its entries are in none of the tiers below.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-COUNT "What this claim rests on")</sup>
+
+**Why it was retired:** The queue now reads all three register files.
+
+**Replaced by:** [`C-DQ-Q-COUNT`](CLAIMS.md#C-DQ-Q-COUNT) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-HELD"></a>
+### What the held tier held, before the Copernicus credentials and the entries on disk were counted.
+
+`C-DQ-OLD2-HELD` · retired 2026-09-13 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-HELD">*An ODA topic, or a service behind the Dataforsyningen token: behind a credential this project holds. Some are already on disk: the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-HELD "What this claim rests on")</sup>
+
+**Why it was retired:** The held tier now includes the Copernicus credentials and the entries on disk.
+
+**Replaced by:** [`C-DQ-Q-HELD`](CLAIMS.md#C-DQ-Q-HELD) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-TIERS"></a>
+### How the queue read an entry's tier, naming only ODA and Dataforsyningen as held.
+
+`C-DQ-OLD2-TIERS` · retired 2026-09-13 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-TIERS">Each entry's tier is read from its access text by keyword, in this order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry, and the note under the credentials shows where they go wrong for the Copernicus entries.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-TIERS "What this claim rests on")</sup>
+
+**Why it was retired:** The queue now also counts entries on disk and the Copernicus products as held, tested first.
+
+**Replaced by:** [`C-DQ-Q-TIERS`](CLAIMS.md#C-DQ-Q-TIERS) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-UNCOUNTED"></a>
+### The queue counted only two credentials as held while its fetch scripts read two Copernicus credentials, and said so.
+
+`C-DQ-OLD2-UNCOUNTED` · retired 2026-09-13 from [DATA_QUEUE.md](DATA_QUEUE.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-UNCOUNTED">The queue counts only these as held. This project's fetch scripts also read Copernicus Data Space client credentials (`scripts/fetch_satellite.py`) and Copernicus Marine credentials (`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are counted in tiers that say otherwise: `CDSE-SENTINEL1` `CMEMS-BAL-BGC` `CMEMS-BAL-PHY` `CMEMS-NWS-WAV` as *account*; `CMEMS-BAL-WAV` as *blocked*.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-UNCOUNTED "What this claim rests on")</sup>
+
+**Why it was retired:** The queue now counts the Copernicus Marine and Copernicus Data Space credentials as held, so there is no longer a gap to note.
+
+**Replaced by:** [`C-DQ-Q-CMEMS`](CLAIMS.md#C-DQ-Q-CMEMS), [`C-DQ-Q-CDSE`](CLAIMS.md#C-DQ-Q-CDSE) — each opens what it rests on.
 
 ## DATA_SOURCES.md
 
@@ -3929,6 +3973,39 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** That Landbrugsstyrelsen holds the agreements is in no register entry or pinned document this project holds; the contracts are recorded as private.
 
 **Replaced by:** [`C-DQ-W-SLURRY`](CLAIMS.md#C-DQ-W-SLURRY) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-S-CVR"></a>
+### The CVR slot said the sibling project held records for part of the join and the bulk register would complete it.
+
+`C-DQ-OLD2-S-CVR` · retired 2026-09-13 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-S-CVR">Turning a CVR number into who and where, for the manure surplus join. The sibling project danish-livestock holds CVR records for part of it; the bulk register would complete it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-S-CVR "What this claim rests on")</sup>
+
+**Why it was retired:** Counted on 2026-09-13, the sibling project holds an answered record for every CVR number behind a livestock site and for all but one field-parcel operator; the bulk register would add only companies outside these joins.
+
+**Replaced by:** [`C-DQ-S-CVR`](CLAIMS.md#C-DQ-S-CVR) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-U-TIERS"></a>
+### What the page's tiers meant, before the Copernicus credentials and the entries on disk were counted as held.
+
+`C-DQ-OLD2-U-TIERS` · retired 2026-09-13 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-U-TIERS">*Held* means behind a credential this project holds, and some of those topics are already on disk; *account* means a registration, an account, a login or a token the fetch queue does not count as held; *blocked* means the access text says it is closed or unverified, or matches no tier word.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-U-TIERS "What this claim rests on")</sup>
+
+**Why it was retired:** The held tier now names the four credentials and the entries on disk.
+
+**Replaced by:** [`C-DQ-U-TIERS`](CLAIMS.md#C-DQ-U-TIERS) — each opens what it rests on.
+
+<a id="C-DQ-OLD2-W-CVR"></a>
+### The CVR slot said how the bulk register is reached was not on file.
+
+`C-DQ-OLD2-W-CVR` · retired 2026-09-13 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `1c0840a`
+
+> <span class="claim" data-claim="C-DQ-OLD2-W-CVR">Not recorded: the source register has no entry for it, so how the bulk register is reached, and on what terms, is not on file.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD2-W-CVR "What this claim rests on")</sup>
+
+**Why it was retired:** The sibling project's notes on the registers, now pinned, record it: credentials on written application, and a keyless public site one company at a time.
+
+**Replaced by:** [`C-DQ-W-CVR`](CLAIMS.md#C-DQ-W-CVR) — each opens what it rests on.
 
 ## INCIDENCE.md
 

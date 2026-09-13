@@ -57,11 +57,15 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from common import DERIVED, ROOT, log, write_doc
+from common import DERIVED, ROOT, log, write_doc, write_json
 from fetch_queue import BAD_REFS, classify, ident, load, ref
 import live
 
 DROPIN = os.path.join(ROOT, "data", "dropin")
+# the sibling project's data, read in place (docs/data-sources.md there says where each
+# register came from)
+SIB = os.environ.get("DANISH_LIVESTOCK", os.path.join(os.path.dirname(ROOT), "danish-livestock", "data"))
+UNLOCK_JSON = os.path.join(DERIVED, "unlock.json")
 DOC = os.path.join(ROOT, "docs", "IF_YOU_HAVE_THE_DATA.md")
 PAGE = "docs/IF_YOU_HAVE_THE_DATA.md"
 
@@ -132,6 +136,27 @@ SLOTS = {
         "consumers": ["scripts/depth_clock.py"],
     },
 }
+
+
+def sibling_facts():
+    """How far the sibling project's CVR records cover the businesses in this project's
+    joins, counted from its files and written to data/derived/unlock.json. Of each CVR
+    record only the number and whether the register answered are kept - no company name,
+    address or person."""
+    sites = json.load(open(os.path.join(SIB, "chr_2024.json"), encoding="utf-8"))
+    herd = {str(r.get("CVRNR")) for r in sites if r.get("CVRNR")}
+    land = set(json.load(open(os.path.join(SIB, "land_by_cvr.json"), encoding="utf-8")))
+    answered = set()
+    with open(os.path.join(SIB, "cvr_raw.jsonl"), encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            if r.get("ok"):
+                answered.add(str(r["cvr"]))
+    write_json(UNLOCK_JSON, {
+        "_what": "How many CVR numbers in the sibling project's herd-register and "
+                 "field-parcel files have an answered record in its CVR extract.",
+        "cvr": {"chr_cvrs": len(herd), "chr_with_record": len(herd & answered),
+                "land_cvrs": len(land), "land_with_record": len(land & answered)}})
 
 
 def slot_path(sid):
@@ -278,7 +303,16 @@ def cmd_doc():
             raise SystemExit(f"the page says {sid} is in the {t} tier and it no longer is "
                              "- reword its slot")
     C = live.claim
-    files = " and ".join(f"`{f}`" for f in FILES)
+    files = ", ".join(f"`{f}`" for f in FILES[:-1]) + f" and `{FILES[-1]}`"
+    sibling_facts()
+    uf = J("unlock.json")["cvr"]
+    # the section on what is held names which script reads which sibling file: it
+    # refuses to stand once a script no longer names its file
+    for script, name in (("livestock_baskets.py", "chr_2024"), ("socialcontext.py", "chr_2024"),
+                         ("socialcontext.py", "cvr_raw"), ("socialcontext.py", "cvr_financials"),
+                         ("socialcontext.py", "land_by_cvr")):
+        if name not in open(os.path.join(ROOT, "scripts", script), encoding="utf-8").read():
+            raise SystemExit(f"the page says {script} reads {name}, and it no longer names it")
     ler_hours = _reading("LER-GRAVE", 2, "Ledningsejere har 2 timer til at besvare din søgning")
     drain_res = _reading("KP-DRAENKORT-DCA135", 30.4,
                          "Kortet har en opløsning på 30,4 x 30,4 meter")
@@ -316,11 +350,18 @@ def cmd_doc():
                      "distributed was not found."),
         },
         "CVR-BULK": {
-            "unlocks": C("C-DQ-S-CVR", "Turning a CVR number into who and where, for the "
-                         "manure surplus join. The sibling project danish-livestock holds CVR "
-                         "records for part of it; the bulk register would complete it."),
-            "who": C("C-DQ-W-CVR", "Not recorded: the source register has no entry for it, so "
-                     "how the bulk register is reached, and on what terms, is not on file."),
+            "unlocks": C("C-DQ-S-CVR", "Turning a CVR number into who and where. For this "
+                         "project's joins the register's own records are already held: the "
+                         "sibling project danish-livestock has an answered record for "
+                         f"{uf['chr_with_record']:,} of the {uf['chr_cvrs']:,} CVR numbers behind a "
+                         f"livestock site and {uf['land_with_record']:,} of the {uf['land_cvrs']:,} "
+                         "field-parcel operators, and `scripts/socialcontext.py` keeps four company "
+                         "fields from each record and no person. The bulk register would add the "
+                         "companies outside these joins."),
+            "who": C("C-DQ-W-CVR", "Erhvervsstyrelsen. Its documented bulk API issues "
+                     "credentials on written application; the register's own public site answers "
+                     "one company at a time without a key, which is how the sibling project "
+                     "fetched these, as its notes on the registers record."),
         },
         "ODA-MFS-FISK": {
             "unlocks": C("C-DQ-S-MFS", "Contaminants measured in fish tissue: the ODA topic "
@@ -463,6 +504,29 @@ def cmd_doc():
     w()
     w("---")
     w()
+    w("## Already held")
+    w()
+    w(C("C-DQ-H-INTRO", "Some of what this page once listed as out of reach is held. The "
+        "sibling project danish-livestock fetched the herd, company and field-parcel registers "
+        "from their open, first-party sources, and this project reads its files in place:"))
+    w()
+    w("- " + C("C-DQ-H-CHR", "`chr_2024.json` - every livestock site in the herd register, with "
+               "the business that runs it, its species and its animal units; read by "
+               "`scripts/livestock_baskets.py` and `scripts/socialcontext.py`"))
+    w("- " + C("C-DQ-H-CVR", "`cvr_raw.jsonl` - the CVR register's record for each of those "
+               "businesses; `scripts/socialcontext.py` keeps four company fields and no person"))
+    w("- " + C("C-DQ-H-ACCOUNTS", "`cvr_financials.json` - the annual accounts those businesses "
+               "filed; read by `scripts/socialcontext.py`"))
+    w("- " + C("C-DQ-H-LAND", "`land_by_cvr.json` - declared field-parcel hectares per "
+               "business, from the field-parcel register; read by `scripts/socialcontext.py`"))
+    w()
+    w(C("C-DQ-H-MANURE", "`scripts/manure.py` fetches the herd and field-parcel registers "
+        "itself, from the same open source the sibling project found.") + " " +
+      C("C-DQ-H-COPERNICUS", "The Copernicus Marine and Copernicus Data Space credentials are "
+        "held as well, and the fetch queue counts their entries as held, in the table below."))
+    w()
+    w("---")
+    w()
     w("## 1. Slots — hand these in mechanically")
     w()
     consumed = [f"`{sl['file']}`" for sl in SLOTS.values() if sl["consumers"]]
@@ -501,10 +565,11 @@ def cmd_doc():
     w(C("C-DQ-U-TABLE", f"Every entry of {files} that the fetch queue does not class as open, "
         "ordered by tier, then by how many hypotheses the entry names, with every hypothesis "
         "it names.") + " " +
-      C("C-DQ-U-TIERS", "*Held* means behind a credential this project holds, and some of "
-        "those topics are already on disk; *account* means a registration, an account, a login "
-        "or a token the fetch queue does not count as held; *blocked* means the access text "
-        "says it is closed or unverified, or matches no tier word."))
+      C("C-DQ-U-TIERS", "*Held* means behind a credential this project holds - ODA, "
+        "Dataforsyningen, Copernicus Marine, Copernicus Data Space - or already on this "
+        "machine; *account* means a registration, an account, a login or a token the fetch "
+        "queue does not count as held; *blocked* means the access text says it is closed or "
+        "unverified, or matches no tier word."))
     w()
     w("| tier | source | serves | what it is |")
     w("|---|---|---|---|")

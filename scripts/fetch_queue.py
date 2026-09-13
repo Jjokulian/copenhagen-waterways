@@ -81,7 +81,7 @@ def ref(h):
     except Exception:
         BAD_REFS.append(h)
         return f"`{h}`"
-FILES = ["data_sources.json", "data_sources_2.json"]
+FILES = ["data_sources.json", "data_sources_2.json", "data_sources_3.json"]
 
 # Credentials this project already has working. A source behind one of these is
 # not blocked, it is queued.
@@ -90,6 +90,12 @@ HELD = {
             "working in scripts/oda_client.py"),
     "dataforsyningen": ("Dataforsyningen", "API token on this machine, orthophoto "
                         "WMS verified"),
+    "copernicus-marine": ("Copernicus Marine", "account credentials in the home directory, "
+                          "read by scripts/fetch_cmems.py"),
+    "cdse": ("Copernicus Data Space", "client credentials in the home directory, read by "
+             "scripts/fetch_satellite.py"),
+    "disk": ("Already on this machine", "downloaded earlier; the third register file records "
+             "these as on disk"),
 }
 
 # Spatial index words that mean "somebody already aggregated this for you".
@@ -141,6 +147,13 @@ def classify(src):
     a = (src.get("access") or "").lower()
     sid = (src.get("id") or "").lower()
     name = (src.get("name") or "").lower()
+    if "on disk" in a:
+        return "held", "disk"
+    if sid.startswith("cmems") or "copernicus marine" in name or "copernicus marine" in a:
+        return "held", "copernicus-marine"
+    if sid.startswith("cdse") or "copernicus data space" in name \
+            or "copernicus data space" in a or "sentinel hub" in a:
+        return "held", "cdse"
     if sid.startswith("oda") or "odaforalle" in (src.get("url") or "").lower() \
             or name.startswith("oda -") or "already working in this project" in a:
         return "held", "oda"
@@ -234,13 +247,15 @@ def main():
     C = live.claim
     q = live.live_json(os.path.join(DERIVED, "fetch_queue.json"))
     obs = live.live_json(os.path.join(DERIVED, "observing.json"))
-    if set(HELD) != {"oda", "dataforsyningen"}:
+    if set(HELD) != {"oda", "dataforsyningen", "copernicus-marine", "cdse", "disk"}:
         raise SystemExit("HELD has changed: rewrite the page's list of held credentials")
-    read = " and ".join(f"`{f}`" for f in FILES)
+    read = ", ".join(f"`{f}`" for f in FILES[:-1]) + f" and `{FILES[-1]}`"
     unread = sorted(f for f in os.listdir(MANUAL)
                     if f.startswith("data_sources") and f.endswith(".json") and f not in FILES)
-    # entries behind credentials the fetch scripts use but HELD does not name
-    cop = [(s["id"], s["_tier"]) for s in srcs if s["id"].startswith(("CMEMS-", "CDSE-"))]
+    # the page says every Copernicus entry is held; it refuses to stand if one is not
+    cop = [s["id"] for s in srcs if s["id"].startswith(("CMEMS-", "CDSE-")) and s["_tier"] != "held"]
+    if cop:
+        raise SystemExit(f"Copernicus entries outside the held tier: {cop} - the page says they are held")
     o = []
     a = o.append
     a("# The fetch queue\n")
@@ -259,14 +274,15 @@ def main():
       C("C-DQ-Q-UNLOCKS", "*Unlocks* lists the hypotheses an entry names that no entry in an "
         "easier tier also names — a crude priority signal, and meant to be.") + "\n")
     a(C("C-DQ-Q-TIERS", "Each entry's tier is read from its access text by keyword, in this "
-        "order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not "
-        "public, request-only, FOI, provisioning, unverified or no download make it *blocked*; "
-        "words for a registration, an account, a login or a token make it *account*; words for "
-        "an open or key-free download make it *open*; and an entry that matches none of these "
-        "is counted as *blocked*. Because the account words are tested before the open ones, "
-        "an access text saying that no login or no registration is needed is counted as "
-        "*account*. The tiers have not been checked by hand entry by entry, and the note under "
-        "the credentials shows where they go wrong for the Copernicus entries.") + "\n")
+        "order: an entry the register records as already on disk, a Copernicus Marine or "
+        "Copernicus Data Space product, an ODA topic, or a source that names Dataforsyningen is "
+        "*held*; words for not public, request-only, FOI, provisioning, unverified or no "
+        "download make it *blocked*; words for a registration, an account, a login or a token "
+        "make it *account*; words for an open or key-free download make it *open*; and an entry "
+        "that matches none of these is counted as *blocked*. Because the account words are "
+        "tested before the open ones, an access text saying that no login or no registration is "
+        "needed is counted as *account*. The tiers have not been checked by hand entry by "
+        "entry.") + "\n")
     a("| tier | | sources |")
     a("|---|---|---:|")
     for t, label, _ in TIERS:
@@ -277,18 +293,13 @@ def main():
                "scripted SOAP extract in `scripts/oda_client.py`"))
     a("- " + C("C-DQ-Q-DF", "**Dataforsyningen** — an API token, which "
                "`scripts/terraincheck.py` reads to fetch the national elevation model"))
+    a("- " + C("C-DQ-Q-CMEMS", "**Copernicus Marine** — account credentials in the home "
+               "directory, which `scripts/fetch_cmems.py` reads"))
+    a("- " + C("C-DQ-Q-CDSE", "**Copernicus Data Space** — client credentials in the home "
+               "directory, which `scripts/fetch_satellite.py` reads"))
+    a("- " + C("C-DQ-Q-DISK", "**Already on this machine** — the entries the third register "
+               "file records as on disk, downloaded earlier"))
     a("")
-    parts = []
-    for t in ("open", "account", "blocked"):
-        ids = sorted(i for i, tt in cop if tt == t)
-        if ids:
-            parts.append(" ".join(f"`{i}`" for i in ids) + f" as *{t}*")
-    if parts:
-        a(C("C-DQ-Q-UNCOUNTED", "The queue counts only these as held. This project's fetch "
-            "scripts also read Copernicus Data Space client credentials "
-            "(`scripts/fetch_satellite.py`) and Copernicus Marine credentials "
-            "(`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are "
-            "counted in tiers that say otherwise: " + "; ".join(parts) + ".") + "\n")
     a(C("C-DQ-Q-ROWS", "In each tier below, entries are ordered by how many hypotheses they "
         "unlock. *Indexed by* is read from the entry's spatial and aggregation text by keyword: "
         "a position, a **region**, both (*mixed*), or `?` where neither matched. *What it is* "
@@ -297,8 +308,9 @@ def main():
         "open": C("C-DQ-Q-OPEN", "*The access text reads as open — an open or direct "
                   "download, a service asking no key or authentication, or an open licence — "
                   "and names nothing that puts it in another tier.*"),
-        "held": C("C-DQ-Q-HELD", "*An ODA topic, or a service behind the Dataforsyningen "
-                  "token: behind a credential this project holds. Some are already on disk: "
+        "held": C("C-DQ-Q-HELD", "*Behind a credential this project holds - an ODA topic, a "
+                  "Copernicus Marine or Copernicus Data Space product, or a service behind the "
+                  "Dataforsyningen token - or already on this machine. On disk, among others: "
                   "the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*"),
         "account": C("C-DQ-Q-ACCOUNT", "*The access text names a registration, an account, "
                      "a login or a token that the queue does not count as held.*"),

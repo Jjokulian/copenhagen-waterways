@@ -706,6 +706,36 @@
    ],
    "what": "Imposes a diurnal oxygen cycle of stipulated amplitude on the real instants and positions of the archive's surface samples, adds noise measured from the archive, and measures the result with the estimator the real data are measured with - over many noise draws per amplitude, once at the real times of day and once with the times redrawn."
   },
+  "K-DQ-SIBLING-CVR": {
+   "assumptions": [
+    "A CVR number names one business across the herd register, the field-parcel register and the CVR register."
+   ],
+   "confirmed": {
+    "by": "Claude (declared 2026-09-13 for the counts unlock.py writes from the sibling project's files: set sizes and intersections by CVR number; no company or person field kept)",
+    "on": "2026-09-13"
+   },
+   "covers": "data/derived/unlock.json",
+   "gaps": [
+    "Whether an answered record is still current is not checked here."
+   ],
+   "id": "K-DQ-SIBLING-CVR",
+   "justified": [
+    "The CVR number is the key all three registers publish, and the sibling project joins them on it."
+   ],
+   "licenses": "That the sibling project holds the CVR register's record for the businesses in these joins.",
+   "model": "Set sizes and intersections, keyed by CVR number; a record counts as answered where the extract marks it so.",
+   "not_licensed": "Anything about the businesses themselves, or about companies outside these joins.",
+   "produces": "counted",
+   "status": "current",
+   "title": "The sibling project's CVR records, counted against the businesses in this project's joins",
+   "void_if": [
+    "the sibling project's files change shape, or its extract marks answered records differently"
+   ],
+   "watches": [
+    "scripts/unlock.py"
+   ],
+   "what": "Counts the CVR numbers in two of the sibling project's files, and how many of them its CVR extract answered."
+  },
   "K-DRAFTSA-B1": {
    "assumptions": [
     "An overflow and a register point with the same name are the same structure.",
@@ -2843,7 +2873,7 @@
    "licenses": "How many items the named files hold, and where the sun stands at the stated times.",
    "model": "`scripts/meta_facts.py` counts list items in the named files, and computes elevations with `solar_elevation` from `scripts/daylight.py`, converting the Danish legal clock time to UTC with `clock.offset`. The fat and carbohydrate figures are stoichiometry on a chosen reference compound - tripalmitin for fat, glucose for carbohydrate - with standard atomic masses; a real sewage fat is a mixture and would differ somewhat.",
    "not_licensed": "Anything about light under water, or a count of pathways nobody enumerated.",
-   "status": "current",
+   "status": "stale: scripts/unlock.py changed since it was read",
    "title": "Small counts and solstice elevations for the overview pages",
    "void_if": [
     "a counted file changes and the script is not rerun"
@@ -3032,7 +3062,7 @@
    "licenses": "How the registered sources divide by friction and by index, under the stated rules.",
    "model": "Both sortings are keyword rules over the free text of each register entry: the access text for the tier, the spatial and aggregation text for the index. The rules are in the script and are applied at every build.",
    "not_licensed": "How valuable a source is, or whether its access text is current.",
-   "status": "current",
+   "status": "stale: scripts/fetch_queue.py changed since it was read",
    "title": "How many registered sources there are, by friction and by what they are indexed by",
    "void_if": [
     "a register entry is edited and the queue is not rebuilt",
@@ -4285,7 +4315,7 @@
     "The commit named is the version being talked about."
    ],
    "confirmed": {
-    "by": "Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13)",
+    "by": "Claude (live.py: render_sources also publishes the flows store, each data file and script once; how a quotation is read and checked is unchanged; 2026-09-13)",
     "on": "2026-09-13"
    },
    "covers": "quote",
@@ -9512,17 +9542,21 @@
    "F-f88f6ae3cd"
   ],
   "docs/IF_YOU_HAVE_THE_DATA.md": [
+   "F-02fa59aaa0",
    "F-198b20fb90",
    "F-214f326d29",
    "F-38de94525e",
    "F-46c5c33c27",
    "F-4c570f3335",
    "F-4df017f985",
+   "F-507efc40ea",
    "F-542c824a5b",
    "F-566c0ca9ca",
    "F-69521ba044",
    "F-70de0de87a",
    "F-8378fdc19e",
+   "F-88d706031a",
+   "F-bd2dc3f8ee",
    "F-d3261ec77b",
    "F-d4ab94d60c",
    "F-eefa58fbf2"
@@ -13793,7 +13827,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -13834,7 +13868,7 @@
     "gated_sources"
    ],
    "synthetic": false,
-   "value": 89,
+   "value": 112,
    "where": [
     "scripts/pages/known_and_unknown.py",
     76
@@ -14979,10 +15013,10 @@
   },
   "F-008df4b99b": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 162,
-    "line": 168,
-    "text": "               \"sonde.\"))\n    w(\"\")\n    w(\"## What is in this repository, counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-A7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \"\n               f\"{md['stations']:,} stations, {md['stations_with_bottom_depth']:,} of them \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 122,
+    "line": 128,
+    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -15035,8 +15069,8 @@
    "synthetic": false,
    "value": 564,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    168
+    "scripts/pages/openproblem_e7.py",
+    128
    ]
   },
   "F-008ed6b857": {
@@ -15469,10 +15503,10 @@
   },
   "F-00b2f8d525": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 460,
-    "line": 466,
-    "text": "          \"frigivelse fra sedimentet med bundkamre\") + \" | \"\n      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")\n      + \" |\")"
+    "file": "scripts/pages/open_problems.py",
+    "first": 158,
+    "line": 164,
+    "text": "      + C(\"C-OP-5-THRESHOLD\", \"Sediment resuspension in a basin is a *threshold* in flow, so the mass is \"\n          \"plausibly dominated by a handful of events the method averages away.\"))\n    w()\n    w(B(\"C-OP-5-SETTLE\") + \"**What would settle it.** Measuring the overflow at a handful of structures\")\n    w(\"across a range of event sizes - both its flow, directly or by mass balance, and the substance\")\n    w(f\"concentrations in the overflowing water. That is videnniveau {lv['level']} in Miljøstyrelsen's own scheme:\")\n    w(f\"{lv['uncertainty_pct']}% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures\")\n    w(\"are measured this way is not in anything this project holds.\" + E)\n    w()\n    w(\"---\")"
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -15512,8 +15546,8 @@
    "synthetic": false,
    "value": 30,
    "where": [
-    "scripts/landbrug.py",
-    466
+    "scripts/pages/open_problems.py",
+    164
    ]
   },
   "F-00ba3a9068": {
@@ -18804,6 +18838,59 @@
    ],
    "synthetic": false,
    "value": 0.24418604651162787
+  },
+  "F-02fa59aaa0": {
+   "code": {
+    "file": "scripts/unlock.py",
+    "first": 351,
+    "line": 357,
+    "text": "        },\n        \"CVR-BULK\": {\n            \"unlocks\": C(\"C-DQ-S-CVR\", \"Turning a CVR number into who and where. For this \"\n                         \"project's joins the register's own records are already held: the \"\n                         \"sibling project danish-livestock has an answered record for \"\n                         f\"{uf['chr_with_record']:,} of the {uf['chr_cvrs']:,} CVR numbers behind a \"\n                         f\"livestock site and {uf['land_with_record']:,} of the {uf['land_cvrs']:,} \"\n                         \"field-parcel operators, and `scripts/socialcontext.py` keeps four company \"\n                         \"fields from each record and no person. The bulk register would add the \"\n                         \"companies outside these joins.\"),"
+   },
+   "constructions": [
+    "K-DQ-SIBLING-CVR"
+   ],
+   "excerpt": {
+    "parent": "cvr",
+    "rows": [
+     [
+      "chr_cvrs",
+      "16449"
+     ],
+     [
+      "chr_with_record",
+      "16449"
+     ],
+     [
+      "land_cvrs",
+      "26922"
+     ],
+     [
+      "land_with_record",
+      "26921"
+     ]
+    ],
+    "target": "land_cvrs"
+   },
+   "field": {
+    "is": "Businesses with declared field parcels in the sibling project's `land_by_cvr.json`.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/unlock.json",
+    "cvr.land_cvrs"
+   ],
+   "synthetic": false,
+   "value": 26922,
+   "where": [
+    "scripts/unlock.py",
+    357
+   ]
   },
   "F-032b75dbb7": {
    "constructions": [
@@ -28265,10 +28352,10 @@
   },
   "F-0ad2b4d9e0": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 57,
-    "line": 63,
-    "text": "    # two counting the same rows, which they are seen to do for temperature\n    if par[\"Temperatur\"] != hc[\"temperature_decimals\"][\"rows\"]:\n        refuse(\"enums.py and hypodraft_ctd.py no longer agree on the temperature rows\")\n    share = lambda part, whole: live.step(\"K-SUBSET-SHARE\", part / whole * 100)\n    rows = [(\"Temperatur\", unk[\"temperature\"]), (\"Salinitet\", unk[\"salinity\"]),\n            (\"Oxygen indhold\", unk[\"oxygen\"])]\n    probe = \", \".join(f\"{share(u, par[p]):.1f}% of the `{p}` rows ({u:,} of {par[p]:,})\"\n                      for p, u in rows)\n    n_reg = J(\"triage.json\")[\"n_register\"]\n"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 65,
+    "line": 71,
+    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -28365,8 +28452,8 @@
    "synthetic": false,
    "value": 7501421,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    63
+    "scripts/pages/openproblem_j1.py",
+    71
    ]
   },
   "F-0adab19bb4": {
@@ -34963,10 +35050,10 @@
   },
   "F-0f96452fb9": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 212,
-    "line": 218,
-    "text": "        \"fra sedimentet. De veje, der *har* et tal, summerer til \"\n        f\"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\") + \"\\n\")\n    a(C(\"C-LE-FLOOR\", \"En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har \"\n        \"altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et \"\n        \"estimat**:\") + \"\\n\")\n    a(\"> \" + C(\"C-LE-CEILING\", f\"På projektets egne grænser står landbruget for **højst \"\n               f\"{ceil_hi:.0f} %** af det opgjorte reaktive kvælstof, der når danske havområder, og \"\n               f\"ved den brede ende af grænserne for ned til {ceil_lo:.0f} %. Grænserne har ikke en \"\n               \"kilde for hver række, så loftet er ikke bedre end dem.\") + \"\\n\")\n    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \""
+    "file": "scripts/causation.py",
+    "first": 125,
+    "line": 131,
+    "text": "        \"small. The question is what it is a share *of*.\") + \"\\n\")\n    a(C(\"C-PC-CA-FLOOR\", f\"The enumerated pathways that carry any number sum to **{fmt(tot_lo)} – \"\n        f\"{fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} rows empty**. An empty row can only \"\n        \"add, so the sum is a floor on the denominator, and a share computed against it is a \"\n        \"**ceiling, not an estimate**:\") + \"\\n\")\n    a(\"> \" + C(\"C-PC-CA-CEILING\", f\"On this project's own bounds, agriculture accounts for **no more \"\n               f\"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters \"\n               f\"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling an empty \"\n               \"row lowers that ceiling, unless the register's own notes put the row inside another or \"\n               \"make it a timing term, as [LANDBRUG.md](LANDBRUG.md) sets out row by row. The bounds \""
    },
    "constructions": [
     "K-FARM-PATHWAYS",
@@ -35062,8 +35149,8 @@
    "synthetic": false,
    "value": 29.510898775753958,
    "where": [
-    "scripts/landbrug.py",
-    218
+    "scripts/causation.py",
+    131
    ]
   },
   "F-0fa639fd84": {
@@ -41168,10 +41255,10 @@
   },
   "F-153d19187a": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 65,
+    "line": 71,
+    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -41268,8 +41355,8 @@
    "synthetic": false,
    "value": 2601,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_j1.py",
+    71
    ]
   },
   "F-1546645182": {
@@ -46612,10 +46699,10 @@
   },
   "F-198b20fb90": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 134,
-    "line": 140,
-    "text": "        \"years_lower\": live.stated(\"settle_years\", 2, \"two\", R_YEARS),\n        \"windows\": live.stated(\"settle_windows\", 2, \"Two\", R_WINDOWS),\n        \"threshold\": live.stated(\"settle_threshold\", 2 / 3, \"two thirds\", R_THRESH),\n        \"poc_events\": live.stated(\"settle_poc_events\", 3, \"three\", R_POC),\n        \"hypotheses\": f\"{c['hypotheses']}\",\n        \"designs\": f\"{x['n_experiments']}\", \"desk\": f\"{x['by_scale']['desk']}\",\n        \"unscoreable\": f\"{t['classes']['unscoreable']['n']}\", \"mechanisms\": f\"{t['n_triaged']}\",\n        \"cso_n\": f\"{rb['top_one_pct_n']}\", \"cso_share\": f\"{rb['top_one_pct_share_pct']:.0f}\",\n        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\","
+    "file": "scripts/unlock.py",
+    "first": 447,
+    "line": 453,
+    "text": "        \"written against a stated file shape runs on whatever arrives in that shape.\"))\n    w()\n    w(\"| state | meaning | where it lives |\")\n    w(\"|---|---|---|\")\n    w(\"| **wanted** | nobody has measured it, anywhere. The measurement has to be invented or \"\n      \"funded before the question is answerable at all. | [EXPERIMENTS.md](EXPERIMENTS.md), \"\n      \"and \" + C(\"C-DQ-U-UNSCORE\", f\"the {tri['classes']['unscoreable']['n']} hypotheses \"\n                 \"marked *unscoreable* in [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md)\") + \" |\")\n    w(\"| **gated** | it exists, and sits behind a credential, a registration or a closed \"\n      \"door. | **this page** |\")"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -46648,8 +46735,8 @@
    "synthetic": false,
    "value": 42,
    "where": [
-    "scripts/pages/settle.py",
-    140
+    "scripts/unlock.py",
+    453
    ]
   },
   "F-198bb850cd": {
@@ -48227,10 +48314,10 @@
   },
   "F-1acb8bcb68": {
    "code": {
-    "file": "scripts/hypotheses.py",
-    "first": 77,
-    "line": 83,
-    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 130,
+    "line": 136,
+    "text": "               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -48279,8 +48366,8 @@
    "synthetic": false,
    "value": 6288,
    "where": [
-    "scripts/hypotheses.py",
-    83
+    "scripts/pages/openproblem_e7.py",
+    136
    ]
   },
   "F-1acf833585": {
@@ -53943,10 +54030,10 @@
   },
   "F-1efcd4d820": {
    "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 833,
-    "line": 839,
-    "text": "    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]\n    w(C(\"C-NI-STORMWATER-METALS\", \"Note that chromium, nickel and arsenic are **higher in separated \"\n        \"stormwater than in sewage overflow** — and the national outfall layers report \"\n        f\"{sw_v['sum'] / 1e6:.0f} million m³/yr of the former, summed over the {sw_v['n']:,} of \"\n        f\"{sw['n']:,} separate outfalls that give a volume, against {co_v['sum'] / 1e6:.1f} million \"\n        f\"m³/yr of the latter over {co_v['n']:,} of {co['n']:,} combined-sewer overflows. Separating a \"\n        \"sewer system solves the sewage overflow and delivers untreated runoff instead.\") + \"\\n\")\n\n    # ---------------------------------------------------------------- 5. Køge Bugt"
+    "file": "scripts/pages/data_sources.py",
+    "first": 176,
+    "line": 182,
+    "text": "    w(\"## 4. PULS — Punktkilder og spildevand  *(not directly accessible)*\")\n    w()\n    w(C(\"C-DS-PULS\", \"The national point-source database, run by Danmarks Miljøportal. Every \"\n        \"rain-dependent discharge is reported in it with its master data, and its discharged \"\n        \"volumes of water and substance are to be determined every year; DP02 grades how each \"\n        \"volume was found, from a simple mass balance to measurement at the structure.\"))\n    w(C(\"C-DS-PULS-EXTRACT\", f\"The public spildevandsdata extract carries {n_cso:,} combined-sewer \"\n        f\"overflow structures and {n_sep:,} separate stormwater outfalls.\"))\n    w()\n    w(C(\"C-DS-PULS-ACCESS\", \"Access to PULS goes through the IT coordinator of one's own organisation, \""
    },
    "constructions": [
     "K-META-OUTFALLS"
@@ -53995,8 +54082,8 @@
    "synthetic": false,
    "value": 4217,
    "where": [
-    "scripts/nitrogen.py",
-    839
+    "scripts/pages/data_sources.py",
+    182
    ]
   },
   "F-1efd11344c": {
@@ -56702,8 +56789,8 @@
   "F-214f326d29": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 333,
-    "line": 339,
+    "first": 374,
+    "line": 380,
     "text": "            \"unlocks\": C(\"C-DQ-S-LER\", \"Pipe geometry and connectivity for the Copenhagen \"\n                         \"sewer. None of the open sources in [DATA_SOURCES.md](DATA_SOURCES.md) \"\n                         \"gives surveyed invert levels for it, and a hydraulic model of the \"\n                         \"network needs them. Whether LER's answers carry diameters and invert \"\n                         \"levels was not found.\"),\n            \"who\": C(\"C-DQ-W-LER\", \"The line owners, who answer an inquiry made through LER. \"\n                     f\"LER's page for excavators gives them {ler_hours} hours to answer, and \"\n                     \"digging waits until all of them have.\"),\n            \"permission\": C(\"C-DQ-P-LER\", \"An inquiry to LER is a dig inquiry, made before \"\n                            \"digging. This project plans no dig and does not query LER. LER's \""
    },
    "constructions": [
@@ -56731,7 +56818,7 @@
    "value": 2,
    "where": [
     "scripts/unlock.py",
-    339
+    380
    ]
   },
   "F-2154f4fbf6": {
@@ -57087,10 +57174,10 @@
   },
   "F-219d622646": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 306,
-    "line": 312,
-    "text": "    a(C(\"C-LE-REDUCTION\", \"**Indgrebet.** DCE's rapport om vandløbene opgør faldet i tilførslen \"\n        f\"af kvælstof fra land til de danske kystvande i perioden 1990–2018 til {RED} %, beregnet \"\n        \"på vandføringsvægtede årsmiddelkoncentrationer.\") + \" \"\n      + C(\"C-LE-NOTDISPUTED\", \"Denne side bestrider hverken faldet eller indsatsen bag det.\") + \"\\n\")\n    a(C(\"C-LE-OUTCOME\", \"**Udfaldet.** DCE's notat fra efteråret 2023 kaldte iltsvindet i midten \"\n        \"af september det hidtil næststørste registrerede. I midten af september 2024 dækkede \"\n        f\"iltsvindet {dkt(format(KM24, ','))} km², og DCE kaldte det igen det hidtil næststørste \"\n        \"registrerede, kun overgået af iltsvindet i 2002.\") + \"\\n\")\n    a(C(\"C-LE-JUXTA\", \"**Side om side:** tilførslen fra land er omtrent halveret, og udbredelsen i \"\n        \"september 2024 var den næststørste registrerede. Yderpunkterne følger ikke tydeligt \""
+    "file": "scripts/causation.py",
+    "first": 44,
+    "line": 50,
+    "text": "    F = live.live_json(os.path.join(DERIVED, \"landbrug.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    cd = _claims.load()[0]\n    cache = {}\n\n    def read(ph):\n        return _claims.resolve(cd, ph, cache)[0]\n\n    # the published share, read from DANVA's page; the arithmetic below uses the same\n    # value as landbrug.json keeps it, and the two are checked against each other"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -57118,10 +57205,10 @@
     }
    ],
    "synthetic": false,
-   "value": 11000,
+   "value": "11,000",
    "where": [
-    "scripts/landbrug.py",
-    312
+    "scripts/causation.py",
+    50
    ]
   },
   "F-21b0b58a3a": {
@@ -61829,10 +61916,10 @@
   },
   "F-258bfbe96b": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 213,
-    "line": 219,
-    "text": "        f\"**{tot_lo:.0f} – {tot_hi:.0f} kt N/år**.\") + \"\\n\")\n    a(C(\"C-LE-FLOOR\", \"En tom række, der er en kilde for sig, kan kun lægge til. Nævneren har \"\n        \"altså et gulv og intet loft, og enhver andel regnet mod den er et **loft, ikke et \"\n        \"estimat**:\") + \"\\n\")\n    a(\"> \" + C(\"C-LE-CEILING\", f\"På projektets egne grænser står landbruget for **højst \"\n               f\"{ceil_hi:.0f} %** af det opgjorte reaktive kvælstof, der når danske havområder, og \"\n               f\"ved den brede ende af grænserne for ned til {ceil_lo:.0f} %. Grænserne har ikke en \"\n               \"kilde for hver række, så loftet er ikke bedre end dem.\") + \"\\n\")\n    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \""
+    "file": "scripts/causation.py",
+    "first": 126,
+    "line": 132,
+    "text": "    a(C(\"C-PC-CA-FLOOR\", f\"The enumerated pathways that carry any number sum to **{fmt(tot_lo)} – \"\n        f\"{fmt(tot_hi)} kt N/yr**, with **{n_empty} of {n_paths} rows empty**. An empty row can only \"\n        \"add, so the sum is a floor on the denominator, and a share computed against it is a \"\n        \"**ceiling, not an estimate**:\") + \"\\n\")\n    a(\"> \" + C(\"C-PC-CA-CEILING\", f\"On this project's own bounds, agriculture accounts for **no more \"\n               f\"than {ceil_hi:.0f}%** of enumerated reactive nitrogen reaching Danish marine waters \"\n               f\"— and at the wide end of the bounds as little as {ceil_lo:.0f}%. Filling an empty \"\n               \"row lowers that ceiling, unless the register's own notes put the row inside another or \"\n               \"make it a timing term, as [LANDBRUG.md](LANDBRUG.md) sets out row by row. The bounds \"\n               \"carry no source for each row, so the ceiling is \""
    },
    "constructions": [
     "K-FARM-PATHWAYS",
@@ -61928,8 +62015,8 @@
    "synthetic": false,
    "value": 12.546287809349218,
    "where": [
-    "scripts/landbrug.py",
-    219
+    "scripts/causation.py",
+    132
    ]
   },
   "F-259389fe39": {
@@ -64730,10 +64817,10 @@
   },
   "F-27c64403ba": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 408,
-    "line": 414,
-    "text": "         \"on the land-based load, wind work over the stratified season, and the bottom-water \"\n         \"temperature anomaly. No published regression of this kind was found in the sources this \"\n         \"project holds.\")),\n        (\"Whether state-dependence is real\", C(\"C-PC-CA-T2\", \"The same regression with an interaction \"\n         \"term, or simply: does a given load produce more hypoxia now than in 1990, holding weather \"\n         \"constant?\")),\n        (\"Whether the denominator can be closed\", C(\"C-PC-CA-T3\", f\"Two of the {n_empty} empty rows \"\n         \"have established methods — submarine groundwater discharge by radon or radium tracers, \"\n         \"internal regeneration by benthic flux chambers — and both need new measurements.\")),\n        (\"Whether the potency term matters\", C(\"C-PC-CA-T4\", \"Weight existing load figures by season \""
+    "file": "scripts/pages/open_problems.py",
+    "first": 167,
+    "line": 173,
+    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 6\n    w(\"## 6. The unquantified nitrogen pathways\")\n    w()\n    w(C(\"C-OP-6-COUNT\", f\"Of the {meta['pathways_total']} enumerated pathways, \"\n        f\"{meta['pathways_unquantified']} carry no number.\") + \" Two could be measured:\")\n    w()\n    w(C(\"C-OP-6-A6\", f\"- **Submarine groundwater discharge** ({ref('A6')}) - measurable with radon and \"\n        \"radium tracers or seepage meters, and not a term in the Danish marine budget.\"))"
    },
    "constructions": [
     "K-META-FACTS"
@@ -64822,8 +64909,8 @@
    "synthetic": false,
    "value": 10,
    "where": [
-    "scripts/causation.py",
-    414
+    "scripts/pages/open_problems.py",
+    173
    ]
   },
   "F-27c8f192a5": {
@@ -67718,10 +67805,10 @@
   },
   "F-2a17fa5268": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 353,
-    "line": 359,
-    "text": "               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \"\n               \"post.\"))\n    a(\"- \" + C(\"C-LE-C-FAT\", \"**Fedt indeholder intet kvælstof overhovedet.** Triglycerider \"\n               \"består af kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det \""
+    "file": "scripts/causation.py",
+    "first": 218,
+    "line": 224,
+    "text": "    r = tt[\"combined_overflow\"]\n    cb = r[\"COD\"] * C_PER_COD\n    ca = r[\"Tot-N\"] * C_PER_N\n    a(C(\"C-PC-CA-CSO\", f\"A combined sewer overflow carries **{cb:.0f} mg of organic carbon per litre \"\n        f\"directly**, and enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of **{cb/ca:.2f}**. \"\n        \"The two routes are the same size. The nitrogen apportionment counts only the second, and in \"\n        f\"this project's register the overflow's nitrogen is {cso_lo:.1f}–{cso_hi:.1f}% of the \"\n        \"land-based term.\") + \"\\n\")\n    a(C(\"C-PC-CA-OTHERS\", \"For separate stormwater and for the stormwater-runoff reference the direct \"\n        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \""
    },
    "constructions": [
     "K-NITROGEN-PATHWAYS",
@@ -67784,8 +67871,8 @@
    "synthetic": false,
    "value": 0.5633802816901409,
    "where": [
-    "scripts/landbrug.py",
-    359
+    "scripts/causation.py",
+    224
    ]
   },
   "F-2a1bda786d": {
@@ -81540,10 +81627,10 @@
   },
   "F-341b020904": {
    "code": {
-    "file": "scripts/light.py",
-    "first": 536,
-    "line": 542,
-    "text": "                   \"above the thermocline only where the curve differs across it, leave out the \"\n                   \"lowest readings where it bends - choose that window cast by cast.\") + \"\\n\")\n        if sd.get(\"z11_deep_start\") and sd.get(\"z11_shallow_start\"):\n            a(C(\"C-FR-LT-SPLIT\", f\"Splitting the growth-season casts on where they started: \"\n                f\"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a median \"\n                f\"Kd of {sd['kd_shallow_start']} and a median depth reaching {lo}% of \"\n                f\"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below \"\n                f\"{p['start_split_m']} m and give {sd['kd_deep_start']} and \"\n                f\"{sd['z11_deep_start']} m. They are different casts, not the same water \"\n                \"measured twice, so the gap mixes where a profile starts with where it was \""
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 157,
+    "line": 163,
+    "text": "        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \"\n          \"inherits the first reason instead.\"))"
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -81600,8 +81687,8 @@
    "synthetic": false,
    "value": 0.27,
    "where": [
-    "scripts/light.py",
-    542
+    "scripts/pages/openproblem_j1.py",
+    163
    ]
   },
   "F-341fd4af4f": {
@@ -84031,10 +84118,10 @@
   },
   "F-35e37a230f": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 57,
-    "line": 63,
-    "text": "    # two counting the same rows, which they are seen to do for temperature\n    if par[\"Temperatur\"] != hc[\"temperature_decimals\"][\"rows\"]:\n        refuse(\"enums.py and hypodraft_ctd.py no longer agree on the temperature rows\")\n    share = lambda part, whole: live.step(\"K-SUBSET-SHARE\", part / whole * 100)\n    rows = [(\"Temperatur\", unk[\"temperature\"]), (\"Salinitet\", unk[\"salinity\"]),\n            (\"Oxygen indhold\", unk[\"oxygen\"])]\n    probe = \", \".join(f\"{share(u, par[p]):.1f}% of the `{p}` rows ({u:,} of {par[p]:,})\"\n                      for p, u in rows)\n    n_reg = J(\"triage.json\")[\"n_register\"]\n"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 65,
+    "line": 71,
+    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -84131,8 +84218,8 @@
    "synthetic": false,
    "value": 7147012,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    63
+    "scripts/pages/openproblem_j1.py",
+    71
    ]
   },
   "F-35e3cb19e4": {
@@ -85831,7 +85918,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -87675,7 +87762,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -88461,8 +88548,8 @@
   "F-38de94525e": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 517,
-    "line": 523,
+    "first": 582,
+    "line": 588,
     "text": "    tail = []\n    if loose_slots:\n        tail.append(\"no register entry\")\n    if open_slots:\n        tail.append(\"an entry in the open tier (\" + \", \".join(f\"`{x}`\" for x in open_slots)\n                    + \")\")\n    w(C(\"C-DQ-U-COUNT\", f\"**{gated} entries are not classed open.** The ones a slot is filed \"\n        \"under are marked **[slot]**\" + (\"; the other slots match \" + \" or \".join(tail)\n                                          if tail else \"\") + \".\"))\n    w()"
    },
    "constructions": [
@@ -88493,16 +88580,16 @@
      ]
     ],
     [
-     22,
-     30,
-     37
+     39,
+     26,
+     47
     ]
    ],
    "synthetic": false,
-   "value": 89,
+   "value": 112,
    "where": [
     "scripts/unlock.py",
-    523
+    588
    ]
   },
   "F-38e9c5f476": {
@@ -90089,10 +90176,10 @@
   },
   "F-3a70a9dc3f": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 459,
-    "line": 465,
-    "text": "          \"grundvand under havet med radium som sporstof eller med sivemålere, og intern \"\n          \"frigivelse fra sedimentet med bundkamre\") + \" | \"\n      + C(\"C-LE-9-DENOM\", \"begge kræver nye målinger. Uden en nævner er der ingen andel af \"\n          \"helheden\") + \" |\")\n    a(\"| **Mål overløbene i hændelser.** Flowproportional prøvetagning på de største bygværker, \"\n      \"over hændelser af forskellig størrelse | \"\n      + C(\"C-LE-9-LEVEL5\", f\"målebaseret overløbsestimering er videnniveau {lv[5]['level']} i \"\n          f\"Miljøstyrelsens egen skala, med {lv[5]['uncertainty_pct']} % usikkerhed på den udledte \"\n          f\"stofmængde mod {lv[1]['uncertainty_pct']} % på niveau {lv[1]['level']}. Metoden er \"\n          \"defineret. Hvor mange bygværker der opgøres sådan, står ikke i noget, projektet har\")"
+    "file": "scripts/pages/open_problems.py",
+    "first": 157,
+    "line": 163,
+    "text": "        \"checked against that same concentration, with no flow rate recorded.\") + \" \"\n      + C(\"C-OP-5-THRESHOLD\", \"Sediment resuspension in a basin is a *threshold* in flow, so the mass is \"\n          \"plausibly dominated by a handful of events the method averages away.\"))\n    w()\n    w(B(\"C-OP-5-SETTLE\") + \"**What would settle it.** Measuring the overflow at a handful of structures\")\n    w(\"across a range of event sizes - both its flow, directly or by mass balance, and the substance\")\n    w(f\"concentrations in the overflowing water. That is videnniveau {lv['level']} in Miljøstyrelsen's own scheme:\")\n    w(f\"{lv['uncertainty_pct']}% uncertainty on the discharged mass, the highest level in their hierarchy. How many structures\")\n    w(\"are measured this way is not in anything this project holds.\" + E)\n    w()"
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -90132,8 +90219,8 @@
    "synthetic": false,
    "value": 5,
    "where": [
-    "scripts/landbrug.py",
-    465
+    "scripts/pages/open_problems.py",
+    163
    ]
   },
   "F-3a70c7df44": {
@@ -91860,7 +91947,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -100485,10 +100572,10 @@
   },
   "F-42b2c3d0c0": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 899,
-    "line": 905,
-    "text": "    a(f\"| Within {NEAR:.0f} m of a planned **surface** route | **{riv['near_surface_conveyance_pct']:.0f}%** |\")\n    a(f\"| Within {NEAR:.0f} m of a planned **pipe** | {riv['near_buried_conveyance_pct']:.0f}% |\")\n    a(f\"| Within {NEAR:.0f} m of anything in the plan | {riv['near_anything_pct']:.0f}% |\")\n    a(f\"| **With no surface route within {NEAR:.0f} m** | **{riv['no_surface_route_pct']:.0f}%** |\")\n    a(\"\")\n    a(CL(\"C-PG-1-POSITIVE\", f\"So the finding is a positive one. Across the inner city, \"\n         f\"Copenhagen has already drawn the river network: **{riv['near_surface_conveyance_pct']:.0f}% of \"\n         \"the flood paths there have a surface alignment planned beside them.** The city's \"\n         f\"cloudburst plan is {fig('surface_km')} km of surface conveyance against \"\n         f\"{fig('pipe_km')} km of pipe, {fig('surface_ratio')} to 1 \""
+    "file": "scripts/pages/open_problems.py",
+    "first": 308,
+    "line": 314,
+    "text": "    if surf >= 52:\n        verdict = \"a planned surface route beside the flood path is still the majority case\"\n    elif surf >= 48:\n        verdict = \"a planned surface route beside the flood path is a coin flip\"\n    else:\n        verdict = \"a planned surface route beside the flood path is the minority case\"\n    w(C(\"C-OP-13-SURFACE\", f\"At {surf:.1f}% {verdict}, so an argument should not lean on *most*.\"))\n    w()\n    w(C(\"C-OP-13-ORTHO\", \"Registering each sheet against georeferenced aerial photographs of its own era \"\n        \"would place all seven absolutely, with no anchors; whether such imagery is openly served was \""
    },
    "constructions": [
     "K-META-RIVERMAP"
@@ -100561,8 +100648,8 @@
    "synthetic": false,
    "value": 50.1,
    "where": [
-    "scripts/programme.py",
-    905
+    "scripts/pages/open_problems.py",
+    314
    ]
   },
   "F-42bd0b3e37": {
@@ -105731,8 +105818,8 @@
   "F-46c5c33c27": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 312,
-    "line": 318,
+    "first": 324,
+    "line": 330,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -105743,19 +105830,19 @@
     "rows": [
      [
       "open",
-      "59"
+      "71"
      ],
      [
       "held",
-      "22"
+      "39"
      ],
      [
       "account",
-      "30"
+      "26"
      ],
      [
       "blocked",
-      "37"
+      "47"
      ]
     ],
     "target": "held"
@@ -105776,10 +105863,10 @@
     "by_tier.held"
    ],
    "synthetic": false,
-   "value": 22,
+   "value": 39,
    "where": [
     "scripts/fetch_queue.py",
-    318
+    330
    ]
   },
   "F-46ceb0a4e3": {
@@ -114162,7 +114249,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -114879,10 +114966,10 @@
   },
   "F-4e20821308": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 134,
+    "line": 140,
+    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['total']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -114931,8 +115018,8 @@
    "synthetic": false,
    "value": 152,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/known_and_unknown.py",
+    140
    ]
   },
   "F-4e2947acc2": {
@@ -116782,10 +116869,10 @@
   },
   "F-4f7a64285f": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 227,
-    "line": 233,
-    "text": "        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \"\n        \"is nitrogen-dominated.\") + \"\\n\")\n    a(C(\"C-PC-CA-CEILINGS\", \"*Both columns are ceilings.* Not all COD is degradable on a relevant \"\n        \"timescale, and not all nitrogen is assimilated. The two overstatements run in the same \"\n        \"direction, so the **ratio** is the robust part; the absolute milligrams are not.\") + \"\\n\")\n    a(C(\"C-PC-CA-FAT\", f\"Part of what an overflow carries is fat, which contains \"\n        f\"**{meta['fat_n_frac_pct']:.0f}%** nitrogen and takes **~{meta['fat_cod_g_per_g']:.1f} g \"\n        f\"{O2} per g** to oxidise, against ~{meta['carbohydrate_cod_g_per_g']:.1f} for \"\n        \"carbohydrate: a nitrogen account cannot see it at all.\") + \"\\n\")\n    a(\"### Why the direct route acts differently\\n\")"
+    "file": "scripts/pages/open_problems.py",
+    "first": 220,
+    "line": 226,
+    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 10\n    w(\"## 10. Fat, and everything else with no nitrogen in it\")\n    w()\n    w(C(\"C-OP-10-FAT\", f\"Taken as tripalmitin, a triglyceride is \"\n        f\"{meta['fat_n_frac_pct']:.0f}% nitrogen and carries {meta['fat_cod_g_per_g']:.1f} g of oxygen \"\n        f\"demand per gram ({ref('R1')}).\") + \" \" + C(\"C-OP-10-SEWERS\", \"Sewers accumulate fat, oil and \"\n                                                    \"grease as deposits - fedtpropper.\"))\n    w()"
    },
    "constructions": [
     "K-META-FACTS"
@@ -116827,7 +116914,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -116870,8 +116957,8 @@
    "synthetic": false,
    "value": 2.873,
    "where": [
-    "scripts/causation.py",
-    233
+    "scripts/pages/open_problems.py",
+    226
    ]
   },
   "F-4f8159212c": {
@@ -118475,6 +118562,59 @@
    "where": [
     "scripts/floodgap.py",
     635
+   ]
+  },
+  "F-507efc40ea": {
+   "code": {
+    "file": "scripts/unlock.py",
+    "first": 350,
+    "line": 356,
+    "text": "                     \"distributed was not found.\"),\n        },\n        \"CVR-BULK\": {\n            \"unlocks\": C(\"C-DQ-S-CVR\", \"Turning a CVR number into who and where. For this \"\n                         \"project's joins the register's own records are already held: the \"\n                         \"sibling project danish-livestock has an answered record for \"\n                         f\"{uf['chr_with_record']:,} of the {uf['chr_cvrs']:,} CVR numbers behind a \"\n                         f\"livestock site and {uf['land_with_record']:,} of the {uf['land_cvrs']:,} \"\n                         \"field-parcel operators, and `scripts/socialcontext.py` keeps four company \"\n                         \"fields from each record and no person. The bulk register would add the \""
+   },
+   "constructions": [
+    "K-DQ-SIBLING-CVR"
+   ],
+   "excerpt": {
+    "parent": "cvr",
+    "rows": [
+     [
+      "chr_cvrs",
+      "16449"
+     ],
+     [
+      "chr_with_record",
+      "16449"
+     ],
+     [
+      "land_cvrs",
+      "26922"
+     ],
+     [
+      "land_with_record",
+      "26921"
+     ]
+    ],
+    "target": "chr_with_record"
+   },
+   "field": {
+    "is": "Of those, the numbers for which the sibling project's `cvr_raw.jsonl` holds an answered record from the CVR register.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/unlock.json",
+    "cvr.chr_with_record"
+   ],
+   "synthetic": false,
+   "value": 16449,
+   "where": [
+    "scripts/unlock.py",
+    356
    ]
   },
   "F-508010d69e": {
@@ -122587,10 +122727,10 @@
   },
   "F-53860b0f29": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 134,
+    "line": 140,
+    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['total']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -122639,8 +122779,8 @@
    "synthetic": false,
    "value": 104,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/known_and_unknown.py",
+    140
    ]
   },
   "F-538a73226f": {
@@ -123241,8 +123381,8 @@
   "F-542c824a5b": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 312,
-    "line": 318,
+    "first": 324,
+    "line": 330,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -123253,19 +123393,19 @@
     "rows": [
      [
       "open",
-      "59"
+      "71"
      ],
      [
       "held",
-      "22"
+      "39"
      ],
      [
       "account",
-      "30"
+      "26"
      ],
      [
       "blocked",
-      "37"
+      "47"
      ]
     ],
     "target": "account"
@@ -123286,10 +123426,10 @@
     "by_tier.account"
    ],
    "synthetic": false,
-   "value": 30,
+   "value": 26,
    "where": [
     "scripts/fetch_queue.py",
-    318
+    330
    ]
   },
   "F-542e5508f5": {
@@ -127790,7 +127930,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ]
     ],
     "target": "kbhkort_layers_fetched"
@@ -131281,10 +131421,10 @@
   },
   "F-5a36ae8ceb": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 152,
-    "line": 158,
-    "text": "    a(\"|---|---|---|---|\")\n    a(f\"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | \"\n      + C(\"C-PC-CA-L1\", \"A residual: measured-plus-modelled total minus modelled point sources minus \"\n          f\"modelled background, with a retention uncertainty of {ret} percentage points in this \"\n          \"project's register, which gives no source for it.\") + \" |\")\n    a(\"| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | \"\n      + C(\"C-PC-CA-L2\", f\"{n_empty} of {n_paths} enumerated pathways carry no number, among them \"\n          \"deposition's organic fraction, submarine groundwater discharge and sediment \"\n          \"regeneration.\") + \" |\")\n    a(\"| Nitrogen at sea → the growth of the algae | no coefficient | **NOT COMPUTED** | \""
+    "file": "scripts/pages/open_problems.py",
+    "first": 166,
+    "line": 172,
+    "text": "    w()\n    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 6\n    w(\"## 6. The unquantified nitrogen pathways\")\n    w()\n    w(C(\"C-OP-6-COUNT\", f\"Of the {meta['pathways_total']} enumerated pathways, \"\n        f\"{meta['pathways_unquantified']} carry no number.\") + \" Two could be measured:\")\n    w()\n    w(C(\"C-OP-6-A6\", f\"- **Submarine groundwater discharge** ({ref('A6')}) - measurable with radon and \""
    },
    "constructions": [
     "K-META-FACTS"
@@ -131369,8 +131509,8 @@
    "synthetic": false,
    "value": 20,
    "where": [
-    "scripts/causation.py",
-    158
+    "scripts/pages/open_problems.py",
+    172
    ]
   },
   "F-5a40007fae": {
@@ -131471,10 +131611,10 @@
   },
   "F-5a6a77bc92": {
    "code": {
-    "file": "scripts/light.py",
-    "first": 536,
-    "line": 542,
-    "text": "                   \"above the thermocline only where the curve differs across it, leave out the \"\n                   \"lowest readings where it bends - choose that window cast by cast.\") + \"\\n\")\n        if sd.get(\"z11_deep_start\") and sd.get(\"z11_shallow_start\"):\n            a(C(\"C-FR-LT-SPLIT\", f\"Splitting the growth-season casts on where they started: \"\n                f\"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a median \"\n                f\"Kd of {sd['kd_shallow_start']} and a median depth reaching {lo}% of \"\n                f\"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below \"\n                f\"{p['start_split_m']} m and give {sd['kd_deep_start']} and \"\n                f\"{sd['z11_deep_start']} m. They are different casts, not the same water \"\n                \"measured twice, so the gap mixes where a profile starts with where it was \""
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 156,
+    "line": 162,
+    "text": "        \"describes, and `R_new = R_old − P` has no independent `P`. It would become a real test \"\n        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \""
    },
    "constructions": [
     "K-OQ-LIGHT-SPLIT"
@@ -131551,15 +131691,15 @@
    "synthetic": false,
    "value": 2.0,
    "where": [
-    "scripts/light.py",
-    542
+    "scripts/pages/openproblem_j1.py",
+    162
    ]
   },
   "F-5a6aa3c0d7": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 341,
-    "line": 347,
+    "first": 353,
+    "line": 359,
     "text": "    kinds = q[\"by_spatial\"]\n    a(C(\"C-DQ-Q-INDEX\", \"Counted by that keyword reading of each entry's spatial and \"\n        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")"
    },
    "constructions": [
@@ -131570,19 +131710,19 @@
     "rows": [
      [
       "position",
-      "69"
+      "81"
      ],
      [
       "region",
-      "16"
+      "23"
      ],
      [
       "mixed",
-      "12"
+      "16"
      ],
      [
       "unknown",
-      "51"
+      "63"
      ]
     ],
     "target": "position"
@@ -131603,10 +131743,10 @@
     "by_spatial.position"
    ],
    "synthetic": false,
-   "value": 69,
+   "value": 81,
    "where": [
     "scripts/fetch_queue.py",
-    347
+    359
    ]
   },
   "F-5a731f2a63": {
@@ -137359,10 +137499,10 @@
   },
   "F-5ef28a7f0b": {
    "code": {
-    "file": "scripts/causation.py",
-    "first": 227,
-    "line": 233,
-    "text": "        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \"\n        \"is nitrogen-dominated.\") + \"\\n\")\n    a(C(\"C-PC-CA-CEILINGS\", \"*Both columns are ceilings.* Not all COD is degradable on a relevant \"\n        \"timescale, and not all nitrogen is assimilated. The two overstatements run in the same \"\n        \"direction, so the **ratio** is the robust part; the absolute milligrams are not.\") + \"\\n\")\n    a(C(\"C-PC-CA-FAT\", f\"Part of what an overflow carries is fat, which contains \"\n        f\"**{meta['fat_n_frac_pct']:.0f}%** nitrogen and takes **~{meta['fat_cod_g_per_g']:.1f} g \"\n        f\"{O2} per g** to oxidise, against ~{meta['carbohydrate_cod_g_per_g']:.1f} for \"\n        \"carbohydrate: a nitrogen account cannot see it at all.\") + \"\\n\")\n    a(\"### Why the direct route acts differently\\n\")"
+    "file": "scripts/pages/open_problems.py",
+    "first": 220,
+    "line": 226,
+    "text": "    w(\"---\")\n    w()\n    # ------------------------------------------------------------------- 10\n    w(\"## 10. Fat, and everything else with no nitrogen in it\")\n    w()\n    w(C(\"C-OP-10-FAT\", f\"Taken as tripalmitin, a triglyceride is \"\n        f\"{meta['fat_n_frac_pct']:.0f}% nitrogen and carries {meta['fat_cod_g_per_g']:.1f} g of oxygen \"\n        f\"demand per gram ({ref('R1')}).\") + \" \" + C(\"C-OP-10-SEWERS\", \"Sewers accumulate fat, oil and \"\n                                                    \"grease as deposits - fedtpropper.\"))\n    w()"
    },
    "constructions": [
     "K-META-FACTS"
@@ -137412,7 +137552,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -137455,8 +137595,8 @@
    "synthetic": false,
    "value": 0.0,
    "where": [
-    "scripts/causation.py",
-    233
+    "scripts/pages/open_problems.py",
+    226
    ]
   },
   "F-5ef6bf596b": {
@@ -140897,10 +141037,10 @@
   },
   "F-61a9da50ff": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 221,
-    "line": 227,
-    "text": "    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \"\n        \"diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre \"\n        \"rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver \"\n        \"fyldt ud.\") + \"\\n\")\n    a(C(\"C-LE-DEPOSITION\", \"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen \"\n        f\"er {atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** i projektets register — på størrelse med \"\n        \"hele den landbaserede post — og den er ikke en linje i den fordeling, andelen kommer \"\n        \"fra.\") + \"\\n\")\n"
+    "file": "scripts/causation.py",
+    "first": 32,
+    "line": 38,
+    "text": "\nOUT = os.path.join(ROOT, \"docs\", \"CAUSATION.md\")\nB, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref\n\n\ndef fmt(x):\n    return f\"{x:,.0f}\" if abs(x) >= 10 else f\"{x:,.1f}\"\n\n\ndef main():"
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -140960,8 +141100,8 @@
    "synthetic": false,
    "value": 65,
    "where": [
-    "scripts/landbrug.py",
-    227
+    "scripts/causation.py",
+    38
    ]
   },
   "F-61b997799e": {
@@ -150653,8 +150793,8 @@
   "F-69521ba044": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 303,
-    "line": 309,
+    "first": 337,
+    "line": 343,
     "text": "                     \"the register records; DP02 puts the system's operation and support with \"\n                     \"Danmarks Miljøportal.\"),\n        },\n        \"DK-DRAENKORT-AU\": {\n            \"unlocks\": C(\"C-DQ-S-DRAIN\", \"Which agricultural land is drained, as a map: the \"\n                         \"national map gives the probable extent of drained and undrained land \"\n                         f\"at a resolution of {drain_res} m, with an accuracy of {drain_acc}%, \"\n                         \"and a layer of the probability of drainage.\") + \" \" +\n                       C(\"C-DQ-S-DRAIN-ROUTE\", \"The register has not located a route to the \"\n                         \"raster, and with no access text recorded, the fetch queue counts it \""
    },
    "constructions": [
@@ -150686,7 +150826,7 @@
    "value": 79,
    "where": [
     "scripts/unlock.py",
-    309
+    343
    ]
   },
   "F-69567d4867": {
@@ -151575,10 +151715,10 @@
   },
   "F-69c790d829": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 254,
-    "line": 260,
-    "text": "        \"coordinates put back.\"))\n    w(\"\")\n    w(\"<!-- landing:tool:flood2012:note -->\")\n    w(f\"{lf['flood2012_mb']:.1f} MB · EPSG:4326\")\n    w(\"\")\n    w(\"<!-- landing:tool:georef -->\")\n    w(C(\"C-LR-L-GEOREF\", f\"The sheets are tied together to {fa['pair_rms_m']:g} m RMS where \"\n        \"they overlap. Nørrebro would not correlate with any neighbour, so it rests on \"\n        f\"{nb['control_points']} reader-supplied control points alone.\"))\n    w(\"\")"
+    "file": "scripts/pages/open_problems.py",
+    "first": 279,
+    "line": 285,
+    "text": "    w()\n    w(B(\"C-OP-13-PLACED\") + \"All seven sheets are placed. They are drawn on aerial photographs, so where\")\n    w(\"two overlap the pixels depict the same ground: `scripts/floodalign.py` resamples each overlapping\")\n    w(\"pair onto a common metric grid, masks out everything drawn and everything flat, reduces both to\")\n    w(\"gradient magnitude and correlates them. A bundle adjustment over the\")\n    w(f\"{meta['floodalign_pairs']} usable pairs and the control points leaves pair residuals of\")\n    w(f\"{fa['pair_rms_m']:.0f} m RMS.\" + E + \" \" + C(\"C-OP-13-CONVERGES\", \"Re-running the alignment after \"\n                                                       \"applying the solution returns residual shifts of \"\n                                                       f\"{min(shifts):+.0f} to {max(shifts):+.0f} m on every \"\n                                                       \"sheet.\"))"
    },
    "constructions": [
     "K-META-FLOODALIGN"
@@ -151623,8 +151763,8 @@
    "synthetic": false,
    "value": 22.6,
    "where": [
-    "scripts/pages/landing.py",
-    260
+    "scripts/pages/open_problems.py",
+    285
    ]
   },
   "F-69cb82eaee": {
@@ -160627,8 +160767,8 @@
   "F-70de0de87a": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 352,
-    "line": 358,
+    "first": 393,
+    "line": 399,
     "text": "                         \"calibrates such a model on measurement at the structure.\"),\n            \"who\": C(\"C-DQ-W-HYDRO\", \"Not recorded: the source register has no entry for it. \"\n                     \"DP02 says the structure data such a model needs should be derivable from \"\n                     \"the utilities' pipe records.\"),\n        },\n        \"SLURRY-CONTRACTS\": {\n            \"unlocks\": C(\"C-DQ-S-SLURRY\", f\"Where the manure from the {pigs['n_landless']:,} \"\n                         f\"landless pig holdings - {pigs['landless_de']:,.0f} animal units - \"\n                         \"actually goes. It leaves the farm by contract, and the contracts are \"\n                         \"in no public register, so the nitrogen is attributed to a holding \""
    },
    "constructions": [
@@ -160711,7 +160851,7 @@
    "value": 581,
    "where": [
     "scripts/unlock.py",
-    358
+    399
    ]
   },
   "F-70e62fe30c": {
@@ -169024,7 +169164,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -176679,8 +176819,8 @@
   "F-7dc131660c": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 332,
-    "line": 338,
+    "first": 344,
+    "line": 350,
     "text": "        \"source by what it is indexed by; it does not enforce the rule.\") + \"\\n\")\n    wb = obs[\"variance\"][\"share_between_wb\"] * 100\n    mr = obs[\"internal\"][\"mean_r\"]\n    a(C(\"C-DQ-Q-WHY\", \"The reason is in [OBSERVING.md](OBSERVING.md): in bathing-water \"\n        \"quality at stations with a long record, once the national year-to-year swing is \"\n        f\"removed, variation between water bodies is **{wb:.1f}%** of the whole, and between \"\n        f\"two stations in the same water body {mr * mr * 100:.1f}% of the wobble in one is \"\n        \"shared with the other. A source already summed into those polygons would carry the \"\n        \"unit back in, and everything computed from it would inherit it.\") + \"\\n\")\n    kinds = q[\"by_spatial\"]"
    },
    "constructions": [
@@ -176719,7 +176859,7 @@
    "value": 4.119559862524575,
    "where": [
     "scripts/fetch_queue.py",
-    338
+    350
    ]
   },
   "F-7dcbc91e91": {
@@ -181760,10 +181900,10 @@
   },
   "F-81bea72caf": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 162,
-    "line": 168,
-    "text": "               \"sonde.\"))\n    w(\"\")\n    w(\"## What is in this repository, counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-A7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \"\n               f\"{md['stations']:,} stations, {md['stations_with_bottom_depth']:,} of them \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 122,
+    "line": 128,
+    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -181816,8 +181956,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    168
+    "scripts/pages/openproblem_e7.py",
+    128
    ]
   },
   "F-81cc2fdcb9": {
@@ -183793,8 +183933,8 @@
   "F-8378fdc19e": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 303,
-    "line": 309,
+    "first": 337,
+    "line": 343,
     "text": "                     \"the register records; DP02 puts the system's operation and support with \"\n                     \"Danmarks Miljøportal.\"),\n        },\n        \"DK-DRAENKORT-AU\": {\n            \"unlocks\": C(\"C-DQ-S-DRAIN\", \"Which agricultural land is drained, as a map: the \"\n                         \"national map gives the probable extent of drained and undrained land \"\n                         f\"at a resolution of {drain_res} m, with an accuracy of {drain_acc}%, \"\n                         \"and a layer of the probability of drainage.\") + \" \" +\n                       C(\"C-DQ-S-DRAIN-ROUTE\", \"The register has not located a route to the \"\n                         \"raster, and with no access text recorded, the fetch queue counts it \""
    },
    "constructions": [
@@ -183826,7 +183966,7 @@
    "value": 30.4,
    "where": [
     "scripts/unlock.py",
-    309
+    343
    ]
   },
   "F-837e6f5289": {
@@ -184150,7 +184290,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -186105,10 +186245,10 @@
   },
   "F-85266abfd1": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 114,
+    "line": 120,
+    "text": "    w(C(\"C-OQ-J1-OPTICS\", \"The archive holds more optics than the monthly panel exposes. \"\n        f\"`docs/data/areas/stations_series.json` carries {ss['total_station_months']:,} \"\n        f\"station-months over {ss['n_variables']} variables, of which one is optical: `fluo`, \"\n        f\"fluorescence in the relative unit `rel`, on {ss['variables']['fluo']['n']:,} \"\n        \"station-months. Beside fluorescence the raw CTD file carries the three optical \"\n        f\"channels the metric below uses: `Lysdæmpning`, light attenuation, on {L:,} records, \"\n        f\"`Turbiditet` on {T:,}, and `FDOM`, the \"\n        f\"fluorescence of dissolved organic matter, on {F:,}, from {fd['first_year']} to \"\n        f\"{fd['last_year']} only.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -186205,8 +186345,8 @@
    "synthetic": false,
    "value": 1076915,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_j1.py",
+    120
    ]
   },
   "F-854ee6fdbb": {
@@ -190882,6 +191022,59 @@
     261
    ]
   },
+  "F-88d706031a": {
+   "code": {
+    "file": "scripts/unlock.py",
+    "first": 350,
+    "line": 356,
+    "text": "                     \"distributed was not found.\"),\n        },\n        \"CVR-BULK\": {\n            \"unlocks\": C(\"C-DQ-S-CVR\", \"Turning a CVR number into who and where. For this \"\n                         \"project's joins the register's own records are already held: the \"\n                         \"sibling project danish-livestock has an answered record for \"\n                         f\"{uf['chr_with_record']:,} of the {uf['chr_cvrs']:,} CVR numbers behind a \"\n                         f\"livestock site and {uf['land_with_record']:,} of the {uf['land_cvrs']:,} \"\n                         \"field-parcel operators, and `scripts/socialcontext.py` keeps four company \"\n                         \"fields from each record and no person. The bulk register would add the \""
+   },
+   "constructions": [
+    "K-DQ-SIBLING-CVR"
+   ],
+   "excerpt": {
+    "parent": "cvr",
+    "rows": [
+     [
+      "chr_cvrs",
+      "16449"
+     ],
+     [
+      "chr_with_record",
+      "16449"
+     ],
+     [
+      "land_cvrs",
+      "26922"
+     ],
+     [
+      "land_with_record",
+      "26921"
+     ]
+    ],
+    "target": "chr_cvrs"
+   },
+   "field": {
+    "is": "Distinct CVR numbers on the livestock sites in the sibling project's herd-register file, `chr_2024.json`.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/unlock.json",
+    "cvr.chr_cvrs"
+   ],
+   "synthetic": false,
+   "value": 16449,
+   "where": [
+    "scripts/unlock.py",
+    356
+   ]
+  },
   "F-88d7fbbc4a": {
    "code": {
     "file": "scripts/pages/places.py",
@@ -192309,10 +192502,10 @@
   },
   "F-89b4887632": {
    "code": {
-    "file": "scripts/export_flood.py",
-    "first": 204,
-    "line": 210,
-    "text": "    if [(b[\"lo\"], b[\"hi\"]) for b in LEGEND] != [(b[\"lo_m\"], b[\"hi_m\"]) for b in m[\"bands\"]]:\n        raise SystemExit(\"the manifest's bands differ from floodmaps.BANDS - rerun the export\")\n    event = _reading(\"FLOOD2012-AMAGER\", 100, \"ved en 100 års hændelse i 2010\")\n    o = []\n    w = o.append\n    w(f\"# {m['name']}\\n\")\n    w(C(\"C-DQ-F-WHAT\", f\"Modelled inundation depth at a {event}-year event in 2010, as the \"\n        \"Amager sheet's title names it, from the flood scenarios of Københavns Kommune's \"\n        \"cloudburst plans.\") + \" \" +\n      C(\"C-DQ-F-RECOVERED\", f\"Recovered from the {m['n_sheets']} published PDF sheets and \""
+    "file": "scripts/pages/data_sources.py",
+    "first": 56,
+    "line": 62,
+    "text": "    of, dc = J(DERIVED, \"outfalls.json\"), J(DERIVED, \"depth_clock.json\")\n    sheets, ext = J(DERIVED, \"floodmaps\", \"_sheets.json\"), J(DERIVED, \"floodmaps\", \"_extract.json\")\n    F, P = J(DERIVED, \"ds_facts.json\"), J(DERIVED, \"ds_probes.json\")\n    chem, C, CB, CE = live.chem, live.claim, live.claim_begin, live.CLAIM_END\n    cd, _, _ = _claims.load()\n    cache = {}\n    R = {k: _claims.resolve(cd, v, cache)[0] for k, v in READ.items()}\n    checked = P[\"checked\"]\n\n    def feat(layer):"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -192340,10 +192533,10 @@
     }
    ],
    "synthetic": false,
-   "value": 100,
+   "value": "100",
    "where": [
-    "scripts/export_flood.py",
-    210
+    "scripts/pages/data_sources.py",
+    62
    ]
   },
   "F-89c05be395": {
@@ -194255,10 +194448,10 @@
   },
   "F-8ad85851b5": {
    "code": {
-    "file": "scripts/experiments.py",
-    "first": 1041,
-    "line": 1047,
-    "text": "                     f\"{v['with_volume']:,} of them with an annual volume. No national map of \"\n                     \"which ground drains to which was found among the sources this project \"\n                     \"surveyed.\")\n            + \" \" + C(\"C-EA-X21-LER\", \"The pipe geometry is held in Ledningsejerregistret, \"\n                      \"which is not open data, so the network cannot be looked up here. It may \"\n                      \"be inferable.\"),\n            \"control\": C(\"C-EA-X21-CTRL\", f\"The {v['outfalls']:,} reported areas are the \"\n                         \"control: they come from the utilities' reports, not from the terrain \"\n                         \"analysis they would be compared with. A delineation that reproduces \"\n                         \"them is doing something right; one that cannot is falsified without \""
+    "file": "scripts/pages/open_problems.py",
+    "first": 453,
+    "line": 459,
+    "text": "    w()\n    w(\"### The method that might work, stated so it can be attacked\")\n    w()\n    w(C(\"C-OP-16-METHOD\", \"Delineate catchments from terrain, then **constrain the delineation so each \"\n        \"outfall's computed impervious area matches the reduced area already reported for it**. The \"\n        \"reported figure stops being an input and becomes the validation: a delineation that reproduces \"\n        f\"{n_cso + n_sep:,} reported areas is doing something right, and one that cannot is falsified \"\n        \"cheaply.\"))\n    w()\n    w(C(\"C-OP-16-INVERT\", \"That inverts the usual dependency. It needs no pipe geometry, only endpoints \""
    },
    "constructions": [
     "K-META-OUTFALLS",
@@ -194291,8 +194484,8 @@
    "synthetic": false,
    "value": 20402,
    "where": [
-    "scripts/experiments.py",
-    1047
+    "scripts/pages/open_problems.py",
+    459
    ]
   },
   "F-8ae57f9c08": {
@@ -206180,8 +206373,8 @@
   "F-92d73d1d05": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 343,
-    "line": 349,
+    "first": 355,
+    "line": 361,
     "text": "        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")\n    a(C(\"C-DQ-Q-TILF\", \"A region-indexed source can still be the one to fetch: the monthly \""
    },
    "constructions": [
@@ -206192,19 +206385,19 @@
     "rows": [
      [
       "position",
-      "69"
+      "81"
      ],
      [
       "region",
-      "16"
+      "23"
      ],
      [
       "mixed",
-      "12"
+      "16"
      ],
      [
       "unknown",
-      "51"
+      "63"
      ]
     ],
     "target": "mixed"
@@ -206225,10 +206418,10 @@
     "by_spatial.mixed"
    ],
    "synthetic": false,
-   "value": 12,
+   "value": 16,
    "where": [
     "scripts/fetch_queue.py",
-    349
+    361
    ]
   },
   "F-92daab4a64": {
@@ -211354,10 +211547,10 @@
   },
   "F-967b074b52": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 221,
-    "line": 227,
-    "text": "    a(C(\"C-LE-NOTADD\", \"Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes \"\n        \"lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den \"\n        \"diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre \"\n        \"rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver \"\n        \"fyldt ud.\") + \"\\n\")\n    a(C(\"C-LE-DEPOSITION\", \"Til sammenligning: **atmosfærisk afsætning direkte på havoverfladen \"\n        f\"er {atm['lo']:.0f}–{atm['hi']:.0f} kt N/år** i projektets register — på størrelse med \"\n        \"hele den landbaserede post — og den er ikke en linje i den fordeling, andelen kommer \"\n        \"fra.\") + \"\\n\")\n"
+    "file": "scripts/causation.py",
+    "first": 32,
+    "line": 38,
+    "text": "\nOUT = os.path.join(ROOT, \"docs\", \"CAUSATION.md\")\nB, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref\n\n\ndef fmt(x):\n    return f\"{x:,.0f}\" if abs(x) >= 10 else f\"{x:,.1f}\"\n\n\ndef main():"
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -211417,8 +211610,8 @@
    "synthetic": false,
    "value": 45,
    "where": [
-    "scripts/landbrug.py",
-    227
+    "scripts/causation.py",
+    38
    ]
   },
   "F-968699b575": {
@@ -217658,10 +217851,10 @@
   },
   "F-9b5234765d": {
    "code": {
-    "file": "scripts/oxygen.py",
-    "first": 282,
-    "line": 288,
-    "text": "        \"which the national programme runs between the first of March and the end of May, \"\n        \"comes after the winter, before the summer, and months after an autumn kill.\")\n      + \"\\n\")\n    a(C(\"C-OB-OX-HAZARD\", \"And the toxicant column is not monitored in the sea in this \"\n        \"layer. The water-plan register's hazardous-substance layer holds \"\n        f\"{hl['points']} points: {hl['lake']} in lakes, {hl['river']} in rivers and \"\n        f\"{hl['coast']} in coastal or marine water. Of Denmark's {hz['n_wb']} marine water \"\n        f\"bodies, {hz['without']} have none, covering {hz['area_without']:,.0f} km² - \"\n        f\"{hz['pct_without']:.0f}% of the sea. Across those freshwater points the matrices \"\n        f\"measured are biota {hz['biota']}, water {hz['water']} and sediment \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 181,
+    "line": 187,
+    "text": "               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {mfs['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \"\n               f\"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have \"\n               \"a point of the layer, because every point belongs to a lake or a river.\"))\n    w(\"\")\n    w(\"## Why *measurement* and not the other two\")"
    },
    "constructions": [
     "K-WATER-OXYGEN"
@@ -217726,8 +217919,8 @@
    "synthetic": false,
    "value": 123,
    "where": [
-    "scripts/oxygen.py",
-    288
+    "scripts/pages/openproblem_e7.py",
+    187
    ]
   },
   "F-9b69d76855": {
@@ -221740,10 +221933,10 @@
   },
   "F-9ecc204bb2": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 75,
-    "line": 81,
-    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 111,
+    "line": 117,
+    "text": "    w(\"\")\n    w(\"## The new metric, stated precisely enough to be rejected\")\n    w(\"\")\n    w(C(\"C-OQ-J1-OPTICS\", \"The archive holds more optics than the monthly panel exposes. \"\n        f\"`docs/data/areas/stations_series.json` carries {ss['total_station_months']:,} \"\n        f\"station-months over {ss['n_variables']} variables, of which one is optical: `fluo`, \"\n        f\"fluorescence in the relative unit `rel`, on {ss['variables']['fluo']['n']:,} \"\n        \"station-months. Beside fluorescence the raw CTD file carries the three optical \"\n        f\"channels the metric below uses: `Lysdæmpning`, light attenuation, on {L:,} records, \"\n        f\"`Turbiditet` on {T:,}, and `FDOM`, the \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -221780,8 +221973,8 @@
    "synthetic": false,
    "value": 60460,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    81
+    "scripts/pages/openproblem_j1.py",
+    117
    ]
   },
   "F-9edac16b2c": {
@@ -233243,8 +233436,8 @@
   "F-a7cb1a9012": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 312,
-    "line": 318,
+    "first": 324,
+    "line": 330,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -233255,19 +233448,19 @@
     "rows": [
      [
       "open",
-      "59"
+      "71"
      ],
      [
       "held",
-      "22"
+      "39"
      ],
      [
       "account",
-      "30"
+      "26"
      ],
      [
       "blocked",
-      "37"
+      "47"
      ]
     ],
     "target": "open"
@@ -233288,10 +233481,10 @@
     "by_tier.open"
    ],
    "synthetic": false,
-   "value": 59,
+   "value": 71,
    "where": [
     "scripts/fetch_queue.py",
-    318
+    330
    ]
   },
   "F-a7cf3306e4": {
@@ -235596,10 +235789,10 @@
   },
   "F-a95c664ddf": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 75,
-    "line": 81,
-    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 125,
+    "line": 131,
+    "text": "    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))"
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -235636,8 +235829,8 @@
    "synthetic": false,
    "value": 76980,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    81
+    "scripts/pages/openproblem_e7.py",
+    131
    ]
   },
   "F-a96752daea": {
@@ -239950,10 +240143,10 @@
   },
   "F-acb2b229c0": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 136,
+    "line": 142,
+    "text": "        f\"`pct` on {unit['pct']:,} records - exactly as many as `Lysdæmpning` ({L:,}) and \"\n        f\"`Oxygenmætning` ({O:,}) carry together - and none of its units is a coefficient per \"\n        \"metre: the attenuation channel is a percentage transmission, not an attenuation \"\n        \"coefficient.\") + \" \"\n      + C(\"C-OQ-J1-PATH\", \"A transmission becomes a coefficient only through the path length \"\n          \"the light travelled, and no column of the extract records one.\") + \" \"\n      + C(\"C-OQ-J1-FDOMUNIT\", f\"`FDOM`'s {F:,} records match the {unit['ppb']:,} in `ppb`, a \"\n          \"concentration unit, not an absorption coefficient. The total has no dimension; the \"\n          \"parts come from one column that mixes scales.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -240050,8 +240243,8 @@
    "synthetic": false,
    "value": 890921,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_j1.py",
+    142
    ]
   },
   "F-acb72c1e37": {
@@ -242151,10 +242344,10 @@
   },
   "F-ae67e45764": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 272,
-    "line": 278,
-    "text": "        \"her, ganger de to sammen, men argumentet indbyder læseren til det. Mellem andelen og \"\n        \"skaden ligger disse led:\") + \"\\n\")\n    a(\"| Led | Koefficient |\")\n    a(\"|---|---|\")\n    a(\"| Landbrug → den landbaserede, vandbårne kvælstofpost | \"\n      + C(\"C-LE-L1\", f\"**{pct} %, offentliggjort.** En restpost: målt og modelleret total minus \"\n          f\"punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± {ret} \"\n          \"procentpoint i projektets register, som ikke angiver en kilde til den\") + \" |\")\n    a(\"| Den post → alt reaktivt kvælstof, der når havet | \"\n      + C(\"C-LE-L2\", f\"**ingen: mængden er åben.** {n_unq} af {n_all} opregnede veje har intet \""
+    "file": "scripts/causation.py",
+    "first": 149,
+    "line": 155,
+    "text": "    a(C(\"C-PC-CA-GRANT\", f\"Granting the {PCT}% entirely, here is what it has to pass through to \"\n        \"become a statement about fedtemøg:\") + \"\\n\")\n    a(\"| Link | Coefficient | Status | Why |\")\n    a(\"|---|---|---|---|\")\n    a(f\"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | \"\n      + C(\"C-PC-CA-L1\", \"A residual: measured-plus-modelled total minus modelled point sources minus \"\n          f\"modelled background, with a retention uncertainty of {ret} percentage points in this \"\n          \"project's register, which gives no source for it.\") + \" |\")\n    a(\"| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | \"\n      + C(\"C-PC-CA-L2\", f\"{n_empty} of {n_paths} enumerated pathways carry no number, among them \""
    },
    "constructions": [
     "K-FARM-MONITORING"
@@ -242234,8 +242427,8 @@
    "synthetic": false,
    "value": 16,
    "where": [
-    "scripts/landbrug.py",
-    278
+    "scripts/causation.py",
+    155
    ]
   },
   "F-ae74e014e2": {
@@ -242580,10 +242773,10 @@
   },
   "F-aee5a58e2f": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 134,
+    "line": 140,
+    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['total']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -242632,8 +242825,8 @@
    "synthetic": false,
    "value": 256,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/known_and_unknown.py",
+    140
    ]
   },
   "F-aee8a1ff8a": {
@@ -251487,10 +251680,10 @@
   },
   "F-b5ea195365": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 218,
-    "line": 224,
-    "text": "    vk, bf = tc[\"clusters\"][\"vandkemi\"], tc[\"clusters\"][\"bundfauna\"]\n    tl = rs[\"tally\"]\n    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \""
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 93,
+    "line": 99,
+    "text": "\n### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -251547,8 +251740,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/triage.py",
-    224
+    "scripts/pages/known_and_unknown.py",
+    99
    ]
   },
   "F-b5ea286603": {
@@ -251755,10 +251948,10 @@
   },
   "F-b61d7944ec": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 161,
-    "line": 167,
-    "text": "               \"layer, is not. Bottle chemistry is a production path separate from the CTD \"\n               \"sonde.\"))\n    w(\"\")\n    w(\"## What is in this repository, counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-A7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 121,
+    "line": 127,
+    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -251811,8 +252004,8 @@
    "synthetic": false,
    "value": 679422,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    167
+    "scripts/pages/openproblem_e7.py",
+    127
    ]
   },
   "F-b632c5f52c": {
@@ -252246,10 +252439,10 @@
   },
   "F-b690a7f648": {
    "code": {
-    "file": "scripts/experiments.py",
-    "first": 1035,
-    "line": 1041,
-    "text": "                               \"is how you buy it back.\")],\n        },\n        \"X21\": {\n            \"why\": C(\"C-EA-X21-WHY\", \"The spildevandsdata.dk extract of the utilities' PULS \"\n                     f\"reports holds {v['outfalls']:,} outfalls, each with a point position \"\n                     \"and a reported reduced impervious area, and \"\n                     f\"{v['with_volume']:,} of them with an annual volume. No national map of \"\n                     \"which ground drains to which was found among the sources this project \"\n                     \"surveyed.\")\n            + \" \" + C(\"C-EA-X21-LER\", \"The pipe geometry is held in Ledningsejerregistret, \""
+    "file": "scripts/pages/open_problems.py",
+    "first": 420,
+    "line": 426,
+    "text": "        f\"because {meta['floodmap_pdfs']} PDFs were published and their georeferencing could be \"\n        \"recovered. That is not a method. It is lucky archaeology.\"))\n    w()\n    w(C(\"C-OP-16-ENDPOINTS\", \"Everywhere else the view has **endpoints without a network**. The national \"\n        f\"outfall extract holds {n_cso:,} combined-sewer overflow structures and {n_sep:,} separate \"\n        \"stormwater outfalls, each with a position and a *reduced impervious area* behind it, and \"\n        f\"{vol_n:,} of them with an annual volume.\") + \" \"\n      + C(\"C-OP-16-NOTAPS\", \"What it does not hold is which ground drains to which outfall, and no \"\n          f\"national map of that was found: {n_cso + n_sep:,} catalogued spouts and no map of the taps.\"))\n    w()"
    },
    "constructions": [
     "K-NI-OUTFALL-VOLUMES",
@@ -252282,8 +252475,8 @@
    "synthetic": false,
    "value": 19299,
    "where": [
-    "scripts/experiments.py",
-    1041
+    "scripts/pages/open_problems.py",
+    426
    ]
   },
   "F-b6a147cf38": {
@@ -254443,7 +254636,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -261833,6 +262026,59 @@
     144
    ]
   },
+  "F-bd2dc3f8ee": {
+   "code": {
+    "file": "scripts/unlock.py",
+    "first": 351,
+    "line": 357,
+    "text": "        },\n        \"CVR-BULK\": {\n            \"unlocks\": C(\"C-DQ-S-CVR\", \"Turning a CVR number into who and where. For this \"\n                         \"project's joins the register's own records are already held: the \"\n                         \"sibling project danish-livestock has an answered record for \"\n                         f\"{uf['chr_with_record']:,} of the {uf['chr_cvrs']:,} CVR numbers behind a \"\n                         f\"livestock site and {uf['land_with_record']:,} of the {uf['land_cvrs']:,} \"\n                         \"field-parcel operators, and `scripts/socialcontext.py` keeps four company \"\n                         \"fields from each record and no person. The bulk register would add the \"\n                         \"companies outside these joins.\"),"
+   },
+   "constructions": [
+    "K-DQ-SIBLING-CVR"
+   ],
+   "excerpt": {
+    "parent": "cvr",
+    "rows": [
+     [
+      "chr_cvrs",
+      "16449"
+     ],
+     [
+      "chr_with_record",
+      "16449"
+     ],
+     [
+      "land_cvrs",
+      "26922"
+     ],
+     [
+      "land_with_record",
+      "26921"
+     ]
+    ],
+    "target": "land_with_record"
+   },
+   "field": {
+    "is": "Of those, the businesses for which `cvr_raw.jsonl` holds an answered record.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/unlock.json",
+    "cvr.land_with_record"
+   ],
+   "synthetic": false,
+   "value": 26921,
+   "where": [
+    "scripts/unlock.py",
+    357
+   ]
+  },
   "F-bd2e87b951": {
    "constructions": [
     "K-QUOTE"
@@ -265337,8 +265583,8 @@
   "F-bfada8d583": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 245,
-    "line": 251,
+    "first": 260,
+    "line": 266,
     "text": "    a = o.append\n    a(\"# The fetch queue\\n\")\n    a(C(\"C-DQ-Q-PURPOSE\", \"The source register records what exists; this page sorts its \"\n        \"entries by friction: what can be downloaded now, what sits behind a credential this \"\n        \"project holds, what needs a registration it has not made, and what the register's \"\n        \"access text does not show to be reachable.\") + \"\\n\")\n    count = f\"**{q['n_sources']} sources**, from {read}.\"\n    if unread:\n        names = \" and \".join(f\"`{f}`\" for f in unread)\n        count += (f\" {names}, also part of the register, \""
    },
    "constructions": [
@@ -265349,7 +265595,7 @@
     "rows": [
      [
       "n_sources",
-      "148"
+      "183"
      ],
      [
       "by_tier",
@@ -265365,11 +265611,11 @@
      ],
      [
       "credentials_held",
-      "{… 2 keys}"
+      "{… 5 keys}"
      ],
      [
       "queue",
-      "[… 148 items]"
+      "[… 183 items]"
      ]
     ],
     "target": "n_sources"
@@ -265390,10 +265636,10 @@
     "n_sources"
    ],
    "synthetic": false,
-   "value": 148,
+   "value": 183,
    "where": [
     "scripts/fetch_queue.py",
-    251
+    266
    ]
   },
   "F-bfb5fe616d": {
@@ -266846,10 +267092,10 @@
   },
   "F-c0e04565fb": {
    "code": {
-    "file": "scripts/pages/hypodraft_d7.py",
-    "first": 151,
-    "line": 157,
-    "text": "               \"records.\") + \" \"\n      + C(\"C-KD-D7-TOBIT\", \"The disc hits bottom exactly when the water is clear, so \"\n          \"censoring correlates with the predictor *and* differs between the arms: an \"\n          \"uncensored fit would manufacture the depth prediction from censoring alone. Model \"\n          \"it interval-censored (\\\"at least the bottom depth\\\").\"))\n    w(\"- \" + C(\"C-KD-D7-SCOPE\", \"`SigtDybdeMedVandkikkert` — read through a water telescope \"\n               f\"— is True on {ds['secchi_by_water_telescope']:,} records, so the Secchi \"\n               \"column holds readings taken two ways; a test models the flag or keeps one \"\n               \"kind.\"))\n    w(\"- \" + C(\"C-KD-D7-NOCLOCK\", \"The extract has a date and no clock field.\") + \" \""
+    "file": "scripts/pages/data_sources.py",
+    "first": 351,
+    "line": 357,
+    "text": "    w(\"measurement* — read as a value it biases the parameter high.\" + CE + \" \" + CB(\"C-DS-NOTDETECTED\")\n      + f\"(`ikke påvist`, {attr['ikke påvist']} rows, is\")\n    w(f\"different: an analysis that found nothing; {nd_pfas} of them are PFAS results.)\" + CE + \" \"\n      + CB(\"C-DS-SECCHI\") + \"In `maaledybde`,\")\n    w(f\"`SigtTilBund` is true on {md['secchi_to_bottom']:,} Secchi readings, meaning the disc reached the\")\n    w(\"bottom and the water was clearer than the number says. `SigtDybdeMedVandkikkert` marks\")\n    w(f\"{md['secchi_by_water_telescope']:,} readings taken through a water telescope, a different instrument.\" + CE)\n    w()\n    w(C(\"C-DS-EMPTYCOLS\", \"**Columns that carry nothing.** `TekniskAnvisningAnvendt` is \"\n        \"single-valued across every row of the three extracts that carry it, and `Afsluttet` across \""
    },
    "constructions": [
     "K-DS-FACTS"
@@ -266914,8 +267160,8 @@
    "synthetic": false,
    "value": 6104,
    "where": [
-    "scripts/pages/hypodraft_d7.py",
-    157
+    "scripts/pages/data_sources.py",
+    357
    ]
   },
   "F-c0e2d7eac1": {
@@ -272114,10 +272360,10 @@
   },
   "F-c53557ff04": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 127,
-    "line": 133,
-    "text": "      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \"\n      f\"{arch} are the monitoring archive auditing itself.{E} \"\n      f\"{B('C-LR-L-MONITORED')}**So nutrients did not win an argument against the \"\n      \"alternatives. Nutrients are the group that has a monitoring programme, and \"\n      f\"{unscore + experiment} rival mechanisms have never been in a position to \""
+    "file": "scripts/pages/plan.py",
+    "first": 215,
+    "line": 221,
+    "text": "      + (\" are\" if len(now9) > 1 else \" is\") + \" testable now, and the rest wait on something the extract\")\n    w(\"does not carry; [TRIAGE.md](hypodrafts/TRIAGE.md) names each one's blocker.\" + E)\n    w(C(\"C-KP-ILTKOR\", \"(`iltkor` is declared in `fetch_oda.py`'s topics and has never been fetched: the \"\n        \"only one of its six topics with no file on disk.)\"))\n    w()\n    w(B(\"C-KP-GROUPS\") + f\"**Not one hypothesis in group A is testable now.** All {grp['A']['n']} are blocked,\")\n    w(f\"unscoreable or unestablished. Of the {cls['testable']} testable now, {grp['I']['testable']} are from group I —\")\n    w(f\"hypotheses about the archive itself — {grp['C']['testable']} from C and {grp['Z']['testable']} from Z, the two\")\n    w(\"physical groups; none is from the groups on \" + \", \".join(f\"*{titles[g].lower()}*\" for g in zero[:-1])\n      + f\" or *{titles[zero[-1]].lower()}*. **The archive can test physics and audit itself, and can\")"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -272174,8 +272420,8 @@
    "synthetic": false,
    "value": 6,
    "where": [
-    "scripts/pages/landing.py",
-    133
+    "scripts/pages/plan.py",
+    221
    ]
   },
   "F-c5372ac745": {
@@ -273830,7 +274076,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -274371,7 +274617,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -284509,10 +284755,10 @@
   },
   "F-cf5c72a98d": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 65,
+    "line": 71,
+    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -284609,8 +284855,8 @@
    "synthetic": false,
    "value": 7474645,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_j1.py",
+    71
    ]
   },
   "F-cf60786ff0": {
@@ -289659,8 +289905,8 @@
   "F-d3261ec77b": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 312,
-    "line": 318,
+    "first": 324,
+    "line": 330,
     "text": "    MARK = {\"position\": \"position\", \"region\": \"**region**\", \"mixed\": \"mixed\",\n            \"unknown\": \"?\"}\n    for t, label, _ in TIERS:\n        rows = by[t]\n        if not rows:\n            continue\n        a(f\"## {label} — {q['by_tier'][t]}\\n\")\n        a(DESC[t] + \"\\n\")\n        a(\"| source | unlocks | indexed by | what it is |\")\n        a(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -289671,19 +289917,19 @@
     "rows": [
      [
       "open",
-      "59"
+      "71"
      ],
      [
       "held",
-      "22"
+      "39"
      ],
      [
       "account",
-      "30"
+      "26"
      ],
      [
       "blocked",
-      "37"
+      "47"
      ]
     ],
     "target": "blocked"
@@ -289704,10 +289950,10 @@
     "by_tier.blocked"
    ],
    "synthetic": false,
-   "value": 37,
+   "value": 47,
    "where": [
     "scripts/fetch_queue.py",
-    318
+    330
    ]
   },
   "F-d32d88f033": {
@@ -295992,8 +296238,8 @@
   "F-d7cb543694": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 342,
-    "line": 348,
+    "first": 354,
+    "line": 360,
     "text": "    a(C(\"C-DQ-Q-INDEX\", \"Counted by that keyword reading of each entry's spatial and \"\n        \"aggregation text; `?` means the text matched no keyword, not that the source has no \"\n        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")"
    },
    "constructions": [
@@ -296004,19 +296250,19 @@
     "rows": [
      [
       "position",
-      "69"
+      "81"
      ],
      [
       "region",
-      "16"
+      "23"
      ],
      [
       "mixed",
-      "12"
+      "16"
      ],
      [
       "unknown",
-      "51"
+      "63"
      ]
     ],
     "target": "region"
@@ -296037,10 +296283,10 @@
     "by_spatial.region"
    ],
    "synthetic": false,
-   "value": 16,
+   "value": 23,
    "where": [
     "scripts/fetch_queue.py",
-    348
+    360
    ]
   },
   "F-d7d8e65001": {
@@ -298052,7 +298298,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -300663,10 +300909,10 @@
   },
   "F-db2b4d8e7a": {
    "code": {
-    "file": "scripts/landbrug.py",
-    "first": 353,
-    "line": 359,
-    "text": "               \"kulstof direkte, som dets kvælstof kunne nå at producere.** Ved typetallene i \"\n               \"projektets register og Redfield-forholdet svarer \"\n               f\"{tt['combined_overflow']['Tot-N']:.0f} mg N/l til \"\n               f\"{tt['combined_overflow']['Tot-N'] * F['c_per_n']:.0f} mg C/l; vandet bærer selv \"\n               f\"{tt['combined_overflow']['COD'] * F['c_per_cod']:.0f} mg C/l. Kvælstofopgørelsen \"\n               \"tæller kun den ene halvdel, og i projektets register er overløbets kvælstof \"\n               f\"{dk(format(cso_lo, '.1f'))}–{dk(format(cso_hi, '.1f'))} % af den landbaserede \"\n               \"post.\"))\n    a(\"- \" + C(\"C-LE-C-FAT\", \"**Fedt indeholder intet kvælstof overhovedet.** Triglycerider \"\n               \"består af kulstof, brint og ilt. En kvælstofopgørelse kan ikke undervurdere det \""
+    "file": "scripts/causation.py",
+    "first": 218,
+    "line": 224,
+    "text": "    r = tt[\"combined_overflow\"]\n    cb = r[\"COD\"] * C_PER_COD\n    ca = r[\"Tot-N\"] * C_PER_N\n    a(C(\"C-PC-CA-CSO\", f\"A combined sewer overflow carries **{cb:.0f} mg of organic carbon per litre \"\n        f\"directly**, and enough nitrogen to grow **{ca:.0f} mg C/l** — a ratio of **{cb/ca:.2f}**. \"\n        \"The two routes are the same size. The nitrogen apportionment counts only the second, and in \"\n        f\"this project's register the overflow's nitrogen is {cso_lo:.1f}–{cso_hi:.1f}% of the \"\n        \"land-based term.\") + \"\\n\")\n    a(C(\"C-PC-CA-OTHERS\", \"For separate stormwater and for the stormwater-runoff reference the direct \"\n        \"term is the *larger* of the two. Only raw sewage — the one stream that goes to treatment — \""
    },
    "constructions": [
     "K-NITROGEN-PATHWAYS",
@@ -300729,8 +300975,8 @@
    "synthetic": false,
    "value": 0.6779661016949153,
    "where": [
-    "scripts/landbrug.py",
-    359
+    "scripts/causation.py",
+    224
    ]
   },
   "F-db2e05e3d9": {
@@ -311797,7 +312043,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -315908,10 +316154,10 @@
   },
   "F-e786dfc514": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 123,
-    "line": 129,
-    "text": "      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \"\n      f\"while Danish inner waters are below {lo:g} mg/l in **{dk_below:.1f}%** of near-bed \"\n      f\"observations — two different conditions under one word.{E} \"\n      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \""
+    "file": "scripts/pages/plan.py",
+    "first": 235,
+    "line": 241,
+    "text": "    w()\n    w(B(\"C-KP-CAVEATS\") + \"Two caveats. The classification is itself an untested partition. And per\")\n    w(\"[KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md), every \\\"not measured\\\" here means \\\"not found by a\")\n    w(\"search whose sensitivity nobody has characterised\\\", so **the unscoreable column is an upper\")\n    w(\"bound, not a measurement.**\" + E)\n    w()\n    w(C(\"C-KP-GATE4\", f\"**Gate:** stage 5 can proceed on the {cls['testable']} testable now.\"))\n    w()\n    w(\"---\")\n    w()"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -315944,8 +316190,8 @@
    "synthetic": false,
    "value": 23,
    "where": [
-    "scripts/pages/landing.py",
-    129
+    "scripts/pages/plan.py",
+    241
    ]
   },
   "F-e787032151": {
@@ -324846,8 +325092,8 @@
   "F-eefa58fbf2": {
    "code": {
     "file": "scripts/unlock.py",
-    "first": 353,
-    "line": 359,
+    "first": 394,
+    "line": 400,
     "text": "            \"who\": C(\"C-DQ-W-HYDRO\", \"Not recorded: the source register has no entry for it. \"\n                     \"DP02 says the structure data such a model needs should be derivable from \"\n                     \"the utilities' pipe records.\"),\n        },\n        \"SLURRY-CONTRACTS\": {\n            \"unlocks\": C(\"C-DQ-S-SLURRY\", f\"Where the manure from the {pigs['n_landless']:,} \"\n                         f\"landless pig holdings - {pigs['landless_de']:,.0f} animal units - \"\n                         \"actually goes. It leaves the farm by contract, and the contracts are \"\n                         \"in no public register, so the nitrogen is attributed to a holding \"\n                         \"that never spread it.\"),"
    },
    "constructions": [
@@ -324930,7 +325176,7 @@
    "value": 406191.7600000002,
    "where": [
     "scripts/unlock.py",
-    359
+    400
    ]
   },
   "F-eefc4bd14f": {
@@ -329386,8 +329632,8 @@
   "F-f2bd84c6b8": {
    "code": {
     "file": "scripts/fetch_queue.py",
-    "first": 344,
-    "line": 350,
+    "first": 356,
+    "line": 362,
     "text": "        \"index.\") + \"\\n\")\n    a(\"| indexed by | sources |\")\n    a(\"|---|---:|\")\n    a(f\"| position | {kinds['position']} |\")\n    a(f\"| **region** | {kinds['region']} |\")\n    a(f\"| mixed | {kinds['mixed']} |\")\n    a(f\"| ? | {kinds['unknown']} |\")\n    a(\"\")\n    a(C(\"C-DQ-Q-TILF\", \"A region-indexed source can still be the one to fetch: the monthly \"\n        \"nutrient input to the sea, `ODA-TILFOERSEL`, is given per marine reference polygon, \""
    },
    "constructions": [
@@ -329398,19 +329644,19 @@
     "rows": [
      [
       "position",
-      "69"
+      "81"
      ],
      [
       "region",
-      "16"
+      "23"
      ],
      [
       "mixed",
-      "12"
+      "16"
      ],
      [
       "unknown",
-      "51"
+      "63"
      ]
     ],
     "target": "unknown"
@@ -329431,10 +329677,10 @@
     "by_spatial.unknown"
    ],
    "synthetic": false,
-   "value": 51,
+   "value": 63,
    "where": [
     "scripts/fetch_queue.py",
-    350
+    362
    ]
   },
   "F-f2c10b2848": {
@@ -337044,10 +337290,10 @@
   },
   "F-f8f56b7f48": {
    "code": {
-    "file": "scripts/light.py",
-    "first": 534,
-    "line": 540,
-    "text": "                   \"line fitted to the lower half differ, so a Kd depends on the depth window it \"\n                   \"is fitted over as well as on the water.** The instruction's own rules - fit \"\n                   \"above the thermocline only where the curve differs across it, leave out the \"\n                   \"lowest readings where it bends - choose that window cast by cast.\") + \"\\n\")\n        if sd.get(\"z11_deep_start\") and sd.get(\"z11_shallow_start\"):\n            a(C(\"C-FR-LT-SPLIT\", f\"Splitting the growth-season casts on where they started: \"\n                f\"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a median \"\n                f\"Kd of {sd['kd_shallow_start']} and a median depth reaching {lo}% of \"\n                f\"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below \"\n                f\"{p['start_split_m']} m and give {sd['kd_deep_start']} and \""
+    "file": "scripts/pages/openproblem_j1.py",
+    "first": 156,
+    "line": 162,
+    "text": "        \"describes, and `R_new = R_old − P` has no independent `P`. It would become a real test \"\n        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \""
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -337104,8 +337350,8 @@
    "synthetic": false,
    "value": 0.35,
    "where": [
-    "scripts/light.py",
-    540
+    "scripts/pages/openproblem_j1.py",
+    162
    ]
   },
   "F-f8fc24617a": {
@@ -343196,7 +343442,7 @@
      ],
      [
       "gated_sources",
-      "89"
+      "112"
      ],
      [
       "gated_slots",
@@ -345688,10 +345934,10 @@
   },
   "F-fff0060a3d": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 161,
-    "line": 167,
-    "text": "               \"layer, is not. Bottle chemistry is a production path separate from the CTD \"\n               \"sonde.\"))\n    w(\"\")\n    w(\"## What is in this repository, counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-A7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 121,
+    "line": 127,
+    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -345744,8 +345990,8 @@
    "synthetic": false,
    "value": 1415,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    167
+    "scripts/pages/openproblem_e7.py",
+    127
    ]
   },
   "F-fffe961438": {

@@ -1384,8 +1384,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Draft only. Counts verified by reading the files; the pilot slopes below carry no null, so none is a result.",
@@ -1415,8 +1415,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "But warming reaches near-bed oxygen by three routes — solubility (deterministic, Weiss 1970), stratification (`C1`'s object) and metabolic rate (`Q10`, unmeasured here) — only the first of which is policy-inert. So `G1`'s testable content is not *does oxygen fall* but what fraction of the long-term fall is thermodynamics: the seasonal decomposition done here (23-fold → 14-fold on a saturation threshold, ~40 % thermodynamic), moved onto the long-term axis.",
      "texts": "88dc77076d2c4139"
@@ -1444,8 +1444,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Per station-month, `C_sat` = Weiss (1970) from near-bed T and S, mL/L × 1.42905: > `O_bed = C_sat(T_bed, S_bed) − D`, so `dO/dt ≡ dC_sat/dt − dD/dt`. `C_sat` is exact and external, so the first term is computed, not estimated. The deficit `D` is solubility-neutral by construction and carries the rest: consumption, failed ventilation, advection.",
@@ -1476,8 +1476,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "`docs/data/areas/stations_series.{json,bin}` — 679,422 station-months, 1,415 stations, months 0–560 (Jan 1980 – Sep 2026). Five-way join `oxy_bed ∩ temp_bed ∩ sal_bed ∩ temp_surf ∩ sal_surf`: 76,309; after plausibility (0 ≤ O ≤ 20, −2 ≤ T ≤ 30, 0 ≤ S ≤ 40 at both depths) 76,264 rows, 1,314 stations, 1980–2026. Trend panel = cells (station × calendar month) with ≥ 8 distinct years and ≥ 15-year span: 2,429 cells · 54,211 rows · 310 stations. Balanced variant (cell in both 1990–1999 and 2015–2026): 1,282 cells · 35,215 rows. Rows per half-decade fall 14,491 (1990–1994) → 6,842 (2020–2024): the network thins, which is the composition problem.",
@@ -1511,8 +1511,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Error classes. class 1, value — `oxy_bed` −9.93 to 281.6 mg/l, `temp_surf` to 80.3 °C; 45 rows removed. class 2, quantisation — one-decimal T; ±0.05 °C is ±0.015 mg/l in `C_sat`, which matters for a single value, not a slope. class 3, aggregation — monthly medians, so `D` may pair T, S and O from different casts. class 5, unfilled — 12,736 `oxy_bed` cells carry no archived saturation. class 6, no time-of-day column anywhere (`ctd.csv.gz` has `Dato` as `19701013`); if sampling hour drifted over 47 years, the diel oxygen cycle drifted with it, uncorrectably — the one class that caps this test rather than bounds it. class 7, avoided: the unit is a station, and no water body is needed, every estimate being within-cell.",
@@ -1542,8 +1542,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Under it I measured the dependence the textbook SE ignores: - Autocorrelation of within-cell detrended `D` residuals at annual spacing: first-lag mean −0.048, second-lag −0.057 over 2,312 cells — indistinguishable from detrending's own −1/(n−1) ≈ −0.05 bias. Temporal AR is not the problem here. - The dependence is *cross-sectional*: SD of the year-mean residual 0.2513 where independence predicts 0.0471 — variance inflation 28.4. All cells in a year sample the same weather. So the null is a year-block procedure: resample the 47 calendar years with replacement, and separately permute year labels attached to whole years; refit, 2,000 draws. That keeps every station effect, the seasonal cycle and the within-year common shock, destroying only the year→outcome ordering. Consequence: the naive SE on `dD/dt` (0.00061 mg/l/yr) understates by ≈ √28.4 ≈ 5.3×, to ≈ 0.0032. A quoted null would have been wrong by that factor.",
@@ -1573,8 +1573,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The phenology mix moves. On my own definition (≥ 8 `oxy_bed` months; ≥ 65 % in May–Oct → \"summer-peaked\"): 282 summer-peaked vs 480 year-round, the summer-peaked running 1.25 mg/l lower in May–Oct (6.31 vs 7.56, d 0.50, n = 12,390 / 32,924), their share of station-months moving 29.5 % (2010–2014) → 16.4 % (2015–2019). Direction and size reproduce the figure on file (293 / 481, 1.57 mg/l, d 0.66, 32→12 %); the split is threshold-dependent, which is itself the warning. Three defences, all required: (i) within-cell FE, so a station only competes with itself; (ii) the balanced panel, so entry and exit cannot tilt the slope; (iii) phenology × year.",
      "texts": "3c6134383bd0e80a"
@@ -1604,8 +1604,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Read the five arrays at the `.json` offsets, key `station×1000 + month`, filter → 76,264; compute `C_sat` (Weiss) and `D`; build the ≥ 8-year / ≥ 15-span panel. 2. FE slopes on year for `O`, `C_sat`, `D`, `T_bed`, `T_surf − T_bed`. The first three satisfy the identity exactly; report the split as a fraction of `dO/dt`, not a p-value. 3. Year-block null (above) for each; report naive SE, block SE and their ratio. 4. Repeat balanced, Jun–Sep, Dec–Mar, and with the phenology interaction. Agreement across all five is the finding; disagreement is equally the finding.",
@@ -1634,8 +1634,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "### What the pilot already shows (no null attached — not yet a result) On the 2,429-cell panel, per decade: `T_bed` +0.42 °C, `C_sat` −0.099 mg/l, `O_bed` −0.046 mg/l, `D` −0.053 mg/l. The solubility term exceeds the whole observed decline; the deficit appears to *narrow*. But `dD/dt` sits ~1.6 block-SE from zero and moves to −0.031 (balanced), −0.088 (Jun–Sep), −0.040 (Dec–Mar) — spread wider than its own uncertainty. Surface-minus-bed temperature difference −0.027 °C/decade: no detectable strengthening of thermal stratification here.",
@@ -1664,8 +1664,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Would. If `dC_sat/dt` matches or exceeds `dO/dt` under the year-block null and across all five sensitivities, that licenses: *at these 310 stations the long-term near-bed oxygen decline is accounted for by the solubility ceiling alone, and the non-thermodynamic deficit did not widen.* That constrains `G1`'s headline directly: \"monotone worsening independent of load\" would be true of the water and still not evidence that load reduction failed, the falling term being the one no load policy touches.",
@@ -1694,8 +1694,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
      "said on ARCHIVE.md": "Would not. It does not measure respiration and cannot: `D` is a standing stock, `Q10` a rate, and converting between them needs a ventilation timescale the archive lacks (class 6). A narrowing `D` is equally consistent with load reduction working *and* with the network drifting toward better-ventilated positions — (i)–(iii) bound that, they do not eliminate it. It says nothing about stratification beyond a two-point difference at sampling depth, which is no pycnocline (`C1`'s object; believe `C1` here), nothing about water bodies, nothing about the 1,004 stations the span filter drops. And `dD/dt ≈ 0` refutes G1-b only at the resolution of monthly medians taken at an unrecorded hour.",
@@ -1724,8 +1724,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Prior work this builds on. Two non-exchangeable observing systems exist (293 summer-peaked, 481 year-round, 1.57 mg/l apart in Jun–Sep near-bed oxygen, d = 0.66) and their mixture changes over time. That establishes the *ingredients* of a composition artefact, not that any published number moved because of it. This draft tests that step.",
      "texts": "0f2dcc6c306eb35b"
@@ -1752,8 +1752,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "is supported if the era-to-era change measured on the fixed set differs from the change measured on the full pooled record by more than the fixed set's own sampling band — i.e. the pooled trajectory lies outside the band in at least one era, with the discrepancy exceeding 0.2 mg/l (twice the raw quantisation step",
@@ -1782,8 +1782,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "fails if the two trajectories track each other inside the band in every era — a real possible outcome, and the interesting one: 72% of observations turned over between 1985 and 2024 (§2) without moving the number, and the composition objection could be set aside for this variable.",
@@ -1813,8 +1813,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`docs/data/areas/stations_series.{json,bin}` — 679,422 station-months, 1,415 stations, 564 months from January 1980, 9 variables; `.bin` is 5,435,376 bytes, exactly the 8 bytes × Σn the layout implies. Variable used: `oxy_bed`: 76,980 rows, all finite, 1,327 stations. Jun–Sep, 1985–2024: 30,460 station-months, 1,167 stations. Per era (n / stations): 1985–1989 2,589 / 443 · 1990–1994 5,734 / 603 · 1995–1999 4,963 / 563 · 2000–2004 4,448 / 503 · 2005–2009 3,635 / 379 · 2010–2014 3,263 / 254 · 2015–2019 2,815 / 210 · 2020–2024 3,013 / 211. Station count halves while observation count falls by less — turnover, not merely decline.",
      "texts": "2b7d2db6b7e5d80a"
@@ -1841,8 +1841,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "Balanced panel: stations with ≥1 Jun–Sep `oxy_bed` observation in *every* one of the eight eras — 64 stations, 8,485 station-months, per-era n from 637 to 1,156. Neither empty nor degenerate. Its complement, 21,975 of 30,460 Jun–Sep observations (72.1%), is what turns over.",
@@ -1872,8 +1872,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "(quantisation): 62.1% of `oxy_bed` values sit exactly on a 0.1 mg/l grid and 75.0% on 0.05 — the residual is the median of an even count. Underlying raw is 0.1 mg/l. - Class 6 (absent dimension): no time-of-day column exists anywhere in the record. Diel oxygen swing aliases into whichever hour the boat went, per station, unrecoverably.",
      "texts": "3f11e8162913a025"
@@ -1901,8 +1901,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The register does not supply what `I1` says it supplies. `data/raw/oda/stations.csv` (`latin-1`, 798,574 rows, 17 columns, 6,288 distinct `ObservationsstedNr`) matches only 34 of the 1,415 series stations. Worse, `StartDato` equals `SlutDato` on 796,990 rows (99.8%): the field holds a single visit date, not a station lifespan — class 4, schema conflation, a column named as a validity period carrying an event date. HYPOTHESES.md's \"Now held: the ODA register carries them\" is wrong. Presence must be derived from the observation record itself, as above. (Flagged, not edited here.)",
      "texts": "f6f5f95d1da01c60"
@@ -1931,8 +1931,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "The constraint is *fixed station set × fixed season window*, which shrinks n from 30,460 to 8,485 and clusters it into 64 groups. The relevant null is therefore not the sampling distribution of a median over 8,485 independent draws, and no published standard error applies. Compute it: Primary null. `H0`: the pooled trajectory is what the fixed network would have shown. Cluster bootstrap over the 64 panel stations — resample 64 *with replacement*, carry each station's entire era-by-era Jun–Sep observation set, recompute Δ_fixed(e) = med(e) − med(1985–1989). 5,000 replicates give a percentile band per era; reject `H0` where Δ_pooled(e) falls outside the 95% band. The station is the resampling unit because observations are not independent within it; resampling observations would understate the band by roughly √(obs per station).",
@@ -1963,8 +1963,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "Read `stations_series.bin` at the `oxy_bed` offset (483,680); decode uint16 station index, uint16 month index, float32 value; `year = 1980 + month//12`, calendar month = `month%12 + 1`. ~1 s, <200 MB. 2. Filter Jun–Sep, 1985–2024. Assign eras. 3. Balanced panel = intersection of the eight per-era station sets (64 stations). 4. Compute Δ_pooled(e) and Δ_fixed(e). 5. Run the two nulls above. 5,000 × 8 medians over ≤8,485 rows — seconds.",
@@ -1994,8 +1994,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "On the classification circularity. The 293 / 481 summer/year-round split was made on each station's *whole* record, so a station that switched regime is labelled by its aggregate — contaminated by the very time-variation under test. This design avoids the problem rather than fixing it: the balanced panel is defined by presence, observable per era, and no behavioural label enters the primary test. Any secondary analysis wanting the regime label must assign it within era, which is feasible: 395 stations have ≥12 observations (all months) in ≥2 eras, 206 in ≥4, 33 in all 8. Report the switch rate before using a pooled label again.",
      "texts": "75ef046112d33ec5"
@@ -2022,8 +2022,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "Would license. Whether, at 64 positions watched continuously for forty years, the Jun–Sep near-bed oxygen change is the change the pooled record reports — and if not, a quantified size for the composition contribution.",
@@ -2054,8 +2054,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "- Any statement about a water body. The 64 stations are wherever they happen to be; they are not a designed sample of anything, and aggregating them into Vandområder would import the model assumption this repo refuses. - A claim that the fixed-panel trajectory is the *true* trend. The panel is survivorship-selected: stations that survive forty years are plausibly main-programme deep-water stations, systematically unlike the ones that came and went. Holding the network fixed trades a composition bias for a selection bias; it does not remove bias. The honest reading of agreement is \"turnover did not move this number\", not \"this is what the sea did\". - Anything about oxygen *causes*. Composition is an instrument question. - Transfer to other variables, seasons, or the pre-1985 record (1980–1984 holds only 763 Jun–Sep station-months over 109 stations, which is why it is excluded).",
@@ -2084,8 +2084,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
      "said on ARCHIVE.md": "Nothing here has been run. The counts in §2 are verified reads of the files; no trajectory, band or p-value is reported.",

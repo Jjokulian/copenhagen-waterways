@@ -1,0 +1,56 @@
+{
+ "constructions": [
+  {
+   "id": "K-DQ-SIBLING-CVR",
+   "title": "The sibling project's CVR records, counted against the businesses in this project's joins",
+   "covers": {
+    "file": "data/derived/unlock.json",
+    "fields": {
+     "cvr.chr_cvrs": {
+      "kind": "counted",
+      "is": "Distinct CVR numbers on the livestock sites in the sibling project's herd-register file, `chr_2024.json`."
+     },
+     "cvr.chr_with_record": {
+      "kind": "counted",
+      "is": "Of those, the numbers for which the sibling project's `cvr_raw.jsonl` holds an answered record from the CVR register."
+     },
+     "cvr.land_cvrs": {
+      "kind": "counted",
+      "is": "Businesses with declared field parcels in the sibling project's `land_by_cvr.json`."
+     },
+     "cvr.land_with_record": {
+      "kind": "counted",
+      "is": "Of those, the businesses for which `cvr_raw.jsonl` holds an answered record."
+     }
+    }
+   },
+   "what": "Counts the CVR numbers in two of the sibling project's files, and how many of them its CVR extract answered.",
+   "model": "Set sizes and intersections, keyed by CVR number; a record counts as answered where the extract marks it so.",
+   "assumptions": [
+    "A CVR number names one business across the herd register, the field-parcel register and the CVR register."
+   ],
+   "justified": [
+    "The CVR number is the key all three registers publish, and the sibling project joins them on it."
+   ],
+   "gaps": [
+    "Whether an answered record is still current is not checked here."
+   ],
+   "void_if": [
+    "the sibling project's files change shape, or its extract marks answered records differently"
+   ],
+   "licenses": "That the sibling project holds the CVR register's record for the businesses in these joins.",
+   "not_licensed": "Anything about the businesses themselves, or about companies outside these joins.",
+   "watches": [
+    "scripts/unlock.py"
+   ],
+   "produces": "counted",
+   "confirmed": {
+    "by": "Claude (declared 2026-09-13 for the counts unlock.py writes from the sibling project's files: set sizes and intersections by CVR number; no company or person field kept)",
+    "on": "2026-09-13",
+    "saw": {
+     "scripts/unlock.py": "cb3c1906da393d74"
+    }
+   }
+  }
+ ]
+}

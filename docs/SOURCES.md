@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,867 distinct numbers in running text, from these sources.
+1,871 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -926,6 +926,7 @@
 - `data/derived/synchrony.json`, written by [`scripts/synchrony.py`](../scripts/synchrony.py) — 22 numbers.
 - `data/derived/terraincheck.json`, written by [`scripts/terraincheck.py`](../scripts/terraincheck.py) — 4 numbers.
 - `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 94 numbers.
+- `data/derived/unlock.json` — 4 numbers.
 - `data/derived/waves.json`, written by [`scripts/waves.py`](../scripts/waves.py) — 11 numbers.
 - `data/manual/monitoring.json` — 35 numbers.
 - `data/manual/nitrogen_constants.json` — 3 numbers.
@@ -1479,6 +1480,21 @@ Imposes a diurnal oxygen cycle of stipulated amplitude on the real instants and 
 - **Void if:** the clock conventions measured by `scripts/clockzone.py` are wrong for a supplier
 - **May support:** What this sampling schedule and this estimator could and could not have detected, for a signal of this shape; and how often noise alone produces the spread the archive shows. Statements about the instrument.
 - **May not:** Anything about the size of the real diurnal cycle on its own. Combined with the observed spread it yields only a conditional upper limit, never a value, and never a limit for a cycle of another shape.
+
+<a id="K-DQ-SIBLING-CVR"></a>
+### The sibling project's CVR records, counted against the businesses in this project's joins
+
+`K-DQ-SIBLING-CVR` · covers data/derived/unlock.json · **current** · read by Claude (declared 2026-09-13 for the counts unlock.py writes from the sibling project's files: set sizes and intersections by CVR number; no company or person field kept), 2026-09-13
+
+Counts the CVR numbers in two of the sibling project's files, and how many of them its CVR extract answered.
+
+- **Model:** Set sizes and intersections, keyed by CVR number; a record counts as answered where the extract marks it so.
+- **Assumes:** A CVR number names one business across the herd register, the field-parcel register and the CVR register.
+- **Justified because:** The CVR number is the key all three registers publish, and the sibling project joins them on it.
+- **Not justified by anything yet:** Whether an answered record is still current is not checked here.
+- **Void if:** the sibling project's files change shape, or its extract marks answered records differently
+- **May support:** That the sibling project holds the CVR register's record for the businesses in these joins.
+- **May not:** Anything about the businesses themselves, or about companies outside these joins.
 
 <a id="K-DRAFTSA-B1"></a>
 ### Local counts behind the combined-overflow draft
@@ -2462,7 +2478,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-FACTS` · covers data/derived/meta_facts.json · **stale: scripts/unlock.py changed since it was read** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -2548,7 +2564,7 @@ Reads the public PULS extract's outfall layers and summarises them.
 <a id="K-META-QUEUE"></a>
 ### How many registered sources there are, by friction and by what they are indexed by
 
-`K-META-QUEUE` · covers data/derived/fetch_queue.json · **current** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-META-QUEUE` · covers data/derived/fetch_queue.json · **stale: scripts/fetch_queue.py changed since it was read** · read by Claude (re-read meta_facts.py, unlock.py and fetch_queue.py: gated_sources counts every source not classed open, the held tier included; gated_slots counts SLOTS, which are slots and not sources; n_sources reads the two registers in FILES, not the third. The wording now says so, as agent w3-dq found. 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts over the source registers, sorted by how hard each source is to reach and by whether it is indexed by a place something was measured or by a region.
 
@@ -3155,7 +3171,7 @@ Adds the annual discharge volumes the statutory plan states, counting a figure s
 <a id="K-QUOTE"></a>
 ### Quoting this site's own past
 
-`K-QUOTE` · covers quote · **current** · read by Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13), 2026-09-13
+`K-QUOTE` · covers quote · **current** · read by Claude (live.py: render_sources also publishes the flows store, each data file and script once; how a quotation is read and checked is unchanged; 2026-09-13), 2026-09-13
 
 What this site printed at an earlier commit.
 

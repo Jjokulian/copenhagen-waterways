@@ -8,7 +8,7 @@
    "id": "X-DQ-QUEUE",
    "kind": "script",
    "label": "fetch_queue.py\\nclassify(), spatial_kind()",
-   "detail": "`scripts/fetch_queue.py` reads the register files in its `FILES` list, `data_sources.json` and `data_sources_2.json`. It puts each entry in a tier by keywords in its access text, in order: an ODA topic or a mention of Dataforsyningen is held; words for closed or unverified access make it blocked; words for a registration, account, login or token make it account; words for open or key-free access make it open; an entry matching none is blocked. It reads each entry's spatial and aggregation text for position or region keywords, lists as unlocks the hypotheses an entry names that no entry in an easier tier names, names the credentials it counts as held in `HELD` (the ODA login and the Dataforsyningen token), and writes `data/derived/fetch_queue.json` and DATA_QUEUE.md."
+   "detail": "`scripts/fetch_queue.py` reads the register files in its `FILES` list, `data_sources.json`, `data_sources_2.json` and `data_sources_3.json`. It puts each entry in a tier by keywords in its access text, in order: an entry recorded as on disk, a Copernicus Marine or Copernicus Data Space product, an ODA topic or a mention of Dataforsyningen is held; words for closed or unverified access make it blocked; words for a registration, account, login or token make it account; words for open or key-free access make it open; an entry matching none is blocked. It reads each entry's spatial and aggregation text for position or region keywords, lists as unlocks the hypotheses an entry names that no entry in an easier tier names, names the credentials it counts as held in `HELD` (the ODA login and the Dataforsyningen token), and writes `data/derived/fetch_queue.json` and DATA_QUEUE.md."
   },
   {
    "id": "X-DQ-ODACLIENT",
@@ -235,12 +235,12 @@
     "C-DQ-OLD-FRICTION"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "The source register records what exists; this page sorts its entries by friction: what can be downloaded now, what sits behind a credential this project holds, what needs a registration it has not made, and what the register's access text does not show to be reachable.",
      "texts": "f6797bdb0f337225",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node D-DQ-REGISTER": "576a124afef5c26d"
     }
    }
@@ -250,24 +250,25 @@
    "kind": "measured",
    "stance": "ours",
    "page": "DATA_QUEUE.md",
-   "claim": "The queue counts the entries of `data_sources.json` and `data_sources_2.json`; `data_sources_3.json`, also part of the register, is not read, so its entries are in no tier.",
-   "because": "`n_sources` in fetch_queue.json counts the entries `load()` reads from the files in `FILES`, which lists the first two; the third file is a companion for later hypotheses, and none of its ids is in the first two.",
+   "claim": "The queue counts the entries of all three register files.",
+   "because": "`n_sources` in fetch_queue.json counts the entries `load()` reads from the files in `FILES`, which lists all three.",
    "rests_on": [
     "D-DQ-QUEUE",
     "X-DQ-QUEUE",
     "D-DQ-REGISTER3"
    ],
    "replaces": [
-    "C-DQ-OLD-FRICTION"
+    "C-DQ-OLD-FRICTION",
+    "C-DQ-OLD2-COUNT"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on DATA_QUEUE.md": "**148 sources**, from `data_sources.json` and `data_sources_2.json`. `data_sources_3.json`, also part of the register, is not read by this queue, so its entries are in none of the tiers below.",
-     "texts": "c8fa963a273fa948",
+     "said on DATA_QUEUE.md": "**183 sources**, from `data_sources.json`, `data_sources_2.json` and `data_sources_3.json`.",
+     "texts": "85582539fb7980c1",
      "node D-DQ-QUEUE": "9372f34ce5858261",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node D-DQ-REGISTER3": "84d3a83e766be856"
     }
    }
@@ -283,12 +284,12 @@
     "X-DQ-QUEUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "*Unlocks* lists the hypotheses an entry names that no entry in an easier tier also names — a crude priority signal, and meant to be.",
      "texts": "a6dece9fa9096691",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -297,24 +298,25 @@
    "kind": "code",
    "stance": "ours",
    "page": "DATA_QUEUE.md",
-   "claim": "Tiers are keyword matches on the access text in a fixed order, an entry matching nothing is blocked, an access text saying no login or registration is needed is counted as account, and the tiers have not been checked by hand; they go wrong for the Copernicus entries.",
-   "because": "classify() as written: its account words, which include login and registration, are tested before its open words; no hand check is recorded, and the Copernicus entries are the case the page's note shows.",
+   "claim": "Tiers are keyword matches on the access text in a fixed order - an entry on disk, a Copernicus product, an ODA topic or a Dataforsyningen service is held - an entry matching nothing is blocked, an access text saying no login or registration is needed is counted as account, and the tiers have not been checked by hand.",
+   "because": "classify() as written: its held tests come first, and its account words, which include login and registration, are tested before its open words; no hand check is recorded.",
    "rests_on": [
     "X-DQ-QUEUE",
-    "U-DQ-HANDCHECK",
-    "C-DQ-Q-UNCOUNTED"
+    "U-DQ-HANDCHECK"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on DATA_QUEUE.md": "Each entry's tier is read from its access text by keyword, in this order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry, and the note under the credentials shows where they go wrong for the Copernicus entries.",
-     "texts": "6f7a687205096749",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
-     "node U-DQ-HANDCHECK": "2b631218a32b11d5",
-     "rests on C-DQ-Q-UNCOUNTED": "47b7387df0722d7b"
+     "said on DATA_QUEUE.md": "Each entry's tier is read from its access text by keyword, in this order: an entry the register records as already on disk, a Copernicus Marine or Copernicus Data Space product, an ODA topic, or a source that names Dataforsyningen is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry.",
+     "texts": "fdd80194b7f049ae",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
+     "node U-DQ-HANDCHECK": "2b631218a32b11d5"
     }
-   }
+   },
+   "replaces": [
+    "C-DQ-OLD2-TIERS"
+   ]
   },
   {
    "id": "C-DQ-Q-ODA",
@@ -329,12 +331,12 @@
     "C-DS-ODA-EXTRACTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "**ODA / Overfladevandsdatabasen** — an email login, and a scripted SOAP extract in `scripts/oda_client.py`",
      "texts": "381df4fc4224ce29",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node X-DQ-ODACLIENT": "963c6c5fecde0723",
      "rests on C-DS-ODA-EXTRACTS": "da94acda32437326"
     }
@@ -356,43 +358,14 @@
     "C-DQ-OLD-WMS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "**Dataforsyningen** — an API token, which `scripts/terraincheck.py` reads to fetch the national elevation model",
      "texts": "e07719cc56cd6d6c",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node X-DQ-TERRAIN": "2cf239cc0a025abc",
      "rests on C-DS-DHM": "b618d5c803ff4d81"
-    }
-   }
-  },
-  {
-   "id": "C-DQ-Q-UNCOUNTED",
-   "kind": "measured",
-   "stance": "ours",
-   "page": "DATA_QUEUE.md",
-   "claim": "The queue counts only the ODA login and the Dataforsyningen token as held, though this project's fetch scripts also read Copernicus Data Space and Copernicus Marine credentials, so the Copernicus entries sit in tiers that say otherwise.",
-   "because": "`HELD` names only those two; fetch_satellite.py and fetch_cmems.py read Copernicus credentials present on this machine and have fetched with them; the Copernicus entries' tiers are what classify() gives their access text.",
-   "rests_on": [
-    "X-DQ-QUEUE",
-    "X-DQ-CDSE",
-    "X-DQ-CMEMS",
-    "D-DQ-QUEUE"
-   ],
-   "replaces": [
-    "C-DQ-OLD-FORM"
-   ],
-   "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
-    "saw": {
-     "said on DATA_QUEUE.md": "The queue counts only these as held. This project's fetch scripts also read Copernicus Data Space client credentials (`scripts/fetch_satellite.py`) and Copernicus Marine credentials (`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are counted in tiers that say otherwise: `CDSE-SENTINEL1` `CMEMS-BAL-BGC` `CMEMS-BAL-PHY` `CMEMS-NWS-WAV` as *account*; `CMEMS-BAL-WAV` as *blocked*.",
-     "texts": "47b7387df0722d7b",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
-     "node X-DQ-CDSE": "a1f95d6ebab726fb",
-     "node X-DQ-CMEMS": "7e128e8b66a82713",
-     "node D-DQ-QUEUE": "9372f34ce5858261"
     }
    }
   },
@@ -407,12 +380,12 @@
     "X-DQ-QUEUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "In each tier below, entries are ordered by how many hypotheses they unlock. *Indexed by* is read from the entry's spatial and aggregation text by keyword: a position, a **region**, both (*mixed*), or `?` where neither matched. *What it is* is the entry's name, shortened where long.",
      "texts": "85223a20a92f67eb",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -427,12 +400,12 @@
     "X-DQ-QUEUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "*The access text reads as open — an open or direct download, a service asking no key or authentication, or an open licence — and names nothing that puts it in another tier.*",
      "texts": "772b26c3d023547f",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -441,26 +414,35 @@
    "kind": "code",
    "stance": "ours",
    "page": "DATA_QUEUE.md",
-   "claim": "Held entries are ODA topics or services behind the Dataforsyningen token, credentials this project holds, and the ODA kemi, ctd, lys and maaledybde extracts are on disk.",
-   "because": "classify() puts ODA and Dataforsyningen entries in this tier; the extracts are C-DS-ODA-EXTRACTS.",
+   "claim": "Held entries are behind a credential this project holds - ODA, Copernicus Marine, Copernicus Data Space, Dataforsyningen - or already on disk, among them the ODA kemi, ctd, lys and maaledybde extracts.",
+   "because": "classify() puts those entries in this tier; the extracts are C-DS-ODA-EXTRACTS.",
    "rests_on": [
     "X-DQ-QUEUE",
     "C-DQ-Q-ODA",
     "C-DQ-Q-DF",
+    "C-DQ-Q-CMEMS",
+    "C-DQ-Q-CDSE",
+    "C-DQ-Q-DISK",
     "C-DS-ODA-EXTRACTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on DATA_QUEUE.md": "*An ODA topic, or a service behind the Dataforsyningen token: behind a credential this project holds. Some are already on disk: the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*",
-     "texts": "ee03ea73220dc114",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "said on DATA_QUEUE.md": "*Behind a credential this project holds - an ODA topic, a Copernicus Marine or Copernicus Data Space product, or a service behind the Dataforsyningen token - or already on this machine. On disk, among others: the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*",
+     "texts": "1adf1600208ad0ca",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "rests on C-DQ-Q-ODA": "381df4fc4224ce29",
      "rests on C-DQ-Q-DF": "e07719cc56cd6d6c",
+     "rests on C-DQ-Q-CMEMS": "e8ccf046c8e07fca",
+     "rests on C-DQ-Q-CDSE": "4dce739dcc140c2c",
+     "rests on C-DQ-Q-DISK": "01ebde91575a24e1",
      "rests on C-DS-ODA-EXTRACTS": "da94acda32437326"
     }
-   }
+   },
+   "replaces": [
+    "C-DQ-OLD2-HELD"
+   ]
   },
   {
    "id": "C-DQ-Q-ACCOUNT",
@@ -476,12 +458,12 @@
     "C-DQ-OLD-FORM"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "*The access text names a registration, an account, a login or a token that the queue does not count as held.*",
      "texts": "087226ef20b0bbd3",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -500,12 +482,12 @@
     "C-DQ-OLD-ARGUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "*The access text says not public, request-only, FOI, provisioned, unverified or without a download — or matches no tier word at all. Entries recording data confirmed not to exist are here too.*",
      "texts": "5494eda8b25847ec",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node D-DQ-REGISTER": "576a124afef5c26d"
     }
    }
@@ -551,12 +533,12 @@
     "C-DQ-OLD-STORED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "The rule: a source is carried at the resolution it was taken — a position, a time, and where it exists a depth — and not at an administrative unit such as a water body, a catchment, a municipality or a sub-basin. This page flags each source by what it is indexed by; it does not enforce the rule.",
      "texts": "8e26b63c9685ec58",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -601,12 +583,12 @@
     "D-DQ-QUEUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "Counted by that keyword reading of each entry's spatial and aggregation text; `?` means the text matched no keyword, not that the source has no index.",
      "texts": "0c3c459db8088052",
-     "node X-DQ-QUEUE": "0cb427648074c08a",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
      "node D-DQ-QUEUE": "9372f34ce5858261"
     }
    }
@@ -688,12 +670,12 @@
     "C-DQ-OLD-VALUE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on DATA_QUEUE.md": "Friction is not value. The tiers say what is easy to reach, and each register entry's hypotheses say what it would serve; they are different questions, and this page answers only the first.",
      "texts": "04bba09977285465",
-     "rests on C-DQ-Q-TIERS": "6f7a687205096749"
+     "rests on C-DQ-Q-TIERS": "fdd80194b7f049ae"
     }
    }
   },
@@ -774,10 +756,10 @@
     "X-DQ-UNLOCK"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "*Generated by `scripts/unlock.py` from `data_sources.json` and `data_sources_2.json` and the slots the script defines.*",
+     "said on IF_YOU_HAVE_THE_DATA.md": "*Generated by `scripts/unlock.py` from `data_sources.json`, `data_sources_2.json` and `data_sources_3.json` and the slots the script defines.*",
      "texts": "344ac10a87935e0e",
      "node X-DQ-UNLOCK": "755fa9165ee58195"
     }
@@ -793,20 +775,22 @@
    "rests_on": [
     "C-DQ-Q-ODA",
     "C-DQ-Q-DF",
-    "C-DQ-Q-UNCOUNTED"
+    "C-DQ-Q-CMEMS",
+    "C-DQ-Q-CDSE"
    ],
    "replaces": [
     "C-DQ-OLD-AFTERNOON"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on IF_YOU_HAVE_THE_DATA.md": "This project runs on what can be fetched openly and with the credentials its fetch scripts read from this machine, which [the fetch queue](DATA_QUEUE.md) lists.",
-     "texts": "662830ca15a5fd15",
+     "texts": "8fb66d61bf5c51e5",
      "rests on C-DQ-Q-ODA": "381df4fc4224ce29",
      "rests on C-DQ-Q-DF": "e07719cc56cd6d6c",
-     "rests on C-DQ-Q-UNCOUNTED": "47b7387df0722d7b"
+     "rests on C-DQ-Q-CMEMS": "e8ccf046c8e07fca",
+     "rests on C-DQ-Q-CDSE": "4dce739dcc140c2c"
     }
    }
   },
@@ -999,13 +983,13 @@
     "C-DQ-OLD-METERED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on IF_YOU_HAVE_THE_DATA.md": "Overflow measured event by event. The register's entry under this id is the public spildevandsdata extract, which gives one annual volume and one annual event count per outfall, with no per-event dates or durations, and which the fetch queue puts in its open tier.",
      "texts": "12a119d85fade1ae",
      "node D-DQ-REGISTER": "576a124afef5c26d",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -1125,14 +1109,14 @@
     "C-DQ-OLD-DRAIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
      "said on IF_YOU_HAVE_THE_DATA.md": "The register has not located a route to the raster, and with no access text recorded, the fetch queue counts it as blocked.",
      "texts": "b4e5f5855c2590fa",
      "node D-DQ-REGISTER": "576a124afef5c26d",
      "node U-DQ-DRAIN-ROUTE": "1c2a040488a09a8d",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -1166,25 +1150,28 @@
    "kind": "argued",
    "stance": "ours",
    "page": "IF_YOU_HAVE_THE_DATA.md",
-   "claim": "The bulk CVR register would turn a CVR number into who and where for the manure surplus join; the sibling project holds CVR records for part of it.",
-   "because": "socialcontext.py joins the registers on CVR and reads the sibling project's data; the sibling's CVR file holds records for the numbers it looked up, not the register.",
+   "claim": "The bulk CVR register would turn a CVR number into who and where; for this project's joins the sibling project already holds the register's record for nearly every business, and socialcontext.py keeps four company fields and no person.",
+   "because": "Counted from the sibling project's files by unlock.py (D-DQ-UNLOCK); socialcontext.py's fields are D-IN-CVR.",
    "rests_on": [
+    "D-DQ-UNLOCK",
     "D-DQ-SIBLING-CVR",
-    "X-SOCIAL",
-    "X-MANURE"
+    "D-IN-CVR",
+    "X-SOCIAL"
    ],
    "replaces": [
-    "C-DQ-OLD-CVR-ROWS"
+    "C-DQ-OLD-CVR-ROWS",
+    "C-DQ-OLD2-S-CVR"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "Turning a CVR number into who and where, for the manure surplus join. The sibling project danish-livestock holds CVR records for part of it; the bulk register would complete it.",
-     "texts": "5b51f9c7f7df7f53",
+     "said on IF_YOU_HAVE_THE_DATA.md": "Turning a CVR number into who and where. For this project's joins the register's own records are already held: the sibling project danish-livestock has an answered record for 16,449 of the 16,449 CVR numbers behind a livestock site and 26,921 of the 26,922 field-parcel operators, and `scripts/socialcontext.py` keeps four company fields from each record and no person. The bulk register would add the companies outside these joins.",
+     "texts": "1c01fca9305960bb",
+     "node D-DQ-UNLOCK": "dba671cb4acc6377",
      "node D-DQ-SIBLING-CVR": "5da03b8746284e08",
-     "node X-SOCIAL": "55bc633a2c9c2130",
-     "node X-MANURE": "2893dee3c11aca68"
+     "node D-IN-CVR": "ee1261ac75b80c57",
+     "node X-SOCIAL": "55bc633a2c9c2130"
     }
    }
   },
@@ -1193,21 +1180,25 @@
    "kind": "argued",
    "stance": "ours",
    "page": "IF_YOU_HAVE_THE_DATA.md",
-   "claim": "How the bulk CVR register is reached, and on what terms, is not recorded.",
-   "because": "The slot has no register entry (U-DQ-NOREGISTER).",
+   "claim": "Erhvervsstyrelsen holds the bulk CVR register: its documented bulk API issues credentials on written application, and its own public site answers one company at a time without a key.",
+   "because": "The sibling project's notes on the registers, pinned.",
    "rests_on": [
-    "U-DQ-NOREGISTER"
+    "E-DQ-DL-BULK",
+    "E-DQ-DL-SITE"
    ],
    "replaces": [
-    "C-DQ-OLD-WHO-CVR"
+    "C-DQ-OLD-WHO-CVR",
+    "C-DQ-OLD2-W-CVR"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "Not recorded: the source register has no entry for it, so how the bulk register is reached, and on what terms, is not on file.",
-     "texts": "a44048e2609dc216",
-     "node U-DQ-NOREGISTER": "89dd08329ccdba8e"
+     "said on IF_YOU_HAVE_THE_DATA.md": "Erhvervsstyrelsen. Its documented bulk API issues credentials on written application; the register's own public site answers one company at a time without a key, which is how the sibling project fetched these, as its notes on the registers record.",
+     "texts": "67df9f89426ed7e9",
+     "node E-DQ-DL-BULK": "54862133bd5d30cd",
+     "pinned DL-DATA-SOURCES": "3f549d80383d9485",
+     "node E-DQ-DL-SITE": "02218d9f5a7199ba"
     }
    }
   },
@@ -1590,13 +1581,13 @@
     "C-DQ-OLD-NOTSPENT"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "Every entry of `data_sources.json` and `data_sources_2.json` that the fetch queue does not class as open, ordered by tier, then by how many hypotheses the entry names, with every hypothesis it names.",
+     "said on IF_YOU_HAVE_THE_DATA.md": "Every entry of `data_sources.json`, `data_sources_2.json` and `data_sources_3.json` that the fetch queue does not class as open, ordered by tier, then by how many hypotheses the entry names, with every hypothesis it names.",
      "texts": "073c3f7238f0bde7",
      "node X-DQ-UNLOCK": "755fa9165ee58195",
-     "node X-DQ-QUEUE": "0cb427648074c08a"
+     "node X-DQ-QUEUE": "a192bf41e47c8558"
     }
    }
   },
@@ -1605,7 +1596,7 @@
    "kind": "code",
    "stance": "ours",
    "page": "IF_YOU_HAVE_THE_DATA.md",
-   "claim": "Held means behind a credential this project holds, some already on disk; account a credential the queue does not count as held; blocked closed, unverified or matching no tier word.",
+   "claim": "Held means behind a credential this project holds - ODA, Dataforsyningen, Copernicus Marine, Copernicus Data Space - or already on this machine; account a credential the queue does not count as held; blocked closed, unverified or matching no tier word.",
    "because": "The tiers as DATA_QUEUE.md describes them.",
    "rests_on": [
     "C-DQ-Q-HELD",
@@ -1613,15 +1604,16 @@
     "C-DQ-Q-BLOCKED"
    ],
    "replaces": [
-    "C-DQ-OLD-NOTSPENT"
+    "C-DQ-OLD-NOTSPENT",
+    "C-DQ-OLD2-U-TIERS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "*Held* means behind a credential this project holds, and some of those topics are already on disk; *account* means a registration, an account, a login or a token the fetch queue does not count as held; *blocked* means the access text says it is closed or unverified, or matches no tier word.",
-     "texts": "f02ccdfe2cc6caf1",
-     "rests on C-DQ-Q-HELD": "ee03ea73220dc114",
+     "said on IF_YOU_HAVE_THE_DATA.md": "*Held* means behind a credential this project holds - ODA, Dataforsyningen, Copernicus Marine, Copernicus Data Space - or already on this machine; *account* means a registration, an account, a login or a token the fetch queue does not count as held; *blocked* means the access text says it is closed or unverified, or matches no tier word.",
+     "texts": "851ccdee272b9c64",
+     "rests on C-DQ-Q-HELD": "1adf1600208ad0ca",
      "rests on C-DQ-Q-ACCOUNT": "087226ef20b0bbd3",
      "rests on C-DQ-Q-BLOCKED": "5494eda8b25847ec"
     }
@@ -1644,10 +1636,10 @@
     "C-DQ-OLD-TENSLOTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (read 2026-09-13 against the pages as rebuilt: they went stale only because the fetch queue's node now names the third register file and the wider held tier, or because a count or the file list moved; each wording still holds. 2026-09-13; not yet read by the project owner)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "**89 entries are not classed open.** The ones a slot is filed under are marked **[slot]**; the other slots match no register entry or an entry in the open tier (`SPILDEVANDSDATA`).",
+     "said on IF_YOU_HAVE_THE_DATA.md": "**112 entries are not classed open.** The ones a slot is filed under are marked **[slot]**; the other slots match no register entry or an entry in the open tier (`SPILDEVANDSDATA`).",
      "texts": "438a3aa806d1b5af",
      "node D-DQ-QUEUE": "9372f34ce5858261",
      "node X-DQ-UNLOCK": "755fa9165ee58195",
@@ -2060,8 +2052,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.",
      "texts": "1717e72f9c81bfb2"
@@ -2088,8 +2080,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "API token on this machine, orthophoto WMS verified",
      "texts": "6b1da8ce5ff5888f"
@@ -2113,12 +2105,13 @@
    },
    "replaced_by": [
     "C-DQ-Q-ACCOUNT",
-    "C-DQ-Q-UNCOUNTED"
+    "C-DQ-Q-CMEMS",
+    "C-DQ-Q-CDSE"
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A form and an email address. Nothing is being withheld; it just has not been done.",
      "texts": "71fe4a17b2119738"
@@ -2146,8 +2139,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.",
      "texts": "8b8a0c0989dbad88"
@@ -2174,8 +2167,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nothing here is stored at an administrative unit — not per water body, not per catchment, not per municipality, not per sub-basin. Everything is carried at the resolution it was taken: a position, a time, and where it exists a depth.",
      "texts": "5efba63f57088f9d"
@@ -2202,8 +2195,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is not fastidiousness. OBSERVING.md establishes that a water body explains 7.9% of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.",
      "texts": "b35bacc7c5286a03"
@@ -2231,8 +2224,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.",
      "texts": "7a7e35c337821c6d"
@@ -2259,8 +2252,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Several entries in the last tier matter more than anything in the first — per-event overflow volumes, monthly trawling effort, and marine phytoplankton species counts are each closed, and each of them would settle a hypothesis that currently cannot be ranked at all.",
      "texts": "300e7e14658d423b"
@@ -2287,8 +2280,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every input this project could use is in one of three states, and the system is written for all three rather than for the one it happens to have. That ordering matters: an analysis written against the data on hand is worth only what that data is worth, but an analysis written against a stated contract runs on whatever arrives, and says what it could not do.",
      "texts": "8e34c9b8f623b0e6"
@@ -2315,8 +2308,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What is published here is the degraded run of a system built for the first column. That is the claim worth arguing with. Not *this is what the open data supports* - which invites the reply that the data is poor and the conclusions are therefore soft - but *this is the analysis, here is the contract it consumes, and here is what it currently has to eat.* Hand it better input and the same code produces a better answer without anyone rewriting an argument. Where the answer would change, it changes in public.",
      "texts": "21bc7ad9350b4656"
@@ -2343,8 +2336,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The pattern is not aspirational. Section 2c of NITROGEN.md had been written for months and rendered nothing, because the file it needed did not exist; the day that file was first produced, the section appeared with its numbers in it and no prose was written to make that happen.",
      "texts": "25eae36691fee07e"
@@ -2369,8 +2362,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "an earlier hand-written version of this page still named ODA `vandkemi` as the* *top blocker after it had been fetched, and still said no clock time existed in* *the archive after the water-chemistry topic turned out to carry one on 100.0%* *of 1,805,827 rows.",
      "texts": "bf440bf5673f0f86"
@@ -2398,8 +2391,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This project is run from open data by someone with no institutional credentials. A large part of what it cannot answer is not hard - it is gated. If you hold a utility login, a field sheet, a drainage archive or a service agreement, you can unblock in an afternoon what this cannot unblock at all.",
      "texts": "edb203168c85a181"
@@ -2426,8 +2419,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What changes is that the pages regenerate with your data in them, and you can see whether it moves any conclusion - which is the only thing worth knowing.",
      "texts": "c7d2f4048821e44b"
@@ -2454,8 +2447,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Overflow as a measurement rather than a model. Every overflow figure on this site is a registered or modelled volume; none has been compared with a metered one.",
      "texts": "c935562e5399b582"
@@ -2482,8 +2475,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "HOFOR, BIOFOS and other utilities; Miljoestyrelsen through PULS",
      "texts": "c12a18b64580b099"
@@ -2510,8 +2503,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Point-source load beside the diffuse residual, at the resolution the residual is computed against.",
      "texts": "c81e785cc54eb7c1"
@@ -2539,8 +2532,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The surface-versus-drain routing fraction as a mapped quantity instead of a single national dial. Tile-drained land bypasses the riparian zone and most of the denitrification, so this is the term between field surplus and delivered load.",
      "texts": "f70a07cf7d48a84f"
@@ -2567,8 +2560,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Aarhus Universitet DCA; Miljoestyrelsen; Danmarks Arealinformation",
      "texts": "1024596c0e9781d2"
@@ -2595,8 +2588,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The sibling project danish-livestock holds a 14,222-row subset; the bulk register would complete it.",
      "texts": "b01d1b5ac1784af7"
@@ -2623,8 +2616,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Erhvervsstyrelsen agreement, or a working Datafordeler subscription",
      "texts": "9b080791e3520e3e"
@@ -2651,8 +2644,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Marine toxicant loading, currently unscoreable: 7 hypotheses turn on whether contaminants rather than nutrients gate recovery.",
      "texts": "3ef8bfb8ba691224"
@@ -2679,8 +2672,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "anyone with an ODA login and the MFS topics enabled",
      "texts": "f661ba27f3f9fb76"
@@ -2707,8 +2700,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A real hydraulic model of the Copenhagen sewer instead of a catchment-level spill estimate. Without pipe geometry and connectivity, overflow can be predicted as whether and roughly how much, never as when within an event - and the timing is where the flush dynamic lives.",
      "texts": "73589a58dbf670d1"
@@ -2735,8 +2728,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ledningsejerregistret; the utilities that own the lines; Klimadatastyrelsen provisions access",
      "texts": "457135fbf8ce392b"
@@ -2763,8 +2756,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Provisioned for excavation safety. Whether a given access covers hydraulic analysis is the holder's question, not this project's - it is recorded here because the data would answer the question, which is a separate fact from whether anyone may ask it that way.",
      "texts": "b68adc05fa25dddd"
@@ -2791,8 +2784,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The comparison this project cannot make: its own predicted spill against a calibrated commercial model of the same network. Agreement would validate a method that needs no pipe data; disagreement would localise exactly where topography stops being enough.",
      "texts": "6ac7c7b4e72cd470"
@@ -2819,8 +2812,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "HOFOR, BIOFOS and the consultancies that built the models",
      "texts": "b1c88c8b29fa00ac"
@@ -2847,8 +2840,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Landbrugsstyrelsen; the parties to the agreements",
      "texts": "83cb9e39f77ca7f4"
@@ -2875,8 +2868,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Bed morphology at the scale that decides where resuspension and sulphidic sediment actually sit. The public depth model is too coarse to separate a trawled furrow from a natural hollow.",
      "texts": "a61b976e65313a0c"
@@ -2903,8 +2896,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Soevaernet and the national hydrographic survey; some holdings are restricted",
      "texts": "1412f0b1f04a820f"
@@ -2929,8 +2922,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Some of this is restricted for reasons that have nothing to do with the environment. Recorded because it is useful, not because it is available.",
      "texts": "9b69aca3e88fe234"
@@ -2957,8 +2950,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A clock on oxygen AT DEPTH. The water-chemistry topic carries a time on every row and CTD carries none, so 53.7M profile measurements have a date and no hour. 66% of the CTD measurements the depth analysis keeps can borrow a time from a same-day bottle whose clock is observed; the field sheets would settle the rest and check that borrowing.",
      "texts": "254abb8f6338bffa"
@@ -2985,8 +2978,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The analysis is already written. `scripts/depth_clock.py` runs today on the best clock available and will use yours the moment the file is here - nobody has to write anything for your data to be used, and you can see at once whether it changes the answer.",
      "texts": "4df647a2bce7f42f"
@@ -3014,8 +3007,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ordered by friction, then by how many hypotheses each serves. *Held* means a credential this project already has and simply has not spent; *account* means a free registration nobody has done; *blocked* means not open.",
      "texts": "358b880e56e50aed"
@@ -3042,8 +3035,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "gated sources, 10 with a slot.",
      "texts": "0180fb9de32e36b3"
@@ -3071,8 +3064,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Modelled inundation depth for a 100-year rainfall event on the 2010 city, from Københavns Kommune's Skybrudsplan. Recovered from the 7 published PDF sheets, whose geospatial metadata had been stripped, and placed back on the map.",
      "texts": "ecf5ee7a8fa1cfa5"
@@ -3099,8 +3092,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The matching `.pgw` world file and `.prj` sit beside it, so it lands in the right place in `EPSG:4326` with no further steps.",
      "texts": "bd02f3514a9c291f"
@@ -3127,8 +3120,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Pixel values are depth bands, not metres: | value | depth | |---|---| | `1` | 0.05–0.1 m | | `2` | 0.1–0.2 m | | `3` | 0.2–0.5 m | | `4` | 0.5–1 m | | `5` | 1–2 m | | `6` | over 2 m | | `0` | no modelled flooding, or outside the sheet",
      "texts": "0d468575d0cd39b9"
@@ -3155,8 +3148,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Position: an ensemble water cross-correlation for 3 sheets; control points located on a web map by a resident for 4; then sheet-to-sheet image registration on masked gradient images and a bundle adjustment over the sheets that overlap usefully.",
      "texts": "4359fc96ef3b804f"
@@ -3183,8 +3176,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nordhavn, most of Ørestad, Sluseholmen and Teglholmen, and much of Refshaleøen have been built since and are not in it - 344 ha of today's impervious surface, 8.1% of the city, lies outside every sheet.",
      "texts": "df4cad41f544f66b"
@@ -3211,8 +3204,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (second confirmation, after ARCHIVE.md was written: every retired passage was located in git at its commit, every one has a reason, and every replacement it names exists - checked mechanically; the SENSING and SETTLE retirements and my own were read in full, the rest rest on the retiring agents' reading. The archive wording is what git holds. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The sheets paint depth over lakes and the harbour as well as over land.",
      "texts": "1f0c99671c7b5907"

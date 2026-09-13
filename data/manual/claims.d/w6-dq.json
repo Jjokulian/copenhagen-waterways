@@ -1,0 +1,475 @@
+{
+ "_what": "Claims and sources for the update of IF_YOU_HAVE_THE_DATA.md and DATA_QUEUE.md to what the project holds (2026-09-13).",
+ "sources": {
+  "DL-DATA-SOURCES": {
+   "title": "danish-livestock (sibling project), docs/data-sources.md: where Danish livestock and land data actually lives",
+   "url": "https://raw.githubusercontent.com/Jjokulian/danish-livestock/main/docs/data-sources.md",
+   "sha256": "3f549d80383d9485beeea886dacea693bb8f02234e22d87f4c962feca6e77322",
+   "retrieved": "2026-09-13",
+   "checked": "2026-09-13",
+   "status": "pinned"
+  }
+ },
+ "nodes": [
+  {
+   "id": "E-DQ-DL-BULK",
+   "kind": "external",
+   "label": "danish-livestock notes:\\nthe CVR bulk API",
+   "detail": "The sibling project's notes on the Danish registers, pinned: the CVR register's documented bulk API issues its credentials on written application.",
+   "source": "DL-DATA-SOURCES",
+   "said": "credentials are issued on written application"
+  },
+  {
+   "id": "E-DQ-DL-SITE",
+   "kind": "external",
+   "label": "danish-livestock notes:\\nthe register's own site",
+   "detail": "The same notes: the CVR register's own public site answers without a key, one company at a time, and is how the sibling project fetched its records.",
+   "source": "DL-DATA-SOURCES",
+   "said": "Works, unauthenticated, and it is first-party"
+  },
+  {
+   "id": "D-DQ-SIBLING-LAND",
+   "kind": "held",
+   "label": "danish-livestock:\\nland per business",
+   "detail": "`land_by_cvr.json` in the sibling project danish-livestock: declared field-parcel hectares per business, from the field-parcel register."
+  },
+  {
+   "id": "D-DQ-UNLOCK",
+   "kind": "held",
+   "label": "unlock.json",
+   "detail": "`data/derived/unlock.json`: how many of the CVR numbers in the sibling project's herd and field-parcel files have an answered record in its CVR extract, counted by `scripts/unlock.py`, which keeps only the number and whether the register answered."
+  }
+ ],
+ "claims": [
+  {
+   "id": "C-DQ-Q-CMEMS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_QUEUE.md",
+   "claim": "The queue counts Copernicus Marine account credentials as held; fetch_cmems.py reads them from the home directory.",
+   "because": "`HELD` names them, and fetch_cmems.py reads them (X-DQ-CMEMS).",
+   "rests_on": [
+    "X-DQ-QUEUE",
+    "X-DQ-CMEMS"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_QUEUE.md": "**Copernicus Marine** — account credentials in the home directory, which `scripts/fetch_cmems.py` reads",
+     "texts": "e8ccf046c8e07fca",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
+     "node X-DQ-CMEMS": "7e128e8b66a82713"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-Q-CDSE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_QUEUE.md",
+   "claim": "The queue counts Copernicus Data Space client credentials as held; fetch_satellite.py reads them from the home directory.",
+   "because": "`HELD` names them, and fetch_satellite.py reads them (X-DQ-CDSE).",
+   "rests_on": [
+    "X-DQ-QUEUE",
+    "X-DQ-CDSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_QUEUE.md": "**Copernicus Data Space** — client credentials in the home directory, which `scripts/fetch_satellite.py` reads",
+     "texts": "4dce739dcc140c2c",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
+     "node X-DQ-CDSE": "a1f95d6ebab726fb"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-Q-DISK",
+   "kind": "code",
+   "stance": "ours",
+   "page": "DATA_QUEUE.md",
+   "claim": "The queue counts as held the entries the third register file records as on disk.",
+   "because": "classify() tests for an access text saying on disk first; the third file records those entries (D-DQ-REGISTER3).",
+   "rests_on": [
+    "X-DQ-QUEUE",
+    "D-DQ-REGISTER3"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on DATA_QUEUE.md": "**Already on this machine** — the entries the third register file records as on disk, downloaded earlier",
+     "texts": "01ebde91575a24e1",
+     "node X-DQ-QUEUE": "a192bf41e47c8558",
+     "node D-DQ-REGISTER3": "84d3a83e766be856"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-INTRO",
+   "kind": "argued",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "Some of what the page once listed as out of reach is held: the sibling project fetched the herd, company and field-parcel registers from their open, first-party sources, and this project reads its files in place.",
+   "because": "The sibling project's notes record the CVR register's own site as open and first-party, and the scripts named in the list read its files.",
+   "rests_on": [
+    "E-DQ-DL-SITE",
+    "D-W4AR-CHR",
+    "D-IN-CVR",
+    "D-DQ-SIBLING-LAND",
+    "D-ACCOUNTS"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "D-ACCOUNTS.label {fig:accounts_filed}": "1,630",
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}": "81.0",
+     "said on IF_YOU_HAVE_THE_DATA.md": "Some of what this page once listed as out of reach is held. The sibling project danish-livestock fetched the herd, company and field-parcel registers from their open, first-party sources, and this project reads its files in place:",
+     "texts": "1b76b340218fc1a8",
+     "node E-DQ-DL-SITE": "02218d9f5a7199ba",
+     "pinned DL-DATA-SOURCES": "3f549d80383d9485",
+     "node D-W4AR-CHR": "96cee979add927a2",
+     "node D-IN-CVR": "ee1261ac75b80c57",
+     "node D-DQ-SIBLING-LAND": "2e2e4f21c494dfa6",
+     "node D-ACCOUNTS": "c55f26444116abca"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-CHR",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "The sibling project's herd-register file, every livestock site with its business, species and animal units, is read by livestock_baskets.py and socialcontext.py.",
+   "because": "Both scripts name the file, and the page refuses to stand once either no longer does.",
+   "rests_on": [
+    "D-W4AR-CHR",
+    "X-W4AR-LS",
+    "X-SOCIAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on IF_YOU_HAVE_THE_DATA.md": "`chr_2024.json` - every livestock site in the herd register, with the business that runs it, its species and its animal units; read by `scripts/livestock_baskets.py` and `scripts/socialcontext.py`",
+     "texts": "863e3a6dd3cd41dc",
+     "node D-W4AR-CHR": "96cee979add927a2",
+     "node X-W4AR-LS": "5850a110e64ac798",
+     "node X-SOCIAL": "55bc633a2c9c2130"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-CVR",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "The sibling project's CVR records are read by socialcontext.py, which keeps four company fields from each and no person.",
+   "because": "socialcontext.py keeps legal form, industry code, municipality and whether the business files accounts (D-IN-CVR).",
+   "rests_on": [
+    "D-IN-CVR",
+    "X-SOCIAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on IF_YOU_HAVE_THE_DATA.md": "`cvr_raw.jsonl` - the CVR register's record for each of those businesses; `scripts/socialcontext.py` keeps four company fields and no person",
+     "texts": "58847bc76e737570",
+     "node D-IN-CVR": "ee1261ac75b80c57",
+     "node X-SOCIAL": "55bc633a2c9c2130"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-ACCOUNTS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "The annual accounts the businesses filed, from the sibling project, are read by socialcontext.py.",
+   "because": "socialcontext.py names the file (D-ACCOUNTS).",
+   "rests_on": [
+    "D-ACCOUNTS",
+    "X-SOCIAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "D-ACCOUNTS.label {fig:accounts_filed}": "1,630",
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:filers_none_de / herd_total_de * 100|.1f}": "76.3",
+     "D-ACCOUNTS.detail {calc@K-SUBSET-SHARE:ha_none / ha_total * 100|.1f}": "81.0",
+     "said on IF_YOU_HAVE_THE_DATA.md": "`cvr_financials.json` - the annual accounts those businesses filed; read by `scripts/socialcontext.py`",
+     "texts": "f1ff1ec8b3134ba5",
+     "node D-ACCOUNTS": "c55f26444116abca",
+     "node X-SOCIAL": "55bc633a2c9c2130"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-LAND",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "Declared field-parcel hectares per business, from the sibling project, are read by socialcontext.py.",
+   "because": "socialcontext.py names the file (D-DQ-SIBLING-LAND).",
+   "rests_on": [
+    "D-DQ-SIBLING-LAND",
+    "X-SOCIAL"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on IF_YOU_HAVE_THE_DATA.md": "`land_by_cvr.json` - declared field-parcel hectares per business, from the field-parcel register; read by `scripts/socialcontext.py`",
+     "texts": "44f5bd8fe8be1575",
+     "node D-DQ-SIBLING-LAND": "2e2e4f21c494dfa6",
+     "node X-SOCIAL": "55bc633a2c9c2130"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-MANURE",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "manure.py fetches the herd and field-parcel registers itself, from the same open source the sibling project found.",
+   "because": "manure.py fetches both layers from the herd and field-parcel WFS and says the sibling project found them.",
+   "rests_on": [
+    "X-MANURE"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on IF_YOU_HAVE_THE_DATA.md": "`scripts/manure.py` fetches the herd and field-parcel registers itself, from the same open source the sibling project found.",
+     "texts": "20c94d08d0d012e3",
+     "node X-MANURE": "2893dee3c11aca68"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-H-COPERNICUS",
+   "kind": "code",
+   "stance": "ours",
+   "page": "IF_YOU_HAVE_THE_DATA.md",
+   "claim": "The Copernicus Marine and Copernicus Data Space credentials are held, and the fetch queue counts their entries as held.",
+   "because": "As DATA_QUEUE.md lists them.",
+   "rests_on": [
+    "C-DQ-Q-CMEMS",
+    "C-DQ-Q-CDSE"
+   ],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (written as the owner directed on 2026-09-13: the fetch queue now reads all three register files and counts the Copernicus credentials and the entries on disk as held; the CVR slot states the sibling project's coverage, counted from its files, and who holds the bulk register from its pinned notes; each read against the page wording and what it rests on. 2026-09-13; not yet read by the project owner)",
+    "saw": {
+     "said on IF_YOU_HAVE_THE_DATA.md": "The Copernicus Marine and Copernicus Data Space credentials are held as well, and the fetch queue counts their entries as held, in the table below.",
+     "texts": "ff5ee48d6952965d",
+     "rests on C-DQ-Q-CMEMS": "e8ccf046c8e07fca",
+     "rests on C-DQ-Q-CDSE": "4dce739dcc140c2c"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-UNCOUNTED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The queue counted only two credentials as held while its fetch scripts read two Copernicus credentials, and said so.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "DATA_QUEUE.md",
+    "commit": "1c0840a",
+    "file": "docs/DATA_QUEUE.md",
+    "begin": "The queue counts only these as held.",
+    "end": "`CMEMS-BAL-WAV` as *blocked*.",
+    "why": "The queue now counts the Copernicus Marine and Copernicus Data Space credentials as held, so there is no longer a gap to note."
+   },
+   "replaced_by": [
+    "C-DQ-Q-CMEMS",
+    "C-DQ-Q-CDSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The queue counts only these as held. This project's fetch scripts also read Copernicus Data Space client credentials (`scripts/fetch_satellite.py`) and Copernicus Marine credentials (`scripts/fetch_cmems.py`) from this machine, so the Copernicus entries are counted in tiers that say otherwise: `CDSE-SENTINEL1` `CMEMS-BAL-BGC` `CMEMS-BAL-PHY` `CMEMS-NWS-WAV` as *account*; `CMEMS-BAL-WAV` as *blocked*.",
+     "texts": "606870ca462cea77"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-COUNT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The queue read two of the three register files, and said the third was in no tier.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "DATA_QUEUE.md",
+    "commit": "1c0840a",
+    "file": "docs/DATA_QUEUE.md",
+    "begin": "`data_sources_3.json`, also part of the register, is not read",
+    "end": "in none of the tiers below.",
+    "why": "The queue now reads all three register files."
+   },
+   "replaced_by": [
+    "C-DQ-Q-COUNT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "`data_sources_3.json`, also part of the register, is not read by this queue, so its entries are in none of the tiers below.",
+     "texts": "e1730f615815c41a"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-TIERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "How the queue read an entry's tier, naming only ODA and Dataforsyningen as held.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "DATA_QUEUE.md",
+    "commit": "1c0840a",
+    "file": "docs/DATA_QUEUE.md",
+    "begin": "Each entry's tier is read from its access text by keyword",
+    "end": "where they go wrong for the Copernicus entries.",
+    "why": "The queue now also counts entries on disk and the Copernicus products as held, tested first."
+   },
+   "replaced_by": [
+    "C-DQ-Q-TIERS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Each entry's tier is read from its access text by keyword, in this order: an ODA topic, or a source that names Dataforsyningen, is *held*; words for not public, request-only, FOI, provisioning, unverified or no download make it *blocked*; words for a registration, an account, a login or a token make it *account*; words for an open or key-free download make it *open*; and an entry that matches none of these is counted as *blocked*. Because the account words are tested before the open ones, an access text saying that no login or no registration is needed is counted as *account*. The tiers have not been checked by hand entry by entry, and the note under the credentials shows where they go wrong for the Copernicus entries.",
+     "texts": "72cf84f9a747fae3"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-HELD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What the held tier held, before the Copernicus credentials and the entries on disk were counted.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "DATA_QUEUE.md",
+    "commit": "1c0840a",
+    "file": "docs/DATA_QUEUE.md",
+    "begin": "*An ODA topic, or a service behind the Dataforsyningen",
+    "end": "`lys` and `maaledybde`.*",
+    "why": "The held tier now includes the Copernicus credentials and the entries on disk."
+   },
+   "replaced_by": [
+    "C-DQ-Q-HELD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "*An ODA topic, or a service behind the Dataforsyningen token: behind a credential this project holds. Some are already on disk: the ODA extracts `kemi`, `ctd`, `lys` and `maaledybde`.*",
+     "texts": "9de383ee5933dec4"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-S-CVR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The CVR slot said the sibling project held records for part of the join and the bulk register would complete it.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "IF_YOU_HAVE_THE_DATA.md",
+    "commit": "1c0840a",
+    "file": "docs/IF_YOU_HAVE_THE_DATA.md",
+    "begin": "Turning a CVR number into who and where, for the manure surplus join.",
+    "end": "the bulk register would complete it.",
+    "why": "Counted on 2026-09-13, the sibling project holds an answered record for every CVR number behind a livestock site and for all but one field-parcel operator; the bulk register would add only companies outside these joins."
+   },
+   "replaced_by": [
+    "C-DQ-S-CVR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Turning a CVR number into who and where, for the manure surplus join. The sibling project danish-livestock holds CVR records for part of it; the bulk register would complete it.",
+     "texts": "b1d5ea32162fb8f4"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-W-CVR",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The CVR slot said how the bulk register is reached was not on file.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "IF_YOU_HAVE_THE_DATA.md",
+    "commit": "1c0840a",
+    "file": "docs/IF_YOU_HAVE_THE_DATA.md",
+    "begin": "Not recorded: the source register has no entry for it, so how the bulk register",
+    "end": "is not on file.",
+    "why": "The sibling project's notes on the registers, now pinned, record it: credentials on written application, and a keyless public site one company at a time."
+   },
+   "replaced_by": [
+    "C-DQ-W-CVR"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Not recorded: the source register has no entry for it, so how the bulk register is reached, and on what terms, is not on file.",
+     "texts": "79e3d866dd40aa44"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD2-U-TIERS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "What the page's tiers meant, before the Copernicus credentials and the entries on disk were counted as held.",
+   "retired": {
+    "on": "2026-09-13",
+    "from": "IF_YOU_HAVE_THE_DATA.md",
+    "commit": "1c0840a",
+    "file": "docs/IF_YOU_HAVE_THE_DATA.md",
+    "begin": "*Held* means behind a credential this project holds, and some",
+    "end": "or matches no tier word.",
+    "why": "The held tier now names the four credentials and the entries on disk."
+   },
+   "replaced_by": [
+    "C-DQ-U-TIERS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-13",
+    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "*Held* means behind a credential this project holds, and some of those topics are already on disk; *account* means a registration, an account, a login or a token the fetch queue does not count as held; *blocked* means the access text says it is closed or unverified, or matches no tier word.",
+     "texts": "20d2c7dad01af711"
+    }
+   }
+  }
+ ]
+}

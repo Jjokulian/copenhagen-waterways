@@ -13,7 +13,7 @@
 | | we know we have it | we don't know we have it |
 |---|---|---|
 | **it exists** | **known known** — the [53.7](SOURCES.md#F-4c570f3335)M CTD measurements, and everything computed from them | **UNKNOWN KNOWN** — data that exists, is held by someone, and is absent from our map |
-| **we know it's missing** | **known unknown** — the [89](SOURCES.md#F-000ac8d87b) gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), [10](SOURCES.md#F-fe0618057d) of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |
+| **we know it's missing** | **known unknown** — the [112](SOURCES.md#F-000ac8d87b) gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), [10](SOURCES.md#F-fe0618057d) of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |
 
 <span class="claim" data-claim="C-KP-UNKNOWN-KNOWN">**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-UNKNOWN-KNOWN "What this claim rests on")</sup> Some of those we found:
 
