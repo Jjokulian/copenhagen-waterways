@@ -2364,7 +2364,87 @@ async function nvMenu(id, x, y, shown) {
   const first = m.querySelector("button");
   if (first) first.focus();
 }
-/* Claims keep their own view: the claim, its graph and its assessment. */
+/* Claims come from the claims store (docs/static-async-data/claims, and
+   .../claimnodes for what they rest on), written by scripts/claims.py: each claim and
+   each thing it rests on is one record, written once. The fixed wording is written
+   here or in the store's meta, and the diagram is drawn from the records. A retired
+   claim, or any claim when the store cannot be loaded, is read from the page text. */
+let clStore = null;
+async function clFetch(ids) {
+  if (!clStore) clStore = new StaticStore(DOCS_DIR + "static-async-data");
+  const meta = await clStore.meta("claims");
+  const recs = {}, nodes = {};
+  let want = [...ids];
+  for (let depth = 0; want.length && depth < 6; depth++) {
+    want = [...new Set(want)].filter(k => !(k in recs) && !(k in nodes));
+    if (!want.length) break;
+    const got = await clStore.getMany("claims", want);
+    const miss = want.filter(k => !got[k]);
+    const gn = miss.length ? await clStore.getMany("claimnodes", miss) : {};
+    const next = [];
+    for (const k of want) {
+      if (got[k]) { recs[k] = got[k]; next.push(...(got[k].r || [])); }
+      else nodes[k] = gn[k] || null;
+    }
+    want = next;
+  }
+  return { meta, recs, nodes };
+}
+const clPlain = s => String(s || "").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/<[^>]+>/g, "")
+  .replace(/[*`†]/g, "").replace(/\s+/g, " ").trim();
+function clGraph(id, recs, nodes, meta, depth) {
+  const seen = new Map(), edges = new Set();
+  const add = (x, dd) => {
+    if (seen.has(x) || dd < 0) return;
+    if (nodes[x]) { seen.set(x, nodes[x].k); return; }
+    const c = recs[x];
+    if (!c) return;
+    seen.set(x, "claim");
+    for (const r of c.r || []) { edges.add(r + " --> " + x); add(r, dd - 1); }
+  };
+  add(id, depth);
+  const L = ["graph BT"];
+  for (const [x, k] of seen) {
+    const [o, c] = (meta.shape || {})[k] || (meta.shape || {}).claim || ['("', '")'];
+    const full = clPlain(nodes[x] ? nodes[x].l : recs[x].t).replace(/"/g, "'");
+    const lab = nodes[x] || full.length <= 58 ? full : full.slice(0, 58) + "...";
+    L.push(`  ${x}${o}${lab}${c}`);
+    if (lab !== full) L.push(`  %% full ${x}: ${full}`);
+  }
+  for (const e of edges) { const [a, b] = e.split(" --> "); if (seen.has(a) && seen.has(b)) L.push("  " + e); }
+  for (const [x, k] of seen) L.push(`  style ${x} ${(meta.style || {})[k] || (meta.style || {}).claim || ""}`);
+  return L.join("\n");
+}
+function clBullet(x, recs, nodes, meta) {
+  const n = nodes[x];
+  if (!n) return recs[x] ? `- **claim** — ${recs[x].t} ([\`${x}\`](CLAIMS.md#${x}))` : `- \`${x}\``;
+  const label = String(n.l || x).replace(/ · /g, " "), det = n.d ? `. ${n.d}` : "";
+  if (n.k === "history") return `- **history** — ${label}: \`${n.file}\` at \`${String(n.commit || "").slice(0, 7)}\` says “${n.said}”${det}`;
+  if (n.k === "untraced") return `- **trail stops here** — ${label}${det}`;
+  if (n.source) {
+    const s = (meta.sources || {})[n.source] || [n.source, "#"];
+    return `- **${n.k}** — ${label}${n.said ? `: “${n.said}”` : ""} ([\`${n.source}\`](${s[1]}), pinned)${det}`;
+  }
+  return `- **${n.k}** — ${label}${det}`;
+}
+function clMarkdown(id, recs, nodes, meta) {
+  const c = recs[id];
+  const L = [`### ${c.t}`, "", `\`${id}\` · **${c.k}** — ${(meta.kind_note || {})[c.k] || ""}`, ""];
+  if (c.th) L.push(`**Somebody else's claim**, held by ${c.h}.`, "");
+  if (c.p && c.p.length) L.push("Said on " + c.p.map(p => `[${p}](${p})`).join(", ") + ".", "");
+  if (c.b) L.push(`**${c.th ? "Their reasons" : "Why it follows"}:** ${c.b}`, "");
+  for (const [old, on, why] of c.rp || [])
+    L.push(`**Replaces an earlier claim**, retired on ${on} to the [archive](ARCHIVE.md#${old}): ${why || ""}`, "");
+  if ((c.r || []).length) {
+    L.push("```mermaid", clGraph(id, recs, nodes, meta, 4), "```", "");
+    for (const x of c.r) L.push(clBullet(x, recs, nodes, meta));
+  } else L.push("- nothing further is cited: the reasoning above is the whole of it");
+  L.push("");
+  if (c.j) L.push(c.j, "");
+  if (c.n) L.push(`> ${c.n}`, "");
+  if (c.cf) L.push(`*Confirmed ${c.cf[0]} by ${c.cf[1]}.*`);
+  return L.join("\n");
+}
 const nvClaimText = {};
 async function openClaim(id, push) {
   const panel = document.getElementById("justify");
@@ -2378,25 +2458,35 @@ async function openClaim(id, push) {
   panel.hidden = false;
   body.innerHTML = '<p class="status">Loading…</p>';
   try {
-    // a live claim is explained in CLAIMS.md, a retired one in the archive
-    let lines = [], at = -1, from = "CLAIMS.md";
-    for (const doc of ["CLAIMS.md", "ARCHIVE.md"]) {
-      if (!(doc in nvClaimText)) {
-        const r = await fetch(DOCS_DIR + doc, { cache: "no-cache" });
-        nvClaimText[doc] = r.ok ? await r.text() : "";
-      }
-      lines = nvClaimText[doc].split("\n");
-      at = lines.findIndex(l => l.indexOf("`" + id + "`") === 0);
-      if (at >= 0) { from = doc; break; }
+    let md = null, from = "CLAIMS.md";
+    if (typeof StaticStore !== "undefined") {
+      try {
+        const { meta, recs, nodes } = await clFetch([id]);
+        if (recs[id]) md = clMarkdown(id, recs, nodes, meta);
+      } catch (err) { md = null; }
     }
-    if (at < 0) { body.innerHTML = `<p>No claim ${nvEsc(id)}.</p>`; return; }
-    let start = at;
-    while (start > 0 && !lines[start].startsWith("### ")) start--;
-    let end = at + 1;
-    while (end < lines.length && !lines[end].startsWith("### ") && !lines[end].startsWith("## ")
-           && !lines[end].startsWith("<a id=")) end++;
+    if (md === null) {
+      // a retired claim is explained in the archive (and, without the store, any claim in its page)
+      let lines = [], at = -1;
+      for (const doc of ["ARCHIVE.md", "CLAIMS.md"]) {
+        if (!(doc in nvClaimText)) {
+          const r = await fetch(DOCS_DIR + doc, { cache: "no-cache" });
+          nvClaimText[doc] = r.ok ? await r.text() : "";
+        }
+        lines = nvClaimText[doc].split("\n");
+        at = lines.findIndex(l => l.indexOf("`" + id + "`") === 0);
+        if (at >= 0) { from = doc; break; }
+      }
+      if (at < 0) { body.innerHTML = `<p>No claim ${nvEsc(id)}.</p>`; return; }
+      let start = at;
+      while (start > 0 && !lines[start].startsWith("### ")) start--;
+      let end = at + 1;
+      while (end < lines.length && !lines[end].startsWith("### ") && !lines[end].startsWith("## ")
+             && !lines[end].startsWith("<a id=")) end++;
+      md = lines.slice(start, end).join("\n");
+    }
     body.innerHTML = (nvState.stack.length ? `<button type="button" class="back">← back</button>` : "")
-      + mdParse(lines.slice(start, end).join("\n"));
+      + mdParse(md);
     body.scrollTop = 0;
     await drawMermaid(body);
     await nvMath(body);

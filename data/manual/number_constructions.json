@@ -345,10 +345,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: the only change to claims.py since the last reading is in the {read:} branch - entities decoded before a phrase is compared; {count:} is untouched. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "on": "2026-09-13",
     "saw": {
-     "scripts/claims.py": "a4f4f23278533e60"
+     "scripts/claims.py": "e981c4615674dc4a"
     }
    }
   },
@@ -386,10 +386,10 @@
     "scripts/claims.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read resolve()'s {read:} branch: it now decodes HTML entities in the pinned text and in the phrase before comparing, as the declaration now says; the check is otherwise the same - tags set aside, whitespace collapsed, the shown number one the phrase states. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "on": "2026-09-13",
     "saw": {
-     "scripts/claims.py": "a4f4f23278533e60"
+     "scripts/claims.py": "e981c4615674dc4a"
     }
    }
   },

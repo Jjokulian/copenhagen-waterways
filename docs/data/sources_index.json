@@ -4285,8 +4285,8 @@
     "The commit named is the version being talked about."
    ],
    "confirmed": {
-    "by": "Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner)",
-    "on": "2026-09-12"
+    "by": "Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13)",
+    "on": "2026-09-13"
    },
    "covers": "quote",
    "gaps": [],
@@ -4309,7 +4309,7 @@
    "model": "A quotation is a located reference: a commit, a file and a phrase from that text with a slot where the value stands. When the page is built the value is read out of `git show COMMIT:FILE` at the slot; a phrase that finds no place, or more than one, is refused. Nothing is typed. In the archive of retired claims a whole passage is read the same way, from a digit-free opening and closing phrase (`live.excerpt`), and every quantity in it is a quotation of that commit.",
    "not_licensed": "That what it said was right.",
    "produces": "quoted",
-   "status": "stale: scripts/live.py changed since it was read",
+   "status": "current",
    "title": "Quoting this site's own past",
    "void_if": [
     "the history is rewritten"
@@ -4325,8 +4325,8 @@
     "The pinned text is a faithful extraction of the document."
    ],
    "confirmed": {
-    "by": "Claude (re-read: the only change to claims.py since the last reading is in the {read:} branch - entities decoded before a phrase is compared; {count:} is untouched. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "on": "2026-09-13"
    },
    "covers": "reading-count",
    "gaps": [
@@ -4362,8 +4362,8 @@
     "The phrase means what the claim takes it to mean."
    ],
    "confirmed": {
-    "by": "Claude (re-read resolve()'s {read:} branch: it now decodes HTML entities in the pinned text and in the phrase before comparing, as the declaration now says; the check is otherwise the same - tags set aside, whitespace collapsed, the shown number one the phrase states. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13)",
+    "on": "2026-09-13"
    },
    "covers": "reading-phrase",
    "gaps": [

@@ -93,16 +93,39 @@ def tables_and_text(entries):
     return tabs, cell_of, text_ids
 
 
-def publish(idx, tt):
-    """Write docs/static-async-data/numbers: one record per number, the shared meta
-    once. Skipped, with a line in the log, where the loader's project is absent."""
-    import live
+def build(name, records, meta, shard_size, note):
+    """Write one store under docs/static-async-data, and the manifest of every store
+    there. False, with a line in the log, where the loader's project is absent."""
     if not os.path.isdir(os.path.join(SAD, "sad")):
-        log(f"  numbers store not rebuilt: {SAD} (static-async-data) is not beside this project")
-        return
+        log(f"  store '{name}' not rebuilt: {SAD} (static-async-data) is not beside this project")
+        return False
     if SAD not in sys.path:
         sys.path.insert(0, SAD)
     import sad
+    fd, tmp = tempfile.mkstemp(suffix=".json")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        json.dump({"records": records, **meta}, f, ensure_ascii=False)
+    try:
+        sad.build_store(tmp, name, OUT, records_key="records", shard_size=shard_size,
+                        note=note, quiet=True)
+    finally:
+        os.remove(tmp)
+    shutil.copyfile(os.path.join(SAD, "sad", "sad.js"), os.path.join(OUT, "sad.js"))
+    stores = []
+    for n in sorted(os.listdir(OUT)):
+        ip = os.path.join(OUT, n, "index.js")
+        if os.path.exists(ip):
+            body = open(ip, encoding="utf-8").read()
+            ix = json.loads(body[body.index(",") + 1:body.rindex(")")])
+            stores.append({"name": n, "count": ix["count"], "shards": len(ix["shards"])})
+    with open(os.path.join(OUT, "manifest.js"), "w", encoding="utf-8") as f:
+        f.write(f"__STORE.manifest({sad.js_safe({'stores': stores})});\n")
+    return True
+
+
+def publish(idx, tt):
+    """The numbers store: one record per number, the shared meta once."""
+    import live
     tabs, cell_of, _ = tt
     entries = idx["entries"]
     pages = sorted(idx.get("docs", {}))
@@ -132,17 +155,7 @@ def publish(idx, tt):
     meta = {"kinds": idx.get("kinds", {}), "constructions": idx.get("constructions", {}),
             "method_pages": idx.get("method_pages", []), "producers": live._producers(),
             "fields": fields, "pages": pages, "tables": tabs}
-    fd, tmp = tempfile.mkstemp(suffix=".json")
-    with os.fdopen(fd, "w", encoding="utf-8") as f:
-        json.dump({"records": records, **meta}, f, ensure_ascii=False)
-    try:
-        sad.build_all([{"source": tmp, "name": "numbers", "records_key": "records",
-                        "shard_size": 30,
-                        "note": "one record per number on the site; shared text in meta"}],
-                      OUT, quiet=True)
-    finally:
-        os.remove(tmp)
-    shutil.copyfile(os.path.join(SAD, "sad", "sad.js"), os.path.join(OUT, "sad.js"))
+    build("numbers", records, meta, 30, "one record per number on the site; shared text in meta")
 
 
 def sources_page(idx, tt):

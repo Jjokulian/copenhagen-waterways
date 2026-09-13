@@ -3155,7 +3155,7 @@ Adds the annual discharge volumes the statutory plan states, counting a figure s
 <a id="K-QUOTE"></a>
 ### Quoting this site's own past
 
-`K-QUOTE` · covers quote · **stale: scripts/live.py changed since it was read** · read by Claude (re-read the diff of live.py: it adds _lineages(), which maps a number's (file, field) to a lineage file under docs/data/lineage, and attaches that link to the number's index entry; nothing about quotations changed. 2026-09-12; not yet read by the project owner), 2026-09-12
+`K-QUOTE` · covers quote · **current** · read by Claude (live.py: render_sources now hands SOURCES.md and the number store to scripts/numbers_store.py; how a quotation is read and checked is unchanged; 2026-09-13), 2026-09-13
 
 What this site printed at an earlier commit.
 
@@ -3171,7 +3171,7 @@ What this site printed at an earlier commit.
 <a id="K-READ-COUNT"></a>
 ### Counting a term in a pinned document
 
-`K-READ-COUNT` · covers reading-count · **current** · read by Claude (re-read: the only change to claims.py since the last reading is in the {read:} branch - entities decoded before a phrase is compared; {count:} is untouched. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-READ-COUNT` · covers reading-count · **current** · read by Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13), 2026-09-13
 
 The number of occurrences of a term in the pinned text of an external document.
 
@@ -3188,7 +3188,7 @@ The number of occurrences of a term in the pinned text of an external document.
 <a id="K-READ-PHRASE"></a>
 ### A value stated in a pinned document
 
-`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (re-read resolve()'s {read:} branch: it now decodes HTML entities in the pinned text and in the phrase before comparing, as the declaration now says; the check is otherwise the same - tags set aside, whitespace collapsed, the shown number one the phrase states. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-READ-PHRASE` · covers reading-phrase · **current** · read by Claude (claims.py: the claims page now publishes each claim once as a record of the claims store; how a count or a phrase is read from a pinned document is unchanged; 2026-09-13), 2026-09-13
 
 A value as an external document states it, confirmed to be present in the document's pinned text.
 
