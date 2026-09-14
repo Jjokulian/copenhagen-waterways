@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from common import DERIVED, MANUAL, ROOT, log, write_doc
 import live
+import pathways
 
 OUT = os.path.join(ROOT, "docs", "OPEN_PROBLEMS.md")
 SUN_ORDER = ["night", "twilight", "0-10", "10-20", "20-30", "30-40", "40+"]
@@ -169,8 +170,9 @@ def main():
     # ------------------------------------------------------------------- 6
     w("## 6. The unquantified nitrogen pathways")
     w()
-    w(C("C-OP-6-COUNT", f"Of the {meta['pathways_total']} enumerated pathways, "
-        f"{meta['pathways_unquantified']} carry no number.") + " Two could be measured:")
+    n_all, n_unq = pathways.counts()
+    w(C("C-OP-6-COUNT", f"Of the {n_all} enumerated pathways, "
+        f"{n_unq} carry no number.") + " Two could be measured:")
     w()
     w(C("C-OP-6-A6", f"- **Submarine groundwater discharge** ({ref('A6')}) - measurable with radon and "
         "radium tracers or seepage meters, and not a term in the Danish marine budget."))

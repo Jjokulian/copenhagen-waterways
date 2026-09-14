@@ -276,6 +276,14 @@ def RD(sid, value, phrase):
     phrase. Live, so arithmetic on it keeps its chain."""
     if _claims._norm(phrase) not in _pin(sid):
         raise live.Unjustified(f"{sid}: the pinned text does not contain '{phrase}'")
+    # a statement quoting the same figure from the same document reads it through a
+    # longer phrase; take that one, so the figure is one reading with one menu
+    for s in _REG.get("st", ()):
+        if _sid_of(s.get("source_url")) == sid:
+            r = _quote_reads(s).get(value)
+            if r and _claims._norm(phrase) in _claims._norm(r[1]):
+                phrase = r[1]
+                break
     x = live._mk(value, ["reading", sid, "phrase", phrase, _meta(sid)])
     _REG.setdefault("rd", {})[id(x)] = (sid, phrase, x)
     return x
@@ -417,6 +425,7 @@ def render():
     write_json(TALLIES, analyse(d))
     a = live.live_json(TALLIES)
     st = d["statements"]
+    _REG["st"] = st          # so RD can take a statement's own phrase for the same figure
     for s in st:
         s["_camp"] = camp_of(s["id"])
     o = []
@@ -448,7 +457,7 @@ def render():
     D12776 = RD("POL-EL-20260623", 12776, "12.776 ton")
     D13780 = RD("POL-GP-20250619", 13780, "13.780 ton")
     D14800 = RD("POL-TV2-20251203", 14800, "14.800 ton")
-    G20000 = RD("POL-GP-20250619", 20000, "20.000 ton")
+    G20000 = RD("POL-GP-20250619", 20000, "den gode side af 20.000")
     G52 = RD("POL-GP-20250619", 52, "52 procent")
     V119 = RD("POL-TV2-20260903", 119, "119 medlemmer af Folketinget stemte for loven")
     V34 = RD("POL-TV2-20260903", 34, "mens 34 stemte imod")

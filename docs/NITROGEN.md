@@ -317,7 +317,7 @@ Three things have to be said with it, because each of them can make the predicti
 
 <span class="claim" data-claim="C-NI-KOEGE-COMBINED">Vallensbæk, Ishøj and Solrød have **no** combined-sewer overflow in the national register; Greve has [2](SOURCES.md#F-a1e648a27d). So in a storm they cannot spill combined sewage through one — though pumping stations on a separate system can still have emergency overflows, which DANVA's own list of discharge types names: *"Nødoverløb fra Pumpestationer"*.</span><sup class="claim-mark">[†](CLAIMS.md#C-NI-KOEGE-COMBINED "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-NI-KOEGE-STORAGE">**[92](SOURCES.md#F-2fd4e7f4b9)% of the bay's basin storage** ([80,072](SOURCES.md#F-055af6319d) of [87,343](SOURCES.md#F-6b51597463) m³) sits in the northern municipalities, along with [47](SOURCES.md#F-7d6ca460ce) of [85](SOURCES.md#F-05d8cfe97a) combined overflows. The bay opens southeast, so their discharge enters at the northern end.</span><sup class="claim-mark">[†](CLAIMS.md#C-NI-KOEGE-STORAGE "What this claim rests on")</sup>
+<span class="claim" data-claim="C-NI-KOEGE-STORAGE">**[92](SOURCES.md#F-cf82a795d8)% of the bay's basin storage** ([80,072](SOURCES.md#F-e82b3224a7) of [87,343](SOURCES.md#F-6b51597463) m³) sits in the northern municipalities, along with [47](SOURCES.md#F-73ed228595) of [85](SOURCES.md#F-05d8cfe97a) combined overflows. The bay opens southeast, so their discharge enters at the northern end.</span><sup class="claim-mark">[†](CLAIMS.md#C-NI-KOEGE-STORAGE "What this claim rests on")</sup>
 
 ### But "downstream" is a claim about water, and it has been tested
 

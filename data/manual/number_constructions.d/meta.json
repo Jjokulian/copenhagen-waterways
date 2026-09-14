@@ -123,14 +123,6 @@
    "covers": {
     "file": "data/derived/meta_facts.json",
     "fields": {
-     "pathways_total": {
-      "kind": "counted",
-      "is": "Rows in `data/manual/nitrogen_pathways.json`: every pathway of reactive nitrogen to Danish marine waters the project enumerated."
-     },
-     "pathways_unquantified": {
-      "kind": "counted",
-      "is": "Of those, the pathways whose status is `UNQUANTIFIED` - no bound given, published or constructed."
-     },
      "floodalign_pairs": {
       "kind": "counted",
       "is": "Overlapping flood-sheet pairs in `data/derived/floodalign.json` that passed the peak-to-rival test and entered the bundle adjustment."
@@ -299,8 +291,8 @@
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
-    "on": "2026-09-13",
+    "by": "Claude (2026-09-14: meta_facts.py no longer writes pathways_total and pathways_unquantified - the pages take them from scripts/pathways.py and the two fields are no longer declared; every other field is computed as before)",
+    "on": "2026-09-14",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
      "data/derived/hypotheses.json": "bf741395d16fdb52",
@@ -309,7 +301,7 @@
      "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson": "b2b949376e93ee05",
      "scripts/clock.py": "e2fb9cafe90c804b",
      "scripts/daylight.py": "84c11f42cb7e2cab",
-     "scripts/meta_facts.py": "eea330a720cf22c6",
+     "scripts/meta_facts.py": "12c9f325d0873b1e",
      "scripts/unlock.py": "cb3c1906da393d74",
      "scripts/fetch_queue.py": "d45cc3fd2ade07f0",
      "data/derived/light.json": "3bf11c218286e4c6"

@@ -59,7 +59,7 @@
    "id": "X-OP-META",
    "kind": "script",
    "label": "meta_facts.py",
-   "detail": "Counts and computed values for the overview pages: pathway counts, sun elevations through daylight.py, the flood-sheet PDF count, and fat and carbohydrate stoichiometry on reference compounds."
+   "detail": "Counts and computed values for the overview pages: sun elevations through daylight.py, the flood-sheet PDF count, and fat and carbohydrate stoichiometry on reference compounds."
   },
   {
    "id": "X-OP-DAYLIGHT",
@@ -838,16 +838,16 @@
    "because": "meta_facts.py counts the pathways register's rows and those marked unquantified.",
    "rests_on": [
     "D-OP-PATHWAYS",
-    "X-OP-META"
+    "X-NI-PATHWAY-COUNTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "Of the 20 enumerated pathways, 10 carry no number.",
-     "texts": "52c721f6a3cab5de",
+     "texts": "344ad6ca2092d1fb",
      "node D-OP-PATHWAYS": "d76dd2e07495bdcd",
-     "node X-OP-META": "1e1590fb554b2dd0"
+     "node X-NI-PATHWAY-COUNTS": "a43dc76ccfc3988e"
     }
    }
   },
@@ -916,12 +916,12 @@
     "C-OP-OLD-6-MEANINGLESS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: each rests on C-OP-6-COUNT or C-LE-EMPTY, which now also rest on scripts/pathways.py, where the pathway counts are made once; what those claims say is unchanged, and so is what these three draw from them)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "Until they are measured, a percentage in an apportionment is a share of the quantified pathways, not of the supply.",
      "texts": "a6cedccd112d1d8d",
-     "rests on C-OP-6-COUNT": "52c721f6a3cab5de"
+     "rests on C-OP-6-COUNT": "344ad6ca2092d1fb"
     }
    }
   },
@@ -1085,14 +1085,14 @@
     "A-OP-TRIPALMITIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: the sentence calling fedtemøg a material is gone - it names rotting algae - and the tripalmitin arithmetic about sewer fat is unchanged; the published wording is retired to the archive. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "claim {ref:R1}": "R1: The C:N threshold, and fat as a nitrogen sink",
      "said on OPEN_PROBLEMS.md": "Taken as tripalmitin, a triglyceride is 0% nitrogen and carries 2.9 g of oxygen demand per gram (R1).",
      "hypothesis R1": "9f9b867116a58f91",
      "texts": "f60789215536de04",
-     "node X-OP-META": "1e1590fb554b2dd0",
+     "node X-OP-META": "6055c2f230fd313a",
      "node A-OP-TRIPALMITIN": "d62cfc03d2973aa1"
     }
    },
@@ -1360,14 +1360,14 @@
     "C-OP-OLD-13-DETAILS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "All seven sheets are placed. They are drawn on aerial photographs, so where two overlap the pixels depict the same ground: `scripts/floodalign.py` resamples each overlapping pair onto a common metric grid, masks out everything drawn and everything flat, reduces both to gradient magnitude and correlates them. A bundle adjustment over the 11 usable pairs and the control points leaves pair residuals of 23 m RMS.",
      "texts": "a6555da3fb242be3",
      "node X-OP-FLOODALIGN": "d8ae0d3ef557ee05",
      "node D-OP-FLOODALIGN": "fd4b42142c9b1cf0",
-     "node X-OP-META": "1e1590fb554b2dd0"
+     "node X-OP-META": "6055c2f230fd313a"
     }
    }
   },
@@ -1866,8 +1866,8 @@
     "C-OP-OLD-16-NOWHERE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "D-SHEETS.label {fig:conv_n_sheets}": "7",
      "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
@@ -1875,7 +1875,7 @@
      "said on OPEN_PROBLEMS.md": "Item 14 is about the Copenhagen model. This is the larger version of the same problem: this project has such a reconstruction for Copenhagen only, and it exists there because 7 PDFs were published and their georeferencing could be recovered. That is not a method. It is lucky archaeology.",
      "texts": "b202838d91bbe818",
      "node D-SHEETS": "15d74fbee34cafef",
-     "node X-OP-META": "1e1590fb554b2dd0"
+     "node X-OP-META": "6055c2f230fd313a"
     }
    }
   },
@@ -2209,12 +2209,12 @@
     "X-OP-DAYLIGHT"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "A clock hour is not a light level at 55.7°N, so the sun's elevation is computed per sample from its own position and instant (`scripts/daylight.py`, the NOAA series). The difference is the whole point: **09:00 on the winter solstice is a sun 1.4° above the horizon; 09:00 on the summer solstice is 34.4°.** At 13:00 in midwinter the sun reaches 10.1° - 29% of the summer's 09:00 height.",
      "texts": "7ce0084f455a5b21",
-     "node X-OP-META": "1e1590fb554b2dd0",
+     "node X-OP-META": "6055c2f230fd313a",
      "node X-OP-DAYLIGHT": "e1e982b649eefab2"
     }
    }

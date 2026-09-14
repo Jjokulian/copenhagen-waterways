@@ -734,14 +734,6 @@
    "covers": {
     "file": "data/derived/landbrug.json",
     "fields": {
-     "n_pathways": {
-      "kind": "counted",
-      "is": "Pathways in `data/manual/nitrogen_pathways.json`."
-     },
-     "n_unquantified": {
-      "kind": "counted",
-      "is": "Of those, the pathways with no lower bound: the empty rows."
-     },
      "agri_pct": {
       "kind": "document",
       "is": "The published agricultural share of the Danish land-based waterborne nitrogen load, as this page quotes it; the page's subject is what that share is a share of."
@@ -781,10 +773,10 @@
     "data/manual/nitrogen_pathways.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: the only change to scripts/landbrug.py since the last reading drops the word 'trådformede' from the C-LE-FEDT page sentence; n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod are computed as before)",
+    "by": "Claude (2026-09-14: landbrug.py no longer writes n_pathways and n_unquantified - the page takes them from scripts/pathways.py and the two fields are no longer declared; agri_pct, c_per_n and c_per_cod are written as before)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/landbrug.py": "d703d9bfa787f653",
+     "scripts/landbrug.py": "198a7d14cf9ddc96",
      "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
     }
    }

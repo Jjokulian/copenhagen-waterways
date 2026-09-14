@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: nitrogen.py's only change since the last confirmation is one printed table cell - 'minus modelled point sources' became 'minus point sources'; no computation changed. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "5e453fe67bac02ca"
+     "scripts/nitrogen.py": "3b65bafc91d0d21e"
     }
    }
   }

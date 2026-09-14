@@ -5,7 +5,7 @@
 
 <span class="claim" data-claim="C-LR-L-LEFTOVER">**The farm share of the nitrogen reaching the sea is not measured.** It is what is left of the land-borne load once point sources and the natural background are subtracted: a leftover, which takes up every error in the terms subtracted. [Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-L-LEFTOVER "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-LR-L-DENOM">**And the share has no denominator.** Nitrogen reaches the sea by at least [20](SOURCES.md#F-ed6addefe7) pathways, and [10](SOURCES.md#F-10301e05f2) of them carry no number at all. Without them there is no total, and no share of it can be stated.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-L-DENOM "What this claim rests on")</sup>
+<span class="claim" data-claim="C-LR-L-DENOM">**And the share has no denominator.** Nitrogen reaches the sea by at least [20](SOURCES.md#F-c09b9f4a15) pathways, and [10](SOURCES.md#F-2e42b3ed03) of them carry no number at all. Without them there is no total, and no share of it can be stated.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-L-DENOM "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-LR-L-ONELINK">**Nor is nitrogen the whole chain.** It is one of several routes to oxygen depletion, which is one of many ways a sea bed and its life are lost, and both are among many causes of fedtemøg - the harms politicians and nature organisations name. [Link by link](CAUSATION.md)</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-L-ONELINK "What this claim rests on")</sup>
 

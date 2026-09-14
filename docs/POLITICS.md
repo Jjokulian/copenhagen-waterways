@@ -52,11 +52,11 @@ Two related exclusions follow from the same problem, and both are stated in the 
 
 ### 1.3 What is thin, undated, or unattributable
 
-- <span class="claim" data-claim="C-PO-UNDATED">**One entry has no date.** Danmarks Naturfredningsforening's campaign page carrying the [69](SOURCES.md#F-12e0446fef) % figure was undated at capture, so it cannot be placed in any chronology, and it is not used in the dated sequence in section 4.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-UNDATED "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-PO-UNDATED">**One entry has no date.** Danmarks Naturfredningsforening's campaign page carrying the [69](SOURCES.md#F-59ba9fe5cd) % figure was undated at capture, so it cannot be placed in any chronology, and it is not used in the dated sequence in section 4.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-UNDATED "What this claim rests on")</sup>
 
-- <span class="claim" data-claim="C-PO-TOTALS">**Two of the three competing totals are quoted in the record; one is not.** The figures [13,780](SOURCES.md#F-437291a723) t and [14,800](SOURCES.md#F-4e2b5f0f3c) t are each quoted in a statement below. The third, [12,776](SOURCES.md#F-8906ed2ac7) t, appears in the collection's own caveat and **no statement in this record quotes it**; it is stated as *målet* in the Effektivt Landbrug article of 2026-06-23 that one entry is taken from, and is read from there. It is carried through the arithmetic in section 5 with that provenance attached, and no further.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-TOTALS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-PO-TOTALS">**Two of the three competing totals are quoted in the record; one is not.** The figures [13,780](SOURCES.md#F-c33ac514b9) t and [14,800](SOURCES.md#F-7af2c48289) t are each quoted in a statement below. The third, [12,776](SOURCES.md#F-8906ed2ac7) t, appears in the collection's own caveat and **no statement in this record quotes it**; it is stated as *målet* in the Effektivt Landbrug article of 2026-06-23 that one entry is taken from, and is read from there. It is carried through the arithmetic in section 5 with that provenance attached, and no further.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-TOTALS "What this claim rests on")</sup>
 
-- <span class="claim" data-claim="C-PO-UNNAMED">**Both sides cite unnamed experts for a total.** Ritzau reports that *forskere vurderer* the need is [14,800](SOURCES.md#F-4e2b5f0f3c) t; Greenpeace reports that *eksperter peger imidlertid på* a real need above [20,000](SOURCES.md#F-c347f5e660) t. Neither names a researcher or cites a report. From this record alone, the two are exactly equally uncheckable, and they point in opposite directions.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-UNNAMED "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-PO-UNNAMED">**Both sides cite unnamed experts for a total.** Ritzau reports that *forskere vurderer* the need is [14,800](SOURCES.md#F-7af2c48289) t; Greenpeace reports that *eksperter peger imidlertid på* a real need above [20,000](SOURCES.md#F-80775fd09d) t. Neither names a researcher or cites a report. From this record alone, the two are exactly equally uncheckable, and they point in opposite directions.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-UNNAMED "What this claim rests on")</sup>
 
 - <span class="claim" data-claim="C-PO-FDK-DATE">**One date is approximate.** The collection dates the FødevareDanmark release 2026-08-20 by inference, from a date for the bill's first reading that it gives without a source. The pinned release carries its own date, 2026-08-21, and says only that the Folketing first read the bill *i sidste uge*.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-FDK-DATE "What this claim rests on")</sup>
 
@@ -173,27 +173,27 @@ Three consequences worth stating plainly.
 | Total (`indsatsbehov`) | provenance in this record |
 |---:|---|
 | [12,776](SOURCES.md#F-8906ed2ac7) t | <span class="claim" data-claim="C-PO-DEN-A">stated as *målet* in the Effektivt Landbrug article of 2026-06-23 behind `rabjerg-2026-06-23`, and in the collection's own caveat; no statement in the record quotes it</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DEN-A "What this claim rests on")</sup> |
-| [13,780](SOURCES.md#F-437291a723) t | <span class="claim" data-claim="C-PO-DEN-B">quoted by Greenpeace, 2025-06-19, as *et estimat*</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DEN-B "What this claim rests on")</sup> |
-| [14,800](SOURCES.md#F-4e2b5f0f3c) t | <span class="claim" data-claim="C-PO-DEN-C">quoted by Ritzau, 2025-12-03, as what *forskere vurderer*</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DEN-C "What this claim rests on")</sup> |
+| [13,780](SOURCES.md#F-c33ac514b9) t | <span class="claim" data-claim="C-PO-DEN-B">quoted by Greenpeace, 2025-06-19, as *et estimat*</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DEN-B "What this claim rests on")</sup> |
+| [14,800](SOURCES.md#F-7af2c48289) t | <span class="claim" data-claim="C-PO-DEN-C">quoted by Ritzau, 2025-12-03, as what *forskere vurderer*</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DEN-C "What this claim rests on")</sup> |
 
 So: is the two-thirds claim sensitive to which total is meant? The arithmetic is one line and it should be run rather than argued about.
 
-| Reduction claimed | of [12,776](SOURCES.md#F-8906ed2ac7) t | of [13,780](SOURCES.md#F-437291a723) t | of [14,800](SOURCES.md#F-4e2b5f0f3c) t |
+| Reduction claimed | of [12,776](SOURCES.md#F-8906ed2ac7) t | of [13,780](SOURCES.md#F-c33ac514b9) t | of [14,800](SOURCES.md#F-7af2c48289) t |
 |---|---:|---:|---:|
-| **[10,100](SOURCES.md#F-25dc682a2c) t** - nitrogen regulation **and** the agreed wastewater effort together (MGTP, 2025-12-03) | [79.1](SOURCES.md#F-7a6833b15d)% | [73.3](SOURCES.md#F-0b5163cec1)% | [68.2](SOURCES.md#F-18aa2179b1)% |
-| **[7,900](SOURCES.md#F-88199506d0) t** - the nitrogen regulation alone (MGTP, 2025-12-03) | [61.8](SOURCES.md#F-e67645572c)% | [57.3](SOURCES.md#F-e4a376406d)% | [53.4](SOURCES.md#F-60504f81bc)% |
-| **[3,500](SOURCES.md#F-aad9162bdc) t** - the previous regulation, for comparison (MGTP, 2025-12-03) | [27.4](SOURCES.md#F-61d82e82d0)% | [25.4](SOURCES.md#F-9a93912e70)% | [23.6](SOURCES.md#F-fc3ef0cc11)% |
+| **[10,100](SOURCES.md#F-807fa102b4) t** - nitrogen regulation **and** the agreed wastewater effort together (MGTP, 2025-12-03) | [79.1](SOURCES.md#F-e4b02d9837)% | [73.3](SOURCES.md#F-b170e0a7a4)% | [68.2](SOURCES.md#F-a12e0256e4)% |
+| **[7,900](SOURCES.md#F-ac08cb23e6) t** - the nitrogen regulation alone (MGTP, 2025-12-03) | [61.8](SOURCES.md#F-fd27f65674)% | [57.3](SOURCES.md#F-535ccc3d13)% | [53.4](SOURCES.md#F-de4f2b3557)% |
+| **[3,500](SOURCES.md#F-18f278936f) t** - the previous regulation, for comparison (MGTP, 2025-12-03) | [27.4](SOURCES.md#F-0cfbb3afb9)% | [25.4](SOURCES.md#F-74a0b64544)% | [23.6](SOURCES.md#F-51dd42f5bb)% |
 
 <span class="claim" data-claim="C-PO-TWO-THIRDS-READ">Two thirds is [66.7](SOURCES.md#F-7c7f983a58)%. Read the table honestly and it says two things, and the first one favours the claim:</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-TWO-THIRDS-READ "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-PO-PKG">**The claim survives the ambiguity, for the package as a whole.** [10,100](SOURCES.md#F-25dc682a2c) t is more than two thirds of every one of the three totals - [68.2](SOURCES.md#F-18aa2179b1)% of the largest, [79.1](SOURCES.md#F-7a6833b15d)% of the smallest. Whichever total the ministry had in mind, *more than two thirds* is arithmetically true of the combined nitrogen-and-wastewater package. The missing denominator is a defect of the sentence, not a defect of its arithmetic, and it would be unfair to imply otherwise.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-PKG "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PO-PKG">**The claim survives the ambiguity, for the package as a whole.** [10,100](SOURCES.md#F-807fa102b4) t is more than two thirds of every one of the three totals - [68.2](SOURCES.md#F-a12e0256e4)% of the largest, [79.1](SOURCES.md#F-e4b02d9837)% of the smallest. Whichever total the ministry had in mind, *more than two thirds* is arithmetically true of the combined nitrogen-and-wastewater package. The missing denominator is a defect of the sentence, not a defect of its arithmetic, and it would be unfair to imply otherwise.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-PKG "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-PO-SUBJECT">**It does not survive a change of subject.** 
-The nitrogen regulation on its own is [7,900](SOURCES.md#F-88199506d0) t, and that is [61.8](SOURCES.md#F-e67645572c)% of the smallest total and [53.4](SOURCES.md#F-60504f81bc)% of the largest. **On the ministry's own published figures, the nitrogen regulation alone does not reach two thirds of any of the three totals.** The 2025-12-03 release attaches the fraction correctly, to `kvælstofreguleringen og den aftalte spildevandsindsats` together. The 2026-06-19 release from the successor ministry says *"Den nye model ventes med ét hug at fjerne to tredjedele af de udledninger, vi skal have væk"* - and *den nye model* is the regulation model, not the package.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-SUBJECT "What this claim rests on")</sup>
+The nitrogen regulation on its own is [7,900](SOURCES.md#F-ac08cb23e6) t, and that is [61.8](SOURCES.md#F-fd27f65674)% of the smallest total and [53.4](SOURCES.md#F-de4f2b3557)% of the largest. **On the ministry's own published figures, the nitrogen regulation alone does not reach two thirds of any of the three totals.** The 2025-12-03 release attaches the fraction correctly, to `kvælstofreguleringen og den aftalte spildevandsindsats` together. The 2026-06-19 release from the successor ministry says *"Den nye model ventes med ét hug at fjerne to tredjedele af de udledninger, vi skal have væk"* - and *den nye model* is the regulation model, not the package.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-SUBJECT "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-PO-TRANSFORM">That is the transformation this site exists to notice, and here it is in a form anyone can check with a calculator: **the same fraction, in releases dated 2025-12-03 and 2026-06-19, attached to a different subject, with no figure changed.** Whether the second sentence is loose drafting or a different intended referent is not something the record settles, and this page does not guess.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-TRANSFORM "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-PO-GP52">One more figure that looks inconsistent and is not: Greenpeace stated in June 2025 that the regulation reaches *op til [52](SOURCES.md#F-844015b817) procent* of the way, against a total of [13,780](SOURCES.md#F-437291a723) t. That is the June 2025 package, before December's, and [52](SOURCES.md#F-844015b817)% of [13,780](SOURCES.md#F-437291a723) t is [7,166](SOURCES.md#F-aaab58b857) t. It is a different measure of a different agreement at a different date, and it does not contradict the December figures. Scoring a point off it would be the same error as the one this section describes.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-GP52 "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PO-GP52">One more figure that looks inconsistent and is not: Greenpeace stated in June 2025 that the regulation reaches *op til [52](SOURCES.md#F-9008e814c3) procent* of the way, against a total of [13,780](SOURCES.md#F-c33ac514b9) t. That is the June 2025 package, before December's, and [52](SOURCES.md#F-9008e814c3)% of [13,780](SOURCES.md#F-c33ac514b9) t is [7,166](SOURCES.md#F-acbe6565c3) t. It is a different measure of a different agreement at a different date, and it does not contradict the December figures. Scoring a point off it would be the same error as the one this section describes.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-GP52 "What this claim rests on")</sup>
 
 ## 6. The [69.6](SOURCES.md#F-7e1b8a8a83) %, and the [4](SOURCES.md#F-65f135a64c) places it is stated as a fact
 
@@ -201,7 +201,7 @@ The nitrogen regulation on its own is [7,900](SOURCES.md#F-88199506d0) t, and th
 
 <span class="claim" data-claim="C-PO-SHARE-STATED">[4](SOURCES.md#F-755bee0eb4) of the [5](SOURCES.md#F-476f00cc3c) statements carrying the `estimator_treated_as_estimand` flag concern this share - the remaining one is the ministry sentence in the ladder above, which is about a different modelled quantity. All [4](SOURCES.md#F-755bee0eb4) state the share with no qualification at all:</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-SHARE-STATED "What this claim rests on")</sup>
 
-> *"Landbruget står for størstedelen af kvælstofudledningerne. Hele [69](SOURCES.md#F-12e0446fef) procent af den kvælstof, der ender i vores fjorde og indre farvande, stammer fra landbrugets brug af gødning."*
+> *"Landbruget står for størstedelen af kvælstofudledningerne. Hele [69](SOURCES.md#F-59ba9fe5cd) procent af den kvælstof, der ender i vores fjorde og indre farvande, stammer fra landbrugets brug af gødning."*
 >
 > — Danmarks Naturfredningsforening (kampagneside 'Kvælstof'), undated
 
@@ -213,11 +213,11 @@ The nitrogen regulation on its own is [7,900](SOURCES.md#F-88199506d0) t, and th
 >
 > — DR Verificerer (redaktionel tekst), 2026-09-03
 
-> *"Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer [91,7](SOURCES.md#F-6f97ce1310) % af al kvælstofudledning fra diffuse kilder, hvor landbruget alene står for [69,6](SOURCES.md#F-7e1b8a8a83) %. Disse diffuse kilder omfatter blandt andet udvaskning fra marker, hvor gødning anvendes, samt naturlige baggrundskilder, som bidrager med [22,1](SOURCES.md#F-5be82bad90) %."*
+> *"Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer [91,7](SOURCES.md#F-2cd156f9de) % af al kvælstofudledning fra diffuse kilder, hvor landbruget alene står for [69,6](SOURCES.md#F-7e1b8a8a83) %. Disse diffuse kilder omfatter blandt andet udvaskning fra marker, hvor gødning anvendes, samt naturlige baggrundskilder, som bidrager med [22,1](SOURCES.md#F-5be82bad90) %."*
 >
 > — DANVA (brancheorganisation for vandselskaber), 2024
 
-<span class="claim" data-claim="C-PO-VERBS">The verbs are worth reading closely, because they are the whole content of the flag. `stammer fra` - comes from. `viser de seneste tal` - the latest figures show. `Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer 91,7 %` - according to data, [91.7](SOURCES.md#F-6f97ce1310)% comes from. `det er videnskabeligt dokumenteret` - it is scientifically documented. Each is a verb of observation applied to a subtraction, and `mere præcist` in front of a residual quoted to one decimal place is the clearest single instance in the collection.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-VERBS "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PO-VERBS">The verbs are worth reading closely, because they are the whole content of the flag. `stammer fra` - comes from. `viser de seneste tal` - the latest figures show. `Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer 91,7 %` - according to data, [91.7](SOURCES.md#F-2cd156f9de)% comes from. `det er videnskabeligt dokumenteret` - it is scientifically documented. Each is a verb of observation applied to a subtraction, and `mere præcist` in front of a residual quoted to one decimal place is the clearest single instance in the collection.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-VERBS "What this claim rests on")</sup>
 
 Two things must be said immediately after that, and they are not softening.
 
@@ -259,13 +259,13 @@ Two things must be said immediately after that, and they are not softening.
 >
 > — Leif Wilson Laustsen, 2026-08-20 · `fdk-laustsen-2026-08`
 
-<span class="claim" data-claim="C-PO-FOUR-OBJECTIONS">Read as a set, these make four distinct objections, and they are not the same objection: that a decision-support map is being used as an answer key for individual holdings; that the model's own reported explanatory power is low relative to the decisions taken on it; that physical measurement might later contradict a model on which a farm has already been closed; and that the reference condition the target is derived from lies [6,000](SOURCES.md#F-2d5c1c984f) years back, before Danish agriculture existed. Whether any of them is correct is a question about documents, and it is not answered here or anywhere else on this site by counting who said them.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-FOUR-OBJECTIONS "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PO-FOUR-OBJECTIONS">Read as a set, these make four distinct objections, and they are not the same objection: that a decision-support map is being used as an answer key for individual holdings; that the model's own reported explanatory power is low relative to the decisions taken on it; that physical measurement might later contradict a model on which a farm has already been closed; and that the reference condition the target is derived from lies [6,000](SOURCES.md#F-20ebb62a63) years back, before Danish agriculture existed. Whether any of them is correct is a question about documents, and it is not answered here or anywhere else on this site by counting who said them.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-FOUR-OBJECTIONS "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-PO-COMMON-GROUND">What can be said from the record: **the leader of Danmarksdemokraterne, which voted against `L5`, states the environmental objective as common ground** - *"Vi vil også have en grøn omstilling om landbruget, vi vil også have rent drikkevand, rene fjorde og havmiljø, men omstillingen skal være baseret på sund fornuft"* - and no statement in this collection, from any speaker, asserts that Danish coastal water is in acceptable condition. Every `state_claim` entry but one describes the water as in poor condition - from a minister, an SF spokesperson, a think tank, and a joint count by two environmental organisations - and the exception is a minister characterising his opponents rather than the sea. **Not one statement in the record disputes any of them.**</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-COMMON-GROUND "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-PO-DISAGREEMENT">So the public disagreement recorded here is **not a disagreement about the state of the sea.** It is a disagreement about whether particular model outputs can carry particular legal consequences, and about how the cost should fall. That is a more tractable disagreement than the one the shouting implies, and noticing it is the most useful thing this collection does.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-DISAGREEMENT "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-PO-SYMMETRY">**The symmetry runs the other way too.** The objection that the framework is *insufficient* is made from the other end by Alternativet, which stated in the chamber that `L5` will not meet the Water Framework Directive and voted for it anyway; by Enhedslisten, which is not in the tripartite, criticises its reliance on voluntary conversion, and also voted for it; and by Greenpeace, which puts the real requirement above [20,000](SOURCES.md#F-c347f5e660) t against the government's estimate. One measure, contested from both directions, passed [119](SOURCES.md#F-4d2c213b6e)–[34](SOURCES.md#F-a987b8d1e3).</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-SYMMETRY "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PO-SYMMETRY">**The symmetry runs the other way too.** The objection that the framework is *insufficient* is made from the other end by Alternativet, which stated in the chamber that `L5` will not meet the Water Framework Directive and voted for it anyway; by Enhedslisten, which is not in the tripartite, criticises its reliance on voluntary conversion, and also voted for it; and by Greenpeace, which puts the real requirement above [20,000](SOURCES.md#F-80775fd09d) t against the government's estimate. One measure, contested from both directions, passed [119](SOURCES.md#F-4d2c213b6e)–[34](SOURCES.md#F-a987b8d1e3).</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-SYMMETRY "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-PO-HEDGE">**And the hedge is dropped on both sides.** The technical document behind the policy writes `evt. iltsvind` - *possibly* oxygen depletion - inside its own definition of eutrophication. In the public sentences the *evt.* is gone: a minister says too much nitrogen *har ført til iltsvind*, and Greenpeace says decades of nitrogen pollution *har skabt voldsomt iltsvind og livløse danske fjorde*. Same dropped qualifier, opposite politics.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-HEDGE "What this claim rests on")</sup>
 
@@ -311,9 +311,9 @@ Two things must be said immediately after that, and they are not softening.
 
 **DANVA (brancheorganisation for vandselskaber)** · Brancheorganisation
 
-> Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer [91,7](SOURCES.md#F-6f97ce1310) % af al kvælstofudledning fra diffuse kilder, hvor landbruget alene står for [69,6](SOURCES.md#F-7e1b8a8a83) %. Disse diffuse kilder omfatter blandt andet udvaskning fra marker, hvor gødning anvendes, samt naturlige baggrundskilder, som bidrager med [22,1](SOURCES.md#F-5be82bad90) %.
+> Ifølge data fra Miljøstyrelsen og Aarhus Universitet kommer [91,7](SOURCES.md#F-2cd156f9de) % af al kvælstofudledning fra diffuse kilder, hvor landbruget alene står for [69,6](SOURCES.md#F-7e1b8a8a83) %. Disse diffuse kilder omfatter blandt andet udvaskning fra marker, hvor gødning anvendes, samt naturlige baggrundskilder, som bidrager med [22,1](SOURCES.md#F-5be82bad90) %.
 
-*Gloss (supplied here, not a quotation):* According to data from the Environmental Protection Agency and Aarhus University, [91.7](SOURCES.md#F-6f97ce1310) % of all nitrogen discharge comes from diffuse sources, where agriculture alone accounts for [69.6](SOURCES.md#F-7e1b8a8a83) %. These diffuse sources include leaching from fields where fertiliser is used, as well as natural background sources, which contribute [22.1](SOURCES.md#F-5be82bad90) %.
+*Gloss (supplied here, not a quotation):* According to data from the Environmental Protection Agency and Aarhus University, [91.7](SOURCES.md#F-2cd156f9de) % of all nitrogen discharge comes from diffuse sources, where agriculture alone accounts for [69.6](SOURCES.md#F-7e1b8a8a83) %. These diffuse sources include leaching from fields where fertiliser is used, as well as natural background sources, which contribute [22.1](SOURCES.md#F-5be82bad90) %.
 
 `number_claim` · `estimator_treated_as_estimand` · [source](https://www.danva.dk/nyheder/2024/kvaelstofudledningen-skyldes-overvejende-andre-kilder-end-spildevand/) · `danva-2024-696`  
 *Note:* The [22.1](SOURCES.md#F-5be82bad90) % 'naturlig baggrund' is itself a model output; agriculture's [69.6](SOURCES.md#F-7e1b8a8a83) % is the remainder after subtracting it and the reported point sources. Whitespace around ' % . ' in the source HTML normalised. Precise publication month not given on the page as captured.
@@ -609,12 +609,12 @@ Two things must be said immediately after that, and they are not softening.
 
 **Ritzau (refererende, ikke citat af navngiven person)** · Nyhedsbureau
 
-> Forskere vurderer dog, at der er behov for en reduktion på [14.800](SOURCES.md#F-4e2b5f0f3c) ton kvælstof for at få god vandkvalitet igen.
+> Forskere vurderer dog, at der er behov for en reduktion på [14.800](SOURCES.md#F-7af2c48289) ton kvælstof for at få god vandkvalitet igen.
 
-*Gloss (supplied here, not a quotation):* Researchers assess, however, that a reduction of [14,800](SOURCES.md#F-4e2b5f0f3c) tonnes of nitrogen is needed to obtain good water quality again.
+*Gloss (supplied here, not a quotation):* Researchers assess, however, that a reduction of [14,800](SOURCES.md#F-7af2c48289) tonnes of nitrogen is needed to obtain good water quality again.
 
 `number_claim` · `denominator_variant` · [source](https://nyheder.tv2.dk/politik/2025-12-03-politisk-aftale-reducerer-landbrugets-kvaelstofudledning-markant) · `ritzau-2025-12-03-14800`  
-*Note:* The denominator against which 'two thirds' is computed in press coverage. Sources in this file give [12,776](SOURCES.md#F-8906ed2ac7) t, [13,780](SOURCES.md#F-437291a723) t and [14,800](SOURCES.md#F-4e2b5f0f3c) t.
+*Note:* The denominator against which 'two thirds' is computed in press coverage. Sources in this file give [12,776](SOURCES.md#F-8906ed2ac7) t, [13,780](SOURCES.md#F-c33ac514b9) t and [14,800](SOURCES.md#F-7af2c48289) t.
 
 ### On 2025-12-05 - trade-press reaction to the agreement
 
@@ -943,7 +943,7 @@ Two things must be said immediately after that, and they are not softening.
 *Gloss (supplied here, not a quotation):* But nature is not divided into squares, so there will always be an uncertainty with that kind of map. If it were to be more precise it would require putting a meter on every single field and every single drain, and even then there would still be a certain uncertainty. And it would be extremely expensive and cumbersome.
 
 `certainty_claim` · `uncertainty_acknowledged` · [source](https://www.dr.dk/nyheder/viden/klima/saa-har-vi-balladen-igen-hvad-er-op-og-ned-i-det-groenne-slagsmaal-mellem-landmaendene-og) · `dr-andersen-2026-09-03`  
-*Note:* Appears in the same DR article as the [69.6](SOURCES.md#F-947d0c448a) % statement recorded under `dr-verificerer-2026-09-03-a`.
+*Note:* Appears in the same DR article as the [69.6](SOURCES.md#F-b1ff896da1) % statement recorded under `dr-verificerer-2026-09-03-a`.
 
 **DR Verificerer (redaktionel tekst)** · Public service-medie
 
@@ -1118,12 +1118,12 @@ Two things must be said immediately after that, and they are not softening.
 
 **Danmarks Naturfredningsforening (kampagneside 'Kvælstof')** · NGO
 
-> Landbruget står for størstedelen af kvælstofudledningerne. Hele [69](SOURCES.md#F-12e0446fef) procent af den kvælstof, der ender i vores fjorde og indre farvande, stammer fra landbrugets brug af gødning.
+> Landbruget står for størstedelen af kvælstofudledningerne. Hele [69](SOURCES.md#F-59ba9fe5cd) procent af den kvælstof, der ender i vores fjorde og indre farvande, stammer fra landbrugets brug af gødning.
 
-*Gloss (supplied here, not a quotation):* Agriculture accounts for the greater part of nitrogen discharges. A full [69](SOURCES.md#F-12e0446fef) percent of the nitrogen that ends up in our fjords and inner waters comes from agriculture's use of fertiliser.
+*Gloss (supplied here, not a quotation):* Agriculture accounts for the greater part of nitrogen discharges. A full [69](SOURCES.md#F-59ba9fe5cd) percent of the nitrogen that ends up in our fjords and inner waters comes from agriculture's use of fertiliser.
 
 `number_claim` · `estimator_treated_as_estimand` · [source](https://www.dn.dk/vi-kaemper-for/et-nyt-landbrug/kvaelstof/) · `dn-web-69`  
-*Note:* The [69](SOURCES.md#F-12e0446fef)-[69.6](SOURCES.md#F-7e1b8a8a83) % figure is a modelled source apportionment: diffuse agricultural load is obtained as a residual after subtracting modelled natural background and reported point sources, then routed through a modelled retention map. Stated here as a fact about what 'ender i' the water. Page undated at time of capture.
+*Note:* The [69](SOURCES.md#F-59ba9fe5cd)-[69.6](SOURCES.md#F-7e1b8a8a83) % figure is a modelled source apportionment: diffuse agricultural load is obtained as a residual after subtracting modelled natural background and reported point sources, then routed through a modelled retention map. Stated here as a fact about what 'ender i' the water. Page undated at time of capture.
 
 ## 11. Where each party and organisation stood
 
@@ -1167,7 +1167,7 @@ Two things must be said immediately after that, and they are not softening.
 
 **Enhedslisten (EL)** — Not a party to the Green Tripartite; criticises its reliance on voluntary land conversion and wants the state and municipalities to buy land directly. Voted for `L5` nonetheless.
 
-**Alternativet (ALT)** — Says the framework cannot deliver a sufficient nitrogen reduction while it depends on voluntary agreements 'der har fejlet gennem [20](SOURCES.md#F-9498f568c6) år', and stated in the chamber that `L5` will not meet the Water Framework Directive. Voted for it anyway.
+**Alternativet (ALT)** — Says the framework cannot deliver a sufficient nitrogen reduction while it depends on voluntary agreements 'der har fejlet gennem [20](SOURCES.md#F-9ac4df2a4c) år', and stated in the chamber that `L5` will not meet the Water Framework Directive. Voted for it anyway.
 
 **Danmarksdemokraterne (DD)** — Opposes: calls the law 'makværk', not transparent and not thought through; predicts large job losses in rural districts; treats the last-minute vegetable exemption as proof the model does not hold together. Says it wants a green transition 'baseret på sund fornuft'.
 
@@ -1179,11 +1179,11 @@ Two things must be said immediately after that, and they are not softening.
 
 **Danmarks Naturfredningsforening (NGO)** — Welcomes the December 2025 agreement as 'et stort og vigtigt skridt', but wanted quotas targeted harder at the most polluting soils and later called the June 2026 deferral of the kvælstofhammer to 2028 a breach of the tripartite agreement.
 
-**Greenpeace Danmark (NGO)** — Says the agreements go nowhere near far enough: the reduction target itself is too low (cites experts at over [20,000](SOURCES.md#F-c347f5e660) t against the government's [13,780](SOURCES.md#F-437291a723) t estimate), and too much still rests on voluntariness.
+**Greenpeace Danmark (NGO)** — Says the agreements go nowhere near far enough: the reduction target itself is too low (cites experts at over [20,000](SOURCES.md#F-80775fd09d) t against the government's [13,780](SOURCES.md#F-c33ac514b9) t estimate), and too much still rests on voluntariness.
 
 **Økologisk Landsforening (erhvervsorganisation)** — Wants maximum pressure on nitrogen discharge but objects to conventional farms being able to buy organic farmers' unused discharge quotas.
 
-**FødevareDanmark / Fødevarealliancen (erhvervsorganisation)** — Demands that the Folketing account for the reference basis before adopting the law, arguing that the environmental target is set at c. year 1900 conditions while agriculture's required load corresponds to c. [6,000](SOURCES.md#F-2d5c1c984f) years earlier, and questioning whether that is compatible with EU law.
+**FødevareDanmark / Fødevarealliancen (erhvervsorganisation)** — Demands that the Folketing account for the reference basis before adopting the law, arguing that the environmental target is set at c. year 1900 conditions while agriculture's required load corresponds to c. [6,000](SOURCES.md#F-20ebb62a63) years earlier, and questioning whether that is compatible with EU law.
 
 ## 12. What this page does and does not establish
 
@@ -1199,7 +1199,7 @@ What it does establish, and what is checkable by anyone with the same sources:
 
 - <span class="claim" data-claim="C-PO-EST-MAALINGER">The responsible ministry's press release describes updates to a modelled target load as `nye målinger`.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-EST-MAALINGER "What this claim rests on")</sup>
 
-- <span class="claim" data-claim="C-PO-EST-TWOTHIRDS">On that ministry's own published figures, *more than two thirds* holds for the combined package against all three circulating totals ([68.2](SOURCES.md#F-18aa2179b1)% to [79.1](SOURCES.md#F-7a6833b15d)%), and does not hold for the nitrogen regulation alone against any of them ([53.4](SOURCES.md#F-60504f81bc)% to [61.8](SOURCES.md#F-e67645572c)%). A later release attaches the fraction to the regulation model.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-EST-TWOTHIRDS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-PO-EST-TWOTHIRDS">On that ministry's own published figures, *more than two thirds* holds for the combined package against all three circulating totals ([68.2](SOURCES.md#F-a12e0256e4)% to [79.1](SOURCES.md#F-e4b02d9837)%), and does not hold for the nitrogen regulation alone against any of them ([53.4](SOURCES.md#F-de4f2b3557)% to [61.8](SOURCES.md#F-fd27f65674)%). A later release attaches the fraction to the regulation model.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-EST-TWOTHIRDS "What this claim rests on")</sup>
 
 - <span class="claim" data-claim="C-PO-EST-NOINTERVAL">Across all [92](SOURCES.md#F-8cb51f4106) statements, no figure is given with an interval, by anyone.</span><sup class="claim-mark">[†](CLAIMS.md#C-PO-EST-NOINTERVAL "What this claim rests on")</sup>
 

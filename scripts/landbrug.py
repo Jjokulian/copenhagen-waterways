@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, ROOT, log, read_json, write_doc
 import claims as _claims
 import live
+import pathways
 
 MANUAL = os.path.join(ROOT, "data", "manual")
 AGRI_PCT = 69.6           # the published agricultural share; declared, not pinned here
@@ -69,13 +70,10 @@ def RD(sid, value, phrase):
 
 def main():
     # the few numbers this page derives itself are stored, then read back live
-    raw = read_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
     os.makedirs(DERIVED, exist_ok=True)
     with open(FACTS, "w", encoding="utf-8") as f:
         json.dump({"_what": "Counts and constants LANDBRUG.md prints, written by "
                             "scripts/landbrug.py.",
-                   "n_pathways": len(raw),
-                   "n_unquantified": sum(1 for p in raw if p["lo"] is None),
                    "agri_pct": AGRI_PCT, "c_per_n": C_PER_N, "c_per_cod": C_PER_COD},
                   f, ensure_ascii=False, indent=1)
         f.write("\n")
@@ -130,7 +128,7 @@ def render():
         if row is None or row["lo"] is not None or note not in str(row["note"]):
             raise live.Unjustified(f"landbrug: the register no longer says '{note}' of '{name}'")
     lv = {k["level"]: k for k in ov["knowledge_levels"]}
-    n_unq, n_all = F["n_unquantified"], F["n_pathways"]
+    n_all, n_unq = pathways.counts()
     ret = dl["retention_uncertainty_national_average_pct_points"]
     k12, d8, t4 = live.ref("K12"), live.ref("D8"), live.ref("T4", family="hypotheses")
 

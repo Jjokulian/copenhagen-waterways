@@ -472,6 +472,12 @@
    "kind": "untraced",
    "label": "Trail ends: the sibling\\nproject is not pinned",
    "detail": "The danish-livestock repository that documented the layers is cited by link and not pinned here."
+  },
+  {
+   "id": "X-NI-PATHWAY-COUNTS",
+   "kind": "script",
+   "label": "pathways.py",
+   "detail": "scripts/pathways.py: counts the pathway register's rows and the rows with no lower bound, once, for every page that prints them - NITROGEN, LANDBRUG, LANDING, CAUSATION and OPEN_PROBLEMS - so each count is one number with one menu."
   }
  ],
  "claims": [

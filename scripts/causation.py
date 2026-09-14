@@ -7,8 +7,8 @@ currency. This page grants the share and follows it forward through the links it
 have to pass to become a statement about the outcome people name, asking at each link
 what coefficient exists.
 
-Fedtemøg is algae - filamentous brown algae rotting at the water's edge, as the pinned
-Danish Wikipedia article defines it - so it is grown, and nitrogen is on its path. The
+Fedtemøg is algae - loose-lying brown algae rotting at the water's edge, as the pinned
+dictionaries define it - so it is grown, and nitrogen is on its path. The
 page's questions are which nitrogen, what else limits the growth, and what connects a
 share of nitrogen discharged to algae on a shore. The routes by which oxygen is lost
 without growth are set out separately, as routes to iltsvind.
@@ -29,6 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, ROOT, log, write_doc
 import claims as _claims
 import live
+import pathways
 
 OUT = os.path.join(ROOT, "docs", "CAUSATION.md")
 B, E, C, R = live.claim_begin, live.CLAIM_END, live.claim, live.ref
@@ -58,7 +59,7 @@ def main():
     KM24 = read("{read:PC-DCE-ILT-2024:11,000|udgjorde midt i september 11.000 km2}")
     UP24 = read("{read:PC-DCE-ILT-2024:50|var næsten 50 % større end i september 2023}")
     O2 = live.chem("O2")
-    n_paths, n_empty = meta["pathways_total"], meta["pathways_unquantified"]
+    n_paths, n_empty = pathways.counts()
     C_PER_N, C_PER_COD = F["c_per_n"], F["c_per_cod"]
     ret = mon["diffuse_load"]["retention_uncertainty_national_average_pct_points"]
 

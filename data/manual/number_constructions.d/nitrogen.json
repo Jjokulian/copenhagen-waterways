@@ -184,11 +184,11 @@
      },
      "pathways.n": {
       "kind": "counted",
-      "is": "The pathways the register enumerates - every row, quantified or not."
+      "is": "The pathways the register enumerates - every row, quantified or not - counted once, by `scripts/pathways.py`, for every page that prints it."
      },
      "pathways.n_unquantified": {
       "kind": "counted",
-      "is": "Of those, the rows that carry no bound at all."
+      "is": "Of those, the rows that carry no bound at all, counted in the same place."
      }
     }
    },
@@ -214,13 +214,15 @@
    "licenses": "A lower bound on reactive nitrogen supply, and the count of pathways nobody has quantified.",
    "not_licensed": "A total, a denominator, or a share of the total for any source.",
    "watches": [
-    "data/manual/nitrogen_pathways.json"
+    "data/manual/nitrogen_pathways.json",
+    "scripts/pathways.py"
    ],
    "confirmed": {
-    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (2026-09-14: read scripts/pathways.py - pathways.n counts every row of the register and pathways.n_unquantified the rows whose lo is empty, which are the rows with no bound; both as the declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
+     "data/manual/nitrogen_pathways.json": "3c05038bde72ac40",
+     "scripts/pathways.py": "ab20b03d29c2acdc"
     }
    }
   },
@@ -526,10 +528,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: nitrogen.py's only change since the last confirmation is one printed table cell - 'minus modelled point sources' became 'minus point sources', since plants and industry report their discharges; no computation changed. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "5e453fe67bac02ca"
+     "scripts/nitrogen.py": "3b65bafc91d0d21e"
     }
    }
   },

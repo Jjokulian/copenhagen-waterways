@@ -92,7 +92,6 @@ def mb(path):
 
 
 def main(argv):
-    pw = read_json(os.path.join(MANUAL, "nitrogen_pathways.json"))["pathways"]
     fa = read_json(os.path.join(DERIVED, "floodalign.json"))
     rbu = read_json(os.path.join(RAW, "vp3_basis_2019_punkt_rbu_udl.geojson"))["features"]
     plans = read_json(os.path.join(RAW, "plan_projects.json"))
@@ -110,8 +109,6 @@ def main(argv):
     out = {
         "_what": "Counts and computed values quoted by the overview pages, each "
                  "derived from the file named in its field description.",
-        "pathways_total": len(pw),
-        "pathways_unquantified": sum(1 for p in pw if p.get("status") == "UNQUANTIFIED"),
         "floodalign_pairs": len(fa.get("pairs", [])),
         "sun_reference_lat": REF_LAT,
         "sun_reference_lon": REF_LON,

@@ -53,10 +53,10 @@
     "data/manual/politics.json"
    ],
    "confirmed": {
-    "by": "fork w2-po (read analyse() and _quote_check() in politics.py as patched against the declaration: each field counts what it says, and the build stops on an unpinned source, a weak passage or an interval; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: politics.py now lets RD take a statement's own, longer phrase for a figure the statement quotes from the same document, so the figure is one reading, and reads the 20.000 through the quote's phrase; the tallies are computed as before)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/politics.py": "21263d09920b81cc",
+     "scripts/politics.py": "074980454ccff1c8",
      "data/manual/politics.json": "cb444fb5f0e2706a"
     }
    }

@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from common import DERIVED, ROOT, log, write_doc
 import claims
 import live
+import pathways
 
 OUT = os.path.join(ROOT, "docs", "LANDING.md")
 C, B, E = live.claim, live.claim_begin, live.CLAIM_END
@@ -99,9 +100,9 @@ def main(argv):
       "are subtracted: a leftover, which takes up every error in the terms subtracted. "
       "[Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)"))
     w("")
-    lb = live.live_json(os.path.join(DERIVED, "landbrug.json"))
+    n_all, n_unq = pathways.counts()
     w(C("C-LR-L-DENOM", "**And the share has no denominator.** Nitrogen reaches the sea by at least "
-      f"{lb['n_pathways']} pathways, and {lb['n_unquantified']} of them carry no number at all. "
+      f"{n_all} pathways, and {n_unq} of them carry no number at all. "
       "Without them there is no total, and no share of it can be stated."))
     w("")
     w(C("C-LR-L-ONELINK", "**Nor is nitrogen the whole chain.** It is one of several routes to oxygen "

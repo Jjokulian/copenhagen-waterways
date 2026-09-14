@@ -39,6 +39,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_doc
 import claims
 import live
+import pathways
 
 KOEGE = ["København", "Hvidovre", "Tårnby", "Brøndby", "Vallensbæk",
          "Ishøj", "Greve", "Solrød", "Køge", "Stevns"]
@@ -636,8 +637,7 @@ def main():
         "compilation, and the register behind them gives no source for each.") + "\n")
     w("| Pathway | kt N/yr | Basis |\n|---|---:|---|")
     quant = [p for p in paths if p["lo"] is not None]
-    unq = live.live(len(paths) - len(quant), P._f, "pathways.n_unquantified")
-    n_all = live.live(len(paths), P._f, "pathways.n")
+    n_all, unq = pathways.counts(P)
     lo, hi = sum(p["lo"] for p in quant), sum(p["hi"] for p in quant)
     for p in paths:
         val = "**—**" if p["lo"] is None else f"{p['lo']:g} – {p['hi']:g}"

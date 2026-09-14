@@ -91,7 +91,7 @@ are measured this way is not in anything this project holds.</span><sup class="c
 
 ## 6. The unquantified nitrogen pathways
 
-<span class="claim" data-claim="C-OP-6-COUNT">Of the [20](SOURCES.md#F-5a36ae8ceb) enumerated pathways, [10](SOURCES.md#F-27c64403ba) carry no number.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-6-COUNT "What this claim rests on")</sup> Two could be measured:
+<span class="claim" data-claim="C-OP-6-COUNT">Of the [20](SOURCES.md#F-c09b9f4a15) enumerated pathways, [10](SOURCES.md#F-2e42b3ed03) carry no number.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-6-COUNT "What this claim rests on")</sup> Two could be measured:
 
 - <span class="claim" data-claim="C-OP-6-A6">**Submarine groundwater discharge** ([A6](HYPOTHESES.md "Submarine groundwater discharge")) - measurable with radon and radium tracers or seepage meters, and not a term in the Danish marine budget.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-6-A6 "What this claim rests on")</sup>
 - <span class="claim" data-claim="C-OP-6-A7">**Regeneration from the sediment** ([A7](openproblems/A7.md "Sediment nutrient regeneration")) - measurable with benthic flux chambers; no Danish nutrient budget this project holds includes it.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-6-A7 "What this claim rests on")</sup>

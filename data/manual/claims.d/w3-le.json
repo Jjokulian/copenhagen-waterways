@@ -385,7 +385,7 @@
    "id": "X-LE-LANDBRUG",
    "kind": "script",
    "label": "landbrug.py",
-   "detail": "scripts/landbrug.py: counts the pathway register's rows and empty rows, sums the two land rows and the quantified rows, applies the published share, divides for the ceiling and computes the overflow's share of the land term; it refuses to build if the share in landbrug.json differs from DANVA's pinned page, or if the register's notes no longer place three empty rows inside others."
+   "detail": "scripts/landbrug.py: takes the counts of the pathway register's rows and empty rows from scripts/pathways.py, sums the two land rows and the quantified rows, applies the published share, divides for the ceiling and computes the overflow's share of the land term; it refuses to build if the share in landbrug.json differs from DANVA's pinned page, or if the register's notes no longer place three empty rows inside others."
   },
   {
    "id": "X-LE-CITY",
@@ -918,21 +918,23 @@
     "C-NI-UNQUANTIFIED",
     "C-PC-CA-L2",
     "C-NI-LOWER-BOUND",
-    "X-LE-LANDBRUG"
+    "X-LE-LANDBRUG",
+    "X-NI-PATHWAY-COUNTS"
    ],
    "replaces": [
     "C-LE-OLD-EMPTY"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on LANDBRUG.md": "De **10 af 20 veje har slet intet tal** — heriblandt organisk kvælstof i den atmosfæriske afsætning, udsivning af grundvand under havet og frigivelse fra sedimentet. De veje, der *har* et tal, summerer til **167 – 327 kt N/år**.",
-     "texts": "09ab83a4069cf8b2",
+     "texts": "8c204e9ee269fde8",
      "rests on C-NI-UNQUANTIFIED": "55cd73d150185cdd",
      "rests on C-PC-CA-L2": "fd7d5f1a8b38da35",
      "rests on C-NI-LOWER-BOUND": "f18c1f930504af87",
-     "node X-LE-LANDBRUG": "7cf5abbe6719f47d"
+     "node X-LE-LANDBRUG": "9b181b167594e62f",
+     "node X-NI-PATHWAY-COUNTS": "a43dc76ccfc3988e"
     }
    }
   },
@@ -977,13 +979,13 @@
     "C-LE-OLD-CEILING"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: neither depends on the parts reworded under it - C-LE-CEILING states the ceiling, not the empty-row rule now qualified in C-PC-CA-CEILING, and C-LE-9-LEVEL5 already calls the level measurement-based estimation, which C-OP-5-SETTLE now spells out as flow plus concentrations. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on LANDBRUG.md": "På projektets egne grænser står landbruget for **højst 30 %** af det opgjorte reaktive kvælstof, der når danske havområder, og ved den brede ende af grænserne for ned til 13 %. Grænserne har ikke en kilde for hver række, så loftet er ikke bedre end dem.",
      "texts": "b401a1bbebfceea2",
      "rests on C-PC-CA-CEILING": "82b3b8e546f3dc23",
-     "node X-LE-LANDBRUG": "7cf5abbe6719f47d",
+     "node X-LE-LANDBRUG": "9b181b167594e62f",
      "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b"
     }
    }
@@ -1004,14 +1006,14 @@
     "C-LE-OLD-CEILING"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on LANDBRUG.md": "Ikke alle tomme rækker lægger til. Kvælstof fra skibsfart, der afsættes lokalt, ligger allerede inde i afsætningen; drænede organiske jorde ligger inde i den diffuse restpost; og kvælstof, der stadig er undervejs, er en tidsforskydning af de andre rækker, ikke en ekstra kilde. De øvrige tomme rækker kan kun sænke loftet, når de bliver fyldt ud.",
      "texts": "cea7a41866e71354",
      "node D-NI-PATHWAYS": "6d5a9579c56f6625",
      "node U-NI-PATHWAY-SOURCES": "b57402ae8211022b",
-     "node X-LE-LANDBRUG": "7cf5abbe6719f47d"
+     "node X-LE-LANDBRUG": "9b181b167594e62f"
     }
    }
   },
@@ -1380,13 +1382,13 @@
     "C-LE-OLD-LINKS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the nitrogen-pathway counts are now made once, by scripts/pathways.py, for every page that prints them; C-OP-6-COUNT and C-LE-EMPTY now rest on that script, and the descriptions of meta_facts.py and landbrug.py no longer say they count the pathways. The other seven rest on those two script nodes for other values - fat stoichiometry, the flood sheets, sun elevations, the land-term sums and the ceiling - which are unchanged)",
     "saw": {
      "said on LANDBRUG.md": "**ingen: mængden er åben.** 10 af 20 opregnede veje har intet tal, heriblandt organisk kvælstof i afsætningen, udsivning af grundvand under havet og frigivelse fra sedimentet",
      "texts": "22c5ec705f7bd39d",
      "rests on C-PC-CA-L2": "fd7d5f1a8b38da35",
-     "node X-LE-LANDBRUG": "7cf5abbe6719f47d"
+     "node X-LE-LANDBRUG": "9b181b167594e62f"
     }
    }
   },
@@ -2448,13 +2450,13 @@
     "C-LE-OLD-EN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it, including GRUNDLAGET.md's qualification C-GC-G-Q2 of the extremes-versus-load comparison; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: each rests on C-OP-6-COUNT or C-LE-EMPTY, which now also rest on scripts/pathways.py, where the pathway counts are made once; what those claims say is unchanged, and so is what these three draw from them)",
     "saw": {
      "said on LANDBRUG.md": "This page argues, in Danish and to a Danish agricultural audience, that the chain from the published 69.6% figure to the damage it is used to explain has missing links. The figure is a residual share of one term of an open account (10 of 20 enumerated nitrogen pathways carry no number). The oxygen part of the requirement is a binary trigger that sets a judged 25% cut in total-nitrogen concentration, converted to a load through each water body's own relation, where chlorophyll and light attenuation have fitted slopes. And the recent extremes of oxygen depletion do not obviously track a land-based supply that DCE put 51% lower - though a comparison of chosen years cannot tell no effect from worse without, and warming works against the reduction. The page states that this does not exonerate agriculture, that multiplying unknown fractions yields an unknown rather than a small one, and that it is not an argument for inaction. It applies the same scrutiny to the city's own discharges, and ends with four demands, three of which ask for measurement or a test rather than a different answer.",
      "texts": "b2ffbe2709fc1f41",
      "rests on C-LE-SCOPE": "a006b865abdb2cd2",
-     "rests on C-LE-EMPTY": "09ab83a4069cf8b2",
+     "rests on C-LE-EMPTY": "8c204e9ee269fde8",
      "rests on C-LE-SLOPE": "b80fb94d3fc0e3b4",
      "rests on C-LE-TRIGGER": "20eb2451c6c28ee0",
      "rests on C-LE-JUXTA": "de8b712a3d658d32",

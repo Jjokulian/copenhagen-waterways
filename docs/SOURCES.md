@@ -24,7 +24,7 @@
 <a id="T-4c1741ef"></a>
 ### [CAUSATION.md](CAUSATION.md) — 9. What would separate the readings
 
-1 numbers in the columns *To test*, *Do this*. Read from `data/derived/meta_facts.json` (`pathways_unquantified`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py).
+1 numbers in the columns *To test*, *Do this*. Read from `data/manual/nitrogen_pathways.json` (`pathways.n_unquantified`).
 
 <a id="T-5f6ca372"></a>
 ### [CAUSATION.md](CAUSATION.md) — 1. What the number is a share of
@@ -39,7 +39,7 @@
 <a id="T-f4aba89b"></a>
 ### [CAUSATION.md](CAUSATION.md) — 2. Missing coefficients, reported as one number
 
-4 numbers in the columns *Link*, *Coefficient*, *Status*, *Why*. Read from `data/derived/meta_facts.json` (`pathways_total`, `pathways_unquantified`), written by [`scripts/meta_facts.py`](../scripts/meta_facts.py). Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from pinned documents: `DANVA-2024`.
+4 numbers in the columns *Link*, *Coefficient*, *Status*, *Why*. Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from pinned documents: `DANVA-2024`.
 
 <a id="T-81f44d68"></a>
 ### [CONSTRUCTED.md](CONSTRUCTED.md) — The register
@@ -349,7 +349,7 @@
 <a id="T-5ecab7b4"></a>
 ### [LANDBRUG.md](LANDBRUG.md) — 3. Tre led mangler mellem tallet og skaden
 
-5 numbers in the columns *Led*, *Koefficient*. Read from `data/derived/landbrug.json` (`n_pathways`, `n_unquantified`), written by [`scripts/landbrug.py`](../scripts/landbrug.py). Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from pinned documents: `DANVA-2024`, `DCE-STATMOD-2015`.
+5 numbers in the columns *Led*, *Koefficient*. Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from pinned documents: `DANVA-2024`, `DCE-STATMOD-2015`.
 
 <a id="T-7109e001"></a>
 ### [LANDBRUG.md](LANDBRUG.md) — 2. Tallet er en restpost, ikke en måling
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,871 distinct numbers in running text, from these sources.
+1,859 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -902,13 +902,13 @@
 - `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 32 numbers.
 - `data/derived/hypotheses.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 2 numbers.
 - `data/derived/hypotheses_evidence.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 18 numbers.
-- `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 5 numbers.
+- `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 3 numbers.
 - `data/derived/landing_facts.json`, written by [`scripts/landing_facts.py`](../scripts/landing_facts.py) — 9 numbers.
 - `data/derived/light.json`, written by [`scripts/light.py`](../scripts/light.py) — 65 numbers.
 - `data/derived/livestock.json`, written by [`scripts/livestock.py`](../scripts/livestock.py) — 6 numbers.
 - `data/derived/livestock_baskets.json`, written by [`scripts/livestock_baskets.py`](../scripts/livestock_baskets.py) — 41 numbers.
 - `data/derived/manure.json`, written by [`scripts/manure.py`](../scripts/manure.py) — 5 numbers.
-- `data/derived/meta_facts.json`, written by [`scripts/meta_facts.py`](../scripts/meta_facts.py) — 27 numbers.
+- `data/derived/meta_facts.json`, written by [`scripts/meta_facts.py`](../scripts/meta_facts.py) — 25 numbers.
 - `data/derived/observing.json`, written by [`scripts/observing.py`](../scripts/observing.py) — 46 numbers.
 - `data/derived/outfalls.json`, written by [`scripts/fetch_spildevand.py`](../scripts/fetch_spildevand.py) — 6 numbers.
 - `data/derived/oxygen.json`, written by [`scripts/oxygen.py`](../scripts/oxygen.py) — 14 numbers.
@@ -1005,16 +1005,16 @@
 - [Wikipedia, Hexafluoroethane](https://en.wikipedia.org/wiki/Hexafluoroethane) (`PG-WIKI-C2F6`) — 2 numbers, each read at its phrase from the pinned text.
 - [Wikipedia, Fluoroform](https://en.wikipedia.org/wiki/Fluoroform) (`PG-WIKI-CHF3`) — 1 numbers, each read at its phrase from the pinned text.
 - [Wikipedia, ECMWF re-analysis](https://en.wikipedia.org/wiki/ECMWF_re-analysis) (`PG-WIKI-ERA5`) — 1 numbers, each read at its phrase from the pinned text.
-- [DM Bio, 2026-03: Folketingsvalg 2026 - politikerne besvarer spørgsmål om natur og Grøn Trepart](https://dm.dk/bio/alle-artikler/kampen-om-arealerne/folketingsvalg-2026-politikerne-besvarer-spoergsmaal-om-natur-og-groen-trepart/) (`POL-DMBIO-2026`) — 7 numbers, each read at its phrase from the pinned text.
+- [DM Bio, 2026-03: Folketingsvalg 2026 - politikerne besvarer spørgsmål om natur og Grøn Trepart](https://dm.dk/bio/alle-artikler/kampen-om-arealerne/folketingsvalg-2026-politikerne-besvarer-spoergsmaal-om-natur-og-groen-trepart/) (`POL-DMBIO-2026`) — 6 numbers, each read at its phrase from the pinned text.
 - [Danmarks Naturfredningsforening, 2026: Se kortet - disse kystvande har været ramt af iltsvind i sommeren 2026](https://www.dn.dk/nyheder/2026/se-kortet-disse-kystvande-har-vaeret-ramt-af-iltsvind-i-sommeren-2026/) (`POL-DN-20260903`) — 4 numbers, each read at its phrase from the pinned text.
 - [Danmarks Naturfredningsforening: Kvælstof (campaign page, undated at capture)](https://www.dn.dk/vi-kaemper-for/et-nyt-landbrug/kvaelstof/) (`POL-DN-KVAELSTOF`) — 1 numbers, each read at its phrase from the pinned text.
 - [DR, 2026-08-27: Afviser særbehandling af grøntsagsavlere](https://www.dr.dk/nyheder/indland/afviser-saerbehandling-af-groentsagsavlere-saa-vil-vi-fortsat-se-vejle-fjord-uden-fisk) (`POL-DR-20260827`) — 2 numbers, each read at its phrase from the pinned text.
-- [DR, 2026-09-03: Så har vi balladen igen - hvad er op og ned i det grønne slagsmål](https://www.dr.dk/nyheder/viden/klima/saa-har-vi-balladen-igen-hvad-er-op-og-ned-i-det-groenne-slagsmaal-mellem-landmaendene-og) (`POL-DR-20260903`) — 2 numbers, each read at its phrase from the pinned text.
+- [DR, 2026-09-03: Så har vi balladen igen - hvad er op og ned i det grønne slagsmål](https://www.dr.dk/nyheder/viden/klima/saa-har-vi-balladen-igen-hvad-er-op-og-ned-i-det-groenne-slagsmaal-mellem-landmaendene-og) (`POL-DR-20260903`) — 1 numbers, each read at its phrase from the pinned text.
 - [Effektivt Landbrug, 2026-06-23: Politikerne ramte virkelighedens verden](https://effektivtlandbrug.landbrugnet.dk/artikler/politik/123345/politikerne-ramte-virkelighedens-verden) (`POL-EL-20260623`) — 1 numbers, each read at its phrase from the pinned text.
-- [Fødevarealliancen via Ritzau, 2026-08: Nye kvælstofkrav til landbruget bygger på tal fra bondestenalderen](https://via.ritzau.dk/pressemeddelelse/15103932/nye-kvaelstofkrav-til-landbruget-bygger-pa-tal-fra-bondestenalderen?publisherId=13561562&lang=da) (`POL-FDK-2026`) — 2 numbers, each read at its phrase from the pinned text.
-- [Greenpeace Danmark, 2025-06-19: Kvælstofaftale har langt til målstregen (press release)](https://www.greenpeace.org/denmark/pressemeddelelse/landbrug/kvaelstofaftale-har-langt-til-maalstregen/) (`POL-GP-20250619`) — 7 numbers, each read at its phrase from the pinned text.
+- [Fødevarealliancen via Ritzau, 2026-08: Nye kvælstofkrav til landbruget bygger på tal fra bondestenalderen](https://via.ritzau.dk/pressemeddelelse/15103932/nye-kvaelstofkrav-til-landbruget-bygger-pa-tal-fra-bondestenalderen?publisherId=13561562&lang=da) (`POL-FDK-2026`) — 1 numbers, each read at its phrase from the pinned text.
+- [Greenpeace Danmark, 2025-06-19: Kvælstofaftale har langt til målstregen (press release)](https://www.greenpeace.org/denmark/pressemeddelelse/landbrug/kvaelstofaftale-har-langt-til-maalstregen/) (`POL-GP-20250619`) — 4 numbers, each read at its phrase from the pinned text.
 - [Greenpeace Danmark, 2026-08-25: Katastrofalt iltsvind truer livet under overfladen](https://www.greenpeace.org/denmark/artikel/hav/katastrofalt-iltsvind-truer-livet-under-overfladen/) (`POL-GP-20260825`) — 1 numbers, each read at its phrase from the pinned text.
-- [Ministeriet for Grøn Trepart, 2025-12-03: Ny aftale - historisk reduktion af landbrugets udledninger af kvælstof (press release)](https://mgtp.dk/nyheder/2025/dec/ny-aftale-historisk-reduktion-af-landbrugets-udledninger-af-kvaelstof-) (`POL-MGTP-20251203`) — 5 numbers, each read at its phrase from the pinned text.
+- [Ministeriet for Grøn Trepart, 2025-12-03: Ny aftale - historisk reduktion af landbrugets udledninger af kvælstof (press release)](https://mgtp.dk/nyheder/2025/dec/ny-aftale-historisk-reduktion-af-landbrugets-udledninger-af-kvaelstof-) (`POL-MGTP-20251203`) — 3 numbers, each read at its phrase from the pinned text.
 - [TV 2, 2025-12-03: Politisk aftale reducerer landbrugets kvælstofudledning markant](https://nyheder.tv2.dk/politik/2025-12-03-politisk-aftale-reducerer-landbrugets-kvaelstofudledning-markant) (`POL-TV2-20251203`) — 2 numbers, each read at its phrase from the pinned text.
 - [TV 2 live, 2026-09-03: Omstridt lov er vedtaget i Folketinget](https://nyheder.tv2.dk/live/politik/2026-08-31-ny-lov-vaekker-vrede-i-landbruget/omstridt-lov-er-vedtaget-i-folketinget) (`POL-TV2-20260903`) — 3 numbers, each read at its phrase from the pinned text.
 - [Finansministeriet, Ministeriet for Grøn Trepart, Ministeriet for Fødevarer, Landbrug og Fiskeri (November 2024). Second opinion - Baggrundsanalyser.](https://mgtp.dk/Media/638803057484281253/second-opinion-baggrundsanalyser.pdf) (`SO-BG-2024`) — 1 numbers, each read at its phrase from the pinned text.
@@ -1568,7 +1568,7 @@ The count of records per value of each categorical column, from the enumeration 
 <a id="K-DRAFTSA-FACTS"></a>
 ### File facts cited by the hypothesis drafts
 
-`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **stale: scripts/hypodraft_facts.py changed since it was read** · read by fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner), 2026-09-10
 
 Re-derives, from the files named, the row counts, station counts, spans and layer facts the hypothesis drafts once typed from one-off checks.
 
@@ -1633,7 +1633,7 @@ Counts the rows of the hypothesis triage by class, by register group and by the 
 <a id="K-DRAFTSB-COUNTS"></a>
 ### Counts of held files, as the drafts quote them
 
-`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **stale: scripts/drafts_b_counts.py changed since it was read** · read by Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner), 2026-09-11
 
 Counts the monthly station panel, the soundings extract, the seabed sediment layer and the pollutant-status layer, and parses the station counts the ODA portal returned as recorded in the source register - the file facts the hypothesis drafts and open problems cite.
 
@@ -1815,7 +1815,7 @@ Joins the sibling project's livestock register, declared field parcels, CVR mast
 <a id="K-FARM-LANDBRUG"></a>
 ### Counts and constants the Danish-language page derives itself
 
-`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **stale: scripts/landbrug.py changed since it was read** · read by Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared), 2026-09-13
+`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by Claude (2026-09-14: landbrug.py no longer writes n_pathways and n_unquantified - the page takes them from scripts/pathways.py and the two fields are no longer declared; agri_pct, c_per_n and c_per_cod are written as before), 2026-09-14
 
 Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.
 
@@ -2234,7 +2234,7 @@ Reads the sibling project's fetched registers (CHR herds, declared hectares per 
 <a id="K-KD-PLANKTON"></a>
 ### Span of the CMEMS plankton files on disk
 
-`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **stale: scripts/drafts_b_counts.py changed since it was read** · read by agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner), 2026-09-11
 
 The first and last year of the yearly CMEMS Baltic plankton files held on disk, and which years look partial by file size.
 
@@ -2478,7 +2478,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code), 2026-09-13
+`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-14: meta_facts.py no longer writes pathways_total and pathways_unquantified - the pages take them from scripts/pathways.py and the two fields are no longer declared; every other field is computed as before), 2026-09-14
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -2654,7 +2654,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (re-read: nitrogen.py's only change since the last confirmation is one printed table cell - 'minus modelled point sources' became 'minus point sources'; no computation changed. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before), 2026-09-14
 
 How many rain-dependent discharge points the national register lists.
 
@@ -2818,7 +2818,7 @@ Documented properties of the Danish measurement system, collected from technical
 <a id="K-NITROGEN-PATHWAYS"></a>
 ### The enumerated pathways of reactive nitrogen, with plausible bounds
 
-`K-NITROGEN-PATHWAYS` · covers data/manual/nitrogen_pathways.json · **current** · read by fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-NITROGEN-PATHWAYS` · covers data/manual/nitrogen_pathways.json · **current** · read by Claude (2026-09-14: read scripts/pathways.py - pathways.n counts every row of the register and pathways.n_unquantified the rows whose lo is empty, which are the rows with no bound; both as the declaration says), 2026-09-14
 
 Every pathway of reactive nitrogen to Danish marine waters this project could enumerate, with a plausible range where one exists and none where it does not.
 
@@ -2874,7 +2874,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (re-read: nitrogen.py's only change since the last confirmation is one printed table cell - 'minus modelled point sources' became 'minus point sources', since plants and industry report their discharges; no computation changed. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before), 2026-09-14
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 
@@ -2953,7 +2953,7 @@ The threshold light.py uses to split casts by where the profile begins.
 <a id="K-PO-TALLIES"></a>
 ### The quotation check and the notes counted over the politics record
 
-`K-PO-TALLIES` · covers data/derived/politics.json · **current** · read by fork w2-po (read analyse() and _quote_check() in politics.py as patched against the declaration: each field counts what it says, and the build stops on an unpinned source, a weak passage or an interval; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-PO-TALLIES` · covers data/derived/politics.json · **current** · read by Claude (2026-09-14: politics.py now lets RD take a statement's own, longer phrase for a figure the statement quotes from the same document, so the figure is one reading, and reads the 20.000 through the quote's phrase; the tallies are computed as before), 2026-09-14
 
 Counts over data/manual/politics.json made by scripts/politics.py.
 
@@ -3116,7 +3116,7 @@ Turns the hourly rain record over Copenhagen and Amager's combined-sewered imper
 <a id="K-POLITICS-TALLIES"></a>
 ### Tallies over the collected public statements
 
-`K-POLITICS-TALLIES` · covers data/derived/politics.json · **current** · read by Claude (re-read analyse() in politics.py against the committed version by diff: it gains new counts - typography notes, intervals, quotation checks - and every field this declaration covers is computed exactly as before. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-POLITICS-TALLIES` · covers data/derived/politics.json · **current** · read by Claude (2026-09-14: politics.py now lets RD take a statement's own, longer phrase for a figure the statement quotes from the same document, so the figure is one reading, and reads the 20.000 through the quote's phrase; the tallies are computed as before), 2026-09-14
 
 Counts the collected public statements by camp, claim class, flag, publisher and date, for the page that prints them.
 
