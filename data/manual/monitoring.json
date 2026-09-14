@@ -186,11 +186,9 @@
    "series": "Flow-normalised total nitrogen supply from Danish land areas to the sea",
    "reported_by": "DCE / Aarhus Universitet, annual NOVANA reporting; summarised at miljotilstand.dk",
    "url": "https://miljotilstand.dk/vandmiljoe/tilfoersel-af-kvaelstof-og-fosfor-til-havet-fra-danske-landomraader",
-   "approx_1990_kt": 100,
-   "approx_recent_kt": 55,
-   "reduction_pct_since_1990": 50,
    "note": "'Flow-normalised' removes the year-to-year weather signal from the load series - which is itself worth noting, because the outcome series below is dominated by exactly that signal.",
-   "airborne_component": "Atmospheric nitrogen to Danish sea areas was 59 kt in 2023 and is also roughly halved since 1990."
+   "airborne_component": "Atmospheric nitrogen to Danish sea areas was 59 kt in 2023 and is also roughly halved since 1990.",
+   "_figures": "The load figures are read from SR353, pinned, through scripts/readings.py; this entry keeps only the description."
   },
   "iltsvind_extent": {
    "series": "Area of Danish inner waters affected by oxygen depletion, mid/late September",

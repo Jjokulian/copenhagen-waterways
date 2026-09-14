@@ -99,7 +99,7 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on LANDBRUG.md": "**Andelen kan ikke angives som en andel af alt det kvælstof, der når havet.** Den gælder én post - kvælstof, der løber fra land til kystvandene - og selv den er beregnet, ikke målt: målt i vandløb for en del af landet og modelberegnet for resten, og den model regner ud fra markoverskuddet, som selv er et regnestykke - tilført minus høstet - ikke en måling. Kvælstof når havet ad mindst 20 veje, og 10 af dem har slet intet tal. Uden dem er der ingen nævner, og så er der ingen andel af det hele at angive.",
      "texts": "5d69f338acd1766e",
@@ -110,7 +110,7 @@
      "rests on C-LE-LEFTOVER": "e568cfaf63931fb3",
      "rests on C-NI-COUPLED": "f10932f35657ed9c",
      "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
-     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f"
+     "rests on C-NI-SURPLUS-IDENTITY": "094570b39a388c73"
     }
    }
   },

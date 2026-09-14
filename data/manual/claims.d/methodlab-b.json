@@ -16,6 +16,22 @@
    "sha256": "1045cc4c84324598cd23e79fb4f51cf7f2e2c774d9113b75f64f4e7475fec70e",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "ML-DMU-FR685": {
+   "title": "Markager, Bassompierre & Petersen 2008, Analyse af miljøtilstanden i Mariager Fjord, Faglig rapport fra DMU nr. 685",
+   "url": "http://www.dmu.dk/Pub/FR685.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "52a1f5ab3815482681e9756d02dc3d46bde6a3d5d99e0c987551c63da413329c",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "ML-DMU-FR733": {
+   "title": "Markager, Bassompierre & Petersen 2010, Analyse af miljøtilstanden i Horsens Fjord, Faglig rapport fra DMU nr. 733",
+   "url": "http://www.dmu.dk/Pub/FR733.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "4e85fb67f49afc1213cb0d0054542d3b71e1021d38dea87dbe4fbe18f40952a6",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "figures": {
@@ -240,7 +256,7 @@
    "id": "U-ML-DCE-R2-DATA",
    "kind": "untraced",
    "label": "Trail ends: which data\\nDCE's R² is measured on",
-   "detail": "The pinned report describes a calibration part and a held-out validation part, evaluation on the validation part and a final refit on all data, and calls its results table validation results - but it does not say whether the R² it reports is computed on the held-out part or on all the data. For details it refers to two earlier reports, which this project does not hold."
+   "detail": "The pinned report describes a calibration part and a held-out validation part, evaluation on the validation part and a final refit on all data, and calls its results table validation results - but it does not say whether the R² it reports is computed on the held-out part or on all the data. The two earlier reports it refers to for details, pinned and read on 2026-09-14, define a cross-validation error and a separate prediction error on independent validation years; neither says which of these, if either, the later table's R² is."
   },
   {
    "id": "U-ML-DCE-MAXTERMS",
@@ -367,6 +383,22 @@
    "commit": "4469fc7",
    "file": "docs/OBSERVING.md",
    "said": "What it shows is that the reported"
+  },
+  {
+   "id": "E-ML-DMU-RMSEP",
+   "kind": "external",
+   "label": "DMU method reports: an error\non independent data",
+   "detail": "The earlier method report DCE refers to defines a cross-validation error and, separately, a prediction error on an independent validation set.",
+   "source": "ML-DMU-FR685",
+   "said": "Root Mean Square Error of Prediction"
+  },
+  {
+   "id": "E-ML-DMU-HOLDOUT",
+   "kind": "external",
+   "label": "DMU 2010: the last years\nheld out",
+   "detail": "The second method report holds the last years out of the calibration and uses them as independent validation years for the prediction error.",
+   "source": "ML-DMU-FR733",
+   "said": "anvendes som uafhængige valideringsår"
   }
  ],
  "claims": [
@@ -808,20 +840,26 @@
    "because": "Stated in the report's results, beside the mean absolute deviations. The report does not say whether this R² is measured on the held-out part of the data or on all of it after the final refit.",
    "rests_on": [
     "E-ML-DCE-MEAN",
-    "U-ML-DCE-R2-DATA"
+    "U-ML-DCE-R2-DATA",
+    "E-ML-DMU-RMSEP",
+    "E-ML-DMU-HOLDOUT"
    ],
    "basis": "assessed",
    "holder": "DCE, Aarhus University",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "claim {read:DCE-STATMOD-2015:0.56|har et gennemsnit på 0,56}": "0.56",
      "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
      "said on METHOD_LAB.md": "DCE report a mean $R^2$ of 0.56 across their models.",
-     "texts": "6a5de15f4b83c0e9",
+     "texts": "2a308b57cc1d463b",
      "node E-ML-DCE-MEAN": "fbfb330301193977",
-     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+     "node U-ML-DCE-R2-DATA": "7a7dd40507a9997a",
+     "node E-ML-DMU-RMSEP": "445115b4f869b769",
+     "pinned ML-DMU-FR685": "52a1f5ab38154826",
+     "node E-ML-DMU-HOLDOUT": "9bb5c7404a550097",
+     "pinned ML-DMU-FR733": "4e85fb67f49afc12"
     }
    }
   },
@@ -865,16 +903,16 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "claim {fig:nf_accept}": "0.4",
      "said on METHOD_LAB.md": "An $R^2$ of 0.4 is no hurdle for the simplified search on autocorrelated noise, which clears it more often than not. Whether DCE's reported $R^2$ carries evidence depends on whether it was measured on held-out data, which the report does not say; until that is known, this is a statement about a selection procedure, not about the water.",
      "texts": "8bb509d3f1cdf3cc",
      "rests on C-ML-NOISE-FLOOR": "653098afe7d6c0b9",
      "rests on C-ML-DCE-METHOD": "f81eee8421f28424",
-     "rests on C-ML-DCE-MEAN": "6a5de15f4b83c0e9",
-     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+     "rests on C-ML-DCE-MEAN": "2a308b57cc1d463b",
+     "node U-ML-DCE-R2-DATA": "7a7dd40507a9997a"
     }
    }
   },

@@ -651,18 +651,6 @@
    "covers": {
     "file": "data/manual/monitoring.json",
     "fields": {
-     "load_trend_vs_outcome.nitrogen_load.approx_1990_kt": {
-      "kind": "document",
-      "is": "The flow-normalised nitrogen supply from Danish land to the sea around the start of the series, kilotonnes a year, as reported by DCE and summarised at miljotilstand.dk - an approximate reading of the published series."
-     },
-     "load_trend_vs_outcome.nitrogen_load.approx_recent_kt": {
-      "kind": "document",
-      "is": "The same supply in recent years, on the same terms."
-     },
-     "load_trend_vs_outcome.nitrogen_load.reduction_pct_since_1990": {
-      "kind": "document",
-      "is": "The reduction between the two, as a percentage, on the same terms."
-     },
      "load_trend_vs_outcome.iltsvind_extent.observations.*.year": {
       "kind": "document",
       "is": "The year of one observation of the area affected by oxygen depletion."
@@ -709,10 +697,10 @@
     "data/manual/monitoring.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - the national load entry keeps only its description; its uncited figures were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json": "0f14a80dadb838a8"
+     "data/manual/monitoring.json": "de6220c30135f022"
     }
    }
   },

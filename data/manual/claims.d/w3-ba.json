@@ -96,6 +96,22 @@
    "sha256": "2a4e87bd8134523690d3bb114321895845318f9f578eff1d9457580a2cc90359",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "BA-BWD-ART3": {
+   "title": "Directive 2006/7/EC on bathing water quality, Article 3 (legislation.gov.uk)",
+   "url": "https://www.legislation.gov.uk/eudr/2006/7/article/3",
+   "retrieved": "2026-09-14",
+   "sha256": "5e9501cce3000934e2af950ecff175d8c2b1a1ab6a44d2f352ce356747f787d3",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "BA-BWD-ANNEX2": {
+   "title": "Directive 2006/7/EC on bathing water quality, Annex II (legislation.gov.uk)",
+   "url": "https://www.legislation.gov.uk/eudr/2006/7/annex/II",
+   "retrieved": "2026-09-14",
+   "sha256": "91a40956ba17c6582f8ec5a6fe20c630b2c624fe8c57b45a4f78d1d490cdcd15",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "figures": {},
@@ -648,12 +664,6 @@
    "detail": "On 2026-09-11 the host kbh.badevand.dk did not resolve from this machine: no address is associated with the name. No other public archive of measured overflow in Copenhagen was searched for."
   },
   {
-   "id": "U-BA-DIRECTIVE",
-   "kind": "untraced",
-   "label": "Trail ends: the Bathing\\nWater Directive not read",
-   "detail": "On 2026-09-11 EUR-Lex returned an empty body for the Bathing Water Directive, CELEX `32006L0007`, in its HTML view and its default view, so its rule on samples taken during short-term pollution was not read here, and no other copy was sought."
-  },
-  {
    "id": "U-BA-NOGAUGE",
    "kind": "untraced",
    "label": "Trail ends: no rain\\ngauge on disk",
@@ -670,6 +680,22 @@
    "kind": "untraced",
    "label": "Trail ends: no series\\nper catchment",
    "detail": "Searched the pinned texts of SR353 and SR120 on 2026-09-11 for a series of field surplus or of diffuse load per catchment of a coastal water: SR353 gives the national relation, and SR120 the national balance and balances for its agricultural monitoring catchments; whether any of those matches a catchment with a gauged stream series to the coast was not examined, and nothing else was found."
+  },
+  {
+   "id": "E-BA-BWD-DISREGARD",
+   "kind": "external",
+   "label": "The Directive: short-term\npollution samples may be set aside",
+   "detail": "Article 3: samples taken during short-term pollution may be disregarded, and are then replaced by new samples.",
+   "source": "BA-BWD-ART3",
+   "said": "Samples taken during short-term pollution may be disregarded"
+  },
+  {
+   "id": "E-BA-BWD-CAP",
+   "kind": "external",
+   "label": "The Directive: only within a cap\nand with measures in place",
+   "detail": "Annex II: disregarding such samples in the assessment is allowed only while management measures are taken, and only up to a capped share of the samples.",
+   "source": "BA-BWD-ANNEX2",
+   "said": "adequate management measures are being taken"
   }
  ],
  "claims": [
@@ -1009,24 +1035,29 @@
    "kind": "measured",
    "stance": "ours",
    "page": "hypodrafts/B1.md",
-   "claim": "Over the same samples the table flags the counted short-term-pollution, replacement and pre-season samples and keeps all of them; which of them a compliance assessment may set aside is the Directive's rule, not read here.",
-   "because": "Read from the pinned query by sample status; the Directive's text could not be fetched.",
+   "claim": "Over the same samples the table flags the counted short-term-pollution, replacement and pre-season samples and keeps all of them; the Directive lets short-term-pollution samples be disregarded and replaced, within a cap and with management measures in place, and which ones an assessment set aside is not in this table.",
+   "because": "Read from the pinned query by sample status, and from the Directive's Article 3 and Annex II, pinned.",
    "rests_on": [
     "E-BA-WISE-FLAGS",
-    "U-BA-DIRECTIVE"
+    "E-BA-BWD-DISREGARD",
+    "E-BA-BWD-CAP"
    ],
    "replaces": [
-    "C-BA-OLD-B1-WISE"
+    "C-BA-OLD-B1-WISE",
+    "C-BA-OLD-B1-FLAGS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
-     "said on hypodrafts/B1.md": "**Sample flags** over the same samples: 1,272 `shortTermPollutionSample`, 1,205 `replacementSample`, 22,912 `preSeasonSample`. The table keeps all of them; which of them a compliance assessment may set aside is the Directive's rule, which was not read here.",
-     "texts": "8661fa2c992f2efd",
+     "said on hypodrafts/B1.md": "**Sample flags** over the same samples: 1,272 `shortTermPollutionSample`, 1,205 `replacementSample`, 22,912 `preSeasonSample`. The table keeps all of them. The Directive lets samples taken during short-term pollution be disregarded and replaced by new ones, within a cap on how many and only while management measures are in place; which ones an assessment set aside is not in this table.",
+     "texts": "2e7c1486819818ea",
      "node E-BA-WISE-FLAGS": "23595a293e0398a1",
      "pinned BA-WISE-DK-SAMPLESTATUS": "e7f86aecd0d642ad",
-     "node U-BA-DIRECTIVE": "f98059b594d2d3b4"
+     "node E-BA-BWD-DISREGARD": "c808a4882e80cb74",
+     "pinned BA-BWD-ART3": "5e9501cce3000934",
+     "node E-BA-BWD-CAP": "08f77c15407ea7b6",
+     "pinned BA-BWD-ANNEX2": "91a40956ba17c658"
     }
    }
   },
@@ -1945,13 +1976,13 @@
     "C-BA-OLD-B1-CREWS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on hypodrafts/B1.md": "(d) Sampling may be **selected against the exposure** — if visits avoid storms, and since the table flags replacement samples beside short-term-pollution ones — which would attenuate the effect toward zero, so a positive result survives it but a null does **not** license *no effect*.",
      "texts": "c664d97d7ec9ad45",
      "node A-BA-VISITS": "0e742d21e361e2bd",
-     "rests on C-BA-B1-FLAGS": "8661fa2c992f2efd"
+     "rests on C-BA-B1-FLAGS": "2e7c1486819818ea"
     }
    }
   },
@@ -2889,12 +2920,12 @@
     "E-BA-SR353-UNGAUGED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on hypodrafts/A1b.md": "*The field surplus is a construction; the stream and estuary nitrogen are measured, the stream series only where it is gauged. Do they move together, and does the relation hold still?*",
      "texts": "8fb0f092c0ad2625",
-     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f",
+     "rests on C-NI-SURPLUS-IDENTITY": "094570b39a388c73",
      "node E-BA-SR353-UNGAUGED": "c74642829008e798",
      "pinned SR353": "8a598b8a6973094b"
     }
@@ -2914,12 +2945,12 @@
     "C-BA-OLD-A1B-STEPS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on hypodrafts/A1b.md": "`markoverskud`, the field surplus, is built from coefficients as well as counts: manure nitrogen from livestock numbers times the norms in force, crop nitrogen from the editions of the feed tables. It can move when a coefficient moves, with no change in any field. SR120 records two changes on known dates:",
      "texts": "768c03799277c357",
-     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf"
+     "rests on C-NI-SURPLUS-TERMS": "4f161997fb5a10d3"
     }
    }
   },
@@ -2967,14 +2998,14 @@
     "C-BA-OLD-A1B-STEPS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on hypodrafts/A1b.md": "The quota is what a farm may apply, set from crop norms; it is not a term of the surplus, and a cut in it can change what is applied. Whether the surplus steps at 1999, and by how much, is what the test measures.",
      "texts": "9b34535968e7e7e2",
      "node E-BA-SR120-QUOTA": "c96e2ad442fcdb6d",
      "pinned SR120": "cea5fe54325343de",
-     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf"
+     "rests on C-NI-SURPLUS-TERMS": "4f161997fb5a10d3"
     }
    }
   },
@@ -3222,13 +3253,13 @@
     "C-BA-OLD-A1B-CLEANEST"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on hypodrafts/A1b.md": "The surplus is a **norm product**; the load is **hybrid** — measured on the gauged fraction, model output on the rest, since the ungauged part is DK-QNP output whose input is the surplus itself (class `7` in [the taxonomy of data-stream errors](https://github.com/Jjokulian/statistical-methods#7b-rate-a-data-stream-by-the-errors-it-can-contain)). **Use the gauged fraction only**, or the test is partly circular by construction. Measured nitrogen in the sea does not pass through the surplus at all.",
      "texts": "c81dc0963c744c82",
      "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
-     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f",
+     "rests on C-NI-SURPLUS-IDENTITY": "094570b39a388c73",
      "node E-BA-SM-7": "f25e08b089b5cd37",
      "pinned BA-SM-TAXONOMY": "196fa7e459c207d2"
     }
@@ -4436,6 +4467,34 @@
     "saw": {
      "said on ARCHIVE.md": "The catchment-level series are in a paper supplement and DCE annual reports; neither has been extracted. Nothing here has been computed.",
      "texts": "2a10e4a764cca762"
+    }
+   }
+  },
+  {
+   "id": "C-BA-OLD-B1-FLAGS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-BA-B1-FLAGS` on hypodrafts/B1.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "hypodrafts/B1.md",
+    "commit": "17af413",
+    "file": "docs/hypodrafts/B1.md",
+    "begin": "keeps all of them; which of them a compliance assessment may set aside",
+    "end": "which was not read here.",
+    "why": "The Directive's text is now pinned from another host and read: it lets short-term-pollution samples be disregarded and replaced, within a cap and with measures in place."
+   },
+   "replaced_by": [
+    "C-BA-B1-FLAGS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "keeps all of them; which of them a compliance assessment may set aside is the Directive's rule, which was not read here.",
+     "texts": "81a29055d9224319"
     }
    }
   }

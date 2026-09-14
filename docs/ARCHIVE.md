@@ -6175,6 +6175,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-NI-SURPLUS-TERMS`](CLAIMS.md#C-NI-SURPLUS-TERMS), [`C-NI-NO-FIELD`](CLAIMS.md#C-NI-NO-FIELD) — each opens what it rests on.
 
+<a id="C-NI-OLD-NO-FIELD"></a>
+### The earlier wording of `C-NI-NO-FIELD` on NITROGEN.md.
+
+`C-NI-OLD-NO-FIELD` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `17af413`
+
+> <span class="claim" data-claim="C-NI-OLD-NO-FIELD">No field's nitrogen balance is observed. Every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD-NO-FIELD "What this claim rests on")</sup>
+
+**Why it was retired:** It said every term of the surplus is a count, a sales total or an area times a coefficient; SR120's appendix does not say how deposition is estimated, so the claim now covers the terms whose method is described.
+
+**Replaced by:** [`C-NI-NO-FIELD`](CLAIMS.md#C-NI-NO-FIELD) — each opens what it rests on.
+
 <a id="C-NI-OLD-NO-MEASUREMENT"></a>
 ### The herd's share is asked constantly and no measurement in a stream could separate it.
 
@@ -7333,6 +7344,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** DCE's 2024 note ranks that year second, surpassed only by 2002, so neither recent year was at or above 2002; and the loads of the earlier years were not stored or cited.
 
 **Replaced by:** [`C-OP-2-EXTENT`](CLAIMS.md#C-OP-2-EXTENT) — each opens what it rests on.
+
+<a id="C-OP-OLD-2-LOAD"></a>
+### The earlier wording of `C-OP-2-LOAD` on OPEN_PROBLEMS.md.
+
+`C-OP-OLD-2-LOAD` · retired 2026-09-14 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `17af413`
+
+> <span class="claim" data-claim="C-OP-OLD-2-LOAD">Land-based nitrogen supply is down about [50](SOURCES.md#F-fb11e23a83)% since 1990 as DCE reports it, flow-normalised: from about [100](SOURCES.md#F-350a6dfa56) to about [55](SOURCES.md#F-14fb4c2bd2) kt a year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-2-LOAD "What this claim rests on")</sup>
+
+**Why it was retired:** SR353's figure is the fall in the flow-weighted concentration, not in the flow-normalised load, and the report gives no total for the first year; the page now says what the report states.
+
+**Replaced by:** [`C-OP-2-LOAD`](CLAIMS.md#C-OP-2-LOAD) — each opens what it rests on.
 
 <a id="C-OP-OLD-2-ONLYTEST"></a>
 ### The load-outcome comparison is the only empirical test of the nitrogen-dominant model anyone has run.
@@ -11545,6 +11567,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** That crews avoid storms was not observed in any record held, and how a replacement relates to a short-term-pollution sample is the Directive's rule, which was not read here.
 
 **Replaced by:** [`C-BA-B1-NOT-SELECTED`](CLAIMS.md#C-BA-B1-NOT-SELECTED) — each opens what it rests on.
+
+<a id="C-BA-OLD-B1-FLAGS"></a>
+### The earlier wording of `C-BA-B1-FLAGS` on hypodrafts/B1.md.
+
+`C-BA-OLD-B1-FLAGS` · retired 2026-09-14 from [hypodrafts/B1.md](hypodrafts/B1.md) · as published in `17af413`
+
+> <span class="claim" data-claim="C-BA-OLD-B1-FLAGS">keeps all of them; which of them a compliance assessment may set aside is the Directive's rule, which was not read here.</span><sup class="claim-mark">[†](ARCHIVE.md#C-BA-OLD-B1-FLAGS "What this claim rests on")</sup>
+
+**Why it was retired:** The Directive's text is now pinned from another host and read: it lets short-term-pollution samples be disregarded and replaced, within a cap and with measures in place.
+
+**Replaced by:** [`C-BA-B1-FLAGS`](CLAIMS.md#C-BA-B1-FLAGS) — each opens what it rests on.
 
 <a id="C-BA-OLD-B1-KBH"></a>
 ### Copenhagen's bathing-water forecast ingests measured overflow on a short cycle and is the highest-value fetch for the hypothesis.

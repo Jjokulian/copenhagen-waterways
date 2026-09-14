@@ -7,18 +7,6 @@
    "covers": {
     "file": "data/manual/monitoring.json",
     "fields": {
-     "load_trend_vs_outcome.nitrogen_load.reduction_pct_since_1990": {
-      "kind": "document",
-      "is": "The reduction in flow-normalised nitrogen supply from Danish land to the sea since the base year, as DCE reports it on miljotilstand.dk - a rounded figure from a summary page, transcribed by hand."
-     },
-     "load_trend_vs_outcome.nitrogen_load.approx_1990_kt": {
-      "kind": "document",
-      "is": "The approximate flow-normalised land-based nitrogen supply in the base year, in kt a year, as the same summary reports it."
-     },
-     "load_trend_vs_outcome.nitrogen_load.approx_recent_kt": {
-      "kind": "document",
-      "is": "The approximate recent flow-normalised land-based nitrogen supply, in kt a year, as the same summary reports it."
-     },
      "load_trend_vs_outcome.iltsvind_extent.observations.*.km2_september": {
       "kind": "document",
       "is": "The September area of Danish inner waters affected by oxygen depletion in one year, in km², as DCE's iltsvind notices report it."
@@ -90,10 +78,10 @@
     "data/manual/monitoring.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - the national load entry keeps only its description; its uncited figures were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json": "0f14a80dadb838a8"
+     "data/manual/monitoring.json": "de6220c30135f022"
     }
    }
   },

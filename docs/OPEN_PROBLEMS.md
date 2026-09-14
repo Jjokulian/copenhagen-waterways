@@ -31,9 +31,9 @@ could tell locally derived from imported material. It needs sediment samples.</s
 
 ## 2. Why the extremes did not respond to a halved load
 
-<span class="claim" data-claim="C-OP-2-LOAD">Land-based nitrogen supply is down about [50](SOURCES.md#F-c1dfd7d027)% since
-1990 as DCE reports it, flow-normalised: from about [100](SOURCES.md#F-4a25552fa4) to about
-[55](SOURCES.md#F-b76b31049f) kt a year.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-LOAD "What this claim rests on")</sup> <span class="claim" data-claim="C-OP-2-EXTENT">September oxygen-depletion
+<span class="claim" data-claim="C-OP-2-LOAD">DCE report the flow-weighted nitrogen concentration of the supply from land
+down [51](SOURCES.md#F-962b78c8ca)% since 1990 (confidence limits [43](SOURCES.md#F-886d3908f4) to [58](SOURCES.md#F-0febe77357)%), and the normalised supply in
+recent years between [53,000](SOURCES.md#F-bb1bab6ffa) and [58,000](SOURCES.md#F-b000210e2a) tonnes.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-2-LOAD "What this claim rests on")</sup> <span class="claim" data-claim="C-OP-2-EXTENT">September oxygen-depletion
 extent was [7,500](SOURCES.md#F-934bda9fbc) km² in 2023 and [11,000](SOURCES.md#F-066dfb9a42) km² in 2024 - by DCE's note on 2024 nearly half as
 large again as 2023, and the second largest registered, exceeded only by 2002. By late
 September 2025 the register's figure was [34](SOURCES.md#F-d81abd2971)% of 2024's September area; it does not

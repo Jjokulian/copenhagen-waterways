@@ -1119,7 +1119,9 @@
    "because": "Stated in their results. Whether it is measured on held-out data is not said.",
    "rests_on": [
     "E-ML-DCE-MEAN",
-    "U-ML-DCE-R2-DATA"
+    "U-ML-DCE-R2-DATA",
+    "E-ML-DMU-RMSEP",
+    "E-ML-DMU-HOLDOUT"
    ],
    "basis": "assessed",
    "holder": "DCE, Aarhus University (Timmermann and co-authors, the statistical-model report)",
@@ -1127,14 +1129,18 @@
     "C-OB-OLD-72-MEDIAN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ob (wrote the claim, its reasoning and supports after reading observing.py/oxygen.py, the pinned DCE, DHI, MSFD28, NOVANA and Middelburg-Levin texts and the committed pages; read the claim against the page wording; pinned phrases checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on OBSERVING.md": "DCE report a mean $R^2$ of **0.56** across all their models.",
-     "texts": "eb5a259e835eedf8",
+     "texts": "2ba8bf0a271d0eca",
      "node E-ML-DCE-MEAN": "fbfb330301193977",
      "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
-     "node U-ML-DCE-R2-DATA": "b39eeeb0d003dc11"
+     "node U-ML-DCE-R2-DATA": "7a7dd40507a9997a",
+     "node E-ML-DMU-RMSEP": "445115b4f869b769",
+     "pinned ML-DMU-FR685": "52a1f5ab38154826",
+     "node E-ML-DMU-HOLDOUT": "9bb5c7404a550097",
+     "pinned ML-DMU-FR733": "4e85fb67f49afc12"
     }
    }
   },

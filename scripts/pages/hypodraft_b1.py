@@ -219,8 +219,10 @@ def text():
                f"{RD('BA-WISE-DK-SAMPLESTATUS', '1,272', stp)} `shortTermPollutionSample`, "
                f"{RD('BA-WISE-DK-SAMPLESTATUS', '1,205', rep)} `replacementSample`, "
                f"{RD('BA-WISE-DK-SAMPLESTATUS', '22,912', pre)} `preSeasonSample`. The table "
-               "keeps all of them; which of them a compliance assessment may set aside is the "
-               "Directive's rule, which was not read here."))
+               "keeps all of them. The Directive lets samples taken during short-term pollution "
+               "be disregarded and replaced by new ones, within a cap on how many and only while "
+               "management measures are in place; which ones an assessment set aside is not in "
+               "this table."))
     w("- " + C("C-BA-B1-LAYER", "**Bathing sites.** `data/raw/national/badevand.geojson` "
                f"holds {b['sites']:,} sites with latitude, longitude and a `DKBW…` "
                "identifier, and every one of its identifiers is among the Danish identifiers "

@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - C-NI-SPILL now reads the two releases through readings.spill() and no longer divides by the first night's load; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "11183f4afade655c"
+     "scripts/nitrogen.py": "f657cfa27c1b3691"
     }
    }
   }

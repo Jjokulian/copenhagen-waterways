@@ -391,6 +391,36 @@
    "source": "OP-BYOGHAVN-KLAP",
    "phrase": "84 procent af det samlede havbundsmateriale",
    "where": "Lynetteholm: the share of the dumped material deposited within the dump site, per cent"
+  },
+  "sr353_conc_fall_pct": {
+   "value": 51,
+   "source": "SR353",
+   "phrase": "estimeret til 51% (95% konfidensgrænser: 43 til 58%)",
+   "where": "fall in the flow-weighted nitrogen concentration of the supply from land since 1990, per cent"
+  },
+  "sr353_conc_fall_lo": {
+   "value": 43,
+   "source": "SR353",
+   "phrase": "estimeret til 51% (95% konfidensgrænser: 43 til 58%)",
+   "where": "its lower confidence limit"
+  },
+  "sr353_conc_fall_hi": {
+   "value": 58,
+   "source": "SR353",
+   "phrase": "estimeret til 51% (95% konfidensgrænser: 43 til 58%)",
+   "where": "its upper confidence limit"
+  },
+  "sr353_norm_n_lo": {
+   "value": 53000,
+   "source": "SR353",
+   "phrase": "Den samlede normaliserede kvælstoftilførsel har ligget imellem 53.000 til 58.000 tons N",
+   "where": "the normalised total nitrogen supply from land in recent years, lowest, tonnes"
+  },
+  "sr353_norm_n_hi": {
+   "value": 58000,
+   "source": "SR353",
+   "phrase": "Den samlede normaliserede kvælstoftilførsel har ligget imellem 53.000 til 58.000 tons N",
+   "where": "the same, highest, tonnes"
   }
  }
 }

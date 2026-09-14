@@ -91,9 +91,11 @@ def main():
     a25 = year[2025]["km2_late_september"]
     w("## 2. Why the extremes did not respond to a halved load")
     w()
-    w(B("C-OP-2-LOAD") + f"Land-based nitrogen supply is down about {nl['reduction_pct_since_1990']}% since")
-    w(f"1990 as DCE reports it, flow-normalised: from about {nl['approx_1990_kt']} to about")
-    w(f"{nl['approx_recent_kt']} kt a year." + E + " " + B("C-OP-2-EXTENT") + "September oxygen-depletion")
+    rv = readings.rv
+    w(B("C-OP-2-LOAD") + "DCE report the flow-weighted nitrogen concentration of the supply from land")
+    w(f"down {rv('sr353_conc_fall_pct')}% since 1990 (confidence limits {rv('sr353_conc_fall_lo')} to "
+      f"{rv('sr353_conc_fall_hi')}%), and the normalised supply in")
+    w(f"recent years between {rv('sr353_norm_n_lo'):,} and {rv('sr353_norm_n_hi'):,} tonnes." + E + " " + B("C-OP-2-EXTENT") + "September oxygen-depletion")
     w(f"extent was {a23:,} km² in 2023 and {a24:,} km² in 2024 - by DCE's note on 2024 nearly half as")
     w("large again as 2023, and the second largest registered, exceeded only by 2002. By late")
     w(f"September 2025 the register's figure was {a25 / a24 * 100:.0f}% of 2024's September area; it does not")

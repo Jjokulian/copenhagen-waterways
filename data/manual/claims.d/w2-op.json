@@ -80,6 +80,14 @@
    "sha256": "fd45ad4e0d9dc1ed8e85bb2be252bbe8613698f1439d4c6456d5ba74d6764540",
    "checked": "2026-09-14",
    "status": "pinned 2026-09-14"
+  },
+  "OP-DAF-BYGNING": {
+   "title": "Datafordeler, Grunddatamodel, objekttypekatalog: Bygning (BBR)",
+   "url": "https://grunddatamodel.datafordeler.dk/objekttypekatalog/Bygninger%20og%20boliger/Bygning.html",
+   "retrieved": "2026-09-14",
+   "sha256": "c6b2c71c5b2fd2100ea4dea610a13854e22dbed16cc6f35cf41eda5f2dd62848",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -274,12 +282,6 @@
    "detail": "Searched 2026-09-11: CURRENTS.md and its data, the data-source registers and the monitoring register. No particle-tracking run and no sediment provenance study of Køge Bugt is held."
   },
   {
-   "id": "U-OP-LOAD-SOURCE",
-   "kind": "untraced",
-   "label": "Trail ends: the load figures",
-   "detail": "The monitoring register cites miljotilstand.dk for the flow-normalised load and its fall; the page as fetched on 2026-09-11 did not contain the figures in its text, so they rest on the register's transcription."
-  },
-  {
    "id": "U-OP-EXTENT-OTHER",
    "kind": "untraced",
    "label": "Trail ends: the other\\nyears' extents",
@@ -370,12 +372,6 @@
    "detail": "That each municipality adopts a wastewater plan with its catchments rests on Danish environmental law, not pinned here; no national assembly of the plans is in the data-source registers."
   },
   {
-   "id": "U-OP-BBR",
-   "kind": "untraced",
-   "label": "Trail ends: the BBR fields\\nnot read",
-   "detail": "Two encyclopaedia pages for the register returned not-found on 2026-09-11 and the register itself was not queried; that it carries a construction year per building is general knowledge here."
-  },
-  {
    "id": "E-OP-LEX-SPILL",
    "kind": "external",
    "label": "Den Store Danske: the spill\nlimit on the dredging",
@@ -422,6 +418,30 @@
    "detail": "The parties behind the project agreed that dumping stop entirely and the mud be built into the first part of the peninsula instead.",
    "source": "OP-TV2-LYN-20220602",
    "said": "Aftalen betyder, at dumpningen, der i fagsprog kaldes klapning, helt skal stoppes"
+  },
+  {
+   "id": "E-OP-BBR-FIELD",
+   "kind": "external",
+   "label": "BBR: each building's\nconstruction year",
+   "detail": "The national data catalogue's definition of the building register's field byg026Opførelsesår: the year the building was built, one per building, with its legal basis and the register's instructions named.",
+   "source": "OP-DAF-BYGNING",
+   "said": "angiver bygningens opførselsår"
+  },
+  {
+   "id": "E-NI-SR353-CONCFALL",
+   "kind": "external",
+   "label": "SR353: the concentration fall\nsince 1990",
+   "detail": "DCE's stream report: the fall in the flow-weighted nitrogen concentration of the total supply from land since 1990, with its confidence limits, which the report calls a good measure of the real development of the supply.",
+   "source": "SR353",
+   "said": "Faldet i den vandføringsvægtede kvælstofkoncentration af den samlede tilførsel er estimeret til"
+  },
+  {
+   "id": "E-NI-SR353-NORMRANGE",
+   "kind": "external",
+   "label": "SR353: the normalised supply\nin recent years",
+   "detail": "DCE's stream report: the range the normalised total nitrogen supply from land has lain in over recent years.",
+   "source": "SR353",
+   "said": "Den samlede normaliserede kvælstoftilførsel har ligget imellem"
   }
  ],
  "claims": [
@@ -561,23 +581,27 @@
    "kind": "attributed",
    "stance": "theirs",
    "page": "OPEN_PROBLEMS.md",
-   "claim": "DCE report land-based nitrogen supply, flow-normalised, down by about half since 1990.",
-   "because": "Their figures as the monitoring register transcribes them; the page the register cites did not show them in its fetched text.",
+   "claim": "DCE report the flow-weighted nitrogen concentration of the supply from land down by about half since 1990, and the normalised supply in recent years within a stated range.",
+   "because": "Both read from SR353, pinned, which calls the concentration fall a good measure of the real development of the supply.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-OP-LOAD-SOURCE"
+    "E-NI-SR353-CONCFALL",
+    "E-NI-SR353-NORMRANGE"
    ],
    "holder": "DCE, Aarhus University",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
-     "said on OPEN_PROBLEMS.md": "Land-based nitrogen supply is down about 50% since 1990 as DCE reports it, flow-normalised: from about 100 to about 55 kt a year.",
-     "texts": "645ccbd7aebf492d",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-OP-LOAD-SOURCE": "69777c33bc6eb5a6"
+     "said on OPEN_PROBLEMS.md": "DCE report the flow-weighted nitrogen concentration of the supply from land down 51% since 1990 (confidence limits 43 to 58%), and the normalised supply in recent years between 53,000 and 58,000 tonnes.",
+     "texts": "c15174e5abd9ccff",
+     "node E-NI-SR353-CONCFALL": "e06bbd0a335bf958",
+     "pinned SR353": "8a598b8a6973094b",
+     "node E-NI-SR353-NORMRANGE": "3b28954e9c10bc94"
     }
-   }
+   },
+   "replaces": [
+    "C-OP-OLD-2-LOAD"
+   ]
   },
   {
    "id": "C-OP-2-EXTENT",
@@ -628,12 +652,12 @@
     "C-OP-OLD-2-ACCEPTED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (reworded: the register gives 2025 in late September and 2024 only as September, so the share now says the two may not be read at the same point in the month, as agent w3-le noted; the dependent claim is unaffected. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "So the extremes have not fallen with a halved load, and the swing from one year to the next is large. No source this project holds explains either.",
      "texts": "f9fd62351b477137",
-     "rests on C-OP-2-LOAD": "645ccbd7aebf492d",
+     "rests on C-OP-2-LOAD": "c15174e5abd9ccff",
      "rests on C-OP-2-EXTENT": "05e465f033fceb51",
      "node U-OP-NOEXPLAIN": "0f1f2d2a9e9729da"
     }
@@ -2119,20 +2143,21 @@
    "stance": "ours",
    "page": "OPEN_PROBLEMS.md",
    "claim": "The BBR building register, carrying a construction year per building, would make impervious change since any date computable nationally without a hydraulic model.",
-   "because": "Buildings dated by year give impervious surface added since any date; the register's fields were not read here.",
+   "because": "Buildings dated by year give impervious surface added since any date; the register's object catalogue defines the construction-year field, pinned.",
    "rests_on": [
-    "U-OP-BBR"
+    "E-OP-BBR-FIELD"
    ],
    "replaces": [
     "C-OP-OLD-16-BBR"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-op (read each claim, its reasoning and what it rests on against the page wording as built; checked fetch_oda.py's run(), floodgap.py's water polygons, the plan layers' fields, and the pinned DCE, lux, fatberg, eelgrass and municipality pages; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on OPEN_PROBLEMS.md": "- **The BBR building register**, which carries a construction year per building, would make impervious change since any date computable nationally rather than by hand, without a hydraulic model.",
-     "texts": "65c8ca24590b23a4",
-     "node U-OP-BBR": "14dd5162903b00d7"
+     "texts": "60bd653f12a347f3",
+     "node E-OP-BBR-FIELD": "b3cd30a27b00a381",
+     "pinned OP-DAF-BYGNING": "c6b2c71c5b2fd210"
     }
    }
   },
@@ -4388,6 +4413,34 @@
     "saw": {
      "said on ARCHIVE.md": "Both events are recorded in `data/manual/monitoring.json` under `sediment_release_events`, without a cited source.",
      "texts": "774a9869102afb74"
+    }
+   }
+  },
+  {
+   "id": "C-OP-OLD-2-LOAD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-OP-2-LOAD` on OPEN_PROBLEMS.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "OPEN_PROBLEMS.md",
+    "commit": "17af413",
+    "file": "docs/OPEN_PROBLEMS.md",
+    "begin": "Land-based nitrogen supply is down about",
+    "end": "kt a year.",
+    "why": "SR353's figure is the fall in the flow-weighted concentration, not in the flow-normalised load, and the report gives no total for the first year; the page now says what the report states."
+   },
+   "replaced_by": [
+    "C-OP-2-LOAD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Land-based nitrogen supply is down about 50% since 1990 as DCE reports it, flow-normalised: from about 100 to about 55 kt a year.",
+     "texts": "9c191c6322d881a1"
     }
    }
   }

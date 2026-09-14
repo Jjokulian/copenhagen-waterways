@@ -266,8 +266,8 @@
   {
    "id": "U-NI-SR120-DEPOSITION",
    "kind": "untraced",
-   "label": "Trail ends: how SR120\\nestimates deposition",
-   "detail": "The appendix section on deposition was not read; that the deposition term is modelled is this page's statement, not a checked reading."
+   "label": "Trail ends: the appendix names\ndeposition but not its method",
+   "detail": "Searched on 2026-09-14: SR120 lists atmospheric deposition among the field balance's inputs and points to its appendix on the balance methods; that appendix, read in full, mentions deposition only for deposition directly on fresh water in the stream-load calculation, and does not say how the field-balance term is estimated."
   },
   {
    "id": "E-NI-NOVANA-FAUNA",
@@ -464,12 +464,6 @@
    "detail": "No public register of inter-farm manure contracts is known to this project; none was searched for beyond the registers it fetches."
   },
   {
-   "id": "U-NI-SIBLING",
-   "kind": "untraced",
-   "label": "Trail ends: the sibling\\nproject is not pinned",
-   "detail": "The danish-livestock repository that documented the layers is cited by link and not pinned here."
-  },
-  {
    "id": "X-NI-PATHWAY-COUNTS",
    "kind": "script",
    "label": "pathways.py",
@@ -566,6 +560,22 @@
    "detail": "The note: around Mariager Fjord a continued rise in nitrogen concentration was measured in several streams in the period when it fell in others.",
    "source": "NI-WINDOLF-2012B",
    "said": "Omkring Mariager Fjord er der imidlertid blevet målt en fortsat stigning i kvælstofkoncentrationen i flere vandløb"
+  },
+  {
+   "id": "E-NI-DL-ENCODING",
+   "kind": "external",
+   "label": "danish-livestock: the server\nmisstates its encoding",
+   "detail": "The sibling project's notes: the livestock layer's server declares one encoding and sends another; decode it as the other or every Danish name arrives mangled.",
+   "source": "DL-DATA-SOURCES",
+   "said": "every Danish name arrives mangled"
+  },
+  {
+   "id": "E-NI-DL-SIZES",
+   "kind": "external",
+   "label": "danish-livestock: the herd-size\ncolumns do not always sum",
+   "detail": "The sibling project's notes: the herd-size columns partition the herd for cattle and pigs, but for other species one column is already the total, so summing double-counts.",
+   "source": "DL-DATA-SOURCES",
+   "said": "The three size columns do not always sum"
   }
  ],
  "claims": [
@@ -1023,19 +1033,19 @@
    "stance": "ours",
    "page": "NITROGEN.md",
    "claim": "The field surplus is an accounting identity - what is supplied minus what is harvested - not a measurement.",
-   "because": "SR120's table computes it as the sum of the inputs less harvested nitrogen, and each term is estimated from registers and coefficients.",
+   "because": "SR120's table computes it as the sum of the inputs less harvested nitrogen, and each term whose method is described is estimated from registers and coefficients.",
    "rests_on": [
     "C-NI-SURPLUS-TERMS",
     "E-NI-SR120-T34"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on NITROGEN.md": "It is an accounting identity, not a measurement.",
-     "texts": "3b4965b5c5f1e87f",
-     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf",
+     "texts": "094570b39a388c73",
+     "rests on C-NI-SURPLUS-TERMS": "4f161997fb5a10d3",
      "node E-NI-SR120-T34": "2f094ce77f6ad717",
      "pinned SR120": "cea5fe54325343de"
     }
@@ -1047,7 +1057,7 @@
    "stance": "theirs",
    "page": "NITROGEN.md",
    "claim": "SR120 builds each term from registers and norms: mineral fertiliser from sales less an estimate for public grounds; manure from livestock counts times the norms in force; yields from the harvest census with assumed shrinkage; crop nitrogen from four editions of the feed tables, cereals corrected annually from the pig industry's research centre's analyses.",
-   "because": "Their appendix and methods text say so; how deposition is estimated was not read.",
+   "because": "Their appendix and methods text say so; how deposition is estimated is not described in the appendix they point to.",
    "rests_on": [
     "E-NI-SR120-MANURE",
     "E-NI-SR120-NORMS",
@@ -1057,16 +1067,16 @@
    "basis": "assessed",
    "holder": "DCE, SR120",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and the pinned phrases the engine checks - their words, as far as found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
-     "said on NITROGEN.md": "And SR120 says what each term is made of: **mineral fertiliser** from national sales statistics, minus an estimated 5,000 t N assumed to go to public grounds, forests and private gardens — a stated constant; **manure** from livestock **counts** by category, times a nutrient content per category that follows *\"de til en hver tid gældende normer\"* — the norms in force at the time, set by regulation; **yields** from the harvest census, with roughage known to be overestimated, so an assumed 10% shrinkage for maize, grass and catch crops and 15% for permanent grass; **crop nitrogen content** from the norm tables of the *Fodermiddeltabeller* of 1992, 1995, 2000 and 2005, with cereals *\"korrigeres hvert år efter de analyser Videncenter for Svineproduktion foretager\"* — corrected every year from analyses by the pig industry's own research centre; and **atmospheric deposition**, whose method is not read here.",
-     "texts": "0a0b60ea14f40bdf",
+     "said on NITROGEN.md": "And SR120 says what each term is made of: **mineral fertiliser** from national sales statistics, minus an estimated 5,000 t N assumed to go to public grounds, forests and private gardens — a stated constant; **manure** from livestock **counts** by category, times a nutrient content per category that follows *\"de til en hver tid gældende normer\"* — the norms in force at the time, set by regulation; **yields** from the harvest census, with roughage known to be overestimated, so an assumed 10% shrinkage for maize, grass and catch crops and 15% for permanent grass; **crop nitrogen content** from the norm tables of the *Fodermiddeltabeller* of 1992, 1995, 2000 and 2005, with cereals *\"korrigeres hvert år efter de analyser Videncenter for Svineproduktion foretager\"* — corrected every year from analyses by the pig industry's own research centre; and **atmospheric deposition**, whose method the appendix SR120 points to does not describe.",
+     "texts": "4f161997fb5a10d3",
      "node E-NI-SR120-MANURE": "48262cb4be713436",
      "pinned SR120": "cea5fe54325343de",
      "node E-NI-SR120-NORMS": "590c5c2c50b93d50",
      "node E-NI-SR120-CEREAL": "3a2759bd6de985f9",
-     "node U-NI-SR120-DEPOSITION": "b09be2b4a833f3cc"
+     "node U-NI-SR120-DEPOSITION": "82d6c35063b62ac7"
     }
    }
   },
@@ -1075,22 +1085,23 @@
    "kind": "argued",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "No field's nitrogen balance is observed: every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
-   "because": "Follows from how SR120 builds each term.",
+   "claim": "No field's nitrogen balance is observed: every term whose method SR120 describes is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
+   "because": "Follows from how SR120 builds each term it describes; one term that is not observed is enough for the balance not to be, and how deposition is estimated is not described.",
    "rests_on": [
     "C-NI-SURPLUS-TERMS"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-NI-OLD-NEVER-INSTRUMENT"
+    "C-NI-OLD-NEVER-INSTRUMENT",
+    "C-NI-OLD-NO-FIELD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
-     "said on NITROGEN.md": "**No field's nitrogen balance is observed.** Every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
-     "texts": "1271d3fed6dbc09b",
-     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf"
+     "said on NITROGEN.md": "**No field's nitrogen balance is observed.** Every term whose method SR120 describes is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
+     "texts": "84033cd7a181a87a",
+     "rests on C-NI-SURPLUS-TERMS": "4f161997fb5a10d3"
     }
    }
   },
@@ -1188,13 +1199,13 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on NITROGEN.md": "**So the chain reads:** norm tables × register counts → *markoverskud*, a residual → input to DK-QNP → diffuse load over the ungauged area → summed into total diffuse transport → correlated with *markoverskud* → \"a very strong, significant linear relation\". Each step is defensible alone. The composite cannot evidence what the last step is used to evidence.",
      "texts": "9f38a24ae2cb83a8",
      "rests on C-NI-FIG67": "b21e961e91828587",
-     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f"
+     "rests on C-NI-SURPLUS-IDENTITY": "094570b39a388c73"
     }
    }
   },
@@ -1346,12 +1357,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on NITROGEN.md": "It is easy to run together the **field balance** and the **load apportionment**. They are different operations on different quantities, and the headline share is the second, not the first.",
      "texts": "5c8ebfe49c530938",
-     "rests on C-NI-SURPLUS-IDENTITY": "3b4965b5c5f1e87f",
+     "rests on C-NI-SURPLUS-IDENTITY": "094570b39a388c73",
      "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
      "pinned MSFD28": "8204718867e3910b"
     }
@@ -1849,20 +1860,23 @@
    "stance": "ours",
    "page": "NITROGEN.md",
    "claim": "Both layers are open; they were located by the sibling project danish-livestock, and scripts/manure.py handles the two traps it documented - an encoding the server misstates, and herd-size columns that do not partition.",
-   "because": "manure.py decodes the livestock file as Latin against its declared encoding and uses animal units because the herd columns do not partition; the sibling repository is not pinned.",
+   "because": "manure.py decodes the livestock file as Latin against its declared encoding and uses animal units because the herd columns do not partition; the sibling project's notes documenting both traps are pinned.",
    "rests_on": [
     "X-MANURE",
-    "U-NI-SIBLING"
+    "E-NI-DL-ENCODING",
+    "E-NI-DL-SIZES"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on NITROGEN.md": "*Provenance.* Both layers are open and need no key. They were located and documented by the sibling project [danish-livestock](https://github.com/Jjokulian), which mapped the livestock layer; this project fetches them from the same primary source rather than copying its data, and the two traps it found — an encoding the server lies about, and herd-size columns that do not partition — are handled in `scripts/manure.py` because of that documentation.",
-     "texts": "24b68afc8bc89ef1",
+     "texts": "25579b39d5b76895",
      "node X-MANURE": "2893dee3c11aca68",
-     "node U-NI-SIBLING": "de544876890c44f4"
+     "node E-NI-DL-ENCODING": "e276e9e52c08be48",
+     "pinned DL-DATA-SOURCES": "3f549d80383d9485",
+     "node E-NI-DL-SIZES": "1ec472d382aad104"
     }
    }
   },
@@ -3977,6 +3991,34 @@
     "saw": {
      "said on ARCHIVE.md": "The same bay carries the largest release nobody argued about. The Øresund fixed link's permitted spill — up to 370,000 m³ of fines into the water column at the bay's northern entrance, 1995-2000 — against the 498 m³ released at Lynetteholm before dumping was stopped: 743 times, and the larger one, as recorded in OPEN_PROBLEMS.md, a permit condition met rather than a controversy.",
      "texts": "721fe045364ccef3"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-NO-FIELD",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-NI-NO-FIELD` on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "17af413",
+    "file": "docs/NITROGEN.md",
+    "begin": "No field's nitrogen balance is observed.",
+    "end": "the annual analysis of cereal nitrogen.",
+    "why": "It said every term of the surplus is a count, a sales total or an area times a coefficient; SR120's appendix does not say how deposition is estimated, so the claim now covers the terms whose method is described."
+   },
+   "replaced_by": [
+    "C-NI-NO-FIELD"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "No field's nitrogen balance is observed. Every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
+     "texts": "a6305245e64ece1b"
     }
    }
   }

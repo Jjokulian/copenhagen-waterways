@@ -2391,20 +2391,21 @@
    "stance": "ours",
    "page": "EXPERIMENTS.md",
    "claim": "Terrain, building footprints with year built, and the outfall register, with municipal plans' published catchments as a harder second test.",
-   "because": "What the entry proposes to use. That the building register carries a construction year per building is general knowledge here; its fields were not read.",
+   "because": "What the entry proposes to use. The building register's construction-year field is defined in its object catalogue, pinned.",
    "rests_on": [
-    "U-OP-BBR"
+    "E-OP-BBR-FIELD"
    ],
    "replaces": [
     "C-EA-OLD-X21-MEAS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on EXPERIMENTS.md": "Terrain, building footprints with year built, and the outfall register. Plus, where a municipal wastewater plan publishes real catchment boundaries, those become a second and much harder test.",
-     "texts": "a5e7cf6b515c96aa",
-     "node U-OP-BBR": "14dd5162903b00d7"
+     "texts": "5dad5d4d25d089cf",
+     "node E-OP-BBR-FIELD": "b3cd30a27b00a381",
+     "pinned OP-DAF-BYGNING": "c6b2c71c5b2fd210"
     }
    }
   },
@@ -3482,17 +3483,18 @@
    "stance": "ours",
    "page": "EXPERIMENTS.md",
    "claim": "Nothing physical. Delineate catchments from the terrain model, then **constrain the delineation so each outfall's computed impervious area matches the reduced area already published for it**. Building footprints and construction years come from BBR, so impervious cover can be reconstructed for any year rather than only for today.",
-   "because": "What this entry proposes to change or build; nothing in it has been run. That the building register carries a construction year per building is general knowledge here; its fields were not read.",
+   "because": "What this entry proposes to change or build; nothing in it has been run. The building register's construction-year field is defined in its object catalogue, pinned.",
    "rests_on": [
-    "U-OP-BBR"
+    "E-OP-BBR-FIELD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on EXPERIMENTS.md": "Nothing physical. Delineate catchments from the terrain model, then **constrain the delineation so each outfall's computed impervious area matches the reduced area already published for it**. Building footprints and construction years come from BBR, so impervious cover can be reconstructed for any year rather than only for today.",
-     "texts": "cb3c39741131cc66",
-     "node U-OP-BBR": "14dd5162903b00d7"
+     "texts": "36402cba33d71577",
+     "node E-OP-BBR-FIELD": "b3cd30a27b00a381",
+     "pinned OP-DAF-BYGNING": "c6b2c71c5b2fd210"
     }
    }
   },
@@ -4964,12 +4966,12 @@
     "C-EA-OLD-B-NORM"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - the building register's construction-year field in the national data catalogue; SR120's appendix, which names deposition but not its method; the two method reports behind DCE's R², which define a held-out prediction error while the later table does not say which data it uses; the Bathing Water Directive's Article 3 and Annex II on disregarding short-term-pollution samples; SR353's concentration fall and normalised supply, which replace the register's uncited load figures; and the sibling project's notes on the two data traps. Each claim read against its new supports; NITROGEN's no-field sentence narrowed to the terms whose method SR120 describes; those resting on the changed claims draw on the surplus being an identity built from counts and norms, which still holds)",
     "saw": {
      "said on AGENT_BRIEF.md": "*markoverskud*, whose manure term is livestock counts × excretion norms",
      "texts": "db981e511b2bb4a6",
-     "rests on C-NI-SURPLUS-TERMS": "0a0b60ea14f40bdf"
+     "rests on C-NI-SURPLUS-TERMS": "4f161997fb5a10d3"
     }
    }
   },

@@ -219,9 +219,10 @@ def surplus_audit(mon):
         "with cereals *\"" + quote("SR120", "korrigeres hvert år efter de analyser Videncenter for "
                                    "Svineproduktion foretager") + "\"* — corrected every year from "
         "analyses by the pig industry's own research centre; and **atmospheric deposition**, whose "
-        "method is not read here.") + "\n")
-    w(C("C-NI-NO-FIELD", "**No field's nitrogen balance is observed.** Every term is a register "
-        "count, a sales total or an area times a coefficient, and the surplus is what is left over; "
+        "method the appendix SR120 points to does not describe.") + "\n")
+    w(C("C-NI-NO-FIELD", "**No field's nitrogen balance is observed.** Every term whose method SR120 "
+        "describes is a register count, a sales total or an area times a coefficient, and the "
+        "surplus is what is left over; "
         "the one measurement inside it is the annual analysis of cereal nitrogen.") + "\n")
     w("#### The consequence is documented in the sources themselves\n")
     w(C("C-NI-NORM-STEPS", "Because the coefficients are administrative, the published figures move "
