@@ -35,9 +35,9 @@ def rows():
     deep = [b for b in bands if b["to"] > split]
     sh = sum(b["n"] * b["at_bed_pct"] for b in shallow) / sum(b["n"] for b in shallow)
     dp = sum(b["n"] * b["at_bed_pct"] for b in deep) / sum(b["n"] for b in deep)
-    m = live.live_json(os.path.join(ROOT, "docs", "data", "flood2012", "manifest.json"))
-    se = m["sheets"]["norrebro"]["standard_error_m"]
-    tied = "norrebro" not in list((m.get("bundle_adjustment") or {}).get("unconstrained") or [])
+    geo = live.live_json(os.path.join(DERIVED, "floodmaps", "_georef.json"))
+    se = geo["norrebro"]["standard_error_m"]
+    tied = "norrebro" not in list(live.live_json(os.path.join(DERIVED, "floodalign.json")).get("unconstrained") or [])
     ar = live.live_json(os.path.join(DERIVED, "areas.json"))
     hz = ar["hazardous_layer"]
     n_wb = ar["summary"]["sets"]["all"]["n"]

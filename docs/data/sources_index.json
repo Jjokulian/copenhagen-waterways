@@ -1534,7 +1534,7 @@
     "A row is flagged as the project's own exactly when its construction cell says so."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/pages/constructed.py - the C-GC-C-MARK-V sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/pages/constructed.py reads the Nørrebro sheet's standard error and the bundle adjustment's record from _georef.json and floodalign.json instead of the manifest that copies them; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/constructed.json",
@@ -8599,9 +8599,9 @@
    "F-be463675ea",
    "F-c5d6760031",
    "F-c8d07c0744",
+   "F-ca81107c43",
    "F-cc1d7f1b8e",
    "F-d171ad8729",
-   "F-dadf830a6b",
    "F-db87f0a6fb",
    "F-dbc1d51af8",
    "F-e4739b3732",
@@ -40562,10 +40562,10 @@
   },
   "F-14c484c159": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 987,
-    "line": 993,
-    "text": "    if arch.get(\"structures\"):\n        st_r = arch[\"structures\"][\"rist\"]\n        st_b = arch[\"structures\"][\"broend\"]\n        km = (arch[\"street_m\"][\"amager\"] + arch[\"street_m\"][\"mainland\"]) / 1000\n        a(CL(\"C-PG-1-DENSITY\", \"**And the density of that problem can now be counted rather \"\n             \"than asserted.** The city publishes its own structures — \"\n             f\"{st_r['total']:,} gully gratings and {st_b['total']:,} manholes and wells, \"\n             f\"each with an elevation, maintained to {st_b['last'][:4]}. Inside the \"\n             f\"combined-sewered catchments that is **{ri:,} gratings and {br:,} chambers**, \"\n             f\"against {km:,.0f} km of street: **a grating about every {km*1000/ri:.0f} m and \""
+    "file": "scripts/pages/constructed.py",
+    "first": 87,
+    "line": 93,
+    "text": "           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \"\n         \"city's own\", \"its own field\",\n         C(\"C-GC-C-ST-R\", f\"**empty on {st['rist']['type_field_empty_pct']:.0f}% of \"\n           f\"{st['rist']['total']:,} gratings and {st['broend']['type_field_empty_pct']:.0f}% \"\n           f\"of {st['broend']['total']:,} wells**, while every one carries an elevation\"),\n         C(\"C-GC-C-ST-V\", \"**an unfilled field, not an absent dimension.** The column exists, \"\n           \"the survey happened, the value was never entered — so a contractor planning a bore \"\n           \"knows where every lid is and not what one of them is\"), False),"
    },
    "constructions": [
     "K-POLITICS-ARCH"
@@ -40588,8 +40588,8 @@
    "synthetic": false,
    "value": 85816,
    "where": [
-    "scripts/programme.py",
-    993
+    "scripts/pages/constructed.py",
+    93
    ]
   },
   "F-14ca135518": {
@@ -50084,10 +50084,10 @@
   },
   "F-1c1344b3bb": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 987,
-    "line": 993,
-    "text": "    if arch.get(\"structures\"):\n        st_r = arch[\"structures\"][\"rist\"]\n        st_b = arch[\"structures\"][\"broend\"]\n        km = (arch[\"street_m\"][\"amager\"] + arch[\"street_m\"][\"mainland\"]) / 1000\n        a(CL(\"C-PG-1-DENSITY\", \"**And the density of that problem can now be counted rather \"\n             \"than asserted.** The city publishes its own structures — \"\n             f\"{st_r['total']:,} gully gratings and {st_b['total']:,} manholes and wells, \"\n             f\"each with an elevation, maintained to {st_b['last'][:4]}. Inside the \"\n             f\"combined-sewered catchments that is **{ri:,} gratings and {br:,} chambers**, \"\n             f\"against {km:,.0f} km of street: **a grating about every {km*1000/ri:.0f} m and \""
+    "file": "scripts/pages/constructed.py",
+    "first": 86,
+    "line": 92,
+    "text": "           f\"{se:g} m\"\n           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \"\n         \"city's own\", \"its own field\",\n         C(\"C-GC-C-ST-R\", f\"**empty on {st['rist']['type_field_empty_pct']:.0f}% of \"\n           f\"{st['rist']['total']:,} gratings and {st['broend']['type_field_empty_pct']:.0f}% \"\n           f\"of {st['broend']['total']:,} wells**, while every one carries an elevation\"),\n         C(\"C-GC-C-ST-V\", \"**an unfilled field, not an absent dimension.** The column exists, \"\n           \"the survey happened, the value was never entered — so a contractor planning a bore \""
    },
    "constructions": [
     "K-POLITICS-ARCH"
@@ -50110,8 +50110,8 @@
    "synthetic": false,
    "value": 123806,
    "where": [
-    "scripts/programme.py",
-    993
+    "scripts/pages/constructed.py",
+    92
    ]
   },
   "F-1c20552c49": {
@@ -125017,10 +125017,10 @@
   },
   "F-561255f58a": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 997,
-    "line": 1003,
-    "text": "             f\"a chamber about every {km*1000/br:.0f} m.** A bore is not threading an empty \"\n             f\"metre. It is threading a metre with a lid in it about every \"\n             f\"{km*1000/(ri + br):.0f} m, and each lid is a thing that goes down.\\n\"))\n        a(CL(\"C-PG-1-TYPEEMPTY\", \"**The same register also shows what it does not know.** \"\n             \"Both layers carry a type column — `ristetype`, `broendtype` — and it is empty \"\n             f\"on **{st_r['type_field_empty_pct']:.0f}% of the gratings and \"\n             f\"{st_b['type_field_empty_pct']:.0f}% of the wells.** The city knows where its \"\n             \"structures are, to the centimetre in the vertical, and its own record does not \"\n             \"say what any of them is: which lid is a sewer manhole, which is a gully pot, \"\n             \"which belongs to water, gas or telecom. That is the [unfilled-field \""
+    "file": "scripts/pages/constructed.py",
+    "first": 86,
+    "line": 92,
+    "text": "           f\"{se:g} m\"\n           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \"\n         \"city's own\", \"its own field\",\n         C(\"C-GC-C-ST-R\", f\"**empty on {st['rist']['type_field_empty_pct']:.0f}% of \"\n           f\"{st['rist']['total']:,} gratings and {st['broend']['type_field_empty_pct']:.0f}% \"\n           f\"of {st['broend']['total']:,} wells**, while every one carries an elevation\"),\n         C(\"C-GC-C-ST-V\", \"**an unfilled field, not an absent dimension.** The column exists, \"\n           \"the survey happened, the value was never entered — so a contractor planning a bore \""
    },
    "constructions": [
     "K-POLITICS-ARCH"
@@ -125043,8 +125043,8 @@
    "synthetic": false,
    "value": 94.08035797520276,
    "where": [
-    "scripts/programme.py",
-    1003
+    "scripts/pages/constructed.py",
+    92
    ]
   },
   "F-5616810c22": {
@@ -277577,10 +277577,10 @@
   },
   "F-ca81107c43": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 881,
-    "line": 887,
-    "text": "         f\"{fsh['assisted']} — {', '.join('`' + n + '`' for n in F['assisted_sheets'])} — \"\n         \"were placed from control points reported by a resident, who found marked dots on \"\n         f\"a web map one at a time. **All {fsh['total']} are now placed**, and everything \"\n         f\"below is **{riv['flood_path_km2']:.2f} km² of modelled flood path** across the \"\n         \"whole city.\\n\"))\n    a(CL(\"C-PG-1-BANDS\", f\"The {fsh['assisted']} assisted sheets are tied to the ground with \"\n         f\"standard errors of {se_lo:.0f}–{se_hi:.0f} m, against an ensemble spread of \"\n         f\"{sp_lo:.0f}–{sp_hi:.0f} m for the {fsh['automatic']} automatic ones, so treat the \"\n         f\"{P('terrain_window_m'):.0f} m proximity band on those as indicative and the \"\n         f\"{P('terrain_window_wide_m'):.0f} m band as sound. Provenance and per-sheet \""
+    "file": "scripts/pages/constructed.py",
+    "first": 80,
+    "line": 86,
+    "text": "        (\"**`confident` on the Nørrebro flood sheet** — ours, a quality flag\",\n         \"the spread over *all* registration variants, not just the agreeing ones\",\n         C(\"C-GC-C-NB-R\", \"the flag's spread was measured over the agreeing variants only\"),\n         C(\"C-GC-C-NB-V\", \"**the confidence statistic was conditioned on the selection it \"\n           \"validated.** The rule now needs a majority and measures the spread over every \"\n           \"variant. Since placed from resident-reported control points, standard error \"\n           f\"{se:g} m\"\n           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \""
    },
    "constructions": [
     "K-POLITICS-GEOREF"
@@ -277673,8 +277673,8 @@
    "synthetic": false,
    "value": 14.3,
    "where": [
-    "scripts/programme.py",
-    887
+    "scripts/pages/constructed.py",
+    86
    ]
   },
   "F-ca904caa01": {
@@ -298774,38 +298774,6 @@
     1658
    ]
   },
-  "F-dadf830a6b": {
-   "code": {
-    "file": "scripts/pages/constructed.py",
-    "first": 80,
-    "line": 86,
-    "text": "        (\"**`confident` on the Nørrebro flood sheet** — ours, a quality flag\",\n         \"the spread over *all* registration variants, not just the agreeing ones\",\n         C(\"C-GC-C-NB-R\", \"the flag's spread was measured over the agreeing variants only\"),\n         C(\"C-GC-C-NB-V\", \"**the confidence statistic was conditioned on the selection it \"\n           \"validated.** The rule now needs a majority and measures the spread over every \"\n           \"variant. Since placed from resident-reported control points, standard error \"\n           f\"{se:g} m\"\n           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \""
-   },
-   "constructions": [
-    "K-FLOOD-EXPORT"
-   ],
-   "field": {
-    "is": "The standard error recorded for one sheet's placement, where it was placed from control points; entered by hand in the registration record.",
-    "kind": "estimated",
-    "synthetic": false
-   },
-   "kind": "estimated",
-   "producer": "scripts/export_flood.py",
-   "rests_on": {
-    "estimated": 1
-   },
-   "src": [
-    "leaf",
-    "docs/data/flood2012/manifest.json",
-    "sheets.norrebro.standard_error_m"
-   ],
-   "synthetic": false,
-   "value": 14.3,
-   "where": [
-    "scripts/pages/constructed.py",
-    86
-   ]
-  },
   "F-dae6ebc26b": {
    "constructions": [
     "K-WATER-WAVES"
@@ -311912,10 +311880,10 @@
   },
   "F-e51550bdc9": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
+    "file": "scripts/pages/constructed.py",
+    "first": 66,
+    "line": 72,
+    "text": "        (\"**`hz`, marine hazardous-substance coverage** — ours\",\n         \"the source layer's own geography\",\n         C(\"C-GC-C-HZ-R\", f\"**{hz['coast']} of {hz['points']} points are marine** \"\n           f\"({hz['lake']} lake, {hz['river']} river)\"),\n         C(\"C-GC-C-HZ-V\", \"withdrawn; the coverage was manufactured by proximity\"), True),\n        (\"**`SigtDybde_m`, Secchi depth**\",\n         f\"`BundDybde_m`, bottom depth, {L['n_paired']:,} paired rows\",\n         C(\"C-GC-C-SECCHI-R\", f\"seen-to-bottom on **{sh:.1f}%** of readings where the water is \"\n           f\"{split:g} m deep or less, and **{dp:.1f}%** deeper\"),\n         C(\"C-GC-C-SECCHI-V\", f\"right-censored, **{sh / dp:.0f}× more in shallow water**; any \""
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -311972,8 +311940,8 @@
    "synthetic": false,
    "value": 96708,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/constructed.py",
+    72
    ]
   },
   "F-e5193dafdc": {
@@ -320078,10 +320046,10 @@
   },
   "F-ec15099e98": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 996,
-    "line": 1002,
-    "text": "             f\"against {km:,.0f} km of street: **a grating about every {km*1000/ri:.0f} m and \"\n             f\"a chamber about every {km*1000/br:.0f} m.** A bore is not threading an empty \"\n             f\"metre. It is threading a metre with a lid in it about every \"\n             f\"{km*1000/(ri + br):.0f} m, and each lid is a thing that goes down.\\n\"))\n        a(CL(\"C-PG-1-TYPEEMPTY\", \"**The same register also shows what it does not know.** \"\n             \"Both layers carry a type column — `ristetype`, `broendtype` — and it is empty \"\n             f\"on **{st_r['type_field_empty_pct']:.0f}% of the gratings and \"\n             f\"{st_b['type_field_empty_pct']:.0f}% of the wells.** The city knows where its \"\n             \"structures are, to the centimetre in the vertical, and its own record does not \"\n             \"say what any of them is: which lid is a sewer manhole, which is a gully pot, \""
+    "file": "scripts/pages/constructed.py",
+    "first": 85,
+    "line": 91,
+    "text": "           \"variant. Since placed from resident-reported control points, standard error \"\n           f\"{se:g} m\"\n           + (\".\" if tied else \"; the bundle adjustment still cannot tie it to the other \"\n              \"sheets.\")), True),\n        (\"**a structure register with a type column** — `k101:rist`, `k101:broend`, the \"\n         \"city's own\", \"its own field\",\n         C(\"C-GC-C-ST-R\", f\"**empty on {st['rist']['type_field_empty_pct']:.0f}% of \"\n           f\"{st['rist']['total']:,} gratings and {st['broend']['type_field_empty_pct']:.0f}% \"\n           f\"of {st['broend']['total']:,} wells**, while every one carries an elevation\"),\n         C(\"C-GC-C-ST-V\", \"**an unfilled field, not an absent dimension.** The column exists, \""
    },
    "constructions": [
     "K-POLITICS-ARCH"
@@ -320104,8 +320072,8 @@
    "synthetic": false,
    "value": 100.0,
    "where": [
-    "scripts/programme.py",
-    1002
+    "scripts/pages/constructed.py",
+    91
    ]
   },
   "F-ec160a69a3": {

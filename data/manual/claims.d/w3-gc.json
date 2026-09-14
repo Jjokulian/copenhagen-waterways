@@ -95,12 +95,6 @@
    "detail": "The comment on the automatic registration's acceptance rule records that the flag's spread was measured over the agreeing variants only, so it was small by construction once agreement had selected a cluster, and that the Nørrebro sheet was published as confident on a minority agreement; the rule now requires a majority and measures the spread over every variant that ran."
   },
   {
-   "id": "D-GC-FLOOD",
-   "kind": "held",
-   "label": "The flood sheets' placement\ndocs/data/flood2012/manifest.json",
-   "detail": "Each sheet's placement; the Nørrebro sheet's standard error from its control points; the sheets the bundle adjustment could not constrain."
-  },
-  {
    "id": "X-GC-AREAS-HZ",
    "kind": "script",
    "label": "areas.py\nthe hazardous-substance section",
@@ -1073,6 +1067,12 @@
    "detail": "The note tabulates the slope of the relation for each of ten fjord catchments and reads the differences as differing retention; for Mariager Fjord the slope is not significant.",
    "source": "NI-WINDOLF-2012B",
    "said": "Den forskellige oplandsspecifikke hældning i relationen"
+  },
+  {
+   "id": "D-GC-GEOREF",
+   "kind": "held",
+   "label": "The flood sheets' placement\\ndata/derived/floodmaps/_georef.json, floodalign.json",
+   "detail": "Each sheet's placement and standard error, from its control points (_georef.json), and the sheets the bundle adjustment could not constrain (floodalign.json) - the files the published manifest copies."
   }
  ],
  "claims": [
@@ -5130,23 +5130,23 @@
    "stance": "ours",
    "page": "CONSTRUCTED.md",
    "claim": "The confidence statistic was conditioned on the selection it validated; the rule now needs a majority and measures the spread over every variant, and the sheet has since been placed from resident-reported control points with the standard error shown.",
-   "because": "The rule's comment and code, and the manifest's placement.",
+   "because": "The rule's comment and code, and the sheet's placement in _georef.json with the bundle adjustment's record in floodalign.json.",
    "rests_on": [
     "X-GC-FLOODMAPS",
-    "D-GC-FLOOD",
+    "D-GC-GEOREF",
     "C-LR-R-OWN-NORREBRO"
    ],
    "replaces": [
     "C-GC-OLD-C-TABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: CONSTRUCTED reads the Nørrebro sheet's standard error from floodmaps/_georef.json, where PROGRAMME and RESIDUAL read it, and whether the bundle adjustment ties it from floodalign.json, instead of the published manifest that copies both; the claim rests on a node for those two files; its wording and value are unchanged, and the claim resting on it draws on the same)",
     "saw": {
      "said on CONSTRUCTED.md": "**the confidence statistic was conditioned on the selection it validated.** The rule now needs a majority and measures the spread over every variant. Since placed from resident-reported control points, standard error 14.3 m; the bundle adjustment still cannot tie it to the other sheets.",
-     "texts": "086d87709ba2f91c",
+     "texts": "680f7a7f53e12015",
      "node X-GC-FLOODMAPS": "b1c06a4ca207fe04",
-     "node D-GC-FLOOD": "60c16ee501ff026f",
+     "node D-GC-GEOREF": "a4fbeb6451cc1bce",
      "rests on C-LR-R-OWN-NORREBRO": "c1f67f14560cb45d"
     }
    }
@@ -5214,14 +5214,14 @@
     "C-GC-C-NB-V"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: CONSTRUCTED reads the Nørrebro sheet's standard error from floodmaps/_georef.json, where PROGRAMME and RESIDUAL read it, and whether the bundle adjustment ties it from floodalign.json, instead of the published manifest that copies both; the claim rests on a node for those two files; its wording and value are unchanged, and the claim resting on it draws on the same)",
     "saw": {
      "said on CONSTRUCTED.md": "Ours are marked as ours. 2 of the 8 entries are this project's own constructions failing its own check, which is the point of keeping the register rather than a list of other people's errors.",
      "texts": "cf94e2f40041687f",
      "node D-GC-CONSTRUCTED": "5f047887425ddddb",
      "rests on C-GC-C-HZ-V": "1c9a777a28ff0887",
-     "rests on C-GC-C-NB-V": "086d87709ba2f91c"
+     "rests on C-GC-C-NB-V": "680f7a7f53e12015"
     }
    }
   },

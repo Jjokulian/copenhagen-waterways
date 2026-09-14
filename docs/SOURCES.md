@@ -44,7 +44,7 @@
 <a id="T-81f44d68"></a>
 ### [CONSTRUCTED.md](CONSTRUCTED.md) — The register
 
-18 numbers in the columns *construction*, *held against*, *result*, *verdict*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`, `summary.sets.all.n`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/light.json` (`secchi.bands.*.to`, `secchi.n_paired`), written by [`scripts/light.py`](../scripts/light.py). Read from `docs/data/architecture.json` (`structures.broend.total`, `structures.broend.type_field_empty_pct`, `structures.rist.total`, `structures.rist.type_field_empty_pct`), written by [`scripts/architecture.py`](../scripts/architecture.py). Read from `docs/data/areas/partition_subspace.json` (`results.*.derived_vs_official_lift`), written by [`scripts/partition_subspace.py`](../scripts/partition_subspace.py). Read from `docs/data/flood2012/manifest.json` (`sheets.norrebro.standard_error_m`), written by [`scripts/export_flood.py`](../scripts/export_flood.py). 4 calculated on the page, each with its arithmetic in its menu.
+18 numbers in the columns *construction*, *held against*, *result*, *verdict*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`, `summary.sets.all.n`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/floodmaps/_georef.json` (`norrebro.standard_error_m`), written by [`scripts/floodmaps.py`](../scripts/floodmaps.py). Read from `data/derived/light.json` (`secchi.bands.*.to`, `secchi.n_paired`), written by [`scripts/light.py`](../scripts/light.py). Read from `docs/data/architecture.json` (`structures.broend.total`, `structures.broend.type_field_empty_pct`, `structures.rist.total`, `structures.rist.type_field_empty_pct`), written by [`scripts/architecture.py`](../scripts/architecture.py). Read from `docs/data/areas/partition_subspace.json` (`results.*.derived_vs_official_lift`), written by [`scripts/partition_subspace.py`](../scripts/partition_subspace.py). 4 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-1f9bc85c"></a>
 ### [CURRENTS.md](CURRENTS.md) — The result: Køge Bugt keeps its water longest
@@ -1863,7 +1863,7 @@ A hand-compiled register of every pathway of reactive nitrogen to Danish marine 
 <a id="K-FLOOD-CONSTRUCTED"></a>
 ### The size of the constructions register
 
-`K-FLOOD-CONSTRUCTED` · covers data/derived/constructed.json · **current** · read by Claude (2026-09-14: scripts/pages/constructed.py - the C-GC-C-MARK-V sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
+`K-FLOOD-CONSTRUCTED` · covers data/derived/constructed.json · **current** · read by Claude (2026-09-14: scripts/pages/constructed.py reads the Nørrebro sheet's standard error and the bundle adjustment's record from _georef.json and floodalign.json instead of the manifest that copies them; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the rows of the constructions register, and those that are the project's own, as the generator writes them.
 

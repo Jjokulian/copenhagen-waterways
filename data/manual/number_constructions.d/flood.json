@@ -581,10 +581,10 @@
     "scripts/pages/constructed.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/pages/constructed.py - the C-GC-C-MARK-V sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/pages/constructed.py reads the Nørrebro sheet's standard error and the bundle adjustment's record from _georef.json and floodalign.json instead of the manifest that copies them; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/pages/constructed.py": "47c52f0f9f473e1a"
+     "scripts/pages/constructed.py": "688937a4be8bc359"
     }
    }
   },
