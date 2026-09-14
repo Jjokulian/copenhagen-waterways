@@ -3908,7 +3908,7 @@
     "A structure belongs to the catchment its point falls in."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "docs/data/architecture.json",
@@ -4092,7 +4092,7 @@
     "A sheet's placement method is recorded in its provenance entry with the prefix the counts test for."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/programme.json",
@@ -4164,7 +4164,7 @@
     "Amager's combined-sewered impervious area is split from the mainland by the hand-drawn polygon in `scripts/programme.py`."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/streams.json",
@@ -7183,6 +7183,7 @@
    "F-ab8b51d821",
    "F-aba7105965",
    "F-ac07a9a0fe",
+   "F-ac165aadf0",
    "F-ac17b8800c",
    "F-ac29a891a1",
    "F-ac4bc3e8b1",
@@ -12177,7 +12178,6 @@
    "F-5e83f81c64",
    "F-5e91dde539",
    "F-5ed168685e",
-   "F-5fb04be1c0",
    "F-60d48cbc42",
    "F-622ec8c3cd",
    "F-6245b3c938",
@@ -12278,6 +12278,7 @@
    "F-b88bfe5005",
    "F-bb3f91aa8f",
    "F-bc8fd7dcd2",
+   "F-bcc89e099f",
    "F-be0e398144",
    "F-be293204eb",
    "F-be53fa2167",
@@ -98981,10 +98982,10 @@
   },
   "F-4196d405de": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 135,
-    "line": 141,
-    "text": "        \"years_lower\": live.stated(\"settle_years\", 2, \"two\", R_YEARS),\n        \"windows\": live.stated(\"settle_windows\", 2, \"Two\", R_WINDOWS),\n        \"threshold\": live.stated(\"settle_threshold\", 2 / 3, \"two thirds\", R_THRESH),\n        \"poc_events\": live.stated(\"settle_poc_events\", 3, \"three\", R_POC),\n        \"hypotheses\": f\"{c['hypotheses']}\",\n        \"designs\": f\"{x['n_experiments']}\", \"desk\": f\"{x['by_scale']['desk']}\",\n        \"unscoreable\": f\"{t['classes']['unscoreable']['n']}\", \"mechanisms\": f\"{t['n_triaged']}\",\n        \"cso_n\": f\"{t0['count']}\", \"cso_share\": f\"{t0['share_of_volume'] * 100:.0f}\",\n        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\","
+    "file": "scripts/programme.py",
+    "first": 2617,
+    "line": 2623,
+    "text": "    # ------------------------------------------------------------ META-SOLUTION\n    a(\"## The last step: stop analysing and try things\\n\")\n    a(CL(\"C-PG-L-LAST\", \"**This is the last step of the solution scope and not a shortcut \"\n         \"past it.** Said first, *just try things* is the oldest way to avoid an argument. \"\n         \"Said after the hypotheses have been laid out, the data queued and the field \"\n         \"triaged, it is something else: the recognition that **the observational route to an \"\n         f\"answer may not exist**. {tri['unscoreable']} of the {tri_total} triaged mechanisms \"\n         \"cannot be scored at all, because the deciding measurement has no column anywhere; \"\n         f\"{tri['needs an experiment']} more need an experiment nobody has run. No amount of \"\n         f\"further collection reaches those {tri['unscoreable'] + tri['needs an experiment']}.\\n\"))"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -99061,8 +99062,8 @@
    "synthetic": false,
    "value": 166,
    "where": [
-    "scripts/pages/settle.py",
-    141
+    "scripts/programme.py",
+    2623
    ]
   },
   "F-419f6468ac": {
@@ -137877,7 +137878,7 @@
     "file": "scripts/programme.py",
     "first": 2711,
     "line": 2717,
-    "text": "         \"site** — the trial units above, summed — with the effects documented beyond what \"\n         f\"the public can see for **{s_lo:,.0f}–{s_hi:,.0f} kroner of sensing hardware per \"\n         \"site** — and every part of it removable if it fails. That is the price of finding \"\n         \"out.\\n\"))\n    a(CL(\"C-PG-L-BEFORE\", \"It would produce before-and-after evidence of a kind the \"\n         \"monitoring does not, and **the expensive half of that design already exists**: \"\n         f\"near-bed oxygen at {SP['coverage']['series_stations']:,} stations is the *before*, \"\n         \"and it is paid for.\\n\"))\n\n    a(\"## What would make this wrong\\n\")"
+    "text": "         \"site** — the trial units above, summed — with the effects documented beyond what \"\n         f\"the public can see for **{s_lo:,.0f}–{s_hi:,.0f} kroner of sensing hardware per \"\n         \"site** — and every part of it removable if it fails. That is the price of finding \"\n         \"out.\\n\"))\n    a(CL(\"C-PG-L-BEFORE\", \"It would produce before-and-after evidence of a kind the \"\n         \"monitoring does not, and **the expensive half of that design already exists**: \"\n         f\"near-bed oxygen at {SP['oxy_bed']['stations_total']:,} stations is the *before*, \"\n         \"and it is paid for.\\n\"))\n\n    a(\"## What would make this wrong\\n\")"
    },
    "constructions": [
     "K-AREAS-PLACES"
@@ -146453,10 +146454,10 @@
   },
   "F-66b55fdb81": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 137,
-    "line": 143,
-    "text": "        \"threshold\": live.stated(\"settle_threshold\", 2 / 3, \"two thirds\", R_THRESH),\n        \"poc_events\": live.stated(\"settle_poc_events\", 3, \"three\", R_POC),\n        \"hypotheses\": f\"{c['hypotheses']}\",\n        \"designs\": f\"{x['n_experiments']}\", \"desk\": f\"{x['by_scale']['desk']}\",\n        \"unscoreable\": f\"{t['classes']['unscoreable']['n']}\", \"mechanisms\": f\"{t['n_triaged']}\",\n        \"cso_n\": f\"{t0['count']}\", \"cso_share\": f\"{t0['share_of_volume'] * 100:.0f}\",\n        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\",\n        \"last\": f\"{rain['last_year']}\",\n        \"rows\": [(f\"{r['mm']}\", f\"{r['median_days']}\", f\"{r['min_days']}\", f\"{r['max_days']}\")"
+    "file": "scripts/programme.py",
+    "first": 2280,
+    "line": 2286,
+    "text": "    a(\"|---|---|---|\")\n    for m, c, w in [\n        (f\"Flow-proportional sampling at the {t0['count']} largest overflow \"\n         \"structures\",\n         \"weeks\",\n         f\"Whether load is as concentrated as volume is. {t0['count']} of \"\n         f\"{rb['with_volume']:,} structures hold {t0['share_of_volume'] * 100:.0f}% of \"\n         f\"recorded storage; if load follows, much of the problem has \"\n         f\"{t0['count']} addresses.\"),\n        (\"Fat, oil, grease and total organic carbon added to the determinands\", \"trivial\","
    },
    "constructions": [
     "K-FLOOD-SOLUTIONS"
@@ -146513,8 +146514,8 @@
    "synthetic": false,
    "value": 1328,
    "where": [
-    "scripts/pages/settle.py",
-    143
+    "scripts/programme.py",
+    2286
    ]
   },
   "F-66b76c9983": {
@@ -238262,6 +238263,28 @@
     637
    ]
   },
+  "F-ac165aadf0": {
+   "constructions": [
+    "K-QUOTE"
+   ],
+   "excerpt": {
+    "mark": "1,415",
+    "text": "an class=\"claim\" data-claim=\"C-PG-L-BEFORE\">It would produce before-and-after evidence of a kind the monitoring does not, and **the expensive half of that design already exists**: near-bed oxygen at [1,415](SOURCES.md#F-5fb04be1c0) stations is the *before*, and it is paid for.</span><sup class=\"claim-mark\">[†](CLAIMS.md#C-PG-L-BEFORE \"What this claim rests on\")</sup> ## What would make this wrong <sp"
+   },
+   "kind": "quoted",
+   "rests_on": {
+    "quoted": 1
+   },
+   "src": [
+    "quote",
+    "4a976dc",
+    "docs/PROGRAMME.md",
+    "1,415",
+    "It would produce before-and-after evidence … and it is paid for."
+   ],
+   "synthetic": false,
+   "value": "1,415"
+  },
   "F-ac17b8800c": {
    "constructions": [
     "K-QUOTE"
@@ -241633,10 +241656,10 @@
   },
   "F-aee8a1ff8a": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 136,
-    "line": 142,
-    "text": "        \"windows\": live.stated(\"settle_windows\", 2, \"Two\", R_WINDOWS),\n        \"threshold\": live.stated(\"settle_threshold\", 2 / 3, \"two thirds\", R_THRESH),\n        \"poc_events\": live.stated(\"settle_poc_events\", 3, \"three\", R_POC),\n        \"hypotheses\": f\"{c['hypotheses']}\",\n        \"designs\": f\"{x['n_experiments']}\", \"desk\": f\"{x['by_scale']['desk']}\",\n        \"unscoreable\": f\"{t['classes']['unscoreable']['n']}\", \"mechanisms\": f\"{t['n_triaged']}\",\n        \"cso_n\": f\"{t0['count']}\", \"cso_share\": f\"{t0['share_of_volume'] * 100:.0f}\",\n        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\",\n        \"last\": f\"{rain['last_year']}\","
+    "file": "scripts/programme.py",
+    "first": 2282,
+    "line": 2288,
+    "text": "        (f\"Flow-proportional sampling at the {t0['count']} largest overflow \"\n         \"structures\",\n         \"weeks\",\n         f\"Whether load is as concentrated as volume is. {t0['count']} of \"\n         f\"{rb['with_volume']:,} structures hold {t0['share_of_volume'] * 100:.0f}% of \"\n         f\"recorded storage; if load follows, much of the problem has \"\n         f\"{t0['count']} addresses.\"),\n        (\"Fat, oil, grease and total organic carbon added to the determinands\", \"trivial\",\n         \"Whether the material the shore is named after is even in the discharge.\"),\n        (\"Autumn benthic sampling at existing stations\", \"one survey season\","
    },
    "constructions": [
     "K-FLOOD-SOLUTIONS"
@@ -241677,8 +241700,8 @@
    "synthetic": false,
    "value": 13,
    "where": [
-    "scripts/pages/settle.py",
-    142
+    "scripts/programme.py",
+    2288
    ]
   },
   "F-aee9bd61e1": {
@@ -259245,10 +259268,10 @@
   },
   "F-bcc89e099f": {
    "code": {
-    "file": "scripts/pages/places.py",
-    "first": 277,
-    "line": 283,
-    "text": "    w(C(\"C-PC-NOTDELAY\", \"None of this weakens the anti-delay conditions below. Plurality is not \"\n        \"everybody waiting to see what the neighbours got; it is different places acting **at the \"\n        \"same time in different ways**, on a clock that runs whether or not the results are \"\n        \"convenient.\") + \"\\n\")\n    w(C(\"C-PC-BEFORE\", f\"**Denmark has the *before* a trial needs:** \"\n        f\"{ox['last_year'] - ox['first_year']} years of near-bed oxygen at \"\n        f\"{ox['stations_total']:,} stations. The design that fits is Before-After-Control-Impact: \"\n        \"intervene in one place, leave a matched place alone, and read both against their own \"\n        \"history. **The expensive half of that design already exists and is paid for.**\") + \"\\n\")\n    w(C(\"C-PC-PORTFOLIO\", \"**What the portfolio would look like**, taken from the places above \""
+    "file": "scripts/programme.py",
+    "first": 2711,
+    "line": 2717,
+    "text": "         \"site** — the trial units above, summed — with the effects documented beyond what \"\n         f\"the public can see for **{s_lo:,.0f}–{s_hi:,.0f} kroner of sensing hardware per \"\n         \"site** — and every part of it removable if it fails. That is the price of finding \"\n         \"out.\\n\"))\n    a(CL(\"C-PG-L-BEFORE\", \"It would produce before-and-after evidence of a kind the \"\n         \"monitoring does not, and **the expensive half of that design already exists**: \"\n         f\"near-bed oxygen at {SP['oxy_bed']['stations_total']:,} stations is the *before*, \"\n         \"and it is paid for.\\n\"))\n\n    a(\"## What would make this wrong\\n\")"
    },
    "constructions": [
     "K-AREAS-PLACES"
@@ -259305,8 +259328,8 @@
    "synthetic": false,
    "value": 1327,
    "where": [
-    "scripts/pages/places.py",
-    283
+    "scripts/programme.py",
+    2717
    ]
   },
   "F-bcc9731e35": {
@@ -267827,10 +267850,10 @@
   },
   "F-c2c8fe6829": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 136,
-    "line": 142,
-    "text": "        \"windows\": live.stated(\"settle_windows\", 2, \"Two\", R_WINDOWS),\n        \"threshold\": live.stated(\"settle_threshold\", 2 / 3, \"two thirds\", R_THRESH),\n        \"poc_events\": live.stated(\"settle_poc_events\", 3, \"three\", R_POC),\n        \"hypotheses\": f\"{c['hypotheses']}\",\n        \"designs\": f\"{x['n_experiments']}\", \"desk\": f\"{x['by_scale']['desk']}\",\n        \"unscoreable\": f\"{t['classes']['unscoreable']['n']}\", \"mechanisms\": f\"{t['n_triaged']}\",\n        \"cso_n\": f\"{t0['count']}\", \"cso_share\": f\"{t0['share_of_volume'] * 100:.0f}\",\n        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\",\n        \"last\": f\"{rain['last_year']}\","
+    "file": "scripts/programme.py",
+    "first": 2280,
+    "line": 2286,
+    "text": "    a(\"|---|---|---|\")\n    for m, c, w in [\n        (f\"Flow-proportional sampling at the {t0['count']} largest overflow \"\n         \"structures\",\n         \"weeks\",\n         f\"Whether load is as concentrated as volume is. {t0['count']} of \"\n         f\"{rb['with_volume']:,} structures hold {t0['share_of_volume'] * 100:.0f}% of \"\n         f\"recorded storage; if load follows, much of the problem has \"\n         f\"{t0['count']} addresses.\"),\n        (\"Fat, oil, grease and total organic carbon added to the determinands\", \"trivial\","
    },
    "constructions": [
     "K-FLOOD-SOLUTIONS"
@@ -267861,8 +267884,8 @@
    "synthetic": false,
    "value": 24.01,
    "where": [
-    "scripts/pages/settle.py",
-    142
+    "scripts/programme.py",
+    2286
    ]
   },
   "F-c2c9a317a7": {
@@ -332854,10 +332877,10 @@
   },
   "F-f6c410a4f2": {
    "code": {
-    "file": "scripts/pages/settle.py",
-    "first": 143,
-    "line": 149,
-    "text": "        \"cso_with\": f\"{rb['with_volume']:,}\",\n        \"seasons\": f\"{rain['seasons']}\", \"first\": f\"{rain['first_year']}\",\n        \"last\": f\"{rain['last_year']}\",\n        \"rows\": [(f\"{r['mm']}\", f\"{r['median_days']}\", f\"{r['min_days']}\", f\"{r['max_days']}\")\n                 for r in rain[\"by_threshold\"]],\n        \"trig_mm\": f\"{trig['mm']}\", \"trig_days\": f\"{trig['median_days']}\",\n        \"era5_km\": f\"{RD('PG-WIKI-ERA5', 31, 'features a spatial resolution of 31 km')}\",\n    }\n\n"
+    "file": "scripts/programme.py",
+    "first": 58,
+    "line": 64,
+    "text": "\ndef RD(ph):\n    \"\"\"A number read from a pinned document - {read:SOURCE:shown|phrase} - held only\n    while the phrase is still in the pinned text.\"\"\"\n    if \"d\" not in _REG:\n        _REG[\"d\"] = _claims.load()[0]\n    return _claims.resolve(_REG[\"d\"], ph, _REG.setdefault(\"cache\", {}))[0]\n\n\n_OX_FIELDS = {\"O2_PER_N_NITRIF\": (\"coefficients\", \"per_n_nitrif\"),"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -332881,10 +332904,10 @@
     }
    ],
    "synthetic": false,
-   "value": 31,
+   "value": "31",
    "where": [
-    "scripts/pages/settle.py",
-    149
+    "scripts/programme.py",
+    64
    ]
   },
   "F-f6cd9c3f9a": {

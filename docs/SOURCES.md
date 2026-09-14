@@ -2968,7 +2968,7 @@ Counts over data/manual/politics.json made by scripts/politics.py.
 <a id="K-POLITICS-ARCH"></a>
 ### The separated architecture on the city's own sewer layer
 
-`K-POLITICS-ARCH` · covers docs/data/architecture.json · **current** · read by Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-POLITICS-ARCH` · covers docs/data/architecture.json · **current** · read by Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Classifies the city's sewer catchments, counts the drainage structures in them, measures the street a rain line would follow, and tests where planned cloudburst pipes end.
 
@@ -3059,7 +3059,7 @@ Fetches the official Danish counts of pigs, sows, cattle and people and the annu
 <a id="K-POLITICS-PROGRAMME"></a>
 ### Counts and sums PROGRAMME.md computes for itself
 
-`K-POLITICS-PROGRAMME` · covers data/derived/programme.json · **current** · read by Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-POLITICS-PROGRAMME` · covers data/derived/programme.json · **current** · read by Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the overflow register's tail, the sheets by placement method, the combined catchments planned for separation and the corridor list, and splits the combined-sewered area by island. The triage and register counts the page prints are read from `data/derived/triage.json`, not computed here.
 
@@ -3095,7 +3095,7 @@ Rasterises the recovered flood model and the cloudburst plan, split into surface
 <a id="K-POLITICS-STREAMS"></a>
 ### The rain stream and the foul stream on Amager, as rates
 
-`K-POLITICS-STREAMS` · covers data/derived/streams.json · **current** · read by Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-POLITICS-STREAMS` · covers data/derived/streams.json · **current** · read by Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Turns the hourly rain record over Copenhagen and Amager's combined-sewered impervious area into flow rates, compares them with the foul stream as people-equivalents, sizes settling ponds for chosen grains, and estimates the solids a pond would catch.
 

@@ -9181,6 +9181,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PG-6-B1`](CLAIMS.md#C-PG-6-B1) — each opens what it rests on.
 
+<a id="C-PG-OLD-L-BEFORE"></a>
+### The earlier wording of `C-PG-L-BEFORE` on PROGRAMME.md.
+
+`C-PG-OLD-L-BEFORE` · retired 2026-09-14 from [PROGRAMME.md](PROGRAMME.md) · as published in `4a976dc`
+
+> <span class="claim" data-claim="C-PG-OLD-L-BEFORE">It would produce before-and-after evidence of a kind the monitoring does not, and the expensive half of that design already exists: near-bed oxygen at [1,415](SOURCES.md#F-ac165aadf0) stations is the *before*, and it is paid for.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PG-OLD-L-BEFORE "What this claim rests on")</sup>
+
+**Why it was retired:** It gave the count of every station in the series, any variable, as the stations with near-bed oxygen; the stations with at least one near-bed oxygen value are fewer, the count PLACES gives for the same point.
+
+**Replaced by:** [`C-PG-L-BEFORE`](CLAIMS.md#C-PG-L-BEFORE) — each opens what it rests on.
+
 <a id="C-PG-OLD-LEVELFACTS"></a>
 ### Copenhagen already restricts on its own ground, Danish wellfield spraying zones are this instrument, and Denmark taxes pesticides and restricted pre-harvest glyphosate.
 

@@ -256,11 +256,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
      "scripts/streams.py": "ba3177e06932c91c",
-     "scripts/programme.py": "ec2a6585facf5374"
+     "scripts/programme.py": "a8ebea84f15502c2"
     }
    }
   },
@@ -524,11 +524,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
      "scripts/architecture.py": "af0d805385dfbef8",
-     "scripts/programme.py": "ec2a6585facf5374"
+     "scripts/programme.py": "a8ebea84f15502c2"
     }
    }
   },
@@ -699,10 +699,10 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/programme.py prints station_places.json's count of stations with near-bed oxygen in the before-evidence sentence instead of the count of all series stations; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/programme.py": "ec2a6585facf5374"
+     "scripts/programme.py": "a8ebea84f15502c2"
     }
    }
   },

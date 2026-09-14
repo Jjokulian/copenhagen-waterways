@@ -1008,7 +1008,7 @@ Seven things. They are ordered by how much evidence stands behind them, not by h
 
 > <span class="claim" data-claim="C-PG-L-SENTENCE">**This solution page could be implemented on trial, non-destructively, at roughly [1.0](SOURCES.md#F-ec42c67645)–[4.0](SOURCES.md#F-8f02bfe989) million kroner per site** — the trial units above, summed — with the effects documented beyond what the public can see for **[48,000](SOURCES.md#F-06dc978b2f)–[165,000](SOURCES.md#F-d41143efb4) kroner of sensing hardware per site** — and every part of it removable if it fails. That is the price of finding out.</span><sup class="claim-mark">[†](CLAIMS.md#C-PG-L-SENTENCE "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-PG-L-BEFORE">It would produce before-and-after evidence of a kind the monitoring does not, and **the expensive half of that design already exists**: near-bed oxygen at [1,415](SOURCES.md#F-5fb04be1c0) stations is the *before*, and it is paid for.</span><sup class="claim-mark">[†](CLAIMS.md#C-PG-L-BEFORE "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PG-L-BEFORE">It would produce before-and-after evidence of a kind the monitoring does not, and **the expensive half of that design already exists**: near-bed oxygen at [1,327](SOURCES.md#F-bcc89e099f) stations is the *before*, and it is paid for.</span><sup class="claim-mark">[†](CLAIMS.md#C-PG-L-BEFORE "What this claim rests on")</sup>
 
 ## What would make this wrong
 

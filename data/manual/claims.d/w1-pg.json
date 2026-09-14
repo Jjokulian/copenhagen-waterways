@@ -10188,20 +10188,21 @@
    "stance": "ours",
    "page": "PROGRAMME.md",
    "claim": "The trials would give before-and-after evidence, and the before already exists in the near-bed oxygen series.",
-   "because": "The station count is station_places.json's. The portfolio cost and the record's length this page once gave were carried as quotations.",
+   "because": "The station count is station_places.json's: the stations in the series with at least one near-bed oxygen value. The portfolio cost and the record's length this page once gave were carried as quotations.",
    "rests_on": [
     "D-PG-SPLACES"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-PG-OLD-PORTFOLIO"
+    "C-PG-OLD-PORTFOLIO",
+    "C-PG-OLD-L-BEFORE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: PROGRAMME printed the count of every station in the series, any variable, as the stations with near-bed oxygen; it now prints station_places.json's count of stations with at least one near-bed oxygen value, the one PLACES gives for the same point, and the claim's reason says which count it is. The old wording is archived with that reason)",
     "saw": {
-     "said on PROGRAMME.md": "It would produce before-and-after evidence of a kind the monitoring does not, and **the expensive half of that design already exists**: near-bed oxygen at 1,415 stations is the *before*, and it is paid for.",
-     "texts": "26181a38c55ad7fc",
+     "said on PROGRAMME.md": "It would produce before-and-after evidence of a kind the monitoring does not, and **the expensive half of that design already exists**: near-bed oxygen at 1,327 stations is the *before*, and it is paid for.",
+     "texts": "fd7da1ba7c684a64",
      "node D-PG-SPLACES": "4a1374b8711c0cca"
     }
    }
@@ -11291,6 +11292,34 @@
     "saw": {
      "said on ARCHIVE.md": "Start with the route that needs no chain at all: it is the substance. What comes out is fat, solids, fibre, wipes and the sediment they were lying in. A person who meets that in the water is not encountering a downstream effect of an oxygen deficit — they are encountering the discharge, diluted. That is *fedtemøg* in the sense the word is actually used",
      "texts": "9c50ec3e227cbe02"
+    }
+   }
+  },
+  {
+   "id": "C-PG-OLD-L-BEFORE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-PG-L-BEFORE` on PROGRAMME.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "PROGRAMME.md",
+    "commit": "4a976dc",
+    "file": "docs/PROGRAMME.md",
+    "begin": "It would produce before-and-after evidence",
+    "end": "and it is paid for.",
+    "why": "It gave the count of every station in the series, any variable, as the stations with near-bed oxygen; the stations with at least one near-bed oxygen value are fewer, the count PLACES gives for the same point."
+   },
+   "replaced_by": [
+    "C-PG-L-BEFORE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "It would produce before-and-after evidence of a kind the monitoring does not, and the expensive half of that design already exists: near-bed oxygen at 1,415 stations is the *before*, and it is paid for.",
+     "texts": "578a09a3c3938b4d"
     }
    }
   }

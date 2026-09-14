@@ -2714,7 +2714,7 @@ def render():
          "out.\n"))
     a(CL("C-PG-L-BEFORE", "It would produce before-and-after evidence of a kind the "
          "monitoring does not, and **the expensive half of that design already exists**: "
-         f"near-bed oxygen at {SP['coverage']['series_stations']:,} stations is the *before*, "
+         f"near-bed oxygen at {SP['oxy_bed']['stations_total']:,} stations is the *before*, "
          "and it is paid for.\n"))
 
     a("## What would make this wrong\n")
