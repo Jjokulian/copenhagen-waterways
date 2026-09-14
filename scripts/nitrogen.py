@@ -544,13 +544,14 @@ def koege_transport(mon):
         "bay that flushes slowly is a different quantity from a load entering one that flushes fast — "
         "and the timing means an event-based attribution (this overflow, that shoreline) is not "
         "supported, while an accumulated one may be.") + "\n")
-    ratio = link["spill_limit_m3"] / lyn["first_dumped_m3"]
-    w(C("C-NI-SPILL", "The same bay carries the largest release nobody argued about. The Øresund "
-        f"fixed link's permitted spill — **up to {link['spill_limit_m3']:,} m³** of fines into the "
-        f"water column at the bay's northern entrance, {link['period']} — against the "
-        f"**{lyn['first_dumped_m3']:,} m³** released at Lynetteholm before dumping was stopped: "
-        f"**{ratio:.0f} times**, and the larger one, as recorded in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), "
-        "a permit condition met rather than a controversy. Where that material went has not been "
+    sp = readings.spill()
+    w(C("C-NI-SPILL", "The same bay carries a release nobody argued about. The Øresund fixed link's "
+        f"permitted spill — **up to {sp['oresund']['spill_limit_m3']:,.0f} m³** of fines into the water "
+        f"column at the bay's northern entrance, {link['period']} — is of the same order as the "
+        f"**{sp['lynetteholm']['dumped_m3']:,} m³** dumped at Lynetteholm's dump site in the first three "
+        "months of 2022, before the dumping was stopped; the older one, as recorded in "
+        "[OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), a permit condition met rather than a controversy. Where "
+        "that material went has not been "
         f"computed here: the current field used above covers {y0}–{y1} only, and underestimates "
         f"published peak currents in the straits by a factor of {min(slow):.1f} to {max(slow):.1f} "
         "by its own calibration.") + "\n")

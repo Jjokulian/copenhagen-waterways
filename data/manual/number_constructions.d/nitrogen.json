@@ -51,13 +51,13 @@
     "scripts/readings.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: nitrogen_readings.json gained seven readings - SR353's stations and measured share, the Vand & Jord deviations, NKM2020's retention uncertainty - each with its phrase located in its pin and its value printed in the phrase; scripts/readings.py is the reader now watched, and rv() refuses a reading whose phrase is not in the pin, as before)",
+    "by": "Claude (2026-09-14: data/manual/nitrogen_readings.json - five readings added for the two releases, each phrase located in its pin; scripts/readings.py - spill() added: the fixed link's dredged volume and spill limit, and Lynetteholm's dumping, each read from its pinned source; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "data/manual/nitrogen_readings.json": "a03491fce7c57416",
+     "data/manual/nitrogen_readings.json": "05168bf059d7b9c1",
      "data/manual/claims.d/nitrogen.json#sources": "a8fadfa0a7e17b1c",
      "scripts/pages/grundlaget.py": "7b84287f07d1799d",
-     "scripts/readings.py": "28b8f25dde237a56"
+     "scripts/readings.py": "74e594908221b251"
     }
    }
   },
@@ -504,10 +504,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - C-NI-SPILL now reads the two releases through readings.spill() and no longer divides by the first night's load; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "d7b09ce7bd4da4d9"
+     "scripts/nitrogen.py": "11183f4afade655c"
     }
    }
   },

@@ -626,10 +626,10 @@
     "data/manual/monitoring.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json": "b41261b44411c99d"
+     "data/manual/monitoring.json": "0f14a80dadb838a8"
     }
    }
   },

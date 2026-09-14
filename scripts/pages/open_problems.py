@@ -16,6 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from common import DERIVED, MANUAL, ROOT, log, write_doc
 import live
+import readings
 import pathways
 
 OUT = os.path.join(ROOT, "docs", "OPEN_PROBLEMS.md")
@@ -367,6 +368,8 @@ def main():
     peak = max(list(ct["lag"]), key=lambda x: x["southward_pct"])
     ev = mon["sediment_release_events"]
     ofl, lyn = ev["oresund_fixed_link"], ev["lynetteholm"]
+    sp = readings.spill()
+    so, sl = sp["oresund"], sp["lynetteholm"]
     w("## 15. The transport experiments that were already run, and nobody read")
     w()
     w(B("C-OP-15-LAG") + "[CURRENTS.md](CURRENTS.md) could not establish whether material from the")
@@ -374,24 +377,26 @@ def main():
     w(f"overflow-scale rain the Sound runs *north*, and {peak['lag_h']} hours later it runs south, on")
     w(f"{peak['hours']} event-hours of the {first}-{last} record. That is suggestive and thin." + E)
     w()
-    w(C("C-OP-15-EVENTS", "The monitoring register records two dated releases of seabed material near "
-        "the bay, each with a quantity, a place and dates; it cites no source for them."))
+    w(C("C-OP-15-EVENTS", "Two dated releases of seabed material near the bay are on record, each with "
+        "a quantity, a place and dates; the quantities are read from the sources pinned for them."))
     w()
     w("| | Øresund fixed link | Lynetteholm |")
     w("|---|---|---|")
     w(f"| When | {ofl['period']} | {lyn['period']} |")
     w("| Material | dredged seabed, Drogden and Saltholm | harbour gytje |")
-    w(f"| Volume | **{ofl['dredged_m3'] / 1e6:.1f} million m³ dredged** | {lyn['planned_dump_m3'] / 1e6:.0f} million m³ planned to be dumped |")
-    w(f"| Released to the water | spill limit **{ofl['spill_limit_pct_of_dredged']}%, up to {ofl['spill_limit_m3']:,} m³** | **{lyn['first_dumped_m3']:,} m³** before it was stopped |")
+    w(f"| Volume | **{so['dredged_m3'] / 1e6:.1f} million m³ dredged** | **{sl['dumped_m3']:,} m³ dumped** before it was stopped (the first night: {sl['first_night_m3']:,} m³) |")
+    w(f"| Released to the water | spill limit **{so['spill_pct']}%, up to {so['spill_limit_m3']:,.0f} m³** of fines | the dumping itself; {sl['onsite_pct']}% stayed on the dump site |")
     w("| Where | the northern entrance to Køge Bugt | Køge Bugt, by permit |")
     w("| Outcome | limit reported met, *nulløsning* judged met | dumping dropped entirely; material built into the peninsula instead |")
     w("| Attention | project's own monitoring programme | national controversy, Swedish objection under the Espoo Convention |")
     w()
-    w(B("C-OP-15-ASYM") + "**The asymmetry is the finding.** The permitted spill from the Øresund link -")
-    w(f"up to {ofl['spill_limit_m3']:,} m³ of fines put into the water column at the mouth of Køge Bugt")
-    w(f"between 1995 and 2000 - is **{ofl['spill_limit_m3'] / lyn['first_dumped_m3']:.0f} times** what")
-    w("was dumped at Lynetteholm before the dumping was stopped. The recent, smaller project was halted")
-    w("after a political fight. The older, far larger one was a permit condition that was met." + E)
+    w(B("C-OP-15-ASYM") + "**The asymmetry is in the attention, not the size.** The permitted spill from")
+    w(f"the Øresund link - up to {so['spill_limit_m3']:,.0f} m³ of fines put into the water column at the mouth")
+    w(f"of Køge Bugt between 1995 and 2000 - is of the same order as the {sl['dumped_m3']:,} m³ dumped at")
+    w("Lynetteholm's dump site in the first three months of 2022, before the dumping was stopped. They are")
+    w("not alike: one is fines lost while dredging, the other everything unloaded at a dump site, most of")
+    w("which stayed there. The recent project was halted after a political fight; the older one was a")
+    w("permit condition that was met." + E)
     w()
     w(C("C-OP-15-LOOKED", "This is not an argument that the Øresund link was mishandled; its spill was "
         "reported against a limit and within it, which is more than most of the discharges in this "
@@ -404,8 +409,10 @@ def main():
         "a direct test of item 1, using events that have already happened, and it needs a boat and a lab "
         "rather than a model."))
     w()
-    w(C("C-OP-15-WHERE", "Both events are recorded in `data/manual/monitoring.json` under "
-        "`sediment_release_events`, without a cited source."))
+    w(C("C-OP-15-WHERE", "The quantities are read from pinned sources - the encyclopaedia entry on the "
+        "link, By & Havn's final monitoring report for the dumping and the trade-press report of its "
+        "first night; the register's own record had given that first night's load as the whole. The "
+        "rest of the table is the register's own description, uncited."))
     w()
     w("---")
     w()

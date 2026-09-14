@@ -210,29 +210,31 @@ Copenhagen side reaches Køge Bugt. The best it managed was a statistical lag - 
 overflow-scale rain the Sound runs *north*, and [12](SOURCES.md#F-c6c72c26e2) hours later it runs south, on
 [145](SOURCES.md#F-d5db6302f0) event-hours of the 2022-2025 record. That is suggestive and thin.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-LAG "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-OP-15-EVENTS">The monitoring register records two dated releases of seabed material near the bay, each with a quantity, a place and dates; it cites no source for them.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-EVENTS "What this claim rests on")</sup>
+<span class="claim" data-claim="C-OP-15-EVENTS">Two dated releases of seabed material near the bay are on record, each with a quantity, a place and dates; the quantities are read from the sources pinned for them.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-EVENTS "What this claim rests on")</sup>
 
 | | Øresund fixed link | Lynetteholm |
 |---|---|---|
-| When | 1995-2000 | 2021-2022 |
+| When | 1995-2000 | January-March 2022 |
 | Material | dredged seabed, Drogden and Saltholm | harbour gytje |
-| Volume | **[7.4](SOURCES.md#F-c7627bf5bf) million m³ dredged** | [2](SOURCES.md#F-fb2540ab99) million m³ planned to be dumped |
-| Released to the water | spill limit **[5](SOURCES.md#F-1cb506b667)%, up to [370,000](SOURCES.md#F-07396d14f0) m³** | **[498](SOURCES.md#F-2ec0325b7f) m³** before it was stopped |
+| Volume | **[7.4](SOURCES.md#F-7189a5c231) million m³ dredged** | **[274,685](SOURCES.md#F-689af0e293) m³ dumped** before it was stopped (the first night: [498](SOURCES.md#F-7390a47419) m³) |
+| Released to the water | spill limit **[5](SOURCES.md#F-54d643400d)%, up to [370,000](SOURCES.md#F-6133ff5063) m³** of fines | the dumping itself; [84](SOURCES.md#F-5059ce8797)% stayed on the dump site |
 | Where | the northern entrance to Køge Bugt | Køge Bugt, by permit |
 | Outcome | limit reported met, *nulløsning* judged met | dumping dropped entirely; material built into the peninsula instead |
 | Attention | project's own monitoring programme | national controversy, Swedish objection under the Espoo Convention |
 
-<span class="claim" data-claim="C-OP-15-ASYM">**The asymmetry is the finding.** The permitted spill from the Øresund link -
-up to [370,000](SOURCES.md#F-07396d14f0) m³ of fines put into the water column at the mouth of Køge Bugt
-between 1995 and 2000 - is **[743](SOURCES.md#F-d929df5b46) times** what
-was dumped at Lynetteholm before the dumping was stopped. The recent, smaller project was halted
-after a political fight. The older, far larger one was a permit condition that was met.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-ASYM "What this claim rests on")</sup>
+<span class="claim" data-claim="C-OP-15-ASYM">**The asymmetry is in the attention, not the size.** The permitted spill from
+the Øresund link - up to [370,000](SOURCES.md#F-6133ff5063) m³ of fines put into the water column at the mouth
+of Køge Bugt between 1995 and 2000 - is of the same order as the [274,685](SOURCES.md#F-689af0e293) m³ dumped at
+Lynetteholm's dump site in the first three months of 2022, before the dumping was stopped. They are
+not alike: one is fines lost while dredging, the other everything unloaded at a dump site, most of
+which stayed there. The recent project was halted after a political fight; the older one was a
+permit condition that was met.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-ASYM "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-OP-15-LOOKED">This is not an argument that the Øresund link was mishandled; its spill was reported against a limit and within it, which is more than most of the discharges in this project can say. It is an argument about **what gets looked at**: a release becomes controversial when it is called dumping and invisible when it is called spill.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-LOOKED "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-OP-15-SETTLE">**What would settle it.** Sediment cores from Køge Bugt, dated. Fine material released at the Drogden end between 1995 and 2000, and again from harbour works since, should appear as datable horizons if the transport is real, and be absent if it is not. That is a direct test of item 1, using events that have already happened, and it needs a boat and a lab rather than a model.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-SETTLE "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-OP-15-WHERE">Both events are recorded in `data/manual/monitoring.json` under `sediment_release_events`, without a cited source.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-WHERE "What this claim rests on")</sup>
+<span class="claim" data-claim="C-OP-15-WHERE">The quantities are read from pinned sources - the encyclopaedia entry on the link, By & Havn's final monitoring report for the dumping and the trade-press report of its first night; the register's own record had given that first night's load as the whole. The rest of the table is the register's own description, uncited.</span><sup class="claim-mark">[†](CLAIMS.md#C-OP-15-WHERE "What this claim rests on")</sup>
 
 ---
 

@@ -458,12 +458,6 @@
    "detail": "No measurement of Køge Bugt's mixing is read here, and the pinned notes do not say whether their stations in the bay were sampled in the periods they cover."
   },
   {
-   "id": "U-NI-SPILL-SOURCES",
-   "kind": "untraced",
-   "label": "Trail ends: the sediment\\nreleases are uncited",
-   "detail": "The monitoring register's sediment-release section - the fixed link's permitted spill and period, the volume released at Lynetteholm, and how each was received - carries no source; none was found in the pinned documents (searched on 2026-09-11)."
-  },
-  {
    "id": "U-NI-CONTRACTS",
    "kind": "untraced",
    "label": "Trail ends: no public\\nregister of manure contracts",
@@ -2683,25 +2677,28 @@
    "kind": "provisional",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "The fixed link's permitted spill into the bay's northern entrance was hundreds of times the volume released at Lynetteholm, and where it went has not been computed here; the current field could not show it.",
-   "because": "The volumes and how each was received are in the monitoring register without a source; the field's period and calibration are from CURRENTS.md's analyses.",
+   "claim": "The fixed link's permitted spill into the bay's northern entrance was of the same order as what was dumped at Lynetteholm, and where it went has not been computed here; the current field could not show it.",
+   "because": "The volumes are read from pinned sources - Den Store Danske for the link's dredged volume and spill limit, By & Havn's final monitoring report for the dumping; the field's period and calibration are from CURRENTS.md's analyses.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-SPILL-SOURCES",
+    "E-OP-LEX-SPILL",
+    "E-OP-LYN-TOTAL",
     "D-NI-CURRENTS"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-NI-OLD-NEVER-COMPUTED"
+    "C-NI-OLD-NEVER-COMPUTED",
+    "C-NI-OLD-SPILL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the two sediment releases read from pinned sources - Den Store Danske for the fixed link's 7.4 million m³ dredged and 5% spill limit, By & Havn's final hindcast for Lynetteholm's 274,685 m³ dumped January-March 2022, the trade press for the first night's 498 m³ that the register had recorded as the whole, TV 2 for the stop. The 'hundreds' and '740 times' comparisons are archived; the spill and the dumping are of the same order and differ in kind. The three resting on them draw on the difference in attention, the dated-core test and the open transport question, which stand)",
     "saw": {
-     "said on NITROGEN.md": "The same bay carries the largest release nobody argued about. The Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995-2000 — against the **498 m³** released at Lynetteholm before dumping was stopped: **743 times**, and the larger one, as recorded in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), a permit condition met rather than a controversy. Where that material went has not been computed here: the current field used above covers 2022–2025 only, and underestimates published peak currents in the straits by a factor of 1.7 to 2.1 by its own calibration.",
-     "texts": "caa3443af31ccc3a",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-SPILL-SOURCES": "3971ed34f8fa8309",
+     "said on NITROGEN.md": "The same bay carries a release nobody argued about. The Øresund fixed link's permitted spill — **up to 370,000 m³** of fines into the water column at the bay's northern entrance, 1995-2000 — is of the same order as the **274,685 m³** dumped at Lynetteholm's dump site in the first three months of 2022, before the dumping was stopped; the older one, as recorded in [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md), a permit condition met rather than a controversy. Where that material went has not been computed here: the current field used above covers 2022–2025 only, and underestimates published peak currents in the straits by a factor of 1.7 to 2.1 by its own calibration.",
+     "texts": "2e1290c1ad14a7f6",
+     "node E-OP-LEX-SPILL": "4d83e1eb988bbf7d",
+     "pinned OP-LEX-OERESUND": "6132f90a24ef0d67",
+     "node E-OP-LYN-TOTAL": "d58082c5825c669c",
+     "pinned OP-LYN-HINDCAST-3": "fd45ad4e0d9dc1ed",
      "node D-NI-CURRENTS": "c1f7b8921c238c61"
     }
    }
@@ -3952,6 +3949,34 @@
     "saw": {
      "said on ARCHIVE.md": "This is the question the rest of it turns on: whether a fall in the surplus shows up as a fall in the measured load, catchment by catchment. DCE's own qualification above says it did not everywhere — Mariager Fjord and parts of Limfjorden responded less than the national relation indicates. The study that quantifies it per catchment could not be read here, so the size of the shortfall is not given on this page.",
      "texts": "b5614bfa73257ee5"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-SPILL",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-NI-SPILL on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "c5a570c",
+    "file": "docs/NITROGEN.md",
+    "begin": "The same bay carries the largest release nobody argued about.",
+    "end": "a permit condition met rather than a controversy.",
+    "why": "The comparison divided the link's permitted spill by the first night's load at Lynetteholm; By & Havn's final monitoring report gives the whole season's dumping, of the same order as the spill."
+   },
+   "replaced_by": [
+    "C-NI-SPILL"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The same bay carries the largest release nobody argued about. The Øresund fixed link's permitted spill — up to 370,000 m³ of fines into the water column at the bay's northern entrance, 1995-2000 — against the 498 m³ released at Lynetteholm before dumping was stopped: 743 times, and the larger one, as recorded in OPEN_PROBLEMS.md, a permit condition met rather than a controversy.",
+     "texts": "721fe045364ccef3"
     }
    }
   }

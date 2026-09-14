@@ -514,7 +514,7 @@
 <a id="T-419a9c03"></a>
 ### [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) — 15. The transport experiments that were already run, and nobody read
 
-5 numbers in the columns *Øresund fixed link*, *Lynetteholm*. Read from `data/manual/monitoring.json` (`sediment_release_events.lynetteholm.first_dumped_m3`, `sediment_release_events.oresund_fixed_link.spill_limit_m3`, `sediment_release_events.oresund_fixed_link.spill_limit_pct_of_dredged`). 2 calculated on the page, each with its arithmetic in its menu.
+6 numbers in the columns *Øresund fixed link*, *Lynetteholm*. Read from `data/manual/nitrogen_readings.json` (`pinned.lyn_first_night_m3.value`, `pinned.lyn_onsite_pct.value`, `pinned.lyn_total_m3.value`, `pinned.oresund_spill_pct.value`). 2 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-81bbf3a9"></a>
 ### [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) — 13. The flood sheets are placed; their absolute placement is still open
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,852 distinct numbers in running text, from these sources.
+1,851 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -928,10 +928,10 @@
 - `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 94 numbers.
 - `data/derived/unlock.json` — 4 numbers.
 - `data/derived/waves.json`, written by [`scripts/waves.py`](../scripts/waves.py) — 11 numbers.
-- `data/manual/monitoring.json` — 27 numbers.
+- `data/manual/monitoring.json` — 25 numbers.
 - `data/manual/nitrogen_constants.json` — 3 numbers.
 - `data/manual/nitrogen_pathways.json` — 6 numbers.
-- `data/manual/nitrogen_readings.json` — 22 numbers. A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator.
+- `data/manual/nitrogen_readings.json` — 23 numbers. A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator.
 - `data/raw/national/punkt_rbu_udl.geojson`, written by [`scripts/fetch_national.py`](../scripts/fetch_national.py) — 2 numbers.
 - `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson`, written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py) — 4 numbers.
 - `data/raw/weather/fetch.json` — 4 numbers.
@@ -1831,7 +1831,7 @@ Writes the few numbers the page derives itself - two counts over the pathway reg
 <a id="K-FARM-MONITORING"></a>
 ### How the national nutrient and oxygen figures are produced - the fields LANDBRUG.md prints
 
-`K-FARM-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-FARM-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 A hand-curated register of documented properties of the Danish measurement system, each with its source; this declaration covers the diffuse-load, load-trend and standard-concentration fields the Danish-language page prints.
 
@@ -2531,7 +2531,7 @@ The fetch manifest: for every fetched layer, its server, title, geometry types, 
 <a id="K-META-MONITORING"></a>
 ### Monitoring facts transcribed from named public documents
 
-`K-META-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-META-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 A hand-curated register of monitoring and reporting facts read from named public documents: DCE notices and summaries, Miljøstyrelsen's technical instruction, and the documentation of two sediment releases.
 
@@ -2654,7 +2654,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - C-NI-SPILL now reads the two releases through readings.spill() and no longer divides by the first night's load; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 How many rain-dependent discharge points the national register lists.
 
@@ -2835,7 +2835,7 @@ Every pathway of reactive nitrogen to Danish marine waters this project could en
 <a id="K-NITROGEN-READINGS"></a>
 ### Values read out of pinned documents, each checked at its phrase
 
-`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-14: nitrogen_readings.json gained seven readings - SR353's stations and measured share, the Vand & Jord deviations, NKM2020's retention uncertainty - each with its phrase located in its pin and its value printed in the phrase; scripts/readings.py is the reader now watched, and rv() refuses a reading whose phrase is not in the pin, as before), 2026-09-14
+`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-14: data/manual/nitrogen_readings.json - five readings added for the two releases, each phrase located in its pin; scripts/readings.py - spill() added: the fixed link's dredged volume and spill limit, and Lynetteholm's dumping, each read from its pinned source; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.
 
@@ -2874,7 +2874,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - C-NI-SPILL now reads the two releases through readings.spill() and no longer divides by the first night's load; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 
@@ -3021,7 +3021,7 @@ Records, per flood sheet, how it was placed and how far its placement can be tru
 <a id="K-POLITICS-KARLSTRUP"></a>
 ### Karlstrup Kalkgrav's registered area, depth and pumping, as transcribed
 
-`K-POLITICS-KARLSTRUP` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-POLITICS-KARLSTRUP` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Holds the physical facts about Karlstrup Kalkgrav that PROGRAMME.md weighs against using it as a receiving water.
 

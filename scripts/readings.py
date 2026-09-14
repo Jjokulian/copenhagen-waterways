@@ -57,3 +57,16 @@ def diffuse():
             "deviation_annual_pct": [rv("vj_dev_jegstrup_monthly"), rv("vj_dev_monthly")],
             "retention_uncertainty_pct_points": [rv("nkm_ret_lo"), rv("nkm_ret_hi")],
             "retention_uncertainty_national_average_pct_points": rv("nkm_ret_avg")}
+
+
+def spill():
+    """The two dated releases of seabed material near Køge Bugt, each quantity read from
+    the source that states it: the Øresund fixed link's dredged volume and spill limit
+    from Den Store Danske's entry on the link, and Lynetteholm's dumping from By & Havn's
+    final monitoring report (the whole season) and the trade-press report of its first
+    night. The link's permitted spill is the limit applied to the dredged volume."""
+    dredged = rv("oresund_dredged_mio_m3") * 1e6
+    pct = rv("oresund_spill_pct")
+    return {"oresund": {"dredged_m3": dredged, "spill_pct": pct, "spill_limit_m3": dredged * pct / 100},
+            "lynetteholm": {"dumped_m3": rv("lyn_total_m3"), "first_night_m3": rv("lyn_first_night_m3"),
+                            "onsite_pct": rv("lyn_onsite_pct")}}

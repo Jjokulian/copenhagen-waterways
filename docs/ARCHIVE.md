@@ -6351,6 +6351,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-NI-TRANSPORT-READ`](CLAIMS.md#C-NI-TRANSPORT-READ) — each opens what it rests on.
 
+<a id="C-NI-OLD-SPILL"></a>
+### The earlier wording of C-NI-SPILL on NITROGEN.md.
+
+`C-NI-OLD-SPILL` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `c5a570c`
+
+> <span class="claim" data-claim="C-NI-OLD-SPILL">The same bay carries the largest release nobody argued about. The Øresund fixed link's permitted spill — up to [370,000](SOURCES.md#F-05f33d627b) m³ of fines into the water column at the bay's northern entrance, 1995-2000 — against the [498](SOURCES.md#F-66d52823a5) m³ released at Lynetteholm before dumping was stopped: [743](SOURCES.md#F-b0243d3ab0) times, and the larger one, as recorded in OPEN_PROBLEMS.md, a permit condition met rather than a controversy.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD-SPILL "What this claim rests on")</sup>
+
+**Why it was retired:** The comparison divided the link's permitted spill by the first night's load at Lynetteholm; By & Havn's final monitoring report gives the whole season's dumping, of the same order as the spill.
+
+**Replaced by:** [`C-NI-SPILL`](CLAIMS.md#C-NI-SPILL) — each opens what it rests on.
+
 <a id="C-NI-OLD-STRATIFIED"></a>
 ### DCE's iltsvind is mapped in stratified basins, and Køge Bugt is shallow and mixes readily.
 
@@ -7059,6 +7070,28 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-OP-14-SNAPSHOT`](CLAIMS.md#C-OP-14-SNAPSHOT), [`C-OP-14-LAYERS`](CLAIMS.md#C-OP-14-LAYERS) — each opens what it rests on.
 
+<a id="C-OP-OLD-15-ASYM"></a>
+### The earlier wording of `C-OP-15-ASYM` on OPEN_PROBLEMS.md.
+
+`C-OP-OLD-15-ASYM` · retired 2026-09-14 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `c5a570c`
+
+> <span class="claim" data-claim="C-OP-OLD-15-ASYM">The asymmetry is the finding. The permitted spill from the Øresund link - up to [370,000](SOURCES.md#F-2c7e4c1337) m³ of fines put into the water column at the mouth of Køge Bugt between 1995 and 2000 - is [743](SOURCES.md#F-eb954ec463) times what was dumped at Lynetteholm before the dumping was stopped. The recent, smaller project was halted after a political fight. The older, far larger one was a permit condition that was met.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-15-ASYM "What this claim rests on")</sup>
+
+**Why it was retired:** The ratio divided the link's permitted spill by the first night's load at Lynetteholm, which the register had recorded as the whole; the season's dumping, from By & Havn's final monitoring report, is of the same order as the spill.
+
+**Replaced by:** [`C-OP-15-ASYM`](CLAIMS.md#C-OP-15-ASYM) — each opens what it rests on.
+
+<a id="C-OP-OLD-15-EVENTS"></a>
+### The earlier wording of `C-OP-15-EVENTS` on OPEN_PROBLEMS.md.
+
+`C-OP-OLD-15-EVENTS` · retired 2026-09-14 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `c5a570c`
+
+> <span class="claim" data-claim="C-OP-OLD-15-EVENTS">The monitoring register records two dated releases of seabed material near the bay, each with a quantity, a place and dates; it cites no source for them.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-15-EVENTS "What this claim rests on")</sup>
+
+**Why it was retired:** The quantities now have sources, pinned: Den Store Danske for the link, By & Havn's final monitoring report and the trade-press report of the first night for Lynetteholm.
+
+**Replaced by:** [`C-OP-15-EVENTS`](CLAIMS.md#C-OP-15-EVENTS) — each opens what it rests on.
+
 <a id="C-OP-OLD-15-PROV"></a>
 ### Provenance for both events is in the monitoring register.
 
@@ -7080,6 +7113,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** The releases' quantities and dates are in a register that cites no source, and 'several times' counts two.
 
 **Replaced by:** [`C-OP-15-EVENTS`](CLAIMS.md#C-OP-15-EVENTS) — each opens what it rests on.
+
+<a id="C-OP-OLD-15-WHERE"></a>
+### The earlier wording of `C-OP-15-WHERE` on OPEN_PROBLEMS.md.
+
+`C-OP-OLD-15-WHERE` · retired 2026-09-14 from [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md) · as published in `c5a570c`
+
+> <span class="claim" data-claim="C-OP-OLD-15-WHERE">Both events are recorded in `data/manual/monitoring.json` under `sediment_release_events`, without a cited source.</span><sup class="claim-mark">[†](ARCHIVE.md#C-OP-OLD-15-WHERE "What this claim rests on")</sup>
+
+**Why it was retired:** The quantities are now read from pinned sources; the register keeps only the description.
+
+**Replaced by:** [`C-OP-15-WHERE`](CLAIMS.md#C-OP-15-WHERE) — each opens what it rests on.
 
 <a id="C-OP-OLD-16-AREAS"></a>
 ### AREAS.md carries a correction, and as it reported every water body holds a station while some hold none visited in ten years.

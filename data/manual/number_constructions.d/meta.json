@@ -35,26 +35,6 @@
       "kind": "document",
       "is": "The uncertainty the same instruction attaches to that knowledge level, in percent."
      },
-     "sediment_release_events.oresund_fixed_link.dredged_m3": {
-      "kind": "document",
-      "is": "Seabed volume dredged for the Øresund fixed link, in m³, as the project's documentation reports it."
-     },
-     "sediment_release_events.oresund_fixed_link.spill_limit_pct_of_dredged": {
-      "kind": "document",
-      "is": "The permitted spill, as a percentage of the dredged volume, in the link's environmental conditions."
-     },
-     "sediment_release_events.oresund_fixed_link.spill_limit_m3": {
-      "kind": "document",
-      "is": "The same permitted spill as a volume, in m³."
-     },
-     "sediment_release_events.lynetteholm.planned_dump_m3": {
-      "kind": "document",
-      "is": "The volume of harbour gytje the Lynetteholm project planned to dump in Køge Bugt, in m³."
-     },
-     "sediment_release_events.lynetteholm.first_dumped_m3": {
-      "kind": "document",
-      "is": "The volume actually dumped before the dumping was stopped, in m³."
-     },
      "typetal_nutrients_mg_per_l.separate_stormwater.COD": {
       "kind": "document",
       "is": "The annual-average chemical oxygen demand, mg per litre, Miljøstyrelsen's typetal assign to separate stormwater."
@@ -110,10 +90,10 @@
     "data/manual/monitoring.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - the sediment-release section keeps only its description; its uncited quantities and the wrong ratio were removed and are no longer declared; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json": "b41261b44411c99d"
+     "data/manual/monitoring.json": "0f14a80dadb838a8"
     }
    }
   },

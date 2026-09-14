@@ -361,6 +361,36 @@
    "source": "NKM2020",
    "phrase": "med et landsgennemsnit på 16 procentpoint",
    "where": "the same, the national average"
+  },
+  "oresund_dredged_mio_m3": {
+   "value": 7.4,
+   "source": "OP-LEX-OERESUND",
+   "phrase": "højst måtte spildes 5 % af de 7,4 mio.",
+   "where": "seabed dredged for the Øresund fixed link, million m³"
+  },
+  "oresund_spill_pct": {
+   "value": 5,
+   "source": "OP-LEX-OERESUND",
+   "phrase": "højst måtte spildes 5 % af de 7,4 mio.",
+   "where": "the most of it that could be spilled, per cent"
+  },
+  "lyn_first_night_m3": {
+   "value": 498,
+   "source": "OP-SOEFART-FIRST",
+   "phrase": "498 kubikmeter slam blev natten til torsdag dumpet i Køge Bugt",
+   "where": "Lynetteholm: the first night's load dumped, January 2022"
+  },
+  "lyn_total_m3": {
+   "value": 274685,
+   "source": "OP-LYN-HINDCAST-3",
+   "phrase": "Samlet 274.685 350.381",
+   "where": "Lynetteholm: all material dumped up to 31 March 2022, m³ (By & Havn's final hindcast, Table 2)"
+  },
+  "lyn_onsite_pct": {
+   "value": 84,
+   "source": "OP-BYOGHAVN-KLAP",
+   "phrase": "84 procent af det samlede havbundsmateriale",
+   "where": "Lynetteholm: the share of the dumped material deposited within the dump site, per cent"
   }
  }
 }
