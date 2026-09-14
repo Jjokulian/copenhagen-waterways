@@ -1124,18 +1124,22 @@
     "C-KP-FLAW",
     "A-TR-JUDGEMENT",
     "X-TR-ROWS",
-    "D-KP-TRIAGE"
+    "D-KP-TRIAGE",
+    "X-KP-META",
+    "D-DS-META"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-tr (read each TRIAGE sentence as recorded against its claim, reasoning and what it rests on: triage.json and triage_counts.py for every count and share, the rows in triage_rows.py against the source register's entry for each hypothesis in data/manual/data_sources*.json, rescore.json's matrix and tally, the kemi enumeration in enums.json, the section-station count in triage_sections.json, fetch_oda.py's login and topic list, refs.py's link rule, and the claims on other pages each rests on; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the number of hypothesis groups on TRIAGE is read from meta_facts.json, where PLAN already reads it, both counting the groups in the hypothesis register; triage.json's copy is gone. The caveat now also rests on meta_facts.py and its file; its wording and value are unchanged)",
     "saw": {
      "said on hypodrafts/TRIAGE.md": "The classification is mine and is itself an untested partition, exactly as the 17 groups are (PLAN.md says so of them). Two judgements are load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a fetch** rather than unscoreable even where nobody has confirmed the topic contains what its name suggests; and I treated *measured somewhere in the world but not in Denmark* as unscoreable **for this archive**, which is a statement about Denmark's monitoring rather than about nature. The 4 entries I could not place at all are marked *not established* rather than guessed.",
-     "texts": "60eb8dae299929d0",
+     "texts": "fdd95933667098f3",
      "rests on C-KP-FLAW": "5c7c142de298c3a1",
      "node A-TR-JUDGEMENT": "42a997e67e62fde3",
      "node X-TR-ROWS": "ea4d5dbcc5db844c",
-     "node D-KP-TRIAGE": "0202d059e90c6794"
+     "node D-KP-TRIAGE": "0202d059e90c6794",
+     "node X-KP-META": "b1c9cb927fef3b76",
+     "node D-DS-META": "7ec919a67c7eee00"
     }
    }
   },

@@ -15,10 +15,6 @@
       "kind": "counted",
       "is": "Register IDs with a page of their own under `docs/hypodrafts/` or `docs/openproblems/`, found by file name."
      },
-     "n_groups": {
-      "kind": "counted",
-      "is": "Groups in the hypothesis register."
-     },
      "classes.*.n": {
       "kind": "counted",
       "is": "Triaged hypotheses in one class, the class being the one the triage row names; each hypothesis is in exactly one class."
@@ -114,10 +110,10 @@
     "scripts/pages/triage_rows.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read after my edit: triage_rows.py changed only in A5's row - class fetch, blocker the Belt and Sound transport - and triage.py only in the partly-unblocked set (A5 added), the singular/plural wording and the sentence naming what each still needs; no count is computed differently. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/triage_counts.py - no longer writes the number of groups, which meta_facts.py counts from the same register; every other count unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/triage_counts.py": "bb341ecbe2888cc4",
+     "scripts/triage_counts.py": "e8efeb2d0586e475",
      "scripts/pages/triage_rows.py": "3019de0a4510cb44"
     }
    }

@@ -51,10 +51,10 @@
     "data/raw/oda/kemi.csv.gz"
    ],
    "confirmed": {
-    "by": "Claude (re-read: triage.py's only change since the last confirmation makes one printed line an f-string, so the B4 reference renders instead of showing as code text; sections() is untouched. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/triage.py - reads the number of groups from meta_facts.json, where PLAN reads it, instead of the copy in triage.json; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/triage.py": "86a91e2fde94e295",
+     "scripts/pages/triage.py": "3374835724238cd3",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3"
     }
    }

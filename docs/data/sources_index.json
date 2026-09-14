@@ -989,8 +989,8 @@
     "The classes in the triage rows are the classifications the page argues from; they are judgements, not measurements."
    ],
    "confirmed": {
-    "by": "Claude (re-read after my edit: triage_rows.py changed only in A5's row - class fetch, blocker the Belt and Sound transport - and triage.py only in the partly-unblocked set (A5 added), the singular/plural wording and the sentence naming what each still needs; no count is computed differently. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/triage_counts.py - no longer writes the number of groups, which meta_facts.py counts from the same register; every other count unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/triage.json",
    "gaps": [
@@ -4658,8 +4658,8 @@
     "A station carries a parameter if any row of it is in the file, whatever its unit, censoring flag or year; the unit and censoring filters of `rescore.py` are not applied here."
    ],
    "confirmed": {
-    "by": "Claude (re-read: triage.py's only change since the last confirmation makes one printed line an f-string, so the B4 reference renders instead of showing as code text; sections() is untouched. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/pages/triage.py - reads the number of groups from meta_facts.json, where PLAN reads it, instead of the copy in triage.json; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/triage_sections.json",
    "gaps": [
@@ -13518,10 +13518,10 @@
    "F-aff8947a9f",
    "F-b17d38223a",
    "F-b296cd70dd",
-   "F-b36383859a",
    "F-b5bd0a6bda",
    "F-b5ea195365",
    "F-b61d7944ec",
+   "F-b8330383fd",
    "F-b9e1bc1fb7",
    "F-ba16162ea9",
    "F-bd58527cd6",
@@ -15376,8 +15376,8 @@
   "F-00ac661b28": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 202,
-    "line": 208,
+    "first": 203,
+    "line": 209,
     "text": "    w(\"---\")\n    w(\"\")\n    w(\"## What the shape of it says\")\n    w(\"\")\n    w(\"### Blocked on a fetch\")\n    w(\"\")\n    w(C(\"C-TR-FETCH\", f\"**{cls['fetch']['n']} of {n} ({share('fetch'):.0f}%) are blocked on a \"\n        \"fetch**: what they need is named and is not held here.\") + \" \"\n      + C(\"C-TR-OPEN\", \"The source register records some of those sources as open without a \"\n          \"login: the ICES swept-area-ratio product and HELCOM's fishing-intensity layers, ICES \""
    },
    "constructions": [
@@ -15435,7 +15435,7 @@
    "value": 37.34939759036144,
    "where": [
     "scripts/pages/triage.py",
-    208
+    209
    ]
   },
   "F-00b2bde87b": {
@@ -16240,7 +16240,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -19605,8 +19605,8 @@
   "F-03944105f9": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -19665,7 +19665,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-03a28f57ff": {
@@ -20937,8 +20937,8 @@
   "F-048c9341ee": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -20997,7 +20997,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-04a9183b18": {
@@ -21702,8 +21702,8 @@
   "F-0528ea00b7": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -21762,7 +21762,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-053a9a0e7b": {
@@ -25496,7 +25496,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -29755,8 +29755,8 @@
   "F-0bd0994607": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -29815,7 +29815,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-0bd2b7349b": {
@@ -31833,8 +31833,8 @@
   "F-0d520cad5c": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 153,
-    "line": 159,
+    "first": 154,
+    "line": 160,
     "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
@@ -31892,7 +31892,7 @@
    "value": 9.036144578313253,
    "where": [
     "scripts/pages/triage.py",
-    159
+    160
    ]
   },
   "F-0d53cd5d41": {
@@ -32325,8 +32325,8 @@
   "F-0dcf689add": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -32385,7 +32385,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-0dd212ef3f": {
@@ -33662,8 +33662,8 @@
   "F-0e6fbfe636": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -33722,7 +33722,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-0e89e923e7": {
@@ -34729,8 +34729,8 @@
   "F-0f8c435d44": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -34789,7 +34789,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-0f8dba9d4d": {
@@ -39023,7 +39023,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -40592,8 +40592,8 @@
   "F-14ca135518": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -40652,7 +40652,7 @@
    "value": 8,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-14d1ca4cbd": {
@@ -41169,7 +41169,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -41469,8 +41469,8 @@
   "F-158598441b": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -41529,7 +41529,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-15a2fefcd6": {
@@ -44010,7 +44010,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -49150,8 +49150,8 @@
   "F-1b7430e469": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 222,
-    "line": 228,
+    "first": 223,
+    "line": 229,
     "text": "    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \"\n      + C(\"C-TR-SECOND\", f\"{refs(['A1', 'A2', 'A7'])} need river input, on ODA topics \"\n          f\"`fetch_oda.py` does not reach; {ref('A5')} needs volume transport at the Belt and Sound \""
    },
    "constructions": [
@@ -49190,7 +49190,7 @@
    "value": 8,
    "where": [
     "scripts/pages/triage.py",
-    228
+    229
    ]
   },
   "F-1b811d8a29": {
@@ -49730,8 +49730,8 @@
   "F-1bbb2adcef": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -49790,7 +49790,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-1bc29f8ca0": {
@@ -52341,8 +52341,8 @@
   "F-1e069ecf65": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -52401,7 +52401,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-1e06d1dd4b": {
@@ -52939,7 +52939,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -53583,8 +53583,8 @@
   "F-1ec2922bf1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -53643,7 +53643,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-1ec3a21b41": {
@@ -53795,8 +53795,8 @@
   "F-1ef9a0c61b": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -53855,7 +53855,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-1efcd4d820": {
@@ -53919,8 +53919,8 @@
   "F-1efd11344c": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -53979,7 +53979,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-1f0135f3a3": {
@@ -56106,8 +56106,8 @@
   "F-2104dff7ad": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -56166,7 +56166,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-21135c443e": {
@@ -58327,8 +58327,8 @@
   "F-22cf725cc7": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -58387,7 +58387,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-22d88a928c": {
@@ -58455,8 +58455,8 @@
   "F-22ddb6e7b6": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -58515,7 +58515,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-22e0df6c2f": {
@@ -61699,8 +61699,8 @@
   "F-2587fccf66": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -61759,7 +61759,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-258bfbe96b": {
@@ -67505,8 +67505,8 @@
   "F-29f7a52cc5": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -67565,7 +67565,7 @@
    "value": 11,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-29fc9ba490": {
@@ -68052,8 +68052,8 @@
   "F-2a5b45d5cb": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -68112,7 +68112,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-2a5bb03b37": {
@@ -70291,8 +70291,8 @@
   "F-2c1d0d090e": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -70351,7 +70351,7 @@
    "value": 3,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-2c27414771": {
@@ -71435,8 +71435,8 @@
   "F-2cc76f7f45": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 283,
-    "line": 289,
+    "first": 284,
+    "line": 290,
     "text": "    w(f\"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed\")\n    w(\"\")\n    w(C(\"C-TR-UNSCOREABLE\", f\"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) \"\n        \"are unscoreable**: the deciding measurement is in none of the sources this project \"\n        \"surveyed.\") + \" \"\n      + C(\"C-TR-BEYOND\", f\"Add the {cls['experiment']['n']} that need an experiment and \"\n          f\"**{live.step('K-SUBSET-SHARE', beyond / n * 100):.0f}% of the hypothesis field is \"\n          \"beyond reach of any reanalysis of the data this project holds or has found.**\"))\n    w(\"\")\n    w(C(\"C-TR-CONTEST\", \"This is the number that matters for how the whole argument should be \""
    },
    "constructions": [
@@ -71509,7 +71509,7 @@
    "value": 37.34939759036144,
    "where": [
     "scripts/pages/triage.py",
-    289
+    290
    ]
   },
   "F-2ccbfc2ecf": {
@@ -74265,8 +74265,8 @@
   "F-2e51f8b7c4": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 142,
-    "line": 148,
+    "first": 143,
+    "line": 149,
     "text": "    w(\"# Triage of the hypothesis field\")\n    w(\"\")\n    w(C(\"C-TR-ALL\", f\"This page puts **all {n} lettered hypotheses in \"\n        \"[HYPOTHESES.md](../HYPOTHESES.md)** each in exactly one class, with the specific \"\n        \"blocker.\"))\n    w(\"\")\n    w(C(\"C-TR-ENTRIES\", f\"{tc['n_with_entry']} of them have a draft or an open-problem page \"\n        \"of their own, and their identifiers link to it.\") + \" \"\n      + C(\"C-TR-NOTRESULT\", \"A classification says what testing a hypothesis would need and \"\n          \"whether that is held here; it is not a test result.\"))"
    },
    "constructions": [
@@ -74302,10 +74302,6 @@
      [
       "untriaged",
       "[… 0 items]"
-     ],
-     [
-      "n_groups",
-      "17"
      ],
      [
       "classes",
@@ -74349,7 +74345,7 @@
    "value": 18,
    "where": [
     "scripts/pages/triage.py",
-    148
+    149
    ]
   },
   "F-2e6e5055ed": {
@@ -80041,8 +80037,8 @@
   "F-3307597d2e": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 153,
-    "line": 159,
+    "first": 154,
+    "line": 160,
     "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
@@ -80100,7 +80096,7 @@
    "value": 2.4096385542168677,
    "where": [
     "scripts/pages/triage.py",
-    159
+    160
    ]
   },
   "F-331aa4af95": {
@@ -84568,8 +84564,8 @@
   "F-36488d1ed1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -84628,7 +84624,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-3659f796ed": {
@@ -86125,8 +86121,8 @@
   "F-374e783817": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -86185,7 +86181,7 @@
    "value": 11,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-375055c57c": {
@@ -88289,8 +88285,8 @@
   "F-38d4f3aa11": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 315,
-    "line": 321,
+    "first": 316,
+    "line": 322,
     "text": "        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")\n    w(\"\")"
    },
    "constructions": [
@@ -88324,7 +88320,7 @@
    "value": 62,
    "where": [
     "scripts/pages/triage.py",
-    321
+    322
    ]
   },
   "F-38de94525e": {
@@ -88505,7 +88501,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-TR-SECTIONS"
@@ -90327,8 +90323,8 @@
   "F-3adc3860b2": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -90387,7 +90383,7 @@
    "value": 3,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-3ae55913a0": {
@@ -90793,8 +90789,8 @@
   "F-3b1387751f": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -90853,7 +90849,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-3b236ea0f2": {
@@ -99077,10 +99073,6 @@
       "[… 0 items]"
      ],
      [
-      "n_groups",
-      "17"
-     ],
-     [
       "classes",
       "{… 6 keys}"
      ],
@@ -100859,8 +100851,8 @@
   "F-42f0fd7709": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 153,
-    "line": 159,
+    "first": 154,
+    "line": 160,
     "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
@@ -100918,7 +100910,7 @@
    "value": 12.048192771084338,
    "where": [
     "scripts/pages/triage.py",
-    159
+    160
    ]
   },
   "F-430391ce9b": {
@@ -105249,7 +105241,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -106889,8 +106881,8 @@
   "F-487ebdc741": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 256,
-    "line": 262,
+    "first": 257,
+    "line": 263,
     "text": "    others = [int(tc[\"clusters\"][c][\"n\"]) for c in T.CLUSTERS if c != \"microbial\"]\n    extra = {k for k in ORDER if k not in (\"unscoreable\", \"experiment\", \"fetch\") and int(mc[k])}\n    if extra or int(mc[\"n\"]) <= max(others):\n        raise live.Unjustified(\"TRIAGE: the microbial cluster no longer reads as the page says\")\n    tail = f\"{mc['experiment']} need an experiment instead\"\n    if int(mc[\"fetch\"]):\n        tail += f\" and {mc['fetch']} {'waits' if int(mc['fetch']) == 1 else 'wait'} on a fetch\"\n    w(\"### The largest named blocking dimension is not nutrients\")\n    w(\"\")\n    w(C(\"C-TR-MICROBIAL\", f\"**{mc['unscoreable']} hypotheses are unscoreable for one missing \""
    },
    "constructions": [
@@ -106949,7 +106941,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    262
+    263
    ]
   },
   "F-4880995e61": {
@@ -107377,7 +107369,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -109131,8 +109123,8 @@
   "F-4a26ebdff7": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 314,
-    "line": 320,
+    "first": 315,
+    "line": 321,
     "text": "    if bio:\n        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")"
    },
    "constructions": [
@@ -109164,7 +109156,7 @@
    "value": 42,
    "where": [
     "scripts/pages/triage.py",
-    320
+    321
    ]
   },
   "F-4a27c76e37": {
@@ -110787,8 +110779,8 @@
   "F-4b41d0c1a1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -110847,7 +110839,7 @@
    "value": 3,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-4b47fc38d1": {
@@ -111436,8 +111428,8 @@
   "F-4c1023c5f4": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -111496,7 +111488,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-4c17deba60": {
@@ -114807,8 +114799,8 @@
   "F-4e8b726836": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -114867,7 +114859,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-4e9025e7fa": {
@@ -115044,8 +115036,8 @@
   "F-4ea953ea01": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -115104,7 +115096,7 @@
    "value": 20,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-4eab56d118": {
@@ -116596,8 +116588,8 @@
   "F-4facca4cbd": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -116656,7 +116648,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-4fb071154d": {
@@ -118948,8 +118940,8 @@
   "F-5166c930a6": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -119008,7 +119000,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-5174a7b0b3": {
@@ -119950,8 +119942,8 @@
   "F-51f28a1b04": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -120010,7 +120002,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-5205e993c5": {
@@ -121308,8 +121300,8 @@
   "F-52cfe2e72d": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -121368,7 +121360,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-52df9396b4": {
@@ -122451,7 +122443,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -126338,8 +126330,8 @@
   "F-56f1715935": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -126398,7 +126390,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-56f3c6fec9": {
@@ -131414,7 +131406,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -133507,7 +133499,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -135557,8 +135549,8 @@
   "F-5dc96c18dc": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -135617,7 +135609,7 @@
    "value": 7,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-5dcbcc5c5c": {
@@ -138128,8 +138120,8 @@
   "F-5fe1f1a7ae": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 254,
-    "line": 260,
+    "first": 255,
+    "line": 261,
     "text": "    w(\"\")\n    mc, tx = tc[\"clusters\"][\"microbial\"], tc[\"clusters\"][\"toxicant\"]\n    others = [int(tc[\"clusters\"][c][\"n\"]) for c in T.CLUSTERS if c != \"microbial\"]\n    extra = {k for k in ORDER if k not in (\"unscoreable\", \"experiment\", \"fetch\") and int(mc[k])}\n    if extra or int(mc[\"n\"]) <= max(others):\n        raise live.Unjustified(\"TRIAGE: the microbial cluster no longer reads as the page says\")\n    tail = f\"{mc['experiment']} need an experiment instead\"\n    if int(mc[\"fetch\"]):\n        tail += f\" and {mc['fetch']} {'waits' if int(mc['fetch']) == 1 else 'wait'} on a fetch\"\n    w(\"### The largest named blocking dimension is not nutrients\")"
    },
    "constructions": [
@@ -138188,7 +138180,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    260
+    261
    ]
   },
   "F-5fe2cbedfa": {
@@ -144554,8 +144546,8 @@
   "F-6534048aeb": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -144614,7 +144606,7 @@
    "value": 10,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-6548eb0d98": {
@@ -149290,8 +149282,8 @@
   "F-68e0354bdb": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -149350,7 +149342,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-68e03f3f75": {
@@ -151334,7 +151326,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -152879,8 +152871,8 @@
   "F-6b6b8f73b9": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -152939,7 +152931,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-6b6cfd2a59": {
@@ -153901,7 +153893,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -155586,8 +155578,8 @@
   "F-6d7e02bdc1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -155646,7 +155638,7 @@
    "value": 14,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-6d803ded87": {
@@ -157997,9 +157989,9 @@
   "F-6f2641deb0": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 325,
-    "line": 331,
-    "text": "    w(C(\"C-TR-CAVEAT\", \"The classification is mine and is itself an untested partition, exactly \"\n        f\"as the {tc['n_groups']} groups are (PLAN.md says so of them). Two judgements are \"\n        \"load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a \"\n        \"fetch** rather than unscoreable even where nobody has confirmed the topic contains what \"\n        \"its name suggests; and I treated *measured somewhere in the world but not in Denmark* \"\n        \"as unscoreable **for this archive**, which is a statement about Denmark's monitoring \"\n        f\"rather than about nature. The {cls['unestablished']['n']} entries I could not place \"\n        \"at all are marked *not established* rather than guessed.\"))\n    w(\"\")\n    w(C(\"C-TR-SEARCH\", \"And per [KNOWN_AND_UNKNOWN.md](../KNOWN_AND_UNKNOWN.md): **every \\\"not \""
+    "first": 326,
+    "line": 332,
+    "text": "    w(C(\"C-TR-CAVEAT\", \"The classification is mine and is itself an untested partition, exactly \"\n        f\"as the {meta['groups_n']} groups are (PLAN.md says so of them). Two judgements are \"\n        \"load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a \"\n        \"fetch** rather than unscoreable even where nobody has confirmed the topic contains what \"\n        \"its name suggests; and I treated *measured somewhere in the world but not in Denmark* \"\n        \"as unscoreable **for this archive**, which is a statement about Denmark's monitoring \"\n        f\"rather than about nature. The {cls['unestablished']['n']} entries I could not place \"\n        \"at all are marked *not established* rather than guessed.\"))\n    w(\"\")\n    w(C(\"C-TR-SEARCH\", \"And per [KNOWN_AND_UNKNOWN.md](../KNOWN_AND_UNKNOWN.md): **every \\\"not \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -158033,7 +158025,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    331
+    332
    ]
   },
   "F-6f26568cfc": {
@@ -161404,8 +161396,8 @@
   "F-716b15c6a7": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -161464,7 +161456,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-716bf5a612": {
@@ -162755,8 +162747,8 @@
   "F-7270c02bc1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 274,
-    "line": 280,
+    "first": 275,
+    "line": 281,
     "text": "    w(C(\"C-TR-TOXICANT\", f\"A second cluster of {tx['n']} is **toxicant concentration in a \"\n        f\"marine matrix** — {refs(T.CLUSTERS['toxicant'])} — \"\n        + R(\"where the national hazardous-substance layer holds {fig:da_mfs_total} stations, \"\n            \"not one of them coastal.\")) + \" \"\n      + C(\"C-TR-TWO\", f\"Together those two dimensions account for **{both} of the \"\n          f\"{cls['unscoreable']['n']} unscoreable** \"\n          f\"({live.step('K-SUBSET-SHARE', both / cls['unscoreable']['n'] * 100):.0f}%).\"))\n    w(\"\")\n    beyond = cls[\"unscoreable\"][\"n\"] + cls[\"experiment\"][\"n\"]\n    w(f\"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed\")"
    },
    "constructions": [
@@ -162829,7 +162821,7 @@
    "value": 42.857142857142854,
    "where": [
     "scripts/pages/triage.py",
-    280
+    281
    ]
   },
   "F-727c654584": {
@@ -163578,8 +163570,8 @@
   "F-73622a0de3": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -163638,7 +163630,7 @@
    "value": 12,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-736b07d984": {
@@ -165049,8 +165041,8 @@
   "F-7495c59f85": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 247,
-    "line": 253,
+    "first": 248,
+    "line": 254,
     "text": "        w(C(\"C-TR-GROUPA\", f\"No hypothesis in group A, the nutrient group, is testable now; its \"\n            f\"{ga['n']} are {rest}.\"))\n    w(\"\")\n    if int(bf[\"fetch\"]) != int(bf[\"n\"]):\n        raise live.Unjustified(\"TRIAGE: the page calls every bottom-fauna row a fetch not yet made\")\n    w(C(\"C-TR-BUNDFAUNA\", \"Of the fetches not yet made, ODA's bottom-fauna topic (`bundfauna`) \"\n        f\"is named in the blocker for {bf['n']}: {refs(T.CLUSTERS['bundfauna'])}.\"))\n    w(\"\")\n    mc, tx = tc[\"clusters\"][\"microbial\"], tc[\"clusters\"][\"toxicant\"]\n    others = [int(tc[\"clusters\"][c][\"n\"]) for c in T.CLUSTERS if c != \"microbial\"]"
    },
    "constructions": [
@@ -165109,7 +165101,7 @@
    "value": 8,
    "where": [
     "scripts/pages/triage.py",
-    253
+    254
    ]
   },
   "F-7497f1d062": {
@@ -172087,8 +172079,8 @@
   "F-7a78427d2e": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 268,
-    "line": 274,
+    "first": 269,
+    "line": 275,
     "text": "      + C(\"C-TR-MICRO-REG\", \"National marine monitoring counts no viruses and monitors no \"\n          \"microbial community composition; the Danish sequencing the source register found is \"\n          \"research outside the programme, and for the unscoreable ones none of it records what \"\n          \"they turn on. Of the clusters of blockers this page names, it is the largest.\"))\n    w(\"\")\n    both = mc[\"unscoreable\"] + tx[\"unscoreable\"]\n    w(C(\"C-TR-TOXICANT\", f\"A second cluster of {tx['n']} is **toxicant concentration in a \"\n        f\"marine matrix** — {refs(T.CLUSTERS['toxicant'])} — \"\n        + R(\"where the national hazardous-substance layer holds {fig:da_mfs_total} stations, \"\n            \"not one of them coastal.\")) + \" \""
    },
    "constructions": [
@@ -172147,7 +172139,7 @@
    "value": 7,
    "where": [
     "scripts/pages/triage.py",
-    274
+    275
    ]
   },
   "F-7a8196ec06": {
@@ -173413,8 +173405,8 @@
   "F-7b66b1ce10": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -173473,7 +173465,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-7b6cb5a6cb": {
@@ -173501,8 +173493,8 @@
   "F-7b6ee61308": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -173561,7 +173553,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-7b7f141a39": {
@@ -178404,7 +178396,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -180797,8 +180789,8 @@
   "F-812d915348": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -180857,7 +180849,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-8134a06ef9": {
@@ -182089,8 +182081,8 @@
   "F-8254bef792": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -182149,7 +182141,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-8255ecde08": {
@@ -183941,7 +183933,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -185755,7 +185747,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -187384,8 +187376,8 @@
   "F-8693013085": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -187444,7 +187436,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-86acc253ed": {
@@ -191462,8 +191454,8 @@
   "F-89669b4a5d": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 297,
-    "line": 303,
+    "first": 298,
+    "line": 304,
     "text": "    frac = {k: int(v[\"testable\"]) / int(v[\"n\"]) for k, v in dict.items(gs) if int(v[\"n\"])}\n    ranked = sorted(frac, key=lambda k: -frac[k])\n    majority = [k for k in ranked if frac[k] > 0.5]\n    w(\"### Where the archive is strong\")\n    w(\"\")\n    strong = C(\"C-TR-STRONG\", \"Where most hypotheses are testable now: \" + \", \".join(\n        f\"**{k}** ({gs[k]['testable']} of {gs[k]['n']})\" for k in majority) + \".\")\n    if \"C\" in majority:\n        strong += \" \" + C(\"C-TR-CTD\", \"In **C**, physical resupply, they are the ones the CTD \"\n                          \"record, the depth soundings, the inflow indicator files and the \""
    },
    "constructions": [
@@ -191522,7 +191514,7 @@
    "value": 9,
    "where": [
     "scripts/pages/triage.py",
-    303
+    304
    ]
   },
   "F-89783a76b8": {
@@ -193286,8 +193278,8 @@
   "F-8a51a62310": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 312,
-    "line": 318,
+    "first": 313,
+    "line": 319,
     "text": "    bio = sum(int(gs[g][\"testable\"]) for g in BIOLOGY)\n    hard = sum(gs[g][\"unscoreable\"] + gs[g][\"experiment\"] for g in BIOLOGY + [\"E\"])\n    if bio:\n        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))"
    },
    "constructions": [
@@ -193333,7 +193325,7 @@
    "value": 16,
    "where": [
     "scripts/pages/triage.py",
-    318
+    319
    ]
   },
   "F-8a5714e136": {
@@ -198998,8 +198990,8 @@
   "F-8e56e09dff": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 314,
-    "line": 320,
+    "first": 315,
+    "line": 321,
     "text": "    if bio:\n        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")"
    },
    "constructions": [
@@ -199058,7 +199050,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    320
+    321
    ]
   },
   "F-8e584ca690": {
@@ -200535,8 +200527,8 @@
   "F-8f5ab0863b": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -200595,7 +200587,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-8f5b20994c": {
@@ -206421,8 +206413,8 @@
   "F-935d9e0296": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 279,
-    "line": 285,
+    "first": 280,
+    "line": 286,
     "text": "          f\"{cls['unscoreable']['n']} unscoreable** \"\n          f\"({live.step('K-SUBSET-SHARE', both / cls['unscoreable']['n'] * 100):.0f}%).\"))\n    w(\"\")\n    beyond = cls[\"unscoreable\"][\"n\"] + cls[\"experiment\"][\"n\"]\n    w(f\"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed\")\n    w(\"\")\n    w(C(\"C-TR-UNSCOREABLE\", f\"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) \"\n        \"are unscoreable**: the deciding measurement is in none of the sources this project \"\n        \"surveyed.\") + \" \"\n      + C(\"C-TR-BEYOND\", f\"Add the {cls['experiment']['n']} that need an experiment and \""
    },
    "constructions": [
@@ -206480,7 +206472,7 @@
    "value": 25.301204819277107,
    "where": [
     "scripts/pages/triage.py",
-    285
+    286
    ]
   },
   "F-9360b95c7a": {
@@ -209212,7 +209204,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -211780,8 +211772,8 @@
   "F-9777cbd65a": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -211840,7 +211832,7 @@
    "value": 8,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-977e6e0e74": {
@@ -218397,8 +218389,8 @@
   "F-9c7c58c0f7": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -218457,7 +218449,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-9c7fac7a68": {
@@ -230454,8 +230446,8 @@
   "F-a5ec7810c4": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -230514,7 +230506,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-a5f38c7915": {
@@ -232671,8 +232663,8 @@
   "F-a7d44831d4": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -232731,7 +232723,7 @@
    "value": 9,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-a7dacac4dd": {
@@ -232781,8 +232773,8 @@
   "F-a7ec13c7e5": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -232841,7 +232833,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-a7ef1a5335": {
@@ -239184,7 +239176,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -240463,8 +240455,8 @@
   "F-ada657e8a8": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -240523,7 +240515,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-ada9e60431": {
@@ -243173,8 +243165,8 @@
   "F-aff8947a9f": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 153,
-    "line": 159,
+    "first": 154,
+    "line": 160,
     "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
@@ -243232,7 +243224,7 @@
    "value": 13.855421686746988,
    "where": [
     "scripts/pages/triage.py",
-    159
+    160
    ]
   },
   "F-affed35064": {
@@ -245126,8 +245118,8 @@
   "F-b17d38223a": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 242,
-    "line": 248,
+    "first": 243,
+    "line": 249,
     "text": "    if a_test:\n        verb = \"is\" if len(a_test) == 1 else \"are\"\n        w(C(\"C-TR-GROUPA\", f\"In group A, the nutrient group, {ga['testable']} of {ga['n']} \"\n            f\"{verb} testable now: {refs(a_test)}. The rest are {rest}.\"))\n    else:\n        w(C(\"C-TR-GROUPA\", f\"No hypothesis in group A, the nutrient group, is testable now; its \"\n            f\"{ga['n']} are {rest}.\"))\n    w(\"\")\n    if int(bf[\"fetch\"]) != int(bf[\"n\"]):\n        raise live.Unjustified(\"TRIAGE: the page calls every bottom-fauna row a fetch not yet made\")"
    },
    "constructions": [
@@ -245186,7 +245178,7 @@
    "value": 10,
    "where": [
     "scripts/pages/triage.py",
-    248
+    249
    ]
   },
   "F-b1804c5af7": {
@@ -246503,8 +246495,8 @@
   "F-b296cd70dd": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -246563,7 +246555,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-b29e0fbfc2": {
@@ -247454,96 +247446,6 @@
    "where": [
     "scripts/socialcontext.py",
     1729
-   ]
-  },
-  "F-b36383859a": {
-   "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 320,
-    "line": 326,
-    "text": "        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")\n    w(\"\")\n    w(C(\"C-TR-CAVEAT\", \"The classification is mine and is itself an untested partition, exactly \"\n        f\"as the {tc['n_groups']} groups are (PLAN.md says so of them). Two judgements are \"\n        \"load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a \"\n        \"fetch** rather than unscoreable even where nobody has confirmed the topic contains what \"\n        \"its name suggests; and I treated *measured somewhere in the world but not in Denmark* \""
-   },
-   "constructions": [
-    "K-DRAFTSA-TRIAGE"
-   ],
-   "excerpt": {
-    "parent": "(top level)",
-    "rows": [
-     [
-      "_what",
-      "\"Counts over the hypothesis triage (scripts/pages/triage_rows.py), restricted…"
-     ],
-     [
-      "n_rows",
-      "166"
-     ],
-     [
-      "n_register",
-      "166"
-     ],
-     [
-      "n_triaged",
-      "166"
-     ],
-     [
-      "n_orphans",
-      "0"
-     ],
-     [
-      "orphans",
-      "[… 0 items]"
-     ],
-     [
-      "untriaged",
-      "[… 0 items]"
-     ],
-     [
-      "n_groups",
-      "17"
-     ],
-     [
-      "classes",
-      "{… 6 keys}"
-     ],
-     [
-      "groups",
-      "{… 17 keys}"
-     ],
-     [
-      "clusters",
-      "{… 4 keys}"
-     ],
-     [
-      "n_with_entry",
-      "18"
-     ],
-     [
-      "with_entry",
-      "[… 18 items]"
-     ]
-    ],
-    "target": "n_groups"
-   },
-   "field": {
-    "is": "Groups in the hypothesis register.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/triage_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/triage.json",
-    "n_groups"
-   ],
-   "synthetic": false,
-   "value": 17,
-   "where": [
-    "scripts/pages/triage.py",
-    326
    ]
   },
   "F-b36b844659": {
@@ -250758,8 +250660,8 @@
   "F-b5ea195365": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 218,
-    "line": 224,
+    "first": 219,
+    "line": 225,
     "text": "    vk, bf = tc[\"clusters\"][\"vandkemi\"], tc[\"clusters\"][\"bundfauna\"]\n    tl = rs[\"tally\"]\n    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \""
    },
    "constructions": [
@@ -250818,7 +250720,7 @@
    "value": 9,
    "where": [
     "scripts/pages/triage.py",
-    224
+    225
    ]
   },
   "F-b5ea286603": {
@@ -253475,10 +253377,10 @@
   },
   "F-b8330383fd": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 87,
-    "line": 93,
-    "text": "    w(B(\"C-KP-SATISFACTORY\") + \"**What \\\"satisfactorily\\\" means here.** Not exhaustive — there is no way\")\n    w(\"to know how far off that is. The requirement is weaker and achievable: *broad enough that no\")\n    w(\"test is a contest between two candidates one of which was chosen in advance.* A hypothesis\")\n    w(\"scored against \\\"nothing\\\" is scored against a strawman; it has to be scored against rivals\")\n    w(\"that could actually win.\" + E)\n    w()\n    w(B(\"C-KP-FLAW\") + f\"**The stated flaw.** The {meta['groups_n']} groups are **our own untested partition**,\")\n    w(\"the same error the rest of the project audits, committed on our own list. The grouping has\")\n    w(\"not been run through a complement test, and it should be before stage 5 uses it.\" + E)\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 321,
+    "line": 327,
+    "text": "        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")\n    w(\"\")\n    w(C(\"C-TR-CAVEAT\", \"The classification is mine and is itself an untested partition, exactly \"\n        f\"as the {meta['groups_n']} groups are (PLAN.md says so of them). Two judgements are \"\n        \"load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a \"\n        \"fetch** rather than unscoreable even where nobody has confirmed the topic contains what \"\n        \"its name suggests; and I treated *measured somewhere in the world but not in Denmark* \""
    },
    "constructions": [
     "K-META-FACTS"
@@ -253599,8 +253501,8 @@
    "synthetic": false,
    "value": 17,
    "where": [
-    "scripts/pages/plan.py",
-    93
+    "scripts/pages/triage.py",
+    327
    ]
   },
   "F-b838dc3333": {
@@ -255875,8 +255777,8 @@
   "F-ba16162ea9": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -255935,7 +255837,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-ba1dd339ca": {
@@ -261418,8 +261320,8 @@
   "F-bd58527cd6": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -261478,7 +261380,7 @@
    "value": 11,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-bd6952b14b": {
@@ -263348,8 +263250,8 @@
   "F-bea7d92022": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -263408,7 +263310,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-bea93d73c1": {
@@ -265760,8 +265662,8 @@
   "F-c0a12d6978": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -265820,7 +265722,7 @@
    "value": 7,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-c0a17760a0": {
@@ -267830,7 +267732,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-AREAS-PLACES"
@@ -277384,8 +277286,8 @@
   "F-ca1cf2a63d": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -277444,7 +277346,7 @@
    "value": 9,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-ca32bdc330": {
@@ -278225,8 +278127,8 @@
   "F-cacfb07b20": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -278285,7 +278187,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-cae6670ef6": {
@@ -280982,8 +280884,8 @@
   "F-cd21100ace": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -281042,7 +280944,7 @@
    "value": 8,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-cd310341da": {
@@ -283685,7 +283587,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -283869,10 +283771,6 @@
      [
       "untriaged",
       "[… 0 items]"
-     ],
-     [
-      "n_groups",
-      "17"
      ],
      [
       "classes",
@@ -287090,7 +286988,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -295289,7 +295187,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -296834,7 +296732,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -298096,8 +297994,8 @@
   "F-da712995c6": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -298156,7 +298054,7 @@
    "value": 6,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-da73643c1a": {
@@ -312148,7 +312046,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -312212,8 +312110,8 @@
   "F-e5193dafdc": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -312272,7 +312170,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-e525a0f135": {
@@ -314747,8 +314645,8 @@
   "F-e786dfc514": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 312,
-    "line": 318,
+    "first": 313,
+    "line": 319,
     "text": "    bio = sum(int(gs[g][\"testable\"]) for g in BIOLOGY)\n    hard = sum(gs[g][\"unscoreable\"] + gs[g][\"experiment\"] for g in BIOLOGY + [\"E\"])\n    if bio:\n        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))"
    },
    "constructions": [
@@ -314783,7 +314681,7 @@
    "value": 23,
    "where": [
     "scripts/pages/triage.py",
-    318
+    319
    ]
   },
   "F-e787032151": {
@@ -319163,8 +319061,8 @@
   "F-eb0e417241": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 189,
-    "line": 195,
+    "first": 190,
+    "line": 196,
     "text": "        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")\n        w(\"| id | consequence | class | blocker |\")\n        w(\"|---|---|---|---|\")"
    },
    "constructions": [
@@ -319223,7 +319121,7 @@
    "value": 14,
    "where": [
     "scripts/pages/triage.py",
-    195
+    196
    ]
   },
   "F-eb140fce5f": {
@@ -319269,8 +319167,8 @@
   "F-eb1cc571c1": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -319329,7 +319227,7 @@
    "value": 4,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-eb1f345a79": {
@@ -320456,7 +320354,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -323997,8 +323895,8 @@
   "F-ef0f98c5fb": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -324057,7 +323955,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-ef388b42ae": {
@@ -324420,8 +324318,8 @@
   "F-ef76059756": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -324480,7 +324378,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-ef7b3a7540": {
@@ -329012,8 +328910,8 @@
   "F-f392c48f94": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 220,
-    "line": 226,
+    "first": 221,
+    "line": 227,
     "text": "    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \""
    },
    "constructions": [
@@ -329052,7 +328950,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    226
+    227
    ]
   },
   "F-f397ce00d4": {
@@ -330770,8 +330668,8 @@
   "F-f5117cda81": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -330830,7 +330728,7 @@
    "value": 2,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-f515607420": {
@@ -331076,8 +330974,8 @@
   "F-f540337e22": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 297,
-    "line": 303,
+    "first": 298,
+    "line": 304,
     "text": "    frac = {k: int(v[\"testable\"]) / int(v[\"n\"]) for k, v in dict.items(gs) if int(v[\"n\"])}\n    ranked = sorted(frac, key=lambda k: -frac[k])\n    majority = [k for k in ranked if frac[k] > 0.5]\n    w(\"### Where the archive is strong\")\n    w(\"\")\n    strong = C(\"C-TR-STRONG\", \"Where most hypotheses are testable now: \" + \", \".join(\n        f\"**{k}** ({gs[k]['testable']} of {gs[k]['n']})\" for k in majority) + \".\")\n    if \"C\" in majority:\n        strong += \" \" + C(\"C-TR-CTD\", \"In **C**, physical resupply, they are the ones the CTD \"\n                          \"record, the depth soundings, the inflow indicator files and the \""
    },
    "constructions": [
@@ -331136,7 +331034,7 @@
    "value": 7,
    "where": [
     "scripts/pages/triage.py",
-    303
+    304
    ]
   },
   "F-f543ad4166": {
@@ -331986,7 +331884,7 @@
     "file": "scripts/pages/triage.py",
     "first": 101,
     "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    meta = live.live_json(os.path.join(DERIVED, \"meta_facts.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))"
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -333045,8 +332943,8 @@
   "F-f6b2b6fd6a": {
    "code": {
     "file": "scripts/pages/triage.py",
-    "first": 187,
-    "line": 193,
+    "first": 188,
+    "line": 194,
     "text": "        gc = gs[gid]\n        rows = [r for r in T.ROWS if r[\"group\"] == gid]\n        if not rows:\n            continue\n        w(f\"### {gid}. {g['name']}\")\n        w(\"\")\n        parts = [f\"{gc[k]} {T.CLASSES[k][0]}\" for k in ORDER if gc[k]]\n        noun = \"hypothesis\" if gc[\"n\"] == 1 else \"hypotheses\"\n        w(C(f\"C-TR-N-{gid}\", f\"*{gc['n']} {noun} — \" + \", \".join(parts) + \".*\"))\n        w(\"\")"
    },
    "constructions": [
@@ -333105,7 +333003,7 @@
    "value": 1,
    "where": [
     "scripts/pages/triage.py",
-    193
+    194
    ]
   },
   "F-f6c410a4f2": {

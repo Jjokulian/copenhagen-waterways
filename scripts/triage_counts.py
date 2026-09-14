@@ -59,7 +59,6 @@ def main(argv):
                     "restricted to IDs the hypothesis register holds.",
            "n_rows": len(rows), "n_register": len(register), "n_triaged": len(live),
            "n_orphans": len(orphans), "orphans": orphans, "untriaged": untriaged,
-           "n_groups": len(h["groups"]),
            "classes": classes, "groups": groups, "clusters": clusters,
            "n_with_entry": len(with_entry), "with_entry": with_entry}
     os.makedirs(DERIVED, exist_ok=True)

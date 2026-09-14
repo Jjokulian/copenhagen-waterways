@@ -106,6 +106,7 @@ def main(argv):
     cache = {}
     R = lambda text: claims.resolve(d, text, cache)[0]
     tc = live.live_json(os.path.join(DERIVED, "triage.json"))
+    meta = live.live_json(os.path.join(DERIVED, "meta_facts.json"))
     rs = live.live_json(os.path.join(DERIVED, "rescore.json"))
     reg = json.load(open(os.path.join(DERIVED, "hypotheses.json"), encoding="utf-8"))
     n = tc["n_triaged"]
@@ -323,7 +324,7 @@ def main(argv):
     w("### An honest caveat about this table")
     w("")
     w(C("C-TR-CAVEAT", "The classification is mine and is itself an untested partition, exactly "
-        f"as the {tc['n_groups']} groups are (PLAN.md says so of them). Two judgements are "
+        f"as the {meta['groups_n']} groups are (PLAN.md says so of them). Two judgements are "
         "load-bearing and contestable: I treated *not fetched but fetchable* as **blocked on a "
         "fetch** rather than unscoreable even where nobody has confirmed the topic contains what "
         "its name suggests; and I treated *measured somewhere in the world but not in Denmark* "

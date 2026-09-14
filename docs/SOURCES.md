@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,837 distinct numbers in running text, from these sources.
+1,836 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -925,7 +925,7 @@
 - `data/derived/streams.json`, written by [`scripts/streams.py`](../scripts/streams.py) — 15 numbers.
 - `data/derived/synchrony.json`, written by [`scripts/synchrony.py`](../scripts/synchrony.py) — 22 numbers.
 - `data/derived/terraincheck.json`, written by [`scripts/terraincheck.py`](../scripts/terraincheck.py) — 4 numbers.
-- `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 94 numbers.
+- `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 93 numbers.
 - `data/derived/unlock.json` — 4 numbers.
 - `data/derived/waves.json`, written by [`scripts/waves.py`](../scripts/waves.py) — 11 numbers.
 - `data/manual/monitoring.json` — 22 numbers.
@@ -1616,7 +1616,7 @@ Counts and totals of the outfall layers fetched from spildevandsdata.dk.
 <a id="K-DRAFTSA-TRIAGE"></a>
 ### Counts over the hypothesis triage
 
-`K-DRAFTSA-TRIAGE` · covers data/derived/triage.json · **current** · read by Claude (re-read after my edit: triage_rows.py changed only in A5's row - class fetch, blocker the Belt and Sound transport - and triage.py only in the partly-unblocked set (A5 added), the singular/plural wording and the sentence naming what each still needs; no count is computed differently. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-DRAFTSA-TRIAGE` · covers data/derived/triage.json · **current** · read by Claude (2026-09-14: scripts/triage_counts.py - no longer writes the number of groups, which meta_facts.py counts from the same register; every other count unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the rows of the hypothesis triage by class, by register group and by the named clusters of blockers, against the hypothesis register.
 
@@ -3327,7 +3327,7 @@ A part of a counted set, as a percentage of the whole set.
 <a id="K-TR-SECTIONS"></a>
 ### Water-chemistry stations in the Belts and the Sound carrying three nutrients
 
-`K-TR-SECTIONS` · covers data/derived/triage_sections.json · **current** · read by Claude (re-read: triage.py's only change since the last confirmation makes one printed line an f-string, so the B4 reference renders instead of showing as code text; sections() is untouched. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-TR-SECTIONS` · covers data/derived/triage_sections.json · **current** · read by Claude (2026-09-14: scripts/pages/triage.py - reads the number of groups from meta_facts.json, where PLAN reads it, instead of the copy in triage.json; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 How many stations of the held water-chemistry extract, in localities named for the Belts and the Sound, carry total nitrogen, ortho-phosphate and silicon, for the triage row of the hypothesis on advected nutrients.
 
