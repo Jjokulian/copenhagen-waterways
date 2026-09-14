@@ -782,8 +782,8 @@
     "Rows of one station-day are contiguous in the file; `reopened_keys` measures how far that fails."
    ],
    "confirmed": {
-    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10"
+    "by": "Claude (2026-09-14: scripts/hypodraft_ctd.py - drops its count of Dihydrogensulfid rows per station, which station_places.py provides for either sulphide name; every other count unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/hypodraft_ctd.json",
    "gaps": [
@@ -13496,7 +13496,6 @@
    "F-8f5ab0863b",
    "F-8fb3c1299e",
    "F-90694b6d65",
-   "F-906d8ca940",
    "F-935d9e0296",
    "F-9530b4b76f",
    "F-9777cbd65a",
@@ -13529,6 +13528,7 @@
    "F-bea7d92022",
    "F-bec24964f0",
    "F-c0a12d6978",
+   "F-c264be18c8",
    "F-c53557ff04",
    "F-c8b8b1dcfd",
    "F-ca1cf2a63d",
@@ -13738,6 +13738,7 @@
   ],
   "docs/openproblems/R6.md": [
    "F-008df4b99b",
+   "F-170ac8d580",
    "F-20578fffc4",
    "F-2bed4cf5ba",
    "F-2fed65efd6",
@@ -13748,11 +13749,10 @@
    "F-6b152a6536",
    "F-6d6b903f5d",
    "F-76c9d89f3d",
+   "F-7af28cf47a",
    "F-7b5cb6b6c8",
    "F-7ffa2a296c",
    "F-84464ace67",
-   "F-8d6ff9b8d2",
-   "F-906d8ca940",
    "F-989bdfa634",
    "F-9afe347e71",
    "F-9c592adf52",
@@ -13760,7 +13760,7 @@
    "F-a95c664ddf",
    "F-b61d7944ec",
    "F-b88094c201",
-   "F-d29c2aa9f6",
+   "F-c264be18c8",
    "F-d82c05b0fc",
    "F-f71f48c3be",
    "F-fae586dd58",
@@ -42993,6 +42993,68 @@
    ],
    "synthetic": false,
    "value": "0.03"
+  },
+  "F-170ac8d580": {
+   "code": {
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 99,
+    "line": 105,
+    "text": "          f\"quantity besides: oxygen is {R('R6')}'s *precondition*, not its consequence.\") + \" \"\n      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \""
+   },
+   "constructions": [
+    "K-AREAS-PLACES"
+   ],
+   "excerpt": {
+    "parent": "h2s.ctd",
+    "rows": [
+     [
+      "rows",
+      "2601"
+     ],
+     [
+      "stations",
+      "4"
+     ],
+     [
+      "top_station",
+      "\"93610032\""
+     ],
+     [
+      "top_station_name",
+      "\"Dybet\""
+     ],
+     [
+      "top_station_place",
+      "\"Mariager Fjord, midter del\""
+     ],
+     [
+      "top_station_rows",
+      "2598"
+     ]
+    ],
+    "target": "stations"
+   },
+   "field": {
+    "is": "Distinct stations among those rows.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "producer": "scripts/station_places.py",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/station_places.json",
+    "h2s.ctd.stations"
+   ],
+   "synthetic": false,
+   "value": 4,
+   "where": [
+    "scripts/pages/openproblem_r6.py",
+    105
+   ]
   },
   "F-1719766f06": {
    "code": {
@@ -76136,8 +76198,8 @@
   "F-2fed65efd6": {
    "code": {
     "file": "scripts/pages/openproblem_r6.py",
-    "first": 151,
-    "line": 157,
+    "first": 153,
+    "line": 159,
     "text": "    w(\"- \" + C(\"C-OQ-R6-PG880132\", \"**PANGAEA `880132`**: sequential phosphorus extraction, \"\n               \"iron-bound phosphorus among its fractions, on one sediment core from the \"\n               \"Bornholm Basin.\"))\n    w(\"- \" + C(\"C-OQ-R6-ODASED\", \"**ODA `Sedimentkemi/Sporstof`** (`Emne_12_19`): the source \"\n               \"register records its parameters - loss on ignition, total N, iron-adsorbed P, \"\n               \"total P, dry matter and density, none of them an iron content - and the portal's \"\n               f\"station list at {portal['no_period']} stations with no period set and \"\n               f\"{portal['with_period']} over the whole record. It is not held here.\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-NOVANA\", \"The national programme for 2023–2027 takes, in sediment, total N, \""
    },
    "constructions": [
@@ -76176,7 +76238,7 @@
    "value": 18,
    "where": [
     "scripts/pages/openproblem_r6.py",
-    157
+    159
    ]
   },
   "F-2fef8091d0": {
@@ -152360,8 +152422,8 @@
   "F-6b152a6536": {
    "code": {
     "file": "scripts/pages/openproblem_r6.py",
-    "first": 107,
-    "line": 113,
+    "first": 109,
+    "line": 115,
     "text": "          f\"for the {CH('H2S')} climatology of Mariager Fjord's bottom water and nothing \"\n          \"comparative.\") + \" \"\n      + C(\"C-OQ-R6-ENDPOINT\", \"It is also the wrong side of the mechanism: **free sulphide in \"\n          \"the water column is what remains after the sediment's iron buffer is spent**, a \"\n          \"detector of the endpoint, not of the process.\") + \" \"\n      + C(\"C-OQ-R6-KEMIH2S\", \"The held water-chemistry extract carries sulphide from bottles \"\n          f\"under two names, `Dihydrogensulfid` on {kemi['Dihydrogensulfid']:,} records and \"\n          f\"`Svovlbrinte (sulfid)` on {kemi['Svovlbrinte (sulfid)']:,}: a separate production \"\n          \"path, measuring the same endpoint.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -152492,7 +152554,7 @@
    "value": 1188,
    "where": [
     "scripts/pages/openproblem_r6.py",
-    113
+    115
    ]
   },
   "F-6b1903c439": {
@@ -172723,10 +172785,10 @@
   },
   "F-7af28cf47a": {
    "code": {
-    "file": "scripts/pages/places.py",
-    "first": 102,
-    "line": 108,
-    "text": "        \"forms a basin with limited water exchange, and in some summers that leads to iltsvind and \"\n        \"fish kills (Danish Wikipedia).\") + \" \"\n      + C(\"C-PC-MAR-DCE\", \"DCE's oxygen notes name it among the hardest-hit waters at the start of \"\n          \"October 2023, and report toxic hydrogen sulphide released from its bottom in November \"\n          \"2025.\") + \"\\n\")\n    w(C(\"C-PC-MAR-MEASURED\", f\"**Measured:** {mar['share_below_low'] * 100:.1f}% of near-bed \"\n        f\"observations below {lo:g} mg/l, median {mar['median_mg_l']:.2f}. Of the {ctd['rows']:,} \"\n        f\"hydrogen-sulphide rows in the CTD extract, **{ctd['top_station_rows']:,}** come from a \"\n        f\"single station in this fjord, \\\"{ctd['top_station_name']}\\\" ({ctd['top_station_place']}). \"\n        f\"The water-chemistry bottles spread wider: {kemi['top_station_rows']:,} of their \""
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 99,
+    "line": 105,
+    "text": "          f\"quantity besides: oxygen is {R('R6')}'s *precondition*, not its consequence.\") + \" \"\n      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \""
    },
    "constructions": [
     "K-AREAS-PLACES"
@@ -172779,8 +172841,8 @@
    "synthetic": false,
    "value": 2601,
    "where": [
-    "scripts/pages/places.py",
-    108
+    "scripts/pages/openproblem_r6.py",
+    105
    ]
   },
   "F-7af2c48289": {
@@ -184787,8 +184849,8 @@
   "F-84464ace67": {
    "code": {
     "file": "scripts/pages/openproblem_r6.py",
-    "first": 152,
-    "line": 158,
+    "first": 154,
+    "line": 160,
     "text": "               \"iron-bound phosphorus among its fractions, on one sediment core from the \"\n               \"Bornholm Basin.\"))\n    w(\"- \" + C(\"C-OQ-R6-ODASED\", \"**ODA `Sedimentkemi/Sporstof`** (`Emne_12_19`): the source \"\n               \"register records its parameters - loss on ignition, total N, iron-adsorbed P, \"\n               \"total P, dry matter and density, none of them an iron content - and the portal's \"\n               f\"station list at {portal['no_period']} stations with no period set and \"\n               f\"{portal['with_period']} over the whole record. It is not held here.\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-NOVANA\", \"The national programme for 2023–2027 takes, in sediment, total N, \"\n        \"total P, iron-bound phosphate, dry matter, loss on ignition and density, in layers of \""
    },
    "constructions": [
@@ -184827,7 +184889,7 @@
    "value": 39,
    "where": [
     "scripts/pages/openproblem_r6.py",
-    158
+    160
    ]
   },
   "F-845a5522fd": {
@@ -197658,60 +197720,6 @@
    "synthetic": false,
    "value": 100
   },
-  "F-8d6ff9b8d2": {
-   "code": {
-    "file": "scripts/pages/openproblem_r6.py",
-    "first": 97,
-    "line": 103,
-    "text": "          f\"quantity besides: oxygen is {R('R6')}'s *precondition*, not its consequence.\") + \" \"\n      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \""
-   },
-   "constructions": [
-    "K-DRAFTSA-CTD"
-   ],
-   "excerpt": {
-    "parent": "h2s",
-    "rows": [
-     [
-      "rows",
-      "2601"
-     ],
-     [
-      "stations",
-      "4"
-     ],
-     [
-      "top_station",
-      "\"93610032\""
-     ],
-     [
-      "top_station_rows",
-      "2598"
-     ]
-    ],
-    "target": "rows"
-   },
-   "field": {
-    "is": "CTD rows of parameter `Dihydrogensulfid`.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_ctd.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_ctd.json",
-    "h2s.rows"
-   ],
-   "synthetic": false,
-   "value": 2601,
-   "where": [
-    "scripts/pages/openproblem_r6.py",
-    103
-   ]
-  },
   "F-8d890e8f6e": {
    "constructions": [
     "K-WATER-WAVES"
@@ -202022,60 +202030,6 @@
    ],
    "synthetic": false,
    "value": 0.42857142857142855
-  },
-  "F-906d8ca940": {
-   "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
-   },
-   "constructions": [
-    "K-DRAFTSA-CTD"
-   ],
-   "excerpt": {
-    "parent": "h2s",
-    "rows": [
-     [
-      "rows",
-      "2601"
-     ],
-     [
-      "stations",
-      "4"
-     ],
-     [
-      "top_station",
-      "\"93610032\""
-     ],
-     [
-      "top_station_rows",
-      "2598"
-     ]
-    ],
-    "target": "top_station_rows"
-   },
-   "field": {
-    "is": "Rows at the station with the most.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_ctd.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_ctd.json",
-    "h2s.top_station_rows"
-   ],
-   "synthetic": false,
-   "value": 2598,
-   "where": [
-    "scripts/pages/triage.py",
-    107
-   ]
   },
   "F-907dfc9928": {
    "constructions": [
@@ -216507,8 +216461,8 @@
   "F-9afe347e71": {
    "code": {
     "file": "scripts/pages/openproblem_r6.py",
-    "first": 108,
-    "line": 114,
+    "first": 110,
+    "line": 116,
     "text": "          \"comparative.\") + \" \"\n      + C(\"C-OQ-R6-ENDPOINT\", \"It is also the wrong side of the mechanism: **free sulphide in \"\n          \"the water column is what remains after the sediment's iron buffer is spent**, a \"\n          \"detector of the endpoint, not of the process.\") + \" \"\n      + C(\"C-OQ-R6-KEMIH2S\", \"The held water-chemistry extract carries sulphide from bottles \"\n          f\"under two names, `Dihydrogensulfid` on {kemi['Dihydrogensulfid']:,} records and \"\n          f\"`Svovlbrinte (sulfid)` on {kemi['Svovlbrinte (sulfid)']:,}: a separate production \"\n          \"path, measuring the same endpoint.\"))\n    w(\"\")\n    w(\"## What exists\")"
    },
    "constructions": [
@@ -216639,7 +216593,7 @@
    "value": 621,
    "where": [
     "scripts/pages/openproblem_r6.py",
-    114
+    116
    ]
   },
   "F-9b03a32d66": {
@@ -234945,10 +234899,10 @@
   },
   "F-a95c664ddf": {
    "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 89,
+    "line": 95,
+    "text": "    w(\"\")\n    w(\"## No water-column observable can reach it, and this should be said plainly\")\n    w(\"\")\n    w(C(\"C-OQ-R6-PANEL\", \"The archive's finest routine observable near the bed is a monthly \"\n        f\"median per station: `stations_series.json` holds {ss['total_station_months']:,} \"\n        f\"station-months at {ss['n_stations']:,} stations over {ss['months']} months from \"\n        f\"{year0}, near-bed oxygen on {ss['variables']['oxy_bed']['n']:,} of them.\") + \" \"\n      + C(\"C-OQ-R6-SCALE\", f\"{R('R6')} lives at the sulphide front, which the national sediment \"\n          \"reports place millimetres to centimetres below the sediment surface; a station-month \"\n          \"median of bottom-water oxygen is far coarser in space and time, and the wrong \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -234985,8 +234939,8 @@
    "synthetic": false,
    "value": 76980,
    "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
+    "scripts/pages/openproblem_r6.py",
+    95
    ]
   },
   "F-a96752daea": {
@@ -267873,10 +267827,10 @@
   },
   "F-c264be18c8": {
    "code": {
-    "file": "scripts/pages/places.py",
-    "first": 103,
-    "line": 109,
-    "text": "        \"fish kills (Danish Wikipedia).\") + \" \"\n      + C(\"C-PC-MAR-DCE\", \"DCE's oxygen notes name it among the hardest-hit waters at the start of \"\n          \"October 2023, and report toxic hydrogen sulphide released from its bottom in November \"\n          \"2025.\") + \"\\n\")\n    w(C(\"C-PC-MAR-MEASURED\", f\"**Measured:** {mar['share_below_low'] * 100:.1f}% of near-bed \"\n        f\"observations below {lo:g} mg/l, median {mar['median_mg_l']:.2f}. Of the {ctd['rows']:,} \"\n        f\"hydrogen-sulphide rows in the CTD extract, **{ctd['top_station_rows']:,}** come from a \"\n        f\"single station in this fjord, \\\"{ctd['top_station_name']}\\\" ({ctd['top_station_place']}). \"\n        f\"The water-chemistry bottles spread wider: {kemi['top_station_rows']:,} of their \"\n        f\"{kemi['rows']:,} hydrogen-sulphide rows are from the same station, the rest from \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-AREAS-PLACES"
@@ -267929,8 +267883,8 @@
    "synthetic": false,
    "value": 2598,
    "where": [
-    "scripts/pages/places.py",
-    109
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-c27a296fe4": {
@@ -288214,60 +288168,6 @@
    "where": [
     "scripts/pages/hypodraft_f3.py",
     229
-   ]
-  },
-  "F-d29c2aa9f6": {
-   "code": {
-    "file": "scripts/pages/openproblem_r6.py",
-    "first": 97,
-    "line": 103,
-    "text": "          f\"quantity besides: oxygen is {R('R6')}'s *precondition*, not its consequence.\") + \" \"\n      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \""
-   },
-   "constructions": [
-    "K-DRAFTSA-CTD"
-   ],
-   "excerpt": {
-    "parent": "h2s",
-    "rows": [
-     [
-      "rows",
-      "2601"
-     ],
-     [
-      "stations",
-      "4"
-     ],
-     [
-      "top_station",
-      "\"93610032\""
-     ],
-     [
-      "top_station_rows",
-      "2598"
-     ]
-    ],
-    "target": "stations"
-   },
-   "field": {
-    "is": "Stations with any such row.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_ctd.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_ctd.json",
-    "h2s.stations"
-   ],
-   "synthetic": false,
-   "value": 4,
-   "where": [
-    "scripts/pages/openproblem_r6.py",
-    103
    ]
   },
   "F-d29c796283": {

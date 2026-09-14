@@ -13,7 +13,6 @@ can read them live: data/derived/hypodraft_ctd.json.
        `NEAR_M` of the deepest temperature; distinct stations and years.
   I5   rows whose KorrektionsFaktor is exactly one, and rows whose original
        and corrected results differ.
-  E12  Dihydrogensulfid rows per station.
   Z2   first and last year of FDOM.
   C1   SondeNavn '999 - Ukendt' rows for temperature, salinity and oxygen.
   C6   temperature values carrying at most one decimal.
@@ -71,7 +70,6 @@ def main(argv):
     log(f"  maaledybde: {len(maal_days):,} station-days, {len(maal_bottom):,} with a bottom depth")
 
     rows = factor_one = factor_other = factor_blank = differ = both_results = 0
-    h2s = collections.Counter()
     fdom_years = []
     unknown_probe = collections.Counter()
     temp_total = temp_le1dec = 0
@@ -132,9 +130,7 @@ def main(argv):
                     differ += 1
             p = row[i_p]
             st, d = row[i_st], (row[i_d] or "").strip()
-            if p == "Dihydrogensulfid":
-                h2s[st] += 1
-            elif p == "FDOM" and len(d) == 8:
+            if p == "FDOM" and len(d) == 8:
                 fdom_years.append(int(d[:4]))
             if p in (T, S, O) and row[i_sn].startswith("999"):
                 unknown_probe[p] += 1
@@ -159,7 +155,6 @@ def main(argv):
         if cur is not None:
             flush(cur, depths)
 
-    top = h2s.most_common(1)[0] if h2s else (None, 0)
     out = {
         "_what": "Counts the hypothesis drafts cite from the CTD extract, re-derived from "
                  "the whole file by scripts/hypodraft_ctd.py.",
@@ -181,8 +176,6 @@ def main(argv):
         "correction": {"rows": rows, "factor_one": factor_one, "factor_other": factor_other,
                        "factor_blank": factor_blank, "rows_with_both_results": both_results,
                        "original_differs": differ},
-        "h2s": {"rows": sum(h2s.values()), "stations": len(h2s),
-                "top_station": top[0], "top_station_rows": top[1]},
         "fdom": {"rows": len(fdom_years), "first_year": min(fdom_years) if fdom_years else None,
                  "last_year": max(fdom_years) if fdom_years else None},
         "temperature_decimals": {"rows": temp_total, "at_most_one_decimal": temp_le1dec},

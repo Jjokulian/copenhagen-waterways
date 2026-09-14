@@ -839,7 +839,7 @@
 <a id="T-d0c45ed5"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — E. Chemical demand and toxicity
 
-11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/drafts_b_counts.json` (`stations_series.total_station_months`), written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py). Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/hypodraft_ctd.json` (`h2s.top_station_rows`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/oxygen.json` (`hazardous.sediment`), written by [`scripts/oxygen.py`](../scripts/oxygen.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py).
+11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/drafts_b_counts.json` (`stations_series.total_station_months`), written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py). Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/oxygen.json` (`hazardous.sediment`), written by [`scripts/oxygen.py`](../scripts/oxygen.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py). Read from `data/derived/station_places.json` (`h2s.ctd.top_station_rows`), written by [`scripts/station_places.py`](../scripts/station_places.py).
 
 <a id="T-dfb9df78"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — D. Physical disturbance of the bed
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,839 distinct numbers in running text, from these sources.
+1,837 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -898,7 +898,7 @@
 - `data/derived/floodmaps/_sheets.json`, written by [`scripts/floodmaps.py`](../scripts/floodmaps.py) — 4 numbers.
 - `data/derived/grundlaget.json`, written by [`scripts/pages/grundlaget.py`](../scripts/pages/grundlaget.py) — 9 numbers.
 - `data/derived/hypodraft_b1.json`, written by [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py) — 26 numbers.
-- `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 25 numbers.
+- `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 22 numbers.
 - `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 15 numbers.
 - `data/derived/hypotheses.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 2 numbers.
 - `data/derived/hypotheses_evidence.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 18 numbers.
@@ -921,7 +921,7 @@
 - `data/derived/settle.json`, written by [`scripts/pages/settle.py`](../scripts/pages/settle.py) — 6 numbers.
 - `data/derived/socialcontext.json`, written by [`scripts/socialcontext.py`](../scripts/socialcontext.py) — 86 numbers.
 - `data/derived/solutions.json`, written by [`scripts/solutions.py`](../scripts/solutions.py) — 12 numbers.
-- `data/derived/station_places.json`, written by [`scripts/station_places.py`](../scripts/station_places.py) — 33 numbers.
+- `data/derived/station_places.json`, written by [`scripts/station_places.py`](../scripts/station_places.py) — 34 numbers.
 - `data/derived/streams.json`, written by [`scripts/streams.py`](../scripts/streams.py) — 15 numbers.
 - `data/derived/synchrony.json`, written by [`scripts/synchrony.py`](../scripts/synchrony.py) — 22 numbers.
 - `data/derived/terraincheck.json`, written by [`scripts/terraincheck.py`](../scripts/terraincheck.py) — 4 numbers.
@@ -1519,7 +1519,7 @@ Recomputes the local half of the combined-overflow draft's data table: the three
 <a id="K-DRAFTSA-CTD"></a>
 ### CTD facts cited by the hypothesis drafts
 
-`K-DRAFTSA-CTD` · covers data/derived/hypodraft_ctd.json · **current** · read by fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-DRAFTSA-CTD` · covers data/derived/hypodraft_ctd.json · **current** · read by Claude (2026-09-14: scripts/hypodraft_ctd.py - drops its count of Dihydrogensulfid rows per station, which station_places.py provides for either sulphide name; every other count unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 One streaming pass over the whole CTD extract that re-derives the counts the hypothesis drafts cite: density-profile station-days for C1, the correction factor, the hydrogen-sulphide record, the FDOM span and the unknown-probe rows.
 

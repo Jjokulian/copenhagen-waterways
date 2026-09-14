@@ -216,18 +216,6 @@
       "kind": "counted",
       "is": "Of those, rows whose two results differ as numbers."
      },
-     "h2s.rows": {
-      "kind": "counted",
-      "is": "CTD rows of parameter `Dihydrogensulfid`."
-     },
-     "h2s.stations": {
-      "kind": "counted",
-      "is": "Stations with any such row."
-     },
-     "h2s.top_station_rows": {
-      "kind": "counted",
-      "is": "Rows at the station with the most."
-     },
      "fdom.rows": {
       "kind": "counted",
       "is": "CTD rows of parameter `FDOM` whose `Dato` is an eight-character date."
@@ -282,10 +270,10 @@
     "data/raw/oda/maaledybde.csv.gz"
    ],
    "confirmed": {
-    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (2026-09-14: scripts/hypodraft_ctd.py - drops its count of Dihydrogensulfid rows per station, which station_places.py provides for either sulphide name; every other count unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/hypodraft_ctd.py": "2a3931331a0419db",
+     "scripts/hypodraft_ctd.py": "a3b4ae1964f4509a",
      "data/raw/oda/ctd.csv.gz": "99004e1b7bcc8b5b",
      "data/raw/oda/maaledybde.csv.gz": "bcdb9d24722798a1"
     }

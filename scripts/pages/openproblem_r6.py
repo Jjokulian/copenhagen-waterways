@@ -59,7 +59,9 @@ def text():
     dc = J("drafts_b_counts.json")
     ss, portal = dc["stations_series"], dc["oda_portal"]["sedimentkemi_sporstof"]
     year0 = dc["stations_series"]["year0"]
-    h2s = J("hypodraft_ctd.json")["h2s"]
+    h2s = J("station_places.json")["h2s"]["ctd"]
+    if "Svovlbrinte (sulfid)" in J("enums.json")["ctd"]["categorical"]["Parameter"]:
+        refuse("the CTD extract now names sulphide under a second parameter; the page names only Dihydrogensulfid")
     kemi = J("enums.json")["kemi"]["categorical"]["Parameter"]
 
     if h2s["top_station"] != TOP_STATION:

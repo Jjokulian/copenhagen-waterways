@@ -187,7 +187,7 @@
    "id": "D-OQ-HYPCTD",
    "kind": "held",
    "label": "CTD counts for the drafts\\ndata/derived/hypodraft_ctd.json",
-   "detail": "What hypodraft_ctd.py counted over the whole CTD extract: among them the sulphide rows, their stations and the station with most of them, the first and last year of FDOM, and the records whose correction factor is not one."
+   "detail": "What hypodraft_ctd.py counted over the whole CTD extract: among them the first and last year of FDOM, and the records whose correction factor is not one."
   },
   {
    "id": "D-OQ-HYPFACTS",
@@ -938,6 +938,12 @@
    "kind": "held",
    "label": "GEUS files\\ndata/raw/geus",
    "detail": "The directory holds seabed_sediment_dk.gpkg and marta_sedimentproever.geojson; the page's generator refuses if it holds anything else."
+  },
+  {
+   "id": "D-OQ-SPLACES-H2S",
+   "kind": "held",
+   "label": "Sulphide rows by station\\ndata/derived/station_places.json",
+   "detail": "What station_places.py counted of hydrogen sulphide in the CTD and water-chemistry extracts, under either parameter name: the rows, their stations, and the station with most of them, with its name and place."
   }
  ],
  "claims": [
@@ -1139,8 +1145,8 @@
     "C-OQ-OLD-J1-COOCCUR"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each J1 sentence against its claim, reasoning and what it rests on: enums.json counts of the CTD parameters and units and of the water-chemistry parameters, meta_facts.json, hypodraft_ctd.json, drafts_b_counts.json, light.json and light.py's start-depth split, the unit in stations_series.json, the CTD header, the pinned Wikipedia TEP, Beer-Lambert and turbidity phrases, RESIDUAL.md's claims, and the register's J1-J2-J3-GAP; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the CTD extract's sulphide rows, their stations and the station with most of them are read from one place, station_places.json, which counts either sulphide parameter name and also records the top station's name and place; the extract names sulphide only as Dihydrogensulfid, which R6 now checks against enums.py; hypodraft_ctd.json's copy is gone. R6's claim rests on station_places.py, a node for its sulphide counts and enums.py; the CTD-counts node no longer lists the sulphide rows, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on openproblems/J1.md": "The archive holds more optics than the monthly panel exposes. `docs/data/areas/stations_series.json` carries 679,422 station-months over 9 variables, of which one is optical: `fluo`, fluorescence in the relative unit `rel`, on 60,460 station-months. Beside fluorescence the raw CTD file carries the three optical channels the metric below uses: `Lysdæmpning`, light attenuation, on 5,217,377 records, `Turbiditet` on 1,076,915, and `FDOM`, the fluorescence of dissolved organic matter, on 890,921, from 2021 to 2026 only.",
      "texts": "421b7c8f28d337e7",
@@ -1149,7 +1155,7 @@
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
      "node D-DS-ENUMS": "d951dca316762bb4",
      "node X-KD-HYPCTD": "1ceeb76bd5900e03",
-     "node D-OQ-HYPCTD": "2db4fc7c803f6f8a"
+     "node D-OQ-HYPCTD": "afaccfb167187af4"
     }
    }
   },
@@ -1457,13 +1463,13 @@
     "C-OQ-OLD-J1-DEMONSTRABLY"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each J1 sentence against its claim, reasoning and what it rests on: enums.json counts of the CTD parameters and units and of the water-chemistry parameters, meta_facts.json, hypodraft_ctd.json, drafts_b_counts.json, light.json and light.py's start-depth split, the unit in stations_series.json, the CTD header, the pinned Wikipedia TEP, Beer-Lambert and turbidity phrases, RESIDUAL.md's claims, and the register's J1-J2-J3-GAP; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the CTD extract's sulphide rows, their stations and the station with most of them are read from one place, station_places.json, which counts either sulphide parameter name and also records the top station's name and place; the extract names sulphide only as Dihydrogensulfid, which R6 now checks against enums.py; hypodraft_ctd.json's copy is gone. R6's claim rests on station_places.py, a node for its sulphide counts and enums.py; the CTD-counts node no longer lists the sulphide rows, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on openproblems/J1.md": "It **would not** license calling the residual gel, TEP or fedtemøg. That is the shrinkage move in `RESIDUAL.md` - naming the leftover after one item on its list - and the list here includes the sondes' calibration, which the extract corrects by a factor other than one on 2,813,137 records, the unrecorded path length, dissolved matter FDOM does not see, and whatever else attenuates light that none of the three channels measures.",
      "texts": "e5b5ac687426db41",
      "rests on C-LR-R-MOVE": "f7ff0c29ee95f00c",
-     "node D-OQ-HYPCTD": "2db4fc7c803f6f8a",
+     "node D-OQ-HYPCTD": "afaccfb167187af4",
      "node X-KD-HYPCTD": "1ceeb76bd5900e03",
      "rests on C-OQ-J1-PATH": "d3614f0fb5603e45"
     }
@@ -1969,23 +1975,25 @@
    "stance": "ours",
    "page": "openproblems/R6.md",
    "claim": "The CTD extract's sulphide parameter has the counted records at the counted stations, most of them from one station in Mariager Fjord.",
-   "because": "hypodraft_ctd.py counts the rows, their stations and the station with the most; the places page records that station as in Mariager Fjord; the generator refuses the page if another station takes the lead.",
+   "because": "station_places.py counts the rows under either sulphide parameter, their stations and the station with the most; the CTD extract names sulphide only as `Dihydrogensulfid`, which the generator checks against enums.py's count of the extract's parameters; the places page records that station as in Mariager Fjord; the generator refuses the page if another station takes the lead.",
    "rests_on": [
-    "X-KD-HYPCTD",
-    "D-OQ-HYPCTD",
+    "X-AR-STATIONPLACES",
+    "D-OQ-SPLACES-H2S",
+    "X-KP-ENUMS",
     "C-PC-MAR-MEASURED"
    ],
    "replaces": [
     "C-OQ-OLD-R6-H2S"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each R6 sentence against its claim, reasoning and what it rests on: the pinned SR323 and NOVA kap. 14 texts with every number read at its phrase, the pinned NOVANA 2023-2027 text, the PANGAEA records of 997075, 987348 and 880132, hypodraft_ctd.json, drafts_b_counts.json, hypodraft_facts.json, enums.json, the source register's ODA, DOME and AL561 entries, and the places page's Mariager claims; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the CTD extract's sulphide rows, their stations and the station with most of them are read from one place, station_places.json, which counts either sulphide parameter name and also records the top station's name and place; the extract names sulphide only as Dihydrogensulfid, which R6 now checks against enums.py; hypodraft_ctd.json's copy is gone. R6's claim rests on station_places.py, a node for its sulphide counts and enums.py; the CTD-counts node no longer lists the sulphide rows, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on openproblems/R6.md": "**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD extract's `Dihydrogensulfid` has 2,601 records at 4 stations, 2,598 of them from station `93610032` in Mariager Fjord.",
-     "texts": "ad271e04967aafbc",
-     "node X-KD-HYPCTD": "1ceeb76bd5900e03",
-     "node D-OQ-HYPCTD": "2db4fc7c803f6f8a",
+     "texts": "3a33b4ab0756d144",
+     "node X-AR-STATIONPLACES": "f480f67f5bf30b62",
+     "node D-OQ-SPLACES-H2S": "635f4ffe453d7e98",
+     "node X-KP-ENUMS": "9f81357787adb189",
      "rests on C-PC-MAR-MEASURED": "a86ae38fff5e108d"
     }
    }
@@ -2005,12 +2013,12 @@
     "C-OQ-OLD-R6-H2S"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each R6 sentence against its claim, reasoning and what it rests on: the pinned SR323 and NOVA kap. 14 texts with every number read at its phrase, the pinned NOVANA 2023-2027 text, the PANGAEA records of 997075, 987348 and 880132, hypodraft_ctd.json, drafts_b_counts.json, hypodraft_facts.json, enums.json, the source register's ODA, DOME and AL561 entries, and the places page's Mariager claims; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the CTD extract's sulphide rows, their stations and the station with most of them are read from one place, station_places.json, which counts either sulphide parameter name and also records the top station's name and place; the extract names sulphide only as Dihydrogensulfid, which R6 now checks against enums.py; hypodraft_ctd.json's copy is gone. R6's claim rests on station_places.py, a node for its sulphide counts and enums.py; the CTD-counts node no longer lists the sulphide rows, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on openproblems/R6.md": "One silled fjord whose inner basin exchanges little water: usable for the H₂S climatology of Mariager Fjord's bottom water and nothing comparative.",
      "texts": "c3252ec16bd70531",
-     "rests on C-OQ-R6-H2S": "ad271e04967aafbc",
+     "rests on C-OQ-R6-H2S": "3a33b4ab0756d144",
      "rests on C-PC-MAR-SILL": "22ecf4febf6c885b"
     }
    }

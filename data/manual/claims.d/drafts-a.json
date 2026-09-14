@@ -186,9 +186,10 @@
    "fmt": "{:,}"
   },
   "da_h2s_top": {
-   "file": "data/derived/hypodraft_ctd.json",
+   "file": "data/derived/station_places.json",
    "path": [
     "h2s",
+    "ctd",
     "top_station_rows"
    ],
    "fmt": "{:,}"
