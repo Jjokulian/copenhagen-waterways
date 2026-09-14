@@ -110,11 +110,11 @@
     "scripts/pages/triage_rows.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/triage_counts.py - no longer writes the number of groups, which meta_facts.py counts from the same register; every other count unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared)",
     "on": "2026-09-14",
     "saw": {
      "scripts/triage_counts.py": "e8efeb2d0586e475",
-     "scripts/pages/triage_rows.py": "3019de0a4510cb44"
+     "scripts/pages/triage_rows.py": "dc5751ee6e3c0d38"
     }
    }
   },

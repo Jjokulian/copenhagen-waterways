@@ -259,7 +259,7 @@
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
+    "by": "Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared)",
     "on": "2026-09-14",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
@@ -270,7 +270,7 @@
      "scripts/clock.py": "e2fb9cafe90c804b",
      "scripts/daylight.py": "84c11f42cb7e2cab",
      "scripts/meta_facts.py": "12c9f325d0873b1e",
-     "scripts/unlock.py": "cb3c1906da393d74",
+     "scripts/unlock.py": "b8f846953e31bc24",
      "scripts/fetch_queue.py": "d45cc3fd2ade07f0",
      "data/derived/light.json": "3bf11c218286e4c6"
     }
@@ -1086,11 +1086,11 @@
     "data/manual/data_sources_3.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code)",
-    "on": "2026-09-13",
+    "by": "Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared)",
+    "on": "2026-09-14",
     "saw": {
      "scripts/fetch_queue.py": "d45cc3fd2ade07f0",
-     "data/manual/data_sources.json": "bbcf3ff9710105f6",
+     "data/manual/data_sources.json": "c40eee328623cb2e",
      "data/manual/data_sources_2.json": "6d052e73fa896f81",
      "data/manual/data_sources_3.json": "06cef818e7a29730"
     }

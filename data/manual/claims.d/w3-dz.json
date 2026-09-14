@@ -2415,7 +2415,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Status: testable. HYPOTHESES.md calls VMS/AIS effort \"the single most important missing layer in this whole register\". It is a 23.1 MB `CC BY 4.0` zip. Nothing here has been run and nothing downloaded;",
@@ -2443,7 +2443,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Verified by reading the binary: `oxy_bed` 76,980 station-months total, 8,396 in 2016–2021 at 224 stations, of which 197 stations cover ≥8 distinct quarters, 180 ≥12, 140 ≥16, 79 ≥20. Stations occupy 791 distinct 0.05° cells; 215 carry `oxy_bed` in-window, 175 in ≥12 quarters. `fluo` 7,694 in-window station-months, 7,655 of them sharing a station-month with `oxy_bed` — the productivity covariate is nearly complete on the response.",
@@ -2471,7 +2471,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "(placebo). 1,392 of 1,415 stations lie east of 8°E.",
@@ -2501,7 +2501,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Fields per HELCOM metadata record `0195e2c6-6b83-49ea-a0db-41f14a316c87`: `c-square`, `mid_lat`, `mid_lon`, `Year`, `quarter`, `geargroup`, `SurfSAR`, `SubsurfSAR`, `Fishing_ho` — 0.05° c-square, quarterly, 2016–2021, HELCOM area, covering every station east of 8°E. *Class 7 (model-as-datum):* SAR is not measured — pings are interpolated to tracks, fishing inferred from a speed rule, gear width imputed from vessel length by métier. *Class 6 (absent dimension):* VMS is mandatory only above 12 m, with 12–15 m exemptions inside territorial waters, so the small inshore fleet is structurally absent — in the Belt Sea and Øresund that is the fleet.",
@@ -2527,7 +2527,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Optional, larger. ICES/OSPAR annual layers 2009–2020, figshare `18601508`, 411.5 MB, `CC BY 4.0` — annual only, and only for the 23 North Sea stations. Attended work.",
@@ -2556,7 +2556,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Depth and true position. `data/raw/oda/ctd.csv.gz` (448.7 MB gzip) carries `Dybde (m)` and `MålingX_UTM32`/`MalingY_UTM32` per measurement. With 56% of measurements at coordinates differing from their station's, the station→c-square join is itself an error source; one streamed pass places each cast in the c-square it was taken in and yields cast depth.",
@@ -2584,7 +2584,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A null is weakly informative: six years, 8,396 observations, quarterly effort and a modelled SAR missing the inshore fleet can all fail to see a real effect. And there is no pre-trawling baseline — trawling predates the 1980 record start, so this is contrast across places and quarters, never before-and-after.",
@@ -2613,7 +2613,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Overlap, precisely. Effort is quarterly 2016–2021 against a monthly 1980–2026 record: 24 quarters, 8,396 near-bed station-months, 10.9% of `oxy_bed`. OSPAR's 2009–2020 layers would raise that to 17,977 station-months at 325 stations, but at annual resolution, destroying the lag structure that makes the within-station arm a test rather than a correlation. The 0.05° cell is coarse against the station field — 262 of 791 cells hold more than one station — so effort is a shared regressor and errors must cluster on the c-square.",
@@ -2641,7 +2641,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Testable now, on a subset, with one term left by subtraction — said, not hidden.",
@@ -2670,7 +2670,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "names the spectral mechanism this project rediscovered from the data",
@@ -2700,7 +2700,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`lys.csv.gz` — 2,370,340 rows; 62,848 distinct station|date casts with a fitted Kd, 62,845 with a fit coefficient, 62,136 with `ZMin`, the depth the regression started from — 40.6% shallower than 0.6 m, only 1,290 deeper than 5.1 m. 249 rows are field-shifted and must be dropped by field count, not silently. 566 stations, all also CTD stations (of 1,527). *Class 7* — Kd is a regression the operator fitted over a window the operator chose; *class 3* — a profile collapsed to one slope. Guard against circularity: require the fit coefficient, so Secchi-derived Kd cannot enter.",
@@ -2728,7 +2728,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`ctd.csv.gz` — all 18 `Parameter` values counted (17 named, one blank; accented names truncate in my scan). The four this needs: Lysdæmpning 5,217,330 · Fluorescens 6,783,570 · Turbiditet 1,076,915 · FDOM 890,921, with `Photometer m…` 576,179 and `Photometer reference` 531,071 beside them. The rest are channels this project already uses, plus five under 240,000 rows.",
@@ -2757,7 +2757,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The two composition channels do not cover the same record, and that decides the shape of the test. Turbiditet: 1994-01-10 → 2026-09-07, 252 stations, 12,700 station-days, FTU throughout. FDOM: 2021-04-19 → 2026-09-07, 211 stations, 10,550 station-days, ppb throughout. The in-situ CDOM term exists for five years; before 2021 only satellite `adg443` carries it.",
@@ -2786,7 +2786,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "is the finding: the underwater and surface readings TA `M06` requires survive per depth, so Kd can be refitted over a *stated* window instead of the operator's — on the same cast as the three proxies: composition and light in one frame. Check its unit first: attenuation, or transmissometer beam-c, which is a different quantity.",
@@ -2816,7 +2816,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Error classes on the proxies: *class 1* — ppb and FTU are sensor units, not absorption coefficients; *class 4* — FDOM is fluorescence, not a(λ)CDOM, and turbidity is scattering, not non-algal absorption; *class 5* — `SondeNr` is 999 on 83.5% of rows, so the per-cast calibration that would convert units is unrecoverable. *Class 6* over all of it: no wavelength, no clock time.",
@@ -2844,7 +2844,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Second constraint, already shown here: `matchup.py` found the satellite-matched subset is not a random sample (matched median Kd 0.270 against 0.330 in the same months), so the satellite arm's null is built on that subset.",
@@ -2874,7 +2874,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "needs absorption in units: an AC-S or spectroradiometer profile beside the PAR cast, done twice in Danish waters (Gonçalves-Araujo & Markager 2020, around Fyn, 2017 and 2019) and never in monitoring.",
@@ -2902,7 +2902,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Would not: a physical budget, a causal attribution, any per-water-body or national number, or any trend — matchup.py already got both signs.",
@@ -2935,7 +2935,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Satellite IOPs are all *class 7*: a QAA or neural-net retrieval. | source | measures | resolution · coverage · licence | separate path | |---|---|---|---| | `ctd.csv.gz` Lysdæmpning · Photometer · FDOM · Turbiditet · Fluorescens (held) | attenuation + 3 composition proxies, per depth | per cast · counts above · ODA open | no — same ship and frame as `lys` | | BAL_BGC_L3_NRT_009_131 | ADG443, APH443, BBP443, KD490, RRS | 300 m daily · OLCI, NRT only · free | yes | | BAL_BGC_HR_L4_NRT_009_208 | TUR, SPM, BBP443, CHL — no ADG | 100 m, 20 km coastal band · `S2`/MSI, 2020-01-08 → · free | yes; CDOM is its residual | | OC-CCI v6.0 IOP · ERDDAP | adg/aph/atot/bbp at 412–665 nm, kd_490, 14 water classes | 4 km, monthly & 8-day · 1997-09 → · ESA CCI open | yes; box-subsettable, small | | `Sentinel-3` OLCI `L2` WFR | ADG443_NN, TSM_NN, CHL_NN, KD490_M07 | 300 m · 2016 → · free | yes | | MODIS-A `L3` IOP GIOP | adg/aph/bbp_443_giop | 4 km · 2002 → · Earthdata login | yes — GIOP, not QAA | | TA `M06` v3 | the method itself | in force 2015 · AU/DCE public | primary document |",
@@ -2964,7 +2964,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The Baltic multiyear product already fetched (`009_133`, 1 km, 1997 →) lists no IOP: only the 4 km global sets reach back to 1997. EMODnet Chemistry and ICES were searched and no CDOM-absorption or spectral-attenuation product for Danish waters was established — not \"absent\", *not found by the search performed*.",

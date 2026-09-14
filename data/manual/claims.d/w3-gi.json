@@ -1380,7 +1380,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1411,7 +1411,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "But warming reaches near-bed oxygen by three routes — solubility (deterministic, Weiss 1970), stratification (`C1`'s object) and metabolic rate (`Q10`, unmeasured here) — only the first of which is policy-inert. So `G1`'s testable content is not *does oxygen fall* but what fraction of the long-term fall is thermodynamics: the seasonal decomposition done here (23-fold → 14-fold on a saturation threshold, ~40 % thermodynamic), moved onto the long-term axis.",
@@ -1440,7 +1440,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1472,7 +1472,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1507,7 +1507,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1538,7 +1538,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1569,7 +1569,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The phenology mix moves. On my own definition (≥ 8 `oxy_bed` months; ≥ 65 % in May–Oct → \"summer-peaked\"): 282 summer-peaked vs 480 year-round, the summer-peaked running 1.25 mg/l lower in May–Oct (6.31 vs 7.56, d 0.50, n = 12,390 / 32,924), their share of station-months moving 29.5 % (2010–2014) → 16.4 % (2015–2019). Direction and size reproduce the figure on file (293 / 481, 1.57 mg/l, d 0.66, 32→12 %); the split is threshold-dependent, which is itself the warning. Three defences, all required: (i) within-cell FE, so a station only competes with itself; (ii) the balanced panel, so entry and exit cannot tilt the slope; (iii) phenology × year.",
@@ -1600,7 +1600,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1630,7 +1630,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1660,7 +1660,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1690,7 +1690,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:G1}": "G1: Warming",
@@ -1720,7 +1720,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Prior work this builds on. Two non-exchangeable observing systems exist (293 summer-peaked, 481 year-round, 1.57 mg/l apart in Jun–Sep near-bed oxygen, d = 0.66) and their mixture changes over time. That establishes the *ingredients* of a composition artefact, not that any published number moved because of it. This draft tests that step.",
@@ -1748,7 +1748,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -1778,7 +1778,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -1809,7 +1809,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`docs/data/areas/stations_series.{json,bin}` — 679,422 station-months, 1,415 stations, 564 months from January 1980, 9 variables; `.bin` is 5,435,376 bytes, exactly the 8 bytes × Σn the layout implies. Variable used: `oxy_bed`: 76,980 rows, all finite, 1,327 stations. Jun–Sep, 1985–2024: 30,460 station-months, 1,167 stations. Per era (n / stations): 1985–1989 2,589 / 443 · 1990–1994 5,734 / 603 · 1995–1999 4,963 / 563 · 2000–2004 4,448 / 503 · 2005–2009 3,635 / 379 · 2010–2014 3,263 / 254 · 2015–2019 2,815 / 210 · 2020–2024 3,013 / 211. Station count halves while observation count falls by less — turnover, not merely decline.",
@@ -1837,7 +1837,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -1868,7 +1868,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "(quantisation): 62.1% of `oxy_bed` values sit exactly on a 0.1 mg/l grid and 75.0% on 0.05 — the residual is the median of an even count. Underlying raw is 0.1 mg/l. - Class 6 (absent dimension): no time-of-day column exists anywhere in the record. Diel oxygen swing aliases into whichever hour the boat went, per station, unrecoverably.",
@@ -1897,7 +1897,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The register does not supply what `I1` says it supplies. `data/raw/oda/stations.csv` (`latin-1`, 798,574 rows, 17 columns, 6,288 distinct `ObservationsstedNr`) matches only 34 of the 1,415 series stations. Worse, `StartDato` equals `SlutDato` on 796,990 rows (99.8%): the field holds a single visit date, not a station lifespan — class 4, schema conflation, a column named as a validity period carrying an event date. HYPOTHESES.md's \"Now held: the ODA register carries them\" is wrong. Presence must be derived from the observation record itself, as above. (Flagged, not edited here.)",
@@ -1927,7 +1927,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -1959,7 +1959,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -1990,7 +1990,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "On the classification circularity. The 293 / 481 summer/year-round split was made on each station's *whole* record, so a station that switched regime is labelled by its aggregate — contaminated by the very time-variation under test. This design avoids the problem rather than fixing it: the balanced panel is defined by presence, observable per era, and no behavioural label enters the primary test. Any secondary analysis wanting the regime label must assign it within era, which is feasible: 395 stations have ≥12 observations (all months) in ≥2 eras, 206 in ≥4, 33 in all 8. Report the switch rate before using a pooled label again.",
@@ -2018,7 +2018,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -2050,7 +2050,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",
@@ -2080,7 +2080,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "claim {ref:I1}": "I1: Changing station network",

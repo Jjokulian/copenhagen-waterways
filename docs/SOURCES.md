@@ -1485,7 +1485,7 @@ Imposes a diurnal oxygen cycle of stipulated amplitude on the real instants and 
 <a id="K-DQ-SIBLING-CVR"></a>
 ### The sibling project's CVR records, counted against the businesses in this project's joins
 
-`K-DQ-SIBLING-CVR` · covers data/derived/unlock.json · **current** · read by Claude (declared 2026-09-13 for the counts unlock.py writes from the sibling project's files: set sizes and intersections by CVR number; no company or person field kept), 2026-09-13
+`K-DQ-SIBLING-CVR` · covers data/derived/unlock.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts the CVR numbers in two of the sibling project's files, and how many of them its CVR extract answered.
 
@@ -1617,7 +1617,7 @@ Counts and totals of the outfall layers fetched from spildevandsdata.dk.
 <a id="K-DRAFTSA-TRIAGE"></a>
 ### Counts over the hypothesis triage
 
-`K-DRAFTSA-TRIAGE` · covers data/derived/triage.json · **current** · read by Claude (2026-09-14: scripts/triage_counts.py - no longer writes the number of groups, which meta_facts.py counts from the same register; every other count unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-DRAFTSA-TRIAGE` · covers data/derived/triage.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts the rows of the hypothesis triage by class, by register group and by the named clusters of blockers, against the hypothesis register.
 
@@ -1654,7 +1654,7 @@ Counts the monthly station panel, the soundings extract, the seabed sediment lay
 <a id="K-DS-FACTS"></a>
 ### Counts over the four ODA extracts
 
-`K-DS-FACTS` · covers data/derived/ds_facts.json · **current** · read by fork w1-ds (read ds_facts.py against every declared field: full rows only, formats.num parsing, the product check's tolerance, per-parameter factor counters, the lys note and blank counts, the maaledybde station medians, and the three thresholds stored beside their counts; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-DS-FACTS` · covers data/derived/ds_facts.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts and extremes over every row of the kemi, ctd, lys and maaledybde extracts, for the warnings on DATA_SOURCES.md.
 
@@ -1739,7 +1739,7 @@ The brief's station seasonality convention applied to every station of the month
 <a id="K-ENUMS"></a>
 ### Record and non-blank counts of the ODA extracts
 
-`K-ENUMS` · covers data/derived/enums.json · **current** · read by Claude research agent, main findings checked against the code by Claude (2026-09-10); not yet read by the project owner, 2026-09-10
+`K-ENUMS` · covers data/derived/enums.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 For every column of each named ODA extract, counts the distinct values (in full while the column looks categorical, as a reservoir-sampled numeric summary once it does not), the total number of records, and the number of records with a non-blank value in each column.
 
@@ -2132,7 +2132,7 @@ Facts the hypotheses page and its data page state about the national layers, the
 <a id="K-HYPOTHESES-EVIDENCE"></a>
 ### What the hypothesis register states about itself and the station register
 
-`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts the entries and groups of the hypothesis register as it is written, and two facts about the ODA station register that entry `I1` states: how many series stations the register carries, and on how many of its records the start date is the end date.
 
@@ -2479,7 +2479,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files), 2026-09-14
+`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -2565,7 +2565,7 @@ Reads the public PULS extract's outfall layers and summarises them.
 <a id="K-META-QUEUE"></a>
 ### How many registered sources there are, by friction and by what they are indexed by
 
-`K-META-QUEUE` · covers data/derived/fetch_queue.json · **current** · read by Claude (2026-09-13: classify() now takes NEGATED phrases - no login, no registration, no key, without authentication - out of the access text before the account test; nineteen sources moved from account to open and none moved otherwise; wording and fields read against the code), 2026-09-13
+`K-META-QUEUE` · covers data/derived/fetch_queue.json · **current** · read by Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared), 2026-09-14
 
 Counts over the source registers, sorted by how hard each source is to reach and by whether it is indexed by a place something was measured or by a region.
 

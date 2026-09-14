@@ -234,7 +234,8 @@
    "format": "CSV",
    "size": "small",
    "caveat": "E9 (PFAS) is testable in fish tissue at 19 stations and nowhere else in the Danish marine record. Note Neogobius melanostomus (round goby, an invasive) is one of the four monitored species, which incidentally dates its arrival at those stations.",
-   "verified": "2026-09-08, direct SOAP query"
+   "verified": "2026-09-08, direct SOAP query",
+   "fetched": "2026-09-14, by scripts/fetch_oda.py mfs_fisk with the period set to 1970-2026, into data/raw/oda/mfs_fisk.csv.gz: liver and muscle of flounder, eelpout, plaice, round goby and dab, PFAS among the substances from 2011. With the period set the topic offers far more stations than the count above, which was read in the default window (see ODA-STATION-COUNTS-CORRECTION)."
   },
   {
    "id": "ODA-BUNDFAUNA",

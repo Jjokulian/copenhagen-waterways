@@ -91,7 +91,7 @@ python3 scripts/unlock.py          # validates it, then runs what it unblocks
 
 **Shape.** `the ODA extract as downloaded - semicolon separated, ISO-8859-1, Parameter and Enhed columns preserved`
 
-**Who holds it.** <span class="claim" data-claim="C-DQ-W-MFS">Possibly this project: the register lists the topic behind a registration and a scripted extract, as for the ODA topics already fetched with this project's login, and it has not been fetched.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-W-MFS "What this claim rests on")</sup>
+**Who holds it.** <span class="claim" data-claim="C-DQ-W-MFS">This project, and it has: its ODA login opens the topic, and the extract is fetched and held, read with the same client and declared format as the other ODA extracts.</span><sup class="claim-mark">[†](CLAIMS.md#C-DQ-W-MFS "What this claim rests on")</sup>
 
 **Hypotheses waiting on it.** [E9](HYPOTHESES.md "PFAS and persistent novo-chemicals") [E7](openproblems/E7.md "Pesticides and degradation products") [E10](HYPOTHESES.md "Heavy metals") [F5](HYPOTHESES.md "Invasive species")
 

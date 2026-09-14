@@ -863,7 +863,7 @@
     "H-ML-EB-PAGE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nothing on this page is a finding about Danish water; every claim here is about what this project's methods can and cannot see",
@@ -894,7 +894,7 @@
     "H-ML-EB-PAGE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every other page argues about water",
@@ -927,7 +927,7 @@
     "U-ML-ZENG-TEXT"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "OSSEs are how agencies decide whether a proposed satellite or buoy array would earn its cost *before* it is built ([Hoffman & Atlas, *BAMS* 101(8), 2020](https://journals.ametsoc.org/view/journals/bams/101/8/bamsD190155.xml); [Fujii et al., *Frontiers in Marine Science*, 2019](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2019.00417/full)).",
@@ -962,7 +962,7 @@
     "U-ML-POWER"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The same logic under a different name is prospective power analysis, which is uncontroversial wherever an experiment has to be sized before it is run",
@@ -994,7 +994,7 @@
     "H-ML-EB-PAGE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "a simulation can only license claims about the instrument, never about the world. That line is drawn explicitly below, and anywhere it is crossed on another page is a bug worth reporting",
@@ -1027,7 +1027,7 @@
     "H-ML-EB-CELLS"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`scripts/detectable.py` takes the 91,093 real surface-oxygen visits in the water-chemistry extract - their true stations, dates and clock times - imposes a diurnal cycle of stipulated amplitude keyed to the sun's elevation, and runs the same estimator OPEN_PROBLEMS.md item 17 uses on the real data. It claims nothing about how the sea behaves. It asks only: *if it behaved this way, at this amplitude, would this schedule have found out?",
@@ -1064,7 +1064,7 @@
     "H-ML-EB-CELLS"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| imposed amplitude | recovered on the real hours | recovered if sampled round the clock | lost to the working day | |---:|---:|---:|---:| | 0.00 | 0.010 | 0.008 | — | | 0.02 | 0.008 | 0.008 | — | | 0.05 | 0.007 | 0.016 | — | | 0.10 | 0.008 | 0.032 | 76% | | 0.20 | 0.015 | 0.063 | 76% | | 0.50 | 0.042 | 0.156 | 73% | | 1.00 | 0.087 | 0.312 | 72% | | 2.00 | 0.179 | 0.623 | 71% | The working day costs about three quarters of a diurnal signal, and it costs it steadily across a hundredfold range of amplitudes. The same visits, the same stations, the same seasons - only the hour redrawn. That is the strongest result on this page, and it is very nearly assumption-free: no model of the sea enters the comparison of a schedule with itself.",
@@ -1098,7 +1098,7 @@
     "H-ML-EB-WHY"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It also settles something that had been asserted without evidence. OPEN_PROBLEMS.md said the 09:00-15:00 window is *why* the pre-dawn minimum is invisible. That was a plausible story. It is now a measured attenuation with a number on it",
@@ -1136,7 +1136,7 @@
     "H-ML-EB-TYPEDSPREAD"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The bound is softer and should be quoted as a range. Recovery crosses the 0.0294 mg/l actually observed somewhere between an imposed 0.2 and 0.5 mg/l, so the real surface diurnal amplitude is below roughly 0.35 to 0.5 mg/l. The coarse grid in the script reports the upper end; interpolating gives the lower",
@@ -1174,7 +1174,7 @@
     "H-ML-EB-UTC"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Noise is measured at 0.6286 mg/l, not assumed - see the circularity register below for why the first two attempts at that number were wrong",
@@ -1211,7 +1211,7 @@
     "U-ML-SINGLEBIN-CAUSE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "And the reason it cannot be seen at all Fixing the circularity produced a diagnostic worth more than the fix. Of 81,627 station-window cells, 80,445 - 98.5% - contain samples from only one sun-elevation bin. Within a station's own ten-day window, the water is almost always sampled at the same height of sun. That is a harder limit than a narrow working day. A fixed-effects estimator sees a diurnal signal only through *within-cell* contrast, and 98.5% of the cells have none to offer. Whatever the archive can say about the daily cycle rests on the remaining 1.5%. It also explains the three-quarters attenuation above mechanically rather than by analogy: the hours are not merely narrow, they are repeated",
@@ -1248,7 +1248,7 @@
     "H-ML-EB-UTC"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This schedule loses 75% of a signal of this shape.*",

@@ -74,6 +74,11 @@ TOPICS = {
                  "what": "Vandkemi / Næringsstof og Miljøfarligt stof"},
     "maaledybde": {"emne": "Emne_53_159",
                    "what": "Måledybde - Secchi depth paired with bottom depth"},
+    # MFS i biota / Fisk: contaminants in fish tissue, among them PFAS. Fetched on
+    # 2026-09-14 with the period set; the register's station count was read in the
+    # default window and is far below what the period-set query offers.
+    "mfs_fisk": {"emne": "Emne_52_130",
+                 "what": "MFS i biota / Fisk - contaminants in fish liver and muscle"},
 }
 
 

@@ -1244,7 +1244,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "There is no time-of-day column anywhere in the archive. Verified across all four ODA exports: `ctd.csv.gz` (34 fields), `lys.csv.gz` (30), `maaledybde.csv.gz` (19), `stations.csv` (17) — every temporal field is `YYYYMMDD`. Class 6, absent dimension: not recoverable, not boundable, not countable. `I3b` is unscoreable, not unsupported, and no result below speaks to it.",
@@ -1272,7 +1272,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two directions must be separated, because they push opposite ways and the data show they nearly cancel:",
@@ -1300,7 +1300,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Sparse programmes are not thin versions of dense ones — they are late-summer-targeted. Station-years with ≤3 near-bed oxygen months put 50.2% of their observations in August–September; station-years with ≥9 months are near-flat (7.2%–8.8% per month). Sparse sampling therefore *finds* hypoxia while having few chances to.",
@@ -1328,7 +1328,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "month index 0–560. Variable `oxy_bed`: 76,980 station-months, 11,289 station-years.",
@@ -1356,7 +1356,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "value error: 432 values ≤ 0 and 40 > 20 mg/l. Dropped; 76,508 retained.",
@@ -1384,7 +1384,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The complete visit register `data/raw/oda/maaledybde.csv.gz` (151,203 soundings, 1,429 stations, 1980–2026) has 50.9% of its 83,011 station-months carrying ≥2 distinct sampling days. Oxygen rows specifically, over a 6M-row prefix of `ctd.csv.gz` (992 stations, 31,539 station-months — a prefix, not a population estimate): 31.9%. So the monthly panel",
@@ -1412,7 +1412,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Visits per station-year, `oxy_bed`, all 11,289: 1→1,496 · 2→956 · 3→730 · 4→842 · 5→1,154 · 6→609 · 7→336 · 8→383 · 9→527 · 10→764 · 11→1,113 · 12→2,379. ## The null under the constraint I impose Constraint: station-years with all twelve calendar months present — 2,314 of 11,289. Effort is fixed at 12 and station composition is fixed inside each unit, so nothing is compared across differently-observed units.",
@@ -1441,7 +1441,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The null is computed, not assumed, and the naive one is wrong. Marginally, minima do *not* fall with visit count: median annual minimum is 4.73 mg/l at 3 visits and 6.30 at 12. A null of \"severity rises with count\" would be inverted by the window effect. Within the 2,314 fixed units, drawing month-sets from each station-year's own twelve values (200 Monte Carlo draws): | indicator on the same 2,314 station-years | mean min (mg/l) | P(min < 4) | |---|---|---| | min over all 12 months | 5.69 | 0.250 | | Emin over [3 months drawn at random] | 7.23 | 0.058 | | min over the fixed window {Jul, Aug, Sep} | 5.93 | 0.219 | Count alone moves exceedance by 4.3×; fixing the window to Jul–Sep recovers almost all of the 12-month signal from 3 draws. That table *is* the null: the per-station-year resampling distribution of the indicator, against which any observed path is scored.",
@@ -1469,7 +1469,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "all of Jul, Aug and Sep — 6,802 units; 8,771 have ≥2 of the three. 323 stations carry ≥10 such years, 225 carry ≥15, spanning 1980–2026 (789 / 2,411 / 2,006 / 1,697 / 1,091 by decade band).",
@@ -1497,7 +1497,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "already shown robust to effort and station composition here",
@@ -1525,7 +1525,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Test draft. Status: procedure specified and run once on bed oxygen; numbers below are that run, not a literature quote.",
@@ -1553,7 +1553,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This is true of every noisy series ever fitted and is not worth testing — see the null below, which produces it 100% of the time from nothing.",
@@ -1582,7 +1582,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "month index 0–560 = 1980-01 to 2026-09. Variable used: `oxy_bed`, near-bed oxygen in mg/l, 76,980 rows. Dropped 472 as impossible (432 at ≤ 0 mg/l, 40 above 20 mg/l; the raw range is −9.93 to 281.6) — error class 1, value error. Kept 76,508 rows on 1,325 stations.",
@@ -1610,7 +1610,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two further error classes are structural and are not fixed, only declared. The archive is already a monthly median per station — class 3, aggregation: within-month spread and the diel oxygen cycle are gone before I see the file, and there is no time-of-day column anywhere (class 6, absent dimension",
@@ -1638,7 +1638,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Constraint imposed: annual index years 1989–2025 (37 years; before 1989 fewer than 200 stations report per year, 2026 is a part-year of 819 rows), windows of ≥ 10 years, giving 406 admissible windows",
@@ -1666,7 +1666,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Sign-flipping windows occur in 100.0% of simulations, in every station set. Median slope range 0.104 mg/l/yr (pooled).",
@@ -1694,7 +1694,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| set | stations | full-window slope | ρ | obs. slope range | frac. positive | P(`H0` frac ≤ obs) | P(`H1` frac ≤ obs) | P(`H1` range ≥ obs) | |---|---|---|---|---|---|---|---|---| | pooled | 1,325 | −0.0064 | +0.35 | 0.112 | 0.145 | 0.023 | 0.150 | 0.360 | | core (≥20 yrs) | 186 | −0.0085 | +0.44 | 0.138 | 0.108 | 0.008 | 0.091 | 0.358 | | year-round (R<0.2) | 427 | −0.0052 | +0.50 | 0.105 | 0.170 | 0.049 | 0.177 | 0.436 | | summer-peaked (R>0.5) | 426 | −0.0035 | −0.15 | 0.171 | 0.352 | 0.246 | 0.448 | 0.429 | Slopes in mg/l/yr. Fitted slopes run from −0.054 to +0.084 (core set) — a 15-fold range crossing zero. With the end fixed at 2025 every start year gives a negative slope (−0.0085 at 1989, −0.054 at 2016); with the start fixed at 1989 the slope is +0.084 ending 1998 and −0.0085 ending 2025. The sign is set by the end year, not the start year.",
@@ -1722,7 +1722,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every dispersion statistic is consistent with `H1`. P(`H1` range ≥ observed) is 0.36–0.44 everywhere: one constant rate plus this series' own autocorrelation reproduces the whole surface.",
@@ -1751,7 +1751,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The summer-peaked share of `oxy_bed` station-months falls from 0.126 (1989–1994) to 0.035 (2015–2019) — the compositional shift is real and large in this variable. It is handled by re-running on a fixed 186-station core panel and on the 427 year-round stations separately; both give the same answer, and the core panel gives a *stronger* directional signal, not a weaker one. My Rayleigh classification (426 summer / 427 year-round) is computed on `oxy_bed` rows only and does not reproduce the project's 293 / 481 — treat the split as re-derived, not inherited.",
@@ -1779,7 +1779,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Repeating on `oxysat_bed` (64,493 rows, 449 dropped): the fraction of positive windows rises from 0.11–0.15 to 0.28–0.30, and the full-window slope is −0.015 %sat/yr. Moving from a concentration to a saturation ruler roughly doubles the sign ambiguity. Consistent with part of the mg/l decline being solubility, not oxygen supply. Not separated here.",
@@ -1807,7 +1807,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Licensed: for near-bed oxygen in this archive, `L3`'s strong reading is not established. The window-dependence is fully reproduced by one constant slope with matched autocorrelation, and the interesting asymmetry is the opposite of `L3`'s framing — start year barely matters, end year decides the sign.",
@@ -1835,7 +1835,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "is really about — this archive starts at 1980, after the loading peak, so it cannot test \"a trend measured from a peak",
@@ -1863,7 +1863,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "And a negative here does not license reporting a single slope: the fitted rate still ranges −0.054 to +0.084, so any published number needs its window and its `H1` interval printed beside it.",

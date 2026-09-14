@@ -175,12 +175,6 @@
    "detail": "Searched on 2026-09-11 all three register files for entries on overflow events: `SPILDEVANDSDATA` is annual per outfall with no per-event dates, `PULS` is not public, and the only per-event entry is `NYBORG-OVERLOEB`, Nyborg Forsyning's telemetry, which the register treats as request-only. No entry holds per-event overflow volumes for Copenhagen."
   },
   {
-   "id": "U-DQ-MFS-RAW",
-   "kind": "untraced",
-   "label": "Trail ends: the fish\\ntopic is not fetched",
-   "detail": "Listed `data/raw/oda/` on 2026-09-11: the `kemi`, `ctd`, `lys` and `maaledybde` extracts and station lists, and no fish-tissue topic. Whether this project's ODA login reaches the fish-tissue topic was not tried."
-  },
-  {
    "id": "U-DQ-DEPTHSURVEY",
    "kind": "untraced",
    "label": "Trail ends: the surveys\\nbehind the depth model",
@@ -217,6 +211,12 @@
    "detail": "The record's English note gives the year the scenarios were calculated.",
    "source": "FLOOD2012-CKAN",
    "said": "Based on calculations"
+  },
+  {
+   "id": "D-DQ-MFS-FISK",
+   "kind": "held",
+   "label": "The fish-tissue extract\\ndata/raw/oda/mfs_fisk.csv.gz",
+   "detail": "ODA's fish-tissue topic (MFS i biota / Fisk), fetched on 2026-09-14 by fetch_oda.py with the period set: contaminants in the liver and muscle of flounder, eelpout, plaice, round goby and dab, PFAS among them."
   }
  ],
  "claims": [
@@ -1231,27 +1231,28 @@
    "kind": "argued",
    "stance": "ours",
    "page": "IF_YOU_HAVE_THE_DATA.md",
-   "claim": "This project may reach the fish-tissue topic itself: the register lists it behind the same kind of registration and scripted extract as the ODA topics already fetched, and it has not been fetched.",
-   "because": "The register's access text; the fetched ODA extracts; the raw directory holds no fish-tissue topic, and the login was not tried on it.",
+   "claim": "This project can reach the fish-tissue topic, and has: its ODA login opens it and the extract is fetched and held, read with the same client and declared format as the other ODA extracts.",
+   "because": "The extract on disk and the fetch that wrote it; the client and the declared format are those of the other ODA extracts.",
    "rests_on": [
     "D-DQ-REGISTER",
-    "C-DS-ODA-EXTRACTS",
     "X-DQ-ODACLIENT",
-    "U-DQ-MFS-RAW"
+    "D-DQ-MFS-FISK",
+    "C-DS-ODA-EXTRACTS"
    ],
    "replaces": [
-    "C-DQ-OLD-WHO-MFS"
+    "C-DQ-OLD-WHO-MFS",
+    "C-DQ-OLD-W-MFS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dq (read the recorded wording on DATA_QUEUE.md, IF_YOU_HAVE_THE_DATA.md or data/flood2012/README.md against the register entry, its reasoning and every node under it: the entries in data_sources.json and data_sources_2.json, the code of fetch_queue.py, unlock.py, export_flood.py, floodmaps.py, depth_clock.py, oda_client.py, terraincheck.py, fetch_satellite.py and fetch_cmems.py, the values in fetch_queue.json, observing.json, triage.json, socialcontext.json, enums.json, depth_clock.json, floodgap.json and the flood manifest, an exported raster read pixel by pixel, and every quoted phrase found in its pinned text by the engine and read in context by hand; retired passages read at their commit; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: ODA's fish-tissue topic was fetched with this project's login and E9 moved from blocked on a fetch to testable now, its PFAS data held; the counts of those two classes each moved by one on the pages that print them, and the claim on who can unlock the topic now says it has been. Each stale claim read after the rebuild: the wording differs only in those counts or that fact, and what each rests on still holds)",
     "saw": {
-     "said on IF_YOU_HAVE_THE_DATA.md": "Possibly this project: the register lists the topic behind a registration and a scripted extract, as for the ODA topics already fetched with this project's login, and it has not been fetched.",
-     "texts": "fc627464b7009d25",
+     "said on IF_YOU_HAVE_THE_DATA.md": "This project, and it has: its ODA login opens the topic, and the extract is fetched and held, read with the same client and declared format as the other ODA extracts.",
+     "texts": "d8bb9abfea3d10ca",
      "node D-DQ-REGISTER": "576a124afef5c26d",
-     "rests on C-DS-ODA-EXTRACTS": "da94acda32437326",
      "node X-DQ-ODACLIENT": "963c6c5fecde0723",
-     "node U-DQ-MFS-RAW": "ccd07e14aaee3793"
+     "node D-DQ-MFS-FISK": "8a2b42a8a513b0f8",
+     "rests on C-DS-ODA-EXTRACTS": "da94acda32437326"
     }
    }
   },
@@ -2053,7 +2054,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The source register records what exists. It does not say what to do on Monday. This is the same information sorted by friction: what can be downloaded now, what is behind a credential we already hold, what needs a free registration nobody has done, and what is genuinely closed.",
@@ -2081,7 +2082,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "API token on this machine, orthophoto WMS verified",
@@ -2111,7 +2112,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A form and an email address. Nothing is being withheld; it just has not been done.",
@@ -2140,7 +2141,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Request-only, FOI, institutional provisioning, or unverified. These are the ones worth arguing about publicly, because for several of them the measurement exists and the public cannot see it.",
@@ -2168,7 +2169,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nothing here is stored at an administrative unit — not per water body, not per catchment, not per municipality, not per sub-basin. Everything is carried at the resolution it was taken: a position, a time, and where it exists a depth.",
@@ -2196,7 +2197,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is not fastidiousness. OBSERVING.md establishes that a water body explains 7.9% of the variation in the one variable Denmark measures densely enough to check, and that two stations inside one share about four percent of their year-to-year variance. A source already summed into those polygons would carry the assumption straight back in, and everything computed from it would inherit a unit we had just shown is not one.",
@@ -2225,7 +2226,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The region-indexed sources are often the only version that exists, and several matter a great deal — the monthly nutrient input series is per marine reference polygon, and there is no per-outfall alternative. They enter the panel labelled as somebody's aggregate of a measurement, and never as the measurement.",
@@ -2253,7 +2254,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Several entries in the last tier matter more than anything in the first — per-event overflow volumes, monthly trawling effort, and marine phytoplankton species counts are each closed, and each of them would settle a hypothesis that currently cannot be ranked at all.",
@@ -2281,7 +2282,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every input this project could use is in one of three states, and the system is written for all three rather than for the one it happens to have. That ordering matters: an analysis written against the data on hand is worth only what that data is worth, but an analysis written against a stated contract runs on whatever arrives, and says what it could not do.",
@@ -2309,7 +2310,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What is published here is the degraded run of a system built for the first column. That is the claim worth arguing with. Not *this is what the open data supports* - which invites the reply that the data is poor and the conclusions are therefore soft - but *this is the analysis, here is the contract it consumes, and here is what it currently has to eat.* Hand it better input and the same code produces a better answer without anyone rewriting an argument. Where the answer would change, it changes in public.",
@@ -2337,7 +2338,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The pattern is not aspirational. Section 2c of NITROGEN.md had been written for months and rendered nothing, because the file it needed did not exist; the day that file was first produced, the section appeared with its numbers in it and no prose was written to make that happen.",
@@ -2363,7 +2364,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "an earlier hand-written version of this page still named ODA `vandkemi` as the* *top blocker after it had been fetched, and still said no clock time existed in* *the archive after the water-chemistry topic turned out to carry one on 100.0%* *of 1,805,827 rows.",
@@ -2392,7 +2393,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This project is run from open data by someone with no institutional credentials. A large part of what it cannot answer is not hard - it is gated. If you hold a utility login, a field sheet, a drainage archive or a service agreement, you can unblock in an afternoon what this cannot unblock at all.",
@@ -2420,7 +2421,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What changes is that the pages regenerate with your data in them, and you can see whether it moves any conclusion - which is the only thing worth knowing.",
@@ -2448,7 +2449,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Overflow as a measurement rather than a model. Every overflow figure on this site is a registered or modelled volume; none has been compared with a metered one.",
@@ -2476,7 +2477,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "HOFOR, BIOFOS and other utilities; Miljoestyrelsen through PULS",
@@ -2504,7 +2505,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Point-source load beside the diffuse residual, at the resolution the residual is computed against.",
@@ -2533,7 +2534,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The surface-versus-drain routing fraction as a mapped quantity instead of a single national dial. Tile-drained land bypasses the riparian zone and most of the denitrification, so this is the term between field surplus and delivered load.",
@@ -2561,7 +2562,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Aarhus Universitet DCA; Miljoestyrelsen; Danmarks Arealinformation",
@@ -2589,7 +2590,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The sibling project danish-livestock holds a 14,222-row subset; the bulk register would complete it.",
@@ -2617,7 +2618,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Erhvervsstyrelsen agreement, or a working Datafordeler subscription",
@@ -2645,7 +2646,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Marine toxicant loading, currently unscoreable: 7 hypotheses turn on whether contaminants rather than nutrients gate recovery.",
@@ -2673,7 +2674,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "anyone with an ODA login and the MFS topics enabled",
@@ -2701,7 +2702,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A real hydraulic model of the Copenhagen sewer instead of a catchment-level spill estimate. Without pipe geometry and connectivity, overflow can be predicted as whether and roughly how much, never as when within an event - and the timing is where the flush dynamic lives.",
@@ -2729,7 +2730,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ledningsejerregistret; the utilities that own the lines; Klimadatastyrelsen provisions access",
@@ -2757,7 +2758,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Provisioned for excavation safety. Whether a given access covers hydraulic analysis is the holder's question, not this project's - it is recorded here because the data would answer the question, which is a separate fact from whether anyone may ask it that way.",
@@ -2785,7 +2786,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The comparison this project cannot make: its own predicted spill against a calibrated commercial model of the same network. Agreement would validate a method that needs no pipe data; disagreement would localise exactly where topography stops being enough.",
@@ -2813,7 +2814,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "HOFOR, BIOFOS and the consultancies that built the models",
@@ -2841,7 +2842,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Landbrugsstyrelsen; the parties to the agreements",
@@ -2869,7 +2870,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Bed morphology at the scale that decides where resuspension and sulphidic sediment actually sit. The public depth model is too coarse to separate a trawled furrow from a natural hollow.",
@@ -2897,7 +2898,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Soevaernet and the national hydrographic survey; some holdings are restricted",
@@ -2923,7 +2924,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Some of this is restricted for reasons that have nothing to do with the environment. Recorded because it is useful, not because it is available.",
@@ -2951,7 +2952,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A clock on oxygen AT DEPTH. The water-chemistry topic carries a time on every row and CTD carries none, so 53.7M profile measurements have a date and no hour. 66% of the CTD measurements the depth analysis keeps can borrow a time from a same-day bottle whose clock is observed; the field sheets would settle the rest and check that borrowing.",
@@ -2979,7 +2980,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The analysis is already written. `scripts/depth_clock.py` runs today on the best clock available and will use yours the moment the file is here - nobody has to write anything for your data to be used, and you can see at once whether it changes the answer.",
@@ -3008,7 +3009,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ordered by friction, then by how many hypotheses each serves. *Held* means a credential this project already has and simply has not spent; *account* means a free registration nobody has done; *blocked* means not open.",
@@ -3036,7 +3037,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "gated sources, 10 with a slot.",
@@ -3065,7 +3066,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Modelled inundation depth for a 100-year rainfall event on the 2010 city, from Københavns Kommune's Skybrudsplan. Recovered from the 7 published PDF sheets, whose geospatial metadata had been stripped, and placed back on the map.",
@@ -3093,7 +3094,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The matching `.pgw` world file and `.prj` sit beside it, so it lands in the right place in `EPSG:4326` with no further steps.",
@@ -3121,7 +3122,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Pixel values are depth bands, not metres: | value | depth | |---|---| | `1` | 0.05–0.1 m | | `2` | 0.1–0.2 m | | `3` | 0.2–0.5 m | | `4` | 0.5–1 m | | `5` | 1–2 m | | `6` | over 2 m | | `0` | no modelled flooding, or outside the sheet",
@@ -3149,7 +3150,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Position: an ensemble water cross-correlation for 3 sheets; control points located on a web map by a resident for 4; then sheet-to-sheet image registration on masked gradient images and a bundle adjustment over the sheets that overlap usefully.",
@@ -3177,7 +3178,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nordhavn, most of Ørestad, Sluseholmen and Teglholmen, and much of Refshaleøen have been built since and are not in it - 344 ha of today's impervious surface, 8.1% of the city, lies outside every sheet.",
@@ -3205,11 +3206,39 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The sheets paint depth over lakes and the harbour as well as over land.",
      "texts": "1f0c99671c7b5907"
+    }
+   }
+  },
+  {
+   "id": "C-DQ-OLD-W-MFS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-DQ-W-MFS` on IF_YOU_HAVE_THE_DATA.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "IF_YOU_HAVE_THE_DATA.md",
+    "commit": "16cfb69",
+    "file": "docs/IF_YOU_HAVE_THE_DATA.md",
+    "begin": "Possibly this project: the register lists the topic behind",
+    "end": "and it has not been fetched.",
+    "why": "The fish-tissue topic has since been fetched with this project's ODA login; the claim said it had not been, and the login had not been tried on it."
+   },
+   "replaced_by": [
+    "C-DQ-W-MFS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-15",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Possibly this project: the register lists the topic behind a registration and a scripted extract, as for the ODA topics already fetched with this project's login, and it has not been fetched.",
+     "texts": "265bc4584bf758b5"
     }
    }
   }

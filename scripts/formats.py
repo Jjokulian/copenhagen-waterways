@@ -103,7 +103,10 @@ FORMATS = {
                   "server returns only the currently active network.",
                   "Column count varies across rows in a few thousandths of a "
                   "percent; those rows must be skipped, not read at shifted "
-                  "offsets."],
+                  "offsets.",
+                  "MFS i biota: the below-detection flag is in `Attribut`, not "
+                  "`ResultatAttribut`; '<' marks a value under the detection limit, "
+                  "which is the number in `Resultat`."],
     },
     "geojson_dk": {
         "what": "Danish national GeoJSON layers (vandplandata, MiljøGIS)",

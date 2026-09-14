@@ -3952,6 +3952,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-DQ-U-COUNT`](CLAIMS.md#C-DQ-U-COUNT) — each opens what it rests on.
 
+<a id="C-DQ-OLD-W-MFS"></a>
+### The earlier wording of `C-DQ-W-MFS` on IF_YOU_HAVE_THE_DATA.md.
+
+`C-DQ-OLD-W-MFS` · retired 2026-09-14 from [IF_YOU_HAVE_THE_DATA.md](IF_YOU_HAVE_THE_DATA.md) · as published in `16cfb69`
+
+> <span class="claim" data-claim="C-DQ-OLD-W-MFS">Possibly this project: the register lists the topic behind a registration and a scripted extract, as for the ODA topics already fetched with this project's login, and it has not been fetched.</span><sup class="claim-mark">[†](ARCHIVE.md#C-DQ-OLD-W-MFS "What this claim rests on")</sup>
+
+**Why it was retired:** The fish-tissue topic has since been fetched with this project's ODA login; the claim said it had not been, and the login had not been tried on it.
+
+**Replaced by:** [`C-DQ-W-MFS`](CLAIMS.md#C-DQ-W-MFS) — each opens what it rests on.
+
 <a id="C-DQ-OLD-WHO-BATHY"></a>
 ### Finer bathymetry is held by Soevaernet and the hydrographic survey, some of it restricted.
 

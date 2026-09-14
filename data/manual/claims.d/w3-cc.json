@@ -2119,7 +2119,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Pre-registered windows, from a bolus crossing ~350 km of bed at a few cm s⁻¹ with a stall in the Bornholm Basin: strait bed 0–2 months, Arkona 0–3, Bornholm 1–6, Gotland salinity 3–15, Gotland oxygen 3–18 decaying over 1–3 years. The lag structure is asserted, not fitted; the test is whether the peaks fall in it, in order.",
@@ -2147,7 +2147,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "If both rise together it is barotropic exchange with no stratification consequence, and `C4`'s \"strengthens stratification above them\" clause fails at the Danish end.",
@@ -2175,7 +2175,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "same, values | — | `oxy_bed`: 14 < 0, 40 > 20 mg/l — impossible. `sal_bed`: 56 exact zeros, 4 > 36 ‰ | `1`; `4` where saturation-% rows sit in an mg/l column",
@@ -2203,7 +2203,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "stations carry a depth | `5` (253 of 925 box stations have none",
@@ -2231,7 +2231,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "valid profiles, `oxy` 226 (2005-11→2024-12). Title *\"from Observations Reprocessing",
@@ -2260,7 +2260,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "naive read does not mask it — the 2012 annual mean at −200 m then computes as 8.3×10³⁴. (b) `docs/data/baltic/gotland.json` labels `oxy` mg/l and its `_provenance` calls the product a reanalysis; the source netCDF declares units `0.001` (volume fraction ⇒ ml l⁻¹) and *Observations Reprocessing*. The established 0.05 / 1.38 / 1.11 / 0.36 / 0.05 for 2014–2018 reproduce exactly as annual maxima at −200 m in native units (×1.429 for mg l⁻¹).",
@@ -2290,7 +2290,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Station panel (verified). Box 10–15 °E, 54–56.5 °N: 925 stations, 672 with a bottom depth, 151 with median depth ≥ 20 m, 20 with ≥ 120 monthly `sal_bed` medians in 1993–2024 (120–381; 4,822 station-months). Month-of-year counts Jan→Dec: [306, 309, 315, 310, 322, 341, 501, 547, 541, 533, 486, 311] — a 2:1 summer sampling bias, and the reason a month-matched null is mandatory.",
@@ -2319,7 +2319,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Event index (built and run here). Eastward u at 55.0 °N/16.0 °E, daily mean, 10-day running sum as the westerly burst × the preceding 35-day easterly deficit (5-day gap) as preconditioning. Winter maxima rank 2002/03 first (peak window ending 2003-01-18) and 2014/15 second (ending 2014-12-20). Without the preconditioning term 2014/15 ranks only seventh — preconditioning is not optional. Whether those winters are the events they appear to be cannot be confirmed in-repo: the IOW record is not held and I will not assert dates from memory.",
@@ -2347,7 +2347,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "I compare one strait composite against one Gotland series over 1995–2024. Under that constraint the usual quoted null — \"significant at n = 360 months\" — is wrong by an order of magnitude: Gotland deep salinity is a slow reservoir with effective sample size of order ten. Compute, do not quote.",
@@ -2375,7 +2375,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "circular shift of the event index by whole years, 31 non-zero shifts over 1993–2024. Whole years preserve event seasonality, the summer sampling bias and every series' autocorrelation; only the alignment dies. p floor 1/32 = 0.031 — state it, never exceed it.",
@@ -2403,7 +2403,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Fourier phase-randomised surrogates of each response, preserving spectrum and marginal. Continuous p, but it Gaussianises inflow's pulse-like character. `N1` and `N2` bound the answer from two sides; take the more conservative.",
@@ -2431,7 +2431,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "take the more conservative. - The 20 stations are not 20 replicates — they are 20 positions in one hydrographic regime. The statistic is the median across positions of a per-station z-anomaly, the panel shifts as one, and the null is over time only: cross-station spread buys precision, not degrees of freedom. Not a water-body aggregation — positions are listed individually under a stated depth-and-box rule, and the sensitivity run is 20 single-station fits reported as a *distribution of lags*, not 20 tests. If only the composite shows the signal, the composite made it.",
@@ -2459,7 +2459,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Statistic: Kendall τ of peak lag against along-path distance (Belts 0 km, Arkona ~120, Bornholm ~230, Gotland ~380). 6. Recompute τ under",
@@ -2488,7 +2488,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Otherwise weak corroboration, capped at p ≈ 0.03. Would not. (a) The effective event count is 2–3, not 360 months; no effect size is estimable, and the Gotland *oxygen* limb (2005-11→2024-12) holds at most one large event — n ≈ 1, no p at all, reportable only as narrative.",
@@ -2516,7 +2516,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the straits are the valve for a basin whose deep water Denmark does not produce, so a ventilated Gotland Deep does not transfer to Danish coastal deficit, and this design cannot make it.",
@@ -2544,7 +2544,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "replacing a self-built proxy with the published chronology `C4` names and turning the §2 coincidence at 2003-01-18 and 2014-12-20 from suggestive into checked.",
@@ -2572,7 +2572,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the counts were verified by reading the files.",
@@ -2600,7 +2600,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "stations, months 0–560 (Jan 1980 – Sep 2026). Near-bed:",
@@ -2630,7 +2630,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Triple join `oxy_bed ∩ temp_bed ∩ sal_bed`: 76,349; after a plausibility filter (0 ≤ O ≤ 20, −2 ≤ T ≤ 30, 0 ≤ S ≤ 40): 76,305 rows over 1,314 stations, 44 dropped. - Cells = (station × calendar month). With ≥ 8 distinct years: 3,282 cells, 63,262 rows, 395 stations. With ≥ 3: 5,129 / 71,750 / 641. With ≥ 10: 2,837 / 59,512 / 345. - Within-cell SD of `temp_bed`: median 1.55 °C (q10 1.03, q90 2.26) — real leverage.",
@@ -2656,7 +2656,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Reproduced prior work on this join: `O < 4 mg/l` monthly rate 0.0090 (Feb) → 0.2119 (Sep), 23.6-fold; recomputed `< 30 %` saturation 15.5-fold; median `temp_bed` 3.3 °C (Feb) / 16.4 °C (Aug).",
@@ -2684,7 +2684,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Reference for the subsidiary claim: an *equal-rate* deficit flag `D > 5.13 mg/l` (same 8.47 % overall rate) is 13.9-fold seasonally, and 90.2 % of `O < 4` station-months also exceed it. The two statistics differ at the margin, not in bulk.",
@@ -2712,7 +2712,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "value errors — `oxy_bed` spans −9.93 to 281.6 mg/l, `oxysat_bed` to 3292 %, `temp_surf` to 80.3 °C; the filter removes 44 of the join.",
@@ -2740,7 +2740,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "an earlier sample put it at 119,496 of 141,731); where it is, ±0.05 °C → ±0.015 mg/l in `C_sat` (|dC_sat/dT| = 0.29 at 4 °C, 0.18 at 16 °C), negligible against a deficit that reaches 14.6 mg/l. (3) aggregation",
@@ -2768,7 +2768,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "unfilled — 12,736 `oxy_bed` cells carry no saturation; `SondeNavn` is `999 - Ukendt` on the raw rows inspected.",
@@ -2796,7 +2796,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Oxygen has a diel cycle, and sampling hour plausibly covaries with season (short winter days compress sampling toward midday). The confound has the *same sign* as the hypothesis.",
@@ -2825,7 +2825,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Archived `oxysat_bed` is computed from O, T and S; using it as the outcome against T as the regressor would be circular, so it is never the outcome here. It is used once as a check: recomputed Weiss saturation matches the archived value to a median 0.33 percentage points, r = 0.9948, n = 63,638 — so the archive's saturation rests on essentially the same solubility function and `D` adds no second, rival model.",
@@ -2853,7 +2853,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "contains T through `C_sat` deliberately — that is the *removal* of the solubility channel, not circularity, because Weiss is exact and external to this dataset.",
@@ -2881,7 +2881,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "residual risk is errors-in-variables: an error ε in T enters `D` with slope −0.18 to −0.29 and the regressor with slope +1, so it induces a negative spurious slope. The test is therefore conservative in the direction that matters; with σ_ε ≈ 0.05 °C against σ_T = 1.55 °C the attenuation is ~0.1 %. Salinity is computed from conductivity and temperature, so it carries T error too, but dC_sat/dS = −0.055 mg/l per psu — a 0.05 °C error propagates to under 0.001 mg/l. Negligible.",
@@ -2909,7 +2909,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "filter as above → 76,305 rows. 2. Compute `C_sat` (Weiss) and `D`. Keep cells with ≥ 8 years (3,282 cells).",
@@ -2937,7 +2937,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "so that forty years of warming meeting forty years of changing nutrient load cannot manufacture β̂.",
@@ -2965,7 +2965,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Subsidiary: per station, flag rate under `O < 4` and under `D > 5.13`; Spearman ρ over 1,314 stations; count stations flagged by one and not the other.",
@@ -2993,7 +2993,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "warm within-month anomalies co-occur with weak wind and stronger stratification, so the deficit may be failed ventilation rather than `Q10`. It cannot calibrate",
@@ -3019,7 +3019,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Numbers shown as quotations are carried from this page as committed at `c601feb`: nothing in the repository stores them yet, so each says what the page said, not that it was re-derived.",
@@ -3045,7 +3045,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The data (counts verified here)",
@@ -3073,7 +3073,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "an event should raise `sal_bed` without raising `sal_surf`.",
@@ -3102,7 +3102,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "or the ordering statistic (Kendall τ of peak lag against along-path distance) lies inside",
@@ -3131,7 +3131,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Layout checked: last offset + 84,668×8 = 5,435,376 = file size | `3` (median; \"near the bed\" is a bin of varying depth), `6` (no time-of-day)",
@@ -3159,7 +3159,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`sob_ark`, `sob_bor` | 11,688 daily, 1993-01-01→2024-12-31, 0 missing. Title *\"from Reanalysis\"*, `BALTICSEA_MULTIYEAR_PHY_003_011` | 7 — model, not datum",
@@ -3187,7 +3187,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`so`,`to`,`oxy` × 240 depths | 385 steps; `so`/`to` 383 valid profiles, `oxy` 226 (2005-11→2024-12). Title *\"from Observations Reprocessing\"*, `INSITU_BAL_..._013_032` | `3` (regridded monthly / 1 m from discrete casts",
@@ -3216,7 +3216,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "wind_baltic_{n,c,s}.json` | hourly 10 m wind | 271,752 rows each, 1995-01-01→2025-12-31, 0 NaN; points 55.0/16.0, 57.0/19.0, 59.5/21.0 | `7`; `6` — *no point over the Kattegat or the Belts",
@@ -3244,7 +3244,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "IOW/Mohrholz MBI list | the published inflow record | Not held — `DATA_QUEUE.md:49` queues it for",
@@ -3272,7 +3272,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two defects found while verifying; do not inherit them.",
@@ -3300,7 +3300,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Same for `sob_ark`/`sob_bor` (monthly means) and Gotland `so`/`oxy` at −200 m, after masking > 1e30, in native units.",
@@ -3328,7 +3328,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "biphasic check on `oxy_bed`.",
@@ -3356,7 +3356,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A clean falsification if the order breaks — cheap, and the statistic is robust to every calibration error in",
@@ -3384,7 +3384,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Salinity is computed from conductivity and temperature, saturation from oxygen, temperature and salinity: `sal_bed`, `temp_bed`, `oxysat_bed` are one piece of evidence, not three.",
@@ -3412,7 +3412,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Smallest improvement: fetch the IOW/Mohrholz MBI statistics (`DATA_QUEUE.md:49`), replacing a self-built proxy",
@@ -3438,7 +3438,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Numbers shown as quotations are carried from this page as committed at `680eccf`: nothing in the repository stores them yet, so each says what the page said, not that it was re-derived.",
@@ -3466,7 +3466,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Subsidiary claim about the regulated statistic: *the `< 4 mg/l` flag ranks stations by consumption, not by ceiling height.",
@@ -3494,7 +3494,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Data, with verified counts",
@@ -3527,7 +3527,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Error classes present. (1) value errors — `oxy_bed` spans −9.93 to 281.6 mg/l, `oxysat_bed` to 3292 %, `temp_surf` to 80.3 °C; the filter removes 44 of the join. (2) quantisation — raw `Temperatur` is written with at most one decimal on 1,076,874 of 7,501,421 rows over the whole extract (14%; an earlier sample put it at 119,496 of 141,731); where it is, ±0.05 °C → ±0.015 mg/l in `C_sat` (|dC_sat/dT| = 0.29 at 4 °C, 0.18 at 16 °C), negligible against a deficit that reaches 14.6 mg/l. (3) aggregation — these are monthly *medians*, and \"near the bed\" is itself a within-cast selection, so the T, S and O medians of one station-month need not come from the same cast. (5) unfilled — 12,736 `oxy_bed` cells carry no saturation; `SondeNavn` is `999 - Ukendt` on the raw rows inspected. (6) absent dimension — see below. (7) is avoided: the unit is a station, never a water body. Class 6, stated not ignored.",
@@ -3555,7 +3555,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "streaming `ctd.csv.gz` (449 MB gz), removing the class-3 pairing gap.",
@@ -3584,7 +3584,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "ventilation timescale this archive does not record (class 6). It says nothing about water bodies.",

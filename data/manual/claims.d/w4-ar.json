@@ -1022,7 +1022,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This page refuses the aggregate. One record per marine water body: what presses on it, what is observed in it, over which years each of those streams exists, and what cannot be modelled there.",
@@ -1050,7 +1050,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Assignment is by nearest point on the marine boundary, one rule for every layer, with the largest distance kept for each layer in each area and anything beyond 20 km dropped.",
@@ -1078,7 +1078,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The part of it this page can place in water bodies is the station series behind the partition tests below — 1,415 stations with a monthly record, 1,313 of them inside a water body by point in polygon — and 119 of the 123 water bodies contain at least one of those. Counted over that series: 4 water bodies contain no station with data in 2 or more distinct years, 10 water bodies contain no station with data in 5 or more distinct years, 12 water bodies contain no station with data in 10 or more distinct years.",
@@ -1106,7 +1106,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A partition is not right or wrong in general; it is predictive *for a variable*. So the question is what the water bodies encode. The statistic, computed within month by `scripts/partition_score.py`, is a ratio of mean squares: the between-basket mean square over the sum of the between- and within-basket mean squares. One means stations in the same basket agree completely. With labels that carry no information both mean squares estimate the same variance and the ratio sits near one half, not zero — so no value in the table below can be read on its own, only its difference from a null.",
@@ -1134,7 +1134,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Within month is essential. Every station in Denmark shares a season, so pooling across months puts the seasonal signal into the between-basket term and makes every partition look excellent, including an absurd one.",
@@ -1163,7 +1163,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The result depends almost entirely on what it is compared against, and three reasonable comparisons give three different rankings.† | variable | real | shuffled | latitude stripes | size- and shape-matched | lift over the last | spread of its three runs | |---|---:|---:|---:|---:|---:|---:| | surface oxygen saturation | 0.924 | 0.859 | 0.516 | 0.522 | +0.402 | 0.178 | | surface oxygen | 0.878 | 0.782 | 0.550 | 0.595 | +0.283 | 0.111 | | bed oxygen saturation | 0.810 | 0.658 | 0.585 | 0.672 | +0.138 | 0.034 | | surface salinity | 0.968 | 0.531 | 0.679 | 0.844 | +0.124 | 0.065 | | bed salinity | 0.916 | 0.538 | 0.640 | 0.798 | +0.118 | 0.035 | | surface temperature | 0.830 | 0.510 | 0.618 | 0.734 | +0.096 | 0.039 | | bed oxygen | 0.790 | 0.639 | 0.602 | 0.698 | +0.092 | 0.012 | | bed temperature | 0.810 | 0.523 | 0.625 | 0.766 | +0.044 | 0.035 | | whole cast fluorescence (chlorophyll proxy) | 0.725 | 0.404 | 0.564 | 0.775 | -0.050 | 0.109 |",
@@ -1191,7 +1191,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The three nulls answer three different questions. Shuffled permutes station labels while keeping basket sizes, so it destroys geography and keeps the size structure. Latitude stripes are equal-count horizontal bands, as many as there are real baskets, so they keep compactness and equal sizes but ignore hydrography. Size- and shape-matched baskets have the same size distribution as the real ones and are grown from random seeds by nearest neighbour, three times over, so they are compact blobs of the right sizes following no hydrography at all — the only control that varies one thing at a time.† Against the shuffle, salinity gains most, by a distance; against the stripes, surface oxygen saturation does.",
@@ -1220,7 +1220,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Against the matched blobs the ordering reverses: surface oxygen saturation gains most (+0.402), surface salinity little (+0.124), and fluorescence's lift is below zero (-0.050) — but the three blob runs themselves spread by 0.109 for fluorescence, so for it the official partition does no better than random compact blobs, and whether it does worse is not shown.",
@@ -1248,7 +1248,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One reading fits these numbers, and it is not tested here: if salinity is spatially smooth, any compact grouping predicts it well (0.844 from random blobs) and the real boundaries have little left to add; if oxygen is spatially rough, blobs do poorly and boundaries that follow enclosure carry real information.† A partition's value is not how well it predicts, but how much better it predicts than its own shape alone would",
@@ -1274,7 +1274,7 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One further limit bounding every row: stations are not placed at random and are far denser in some baskets than others, so this scores the partition *as sampled*. It cannot distinguish a well-drawn basket from one whose stations happen to sit close together.",
@@ -1302,7 +1302,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A national time series has one unit of replication. The water bodies with two or more bathing stations number 65, so an effect size can be estimated across them.",
@@ -1330,7 +1330,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| predictor | outcome | r | $R^2$ | areas | |---|---|---:|---:|---:| | `log10(1+outfalls_per_km2)` | sub_excellent | +0.149 | 0.022 | 65 | | `log10(1+outfalls_per_km2)` | mean_score | -0.136 | 0.019 | 65 | | `log10(1+pe_per_km2)` | sub_excellent | +0.313 | 0.098 | 65 | | `log10(1+pe_per_km2)` | mean_score | -0.288 | 0.083 | 65 | | `log10(1+basin_m3_per_km2)` | sub_excellent | +0.139 | 0.019 | 65 | | `log10(1+basin_m3_per_km2)` | mean_score | -0.151 | 0.023 | 65 |",
@@ -1358,7 +1358,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`model` — a DHI statistical model, as described above (DCE fitted its statistical models on 1990–2012). `bath` — bathing stations, and the years they span. `r` — the mean correlation between the yearly classes of a water body's informative bathing stations, where there are three or more. `RBU` — rain-conditioned outfalls. `PE` — approved treatment-plant load. `gaps` — the number of written-out reasons this area cannot be modelled.",
@@ -1387,7 +1387,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| km² | area | model | bath (years) | r | RBU | PE | gaps | |---:|---|:-:|---|---:|---:|---:|---:| | 4,248.6 | `Skagerrak, 12 sm` | · | — | — | — | — | 4 | | 3,831.4 | `Bornholm, 12 sm` | · | — | — | — | — | 4 | | 3,703.1 | `Vesterhavet, 12 sm` | · | — | — | — | — | 4 | | 2,495.8 | `Nordlige Kattegat, 12 sm` | · | — | — | — | — | 4 | | 1,880.8 | `Østersøen, 12 sm` | · | — | — | — | — | 4 | | 1,835.6 | Århus Bugt syd, Samsø og Nordlige Bælthav | · | 30 (1991–2018) | +0.12 | 130 | 72,413 | 2 | | 1,766.8 | `Kattegat, SV 12 sm` | · | — | — | — | — | 4 | | 1,526.1 | `Anholt, 12 sm` | · | — | — | — | — | 4 | | 1,315.8 | `Kattegat, SØ 12 sm` | · | — | — | — | — | 4 | | 1,217.9 | Smålandsfarvandet, åbne del | · | 27 (1991–2018) | +0.22 | 64 | 43,945 | 2 | | 1,148.6 | Lillebælt, syd | ✓ | 26 (1991–2018) | +0.19 | 118 | 115,906 | 1 | | 1,052.5 | Kattegat, Aalborg Bugt | · | 14 (1991–2018) | +0.36 | 117 | 88,955 | 2 | | 990.7 | Skagerrak | · | 33 (1991–2018) | +0.16 | 419 | 481,197 | 2 | | 821.0 | Sejerø Bugt | · | 27 (1991–2018) | +0.24 | 104 | 71,550 | 2 | | 721.2 | Kattegat, Nordsjælland | · | 34 (1991–2018) | +0.27 | 295 | 205,544 | 2 | | 686.8 | `Storebælt, nord 12 sm` | · | — | — | — | — | 4 | | 655.2 | Vesterhavet, syd | · | 12 (1991–2018) | — | 3 | — | 3 | | 609.4 | Kattegat, Læsø | · | 6 (1991–2018) | +0.23 | 6 | 3,860 | 2 | | 572.6 | `Storebælt, syd 12 sm` | · | — | — | — | — | 4 | | 562.4 | Køge Bugt | · | 29 (1991–2018) | +0.21 | 865 | 681,555 | 2 | | 554.6 | `Kattegat, Nordsjælland >20 m` | · | — | — | — | — | 4 | | 551.0 | Fakse Bugt | · | 13 (1991–2018) | +0.18 | 78 | 152,578 | 2 | | 497.0 | `Femerbælt, 12 sm` | · | — | — | — | — | 3 | | 482.2 | `Lillebælt, syd 12 sm` | · | — | — | — | — | 3 | | 459.5 | Hevring Bugt | · | 17 (1991–2018) | +0.40 | 76 | 165 | 2 | | 458.4 | Nordlige Kattegat, Ålbæk Bugt | · | 16 (1991–2018) | +0.12 | 310 | 354,821 | 2 | | 437.4 | Det sydfynske Øhav | ✓ | 21 (1991–2018) | +0.20 | 334 | 72,370 | 1 | | 407.5 | Løgstør Bredning | ✓ | — | — | 93 | 161,500 | 2 | | 355.7 | Nordlige Øresund | · | 32 (1991–2018) | +0.17 | 1,418 | 1,605,986 | 2 | | 343.4 | Hjelm Bugt | ✓ | 9 (1991–2018) | +0.17 | 31 | 27,545 | 1 | | 296.0 | Kås Bredning og Venø Bugt | ✓ | — | — | 469 | 282,480 | 2 | | 290.4 | Jammerland Bugt og Musholm Bugt | · | 9 (1991–2018) | +0.28 | 127 | 189,830 | 2 | | 288.1 | Lillebælt, Bredningen | · | 32 (1991–2018) | +0.10 | 57 | 40,532 | 2 | | 279.4 | Ringkøbing Fjord | ✓ | 9 (1991–2018) | +0.08 | 236 | 161,990 | 1 | | 275.3 | Nordlige Lillebælt | ✓ | 20 (1991–2018) | +0.11 | 191 | 15,150 | 1 | | 247.1 | Smålandsfarvandet, syd | · | 11 (1991–2018) | +0.10 | 162 | 53,283 | 2 | | 242.4 | Rødsand og Bredningen | · | 6 (1991–2018) | +0.28 | 115 | 12,107 | 2 | | 238.2 | Nissum Bredning | ✓ | — | — | 84 | 114,015 | 2 | | 231.6 | Århus Bugt og Begtrup Vig | ✓ | 20 (1991–2018) | +0.04 | 772 | 578,019 | 1 | | 228.6 | Langelandssund | · | 20 (1991–2018) | +0.39 | 54 | 119,500 | 2 | | 227.9 | Isefjord, ydre | ✓ | 26 (1991–2018) | +0.23 | 71 | 22,404 | 1 | | 222.1 | Bjørnholms Bugt, Riisgårde Bredning, Skive Fjord og Lovns Bredning | ✓ | 16 (1991–2018) | +0.12 | 299 | 90,355 | 1 | | 214.6 | Vesterhavet, nord | · | 21 (1991–2018) | — | 48 | 430 | 3 | | 211.6 | Anholt | · | 1 (1991–2018) | — | — | — | 3 | | 211.4 | Østersøen, Bornholm | · | 23 (1991–2018) | +0.16 | 185 | 102,697 | 2 | | 205.3 | Lister Dyb | · | 1 (1991–2018) | — | 192 | 56,105 | 3 | | 199.1 | Femerbælt | · | 9 (1991–2018) | +0.29 | 82 | 25,561 | 2 | | 175.2 | Djursland Øst | · | 10 (1991–2018) | +0.19 | 182 | 94,092 | 2 | | 169.7 | `Øresund, 12 sm` | · | — | — | — | — | 3 | | 165.9 | Nibe Bredning og Langerak | ✓ | — | — | 896 | 336,244 | 2 | | 164.0 | Storebælt, SV | · | 14 (1991–2018) | — | 35 | 84,575 | 3 | | 158.5 | Knudedyb | · | — | — | 138 | 30,850 | 3 | | 151.0 | Thisted Bredning | ✓ | — | — | 96 | 97,876 | 2 | | 149.9 | Flensborg Fjord, ydre | · | 14 (1991–2018) | +0.10 | 103 | 10,465 | 2 | | 131.8 | Stege Bugt | · | 5 (1991–2018) | +0.10 | 43 | 25,958 | 2 | | 128.0 | Juvre Dyb | · | — | — | 31 | 1,475 | 3 | | 124.0 | Grådyb | · | 8 (1991–2018) | +0.26 | 332 | 449,600 | 2 | | 116.3 | Storebælt, NV | ✓ | 12 (1991–2018) | — | 65 | 30,000 | 2 | | 100.5 | Grønsund | · | 8 (1991–2018) | +0.14 | 116 | 48,103 | 2 | | 92.0 | Vejle Fjord, ydre | · | 11 (1991–2018) | +0.07 | 108 | 48,760 | 2 | | 85.9 | Isefjord, indre | · | 9 (1991–2018) | +0.17 | 280 | 119,877 | 2 | | 84.5 | Ebeltoft Vig | · | 7 (1991–2018) | — | 27 | — | 3 | | 77.7 | Kalø Vig | · | 6 (1991–2018) | +0.26 | 335 | 24,276 | 2 | | 75.7 | Kalundborg Fjord | · | 11 (1991–2018) | +0.04 | 80 | 2,600 | 2 | | 71.4 | Roskilde Fjord, ydre | · | 13 (1991–2018) | +0.13 | 358 | 139,933 | 2 | | 66.6 | Helnæs Bugt | · | 8 (1991–2018) | +0.47 | 131 | 20,300 | 2 | | 65.7 | `Lillebælt, Als-Ærø 12 sm` | · | — | — | — | — | 3 | | 59.7 | Lillebælt, Snævringen | · | — | — | 232 | 580,100 | 3 | | 51.8 | Roskilde Fjord, indre | ✓ | 7 (1991–2018) | +0.50 | 393 | 217,960 | 1 | | 51.2 | Guldborgsund | · | 3 (1991–2018) | — | 149 | 63,476 | 3 | | 50.4 | Nakskov Fjord | · | 2 (1991–2018) | — | 117 | 28,921 | 3 | | 45.8 | Odense Fjord, ydre | ✓ | — | — | 37 | 20,000 | 2 | | 45.6 | Horsens Fjord, indre | ✓ | 4 (1991–2018) | +0.21 | 549 | 267,612 | 1 | | 40.7 | Avnø Fjord | · | 1 (1991–2018) | — | 2 | — | 3 | | 35.0 | Als Fjord | · | 3 (1991–2018) | — | 47 | 171 | 3 | | 32.6 | Nissum Fjord, ydre | · | — | — | 22 | 2,500 | 3 | | 32.6 | Åbenrå Fjord | ✓ | 11 (1991–2018) | +0.18 | 229 | 87,500 | 1 | | 32.6 | Horsens Fjord, ydre | ✓ | 4 (1991–2018) | — | 14 | 225 | 2 | | 27.8 | Mariager Fjord, ydre | · | 2 (1991–2018) | — | 114 | 450 | 3 | | 24.5 | Hjarbæk Fjord | · | 2 (1991–2018) | — | 232 | 108,500 | 3 | | 21.9 | Præstø Fjord | · | 2 (1991–2018) | — | 62 | 13,170 | 3 | | 19.8 | Nissum Fjord, mellem | · | 2 (1991–2018) | — | 12 | — | 3 | | 18.9 | Østersøen, Christiansø | · | — | — | — | — | 3 | | 18.1 | Randers Fjord, ydre | ✓ | 2 (1994–2018) | — | 45 | 4,631 | 2 | | 17.6 | Mariager Fjord, indre | ✓ | 4 (1991–2018) | — | 245 | 14,850 | 2 | | 17.0 | Dybsø Fjord | · | 1 (1991–2018) | — | 32 | 165 | 3 | | 16.3 | Vejle Fjord, indre | ✓ | 7 (1991–2018) | +0.05 | 728 | 224,735 | 1 | | 16.0 | Stavns Fjord | · | — | — | 6 | 25 | 3 | | 15.7 | Karrebæk Fjord | · | — | — | 188 | 127,348 | 3 | | 15.4 | Odense Fjord, Seden Strand | ✓ | — | — | 565 | 491,620 | 2 | | 15.0 | Augustenborg Fjord | · | 2 (1991–2018) | — | 77 | — | 3 | | 13.4 | Halkær Bredning | · | — | — | 109 | 71,475 | 3 | | 12.9 | Flensborg Fjord, indre | ✓ | 6 (1991–2018) | +0.07 | 84 | 97,035 | 1 | | 10.7 | Faaborg Fjord | · | 3 (1991–2018) | — | 83 | — | 3 | | 10.6 | Lunkebugten | · | 2 (1991–2018) | — | 13 | — | 3 | | 10.4 | Nissum Fjord, Felsted Kog | · | — | — | 34 | 9,415 | 3 | | 10.2 | Gamborg Fjord | · | 2 (1991–2018) | — | 38 | 22,000 | 3 | | 10.1 | Kolding Fjord, ydre | · | 4 (1991–2018) | — | 41 | — | 3 | | 10.0 | Kløven | · | — | — | 13 | 3,500 | 3 | | 9.5 | Basnæs Nor | · | — | — | 5 | 250 | 3 | | 8.0 | Nyborg Fjord | · | — | — | 56 | — | 3 | | 7.9 | Nybøl Nor | · | — | — | 65 | 100 | 3 | | 7.8 | Korsør Nor | · | — | — | 95 | 2,000 | 3 | | 7.4 | Knebel Vig | · | 1 (1992–2018) | — | 13 | 3,811 | 3 | | 7.1 | Randers Fjord, indre | · | — | — | 417 | 204,688 | 3 | | 6.8 | Lindelse Nor | · | — | — | 2 | — | 3 | | 6.5 | Holsteinborg Nor | · | — | — | 60 | 13,595 | 3 | | 6.0 | Lillestrand | · | — | — | — | — | 3 | | 5.5 | Als Sund | · | — | — | 38 | 94,055 | 3 | | 5.3 | Kertinge Nor | · | — | — | 98 | 4,540 | 3 | | 5.2 | Skælskør Fjord og Nor | · | — | — | 85 | 38,230 | 3 | | 5.1 | Haderslev Fjord | · | — | — | 201 | 106,666 | 3 | | 5.1 | Stege Nor | · | — | — | 12 | — | 3 | | 5.0 | Genner Bugt | · | 6 (1991–2018) | — | 16 | 3,910 | 3 | | 4.8 | Kolding Fjord, indre | ✓ | 2 (1991–2018) | — | 318 | 35,085 | 2 | | 4.8 | Nærå Strand | · | — | — | 42 | — | 3 | | 3.3 | Kerteminde Fjord | · | — | — | 22 | — | 3 | | 1.9 | Hejlsminde Nor | · | — | — | 25 | 30,000 | 3 | | 1.8 | Norsminde Fjord | · | — | — | 161 | 38,000 | 3 | | 0.5 | Holckenhavn Fjord | · | — | — | 60 | 31,000 | 3 | | 0.4 | Avnø Vig | · | — | — | 11 | — | 3 | | 0.3 | Bredningen | · | — | — | 17 | 2,800 | 3 | | 0.2 | Aborg Minde Nor | · | — | — | 51 | 17,800 | 3 |",
@@ -1415,7 +1415,7 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It is not a causal model per area. It is the ledger you need before you can build one: which areas have enough observation to support a claim, which have none, and over which years each stream exists — so that an analysis published in 2025 cannot quietly rest on a relation fitted to 1990–2012 without a reader seeing the gap.",

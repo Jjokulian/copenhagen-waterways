@@ -197,11 +197,11 @@
     "scripts/formats.py"
    ],
    "confirmed": {
-    "by": "fork w1-ds (read ds_facts.py against every declared field: full rows only, formats.num parsing, the product check's tolerance, per-parameter factor counters, the lys note and blank counts, the maaledybde station medians, and the three thresholds stored beside their counts; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared)",
+    "on": "2026-09-14",
     "saw": {
      "scripts/ds_facts.py": "483a2a1c83605f32",
-     "scripts/formats.py": "4d546353a50a2668"
+     "scripts/formats.py": "26928e885961f7e9"
     }
    }
   },

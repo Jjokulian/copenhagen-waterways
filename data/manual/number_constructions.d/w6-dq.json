@@ -45,10 +45,10 @@
    ],
    "produces": "counted",
    "confirmed": {
-    "by": "Claude (declared 2026-09-13 for the counts unlock.py writes from the sibling project's files: set sizes and intersections by CVR number; no company or person field kept)",
-    "on": "2026-09-13",
+    "by": "Claude (2026-09-14: the files this construction watches changed for the fish-tissue fetch - the ODA topic declared in fetch_oda.py, its below-detection trap declared in formats.py, the register's fetched note, E9's triage class and the rebuilt pages; read against its declaration, the fields it covers are read or computed as declared)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/unlock.py": "cb3c1906da393d74"
+     "scripts/unlock.py": "b8f846953e31bc24"
     }
    }
   }

@@ -8,8 +8,8 @@
 
 | class | n | share |
 |---|---:|---:|
-| **testable now** | [23](../SOURCES.md#F-e786dfc514) | [14](../SOURCES.md#F-aff8947a9f)% |
-| blocked on a fetch | [62](../SOURCES.md#F-15045ed0fb) | [37](../SOURCES.md#F-00ac661b28)% |
+| **testable now** | [24](../SOURCES.md#F-e786dfc514) | [14](../SOURCES.md#F-aff8947a9f)% |
+| blocked on a fetch | [61](../SOURCES.md#F-15045ed0fb) | [37](../SOURCES.md#F-00ac661b28)% |
 | blocked on resolution | [15](../SOURCES.md#F-ab9e2895d5) | [9](../SOURCES.md#F-0d520cad5c)% |
 | **unscoreable** | [42](../SOURCES.md#F-198b20fb90) | [25](../SOURCES.md#F-935d9e0296)% |
 | needs an experiment | [20](../SOURCES.md#F-64bb5d44db) | [12](../SOURCES.md#F-42f0fd7709)% |
@@ -97,7 +97,7 @@ measurement-level store. *Unscoreable* — the deciding dimension has no column 
 
 ### E. Chemical demand and toxicity
 
-<span class="claim" data-claim="C-TR-N-E">*[20](../SOURCES.md#F-4ea953ea01) hypotheses — [1](../SOURCES.md#F-8e56e09dff) testable now, [4](../SOURCES.md#F-4c1023c5f4) blocked on a fetch, [2](../SOURCES.md#F-8693013085) blocked on resolution, [10](../SOURCES.md#F-6534048aeb) unscoreable, [1](../SOURCES.md#F-52cfe2e72d) needs an experiment, [2](../SOURCES.md#F-0f8c435d44) not established.*</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-N-E "What this claim rests on")</sup>
+<span class="claim" data-claim="C-TR-N-E">*[20](../SOURCES.md#F-4ea953ea01) hypotheses — [2](../SOURCES.md#F-8e56e09dff) testable now, [3](../SOURCES.md#F-4c1023c5f4) blocked on a fetch, [2](../SOURCES.md#F-8693013085) blocked on resolution, [10](../SOURCES.md#F-6534048aeb) unscoreable, [1](../SOURCES.md#F-52cfe2e72d) needs an experiment, [2](../SOURCES.md#F-0f8c435d44) not established.*</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-N-E "What this claim rests on")</sup>
 
 | id | consequence | class | blocker |
 |---|---|---|---|
@@ -109,7 +109,7 @@ measurement-level store. *Unscoreable* — the deciding dimension has no column 
 | **[E6](../HYPOTHESES.md "Biocides and antifoulants")** | Antifoulant concentration up -> decomposer function down | **unscoreable** | **Sediment measured at [5](../SOURCES.md#F-21ba8df2cc) of [256](../SOURCES.md#F-9edac16b2c) national hazardous-substance stations — and not one is coastal** ([152](../SOURCES.md#F-076f9f4115) lake, [104](../SOURCES.md#F-0b7a823dec) river, [0](../SOURCES.md#F-7730f288be) coastal; `sw_mfs_tilstand.geojson`) |
 | **[E7](../openproblems/E7.md "Pesticides and degradation products")** | Pesticide load co-varies with N and acts separately | **unscoreable** | **No toxicant column in [53,710,760](../SOURCES.md#F-4df017f985) CTD rows, none in [679,422](../SOURCES.md#F-b61d7944ec) station-months.** Current-use pesticides are measured in streams; the marine programme measures legacy organochlorines, in fish |
 | **[E8](../HYPOTHESES.md "Pharmaceuticals and personal care products")** | Pharmaceutical residues alter microbial function | **unscoreable** | Pharmaceuticals are measured in streams and in effluent, never in marine water or sediment, in the sources surveyed |
-| **[E9](../HYPOTHESES.md "PFAS and persistent novo-chemicals")** | PFAS persists and accumulates in biota | blocked on a fetch | PFAS in fish liver (ODA, ICES DOME), not fetched; no marine sediment PFAS dataset was found |
+| **[E9](../HYPOTHESES.md "PFAS and persistent novo-chemicals")** | PFAS persists and accumulates in biota | **testable now** | PFAS in fish liver and muscle held (`data/raw/oda/mfs_fisk.csv.gz`, ODA's fish-tissue topic); no marine sediment PFAS dataset was found |
 | **[E10](../HYPOTHESES.md "Heavy metals")** | Metal concentration up -> benthic function down | blocked on a fetch | ICES DOME's Danish sediment metals stop in 2016, apart from a 2022 campaign; metals continue in mussel tissue. Not fetched |
 | **[E11](../HYPOTHESES.md "Ammonia toxicity")** | Un-ionised ammonia is toxic at high pH and temperature | blocked on resolution | Ammonium and pH are in the held extract, together in [25,988](../SOURCES.md#F-135749f431) bottles. Temperature is on [1,316](../SOURCES.md#F-17cdaab156) of its rows, so the temperature for each bottle comes from the CTD record by station, day and depth, not the same hour |
 | **[E12](../HYPOTHESES.md "Hydrogen sulphide toxicity")** | Free sulphide is toxic to fauna above a threshold | blocked on resolution | `Dihydrogensulfid` is [2,601](../SOURCES.md#F-153d19187a) rows and **[2,598](../SOURCES.md#F-c264be18c8) come from the station `93610032`**. Usable for one silled basin, not a series |
@@ -320,7 +320,7 @@ measurement-level store. *Unscoreable* — the deciding dimension has no column 
 
 ### Blocked on a fetch
 
-<span class="claim" data-claim="C-TR-FETCH">**[62](../SOURCES.md#F-15045ed0fb) of [166](../SOURCES.md#F-4196d405de) ([37](../SOURCES.md#F-00ac661b28)%) are blocked on a fetch**: what they need is named and is not held here.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-FETCH "What this claim rests on")</sup> <span class="claim" data-claim="C-TR-OPEN">The source register records some of those sources as open without a login: the ICES swept-area-ratio product and HELCOM's fishing-intensity layers, ICES stock assessments, OBIS occurrences, and DMI's sea-level and weather series, unauthenticated in its testing. `Sentinel-1` scenes need a free account. ODA's bottom-fauna and vegetation topics need the ODA registration this project already uses, and are not in `fetch_oda.py`'s topic list. Phytoplankton counts need credentials: VanDa refused access, and the ICES route needs an account.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-OPEN "What this claim rests on")</sup>
+<span class="claim" data-claim="C-TR-FETCH">**[61](../SOURCES.md#F-15045ed0fb) of [166](../SOURCES.md#F-4196d405de) ([37](../SOURCES.md#F-00ac661b28)%) are blocked on a fetch**: what they need is named and is not held here.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-FETCH "What this claim rests on")</sup> <span class="claim" data-claim="C-TR-OPEN">The source register records some of those sources as open without a login: the ICES swept-area-ratio product and HELCOM's fishing-intensity layers, ICES stock assessments, OBIS occurrences, and DMI's sea-level and weather series, unauthenticated in its testing. `Sentinel-1` scenes need a free account. ODA's bottom-fauna and vegetation topics need the ODA registration this project already uses, and are not in `fetch_oda.py`'s topic list. Phytoplankton counts need credentials: VanDa refused access, and the ICES route needs an account.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-OPEN "What this claim rests on")</sup>
 
 ### The water-chemistry extract, re-scored
 
@@ -346,7 +346,7 @@ measurement-level store. *Unscoreable* — the deciding dimension has no column 
 
 <span class="claim" data-claim="C-TR-STRONG">Where most hypotheses are testable now: **I** ([6](../SOURCES.md#F-c53557ff04) of [7](../SOURCES.md#F-f540337e22)), **C** ([5](../SOURCES.md#F-0596b7e6b1) of [9](../SOURCES.md#F-89669b4a5d)).</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-STRONG "What this claim rests on")</sup> <span class="claim" data-claim="C-TR-CTD">In **C**, physical resupply, they are the ones the CTD record, the depth soundings, the inflow indicator files and the weather reanalysis held here measure: temperature, salinity, oxygen, depth and wind.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-CTD "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-TR-PATTERN">The pattern across groups: **the archive held here tests physics and itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold [16](../SOURCES.md#F-8a51a62310) of the [23](../SOURCES.md#F-e786dfc514) testable-now entries. Groups F, J, T and R — biological structure, films, sediment sickness, decay — hold none of them, and E, chemistry, holds [1](../SOURCES.md#F-8e56e09dff); those five groups hold [42](../SOURCES.md#F-4a26ebdff7) of the [62](../SOURCES.md#F-38d4f3aa11) entries that are unscoreable or need an experiment.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-PATTERN "What this claim rests on")</sup>
+<span class="claim" data-claim="C-TR-PATTERN">The pattern across groups: **the archive held here tests physics and itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold [16](../SOURCES.md#F-8a51a62310) of the [24](../SOURCES.md#F-e786dfc514) testable-now entries. Groups F, J, T and R — biological structure, films, sediment sickness, decay — hold none of them, and E, chemistry, holds [2](../SOURCES.md#F-8e56e09dff); those five groups hold [42](../SOURCES.md#F-4a26ebdff7) of the [62](../SOURCES.md#F-38d4f3aa11) entries that are unscoreable or need an experiment.</span><sup class="claim-mark">[†](../CLAIMS.md#C-TR-PATTERN "What this claim rests on")</sup>
 
 ### An honest caveat about this table
 

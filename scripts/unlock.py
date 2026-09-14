@@ -366,9 +366,9 @@ def cmd_doc():
         "ODA-MFS-FISK": {
             "unlocks": C("C-DQ-S-MFS", "Contaminants measured in fish tissue: the ODA topic "
                          "*MFS i biota / Fisk*, for the hypotheses the register names below."),
-            "who": C("C-DQ-W-MFS", "Possibly this project: the register lists the topic behind "
-                     "a registration and a scripted extract, as for the ODA topics already "
-                     "fetched with this project's login, and it has not been fetched."),
+            "who": C("C-DQ-W-MFS", "This project, and it has: its ODA login opens the topic, and "
+                     "the extract is fetched and held, read with the same client and "
+                     "declared format as the other ODA extracts."),
         },
         "LER": {
             "unlocks": C("C-DQ-S-LER", "Pipe geometry and connectivity for the Copenhagen "

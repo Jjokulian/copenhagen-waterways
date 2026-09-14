@@ -938,7 +938,7 @@
     "H-ML-OLD-MINUTES"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Each of these was found in this project's own work, most of it within minutes of writing it.",
@@ -969,7 +969,7 @@
     "H-ML-OLD-NOISE-SCALES"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The detection limit above scales with an estimate of the noise an estimator must see through.",
@@ -1000,7 +1000,7 @@
     "H-ML-OLD-NOISE-HISTORY"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "version asserted 0.8 mg/l, which made the bound only as good as a guess. The second measured the archive's within-cell residual spread - and that residual *contains whatever diurnal signal exists*, so a large real cycle would have inflated the yardstick used to rule a large real cycle out.",
@@ -1031,7 +1031,7 @@
     "H-ML-OLD-NOISE-CONSERVATIVE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The bias runs conservative, which is exactly why it could have stood for years unnoticed.",
@@ -1062,7 +1062,7 @@
     "H-ML-OLD-NOISE-CONSTRUCTION"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The estimate is now taken only from cells whose samples all fall in one sun-elevation bin, where no diurnal variance can enter by construction.",
@@ -1094,7 +1094,7 @@
     "H-ML-OLD-FLOOD"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "sheets are the output of somebody's hydraulic model run over a terrain model. Scoring a new terrain-driven flow model against them measures agreement between two implementations of similar physics",
@@ -1125,7 +1125,7 @@
     "H-ML-OLD-CATCHMENT"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "which is the same rule this project applies to official catchment delineations, for the same reason.",
@@ -1156,7 +1156,7 @@
     "H-ML-OLD-BORROW-SHARE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "analysing the hour. 80% of CTD station-days can take a time from a same-day water-chemistry bottle, because 99% of those station-days carry a single one.",
@@ -1187,7 +1187,7 @@
     "H-ML-OLD-DEPTHCLOCK"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "`scripts/depth_clock.py` therefore treats supplied field-sheet times as a *check* on the borrowed clock rather than a replacement for it",
@@ -1218,7 +1218,7 @@
     "H-ML-OLD-TUNING"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "reproduces an official product, agreement with that product stops being evidence of anything.",
@@ -1251,7 +1251,7 @@
     "H-ML-OLD-EXACT-DESIGN"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is a best-subset search over 92 candidate models fitted to about 20 points. So the question is not whether R² = 0.57 is high. It is what that search returns when there is no relation there at all. Simulating exactly their design",
@@ -1283,7 +1283,7 @@
     "H-ML-OLD-DECLINE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Annual marine and climate series are autocorrelated, and over 1990–2012 every candidate declined together. Those are the bottom two rows. Under the conditions their own data satisfy",
@@ -1315,7 +1315,7 @@
     "H-ML-OLD-NOT-DISTINGUISHABLE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is not distinguishable from the noise floor of their own selection procedure.",
@@ -1347,7 +1347,7 @@
     "H-ML-OLD-PROBABLY-REAL"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Several are probably real — the phosphorus models in particular are strong and mechanistically expected.",
@@ -1379,7 +1379,7 @@
     "H-ML-OLD-NO-EVIDENCE"
    ],
    "confirmed": {
-    "on": "2026-09-14",
+    "on": "2026-09-15",
     "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What it shows is that the reported R² carries no evidence either way, because the threshold was set below the null distribution of the search that produced it. The fix is cheap and standard: hold out years, or report the R² of the N-load term alone against a model containing only the climate variables. Neither is reported for any of the",
