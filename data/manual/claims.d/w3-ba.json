@@ -2094,15 +2094,15 @@
     "C-BA-OLD-A1-INTRO"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "claim {read:DANVA-2024:69.6|hvor landbruget alene står for 69,6 %}": "69.6",
      "pinned DANVA-2024": "cce512d654be929c",
      "said on hypodrafts/A1.md": "What **can** be tested is a precondition. The agricultural share in circulation, 69.6%, is a residual, and a residual cannot be checked against itself; it can be checked across revisions of the account ([`../RESIDUAL.md`](../RESIDUAL.md)). This page drafts that test against the published reports.",
      "texts": "276f4709f93e81f3",
      "rests on C-NI-HEADLINE": "197fdade8d2070b2",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "rests on C-NI-RELABEL": "370b2a77816def09",
      "rests on C-LR-R-ACROSSTIME": "a59f759ba31651a6"
     }
    }

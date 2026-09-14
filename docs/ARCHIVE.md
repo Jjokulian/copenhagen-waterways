@@ -3519,6 +3519,28 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-GC-G-TR-STATS`](CLAIMS.md#C-GC-G-TR-STATS) — each opens what it rests on.
 
+<a id="C-GC-OLD2-G-NOTOBTAINED"></a>
+### The earlier wording of `C-GC-G-NOTOBTAINED` on GRUNDLAGET.md.
+
+`C-GC-OLD2-G-NOTOBTAINED` · retired 2026-09-14 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `020961d`
+
+> <span class="claim" data-claim="C-GC-OLD2-G-NOTOBTAINED">Not obtained, and this limits the page. Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the VP3 model update, has not been read, so every model-level number here is VP2-era unless marked otherwise. Hansen & Rytter 2024, Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD2-G-NOTOBTAINED "What this claim rests on")</sup>
+
+**Why it was retired:** It said the readers' guide to the third water plans' models had not been read and listed Hansen and Rytter among papers cited from reference lists only; both are now pinned and read.
+
+**Replaced by:** [`C-GC-G-NOTOBTAINED`](CLAIMS.md#C-GC-G-NOTOBTAINED) — each opens what it rests on.
+
+<a id="C-GC-OLD2-G-Q1"></a>
+### The earlier wording of `C-GC-G-Q1` on GRUNDLAGET.md.
+
+`C-GC-OLD2-G-Q1` · retired 2026-09-14 from [GRUNDLAGET.md](GRUNDLAGET.md) · as published in `020961d`
+
+> <span class="claim" data-claim="C-GC-OLD2-G-Q1">Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature." A strong negative claim about the literature, not verified here. The second opinion's background analyses summarise Hansen & Rytter 2024 as saying that *"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer"* — a summary of exactly that analysis. The paper itself has not been read here, so what can be said is that we have not found the coefficients published.</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD2-G-Q1 "What this claim rests on")</sup>
+
+**Why it was retired:** It called the second opinion's citation of Hansen and Rytter a summary of that regression and said their paper was not read; the second opinion cites them for a general statement, and their note, pinned, fits no regression.
+
+**Replaced by:** [`C-GC-G-Q1`](CLAIMS.md#C-GC-G-Q1) — each opens what it rests on.
+
 ## HYPOTHESES.md
 
 <a id="C-HY-OLD-B2-BASINS"></a>
@@ -6119,6 +6141,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** 'Larger than' compares a set of unquantified pathways with the circularity, and nothing measures either against the other.
 
 **Replaced by:** [`C-NI-RESIDUAL-ABSORBS`](CLAIMS.md#C-NI-RESIDUAL-ABSORBS) — each opens what it rests on.
+
+<a id="C-NI-OLD-MEASURED-LINES"></a>
+### The earlier wording of `C-NI-MEASURED-LINES` on NITROGEN.md.
+
+`C-NI-OLD-MEASURED-LINES` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `020961d`
+
+> <span class="claim" data-claim="C-NI-OLD-MEASURED-LINES">Only the treatment-plant and industry lines are reported measurements. The rest are estimates, and the largest is a residual of estimates.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD-MEASURED-LINES "What this claim rests on")</sup>
+
+**Why it was retired:** It said only the treatment-plant and industry lines are measured; the point-source report says fish farms with enough self-monitoring samples are measured too, and small treatment plants are calculated.
+
+**Replaced by:** [`C-NI-MEASURED-LINES`](CLAIMS.md#C-NI-MEASURED-LINES) — each opens what it rests on.
 
 <a id="C-NI-OLD-MINOR-SHARES"></a>
 ### The published apportionment gives shares for aquaculture, separate stormwater, overflow, industry and scattered dwellings.

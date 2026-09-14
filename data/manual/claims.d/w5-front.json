@@ -13,12 +13,12 @@
     "E-NI-MSFD-RESIDUAL"
    ],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on LANDBRUG.md": "**Landbrugets andel er ikke målt.** Den regnes som det, der er tilbage: den samlede kvælstoftilførsel fra land minus punktkilderne giver det diffuse bidrag, og det diffuse bidrag minus det naturlige baggrundsbidrag er det, der kaldes landbrugets andel. Det er en restpost - og alt, hvad der er regnet forkert eller mangler i de andre poster, havner i den. [Hvordan hver post er lavet](NITROGEN.md).",
      "texts": "e568cfaf63931fb3",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "rests on C-NI-RELABEL": "370b2a77816def09",
      "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
      "pinned MSFD28": "8204718867e3910b"
     }
@@ -53,13 +53,13 @@
     "C-NI-RELABEL"
    ],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (wrote these as the owner directed on 2026-09-13: the farm share stated plainly as a leftover - land-borne load minus point sources, minus the natural background, as DCE's pinned methods summary and NITROGEN.md set out - and an invitation to report mistakes. 2026-09-13; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on LANDING.md": "**The farm share of the nitrogen reaching the sea is not measured.** It is what is left of the land-borne load once point sources and the natural background are subtracted: a leftover, which takes up every error in the terms subtracted. [Why that matters](RESIDUAL.md) · [på dansk, til landbruget](LANDBRUG.md)",
      "texts": "b0afd59cd2471f23",
      "rests on C-LE-LEFTOVER": "e568cfaf63931fb3",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc"
+     "rests on C-NI-RELABEL": "370b2a77816def09"
     }
    }
   },

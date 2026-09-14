@@ -96,6 +96,14 @@
    "sha256": "81abd3c8b490e5c32a1474be56cf9cc3f9ea0da682bda649136e679c7dc16aa1",
    "checked": "2026-09-14",
    "status": "pinned 2026-09-14"
+  },
+  "PC-DCE-SR526": {
+   "title": "Blicher-Mathiesen et al. 2023, Landovervågningsoplande 2021, DCE Videnskabelig rapport nr. 526",
+   "url": "https://dce2.au.dk/pub/SR526.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "43319b471993d1052e36fc9baaf20ebe751b1873956a7372ddafad383b3e4973",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -311,7 +319,7 @@
    "id": "U-PC-LAG",
    "kind": "untraced",
    "label": "Trail ends: how long\nthe lag is",
-   "detail": "The registers cite LOOP catchments for a lag between a management change and a response in stream nitrogen, and no LOOP report is pinned. Searched on 2026-09-11: the pinned DCE reports `SR353`, `SR120`, `MSFD28` and `NOVANA-2327` for LOOP and a lag; none states one."
+   "detail": "The registers cite LOOP catchments for a lag between a management change and a response in stream nitrogen. Searched on 2026-09-11 the pinned DCE reports `SR353`, `SR120`, `MSFD28` and `NOVANA-2327`, and on 2026-09-14 the LOOP reports `SR526` and `SR305`: they give how long it took to measure a significant fall in stream nitrate after measures - a detection time, which differs between the two - but not the length of the lag itself."
   },
   {
    "id": "U-PC-REGRESSION",
@@ -378,6 +386,14 @@
    "kind": "untraced",
    "label": "Trail ends: one researcher's\nexplanation, no measurement",
    "detail": "Searched on 2026-09-14: the article's two references for the sentence (DR and TV 2 Fyn), which both quote Stiig Markager without a study; his own explainer in Aktuel Naturvidenskab, which gives a mechanism with several causes and cites nothing; the DCE note on oxygen depletion that TV 2 Fyn links, and DCE's marine monitoring report for the year before, neither of which mentions fedtemøg; Den Store Danske, which says growth is promoted by nutrient salts; and the six DCE and agency documents this project holds, which do not contain the word. No measurement tying fedtemøg's occurrence to agriculture's nitrogen was found."
+  },
+  {
+   "id": "E-PC-LOOP-DETECT",
+   "kind": "external",
+   "label": "LOOP: time to detect\na fall in stream nitrate",
+   "detail": "DCE's report on the agricultural monitoring catchments: how long it has taken to measure a significant fall in stream nitrate transport as a result of the measures adopted - a detection time, not the length of the lag in soil and sediments.",
+   "source": "PC-DCE-SR526",
+   "said": "at måle en signifikant nedgang i nitrattransporten som følge af hidtil vedtagne virkemidler"
   }
  ],
  "claims": [
@@ -3095,26 +3111,29 @@
    "holder": "DCE, Aarhus University",
    "page": "CAUSATION.md",
    "claim": "DCE attribute the drift in their nitrogen models to the time lag of nitrogen accumulated in the sediments; how long the lag is, is not established here.",
-   "because": "Their grounds: the models' residual drift; the lag's length has no pinned source.",
+   "because": "Their grounds: the models' residual drift. The LOOP reports give how long it took to measure a significant fall in stream nitrate after measures, a detection time; the lag's own length has no pinned source.",
    "rests_on": [
     "E-OB-DCE-LAG",
     "C-OB-DCE-TNDRIFT",
-    "U-PC-LAG"
+    "U-PC-LAG",
+    "E-PC-LOOP-DETECT"
    ],
    "basis": "assessed",
    "replaces": [
     "C-PC-CA-OLD-EXPLAIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on CAUSATION.md": "DCE attribute the drift in their nitrogen models to the time lag of nitrogen accumulated in the sediments; how long the lag is, is not established here.",
-     "texts": "8744b8ebc39c751e",
+     "texts": "f22cb463939a9e87",
      "node E-OB-DCE-LAG": "87f41ff0f71ddce1",
      "pinned DCE-STATMOD-2015": "089dd0c3baa388a3",
      "rests on C-OB-DCE-TNDRIFT": "f947af836fb12941",
-     "node U-PC-LAG": "24cc3fcc5ba0c47e"
+     "node U-PC-LAG": "cfa675f0695727e2",
+     "node E-PC-LOOP-DETECT": "17b836009fedf66a",
+     "pinned PC-DCE-SR526": "43319b471993d105"
     }
    }
   },

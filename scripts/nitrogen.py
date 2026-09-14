@@ -658,8 +658,10 @@ def main():
         called = f"**{name}, {pct}%**" if pct is not None else f"**{name}** — no share in the pinned source"
         w(f"| {called} | {what} |")
     w("")
-    w(C("C-NI-MEASURED-LINES", "Only the treatment-plant and industry lines are reported "
-        "measurements. The rest are estimates, and the largest is a residual of estimates.") + "\n")
+    w(C("C-NI-MEASURED-LINES", "Most treatment-plant and industry discharges rest on reported "
+        "measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, "
+        "stormwater outlets, some aquaculture and small treatment plants are calculated, and the "
+        "largest line is a residual of estimates.") + "\n")
     w("### The validation is circular\n")
     w(C("C-NI-QC-RULE", f"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} "
         f"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\""

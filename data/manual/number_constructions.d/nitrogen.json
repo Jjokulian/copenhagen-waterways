@@ -51,12 +51,12 @@
     "scripts/readings.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/nitrogen_readings.json - five SR353 readings added for the load fall and the normalised supply, each phrase located in its pin; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
      "data/manual/nitrogen_readings.json": "c6fd55ed288116ab",
      "data/manual/claims.d/nitrogen.json#sources": "a8fadfa0a7e17b1c",
-     "scripts/pages/grundlaget.py": "7b84287f07d1799d",
+     "scripts/pages/grundlaget.py": "6d34b86320f94819",
      "scripts/readings.py": "74e594908221b251"
     }
    }
@@ -504,10 +504,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "f657cfa27c1b3691"
+     "scripts/nitrogen.py": "472af5c8aa9536a3"
     }
    }
   },

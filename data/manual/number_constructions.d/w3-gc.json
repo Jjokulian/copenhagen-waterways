@@ -102,10 +102,10 @@
     "data/derived/pins/DCE-STATMOD-2015.txt"
    ],
    "confirmed": {
-    "by": "agent w3-gc (written against scripts/pages/grundlaget.py tabel3(): blocks of the pinned Tabel 3 extraction split into deviations, R² and ja/nej, two numbers per flag enforced, variable lists matched per half, model and BV counts checked against observing.py, criteria read from the report's sentences; output reproduces DCE's stated mean R² and mean deviation; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/grundlaget.py": "7b84287f07d1799d",
+     "scripts/pages/grundlaget.py": "6d34b86320f94819",
      "data/derived/pins/DCE-STATMOD-2015.txt": "089dd0c3baa388a3"
     }
    }

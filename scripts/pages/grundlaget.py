@@ -622,7 +622,7 @@ indsatsbehov = 100 · ((Status − Miljømål) / Status) · (1 / hældning)
 
 ### Needs qualifying
 
-⟦B¦C-GC-G-Q1⟧**`Q1`. "Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature."** A strong negative claim about the literature, not verified here. The second opinion's background analyses summarise Hansen & Rytter 2024 as saying that *"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer"* — a summary of exactly that analysis. The paper itself has not been read here, so what can be said is that we have not found the coefficients published.⟦E⟧
+⟦B¦C-GC-G-Q1⟧**`Q1`. "Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature."** A strong negative claim about the literature, not verified here. The second opinion's background analyses cite Hansen & Rytter 2024 only for the general statement that *"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer"* — not for that analysis. Their note, read here, says the same and fits no regression, so what can be said is that we have not found the coefficients published.⟦E⟧
 
 ⟦B¦C-GC-G-Q2⟧**`Q2`. "Halve the load and the extremes do not move."** Three qualifications are missing. A comparison of chosen years cannot carry a trend in a series whose variance between years is large. The alternative to "no effect" is "worse without", which such a comparison cannot separate. And warmer water holds less oxygen, so a warming over the same period would work against the load reduction. Keep the observation and drop the word "test": the extremes are not obviously tracking the load, and a comparison of extremes cannot tell the two readings apart.⟦E⟧
 
@@ -718,7 +718,7 @@ indsatsbehov = 100 · ((Status − Miljømål) / Status) · (1 / hældning)
 6. Finansministeriet m.fl. (Nov 2024). *Second opinion – Baggrundsanalyser.* ⟦P¦SO-BG-2024⟧ pp.
 7. Miljøministeriet. *Retningslinjer for udarbejdelse af vandområdeplaner 2021-2027.*
 
-⟦B¦C-GC-G-NOTOBTAINED⟧**Not obtained, and this limits the page.** Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the VP3 model update, has not been read, so **every model-level number here is VP2-era unless marked otherwise**. Hansen & Rytter 2024, Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.⟦E⟧
+⟦B¦C-GC-G-NOTOBTAINED⟧**Not obtained, and this limits the page.** Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the readers' guide to the VP3 models, is read: ⟦R¦GC-DCE-TR268¦11¦A set of 11 new mechanistic models⟧ new mechanistic models, and ⟦R¦GC-DCE-TR268¦107¦107 out of the 109 Danish marine water bodies⟧ of the ⟦R¦GC-DCE-TR268¦109¦107 out of the 109 Danish marine water bodies⟧ Danish marine water bodies covered by a mechanistic model, some also by a statistical one. **Every other model-level number here is VP2-era unless marked otherwise**. Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.⟦E⟧
 '''
 
 

@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "f657cfa27c1b3691"
+     "scripts/nitrogen.py": "472af5c8aa9536a3"
     }
    }
   }

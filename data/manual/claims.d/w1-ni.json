@@ -40,6 +40,14 @@
    "sha256": "6998e40b980bb5eef1a73d46b19b722d64ad17f07689f05196e5c607e122a28d",
    "checked": "2026-09-14",
    "status": "pinned 2026-09-14"
+  },
+  "NI-MST-PUNKT2024": {
+   "title": "Styrelsen for Grøn Arealomlægning og Vandmiljø, Punktkilderapporten 2024 (NOVANA)",
+   "url": "https://sgavmst.dk/media/fmhnknvo/punktkilderapporten_2024.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "86a9351f2cf7b5e159eb97b074f36bdbec43ebf658944a14782be2d074980b92",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -60,12 +68,6 @@
    "kind": "held",
    "label": "Monitoring register",
    "detail": "data/manual/monitoring.json: documented properties of the Danish measurement system, collected from technical annexes; each section names its source, and the diffuse-load section names none."
-  },
-  {
-   "id": "U-NI-LINE-METHODS",
-   "kind": "untraced",
-   "label": "Trail ends: how the smaller\\nlines are estimated",
-   "detail": "How aquaculture, industry, separate stormwater and scattered dwellings are estimated is described from the monitoring and pathways registers, which cite no source for these lines; the pinned DP02 covers only rain-dependent discharges."
   },
   {
    "id": "E-NI-DANVA-AGRI",
@@ -261,7 +263,7 @@
    "id": "U-NI-HELDOUT",
    "kind": "untraced",
    "label": "Trail ends: no held-out\\nvalidation found",
-   "detail": "The pinned SR353 describes a bias correction, not a validation against gauged catchments held out of the model's fitting; the method papers it cites for DK-QNP were not read."
+   "detail": "The pinned SR353 describes a bias correction, not a validation against gauged catchments held out of the model's fitting. Searched on 2026-09-14: Windolf et al.'s method paper (refused by the publisher), DCE's technical report on the model's flow part (which refers the hydrological model's validation to its own documentation), a DCE note comparing load estimates, and HELCOM's methodology for the latest pollution-load compilation; none describes a held-out validation of the nitrogen part."
   },
   {
    "id": "U-NI-SR120-DEPOSITION",
@@ -576,6 +578,38 @@
    "detail": "The sibling project's notes: the herd-size columns partition the herd for cattle and pigs, but for other species one column is already the total, so summing double-counts.",
    "source": "DL-DATA-SOURCES",
    "said": "The three size columns do not always sum"
+  },
+  {
+   "id": "E-NI-PUNKT-MEASURED",
+   "kind": "external",
+   "label": "Point-source report:\nmost lines measured",
+   "detail": "Miljøstyrelsen's point-source report: measurement data underlie the annual discharges of most point sources.",
+   "source": "NI-MST-PUNKT2024",
+   "said": "For de fleste punktkilder ligger der en række måledata til grund for opgørelserne af de årlige udledninger"
+  },
+  {
+   "id": "E-NI-PUNKT-THEORY",
+   "kind": "external",
+   "label": "Point-source report:\nsome lines calculated",
+   "detail": "The same report: scattered dwellings, stormwater outlets, some aquaculture and small treatment plants are calculated rather than measured.",
+   "source": "NI-MST-PUNKT2024",
+   "said": "anvendes teoretiske beregninger til opgørelse af organisk stof og næringsstoffer"
+  },
+  {
+   "id": "E-NI-PUNKT-DAMBRUG",
+   "kind": "external",
+   "label": "Point-source report:\nfish farms",
+   "detail": "The same report: a freshwater fish farm's discharge is calculated from its production, or from its self-monitoring samples where there are enough of them.",
+   "source": "NI-MST-PUNKT2024",
+   "said": "er udledningerne beregnet ud fra disse egenkontrolprøver"
+  },
+  {
+   "id": "E-NI-PUNKT-RBU",
+   "kind": "external",
+   "label": "Point-source report:\nstormwater outlets",
+   "detail": "The same report: discharges from rain-dependent outlets are calculated from model calculations, measurements and unit figures.",
+   "source": "NI-MST-PUNKT2024",
+   "said": "Udledningerne fra RBU beregnes på baggrund af modelberegninger, målinger og enhedstal"
   }
  ],
  "claims": [
@@ -616,13 +650,13 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on NITROGEN.md": "This document does not dispute the measurements behind it. It asks three questions the percentage, as it is used, does not survive.",
      "texts": "94be4d1832c60564",
      "rests on C-NI-LOWER-BOUND": "f18c1f930504af87",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "rests on C-NI-RELABEL": "370b2a77816def09",
      "rests on C-NI-CURRENCY": "2adc1cd7a468c044"
     }
    }
@@ -735,13 +769,16 @@
    "stance": "ours",
    "page": "NITROGEN.md",
    "claim": "Relabelled by what produced it: the agricultural share is a residual; the background is determined in small low-impact catchments and transferred; the treatment-plant line is reported effluent monitoring; the other lines are reported or modelled, and the pinned summary gives them only as smaller shares.",
-   "because": "The agricultural and background lines follow DCE's methods note and the treatment-plant line the registers; how the remaining lines are estimated is taken from the registers, which cite no source for them, and the summary names no share for them.",
+   "because": "The agricultural and background lines follow DCE's methods note and the treatment-plant line the registers; Miljøstyrelsen's point-source report says the remaining lines are measured where data exist, while scattered dwellings, stormwater outlets, some aquaculture and small plants are calculated.",
    "rests_on": [
     "E-NI-MSFD-RESIDUAL",
     "E-NI-MSFD-BACKGROUND",
     "E-NI-DANVA-MINOR",
     "D-NI-MONITORING",
-    "U-NI-LINE-METHODS"
+    "E-NI-PUNKT-MEASURED",
+    "E-NI-PUNKT-THEORY",
+    "E-NI-PUNKT-DAMBRUG",
+    "E-NI-PUNKT-RBU"
    ],
    "basis": "assessed",
    "replaces": [
@@ -749,18 +786,22 @@
     "C-NI-OLD-BACKGROUND-MODEL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on NITROGEN.md": "Each line of the published apportionment, relabelled by what actually produced it. The pinned summary gives shares for the first three lines and calls the rest *\"endnu mindre andele\"* — even smaller shares:",
-     "texts": "eec5f3032f2482cc",
+     "texts": "370b2a77816def09",
      "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
      "pinned MSFD28": "8204718867e3910b",
      "node E-NI-MSFD-BACKGROUND": "8bce9af7d19e5c93",
      "node E-NI-DANVA-MINOR": "ae7715626dadf3dc",
      "pinned DANVA-2024": "cce512d654be929c",
      "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-LINE-METHODS": "bb50cf2fdfc3a16e"
+     "node E-NI-PUNKT-MEASURED": "6877ec9dafc7a2c1",
+     "pinned NI-MST-PUNKT2024": "86a9351f2cf7b5e1",
+     "node E-NI-PUNKT-THEORY": "a39d05129931c4b7",
+     "node E-NI-PUNKT-DAMBRUG": "fbfb471d101ae223",
+     "node E-NI-PUNKT-RBU": "f8f94632b8a5e79d"
     }
    }
   },
@@ -769,21 +810,31 @@
    "kind": "argued",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "Only the treatment-plant and industry lines are reported measurements; the rest are estimates, and the largest is a residual of estimates.",
-   "because": "Read off the relabelled table: every other line is modelled, transferred or found by subtraction.",
+   "claim": "Most treatment-plant and industry discharges rest on reported measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, stormwater outlets, some aquaculture and small treatment plants are calculated, and the largest line is a residual of estimates.",
+   "because": "Miljøstyrelsen's point-source report, pinned, for how each point-source line is determined; the residual from the relabelled table.",
    "rests_on": [
-    "C-NI-RELABEL"
+    "C-NI-RELABEL",
+    "E-NI-PUNKT-MEASURED",
+    "E-NI-PUNKT-THEORY",
+    "E-NI-PUNKT-DAMBRUG"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
-     "said on NITROGEN.md": "Only the treatment-plant and industry lines are reported measurements. The rest are estimates, and the largest is a residual of estimates.",
-     "texts": "f098190a610c2306",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc"
+     "said on NITROGEN.md": "Most treatment-plant and industry discharges rest on reported measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, stormwater outlets, some aquaculture and small treatment plants are calculated, and the largest line is a residual of estimates.",
+     "texts": "4c06727b99d47a1f",
+     "rests on C-NI-RELABEL": "370b2a77816def09",
+     "node E-NI-PUNKT-MEASURED": "6877ec9dafc7a2c1",
+     "pinned NI-MST-PUNKT2024": "86a9351f2cf7b5e1",
+     "node E-NI-PUNKT-THEORY": "a39d05129931c4b7",
+     "node E-NI-PUNKT-DAMBRUG": "fbfb471d101ae223"
     }
-   }
+   },
+   "replaces": [
+    "C-NI-OLD-MEASURED-LINES"
+   ]
   },
   {
    "id": "C-NI-QC-RULE",
@@ -989,13 +1040,13 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on NITROGEN.md": "So the model has been evaluated. Whether it is validated against gauged catchments held out of its fitting has not been established here.",
      "texts": "3a8c7166bed8b46f",
      "rests on C-NI-BOGESTRAND": "4bfd5c57d243125a",
-     "node U-NI-HELDOUT": "982ec8ba0f3e6203"
+     "node U-NI-HELDOUT": "d8ba4c8557bda2be"
     }
    }
   },
@@ -4019,6 +4070,34 @@
     "saw": {
      "said on ARCHIVE.md": "No field's nitrogen balance is observed. Every term is a register count, a sales total or an area times a coefficient, and the surplus is what is left over; the one measurement inside it is the annual analysis of cereal nitrogen.",
      "texts": "a6305245e64ece1b"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD-MEASURED-LINES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-NI-MEASURED-LINES` on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "020961d",
+    "file": "docs/NITROGEN.md",
+    "begin": "Only the treatment-plant and industry lines are reported",
+    "end": "the largest is a residual of estimates.",
+    "why": "It said only the treatment-plant and industry lines are measured; the point-source report says fish farms with enough self-monitoring samples are measured too, and small treatment plants are calculated."
+   },
+   "replaced_by": [
+    "C-NI-MEASURED-LINES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Only the treatment-plant and industry lines are reported measurements. The rest are estimates, and the largest is a residual of estimates.",
+     "texts": "8be41d8165fc8816"
     }
    }
   }

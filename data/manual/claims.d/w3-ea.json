@@ -4835,12 +4835,12 @@
     "C-NI-RELABEL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on AGENT_BRIEF.md": "When you name a quantity, label it. Never write \"X is 69.6%\" when X is a residual over products of norm coefficients.",
      "texts": "3da040d34dc4f238",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc"
+     "rests on C-NI-RELABEL": "370b2a77816def09"
     }
    }
   },
@@ -4919,12 +4919,12 @@
     "E-NI-MSFD-RESIDUAL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on AGENT_BRIEF.md": "the 69.6% agricultural attribution",
      "texts": "a734d2f02497959d",
-     "rests on C-NI-RELABEL": "eec5f3032f2482cc",
+     "rests on C-NI-RELABEL": "370b2a77816def09",
      "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
      "pinned MSFD28": "8204718867e3910b"
     }

@@ -2028,8 +2028,8 @@
     "Within one block of the extraction the deviations, the R² values and the flags come in the same row order. The pinned text gives no row labels to check this against; what supports it is that every block holds exactly two numbers per flag and that the tally's means round to the means DCE state."
    ],
    "confirmed": {
-    "by": "agent w3-gc (written against scripts/pages/grundlaget.py tabel3(): blocks of the pinned Tabel 3 extraction split into deviations, R² and ja/nej, two numbers per flag enforced, variable lists matched per half, model and BV counts checked against observing.py, criteria read from the report's sentences; output reproduces DCE's stated mean R² and mean deviation; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/grundlaget.json",
    "gaps": [
@@ -3239,7 +3239,7 @@
     "One feature is one discharge point."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/raw/national/punkt_rbu_udl.geojson",
@@ -3620,7 +3620,7 @@
     "The pinned text is a faithful extraction of the document."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: data/manual/nitrogen_readings.json - five SR353 readings added for the load fall and the normalised supply, each phrase located in its pin; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/manual/nitrogen_readings.json",
@@ -3704,7 +3704,7 @@
     "Approved capacity indicates scale; it is not a measured load."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/raw/national/punkt_rens_udl.geojson",
@@ -9453,6 +9453,8 @@
    "F-e59dfab87e",
    "F-e6b4eb923f",
    "F-ea4e97e584",
+   "F-eb7884fe59",
+   "F-ed0abe9de8",
    "F-ee66ec02de",
    "F-ef5ab6f209",
    "F-f159990aa1",
@@ -11048,7 +11050,6 @@
    "F-00b2f8d525",
    "F-011accf67c",
    "F-01b6a90917",
-   "F-01db8c6042",
    "F-0255872934",
    "F-02a9fb18e0",
    "F-032e194fd2",
@@ -11057,10 +11058,9 @@
    "F-040fa02442",
    "F-047545dd05",
    "F-05d8cfe97a",
-   "F-0647b8acee",
    "F-06bb6065bb",
+   "F-06cbad104a",
    "F-06e12f4a44",
-   "F-08559b941f",
    "F-099ec9a07f",
    "F-0add54ec89",
    "F-0cbdbdf4a0",
@@ -11230,6 +11230,7 @@
    "F-90ae99f625",
    "F-90b1fa4ed7",
    "F-9161fc4085",
+   "F-9166e35c10",
    "F-91f72d619a",
    "F-9360b95c7a",
    "F-94976a42ec",
@@ -11269,6 +11270,7 @@
    "F-b26e8aa3c1",
    "F-b3003d7d80",
    "F-b3465440e2",
+   "F-b4ba7fa963",
    "F-b4ecc40fb3",
    "F-b541832c93",
    "F-b5dfa7129e",
@@ -11339,7 +11341,6 @@
    "F-eaafaf707c",
    "F-ed6aa15749",
    "F-ed8edc4ac1",
-   "F-edb6a3cfdb",
    "F-ef0bb9fee9",
    "F-ef601bffa7",
    "F-efdc9c2857",
@@ -11348,13 +11349,14 @@
    "F-f08dbd162f",
    "F-f148a80e32",
    "F-f1b3f6e3a1",
+   "F-f1cafc28ea",
+   "F-f244c7742e",
    "F-f277f8007e",
    "F-f4eb5717b7",
    "F-f59527c346",
    "F-f59e30cc6d",
    "F-f6404752a6",
    "F-f693b34ac5",
-   "F-f77419864f",
    "F-f8476ccf87",
    "F-f88f6ae3cd",
    "F-f8ff3be907",
@@ -14132,8 +14134,8 @@
   "F-00151a4a22": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 687,
-    "line": 693,
+    "first": 689,
+    "line": 695,
     "text": "        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
    },
    "constructions": [
@@ -14175,14 +14177,14 @@
    "value": 45,
    "where": [
     "scripts/nitrogen.py",
-    693
+    695
    ]
   },
   "F-0019d1e160": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 794,
-    "line": 800,
+    "first": 796,
+    "line": 802,
     "text": "    mfs = mon[\"hazardous_substances\"]\n    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \"\n        f\"discharges rest on **{mfs['stations_combined_overflow']} combined-sewer overflows and \"\n        f\"{mfs['stations_separate_stormwater']} separate stormwater outlets** — *\\\"\"\n        + quote(\"TYPETAL22\", \"fælleskloakerede spildevandsoverløb og fem separatkloakerede \"\n                \"regnvandsudledninger\") + \"\\\"* — monitored 2000–2020 in catchments representing *\\\"\""
    },
    "constructions": [
@@ -14252,7 +14254,7 @@
    "value": 6,
    "where": [
     "scripts/nitrogen.py",
-    800
+    802
    ]
   },
   "F-001c24e716": {
@@ -15466,8 +15468,8 @@
   "F-00b2f8d525": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 687,
-    "line": 693,
+    "first": 689,
+    "line": 695,
     "text": "        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
    },
    "constructions": [
@@ -15509,7 +15511,7 @@
    "value": 30,
    "where": [
     "scripts/nitrogen.py",
-    693
+    695
    ]
   },
   "F-00ba3a9068": {
@@ -17382,91 +17384,6 @@
    "synthetic": false,
    "value": "52"
   },
-  "F-01db8c6042": {
-   "constructions": [
-    "K-NITROGEN-KOEGE"
-   ],
-   "kind": "calculated",
-   "rests_on": {
-    "measured": 14
-   },
-   "src": [
-    "nary",
-    "*",
-    [
-     [
-      "op",
-      "/",
-      [
-       [
-        "nary",
-        "+",
-        [
-         [
-          "leaf",
-          "data/raw/national/punkt_rbu_udl.geojson",
-          "koege.Tårnby.vol"
-         ],
-         [
-          "leaf",
-          "data/raw/national/punkt_rbu_udl.geojson",
-          "koege.København.vol"
-         ],
-         [
-          "leaf",
-          "data/raw/national/punkt_rbu_udl.geojson",
-          "koege.Hvidovre.vol"
-         ],
-         [
-          "leaf",
-          "data/raw/national/punkt_rbu_udl.geojson",
-          "koege.Brøndby.vol"
-         ]
-        ],
-        [
-         17464.0,
-         42750.0,
-         19858.0,
-         0.0
-        ]
-       ],
-       [
-        "agg",
-        "+",
-        {
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
-         "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
-        },
-        [],
-        0
-       ]
-      ],
-      [
-       80072.0,
-       87343.0
-      ]
-     ],
-     [
-      "const",
-      100
-     ]
-    ],
-    [
-     0.9167534891176168,
-     100
-    ]
-   ],
-   "synthetic": false,
-   "value": 91.67534891176167
-  },
   "F-01dc098679": {
    "code": {
     "file": "scripts/light.py",
@@ -19013,8 +18930,8 @@
   "F-032e194fd2": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -19069,7 +18986,7 @@
    "value": 100000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-033ea48e63": {
@@ -19546,10 +19463,10 @@
   },
   "F-03924c3609": {
    "code": {
-    "file": "scripts/hypotheses.py",
-    "first": 77,
-    "line": 83,
-    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
+    "file": "scripts/pages/grundlaget.py",
+    "first": 85,
+    "line": 91,
+    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -19577,10 +19494,10 @@
     }
    ],
    "synthetic": false,
-   "value": 0.6,
+   "value": "0.6",
    "where": [
-    "scripts/hypotheses.py",
-    83
+    "scripts/pages/grundlaget.py",
+    91
    ]
   },
   "F-0393f1a1d4": {
@@ -20090,8 +20007,8 @@
   "F-040fa02442": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -20164,7 +20081,7 @@
    "value": 100.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-0413276518": {
@@ -22444,8 +22361,8 @@
   "F-05d8cfe97a": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 861,
-    "line": 867,
+    "first": 863,
+    "line": 869,
     "text": "            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:"
    },
    "constructions": [
@@ -22477,7 +22394,7 @@
    "value": 85,
    "where": [
     "scripts/nitrogen.py",
-    867
+    869
    ]
   },
   "F-05e6585f07": {
@@ -22815,59 +22732,6 @@
    ],
    "synthetic": false,
    "value": "80"
-  },
-  "F-0647b8acee": {
-   "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 860,
-    "line": 866,
-    "text": "            \"overflow in the national register\"\n            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))"
-   },
-   "constructions": [
-    "K-NITROGEN-KOEGE"
-   ],
-   "kind": "calculated",
-   "rests_on": {
-    "measured": 4
-   },
-   "src": [
-    "nary",
-    "+",
-    [
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Tårnby.vol"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.København.vol"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Hvidovre.vol"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Brøndby.vol"
-     ]
-    ],
-    [
-     17464.0,
-     42750.0,
-     19858.0,
-     0.0
-    ]
-   ],
-   "synthetic": false,
-   "value": 80072.0,
-   "where": [
-    "scripts/nitrogen.py",
-    866
-   ]
   },
   "F-0650e3db8e": {
    "constructions": [
@@ -23846,6 +23710,59 @@
    "where": [
     "scripts/programme.py",
     888
+   ]
+  },
+  "F-06cbad104a": {
+   "code": {
+    "file": "scripts/nitrogen.py",
+    "first": 863,
+    "line": 869,
+    "text": "            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:"
+   },
+   "constructions": [
+    "K-NITROGEN-KOEGE"
+   ],
+   "kind": "calculated",
+   "rests_on": {
+    "counted": 4
+   },
+   "src": [
+    "nary",
+    "+",
+    [
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Tårnby.comb"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Brøndby.comb"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.København.comb"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Hvidovre.comb"
+     ]
+    ],
+    [
+     5,
+     1,
+     19,
+     22
+    ]
+   ],
+   "synthetic": false,
+   "value": 47,
+   "where": [
+    "scripts/nitrogen.py",
+    869
    ]
   },
   "F-06dc978b2f": {
@@ -25686,111 +25603,6 @@
    ],
    "synthetic": false,
    "value": "2.26"
-  },
-  "F-08559b941f": {
-   "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 860,
-    "line": 866,
-    "text": "            \"overflow in the national register\"\n            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))"
-   },
-   "constructions": [
-    "K-SUBSET-SHARE",
-    "K-NITROGEN-KOEGE"
-   ],
-   "kind": "share",
-   "rests_on": {
-    "measured": 14
-   },
-   "src": [
-    "step",
-    "K-SUBSET-SHARE",
-    [
-     [
-      "nary",
-      "*",
-      [
-       [
-        "op",
-        "/",
-        [
-         [
-          "nary",
-          "+",
-          [
-           [
-            "leaf",
-            "data/raw/national/punkt_rbu_udl.geojson",
-            "koege.Tårnby.vol"
-           ],
-           [
-            "leaf",
-            "data/raw/national/punkt_rbu_udl.geojson",
-            "koege.København.vol"
-           ],
-           [
-            "leaf",
-            "data/raw/national/punkt_rbu_udl.geojson",
-            "koege.Hvidovre.vol"
-           ],
-           [
-            "leaf",
-            "data/raw/national/punkt_rbu_udl.geojson",
-            "koege.Brøndby.vol"
-           ]
-          ],
-          [
-           17464.0,
-           42750.0,
-           19858.0,
-           0.0
-          ]
-         ],
-         [
-          "agg",
-          "+",
-          {
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
-           "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
-          },
-          [],
-          0
-         ]
-        ],
-        [
-         80072.0,
-         87343.0
-        ]
-       ],
-       [
-        "const",
-        100
-       ]
-      ],
-      [
-       0.9167534891176168,
-       100
-      ]
-     ]
-    ],
-    [
-     91.67534891176167
-    ]
-   ],
-   "synthetic": false,
-   "value": 91.67534891176167,
-   "where": [
-    "scripts/nitrogen.py",
-    866
-   ]
   },
   "F-0866d3e64c": {
    "code": {
@@ -30964,8 +30776,8 @@
   "F-0cbdbdf4a0": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -30995,7 +30807,7 @@
    "value": 0.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-0cc4bbcb85": {
@@ -31549,8 +31361,8 @@
   "F-0d114bd8f2": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 753,
-    "line": 759,
+    "first": 755,
+    "line": 761,
     "text": "    s_mgl = so4 * MM[\"S\"] / (MM[\"S\"] + MM[\"O\"] * 4)\n    demand = s_mgl * o2_per_s\n    w(C(\"C-NI-SULPHATE\", \"**Sulphate makes the debt effectively unbounded.** Full-strength seawater \"\n        f\"holds ~{so4:.0f} mg/l sulphate = {s_mgl:.0f} mg/l as sulphur, against ~{o2sat:.0f} mg/l \"\n        f\"dissolved oxygen. Fully reduced and later re-oxidised that is {demand:.0f} mg/l of demand — \"\n        f\"**{demand / o2sat:.0f}× the oxygen in the water**. Reducing just \"\n        f\"{o2sat / demand * 100:.2f}% of the sulphate pool stores a debt equal to all of it. Danish \"\n        \"waters are brackish and hold proportionally less sulphate, which lowers the multiple and \"\n        \"leaves the point. Once a basin goes anoxic the electron acceptor is effectively infinite, \"\n        \"and every storm that mixes oxygen in spends it re-oxidising sulphide instead of restoring \""
    },
    "constructions": [
@@ -31702,7 +31514,7 @@
    "value": 0.4447314994224177,
    "where": [
     "scripts/nitrogen.py",
-    759
+    761
    ]
   },
   "F-0d23fcbd4a": {
@@ -42728,8 +42540,8 @@
   "F-16b37892b9": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -42759,7 +42571,7 @@
    "value": 0.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-16b806e63f": {
@@ -42787,8 +42599,8 @@
   "F-16bd766a2e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 687,
-    "line": 693,
+    "first": 689,
+    "line": 695,
     "text": "        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
    },
    "constructions": [
@@ -42830,7 +42642,7 @@
    "value": 135,
    "where": [
     "scripts/nitrogen.py",
-    693
+    695
    ]
   },
   "F-16c2345f41": {
@@ -45800,9 +45612,9 @@
   "F-18ed0488b0": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 659,
-    "line": 665,
-    "text": "        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \"\n        \"measurements. The rest are estimates, and the largest is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")\n    w(C(\"C-NI-QC-CIRCULAR\", f\"{ql['consequence']} **The assumed concentration cannot be falsified by \""
+    "first": 661,
+    "line": 667,
+    "text": "    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \"\n        \"measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, \"\n        \"stormwater outlets, some aquaculture and small treatment plants are calculated, and the \"\n        \"largest line is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")\n    w(C(\"C-NI-QC-CIRCULAR\", f\"{ql['consequence']} **The assumed concentration cannot be falsified by \""
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -45839,7 +45651,7 @@
    "value": 2.2,
    "where": [
     "scripts/nitrogen.py",
-    665
+    667
    ]
   },
   "F-18edee6b56": {
@@ -46302,8 +46114,8 @@
   "F-19375c18e8": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 679,
-    "line": 685,
+    "first": 681,
+    "line": 687,
     "text": "    w(C(\"C-NI-DIFFUSE-BASIS\", \"Underneath it, by DCE's stream report for 2018: \"\n        f\"**{dl['stream_stations']} stream stations** whose catchments cover \"\n        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is computed from samples at fixed intervals with linear interpolation, and \"\n        \"in all three streams of a 2018 study measured daily alongside, that method **always \"\n        \"underestimated** - under monthly sampling by \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. \"\n        \"Retention, the largest single term, is uncertain by \"\n        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \""
    },
    "constructions": [
@@ -46349,7 +46161,7 @@
    "value": -7.7,
    "where": [
     "scripts/nitrogen.py",
-    685
+    687
    ]
   },
   "F-1938ee28d0": {
@@ -47908,8 +47720,8 @@
   "F-1aa69ff05b": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -47951,7 +47763,7 @@
    "value": 9.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-1aa85b1e2b": {
@@ -53497,8 +53309,8 @@
   "F-1eb894c5fb": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 735,
-    "line": 741,
+    "first": 737,
+    "line": 743,
     "text": "    w(\"| Pathway | Oxygen demand |\\n|---|---:|\")\n    w(f\"| Remineralisation of algal biomass | **{o2_per_n:.2f} g {O2} per g N** |\")\n    w(f\"| Remineralisation, via phosphorus | {o2_per_p:.1f} g {O2} per g P |\")\n    w(f\"| **Nitrification of delivered ammonium** | **{o2_nitrif:.2f} g {O2} per g N** |\")\n    w(f\"| **Sulphide oxidation** | **{o2_per_s:.2f} g {O2} per g S** |\")\n    w(f\"| Methane oxidation | {o2_per_ch4:.2f} g {O2} per g {live.chem('CH4')} |\")\n    w(f\"| Direct BOD | {K['bod5_to_ultimate']:.2f} g {O2} per g of five-day BOD |\")\n    w(\"\")\n    w(C(\"C-NI-ACCOUNTS-MASS\", \"The nitrogen apportionment counts nitrogen mass, which bears on the \"\n        \"first line only. The mechanistic fjord models used to set the targets do describe the \""
    },
    "constructions": [
@@ -53580,7 +53392,7 @@
    "value": 1.46,
    "where": [
     "scripts/nitrogen.py",
-    741
+    743
    ]
   },
   "F-1ec2922bf1": {
@@ -53864,8 +53676,8 @@
   "F-1efcd4d820": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 817,
-    "line": 823,
+    "first": 819,
+    "line": 825,
     "text": "    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]\n    w(C(\"C-NI-STORMWATER-METALS\", \"Note that chromium, nickel and arsenic are **higher in separated \"\n        \"stormwater than in sewage overflow** — and the national outfall layers report \"\n        f\"{sw_v['sum'] / 1e6:.0f} million m³/yr of the former, summed over the {sw_v['n']:,} of \"\n        f\"{sw['n']:,} separate outfalls that give a volume, against {co_v['sum'] / 1e6:.1f} million \"\n        f\"m³/yr of the latter over {co_v['n']:,} of {co['n']:,} combined-sewer overflows. Separating a \"\n        \"sewer system solves the sewage overflow and delivers untreated runoff instead.\") + \"\\n\")\n\n    # ---------------------------------------------------------------- 5. Køge Bugt"
    },
    "constructions": [
@@ -53916,7 +53728,7 @@
    "value": 4217,
    "where": [
     "scripts/nitrogen.py",
-    823
+    825
    ]
   },
   "F-1efd11344c": {
@@ -57602,8 +57414,8 @@
   "F-223799c3c2": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -57633,7 +57445,7 @@
    "value": 0.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-2246fc966a": {
@@ -58006,10 +57818,10 @@
   },
   "F-22be589220": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2192,
-    "line": 2198,
-    "text": "         f\"{hz['applied_to_discharge_points_nationally']:,} outfalls. The same substance \"\n         \"regulated at the point of sale has to be caught once.\\n\"))\n    a(CL(\"C-PG-5-FURTHEST\", \"*This remains the section furthest from what this project has \"\n         \"measured.* We have not established that any of these is a binding constraint in \"\n         \"Danish coastal water — only that the mechanisms are well founded, that the \"\n         \"substances are present, and that the monitoring which would settle it rests on \"\n         f\"{hz['stations_combined_overflow'] + hz['stations_separate_stormwater']} stations \"\n         f\"which in Miljøstyrelsen's own words are limiting for *{hz['excludes_heavy_catchments']}* \"\n         \"— the industrial areas and heavily trafficked roads the substances come from. The \"\n         f\"same programme reports {hz['counterpoint']}.\\n\"))"
+    "file": "scripts/nitrogen.py",
+    "first": 792,
+    "line": 798,
+    "text": "          \"receive the next year's nitrogen is the one the programme does not sample.\") + \"\\n\")\n    w(C(\"C-NI-SEASONAL\", \"And any seasonal claim drawn from a seasonally-sampled record is circular \"\n        \"unless the window was set by mechanism. Iltsvind's July–November window was; bathing \"\n        \"water's June–September window was not.\") + \"\\n\")\n    mfs = mon[\"hazardous_substances\"]\n    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \""
    },
    "constructions": [
     "K-FLOOD-MONITORING"
@@ -58041,8 +57853,8 @@
    "synthetic": false,
    "value": 11,
    "where": [
-    "scripts/programme.py",
-    2198
+    "scripts/nitrogen.py",
+    798
    ]
   },
   "F-22c8281bf6": {
@@ -64665,8 +64477,8 @@
   "F-27cb5aafd0": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 681,
-    "line": 687,
+    "first": 683,
+    "line": 689,
     "text": "        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is computed from samples at fixed intervals with linear interpolation, and \"\n        \"in all three streams of a 2018 study measured daily alongside, that method **always \"\n        \"underestimated** - under monthly sampling by \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. \"\n        \"Retention, the largest single term, is uncertain by \"\n        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")"
    },
    "constructions": [
@@ -64712,7 +64524,7 @@
    "value": 27,
    "where": [
     "scripts/nitrogen.py",
-    687
+    689
    ]
   },
   "F-27cbd062a5": {
@@ -65795,8 +65607,8 @@
   "F-28a4ed4736": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 681,
-    "line": 687,
+    "first": 683,
+    "line": 689,
     "text": "        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is computed from samples at fixed intervals with linear interpolation, and \"\n        \"in all three streams of a 2018 study measured daily alongside, that method **always \"\n        \"underestimated** - under monthly sampling by \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. \"\n        \"Retention, the largest single term, is uncertain by \"\n        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")"
    },
    "constructions": [
@@ -65842,7 +65654,7 @@
    "value": 6,
    "where": [
     "scripts/nitrogen.py",
-    687
+    689
    ]
   },
   "F-28a77f075a": {
@@ -71343,8 +71155,8 @@
   "F-2cc3054929": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 876,
-    "line": 882,
+    "first": 878,
+    "line": 884,
     "text": "\n    # ------------------------------------------------------------------- caveats\n    ovr = next(p for p in paths if str(p[\"pathway\"]).startswith(\"Rain-dependent overflow\"))\n    w(\"## What this does and does not establish\\n\")\n    w(C(\"C-NI-NOT-URBAN\", \"**It does not establish that urban discharge is a large national \"\n        \"source.** In the pathways register above, combined-sewer overflow is put at \"\n        f\"{ovr['lo']:g}–{ovr['hi']:g} kt N/yr against {land_lo:g}–{land_hi:g} kt from Danish land by \"\n        \"stream: a fraction even at its upper bound.\") + \"\\n\")\n    w(C(\"C-NI-DIFFERENT-QUESTION\", \"**It does establish that the published percentage answers a \"\n        \"different question than the one it is used for.** It answers: *of the nitrogen we observe \""
    },
    "constructions": [
@@ -71378,7 +71190,7 @@
    "value": 71,
    "where": [
     "scripts/nitrogen.py",
-    882
+    884
    ]
   },
   "F-2cc76f7f45": {
@@ -73005,8 +72817,8 @@
   "F-2d8f659171": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -73048,7 +72860,7 @@
    "value": 50,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-2d95576a33": {
@@ -74102,8 +73914,8 @@
   "F-2e42b3ed03": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 707,
-    "line": 713,
+    "first": 709,
+    "line": 715,
     "text": "                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")\n    w(two_subtractions(mon, agri, dl))\n    w(\"### Which sharpens what the residual absorbs\\n\")\n    w(C(\"C-NI-RESIDUAL-ABSORBS\", f\"Section 1 lists **{unq} of {n_all} pathways carrying no number at \"\n        \"all**. Every one of them that reaches a river — submarine groundwater discharge, drained \"\n        \"organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's \"\n        f\"leftover, and is named agriculture by subtraction. That is a weakness of the ~{agri:.0f}% \""
    },
    "constructions": [
@@ -74161,7 +73973,7 @@
    "value": 10,
    "where": [
     "scripts/nitrogen.py",
-    713
+    715
    ]
   },
   "F-2e4572ce1f": {
@@ -80748,8 +80560,8 @@
   "F-33a12f031b": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 876,
-    "line": 882,
+    "first": 878,
+    "line": 884,
     "text": "\n    # ------------------------------------------------------------------- caveats\n    ovr = next(p for p in paths if str(p[\"pathway\"]).startswith(\"Rain-dependent overflow\"))\n    w(\"## What this does and does not establish\\n\")\n    w(C(\"C-NI-NOT-URBAN\", \"**It does not establish that urban discharge is a large national \"\n        \"source.** In the pathways register above, combined-sewer overflow is put at \"\n        f\"{ovr['lo']:g}–{ovr['hi']:g} kt N/yr against {land_lo:g}–{land_hi:g} kt from Danish land by \"\n        \"stream: a fraction even at its upper bound.\") + \"\\n\")\n    w(C(\"C-NI-DIFFERENT-QUESTION\", \"**It does establish that the published percentage answers a \"\n        \"different question than the one it is used for.** It answers: *of the nitrogen we observe \""
    },
    "constructions": [
@@ -80783,7 +80595,7 @@
    "value": 59,
    "where": [
     "scripts/nitrogen.py",
-    882
+    884
    ]
   },
   "F-33c48130d3": {
@@ -84350,8 +84162,8 @@
   "F-360e366744": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -84393,7 +84205,7 @@
    "value": 24,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-362c6476de": {
@@ -89027,8 +88839,8 @@
   "F-39a22f8b38": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -89070,7 +88882,7 @@
    "value": 2.4,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-39b0e6ae17": {
@@ -89904,8 +89716,8 @@
   "F-3a70a9dc3f": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -89947,7 +89759,7 @@
    "value": 5,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-3a70c7df44": {
@@ -96588,8 +96400,8 @@
   "F-3f5e7a4548": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -96662,7 +96474,7 @@
    "value": 45.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-3f6161ca84": {
@@ -97693,8 +97505,8 @@
   "F-405fe94e64": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -97736,7 +97548,7 @@
    "value": 4.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-406219ee6e": {
@@ -97995,8 +97807,8 @@
   "F-40cb41f3b3": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 679,
-    "line": 685,
+    "first": 681,
+    "line": 687,
     "text": "    w(C(\"C-NI-DIFFUSE-BASIS\", \"Underneath it, by DCE's stream report for 2018: \"\n        f\"**{dl['stream_stations']} stream stations** whose catchments cover \"\n        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is computed from samples at fixed intervals with linear interpolation, and \"\n        \"in all three streams of a 2018 study measured daily alongside, that method **always \"\n        \"underestimated** - under monthly sampling by \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. \"\n        \"Retention, the largest single term, is uncertain by \"\n        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \""
    },
    "constructions": [
@@ -98042,7 +97854,7 @@
    "value": -0.9,
    "where": [
     "scripts/nitrogen.py",
-    685
+    687
    ]
   },
   "F-40cbe9e485": {
@@ -98876,10 +98688,10 @@
   },
   "F-415b4027ce": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2164,
-    "line": 2170,
-    "text": "    biggest = max(numeric, key=numeric.get)\n    a(CL(\"C-PG-5-ZINC\", (f\"Zinc is the largest metal term in the Danish stormwater typetal — \"\n                         if biggest == \"Zink\" else \"Zinc is a large metal term in the Danish \"\n                         \"stormwater typetal — \")\n         + f\"**{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in separate \"\n         f\"stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a maximum \"\n         f\"observed of {zn[2]:,.0f}. The flux is not small.\\n\"))\n    a(CL(\"C-PG-5-SINK\", \"**The sink is conditional, and the condition is failing.** Metals \"\n         \"bury in sediment and come back out when it is disturbed. [SEABED.md](SEABED.md) \"\n         \"computes that a dead bed crosses the resuspension threshold several times more \""
+    "file": "scripts/nitrogen.py",
+    "first": 811,
+    "line": 817,
+    "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -98919,8 +98731,8 @@
    "synthetic": false,
    "value": 400,
    "where": [
-    "scripts/programme.py",
-    2170
+    "scripts/nitrogen.py",
+    817
    ]
   },
   "F-415f321838": {
@@ -103993,7 +103805,7 @@
     "file": "scripts/nitrogen.py",
     "first": 652,
     "line": 658,
-    "text": "    w(\"## 2. The numbers are not estimators of what they are named\\n\")\n    w(C(\"C-NI-RELABEL\", \"Each line of the published apportionment, relabelled by what actually \"\n        \"produced it. The pinned summary gives shares for the first three lines and calls the rest \"\n        \"*\\\"\" + quote(\"DANVA-2024\", \"endnu mindre andele\") + \"\\\"* — even smaller shares:\") + \"\\n\")\n    w(\"| Called | Actually is |\\n|---|---|\")\n    for name, pct, what in apportionment:\n        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \""
+    "text": "    w(\"## 2. The numbers are not estimators of what they are named\\n\")\n    w(C(\"C-NI-RELABEL\", \"Each line of the published apportionment, relabelled by what actually \"\n        \"produced it. The pinned summary gives shares for the first three lines and calls the rest \"\n        \"*\\\"\" + quote(\"DANVA-2024\", \"endnu mindre andele\") + \"\\\"* — even smaller shares:\") + \"\\n\")\n    w(\"| Called | Actually is |\\n|---|---|\")\n    for name, pct, what in apportionment:\n        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \""
    },
    "constructions": [
     "K-NITROGEN-READINGS"
@@ -109607,8 +109419,8 @@
   "F-4a992b51dd": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -109650,7 +109462,7 @@
    "value": 0,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-4a9f0973af": {
@@ -112995,8 +112807,8 @@
   "F-4d2c213b6e": {
    "code": {
     "file": "data/manual/claims.d/w1-ni.json",
-    "first": 1882,
-    "line": 1888,
+    "first": 1933,
+    "line": 1939,
     "text": "  },\n  {\n   \"id\": \"C-NI-L5\",\n   \"kind\": \"attributed\",\n   \"stance\": \"theirs\",\n   \"page\": \"NITROGEN.md\",\n   \"claim\": \"The fertilisation law `L 5` passed on 2026-09-03 by {read:POL-TV2-20260903:119|119 medlemmer af Folketinget stemte for loven} votes to {read:POL-TV2-20260903:34|mens 34 stemte imod}; the ministry said holdings would get a nitrogen quota set by what their catchment must cut and called the quota model a safety net under the Tripartite's land conversion; emission-based regulation replaces field regulation from 2027, and its sharper step, the kvælstofhammer, cannot strike before 2028.\",\n   \"because\": \"Their statements, as reported: the vote from TV 2's report, the quota and the safety net from the ministry's announcement, the two steps as the POLITICS page reads the record. The law as passed is LOV 759 and the bill with its remarks is `L 5` as introduced, both pinned.\",\n   \"rests_on\": [\n    \"E-NI-TV2-L5\","
    },
    "constructions": [
@@ -113028,7 +112840,7 @@
    "value": "119",
    "where": [
     "data/manual/claims.d/w1-ni.json",
-    1888
+    1939
    ]
   },
   "F-4d2cb0e0a6": {
@@ -116208,8 +116020,8 @@
   "F-4f8159212c": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 816,
-    "line": 822,
+    "first": 818,
+    "line": 824,
     "text": "    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]\n    w(C(\"C-NI-STORMWATER-METALS\", \"Note that chromium, nickel and arsenic are **higher in separated \"\n        \"stormwater than in sewage overflow** — and the national outfall layers report \"\n        f\"{sw_v['sum'] / 1e6:.0f} million m³/yr of the former, summed over the {sw_v['n']:,} of \"\n        f\"{sw['n']:,} separate outfalls that give a volume, against {co_v['sum'] / 1e6:.1f} million \"\n        f\"m³/yr of the latter over {co_v['n']:,} of {co['n']:,} combined-sewer overflows. Separating a \"\n        \"sewer system solves the sewage overflow and delivers untreated runoff instead.\") + \"\\n\")\n"
    },
    "constructions": [
@@ -116242,7 +116054,7 @@
    "value": 33.614538,
    "where": [
     "scripts/nitrogen.py",
-    822
+    824
    ]
   },
   "F-4f82f4f948": {
@@ -117700,8 +117512,8 @@
   "F-506cb1918a": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -117774,7 +117586,7 @@
    "value": 100.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-507b460a5a": {
@@ -118295,8 +118107,8 @@
   "F-50e9e787ad": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -118326,7 +118138,7 @@
    "value": 0.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-50fad5215b": {
@@ -120133,8 +119945,8 @@
   "F-522e586e8e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -120207,7 +120019,7 @@
    "value": 95.10204081632652,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-52302aa51a": {
@@ -123297,8 +123109,8 @@
   "F-54b63f588b": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 759,
-    "line": 765,
+    "first": 761,
+    "line": 767,
     "text": "        f\"{o2sat / demand * 100:.2f}% of the sulphate pool stores a debt equal to all of it. Danish \"\n        \"waters are brackish and hold proportionally less sulphate, which lowers the multiple and \"\n        \"leaves the point. Once a basin goes anoxic the electron acceptor is effectively infinite, \"\n        \"and every storm that mixes oxygen in spends it re-oxidising sulphide instead of restoring \"\n        \"the water.\") + \"\\n\")\n    w(C(\"C-NI-SILICON\", \"**And the ratio matters, not just the total.** Diatoms take up silicon and \"\n        f\"nitrogen at a molar ratio of about {K['diatom_si_per_n']:g}. Fertiliser and sewage add N \"\n        \"and P; neither adds silicon, which comes from rock weathering. Enrichment therefore raises \"\n        \"N:Si, and when silicon runs out the community shifts from diatoms to flagellates and \"\n        \"dinoflagellates. A composition change driven by a ratio, invisible to any nitrogen \""
    },
    "constructions": [
@@ -123380,7 +123192,7 @@
    "value": 1.0,
    "where": [
     "scripts/nitrogen.py",
-    765
+    767
    ]
   },
   "F-54bb3576eb": {
@@ -130784,8 +130596,8 @@
   "F-5a1f936ed0": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -130858,7 +130670,7 @@
    "value": 100.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-5a40007fae": {
@@ -131644,8 +131456,8 @@
   "F-5ae08efef5": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 730,
-    "line": 736,
+    "first": 732,
+    "line": 738,
     "text": "    w(\"## 3. Nitrogen mass is the wrong currency\\n\")\n    w(C(\"C-NI-CURRENCY\", \"Oxygen depletion is the damage. Nitrogen is one route to it.\") + \" \"\n      + C(\"C-NI-O2-TABLE\", \"Converting everything to oxygen demand — Redfield stoichiometry and the \"\n          \"balanced reactions, which is chemistry rather than judgement \"\n          \"(`data/manual/nitrogen_constants.json`):\") + \"\\n\")\n    w(\"| Pathway | Oxygen demand |\\n|---|---:|\")\n    w(f\"| Remineralisation of algal biomass | **{o2_per_n:.2f} g {O2} per g N** |\")\n    w(f\"| Remineralisation, via phosphorus | {o2_per_p:.1f} g {O2} per g P |\")\n    w(f\"| **Nitrification of delivered ammonium** | **{o2_nitrif:.2f} g {O2} per g N** |\")\n    w(f\"| **Sulphide oxidation** | **{o2_per_s:.2f} g {O2} per g S** |\")"
    },
    "constructions": [
@@ -131709,7 +131521,7 @@
    "value": 19.703201970443352,
    "where": [
     "scripts/nitrogen.py",
-    736
+    738
    ]
   },
   "F-5ae291e71c": {
@@ -137111,8 +136923,8 @@
   "F-5f08c4ec8d": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -137154,7 +136966,7 @@
    "value": 0.03,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-5f1c56a67a": {
@@ -138081,8 +137893,8 @@
   "F-5fe2cbedfa": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -138124,7 +137936,7 @@
    "value": 5.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-5fe57957eb": {
@@ -139103,8 +138915,8 @@
   "F-60be0b96f1": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -139159,7 +138971,7 @@
    "value": 60000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-60c56ffc12": {
@@ -145477,8 +145289,8 @@
   "F-6611096f99": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -145520,7 +145332,7 @@
    "value": 3,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-661c6c942a": {
@@ -147352,8 +147164,8 @@
   "F-67708c9757": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -147426,7 +147238,7 @@
    "value": 98.44961240310077,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-678a62452a": {
@@ -152593,8 +152405,8 @@
   "F-6b51597463": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 861,
-    "line": 867,
+    "first": 863,
+    "line": 869,
     "text": "            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:"
    },
    "constructions": [
@@ -152626,7 +152438,7 @@
    "value": 87343.0,
    "where": [
     "scripts/nitrogen.py",
-    867
+    869
    ]
   },
   "F-6b5fd21283": {
@@ -153312,8 +153124,8 @@
   "F-6c15b4e7e7": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 687,
-    "line": 693,
+    "first": 689,
+    "line": 695,
     "text": "        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
    },
    "constructions": [
@@ -153355,7 +153167,7 @@
    "value": 100,
    "where": [
     "scripts/nitrogen.py",
-    693
+    695
    ]
   },
   "F-6c253b945d": {
@@ -154201,8 +154013,8 @@
   "F-6cd20104a1": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 743,
-    "line": 749,
+    "first": 745,
+    "line": 751,
     "text": "    w(C(\"C-NI-ACCOUNTS-MASS\", \"The nitrogen apportionment counts nitrogen mass, which bears on the \"\n        \"first line only. The mechanistic fjord models used to set the targets do describe the \"\n        \"sediment's sulphate reduction — *\\\"\" + quote(\"DHI-MODEL-DEL2-2015\", \"sker oxidationen overvejende \"\n        \"ved sulfatreduktion med deraf følgende produktion af sulfid\") + \"\\\"* — but the share that \"\n        \"circulates is a share of nitrogen. The consequences:\") + \"\\n\")\n    w(C(\"C-NI-AMMONIUM\", \"**Ammonium carries its own demand.** An ammonium-rich discharge — which is \"\n        f\"what a basin that has gone anaerobic produces — consumes {o2_nitrif:.2f} g {O2} per g N on \"\n        \"arrival, with no algae, no light and no delay. That pathway is absent from a \"\n        \"nitrogen→algae→decay model entirely.\") + \"\\n\")\n    so4, o2sat = K[\"seawater_sulphate_mg_per_l\"], K[\"dissolved_oxygen_mg_per_l\"]"
    },
    "constructions": [
@@ -154251,7 +154063,7 @@
    "value": 4.568858427928893,
    "where": [
     "scripts/nitrogen.py",
-    749
+    751
    ]
   },
   "F-6cd485eb40": {
@@ -158065,8 +157877,8 @@
   "F-6f465fcbe2": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 4327,
-    "line": 4333,
+    "first": 4349,
+    "line": 4355,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-NOTSUPPORT\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The chain does not support an agricultural share of oxygen depletion, and none of its six pinned documents names fedtemøg - the word occurs {count:NOVANA-2327:fedtemøg}, {count:DHI-MODEL-DEL1-2015:fedtemøg}, {count:DHI-MODEL-DEL2-2015:fedtemøg}, {count:DCE-STATMOD-2015:fedtemøg}, {count:SO-BG-2024:fedtemøg} and {count:POL-SO-2024:fedtemøg} times in them; the gap between the science and the politics is where the project stands.\",\n   \"because\": \"Oxygen reaches no requirement and the accounting has no potency term; the counts are over the six pinned documents.\",\n   \"rests_on\": [\n    \"C-GC-G-GATE\","
    },
    "constructions": [
@@ -158095,7 +157907,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    4333
+    4355
    ]
   },
   "F-6f4a3f7c58": {
@@ -159514,8 +159326,8 @@
   "F-70536a1c82": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -159570,7 +159382,7 @@
    "value": 24500,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-706635ffa6": {
@@ -160081,8 +159893,8 @@
   "F-70c7abc479": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -160124,7 +159936,7 @@
    "value": 8.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-70ca8172c1": {
@@ -161248,8 +161060,8 @@
   "F-716a477f1f": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 674,
-    "line": 680,
+    "first": 676,
+    "line": 682,
     "text": "        \"reaching three lakes at Haderslev, the measured source apportionment gave a **negative** \"\n        \"cultivation contribution in dry years such as 1996 and 2005, which its authors call a \"\n        \"meaningless result of the uncertainty in the estimate. That study is of phosphorus; no such \"\n        \"result for the national nitrogen share is on file here. The share itself is published to \"\n        \"one decimal place with no error bar.\") + \"\\n\")\n    w(C(\"C-NI-DIFFUSE-BASIS\", \"Underneath it, by DCE's stream report for 2018: \"\n        f\"**{dl['stream_stations']} stream stations** whose catchments cover \"\n        f\"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** \"\n        \"modelled. Load is computed from samples at fixed intervals with linear interpolation, and \"\n        \"in all three streams of a 2018 study measured daily alongside, that method **always \""
    },
    "constructions": [
@@ -161295,7 +161107,7 @@
    "value": 237,
    "where": [
     "scripts/nitrogen.py",
-    680
+    682
    ]
   },
   "F-716b15c6a7": {
@@ -161843,10 +161655,10 @@
   },
   "F-71c1801261": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2163,
-    "line": 2169,
-    "text": "    numeric = {k: v[0] for k, v in tt_metal.items() if isinstance(v[0], (int, float))}\n    biggest = max(numeric, key=numeric.get)\n    a(CL(\"C-PG-5-ZINC\", (f\"Zinc is the largest metal term in the Danish stormwater typetal — \"\n                         if biggest == \"Zink\" else \"Zinc is a large metal term in the Danish \"\n                         \"stormwater typetal — \")\n         + f\"**{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in separate \"\n         f\"stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a maximum \"\n         f\"observed of {zn[2]:,.0f}. The flux is not small.\\n\"))\n    a(CL(\"C-PG-5-SINK\", \"**The sink is conditional, and the condition is failing.** Metals \"\n         \"bury in sediment and come back out when it is disturbed. [SEABED.md](SEABED.md) \""
+    "file": "scripts/nitrogen.py",
+    "first": 811,
+    "line": 817,
+    "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -161886,8 +161698,8 @@
    "synthetic": false,
    "value": 9.0,
    "where": [
-    "scripts/programme.py",
-    2169
+    "scripts/nitrogen.py",
+    817
    ]
   },
   "F-71d02fc6ff": {
@@ -163947,10 +163759,10 @@
   },
   "F-739f99f4e2": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2163,
-    "line": 2169,
-    "text": "    numeric = {k: v[0] for k, v in tt_metal.items() if isinstance(v[0], (int, float))}\n    biggest = max(numeric, key=numeric.get)\n    a(CL(\"C-PG-5-ZINC\", (f\"Zinc is the largest metal term in the Danish stormwater typetal — \"\n                         if biggest == \"Zink\" else \"Zinc is a large metal term in the Danish \"\n                         \"stormwater typetal — \")\n         + f\"**{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in separate \"\n         f\"stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a maximum \"\n         f\"observed of {zn[2]:,.0f}. The flux is not small.\\n\"))\n    a(CL(\"C-PG-5-SINK\", \"**The sink is conditional, and the condition is failing.** Metals \"\n         \"bury in sediment and come back out when it is disturbed. [SEABED.md](SEABED.md) \""
+    "file": "scripts/nitrogen.py",
+    "first": 811,
+    "line": 817,
+    "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -163990,8 +163802,8 @@
    "synthetic": false,
    "value": 16,
    "where": [
-    "scripts/programme.py",
-    2169
+    "scripts/nitrogen.py",
+    817
    ]
   },
   "F-73b3ca6a77": {
@@ -176414,8 +176226,8 @@
   "F-7decb00e81": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 4327,
-    "line": 4333,
+    "first": 4349,
+    "line": 4355,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-NOTSUPPORT\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The chain does not support an agricultural share of oxygen depletion, and none of its six pinned documents names fedtemøg - the word occurs {count:NOVANA-2327:fedtemøg}, {count:DHI-MODEL-DEL1-2015:fedtemøg}, {count:DHI-MODEL-DEL2-2015:fedtemøg}, {count:DCE-STATMOD-2015:fedtemøg}, {count:SO-BG-2024:fedtemøg} and {count:POL-SO-2024:fedtemøg} times in them; the gap between the science and the politics is where the project stands.\",\n   \"because\": \"Oxygen reaches no requirement and the accounting has no potency term; the counts are over the six pinned documents.\",\n   \"rests_on\": [\n    \"C-GC-G-GATE\","
    },
    "constructions": [
@@ -176444,7 +176256,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    4333
+    4355
    ]
   },
   "F-7df04b0a34": {
@@ -182177,8 +181989,8 @@
   "F-8295355a7a": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -182220,7 +182032,7 @@
    "value": 0.3,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-829cd3f2aa": {
@@ -194542,8 +194354,8 @@
   "F-8b354bb0d8": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -194585,7 +194397,7 @@
    "value": 4.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-8b386e5a02": {
@@ -195422,10 +195234,10 @@
   },
   "F-8be24edb3a": {
    "code": {
-    "file": "scripts/pages/residual.py",
-    "first": 489,
-    "line": 495,
-    "text": "\n---\n\n## A note on who this is about\n\n{B('C-LR-R-WHO-DOCS')}Every limitation of the Danish method described here was found by\n**reading a document that its authors wrote and published**. The {CUT:.0f}% is discoverable\nbecause the method document states it and explains the reasoning. The averaging of\nindicators is discoverable because they wrote down that it reduces the risk of\nover-implementation. The exclusion of eelgrass is discoverable because they justified it, in"
+    "file": "scripts/pages/grundlaget.py",
+    "first": 85,
+    "line": 91,
+    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -195453,10 +195265,10 @@
     }
    ],
    "synthetic": false,
-   "value": 25,
+   "value": "25",
    "where": [
-    "scripts/pages/residual.py",
-    495
+    "scripts/pages/grundlaget.py",
+    91
    ]
   },
   "F-8be823c0fe": {
@@ -197750,7 +197562,7 @@
     "file": "scripts/nitrogen.py",
     "first": 652,
     "line": 658,
-    "text": "    w(\"## 2. The numbers are not estimators of what they are named\\n\")\n    w(C(\"C-NI-RELABEL\", \"Each line of the published apportionment, relabelled by what actually \"\n        \"produced it. The pinned summary gives shares for the first three lines and calls the rest \"\n        \"*\\\"\" + quote(\"DANVA-2024\", \"endnu mindre andele\") + \"\\\"* — even smaller shares:\") + \"\\n\")\n    w(\"| Called | Actually is |\\n|---|---|\")\n    for name, pct, what in apportionment:\n        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \""
+    "text": "    w(\"## 2. The numbers are not estimators of what they are named\\n\")\n    w(C(\"C-NI-RELABEL\", \"Each line of the published apportionment, relabelled by what actually \"\n        \"produced it. The pinned summary gives shares for the first three lines and calls the rest \"\n        \"*\\\"\" + quote(\"DANVA-2024\", \"endnu mindre andele\") + \"\\\"* — even smaller shares:\") + \"\\n\")\n    w(\"| Called | Actually is |\\n|---|---|\")\n    for name, pct, what in apportionment:\n        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \""
    },
    "constructions": [
     "K-NITROGEN-READINGS"
@@ -202089,8 +201901,8 @@
   "F-90b1fa4ed7": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 683,
-    "line": 689,
+    "first": 685,
+    "line": 691,
     "text": "        \"in all three streams of a 2018 study measured daily alongside, that method **always \"\n        \"underestimated** - under monthly sampling by \"\n        f\"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. \"\n        \"Retention, the largest single term, is uncertain by \"\n        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:"
    },
    "constructions": [
@@ -202136,7 +201948,7 @@
    "value": 16,
    "where": [
     "scripts/nitrogen.py",
-    689
+    691
    ]
   },
   "F-90b9f1d591": {
@@ -203596,6 +203408,111 @@
    "where": [
     "scripts/currents.py",
     495
+   ]
+  },
+  "F-9166e35c10": {
+   "code": {
+    "file": "scripts/nitrogen.py",
+    "first": 862,
+    "line": 868,
+    "text": "            \"overflow in the national register\"\n            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))"
+   },
+   "constructions": [
+    "K-SUBSET-SHARE",
+    "K-NITROGEN-KOEGE"
+   ],
+   "kind": "share",
+   "rests_on": {
+    "measured": 14
+   },
+   "src": [
+    "step",
+    "K-SUBSET-SHARE",
+    [
+     [
+      "nary",
+      "*",
+      [
+       [
+        "op",
+        "/",
+        [
+         [
+          "nary",
+          "+",
+          [
+           [
+            "leaf",
+            "data/raw/national/punkt_rbu_udl.geojson",
+            "koege.Tårnby.vol"
+           ],
+           [
+            "leaf",
+            "data/raw/national/punkt_rbu_udl.geojson",
+            "koege.Brøndby.vol"
+           ],
+           [
+            "leaf",
+            "data/raw/national/punkt_rbu_udl.geojson",
+            "koege.København.vol"
+           ],
+           [
+            "leaf",
+            "data/raw/national/punkt_rbu_udl.geojson",
+            "koege.Hvidovre.vol"
+           ]
+          ],
+          [
+           17464.0,
+           0.0,
+           42750.0,
+           19858.0
+          ]
+         ],
+         [
+          "agg",
+          "+",
+          {
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
+           "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
+          },
+          [],
+          0
+         ]
+        ],
+        [
+         80072.0,
+         87343.0
+        ]
+       ],
+       [
+        "const",
+        100
+       ]
+      ],
+      [
+       0.9167534891176168,
+       100
+      ]
+     ]
+    ],
+    [
+     91.67534891176167
+    ]
+   ],
+   "synthetic": false,
+   "value": 91.67534891176167,
+   "where": [
+    "scripts/nitrogen.py",
+    868
    ]
   },
   "F-91677c0226": {
@@ -211226,10 +211143,10 @@
   },
   "F-96ff2ccbd8": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2162,
-    "line": 2168,
-    "text": "    # some typetal cells are text (\"<\" a detection limit); compare the numeric ones\n    numeric = {k: v[0] for k, v in tt_metal.items() if isinstance(v[0], (int, float))}\n    biggest = max(numeric, key=numeric.get)\n    a(CL(\"C-PG-5-ZINC\", (f\"Zinc is the largest metal term in the Danish stormwater typetal — \"\n                         if biggest == \"Zink\" else \"Zinc is a large metal term in the Danish \"\n                         \"stormwater typetal — \")\n         + f\"**{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in separate \"\n         f\"stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a maximum \"\n         f\"observed of {zn[2]:,.0f}. The flux is not small.\\n\"))\n    a(CL(\"C-PG-5-SINK\", \"**The sink is conditional, and the condition is failing.** Metals \""
+    "file": "scripts/nitrogen.py",
+    "first": 811,
+    "line": 817,
+    "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -211269,8 +211186,8 @@
    "synthetic": false,
    "value": 170,
    "where": [
-    "scripts/programme.py",
-    2168
+    "scripts/nitrogen.py",
+    817
    ]
   },
   "F-9703c7379f": {
@@ -212020,10 +211937,10 @@
   },
   "F-97b2ab7cd5": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 385,
-    "line": 391,
-    "text": "         f\"here — a factor of about **{L['manure_over_human']:.0f}**, before a treatment \"\n         \"plant removes most of the human half and nothing removes the other. *Derived, and \"\n         \"marked as such:* the manure figure is a norm product times an area, and the human \"\n         \"figure uses a stated per-person convention, so both can be redone with different \"\n         \"assumptions and neither is a measurement of a river.\\n\"))\n    a(CL(\"C-PG-LS-LAND\", \"**And the land is the same fact in another unit.** \"\n         f\"{cl['central_pct']:.0f}% of Danish farmland grows feed and \"\n         f\"{cl['direct_food_pct']:.1f}% grows food people eat directly, which is why the \"\n         \"mineral fertiliser is not a separate story: most of it is spread to grow what the \"\n         \"animals eat. [NITROGEN.md](NITROGEN.md) works the attribution through and \""
+    "file": "scripts/nitrogen.py",
+    "first": 401,
+    "line": 407,
+    "text": "        (\"…plus rapeseed, whose meal is feed\", \"ceiling_pct\"),\n        (\"**Potatoes, sugar beet, horticulture — food people eat**\", \"direct_food_pct\"),\n    ]:\n        w(\"| \" + label + \" | \" + \" | \".join(\n            f\"{y[k][key]:.1f}%\" for k in (\"1990\", \"2000\", \"2010\", \"2025\")) + \" |\")\n    w(\"\")\n    w(C(\"C-NI-FEED-SHARE\", f\"**Between {last['central_pct']:.0f}% and {last['ceiling_pct']:.0f}% of \"\n        f\"Danish farmland grows feed, and {last['direct_food_pct']:.1f}% of it grows food that people \"\n        f\"eat directly** in 2025, against {y['1990']['direct_food_pct']:.1f}% in 1990. The shares have \"\n        \"barely moved since 1990.\") + \" \""
    },
    "constructions": [
     "K-NITROGEN-CROPLAND"
@@ -212092,8 +212009,8 @@
    "synthetic": false,
    "value": 67.51159942510127,
    "where": [
-    "scripts/programme.py",
-    391
+    "scripts/nitrogen.py",
+    407
    ]
   },
   "F-97b3e98a8a": {
@@ -217551,8 +217468,8 @@
   "F-9c03f92b97": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 817,
-    "line": 823,
+    "first": 819,
+    "line": 825,
     "text": "    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]\n    w(C(\"C-NI-STORMWATER-METALS\", \"Note that chromium, nickel and arsenic are **higher in separated \"\n        \"stormwater than in sewage overflow** — and the national outfall layers report \"\n        f\"{sw_v['sum'] / 1e6:.0f} million m³/yr of the former, summed over the {sw_v['n']:,} of \"\n        f\"{sw['n']:,} separate outfalls that give a volume, against {co_v['sum'] / 1e6:.1f} million \"\n        f\"m³/yr of the latter over {co_v['n']:,} of {co['n']:,} combined-sewer overflows. Separating a \"\n        \"sewer system solves the sewage overflow and delivers untreated runoff instead.\") + \"\\n\")\n\n    # ---------------------------------------------------------------- 5. Køge Bugt"
    },
    "constructions": [
@@ -217595,7 +217512,7 @@
    "value": 4140,
    "where": [
     "scripts/nitrogen.py",
-    823
+    825
    ]
   },
   "F-9c057ac1cf": {
@@ -220571,8 +220488,8 @@
   "F-9e8412db3f": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -220627,7 +220544,7 @@
    "value": 400000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-9e9e5838e1": {
@@ -225044,8 +224961,8 @@
   "F-a1e648a27d": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 855,
-    "line": 861,
+    "first": 857,
+    "line": 863,
     "text": "        nc = sum(st[k][\"comb\"] for k in KOEGE_NORTH if k in shown)\n        nv = sum(st[k][\"vol\"] for k in KOEGE_NORTH if k in shown)\n        none = [k for k in shown if k not in KOEGE_NORTH and st[k][\"comb\"] == 0]\n        few = [k for k in shown if k not in KOEGE_NORTH and 0 < st[k][\"comb\"] and st[k][\"vol\"] == 0]\n        w(C(\"C-NI-KOEGE-COMBINED\", f\"{', '.join(none[:-1])} and {none[-1]} have **no** combined-sewer \"\n            \"overflow in the national register\"\n            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")"
    },
    "constructions": [
@@ -225075,7 +224992,7 @@
    "value": 2,
    "where": [
     "scripts/nitrogen.py",
-    861
+    863
    ]
   },
   "F-a1f4a8181d": {
@@ -228911,8 +228828,8 @@
   "F-a4bcbf857e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 876,
-    "line": 882,
+    "first": 878,
+    "line": 884,
     "text": "\n    # ------------------------------------------------------------------- caveats\n    ovr = next(p for p in paths if str(p[\"pathway\"]).startswith(\"Rain-dependent overflow\"))\n    w(\"## What this does and does not establish\\n\")\n    w(C(\"C-NI-NOT-URBAN\", \"**It does not establish that urban discharge is a large national \"\n        \"source.** In the pathways register above, combined-sewer overflow is put at \"\n        f\"{ovr['lo']:g}–{ovr['hi']:g} kt N/yr against {land_lo:g}–{land_hi:g} kt from Danish land by \"\n        \"stream: a fraction even at its upper bound.\") + \"\\n\")\n    w(C(\"C-NI-DIFFERENT-QUESTION\", \"**It does establish that the published percentage answers a \"\n        \"different question than the one it is used for.** It answers: *of the nitrogen we observe \""
    },
    "constructions": [
@@ -228970,7 +228887,7 @@
    "value": 4.0,
    "where": [
     "scripts/nitrogen.py",
-    882
+    884
    ]
   },
   "F-a4bf90a242": {
@@ -231360,8 +231277,8 @@
   "F-a6e4df0589": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 710,
-    "line": 716,
+    "first": 712,
+    "line": 718,
     "text": "        \"years.\") + \"\\n\")\n    w(two_subtractions(mon, agri, dl))\n    w(\"### Which sharpens what the residual absorbs\\n\")\n    w(C(\"C-NI-RESIDUAL-ABSORBS\", f\"Section 1 lists **{unq} of {n_all} pathways carrying no number at \"\n        \"all**. Every one of them that reaches a river — submarine groundwater discharge, drained \"\n        \"organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's \"\n        f\"leftover, and is named agriculture by subtraction. That is a weakness of the ~{agri:.0f}% \"\n        \"separate from the circularity in §2.\") + \"\\n\")\n    cl_path = os.path.join(DERIVED, \"cropland.json\")\n    if os.path.exists(cl_path):"
    },
    "constructions": [
@@ -231408,7 +231325,7 @@
    "value": 69.6,
    "where": [
     "scripts/nitrogen.py",
-    716
+    718
    ]
   },
   "F-a6ead9f10c": {
@@ -235282,8 +235199,8 @@
   "F-a987b8d1e3": {
    "code": {
     "file": "data/manual/claims.d/w1-ni.json",
-    "first": 1882,
-    "line": 1888,
+    "first": 1933,
+    "line": 1939,
     "text": "  },\n  {\n   \"id\": \"C-NI-L5\",\n   \"kind\": \"attributed\",\n   \"stance\": \"theirs\",\n   \"page\": \"NITROGEN.md\",\n   \"claim\": \"The fertilisation law `L 5` passed on 2026-09-03 by {read:POL-TV2-20260903:119|119 medlemmer af Folketinget stemte for loven} votes to {read:POL-TV2-20260903:34|mens 34 stemte imod}; the ministry said holdings would get a nitrogen quota set by what their catchment must cut and called the quota model a safety net under the Tripartite's land conversion; emission-based regulation replaces field regulation from 2027, and its sharper step, the kvælstofhammer, cannot strike before 2028.\",\n   \"because\": \"Their statements, as reported: the vote from TV 2's report, the quota and the safety net from the ministry's announcement, the two steps as the POLITICS page reads the record. The law as passed is LOV 759 and the bill with its remarks is `L 5` as introduced, both pinned.\",\n   \"rests_on\": [\n    \"E-NI-TV2-L5\","
    },
    "constructions": [
@@ -235315,7 +235232,7 @@
    "value": "34",
    "where": [
     "data/manual/claims.d/w1-ni.json",
-    1888
+    1939
    ]
   },
   "F-a998566e98": {
@@ -235788,8 +235705,8 @@
   "F-aa2457384c": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -235831,7 +235748,7 @@
    "value": 4.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-aa2dd2e495": {
@@ -236510,10 +236427,10 @@
   },
   "F-aaa96d8309": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 2162,
-    "line": 2168,
-    "text": "    # some typetal cells are text (\"<\" a detection limit); compare the numeric ones\n    numeric = {k: v[0] for k, v in tt_metal.items() if isinstance(v[0], (int, float))}\n    biggest = max(numeric, key=numeric.get)\n    a(CL(\"C-PG-5-ZINC\", (f\"Zinc is the largest metal term in the Danish stormwater typetal — \"\n                         if biggest == \"Zink\" else \"Zinc is a large metal term in the Danish \"\n                         \"stormwater typetal — \")\n         + f\"**{zn[0]:,.0f} µg/l** in combined overflow and {zn[1]:,.0f} µg/l in separate \"\n         f\"stormwater, against {cu[0]:,.0f} and {cu[1]:,.0f} for copper, with a maximum \"\n         f\"observed of {zn[2]:,.0f}. The flux is not small.\\n\"))\n    a(CL(\"C-PG-5-SINK\", \"**The sink is conditional, and the condition is failing.** Metals \""
+    "file": "scripts/nitrogen.py",
+    "first": 811,
+    "line": 817,
+    "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -236553,8 +236470,8 @@
    "synthetic": false,
    "value": 130,
    "where": [
-    "scripts/programme.py",
-    2168
+    "scripts/nitrogen.py",
+    817
    ]
   },
   "F-aaaa7cf960": {
@@ -242657,8 +242574,8 @@
   "F-afa1bfd267": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 687,
-    "line": 693,
+    "first": 689,
+    "line": 695,
     "text": "        f\"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} \"\n        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \""
    },
    "constructions": [
@@ -242700,7 +242617,7 @@
    "value": 55,
    "where": [
     "scripts/nitrogen.py",
-    693
+    695
    ]
   },
   "F-afa4d8bb06": {
@@ -246279,7 +246196,7 @@
     "file": "scripts/nitrogen.py",
     "first": 701,
     "line": 707,
-    "text": "          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")"
+    "text": "          \"per-event measure is *\\\"\" + quote(\"DP02\", \"Antal overløb (antal/år)\") + \"\\\"* — the number \"\n          \"of overflows a year. No flow rate, peak or threshold crossing is among them, so a \"\n          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \""
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -248204,6 +248121,91 @@
     "scripts/socialcontext.py",
     1303
    ]
+  },
+  "F-b4ba7fa963": {
+   "constructions": [
+    "K-NITROGEN-KOEGE"
+   ],
+   "kind": "calculated",
+   "rests_on": {
+    "measured": 14
+   },
+   "src": [
+    "nary",
+    "*",
+    [
+     [
+      "op",
+      "/",
+      [
+       [
+        "nary",
+        "+",
+        [
+         [
+          "leaf",
+          "data/raw/national/punkt_rbu_udl.geojson",
+          "koege.Tårnby.vol"
+         ],
+         [
+          "leaf",
+          "data/raw/national/punkt_rbu_udl.geojson",
+          "koege.Brøndby.vol"
+         ],
+         [
+          "leaf",
+          "data/raw/national/punkt_rbu_udl.geojson",
+          "koege.København.vol"
+         ],
+         [
+          "leaf",
+          "data/raw/national/punkt_rbu_udl.geojson",
+          "koege.Hvidovre.vol"
+         ]
+        ],
+        [
+         17464.0,
+         0.0,
+         42750.0,
+         19858.0
+        ]
+       ],
+       [
+        "agg",
+        "+",
+        {
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
+         "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
+        },
+        [],
+        0
+       ]
+      ],
+      [
+       80072.0,
+       87343.0
+      ]
+     ],
+     [
+      "const",
+      100
+     ]
+    ],
+    [
+     0.9167534891176168,
+     100
+    ]
+   ],
+   "synthetic": false,
+   "value": 91.67534891176167
   },
   "F-b4bb90da8b": {
    "code": {
@@ -250270,8 +250272,8 @@
   "F-b5dfa7129e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -250313,7 +250315,7 @@
    "value": 1.3,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-b5e1ba42ec": {
@@ -259405,8 +259407,8 @@
   "F-bccb2b0d9b": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -259479,7 +259481,7 @@
    "value": 85.92592592592592,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-bccfed7608": {
@@ -262964,8 +262966,8 @@
   "F-be91fe8928": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -263038,7 +263040,7 @@
    "value": 94.73684210526315,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-be924c2c1f": {
@@ -265167,8 +265169,8 @@
   "F-c06e5e8a57": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -265198,7 +265200,7 @@
    "value": 0.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-c073b70406": {
@@ -265416,8 +265418,8 @@
   "F-c09b9f4a15": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 707,
-    "line": 713,
+    "first": 709,
+    "line": 715,
     "text": "                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")\n    w(two_subtractions(mon, agri, dl))\n    w(\"### Which sharpens what the residual absorbs\\n\")\n    w(C(\"C-NI-RESIDUAL-ABSORBS\", f\"Section 1 lists **{unq} of {n_all} pathways carrying no number at \"\n        \"all**. Every one of them that reaches a river — submarine groundwater discharge, drained \"\n        \"organic soils, legacy nitrogen in transit, foreign inflow to shared waters — lands inside B's \"\n        f\"leftover, and is named agriculture by subtraction. That is a weakness of the ~{agri:.0f}% \""
    },
    "constructions": [
@@ -265475,7 +265477,7 @@
    "value": 20,
    "where": [
     "scripts/nitrogen.py",
-    713
+    715
    ]
   },
   "F-c09fa0a47d": {
@@ -267891,8 +267893,8 @@
   "F-c2c9a317a7": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -267934,7 +267936,7 @@
    "value": 4.0,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-c2cfbda108": {
@@ -268750,8 +268752,8 @@
   "F-c376e1041d": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 795,
-    "line": 801,
+    "first": 797,
+    "line": 803,
     "text": "    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \"\n        f\"discharges rest on **{mfs['stations_combined_overflow']} combined-sewer overflows and \"\n        f\"{mfs['stations_separate_stormwater']} separate stormwater outlets** — *\\\"\"\n        + quote(\"TYPETAL22\", \"fælleskloakerede spildevandsoverløb og fem separatkloakerede \"\n                \"regnvandsudledninger\") + \"\\\"* — monitored 2000–2020 in catchments representing *\\\"\"\n        + quote(\"TYPETAL22\", \"husholdninger og boligområder\") + \"\\\"*. They cover only discharges *\\\"\""
    },
    "constructions": [
@@ -268821,7 +268823,7 @@
    "value": 5,
    "where": [
     "scripts/nitrogen.py",
-    801
+    803
    ]
   },
   "F-c38a0fc9cc": {
@@ -269420,8 +269422,8 @@
   "F-c43b4b1e0a": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -269463,7 +269465,7 @@
    "value": 2.7,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-c44ec3af08": {
@@ -269674,8 +269676,8 @@
   "F-c47c51a935": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -269717,7 +269719,7 @@
    "value": 0.07,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-c47f02d83e": {
@@ -269824,10 +269826,10 @@
   },
   "F-c485648991": {
    "code": {
-    "file": "scripts/programme.py",
-    "first": 386,
-    "line": 392,
-    "text": "         \"plant removes most of the human half and nothing removes the other. *Derived, and \"\n         \"marked as such:* the manure figure is a norm product times an area, and the human \"\n         \"figure uses a stated per-person convention, so both can be redone with different \"\n         \"assumptions and neither is a measurement of a river.\\n\"))\n    a(CL(\"C-PG-LS-LAND\", \"**And the land is the same fact in another unit.** \"\n         f\"{cl['central_pct']:.0f}% of Danish farmland grows feed and \"\n         f\"{cl['direct_food_pct']:.1f}% grows food people eat directly, which is why the \"\n         \"mineral fertiliser is not a separate story: most of it is spread to grow what the \"\n         \"animals eat. [NITROGEN.md](NITROGEN.md) works the attribution through and \"\n         \"concludes that **the herd is behind most of the nitrogen applied to Danish soil — \""
+    "file": "scripts/nitrogen.py",
+    "first": 402,
+    "line": 408,
+    "text": "        (\"**Potatoes, sugar beet, horticulture — food people eat**\", \"direct_food_pct\"),\n    ]:\n        w(\"| \" + label + \" | \" + \" | \".join(\n            f\"{y[k][key]:.1f}%\" for k in (\"1990\", \"2000\", \"2010\", \"2025\")) + \" |\")\n    w(\"\")\n    w(C(\"C-NI-FEED-SHARE\", f\"**Between {last['central_pct']:.0f}% and {last['ceiling_pct']:.0f}% of \"\n        f\"Danish farmland grows feed, and {last['direct_food_pct']:.1f}% of it grows food that people \"\n        f\"eat directly** in 2025, against {y['1990']['direct_food_pct']:.1f}% in 1990. The shares have \"\n        \"barely moved since 1990.\") + \" \"\n      + C(\"C-NI-HERD-INPUT\", \"Set that beside half one and, if mineral fertiliser is spread in \""
    },
    "constructions": [
     "K-NITROGEN-CROPLAND"
@@ -269896,8 +269898,8 @@
    "synthetic": false,
    "value": 4.6606761489793165,
    "where": [
-    "scripts/programme.py",
-    392
+    "scripts/nitrogen.py",
+    408
    ]
   },
   "F-c48c74b6c5": {
@@ -270293,8 +270295,8 @@
   "F-c4c790e4de": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -270367,7 +270369,7 @@
    "value": 44.44444444444444,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-c4d0799598": {
@@ -274945,7 +274947,7 @@
     "file": "scripts/nitrogen.py",
     "first": 701,
     "line": 707,
-    "text": "          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")"
+    "text": "          \"per-event measure is *\\\"\" + quote(\"DP02\", \"Antal overløb (antal/år)\") + \"\\\"* — the number \"\n          \"of overflows a year. No flow rate, peak or threshold crossing is among them, so a \"\n          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \""
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -275985,8 +275987,8 @@
   "F-c92bfe9b2d": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 1552,
-    "line": 1558,
+    "first": 1572,
+    "line": 1578,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-FEDTE\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The current NOVANA programme has no programme for fedtemøg as a shore condition - the word occurs {count:NOVANA-2327:fedtemøg} times in it - while it monitors marine litter, microplastic and litter on beaches; stranded decaying organic material is not among what it monitors.\",\n   \"because\": \"A count over one named document, the programme itself, and a search of it for what it monitors on beaches.\",\n   \"rests_on\": [\n    \"E-GC-NOV-LITTER\","
    },
    "constructions": [
@@ -276015,7 +276017,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    1558
+    1578
    ]
   },
   "F-c932b347e7": {
@@ -276366,8 +276368,8 @@
   "F-c973a7016e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -276409,7 +276411,7 @@
    "value": 1,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-c976d6fd0e": {
@@ -277682,7 +277684,7 @@
     "file": "scripts/nitrogen.py",
     "first": 701,
     "line": 707,
-    "text": "          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")"
+    "text": "          \"per-event measure is *\\\"\" + quote(\"DP02\", \"Antal overløb (antal/år)\") + \"\\\"* — the number \"\n          \"of overflows a year. No flow rate, peak or threshold crossing is among them, so a \"\n          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \""
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -279917,8 +279919,8 @@
   "F-cc5ab08031": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -279960,7 +279962,7 @@
    "value": 0.31,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-cc6b955ff2": {
@@ -283755,9 +283757,9 @@
   "F-cf7420afda": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 659,
-    "line": 665,
-    "text": "        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \"\n        \"measurements. The rest are estimates, and the largest is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")\n    w(C(\"C-NI-QC-CIRCULAR\", f\"{ql['consequence']} **The assumed concentration cannot be falsified by \""
+    "first": 661,
+    "line": 667,
+    "text": "    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \"\n        \"measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, \"\n        \"stormwater outlets, some aquaculture and small treatment plants are calculated, and the \"\n        \"largest line is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")\n    w(C(\"C-NI-QC-CIRCULAR\", f\"{ql['consequence']} **The assumed concentration cannot be falsified by \""
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -283794,7 +283796,7 @@
    "value": 1.8,
    "where": [
     "scripts/nitrogen.py",
-    665
+    667
    ]
   },
   "F-cf77feeaa1": {
@@ -288729,8 +288731,8 @@
   "F-d34419c8c8": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 734,
-    "line": 740,
+    "first": 736,
+    "line": 742,
     "text": "          \"(`data/manual/nitrogen_constants.json`):\") + \"\\n\")\n    w(\"| Pathway | Oxygen demand |\\n|---|---:|\")\n    w(f\"| Remineralisation of algal biomass | **{o2_per_n:.2f} g {O2} per g N** |\")\n    w(f\"| Remineralisation, via phosphorus | {o2_per_p:.1f} g {O2} per g P |\")\n    w(f\"| **Nitrification of delivered ammonium** | **{o2_nitrif:.2f} g {O2} per g N** |\")\n    w(f\"| **Sulphide oxidation** | **{o2_per_s:.2f} g {O2} per g S** |\")\n    w(f\"| Methane oxidation | {o2_per_ch4:.2f} g {O2} per g {live.chem('CH4')} |\")\n    w(f\"| Direct BOD | {K['bod5_to_ultimate']:.2f} g {O2} per g of five-day BOD |\")\n    w(\"\")\n    w(C(\"C-NI-ACCOUNTS-MASS\", \"The nitrogen apportionment counts nitrogen mass, which bears on the \""
    },
    "constructions": [
@@ -288779,7 +288781,7 @@
    "value": 3.9897755610972574,
    "where": [
     "scripts/nitrogen.py",
-    740
+    742
    ]
   },
   "F-d350796b05": {
@@ -296364,9 +296366,9 @@
   "F-d9750041da": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 658,
-    "line": 664,
-    "text": "        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \"\n        \"measurements. The rest are estimates, and the largest is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")"
+    "first": 660,
+    "line": 666,
+    "text": "    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \"\n        \"measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, \"\n        \"stormwater outlets, some aquaculture and small treatment plants are calculated, and the \"\n        \"largest line is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -296403,7 +296405,7 @@
    "value": 12,
    "where": [
     "scripts/nitrogen.py",
-    664
+    666
    ]
   },
   "F-d979585751": {
@@ -297639,9 +297641,9 @@
   "F-da54056785": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 658,
-    "line": 664,
-    "text": "        called = f\"**{name}, {pct}%**\" if pct is not None else f\"**{name}** — no share in the pinned source\"\n        w(f\"| {called} | {what} |\")\n    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Only the treatment-plant and industry lines are reported \"\n        \"measurements. The rest are estimates, and the largest is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")"
+    "first": 660,
+    "line": 666,
+    "text": "    w(\"\")\n    w(C(\"C-NI-MEASURED-LINES\", \"Most treatment-plant and industry discharges rest on reported \"\n        \"measurements, as do fish farms with enough self-monitoring samples; scattered dwellings, \"\n        \"stormwater outlets, some aquaculture and small treatment plants are calculated, and the \"\n        \"largest line is a residual of estimates.\") + \"\\n\")\n    w(\"### The validation is circular\\n\")\n    w(C(\"C-NI-QC-RULE\", f\"Reported nitrogen divided by reported volume must fall within **{ci[0]}–{ci[1]} \"\n        f\"mg/l** for combined sewers and **{si[0]}–{si[1]} mg/l** for separate ones. Outside that, *\\\"\"\n        f\"{quote('DP02', 'kontaktes den dataansvarlige med henblik på at få rettet eventuelle fejl')}\"\n        \"\\\"* — the data owner is contacted to correct the error.\") + \"\\n\")"
    },
    "constructions": [
     "K-NITROGEN-MONITORING"
@@ -297678,7 +297680,7 @@
    "value": 10,
    "where": [
     "scripts/nitrogen.py",
-    664
+    666
    ]
   },
   "F-da58a010b9": {
@@ -300035,8 +300037,8 @@
   "F-db998058d7": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 731,
-    "line": 737,
+    "first": 733,
+    "line": 739,
     "text": "    w(C(\"C-NI-CURRENCY\", \"Oxygen depletion is the damage. Nitrogen is one route to it.\") + \" \"\n      + C(\"C-NI-O2-TABLE\", \"Converting everything to oxygen demand — Redfield stoichiometry and the \"\n          \"balanced reactions, which is chemistry rather than judgement \"\n          \"(`data/manual/nitrogen_constants.json`):\") + \"\\n\")\n    w(\"| Pathway | Oxygen demand |\\n|---|---:|\")\n    w(f\"| Remineralisation of algal biomass | **{o2_per_n:.2f} g {O2} per g N** |\")\n    w(f\"| Remineralisation, via phosphorus | {o2_per_p:.1f} g {O2} per g P |\")\n    w(f\"| **Nitrification of delivered ammonium** | **{o2_nitrif:.2f} g {O2} per g N** |\")\n    w(f\"| **Sulphide oxidation** | **{o2_per_s:.2f} g {O2} per g S** |\")\n    w(f\"| Methane oxidation | {o2_per_ch4:.2f} g {O2} per g {live.chem('CH4')} |\")"
    },
    "constructions": [
@@ -300100,7 +300102,7 @@
    "value": 142.56227803964615,
    "where": [
     "scripts/nitrogen.py",
-    737
+    739
    ]
   },
   "F-dba2ac86fa": {
@@ -302427,8 +302429,8 @@
   "F-ddc21edd91": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -302483,7 +302485,7 @@
    "value": 13000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-ddcaac4658": {
@@ -310246,8 +310248,8 @@
   "F-e409a73f2d": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 752,
-    "line": 758,
+    "first": 754,
+    "line": 760,
     "text": "    so4, o2sat = K[\"seawater_sulphate_mg_per_l\"], K[\"dissolved_oxygen_mg_per_l\"]\n    s_mgl = so4 * MM[\"S\"] / (MM[\"S\"] + MM[\"O\"] * 4)\n    demand = s_mgl * o2_per_s\n    w(C(\"C-NI-SULPHATE\", \"**Sulphate makes the debt effectively unbounded.** Full-strength seawater \"\n        f\"holds ~{so4:.0f} mg/l sulphate = {s_mgl:.0f} mg/l as sulphur, against ~{o2sat:.0f} mg/l \"\n        f\"dissolved oxygen. Fully reduced and later re-oxidised that is {demand:.0f} mg/l of demand — \"\n        f\"**{demand / o2sat:.0f}× the oxygen in the water**. Reducing just \"\n        f\"{o2sat / demand * 100:.2f}% of the sulphate pool stores a debt equal to all of it. Danish \"\n        \"waters are brackish and hold proportionally less sulphate, which lowers the multiple and \"\n        \"leaves the point. Once a basin goes anoxic the electron acceptor is effectively infinite, \""
    },
    "constructions": [
@@ -310385,7 +310387,7 @@
    "value": 224.85477221620718,
    "where": [
     "scripts/nitrogen.py",
-    758
+    760
    ]
   },
   "F-e40c66aa27": {
@@ -310767,8 +310769,8 @@
   "F-e45be9f04e": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -310823,7 +310825,7 @@
    "value": 12000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-e45c5b4954": {
@@ -312385,10 +312387,10 @@
   },
   "F-e59dfab87e": {
    "code": {
-    "file": "scripts/experiments.py",
-    "first": 917,
-    "line": 923,
-    "text": "                       \"homogeneous than one perfect instrument does, because the question is \"\n                       \"about variance and not about level.\")],\n        },\n        \"X15\": {\n            \"why\": C(\"C-EA-X15-DCE\", \"DCE's oxygen indicator is the share of time oxygen is \"\n                     \"below each of two thresholds in the month with the most days of low \"\n                     f\"oxygen; {v['dce6a']} years of data go into the monthly frequencies, and \"\n                     f\"one value results per {v['dce6b']}-year period.\")\n            + \" \" + C(\"C-EA-X15-ARG\", \"What that collapse discards can only be measured \"\n                      \"against a continuous record.\"),"
+    "file": "scripts/pages/grundlaget.py",
+    "first": 85,
+    "line": 91,
+    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -312412,10 +312414,10 @@
     }
    ],
    "synthetic": false,
-   "value": 6,
+   "value": "6",
    "where": [
-    "scripts/experiments.py",
-    923
+    "scripts/pages/grundlaget.py",
+    91
    ]
   },
   "F-e59e7ee579": {
@@ -315042,8 +315044,8 @@
   "F-e809880b99": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -315085,7 +315087,7 @@
    "value": 2,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-e80b213992": {
@@ -316069,8 +316071,8 @@
   "F-e8ff15c9f3": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -316143,7 +316145,7 @@
    "value": 70.37037037037037,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-e90a8c79dc": {
@@ -318391,8 +318393,8 @@
   "F-ea9357c91f": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 4327,
-    "line": 4333,
+    "first": 4349,
+    "line": 4355,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-NOTSUPPORT\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The chain does not support an agricultural share of oxygen depletion, and none of its six pinned documents names fedtemøg - the word occurs {count:NOVANA-2327:fedtemøg}, {count:DHI-MODEL-DEL1-2015:fedtemøg}, {count:DHI-MODEL-DEL2-2015:fedtemøg}, {count:DCE-STATMOD-2015:fedtemøg}, {count:SO-BG-2024:fedtemøg} and {count:POL-SO-2024:fedtemøg} times in them; the gap between the science and the politics is where the project stands.\",\n   \"because\": \"Oxygen reaches no requirement and the accounting has no potency term; the counts are over the six pinned documents.\",\n   \"rests_on\": [\n    \"C-GC-G-GATE\","
    },
    "constructions": [
@@ -318421,7 +318423,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    4333
+    4355
    ]
   },
   "F-eaafaf707c": {
@@ -319469,6 +319471,45 @@
    "where": [
     "scripts/oxygen.py",
     246
+   ]
+  },
+  "F-eb7884fe59": {
+   "code": {
+    "file": "scripts/pages/grundlaget.py",
+    "first": 85,
+    "line": 91,
+    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
+   },
+   "constructions": [
+    "K-READ-PHRASE"
+   ],
+   "excerpt": {
+    "mark": "107 out of the 109 Danish marine water bodies",
+    "text": "aximum allowable Nitrogen inputs to Danish water bodies Scenario summary. 8 • Management scenarios addressing the importance of nutrient loadings from neighbouring countries Scenario2c and atmosphere Scenario3a for Danish MAIs. With the model development 107 out of the 109 Danish marine water bodies is now covered by a mechanistic model or a mechanistic and a statistic model. Figure 2.2. Mechanistic models developed as part of the RBMP 20212027. In addition to the model developments and the MAI calculations (as described below), one additional project w"
+   },
+   "kind": "document",
+   "rests_on": {
+    "document": 1
+   },
+   "src": [
+    "reading",
+    "GC-DCE-TR268",
+    "phrase",
+    "107 out of the 109 Danish marine water bodies",
+    {
+     "checked": "2026-09-14",
+     "retrieved": "2026-09-14",
+     "sha256": "a521ce1c0c194b962f07df7579e21502e051178b97d88af1e09b8c541bb942f3",
+     "status": "pinned 2026-09-14",
+     "title": "Erichsen, Timmermann & Christensen 2023, Second opinion readers guide to RBMP 3 models and scenarios in Denmark, DCE Technical Report No. 268",
+     "url": "http://dce2.au.dk/pub/TR268.pdf"
+    }
+   ],
+   "synthetic": false,
+   "value": "109",
+   "where": [
+    "scripts/pages/grundlaget.py",
+    91
    ]
   },
   "F-eb85d9dd7b": {
@@ -321245,6 +321286,45 @@
    "synthetic": false,
    "value": 0.8078
   },
+  "F-ed0abe9de8": {
+   "code": {
+    "file": "scripts/pages/grundlaget.py",
+    "first": 85,
+    "line": 91,
+    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
+   },
+   "constructions": [
+    "K-READ-PHRASE"
+   ],
+   "excerpt": {
+    "mark": "A set of 11 new mechanistic models",
+    "text": "rall topics: A new typology (Typology -report in Danish, but highlights described further down in this document). • New bayesien models for modelling light and chlorophyll-a conditions (Modelling light conditions and Modelling Chlorophyll-a concentrations ) A set of 11 new mechanistic models (11 hydrodynamic models, 11 biogeochemical models), covering two regional models, three local models and six estuary specific models (Figure 2.2) (The hydrodynamic and biogeochemical models are all described in individual reports – see section 3.5 here: RBMP-"
+   },
+   "kind": "document",
+   "rests_on": {
+    "document": 1
+   },
+   "src": [
+    "reading",
+    "GC-DCE-TR268",
+    "phrase",
+    "A set of 11 new mechanistic models",
+    {
+     "checked": "2026-09-14",
+     "retrieved": "2026-09-14",
+     "sha256": "a521ce1c0c194b962f07df7579e21502e051178b97d88af1e09b8c541bb942f3",
+     "status": "pinned 2026-09-14",
+     "title": "Erichsen, Timmermann & Christensen 2023, Second opinion readers guide to RBMP 3 models and scenarios in Denmark, DCE Technical Report No. 268",
+     "url": "http://dce2.au.dk/pub/TR268.pdf"
+    }
+   ],
+   "synthetic": false,
+   "value": "11",
+   "where": [
+    "scripts/pages/grundlaget.py",
+    91
+   ]
+  },
   "F-ed310c2003": {
    "constructions": [
     "K-QUOTE"
@@ -321685,8 +321765,8 @@
   "F-ed8edc4ac1": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 868,
-    "line": 874,
+    "first": 870,
+    "line": 876,
     "text": "            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:\n            w(\"### Treatment capacity discharging to the bay\\n\")\n            w(\"| Plant | PE | Municipality |\\n|---|---:|---|\")\n            for n, pe, k in plants:\n                w(f\"| {n} | {pe:,} | {k} |\")\n            w(\"\")\n\n    # ------------------------------------------------------------------- caveats"
    },
    "constructions": [
@@ -321741,7 +321821,7 @@
    "value": 71000,
    "where": [
     "scripts/nitrogen.py",
-    874
+    876
    ]
   },
   "F-ed8f00f1c6": {
@@ -322126,77 +322206,6 @@
     "scripts/currents.py",
     601
    ]
-  },
-  "F-edb6a3cfdb": {
-   "constructions": [
-    "K-NITROGEN-KOEGE"
-   ],
-   "kind": "calculated",
-   "rests_on": {
-    "measured": 14
-   },
-   "src": [
-    "op",
-    "/",
-    [
-     [
-      "nary",
-      "+",
-      [
-       [
-        "leaf",
-        "data/raw/national/punkt_rbu_udl.geojson",
-        "koege.Tårnby.vol"
-       ],
-       [
-        "leaf",
-        "data/raw/national/punkt_rbu_udl.geojson",
-        "koege.København.vol"
-       ],
-       [
-        "leaf",
-        "data/raw/national/punkt_rbu_udl.geojson",
-        "koege.Hvidovre.vol"
-       ],
-       [
-        "leaf",
-        "data/raw/national/punkt_rbu_udl.geojson",
-        "koege.Brøndby.vol"
-       ]
-      ],
-      [
-       17464.0,
-       42750.0,
-       19858.0,
-       0.0
-      ]
-     ],
-     [
-      "agg",
-      "+",
-      {
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
-       "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
-      },
-      [],
-      0
-     ]
-    ],
-    [
-     80072.0,
-     87343.0
-    ]
-   ],
-   "synthetic": false,
-   "value": 0.9167534891176168
   },
   "F-edbd22b84f": {
    "constructions": [
@@ -323088,8 +323097,8 @@
   "F-ee9bc541a9": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 4327,
-    "line": 4333,
+    "first": 4349,
+    "line": 4355,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-NOTSUPPORT\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The chain does not support an agricultural share of oxygen depletion, and none of its six pinned documents names fedtemøg - the word occurs {count:NOVANA-2327:fedtemøg}, {count:DHI-MODEL-DEL1-2015:fedtemøg}, {count:DHI-MODEL-DEL2-2015:fedtemøg}, {count:DCE-STATMOD-2015:fedtemøg}, {count:SO-BG-2024:fedtemøg} and {count:POL-SO-2024:fedtemøg} times in them; the gap between the science and the politics is where the project stands.\",\n   \"because\": \"Oxygen reaches no requirement and the accounting has no potency term; the counts are over the six pinned documents.\",\n   \"rests_on\": [\n    \"C-GC-G-GATE\","
    },
    "constructions": [
@@ -323118,7 +323127,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    4333
+    4355
    ]
   },
   "F-ee9d81eaa2": {
@@ -323625,8 +323634,8 @@
   "F-ef0bb9fee9": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -323668,7 +323677,7 @@
    "value": 0.8,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-ef0f28cf83": {
@@ -324978,8 +324987,8 @@
   "F-f00e9f6e22": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 791,
-    "line": 797,
+    "first": 793,
+    "line": 799,
     "text": "    w(C(\"C-NI-SEASONAL\", \"And any seasonal claim drawn from a seasonally-sampled record is circular \"\n        \"unless the window was set by mechanism. Iltsvind's July–November window was; bathing \"\n        \"water's June–September window was not.\") + \"\\n\")\n    mfs = mon[\"hazardous_substances\"]\n    n_st = mfs[\"stations_combined_overflow\"] + mfs[\"stations_separate_stormwater\"]\n    w(f\"### Toxicants: {n_st} stations\\n\")\n    points = (\" \" + C(\"C-NI-RBU-COUNT\", f\"The national register holds **{kt[3]:,}** rain-dependent \"\n                      \"discharge points.\")) if kt else \"\"\n    w(C(\"C-NI-TYPETAL-BASIS\", \"The national typetal for hazardous substances in rain-dependent \"\n        f\"discharges rest on **{mfs['stations_combined_overflow']} combined-sewer overflows and \""
    },
    "constructions": [
@@ -325038,7 +325047,7 @@
    "value": 19665,
    "where": [
     "scripts/nitrogen.py",
-    797
+    799
    ]
   },
   "F-f0108f1818": {
@@ -325370,8 +325379,8 @@
   "F-f08cdedb07": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -325413,7 +325422,7 @@
    "value": 0.05,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-f08dbd162f": {
@@ -326854,8 +326863,8 @@
   "F-f1b3f6e3a1": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 809,
-    "line": 815,
+    "first": 811,
+    "line": 817,
     "text": "        \"sediment, which the typetal do not cover. **The design excludes the worst cases, and says \"\n        \"so.**\") + \"\\n\")\n    w(\"| µg/l | Combined overflow | Separate stormwater | Max observed, combined overflow |\\n|---|---:|---:|---:|\")\n    for m, v in mfs[\"typetal_ug_per_l\"].items():\n        if m.startswith(\"_\"):\n            continue\n        w(f\"| {m} | {v[0]} | {v[1]} | {v[2]} |\")\n    w(\"\")\n    sw, co = OF[\"separate_stormwater\"], OF[\"combined_overflow\"]\n    sw_v, co_v = sw[\"totals\"][VOL], co[\"totals\"][VOL]"
    },
    "constructions": [
@@ -326897,7 +326906,7 @@
    "value": 0.1,
    "where": [
     "scripts/nitrogen.py",
-    815
+    817
    ]
   },
   "F-f1b770ed60": {
@@ -326983,6 +326992,77 @@
    ],
    "synthetic": false,
    "value": null
+  },
+  "F-f1cafc28ea": {
+   "constructions": [
+    "K-NITROGEN-KOEGE"
+   ],
+   "kind": "calculated",
+   "rests_on": {
+    "measured": 14
+   },
+   "src": [
+    "op",
+    "/",
+    [
+     [
+      "nary",
+      "+",
+      [
+       [
+        "leaf",
+        "data/raw/national/punkt_rbu_udl.geojson",
+        "koege.Tårnby.vol"
+       ],
+       [
+        "leaf",
+        "data/raw/national/punkt_rbu_udl.geojson",
+        "koege.Brøndby.vol"
+       ],
+       [
+        "leaf",
+        "data/raw/national/punkt_rbu_udl.geojson",
+        "koege.København.vol"
+       ],
+       [
+        "leaf",
+        "data/raw/national/punkt_rbu_udl.geojson",
+        "koege.Hvidovre.vol"
+       ]
+      ],
+      [
+       17464.0,
+       0.0,
+       42750.0,
+       19858.0
+      ]
+     ],
+     [
+      "agg",
+      "+",
+      {
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Brøndby.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Greve.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Hvidovre.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Ishøj.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.København.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Køge.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Solrød.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Stevns.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Tårnby.vol": 1,
+       "data/raw/national/punkt_rbu_udl.geojson › koege.Vallensbæk.vol": 1
+      },
+      [],
+      0
+     ]
+    ],
+    [
+     80072.0,
+     87343.0
+    ]
+   ],
+   "synthetic": false,
+   "value": 0.9167534891176168
   },
   "F-f1cb145821": {
    "constructions": [
@@ -327422,6 +327502,59 @@
    ],
    "synthetic": false,
    "value": "1.5"
+  },
+  "F-f244c7742e": {
+   "code": {
+    "file": "scripts/nitrogen.py",
+    "first": 862,
+    "line": 868,
+    "text": "            \"overflow in the national register\"\n            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))"
+   },
+   "constructions": [
+    "K-NITROGEN-KOEGE"
+   ],
+   "kind": "calculated",
+   "rests_on": {
+    "measured": 4
+   },
+   "src": [
+    "nary",
+    "+",
+    [
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Tårnby.vol"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Brøndby.vol"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.København.vol"
+     ],
+     [
+      "leaf",
+      "data/raw/national/punkt_rbu_udl.geojson",
+      "koege.Hvidovre.vol"
+     ]
+    ],
+    [
+     17464.0,
+     0.0,
+     42750.0,
+     19858.0
+    ]
+   ],
+   "synthetic": false,
+   "value": 80072.0,
+   "where": [
+    "scripts/nitrogen.py",
+    868
+   ]
   },
   "F-f250c5e843": {
    "code": {
@@ -328668,8 +328801,8 @@
   "F-f3813ac6c6": {
    "code": {
     "file": "data/manual/claims.d/w2-pc.json",
-    "first": 2981,
-    "line": 2987,
+    "first": 2997,
+    "line": 3003,
     "text": "  {\n   \"id\": \"C-PC-CA-REDUCTION\",\n   \"kind\": \"measured\",\n   \"stance\": \"theirs\",\n   \"holder\": \"DCE, Aarhus University (national runoff report)\",\n   \"page\": \"CAUSATION.md\",\n   \"claim\": \"The reduction in nitrogen supply from land to Danish coastal waters since the start of the series is {read:SR353:51|The reductions are 51% and 72% for nitrogen and phosphorus}%, calculated on discharge-weighted mean annual concentrations.\",\n   \"because\": \"Their grounds: the national stream monitoring and the report's load calculation.\",\n   \"rests_on\": [\n    \"E-PC-SR353-RED\""
    },
    "constructions": [
@@ -328697,7 +328830,7 @@
    "value": "51",
    "where": [
     "data/manual/claims.d/w2-pc.json",
-    2987
+    3003
    ]
   },
   "F-f38b862051": {
@@ -330167,8 +330300,8 @@
   "F-f4eb5717b7": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 688,
-    "line": 694,
+    "first": 690,
+    "line": 696,
     "text": "        \"percentage points** between the national nitrogen model's regions, \"\n        f\"{dl['retention_uncertainty_national_average_pct_points']} on the national average.\") + \"\\n\")\n    w(\"### Overflow is modelled, and the deciding variable is not collected\\n\")\n    w(\"| Knowledge level | Method | Stated uncertainty |\\n|---|---|---:|\")\n    for x in lv:\n        u = f\"{x['uncertainty_pct']}%\" if x[\"uncertainty_pct\"] else \"—\"\n        w(f\"| {x['level']} | {x['method']} | {u} |\")\n    w(\"\")\n    w(C(\"C-NI-DP02-LEVELS\", \"The overflow volume is modelled at one of these knowledge levels, each \"\n        \"with the uncertainty Miljøstyrelsen's DP02 states for it.\") + \" \""
    },
    "constructions": [
@@ -330210,7 +330343,7 @@
    "value": 4,
    "where": [
     "scripts/nitrogen.py",
-    694
+    696
    ]
   },
   "F-f4f206ffed": {
@@ -332531,7 +332664,7 @@
     "file": "scripts/nitrogen.py",
     "first": 701,
     "line": 707,
-    "text": "          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \"\n        \"represent that, and the resulting error is one-directional and largest in the wettest \"\n        \"years.\") + \"\\n\")"
+    "text": "          \"per-event measure is *\\\"\" + quote(\"DP02\", \"Antal overløb (antal/år)\") + \"\\\"* — the number \"\n          \"of overflows a year. No flow rate, peak or threshold crossing is among them, so a \"\n          \"high-flow event that scours accumulated basin sediment cannot be distinguished from a \"\n          \"small dilute one.\") + \"\\n\")\n    w(C(\"C-NI-THRESHOLD\", \"That matters because sediment resuspension is a **threshold** in flow, \"\n        \"not a frequency of events. Below the critical shear stress the deposit stays in the basin; \"\n        \"above it, the accumulated material leaves — and the typetal report finds that *\\\"\"\n        + quote(\"TYPETAL22\", \"en væsentlig andel af de adsorberende stoffer bliver fanget i sedimentet \"\n                \"i regnvandsbassiner\") + \"\\\"*, a significant share of the adsorbing substances caught \"\n        \"in basin sediment. Multiplying an annual volume by an average concentration cannot \""
    },
    "constructions": [
     "K-FARM-PATHWAYS"
@@ -333562,59 +333695,6 @@
    "where": [
     "scripts/light.py",
     487
-   ]
-  },
-  "F-f77419864f": {
-   "code": {
-    "file": "scripts/nitrogen.py",
-    "first": 861,
-    "line": 867,
-    "text": "            + \"\".join(f\"; {k} has {st[k]['comb']}\" for k in few if k == \"Greve\") + \". So in a storm \"\n            \"they cannot spill combined sewage through one — though pumping stations on a separate \"\n            \"system can still have emergency overflows, which DANVA's own list of discharge types \"\n            \"names: *\\\"\" + quote(\"DANVA-2024\", \"Nødoverløb fra Pumpestationer\") + \"\\\"*.\") + \"\\n\")\n        share = live.step(\"K-SUBSET-SHARE\", nv / tvol * 100)\n        w(C(\"C-NI-KOEGE-STORAGE\", f\"**{share:.0f}% of the bay's basin storage** ({nv:,.0f} of \"\n            f\"{tvol:,.0f} m³) sits in the northern municipalities, along with {nc} of {tc} combined \"\n            \"overflows. The bay opens southeast, so their discharge enters at the northern end.\") + \"\\n\")\n        w(koege_transport(mon))\n        if plants:"
-   },
-   "constructions": [
-    "K-NITROGEN-KOEGE"
-   ],
-   "kind": "calculated",
-   "rests_on": {
-    "counted": 4
-   },
-   "src": [
-    "nary",
-    "+",
-    [
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Tårnby.comb"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.København.comb"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Hvidovre.comb"
-     ],
-     [
-      "leaf",
-      "data/raw/national/punkt_rbu_udl.geojson",
-      "koege.Brøndby.comb"
-     ]
-    ],
-    [
-     5,
-     19,
-     22,
-     1
-    ]
-   ],
-   "synthetic": false,
-   "value": 47,
-   "where": [
-    "scripts/nitrogen.py",
-    867
    ]
   },
   "F-f779aa1c01": {
@@ -336981,8 +337061,8 @@
   "F-fa54f5fa4f": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 876,
-    "line": 882,
+    "first": 878,
+    "line": 884,
     "text": "\n    # ------------------------------------------------------------------- caveats\n    ovr = next(p for p in paths if str(p[\"pathway\"]).startswith(\"Rain-dependent overflow\"))\n    w(\"## What this does and does not establish\\n\")\n    w(C(\"C-NI-NOT-URBAN\", \"**It does not establish that urban discharge is a large national \"\n        \"source.** In the pathways register above, combined-sewer overflow is put at \"\n        f\"{ovr['lo']:g}–{ovr['hi']:g} kt N/yr against {land_lo:g}–{land_hi:g} kt from Danish land by \"\n        \"stream: a fraction even at its upper bound.\") + \"\\n\")\n    w(C(\"C-NI-DIFFERENT-QUESTION\", \"**It does establish that the published percentage answers a \"\n        \"different question than the one it is used for.** It answers: *of the nitrogen we observe \""
    },
    "constructions": [
@@ -337040,7 +337120,7 @@
    "value": 0.2,
    "where": [
     "scripts/nitrogen.py",
-    882
+    884
    ]
   },
   "F-fa57b4796b": {
@@ -338681,8 +338761,8 @@
   "F-fbc8adfce6": {
    "code": {
     "file": "data/manual/claims.d/w3-gc.json",
-    "first": 4327,
-    "line": 4333,
+    "first": 4349,
+    "line": 4355,
     "text": "  },\n  {\n   \"id\": \"C-GC-G-NOTSUPPORT\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"GRUNDLAGET.md\",\n   \"claim\": \"The chain does not support an agricultural share of oxygen depletion, and none of its six pinned documents names fedtemøg - the word occurs {count:NOVANA-2327:fedtemøg}, {count:DHI-MODEL-DEL1-2015:fedtemøg}, {count:DHI-MODEL-DEL2-2015:fedtemøg}, {count:DCE-STATMOD-2015:fedtemøg}, {count:SO-BG-2024:fedtemøg} and {count:POL-SO-2024:fedtemøg} times in them; the gap between the science and the politics is where the project stands.\",\n   \"because\": \"Oxygen reaches no requirement and the accounting has no potency term; the counts are over the six pinned documents.\",\n   \"rests_on\": [\n    \"C-GC-G-GATE\","
    },
    "constructions": [
@@ -338711,7 +338791,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-gc.json",
-    4333
+    4355
    ]
   },
   "F-fbcc0cc588": {
@@ -339744,8 +339824,8 @@
   "F-fc7324d1ee": {
    "code": {
     "file": "scripts/nitrogen.py",
-    "first": 845,
-    "line": 851,
+    "first": 847,
+    "line": 853,
     "text": "        w(\"| Municipality | Separate outfalls | Combined overflows | % separated | Basin m³ |\\n|---|---:|---:|---:|---:|\")\n        shown = [k for k in KOEGE if (st[k][\"sep\"] + st[k][\"comb\"]) > 0]\n        for k in shown:\n            v = st[k]\n            sep_pct = live.step(\"K-SUBSET-SHARE\", v[\"sep\"] / (v[\"sep\"] + v[\"comb\"]) * 100)\n            bold = \"**\" if k in KOEGE_NORTH else \"\"\n            w(f\"| {bold}{k}{bold} | {v['sep']} | {v['comb']} | {sep_pct:.0f}% | {v['vol']:,.0f} |\")\n        w(\"\")\n        tc = sum(st[k][\"comb\"] for k in shown)\n        tvol = sum(st[k][\"vol\"] for k in shown)"
    },
    "constructions": [
@@ -339775,7 +339855,7 @@
    "value": 7271.0,
    "where": [
     "scripts/nitrogen.py",
-    851
+    853
    ]
   },
   "F-fc7530c00a": {

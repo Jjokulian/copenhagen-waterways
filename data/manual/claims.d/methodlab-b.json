@@ -238,7 +238,7 @@
    "id": "U-ML-FLOOD-MODELTYPE",
    "kind": "untraced",
    "label": "Trail ends: which model\\nmade the sheets",
-   "detail": "Searched on 11 September 2026: the dataset record on opendata.dk, the legend text of the Amager sheet, floodmaps.py and this repository's documents. None names the model, the terrain it ran over, or whether it included the sewers. floodmaps.py calls it a 2D surface flood model without a source. The cloudburst plan documents themselves were not searched."
+   "detail": "Searched on 11 September 2026: the dataset record on opendata.dk, the legend text of the Amager sheet, floodmaps.py and this repository's documents. None names the model, the terrain it ran over, or whether it included the sewers. floodmaps.py calls it a 2D surface flood model without a source. Searched on 2026-09-14: the 2012 cloudburst plan and COWI's 2013 catchment report for Bispebjerg, Ryparken and Dyssegård; neither names the model, the terrain or whether the sewers were included."
   },
   {
    "id": "U-ML-CATCHMENT-RULE",
@@ -527,8 +527,8 @@
    "basis": "assessed",
    "holder": "Københavns Kommune (the dataset record and the sheet titles)",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (read the claim, its reasoning and what it rests on against the METHOD_LAB wording and fork ml-b's research; the engine checked every pinned DCE and flood phrase and every history phrase, and that no number is typed; the DCE procedure read against the glosses of the nine pinned phrases. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "D-SHEETS.label {fig:conv_n_sheets}": "7",
      "D-SHEETS.detail {fig:conv_stated_error_min_m}": "14.3",
@@ -542,7 +542,7 @@
      "pinned FLOOD2012-AMAGER": "1045cc4c84324598",
      "node D-SHEETS": "15d74fbee34cafef",
      "node X-TERRAINCHECK": "d4d4586ba14ad148",
-     "node U-ML-FLOOD-MODELTYPE": "d5c9035dde498113"
+     "node U-ML-FLOOD-MODELTYPE": "289dc5c24bca5221"
     }
    }
   },

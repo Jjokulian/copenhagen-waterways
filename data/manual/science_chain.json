@@ -66,7 +66,7 @@
  "not_obtained": [
   {"citation": "Herman, P.M.J. et al. (2017) and (2023). International expert panel evaluations, phases I and II.", "why_it_matters": "The 2023 panel's finding on the VP3 chlorophyll G/M boundaries is load-bearing and is quoted here only via the Danish translation in so_bg, which itself warns that editorial choices were made in translation.", "verified_by_reading": false},
   {"citation": "Erichsen, A.C., Timmermann, K. & Christensen, J.P.A. (2023). Second opinion readers guide to RBMP 3.", "why_it_matters": "The VP3-era model update: 11 mechanistic models over 107 coastal water bodies, replacing the 4 models / 45 water bodies of VP2. Every model-level number in this file is therefore VP2-era unless marked otherwise.", "verified_by_reading": false},
-  {"citation": "Erichsen et al. 2019, 2020a, 2020b; Timmermann et al. 2024a, 2024b; Hansen & Rytter 2024; Markager & Storm 2003; DCE SR612, SR479.", "why_it_matters": "Cited from so_bg and del3 reference lists only.", "verified_by_reading": false}
+  {"citation": "Erichsen et al. 2019, 2020a, 2020b; Timmermann et al. 2024a, 2024b; Markager & Storm 2003; DCE SR612, SR479.", "why_it_matters": "Cited from so_bg and del3 reference lists only.", "verified_by_reading": false}
  ],
 
  "data_level": {
@@ -222,7 +222,7 @@
     "list": ["regional: Indre danske farvande, including the whole Baltic to Skagerrak", "local: Limfjorden", "local: Odense Fjord", "local: Roskilde Fjord", "Nordsøen (hydrodynamic/advection only; no ecosystem module, no eelgrass)"],
     "with_ecosystem_module": 4,
     "water_bodies_accepted_as_usable": 45,
-    "vp3_successor": "11 mechanistic models over 107 coastal water bodies (Erichsen et al. 2023) - not read here"
+    "vp3_successor": "11 new mechanistic models; 107 of the 109 Danish marine water bodies covered by a mechanistic model or by both types (Erichsen et al. 2023, DCE TR268, pinned and read 2026-09-14)"
    },
    "form": {
     "dimensions": 3,

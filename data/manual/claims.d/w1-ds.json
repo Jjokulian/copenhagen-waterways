@@ -1069,8 +1069,8 @@
     "C-DS-OLD-FLOOD-MODEL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ds (read the claim, its reasoning and what it rests on against the page wording and the sources: pinned phrases checked by the engine, counts read from ds_facts, ds_probes, enums and meta_facts, code read where the claim is about code; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on DATA_SOURCES.md": "`Oversvømmelsesscenarier for vandoplande` on opendata.dk: flood scenarios from the city's cloudburst plans for each water catchment, based on calculations, for a 100-year event, banded `0.05-0.1 m` / `0.1-0.2 m` / `0.2-0.5 m` / `0.5-1 m` / `1-2 m` / `>2 m`. Which model produced them, over what terrain, is not stated.",
      "texts": "8310978a3053b464",
@@ -1079,7 +1079,7 @@
      "node E-ML-FLOOD-CALC": "a85914b5ae80115d",
      "node E-ML-FLOOD-SHEET": "6632fd49d9ae8e13",
      "pinned FLOOD2012-AMAGER": "1045cc4c84324598",
-     "node U-ML-FLOOD-MODELTYPE": "d5c9035dde498113"
+     "node U-ML-FLOOD-MODELTYPE": "289dc5c24bca5221"
     }
    }
   },

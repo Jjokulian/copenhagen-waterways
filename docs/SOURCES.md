@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,833 distinct numbers in running text, from these sources.
+1,835 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -975,6 +975,7 @@
 - [FAO (2003), Food energy - methods of analysis and conversion factors, chapter 2](https://www.fao.org/4/y5022e/y5022e03.htm) (`FAO-2003-PROTEIN`) — 1 numbers, each read at its phrase from the pinned text.
 - [Københavns Kommune, Oversvømmelseskort for Amager vandopland (one of the seven flood sheets)](https://admin.opendata.dk/dataset/9a1f913c-d19b-486e-a22c-58ee52fef68c/resource/ef31af2e-994e-4db7-8ebc-341045581713/download/amager.pdf) (`FLOOD2012-AMAGER`) — 2 numbers, each read at its phrase from the pinned text.
 - [Københavns Kommune, 'Oversvømmelsesscenarier for vandoplande' - dataset record on opendata.dk (CKAN package_show)](https://admin.opendata.dk/api/3/action/package_show?id=oversvommelsesscenarier-for-vandoplande) (`FLOOD2012-CKAN`) — 1 numbers, each read at its phrase from the pinned text.
+- [Erichsen, Timmermann & Christensen 2023, Second opinion readers guide to RBMP 3 models and scenarios in Denmark, DCE Technical Report No. 268](http://dce2.au.dk/pub/TR268.pdf) (`GC-DCE-TR268`) — 2 numbers, each read at its phrase from the pinned text.
 - [figshare 20310255, HELCOM spatial data layers on fishing effort and footprint 2016-2021 (API record)](https://api.figshare.com/v2/articles/20310255) (`HY-FIGSHARE-D1`) — 1 numbers, each read at its phrase from the pinned text.
 - [Lassen et al. (2015), Microplastics - Occurrence, effects and sources of releases to the environment in Denmark, Miljøstyrelsen, Environmental Project 1793](https://www2.mst.dk/Udgiv/publications/2015/10/978-87-93352-80-3.pdf) (`HY-MST-1793`) — 4 numbers, each read at its phrase from the pinned text.
 - [Wikipedia, Atrazine chlorohydrolase](https://en.wikipedia.org/wiki/Atrazine_chlorohydrolase) (`HY-WIKI-ATZA`) — 1 numbers, each read at its phrase from the pinned text.
@@ -2092,7 +2093,7 @@ Counts, over the list of mapped `klima_id` values that no plan page mentions, th
 <a id="K-GC-TABEL3"></a>
 ### DCE's Tabel 3, tallied from its pinned text
 
-`K-GC-TABEL3` · covers data/derived/grundlaget.json · **current** · read by agent w3-gc (written against scripts/pages/grundlaget.py tabel3(): blocks of the pinned Tabel 3 extraction split into deviations, R² and ja/nej, two numbers per flag enforced, variable lists matched per half, model and BV counts checked against observing.py, criteria read from the report's sentences; output reproduces DCE's stated mean R² and mean deviation; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-GC-TABEL3` · covers data/derived/grundlaget.json · **current** · read by Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The page's own tally of DCE's Tabel 3: how many indicator-models DCE fitted, their mean R² and mean deviation, how many fall outside DCE's own criteria or carry systematic deviations, and how many select stability or temperature.
 
@@ -2654,7 +2655,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 How many rain-dependent discharge points the national register lists.
 
@@ -2835,7 +2836,7 @@ Every pathway of reactive nitrogen to Danish marine waters this project could en
 <a id="K-NITROGEN-READINGS"></a>
 ### Values read out of pinned documents, each checked at its phrase
 
-`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-14: data/manual/nitrogen_readings.json - five SR353 readings added for the load fall and the normalised supply, each phrase located in its pin; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-14: scripts/pages/grundlaget.py - two passages reworded after reading Hansen and Rytter's note and DCE's readers' guide to the third water plans' models; the guide's model count and coverage are read from its pin; nothing else computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.
 
@@ -2874,7 +2875,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - two sentences on the field surplus reworded now that SR120's appendix was read (deposition's method not described there); nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the measured-lines sentence narrowed after Miljøstyrelsen's point-source report; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 

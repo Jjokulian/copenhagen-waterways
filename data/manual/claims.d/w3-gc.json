@@ -8,6 +8,14 @@
    "sha256": "196fa7e459c207d2f828265923335375781172f999c3ab9ecef682c00e2b947c",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "GC-DCE-TR268": {
+   "title": "Erichsen, Timmermann & Christensen 2023, Second opinion readers guide to RBMP 3 models and scenarios in Denmark, DCE Technical Report No. 268",
+   "url": "http://dce2.au.dk/pub/TR268.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "a521ce1c0c194b962f07df7579e21502e051178b97d88af1e09b8c541bb942f3",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "figures": {},
@@ -57,18 +65,6 @@
    "kind": "untraced",
    "label": "Trail ends: no programme\nfor fedtemøg",
    "detail": "Searched on 2026-09-11 the pinned texts of the current NOVANA programme, DHI's two method reports, DCE's statistical-model report and both second-opinion reports for fedtemøg: it occurs in none. In NOVANA the monitoring on beaches covers litter and dead fulmars; filamentous algae appear only in the lake programme. No other programme was searched."
-  },
-  {
-   "id": "U-GC-HANSEN",
-   "kind": "untraced",
-   "label": "Trail ends: Hansen and\nRytter not read",
-   "detail": "Searched this project's pinned documents and claims register on 2026-09-11 for the paper by Hansen and Rytter that the second opinion cites on how iltsvind develops: no pinned copy. It is known here only through the second opinion's summary."
-  },
-  {
-   "id": "U-GC-ERICHSEN2023",
-   "kind": "untraced",
-   "label": "Trail ends: the VP3\nmodel update not read",
-   "detail": "Searched this project's pins and registers on 2026-09-11 for Erichsen and colleagues' model update for the third water plans: not pinned, and the project's notes record it as not read, so its model and water-body counts are not given."
   },
   {
    "id": "D-GC-LIGHT",
@@ -1073,6 +1069,30 @@
    "kind": "held",
    "label": "The flood sheets' placement\\ndata/derived/floodmaps/_georef.json, floodalign.json",
    "detail": "Each sheet's placement and standard error, from its control points (_georef.json), and the sheets the bundle adjustment could not constrain (floodalign.json) - the files the published manifest copies."
+  },
+  {
+   "id": "E-GC-HR-NOTE",
+   "kind": "external",
+   "label": "Hansen & Rytter's note:\ntemperature and weather",
+   "detail": "The DCE note the second opinion cites: widespread depletion presupposes a large prior nutrient supply, but its development through the year is governed mainly by bottom-water temperature and the weather.",
+   "source": "OP-DCE-ILT-2024",
+   "said": "iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold"
+  },
+  {
+   "id": "E-GC-TR268-MODELS",
+   "kind": "external",
+   "label": "TR268: the VP3\nmechanistic models",
+   "detail": "DCE's readers' guide to the third water plans' models: a set of new mechanistic models, hydrodynamic and biogeochemical, two regional, three local and six for single estuaries.",
+   "source": "GC-DCE-TR268",
+   "said": "covering two regional models, three local models and six estuary specific models"
+  },
+  {
+   "id": "E-GC-TR268-COVER",
+   "kind": "external",
+   "label": "TR268: the water bodies\nthe models cover",
+   "detail": "The guide: all but two of the Danish marine water bodies are now covered by a mechanistic model, some also by a statistical one.",
+   "source": "GC-DCE-TR268",
+   "said": "Danish marine water bodies is now covered by a mechanistic model or a mechanistic and a statistic model"
   }
  ],
  "claims": [
@@ -1091,8 +1111,8 @@
     "C-GC-OLD-G-HANDWRITTEN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on GRUNDLAGET.md": "Read from the primary method documents, not from summaries of them. Every figure on this page is read from, or computed on, a pinned copy of the document it comes from, and the notes the page was first written from, with verbatim sources and per-claim verification flags, are in `data/manual/science_chain.json`.",
      "texts": "eaee0d87d8e2b171",
@@ -3633,24 +3653,26 @@
    "kind": "argued",
    "stance": "ours",
    "page": "GRUNDLAGET.md",
-   "claim": "That nobody has published the regression of iltsvind extent on load, wind and bottom temperature is unverified: the second opinion summarises Hansen and Rytter as reporting that analysis, the paper is not read here, and its coefficients have not been found published.",
-   "because": "The second opinion's summary is pinned; the paper is not.",
+   "claim": "That nobody has published the regression of iltsvind extent on load, wind and bottom temperature is unverified: the second opinion cites Hansen and Rytter only for the general statement that bottom temperature and the weather govern the year's development while widespread depletion presupposes a large nutrient supply, and their note, read here, fits no such regression.",
+   "because": "The second opinion's sentence and the note it cites are both pinned; the note carries the same sentence, and a search of it for a regression, a statistical model or coefficients finds none.",
    "rests_on": [
     "E-GC-SOBG-HANSEN",
-    "U-GC-HANSEN"
+    "E-GC-HR-NOTE"
    ],
    "replaces": [
-    "C-GC-OLD-G-Q1"
+    "C-GC-OLD-G-Q1",
+    "C-GC-OLD2-G-Q1"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
-     "said on GRUNDLAGET.md": "**`Q1`. \"Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature.\"** A strong negative claim about the literature, not verified here. The second opinion's background analyses summarise Hansen & Rytter 2024 as saying that *\"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer\"* — a summary of exactly that analysis. The paper itself has not been read here, so what can be said is that we have not found the coefficients published.",
-     "texts": "c3c069e9c52ea551",
+     "said on GRUNDLAGET.md": "**`Q1`. \"Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature.\"** A strong negative claim about the literature, not verified here. The second opinion's background analyses cite Hansen & Rytter 2024 only for the general statement that *\"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer\"* — not for that analysis. Their note, read here, says the same and fits no regression, so what can be said is that we have not found the coefficients published.",
+     "texts": "09ecdfea2117e3c8",
      "node E-GC-SOBG-HANSEN": "25bb0a74dd767ba4",
      "pinned SO-BG-2024": "8d12fc4d97151adc",
-     "node U-GC-HANSEN": "fbd3f0a9ee6d56ef"
+     "node E-GC-HR-NOTE": "21fd23d2e27e8ecc",
+     "pinned OP-DCE-ILT-2024": "023288cf83860fad"
     }
    }
   },
@@ -4653,8 +4675,8 @@
     "D-GC-SCIENCECHAIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on GRUNDLAGET.md": "Structured, with verbatim quotes and per-claim `verified_by_reading` flags: `data/manual/science_chain.json`.",
      "texts": "c76d491db980ccf3",
@@ -4674,8 +4696,8 @@
     "D-GC-SCIENCECHAIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
      "said on GRUNDLAGET.md": "Primary documents read for this page:",
      "texts": "dfde41e110191870",
@@ -4689,26 +4711,30 @@
    "kind": "argued",
    "stance": "ours",
    "page": "GRUNDLAGET.md",
-   "claim": "The expert panel's reports are quoted only through the ministries' translation, the VP3 model update has not been read, so model-level numbers here are from the second water plans unless marked, and several papers are cited from reference lists only.",
-   "because": "The translation caveat, the notes' list of what was not obtained, and the search for the update.",
+   "claim": "The expert panel's reports are quoted only through the ministries' translation; the readers' guide to the third water plans' models is read and gives their number and coverage, the page's other model-level numbers are from the second water plans unless marked, and several papers are cited from reference lists only.",
+   "because": "The translation caveat, the notes' list of what was not obtained, and the readers' guide, pinned.",
    "rests_on": [
     "E-GC-SOBG-TRANS",
     "D-GC-SCIENCECHAIN",
-    "U-GC-ERICHSEN2023"
+    "E-GC-TR268-MODELS",
+    "E-GC-TR268-COVER"
    ],
    "replaces": [
-    "C-GC-OLD-G-NOTOBTAINED"
+    "C-GC-OLD-G-NOTOBTAINED",
+    "C-GC-OLD2-G-NOTOBTAINED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: six trails followed and pinned - Hansen and Rytter's DCE note, which carries the sentence the second opinion quotes and fits no regression; DCE's readers' guide to the third water plans' models, with their number and coverage; Miljøstyrelsen's point-source report, for how each smaller load line is measured or calculated; the LOOP report, which gives a detection time rather than the lag's length; the cloudburst plans, which name no model; and the DK-QNP documents, none describing a held-out validation of the nitrogen part. The three reworded claims read against their new supports, their old wordings archived with the reasons; the claims resting on the relabelled lines draw on what still holds, and the claims on the page's notes are unaffected by marking two papers read)",
     "saw": {
-     "said on GRUNDLAGET.md": "**Not obtained, and this limits the page.** Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the VP3 model update, has not been read, so **every model-level number here is VP2-era unless marked otherwise**. Hansen & Rytter 2024, Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.",
-     "texts": "66b04135791f4afb",
+     "said on GRUNDLAGET.md": "**Not obtained, and this limits the page.** Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the readers' guide to the VP3 models, is read: 11 new mechanistic models, and 107 of the 109 Danish marine water bodies covered by a mechanistic model, some also by a statistical one. **Every other model-level number here is VP2-era unless marked otherwise**. Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.",
+     "texts": "4c1dd4cc94847f56",
      "node E-GC-SOBG-TRANS": "10e072ee8bddee08",
      "pinned SO-BG-2024": "8d12fc4d97151adc",
      "node D-GC-SCIENCECHAIN": "41d16aa81f62c44a",
-     "node U-GC-ERICHSEN2023": "cf7cb31e3fb14f97"
+     "node E-GC-TR268-MODELS": "9cdb46bec73a016c",
+     "pinned GC-DCE-TR268": "a521ce1c0c194b96",
+     "node E-GC-TR268-COVER": "d8c48ef7015e8b03"
     }
    }
   },
@@ -7016,6 +7042,62 @@
     "saw": {
      "said on ARCHIVE.md": "The study that sizes the catchment coefficients could not be read here",
      "texts": "51141938260407bf"
+    }
+   }
+  },
+  {
+   "id": "C-GC-OLD2-G-Q1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-GC-G-Q1` on GRUNDLAGET.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "GRUNDLAGET.md",
+    "commit": "020961d",
+    "file": "docs/GRUNDLAGET.md",
+    "begin": "Nobody has published the regression of iltsvind extent",
+    "end": "we have not found the coefficients published.",
+    "why": "It called the second opinion's citation of Hansen and Rytter a summary of that regression and said their paper was not read; the second opinion cites them for a general statement, and their note, pinned, fits no regression."
+   },
+   "replaced_by": [
+    "C-GC-G-Q1"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Nobody has published the regression of iltsvind extent on load, wind work and bottom temperature.\" A strong negative claim about the literature, not verified here. The second opinion's background analyses summarise Hansen & Rytter 2024 as saying that *\"Iltsvindets udvikling i løbet af året reguleres væsentligst af bundvandstemperaturen og de aktuelle vejrmæssige forhold, men udbredt iltsvind forudsætter en forudgående stor tilførsel af næringsstoffer\"* — a summary of exactly that analysis. The paper itself has not been read here, so what can be said is that we have not found the coefficients published.",
+     "texts": "66bd43fc8149f652"
+    }
+   }
+  },
+  {
+   "id": "C-GC-OLD2-G-NOTOBTAINED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of `C-GC-G-NOTOBTAINED` on GRUNDLAGET.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "GRUNDLAGET.md",
+    "commit": "020961d",
+    "file": "docs/GRUNDLAGET.md",
+    "begin": "Not obtained, and this limits the page.",
+    "end": "are cited from reference lists only.",
+    "why": "It said the readers' guide to the third water plans' models had not been read and listed Hansen and Rytter among papers cited from reference lists only; both are now pinned and read."
+   },
+   "replaced_by": [
+    "C-GC-G-NOTOBTAINED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Not obtained, and this limits the page. Herman et al. 2017 and 2023 are quoted only through the ministries' Danish translation, which itself warns that editorial choices were made. Erichsen et al. 2023, the VP3 model update, has not been read, so every model-level number here is VP2-era unless marked otherwise. Hansen & Rytter 2024, Timmermann et al. `2024a/b`, Erichsen et al. `2019/2020a/2020b` and Markager & Storm 2003 are cited from reference lists only.",
+     "texts": "9be5624ea820013b"
     }
    }
   }
