@@ -51,8 +51,8 @@ def rows():
          C("C-GC-C-MARK-R", "nationally *\"en meget stærk, signifikant lineær relation\"*; per "
            "catchment, DCE themselves note that not all fjord catchments respond equally fast"),
          C("C-GC-C-MARK-V", "**a strong national relation says nothing about any one "
-           "catchment's coefficient.** The study that sizes the catchment coefficients could "
-           "not be read here"), False),
+           "catchment's coefficient.** DCE's note gives each fjord it covers its own slope, "
+           "and none that is significant for Mariager Fjord"), False),
         (f"**the official water bodies** — a drawn partition of {n_wb} polygons",
          f"measured station similarity, all {n_sub} feature subsets, contiguity-matched null",
          C("C-GC-C-WB-R", f"lift **{min(lifts):+.3f} to {max(lifts):+.3f}**"),

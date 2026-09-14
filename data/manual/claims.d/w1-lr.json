@@ -625,12 +625,12 @@
     "C-LR-OLD-SLOPE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the LANDING sentence against the claim, its reasoning and what it rests on: triage, register, light, partition, currents and Gotland data read in the files; SR353, SR120, DCE and NOVANA phrases found in the pinned texts by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on LANDING.md": "These are not 166 rivals for a single prize: where the evidence reaches, different places behave differently.",
      "texts": "3c38ca823e68e904",
-     "rests on C-LR-L-MARIAGER": "7ad0d6a64a527a98",
+     "rests on C-LR-L-MARIAGER": "d18deefa37e8f839",
      "rests on C-LR-L-FLUSH": "e0fce9fc6c0da85c",
      "rests on C-LR-L-BALTIC": "ab4fb5ef41497cb1"
     }
@@ -642,10 +642,11 @@
    "stance": "theirs",
    "page": "LANDING.md",
    "claim": "Mariager Fjord's catchment reduced its diffuse nitrogen by less than the national fall in field surplus would lead one to expect.",
-   "because": "Their statement, in the report's discussion of the relation between surplus and diffuse load: not every fjord catchment responds equally quickly, Mariager Fjord's among them. The report attributes it in part to catchment differences; its figures for the size of the difference were not read here.",
+   "because": "Their statement, in the report's discussion of the relation between surplus and diffuse load; the DCE note it cites, pinned, finds no relation at all for Mariager Fjord and puts it down to a long groundwater delay.",
    "rests_on": [
     "E-LR-SR353-RESP",
-    "E-LR-SR353-MARIAGER"
+    "E-LR-SR353-MARIAGER",
+    "E-NI-WINDOLF-MARIAGER"
    ],
    "basis": "assessed",
    "holder": "DCE, Aarhus University: Thodsen et al. 2019, national stream report (SR353)",
@@ -653,14 +654,16 @@
     "C-LR-OLD-RESPONSE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the LANDING sentence against the claim, its reasoning and what it rests on: triage, register, light, partition, currents and Gotland data read in the files; SR353, SR120, DCE and NOVANA phrases found in the pinned texts by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on LANDING.md": "Mariager Fjord's catchment cut its diffuse nitrogen by less than the national fall in field surplus would lead one to expect, as the national stream report itself notes.",
-     "texts": "7ad0d6a64a527a98",
+     "texts": "d18deefa37e8f839",
      "node E-LR-SR353-RESP": "8d77d4518901ae1c",
      "pinned SR353": "8a598b8a6973094b",
-     "node E-LR-SR353-MARIAGER": "68cd0f4f9325e58d"
+     "node E-LR-SR353-MARIAGER": "68cd0f4f9325e58d",
+     "node E-NI-WINDOLF-MARIAGER": "5125304a99afb090",
+     "pinned NI-WINDOLF-2012B": "6998e40b980bb5ee"
     }
    }
   },

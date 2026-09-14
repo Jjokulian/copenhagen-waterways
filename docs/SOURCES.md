@@ -1788,7 +1788,7 @@ Reads each figure INCIDENCE.md takes from a regulation or from the NUAR report o
 <a id="K-FARM-INCIDENCE"></a>
 ### Who carries the nitrogen requirement: herds, land and filed accounts, joined on CVR
 
-`K-FARM-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FARM-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by Claude (2026-09-14: scripts/socialcontext.py - four INCIDENCE rows reworded from the pinned agreement texts - the braklægningspunkt, the compensation rates, the bill's remarks and the tillægsaftale; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
 
 Joins the sibling project's livestock register, declared field parcels, CVR master data and parsed annual accounts on the CVR number, and aggregates them into cohorts - by enterprise type, legal form, place, organic status and filing status - with every figure a count, a sum, a share or a positional statistic over a named cohort.
 
@@ -1863,7 +1863,7 @@ A hand-compiled register of every pathway of reactive nitrogen to Danish marine 
 <a id="K-FLOOD-CONSTRUCTED"></a>
 ### The size of the constructions register
 
-`K-FLOOD-CONSTRUCTED` · covers data/derived/constructed.json · **current** · read by Claude (re-read constructed.py after agent w3-gc's rewrite: it still writes constructed.json with entries = len of the row list and ours = the rows whose last element marks them as the project's own, as the model says; the rows themselves changed, and are the agent's to justify. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-FLOOD-CONSTRUCTED` · covers data/derived/constructed.json · **current** · read by Claude (2026-09-14: scripts/pages/constructed.py - the C-GC-C-MARK-V sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
 
 Counts the rows of the constructions register, and those that are the project's own, as the generator writes them.
 
@@ -2183,7 +2183,7 @@ How many windows of consecutive whole years, each at least a minimum length, fit
 <a id="K-INCIDENCE"></a>
 ### Who carries the nitrogen requirement: visibility and the no-buffer cohort
 
-`K-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-INCIDENCE` · covers data/derived/socialcontext.json · **current** · read by Claude (2026-09-14: scripts/socialcontext.py - four INCIDENCE rows reworded from the pinned agreement texts - the braklægningspunkt, the compensation rates, the bill's remarks and the tillægsaftale; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
 
 Reads the sibling project's fetched registers (CHR herds, declared hectares per CVR, CVR master data, parsed XBRL accounts, kommune-to-region) and asks who carries the nitrogen requirement. It splits herd and land by whether the operator's CVR record lists published accounts. Among the businesses that do file, it counts those that are both stocked past a located regulatory threshold, or landless, and thin on equity.
 
@@ -2654,7 +2654,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
 
 How many rain-dependent discharge points the national register lists.
 
@@ -2874,7 +2874,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says), 2026-09-14
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 

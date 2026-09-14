@@ -5349,14 +5349,14 @@
     "C-NI-WINDOLF-UNREAD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ea (read the recorded wording on EXPERIMENTS.md or AGENT_BRIEF.md against its register entry, its reasoning and every node and claim under it; live values checked in triage.json, experiments.json, solutions.json, outfalls.json, observing.json, agent_brief.json and partition_subspace.json; every pinned phrase found by the engine and read in context; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on AGENT_BRIEF.md": "This project published a circularity finding and had to narrow it within the hour: the authors qualified the figure themselves on the next page, and a paired-catchment study existed that nobody here had read.",
      "texts": "4f2cc02c1463518e",
      "node H-EA-CIRC-PUB": "f4e5e4c9a10b2ae1",
      "node H-EA-CIRC-NARROW": "81469d2542dcdf3d",
-     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea",
+     "rests on C-NI-SR353-QUALIFY": "a867d4fdad414532",
      "rests on C-NI-WINDOLF-UNREAD": "0f8feb644bdedcdb"
     }
    }

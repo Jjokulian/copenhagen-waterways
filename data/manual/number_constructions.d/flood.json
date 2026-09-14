@@ -581,10 +581,10 @@
     "scripts/pages/constructed.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read constructed.py after agent w3-gc's rewrite: it still writes constructed.json with entries = len of the row list and ours = the rows whose last element marks them as the project's own, as the model says; the rows themselves changed, and are the agent's to justify. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/constructed.py - the C-GC-C-MARK-V sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/constructed.py": "6cd23729076d2852"
+     "scripts/pages/constructed.py": "47c52f0f9f473e1a"
     }
    }
   },

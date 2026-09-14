@@ -16,6 +16,46 @@
    "sha256": "8f47fa5a711d21ee0928114f81aa4fe4b29c17177a415024ea27749b1d95f125",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "IN-L5-FREMSAT": {
+   "title": "Lovforslag nr. L 5, Folketinget 2025-26 (2. samling), som fremsat 25 June 2026, with the explanatory remarks",
+   "url": "https://www.folketingstidende.dk/samling/20252/lovforslag/L5/20252_L5_som_fremsat.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "7e1cc22c47c6f7af12bd72b290391e8cde264e81d438cee5e20ada1b4f974196",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "IN-TILLAEG-2026": {
+   "title": "Tillægsaftale til Aftale om Implementering af et Grønt Danmark, 1 September 2026",
+   "url": "https://mgtp.dk/Media/639238618881411874/Till%C3%A6gsaftale%20til%20Aftale%20om%20Implementering%20af%20et%20Gr%C3%B8nt%20Danmark.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "9c75a30e89ee2a80a8786eeb8823bf2a15ffeb87a070bc46706ab6696e68fca0",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "IN-NRM-KOMP-2026": {
+   "title": "Ministeriet for Natur og Dyrevelfærd, Beslutningspapir vedr. kompensation og fleksibilitet i NRM, 19 June 2026",
+   "url": "https://mgtp.dk/Media/639174716194008939/Beslutningspapir%20vedr%20NRM%20fleksibilitet%20kompensation%20og%20underst%C3%B8ttelse%20af%20arealudtag.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "9132badf336189682db75212775fcf3e5d3e5f52eea7b8f06d0d7b616e28c8d8",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "IN-DELAFTALE-2025": {
+   "title": "Delaftale om principper for ny reguleringsmodel, herunder braklægningspunktet, 18 June 2025",
+   "url": "https://mgtp.dk/Media/638860164798243045/Delaftale%20om%20principper%20for%20ny%20reguleringsmodel.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "8a7ab0dd79c395c67c0d74c27ebf2c2d672f011cd501ccf80e9655f0aafc348e",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "IN-UMR-OEKONOMI-2026": {
+   "title": "Vurdering af erhvervsøkonomiske konsekvenser ved udledningsbaseret markregulering, notat 1 July 2026 (Høringsportalen, hearing on the implementing orders)",
+   "url": "https://prodstoragehoeringspo.blob.core.windows.net/fd9f05e1-22e9-44b5-a5dd-0004dc8caa8c/Bilag%204%20-%20Vurdering%20af%20erhvervs%C3%B8konomiske%20konsekvenser.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "30ae034aa818f85de56732e862c14525035298c38a18b35f5bedd2661b44d522",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -428,6 +468,54 @@
    "kind": "assumption",
    "label": "Surplus measured above\\nthe historic density",
    "detail": "The surplus line is a stated parameter, the historic harmony density; it has no legal force now."
+  },
+  {
+   "id": "E-IN-L5-REMARKS",
+   "kind": "external",
+   "label": "`L 5` as introduced:\nthe explanatory remarks",
+   "detail": "The bill as introduced, with its explanatory remarks; it passed as LOV 759. The remarks describe a holding's quota as the sum of its fields' quotas.",
+   "source": "IN-L5-FREMSAT",
+   "said": "Bemærkninger til lovforslaget"
+  },
+  {
+   "id": "E-IN-L5-QUOTA",
+   "kind": "external",
+   "label": "`L 5`: a holding's quota\nis the sum of its fields'",
+   "detail": "The remarks: the holding's nitrogen quota is computed as the sum of the quotas of its individual fields.",
+   "source": "IN-L5-FREMSAT",
+   "said": "beregnes som summen af kvoterne for de enkelte marker"
+  },
+  {
+   "id": "E-IN-TILLAEG-TEXT",
+   "kind": "external",
+   "label": "The tillægsaftale: vegetables\nexempted in the first year",
+   "detail": "The agreement's own text: land growing vegetables is exempted temporarily from the new nitrogen regulation model in its first year.",
+   "source": "IN-TILLAEG-2026",
+   "said": "arealer med produktion af grøntsager undtages midlertidigt fra den nye kvælstofreguleringsmodel i"
+  },
+  {
+   "id": "E-IN-DELAFTALE-BRAK",
+   "kind": "external",
+   "label": "Partial agreement 2025:\nthe point, per catchment",
+   "detail": "The parties agree to set the braklægningspunkt for each catchment, at the level where the catchment can just meet its discharge limit growing spring barley with catch crops on all its farmland.",
+   "source": "IN-DELAFTALE-2025",
+   "said": "fastsætte braklægningspunktet oplandsspecifikt"
+  },
+  {
+   "id": "E-IN-UMR-LATER",
+   "kind": "external",
+   "label": "The ministry's assessment:\npoints and rates still to come",
+   "detail": "The assessment of the implementing orders says that the catchment-specific braklægningspunkter, among other inputs, would be updated and enter the calculation of the final compensation rates later that summer.",
+   "source": "IN-UMR-OEKONOMI-2026",
+   "said": "opgørelse af oplandsspecifikke braklægningspunkter"
+  },
+  {
+   "id": "E-IN-NRM-FRAME",
+   "kind": "external",
+   "label": "Decision paper 2026:\na financing frame",
+   "detail": "The decision paper on compensation raises the financing frame for compensation under the new model; it sets no rate per hectare.",
+   "source": "IN-NRM-KOMP-2026",
+   "said": "Finansieringsrammen til kompensation i NRM øges fra"
   }
  ],
  "claims": [
@@ -904,22 +992,26 @@
    "kind": "attributed",
    "stance": "theirs",
    "page": "INCIDENCE.md",
-   "claim": "By 3 September 2026 a tillægsaftale had, as Venstre described it, secured an exception for vegetable producers.",
-   "because": "Venstre's account, as TV 2 reports it; the agreement's text was not read.",
+   "claim": "On 2026-09-01 a tillægsaftale exempted land growing vegetables from the new nitrogen regulation model, temporarily, in its first year.",
+   "because": "The agreement's own text, pinned; TV 2 reported Venstre's account of it.",
    "rests_on": [
+    "E-IN-TILLAEG-TEXT",
     "E-IN-TV2-TILLAEG"
    ],
    "basis": "assessed",
    "holder": "Venstre, as reported by TV 2 (2026-09-03)",
    "replaces": [
-    "C-IN-OLD-TILLAEG"
+    "C-IN-OLD-TILLAEG",
+    "C-IN-OLD-T-TILLAEG"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-in (wrote each claim from the page wording and read it against socialcontext.py, socialcontext.json, farm_documents.json and the pinned texts it rests on - BEK 931/673/677/130/131, LOV 759, NUAR, the TV 2, DR, Greenpeace, ministry and DM Bio pins; rankings checked in check_positions; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on INCIDENCE.md": "A *tillægsaftale* that, as Venstre described it, secured an exception for vegetable producers",
-     "texts": "9f7bcf03674a96a8",
+     "said on INCIDENCE.md": "A *tillægsaftale* exempting land that grows vegetables from the new nitrogen regulation model, temporarily, in its first year",
+     "texts": "4f9de842555f55e1",
+     "node E-IN-TILLAEG-TEXT": "ce8692007f1b0901",
+     "pinned IN-TILLAEG-2026": "9c75a30e89ee2a80",
      "node E-IN-TV2-TILLAEG": "26a2801fdc5e4b71",
      "pinned POL-TV2-20260903": "7e35b90adf8a8d5e"
     }
@@ -3966,24 +4058,28 @@
    "kind": "gap",
    "stance": "ours",
    "page": "INCIDENCE.md",
-   "claim": "The numeric braklægningspunkt is not established.",
-   "because": "No document holding it was obtained; the June 2025 partial agreement's text was not read.",
+   "claim": "The braklægningspunkt is set per catchment by a rule, not as one number, and the figures per catchment had not been published.",
+   "because": "The partial agreement's text and the ministry's assessment of the implementing orders, both pinned.",
    "rests_on": [
-    "E-IN-GP-PARTIAL",
+    "E-IN-DELAFTALE-BRAK",
+    "E-IN-UMR-LATER",
     "G-IN-IMPL"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-IN-OLD-BRAKROW"
+    "C-IN-OLD-BRAKROW",
+    "C-IN-OLD-G-BRAK"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-in (wrote each claim from the page wording and read it against socialcontext.py, socialcontext.json, farm_documents.json and the pinned texts it rests on - BEK 931/673/677/130/131, LOV 759, NUAR, the TV 2, DR, Greenpeace, ministry and DM Bio pins; rankings checked in check_positions; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on INCIDENCE.md": "**Not established.**",
-     "texts": "f6b65c75db56fa25",
-     "node E-IN-GP-PARTIAL": "d40dfd30f4da796f",
-     "pinned POL-GP-20250619": "a871f4b715fe7872",
+     "said on INCIDENCE.md": "**Set per catchment, not as one number.** The June 2025 partial agreement fixes it for each catchment at the regulation under which that catchment can just meet its discharge limit growing spring barley with catch crops on all its farmland. The figures per catchment had not been published: the ministry's assessment of July 2026 says they were still to be computed.",
+     "texts": "e1a2cede082619ac",
+     "node E-IN-DELAFTALE-BRAK": "5e0bbe3ddf0fb956",
+     "pinned IN-DELAFTALE-2025": "8a7ab0dd79c395c6",
+     "node E-IN-UMR-LATER": "465bf47dd53bc02f",
+     "pinned IN-UMR-OEKONOMI-2026": "30ae034aa818f85d",
      "node G-IN-IMPL": "807a98d86e08a295"
     }
    }
@@ -3993,21 +4089,30 @@
    "kind": "measured",
    "stance": "ours",
    "page": "INCIDENCE.md",
-   "claim": "Compensation rates are established for permanent extensification only.",
-   "because": "BEK 130 §18 is pinned; the other schemes were not read.",
+   "claim": "Compensation rates are published for permanent extensification only; for the new regulation a financing frame is set, and the rates were to follow.",
+   "because": "BEK 130 §18, the decision paper and the ministry's assessment, all pinned.",
    "rests_on": [
-    "C-IN-B130"
+    "C-IN-B130",
+    "E-IN-NRM-FRAME",
+    "E-IN-UMR-LATER"
    ],
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-in (wrote each claim from the page wording and read it against socialcontext.py, socialcontext.json, farm_documents.json and the pinned texts it rests on - BEK 931/673/677/130/131, LOV 759, NUAR, the TV 2, DR, Greenpeace, ministry and DM Bio pins; rankings checked in check_positions; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on INCIDENCE.md": "**Established for permanent extensification only**, read from the pinned BEK 130/2026 §18 in section 6. The other *tilskud* schemes were not read, and no rate for them is published here.",
-     "texts": "be8f8e5f3a7ed31c",
-     "rests on C-IN-B130": "e130c20f78ab4d34"
+     "said on INCIDENCE.md": "**Published for permanent extensification only**, read from the pinned BEK 130/2026 §18 in section 6. For the new regulation, the decision paper of June 2026 sets a financing frame, not rates per hectare, and the ministry's assessment of July 2026 says the final rates were still to be computed.",
+     "texts": "7d126f5153fb8132",
+     "rests on C-IN-B130": "e130c20f78ab4d34",
+     "node E-IN-NRM-FRAME": "68ad77e1ea259e67",
+     "pinned IN-NRM-KOMP-2026": "9132badf33618968",
+     "node E-IN-UMR-LATER": "465bf47dd53bc02f",
+     "pinned IN-UMR-OEKONOMI-2026": "30ae034aa818f85d"
     }
-   }
+   },
+   "replaces": [
+    "C-IN-OLD-G-RATES"
+   ]
   },
   {
    "id": "C-IN-G-OWN",
@@ -4207,24 +4312,32 @@
    "kind": "gap",
    "stance": "ours",
    "page": "INCIDENCE.md",
-   "claim": "The explanatory remarks to LOV 759 were not read; the enacted provisions quoted were.",
-   "because": "The act's text is pinned; the remarks are not.",
+   "claim": "The explanatory remarks to LOV 759 are in the bill as introduced, pinned; the page reads from them how a holding's quota is formed, and the enacted provisions it quotes are the act's.",
+   "because": "The act and the bill with its remarks, both pinned.",
    "rests_on": [
     "E-IN-LOV-TITLE",
+    "E-IN-L5-REMARKS",
+    "E-IN-L5-QUOTA",
     "G-IN-IMPL"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-in (wrote each claim from the page wording and read it against socialcontext.py, socialcontext.json, farm_documents.json and the pinned texts it rests on - BEK 931/673/677/130/131, LOV 759, NUAR, the TV 2, DR, Greenpeace, ministry and DM Bio pins; rankings checked in check_positions; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the bill's identifier L 5 is now written as code in C-NI-L5's reason and in the labels of the two nodes quoting the bill; nothing they say changed)",
     "saw": {
-     "said on INCIDENCE.md": "Not read. The enacted text was read — §6, §11, §57 and §65 are quoted from it — but the explanatory remarks, which is where the modelling behind the quota would be described, were not.",
-     "texts": "902a07b7483c76a4",
+     "said on INCIDENCE.md": "**Pinned, with the bill as introduced (`L 5`).** The enacted text is quoted from LOV 759 — §6, §11, §57 and §65; the remarks describe a holding's quota as the sum of its fields' quotas. What sets each field's quota is delegated to the implementing orders.",
+     "texts": "47418101a2e3609d",
      "node E-IN-LOV-TITLE": "f70b255a537ac898",
      "pinned LOV759-2026": "4220892432767edc",
+     "node E-IN-L5-REMARKS": "29c6892f73e20ef7",
+     "pinned IN-L5-FREMSAT": "7e1cc22c47c6f7af",
+     "node E-IN-L5-QUOTA": "f5aa260e392eedb6",
      "node G-IN-IMPL": "807a98d86e08a295"
     }
-   }
+   },
+   "replaces": [
+    "C-IN-OLD-G-REMARKS"
+   ]
   },
   {
    "id": "C-IN-G-DELIVERY",
@@ -6647,6 +6760,118 @@
     "saw": {
      "said on ARCHIVE.md": "a detail that is widely misreported",
      "texts": "9087c089f75b5a2f"
+    }
+   }
+  },
+  {
+   "id": "C-IN-OLD-G-BRAK",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-IN-G-BRAK on INCIDENCE.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "INCIDENCE.md",
+    "commit": "b460dc5",
+    "file": "docs/INCIDENCE.md",
+    "begin": "The numeric braklægningspunkt",
+    "end": "the implementing act.",
+    "why": "The agreement it named, now pinned, sets the point per catchment by a rule rather than as one number, and the ministry's assessment says the figures per catchment were still to be computed."
+   },
+   "replaced_by": [
+    "C-IN-G-BRAK"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The numeric braklægningspunkt | Not established.† | The text of the June 2025 partial agreement, and the implementing act.",
+     "texts": "43d143b2368bef48"
+    }
+   }
+  },
+  {
+   "id": "C-IN-OLD-G-RATES",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-IN-G-RATES on INCIDENCE.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "INCIDENCE.md",
+    "commit": "b460dc5",
+    "file": "docs/INCIDENCE.md",
+    "begin": "**Established for permanent extensification only**",
+    "end": "no rate for them is published here.",
+    "why": "The decision paper on compensation, now pinned, sets a financing frame for the new regulation, and the ministry's assessment says the rates were still to be computed; the other schemes' rates are not published."
+   },
+   "replaced_by": [
+    "C-IN-G-RATES"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Established for permanent extensification only, read from the pinned BEK 130/2026 §18 in section 6. The other *tilskud* schemes were not read, and no rate for them is published here.",
+     "texts": "9992c837ed75650d"
+    }
+   }
+  },
+  {
+   "id": "C-IN-OLD-G-REMARKS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-IN-G-REMARKS on INCIDENCE.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "INCIDENCE.md",
+    "commit": "b460dc5",
+    "file": "docs/INCIDENCE.md",
+    "begin": "Not read. The enacted text was read",
+    "end": "would be described, were not.",
+    "why": "The bill with its explanatory remarks is now pinned and read for how the quota is formed."
+   },
+   "replaced_by": [
+    "C-IN-G-REMARKS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Not read. The enacted text was read — §6, §11, §57 and §65 are quoted from it — but the explanatory remarks, which is where the modelling behind the quota would be described, were not.",
+     "texts": "0786d42b007df09a"
+    }
+   }
+  },
+  {
+   "id": "C-IN-OLD-T-TILLAEG",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-IN-T-TILLAEG on INCIDENCE.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "INCIDENCE.md",
+    "commit": "b460dc5",
+    "file": "docs/INCIDENCE.md",
+    "begin": "that, as Venstre described it, secured an exception",
+    "end": "for vegetable producers",
+    "why": "The agreement's own text, now pinned, states the exemption; the page no longer needs Venstre's account of it."
+   },
+   "replaced_by": [
+    "C-IN-T-TILLAEG"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "that, as Venstre described it, secured an exception for vegetable producers",
+     "texts": "286b3ad5ba1da05e"
     }
    }
   }

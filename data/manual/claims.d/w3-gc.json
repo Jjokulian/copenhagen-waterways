@@ -1065,6 +1065,14 @@
    "detail": "",
    "source": "POL-SO-2024",
    "said": "Det anbefales især at ophæve nedjustering af G/M-grænseværdierne i de åbne danske kystvande"
+  },
+  {
+   "id": "E-NI-WINDOLF-SLOPES",
+   "kind": "external",
+   "label": "DCE note 2012: each fjord's\nown slope",
+   "detail": "The note tabulates the slope of the relation for each of ten fjord catchments and reads the differences as differing retention; for Mariager Fjord the slope is not significant.",
+   "source": "NI-WINDOLF-2012B",
+   "said": "Den forskellige oplandsspecifikke hældning i relationen"
   }
  ],
  "claims": [
@@ -4829,23 +4837,25 @@
    "kind": "argued",
    "stance": "ours",
    "page": "CONSTRUCTED.md",
-   "claim": "A strong national relation says nothing about any one catchment's coefficient, and the study that sizes the catchment coefficients could not be read here.",
-   "because": "PROGRAMME.md's argument on the national relation, and the unread Windolf study.",
+   "claim": "A strong national relation says nothing about any one catchment's coefficient: DCE's note gives each fjord it covers its own slope, and none that is significant for Mariager Fjord.",
+   "because": "PROGRAMME.md's argument on the national relation, and DCE's note, pinned.",
    "rests_on": [
     "C-PG-F2-AGG",
-    "C-NI-WINDOLF-UNREAD"
+    "E-NI-WINDOLF-SLOPES"
    ],
    "replaces": [
-    "C-GC-OLD-C-TABLE"
+    "C-GC-OLD-C-TABLE",
+    "C-GC-OLD-C-MARK-V"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on CONSTRUCTED.md": "**a strong national relation says nothing about any one catchment's coefficient.** The study that sizes the catchment coefficients could not be read here",
-     "texts": "e7c51726c85540cc",
+     "said on CONSTRUCTED.md": "**a strong national relation says nothing about any one catchment's coefficient.** DCE's note gives each fjord it covers its own slope, and none that is significant for Mariager Fjord",
+     "texts": "007b19a127544808",
      "rests on C-PG-F2-AGG": "1a342b7573ea523e",
-     "rests on C-NI-WINDOLF-UNREAD": "0f8feb644bdedcdb"
+     "node E-NI-WINDOLF-SLOPES": "7acbc45bc378e6c5",
+     "pinned NI-WINDOLF-2012B": "6998e40b980bb5ee"
     }
    }
   },
@@ -5266,22 +5276,25 @@
    "stance": "ours",
    "page": "CONSTRUCTED.md",
    "claim": "A good sign licenses a claim about direction only: surplus and load falling together is supported nationally, while a cut in load proportional to a cut in surplus needs a catchment's own coefficient, which the register does not hold.",
-   "because": "The national relation is published; the catchment coefficients were not read.",
+   "because": "The national relation is published; DCE's note, pinned, gives each fjord's own slope and none significant for Mariager Fjord; this register holds none of them.",
    "rests_on": [
     "C-NI-SR353-RELATION",
-    "C-GC-C-MARK-V"
+    "C-GC-C-MARK-V",
+    "E-NI-WINDOLF-SLOPES"
    ],
    "replaces": [
     "C-GC-OLD-C-DIRECTION"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on CONSTRUCTED.md": "**And a good sign licenses a claim about direction only.** \"Nitrogen surplus fell and load fell\" is supported nationally. \"Cutting the surplus by `X` will cut the load by `0.7X`\" needs a catchment's own coefficient, which this register does not hold.",
-     "texts": "a537504d2acf7bff",
+     "texts": "cde72c7ed877bdc9",
      "rests on C-NI-SR353-RELATION": "048f0349c731b599",
-     "rests on C-GC-C-MARK-V": "e7c51726c85540cc"
+     "rests on C-GC-C-MARK-V": "007b19a127544808",
+     "node E-NI-WINDOLF-SLOPES": "7acbc45bc378e6c5",
+     "pinned NI-WINDOLF-2012B": "6998e40b980bb5ee"
     }
    }
   },
@@ -6975,6 +6988,34 @@
     "saw": {
      "said on ARCHIVE.md": "An entry needs four things: the construction, the measurement it was held against, the number, and what the comparison licenses. If a check was run and passed, that belongs here too — a register of only failures would be a construction with its own selection problem. A new entry's number should come from a stored result, not from this page.",
      "texts": "055edd50d0556e40"
+    }
+   }
+  },
+  {
+   "id": "C-GC-OLD-C-MARK-V",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-GC-C-MARK-V on CONSTRUCTED.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "CONSTRUCTED.md",
+    "commit": "b460dc5",
+    "file": "docs/CONSTRUCTED.md",
+    "begin": "The study that sizes the catchment coefficients could",
+    "end": "not be read here",
+    "why": "DCE's note, now pinned, gives each fjord it covers its own slope, so the coefficients are readable; it is the journal paper that stays unread."
+   },
+   "replaced_by": [
+    "C-GC-C-MARK-V"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The study that sizes the catchment coefficients could not be read here",
+     "texts": "51141938260407bf"
     }
    }
   }

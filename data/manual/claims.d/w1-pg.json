@@ -303,6 +303,14 @@
    "sha256": "b65ca005b5bdbccb30dbaa96f25342524b76bf70539a0e6546d3efa5bdcd6647",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "PG-MST-KLAP-2005": {
+   "title": "Miljøstyrelsen, Vejledning om dumpning af optaget havbundsmateriale - klapning, vejledning nr. 8, 2005",
+   "url": "https://www2.mst.dk/Udgiv/publikationer/2005/87-7614-851-3/pdf/87-7614-851-3.pdf",
+   "retrieved": "2026-09-14",
+   "sha256": "b0bbd28f26bc0411d7882163093f776b7ca8968141c595b1f87d43e56f066a89",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -1177,6 +1185,20 @@
    "detail": "",
    "source": "PG-WIKI-NUCLECON",
    "said": "The costs of the French nuclear scale-up: A case of negative learning by doing"
+  },
+  {
+   "id": "E-PG-KLAP-LEVELS",
+   "kind": "external",
+   "label": "Miljøstyrelsen: action levels\nfor dumping at sea",
+   "detail": "The guidance on dumping dredged material sets a lower and an upper action level per metal; below the lower the material may be dumped, above the upper it goes to land as a rule. Material put to use on land is outside its scope.",
+   "source": "PG-MST-KLAP-2005",
+   "said": "Det øvre aktionsniveau angiver det niveau, hvor der kunne være begyndende effekter"
+  },
+  {
+   "id": "U-PG-LAND-RULE",
+   "kind": "untraced",
+   "label": "Trail ends: the rule for\ndredged material on land",
+   "detail": "Searched on 2026-09-14: Miljøstyrelsen's guidance on dumping dredged material, pinned, sets action levels for dumping at sea and leaves material put to use on land outside its scope; the orders on soil and residual products that govern use on land were not read here."
   }
  ],
  "claims": [
@@ -6553,21 +6575,26 @@
    "stance": "ours",
    "page": "PROGRAMME.md",
    "claim": "Dredged material below a concentration threshold for metals is soil, and the question is where soil is wanted.",
-   "because": "The threshold follows from the principle. The 'Danish limit values' this page once cited were not read.",
+   "because": "The threshold follows from the principle. For dumping at sea the Danish guidance sets action levels per metal, pinned; for use on land the soil and residual-product orders apply, which were not read.",
    "rests_on": [
-    "A-PG-PRIOR"
+    "A-PG-PRIOR",
+    "E-PG-KLAP-LEVELS",
+    "U-PG-LAND-RULE"
    ],
    "basis": "assessed",
    "replaces": [
     "C-PG-OLD-LIMITVALUES"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on PROGRAMME.md": "A wetland and its forebay have to be dredged, and section 4's threshold test says what happens next: below a concentration threshold for metals, the material is soil. The question is where soil is wanted.",
-     "texts": "9b6af23f2fdb643a",
-     "node A-PG-PRIOR": "fb0cba112e287ec3"
+     "texts": "cfbb42b59e51a560",
+     "node A-PG-PRIOR": "fb0cba112e287ec3",
+     "node E-PG-KLAP-LEVELS": "6ebec695626ad24b",
+     "pinned PG-MST-KLAP-2005": "b0bbd28f26bc0411",
+     "node U-PG-LAND-RULE": "6d58d1d52324098e"
     }
    }
   },

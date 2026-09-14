@@ -303,9 +303,11 @@ def two_subtractions(mon, agri, dl):
     w(C("C-NI-PERFORMANCE-UNREAD", "This is the question the rest of it turns on: whether a fall in "
         "the surplus shows up as a fall in the measured load, catchment by catchment. DCE's own "
         "qualification above says it did not everywhere — Mariager Fjord and parts of Limfjorden "
-        "responded less than the national relation indicates. The study that quantifies it per "
-        "catchment could not be read here, so the size of the shortfall is not given on this "
-        "page.") + "\n")
+        "responded less than the national relation indicates. The DCE note it cites finds no "
+        "relation at all between surplus and diffuse load for Mariager Fjord, and puts it down to "
+        "groundwater that takes decades to reach the streams. The journal paper that sizes the "
+        "regional responses could not be read here, so the size of the shortfall elsewhere is not "
+        "given on this page.") + "\n")
     return "\n".join(o)
 
 

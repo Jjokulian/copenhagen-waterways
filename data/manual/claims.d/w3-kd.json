@@ -40,6 +40,14 @@
    "sha256": "9d4d33e66090aa7988432020ecfeba508c6b34d8d2d70dd7067e6c10f0a01bb1",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "KD-CMEMS-BGC012-P1Y": {
+   "title": "Copernicus Marine catalogue record, Baltic Sea biogeochemistry reanalysis, yearly dataset (cmems_mod_bal_bgc_my_P1Y-m_202303)",
+   "url": "https://stac.marine.copernicus.eu/metadata/BALTICSEA_MULTIYEAR_BGC_003_012/cmems_mod_bal_bgc_my_P1Y-m_202303/dataset.stac.json",
+   "retrieved": "2026-09-14",
+   "sha256": "4436094309cd8e222336d38282b20dbe8241d38609dd5bae981483676deabd42",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "figures": {},
@@ -275,6 +283,14 @@
    "detail": "The catalogue record of the reanalysis's daily dataset lists its variables as chl, nh4, no3, nppv, o2, o2b, ph, po4, spco2 and zsd; read in full on 2026-09-11, none of them is silicate. The monthly dataset's record lists the same; the yearly one was not read.",
    "source": "KD-CMEMS-BGC012-P1D",
    "said": "secchi_depth_of_sea_water"
+  },
+  {
+   "id": "E-KD-BGC-P1Y",
+   "kind": "external",
+   "label": "The yearly dataset's record:\nthe same variables",
+   "detail": "The catalogue record of the reanalysis's yearly dataset lists the same ten variables as the daily and monthly ones; none is silicate.",
+   "source": "KD-CMEMS-BGC012-P1Y",
+   "said": "\"nppv\""
   }
  ],
  "claims": [
@@ -897,20 +913,23 @@
    "stance": "ours",
    "page": "hypodrafts/K1.md",
    "claim": "Silicate is not among them, so the reanalysis cannot stand in for the silicon side.",
-   "because": "An absence over a named list: the variables the daily dataset's catalogue record lists, read in full, with the monthly dataset's record listing the same; the data files were not opened, and the yearly dataset's record was not read.",
+   "because": "An absence over a named list: the variables the catalogue records of the daily, monthly and yearly datasets list, each read in full; the data files were not opened.",
    "rests_on": [
-    "C-KD-K1-BGC-LIST"
+    "C-KD-K1-BGC-LIST",
+    "E-KD-BGC-P1Y"
    ],
    "replaces": [
     "C-KD-OLD-K1-VANDA"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-kd (read each K1 sentence against its claim, reasoning and what it rests on: the plankton counts in drafts_b_counts.json, the K1 counts and yearly cells in rescore.json, the netCDF attributes of every plankton file - each functional type noted as derived from chl as in Brando et al. (2021), and DIATO over CHL found to vary with CHL alone in two years' files - the pinned Copernicus, EurOBIS and Wikipedia phrases, the source register and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on hypodrafts/K1.md": "Silicate is not among them, so the reanalysis cannot stand in for the silicon side.",
-     "texts": "aabe65f02eceba54",
-     "rests on C-KD-K1-BGC-LIST": "0d66eafcd3ddb178"
+     "texts": "9995e09cae781fdb",
+     "rests on C-KD-K1-BGC-LIST": "0d66eafcd3ddb178",
+     "node E-KD-BGC-P1Y": "6e113c0b7a01307c",
+     "pinned KD-CMEMS-BGC012-P1Y": "4436094309cd8e22"
     }
    }
   },

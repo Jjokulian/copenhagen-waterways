@@ -2270,12 +2270,12 @@
     "C-LE-OLD-CHEAP"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: each rests on C-NI-L5, whose reason now writes the bill's identifier as code; what C-NI-L5 says is unchanged, and these draw on the vote and the quota mechanics, not on how the bill is named)",
     "saw": {
      "said on LANDBRUG.md": "Ikke *drop kravet*. Det er en tabt sag og en dårlig sag: gødskningsloven `L 5` blev vedtaget med 119 stemmer mod 34, og belastningen er reel. I stedet fire ting, som ingen kan afvise uden at forklare hvorfor:",
      "texts": "8d6d63dadbf8cbde",
-     "rests on C-NI-L5": "820c28f9b74f0e65",
+     "rests on C-NI-L5": "cb702d4812e28825",
      "rests on C-PC-CA-NOTHOOK": "98505b4b561d7d2b"
     }
    }

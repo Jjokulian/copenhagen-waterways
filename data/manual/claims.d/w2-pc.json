@@ -604,26 +604,32 @@
    "kind": "provisional",
    "stance": "ours",
    "page": "PLACES.md",
-   "claim": "What is known about the cause at Mariager is thin: DCE's runoff report says its catchment reduced its diffuse nitrogen load less than the national relation indicates, citing work this project could not read, and gives no cause; the sill limits the exchange of the basin's bottom water.",
-   "because": "The first half is DCE's statement as NITROGEN reads it; the papers it cites are unread; the second half is the pinned description of the fjord.",
+   "claim": "What is known about the cause at Mariager is thin but not empty: DCE's runoff report says its catchment reduced its diffuse nitrogen load less than the national relation indicates; the note it cites finds no relation at all there and puts it down to groundwater that takes decades to reach the streams, where stream nitrate kept rising while it fell elsewhere; the sill limits the exchange of the basin's bottom water.",
+   "because": "DCE's statement as NITROGEN reads it, and the note it cites, pinned; the second half is the pinned description of the fjord.",
    "rests_on": [
     "C-NI-SR353-QUALIFY",
-    "C-NI-WINDOLF-UNREAD",
+    "E-NI-WINDOLF-MARIAGER",
+    "E-NI-WINDOLF-LAG",
+    "E-NI-WINDOLF-RISING",
     "C-PC-MAR-SILL"
    ],
    "basis": "assessed",
    "replaces": [
     "C-PC-OLD-WINDOLF",
-    "C-PC-OLD-HEADING-MAR"
+    "C-PC-OLD-HEADING-MAR",
+    "C-PC-OLD-MAR-CAUSE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on PLACES.md": "**What is known about cause is thinner than it looks.** DCE's national runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen load less than the national relation indicates, citing work this project could not read, and it gives no cause. The sill limits how often the basin's bottom water is exchanged.",
-     "texts": "722d6e32c0b37e0b",
-     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea",
-     "rests on C-NI-WINDOLF-UNREAD": "0f8feb644bdedcdb",
+     "said on PLACES.md": "**What is known about cause is thinner than it looks, but not empty.** DCE's national runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen load less than the national relation indicates. The DCE note it cites finds no relation at all between surplus and load there, and puts it down to groundwater that takes decades to reach the streams - nitrate kept rising in several streams around the fjord while it fell elsewhere. The sill limits how often the basin's bottom water is exchanged.",
+     "texts": "19470f8bd7704e12",
+     "rests on C-NI-SR353-QUALIFY": "a867d4fdad414532",
+     "node E-NI-WINDOLF-MARIAGER": "5125304a99afb090",
+     "pinned NI-WINDOLF-2012B": "6998e40b980bb5ee",
+     "node E-NI-WINDOLF-LAG": "8357ad6740910b75",
+     "node E-NI-WINDOLF-RISING": "36ce0dbe81fe0e83",
      "rests on C-PC-MAR-SILL": "22ecf4febf6c885b"
     }
    }
@@ -643,12 +649,12 @@
     "C-PC-OLD-PHYSICAL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on PLACES.md": "So two things are supported, each in part: a sill that limits exchange, which a nitrogen target does not address, and a catchment whose diffuse load fell less than the national relation predicts, for reasons not established here.",
      "texts": "ed6a4efe3a6ed223",
-     "rests on C-PC-MAR-CAUSE": "722d6e32c0b37e0b"
+     "rests on C-PC-MAR-CAUSE": "19470f8bd7704e12"
     }
    }
   },
@@ -754,22 +760,28 @@
    "kind": "provisional",
    "stance": "ours",
    "page": "PLACES.md",
-   "claim": "The one readable source says Mariager's catchment load fell less than the national relation predicts, not that it did not fall, and how the fjord's bottom water answered is not established here.",
-   "because": "DCE's statement is about the catchment's load, not the fjord; no series here tests the fjord's response.",
+   "claim": "DCE's 2018 report says Mariager's catchment load fell less than the national relation predicts; the note it cites found no marked fall there over the years it covers, unlike every other fjord, and no relation to the surplus; how the fjord's bottom water answered is not established here.",
+   "because": "DCE's statements, both about the catchment's load, not the fjord; no series here tests the fjord's response.",
    "rests_on": [
-    "C-NI-SR353-QUALIFY"
+    "C-NI-SR353-QUALIFY",
+    "E-NI-WINDOLF-NOFALL",
+    "E-NI-WINDOLF-MARIAGER"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-PC-OLD-NORESPONSE"
+    "C-PC-OLD-NORESPONSE",
+    "C-PC-OLD-MAR-N"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
-     "said on PLACES.md": "*Cause-contingent:* nitrogen reduction in the catchment. The one readable source says this catchment's diffuse load fell less than the national relation predicts — not that it did not fall — and how the fjord's bottom water answered is not established here.",
-     "texts": "4fd96d767d016e6f",
-     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea"
+     "said on PLACES.md": "*Cause-contingent:* nitrogen reduction in the catchment. DCE's 2018 report says this catchment's diffuse load fell less than the national relation predicts; the note it cites found no marked fall there over the years it covers, unlike every other fjord it looked at, and no relation to the surplus. How the fjord's bottom water answered is not established here.",
+     "texts": "941ef406493adc4f",
+     "rests on C-NI-SR353-QUALIFY": "a867d4fdad414532",
+     "node E-NI-WINDOLF-NOFALL": "239fc781d5c3dfca",
+     "pinned NI-WINDOLF-2012B": "6998e40b980bb5ee",
+     "node E-NI-WINDOLF-MARIAGER": "5125304a99afb090"
     }
    }
   },
@@ -1734,12 +1746,12 @@
     "C-PC-OLD-TWENTYSIX"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the documents behind the 'not read' claims followed and pinned - DCE's 2012 note on field balances (no relation at all for Mariager Fjord, groundwater taking decades, each fjord's own slope), L 5 as introduced with its remarks, the tillægsaftale, the June 2025 partial agreement (the braklægningspunkt set per catchment), the compensation decision paper and the ministry's assessment (points and rates still to be computed), Miljøstyrelsen's dumping guidance, and the CMEMS yearly record; the journal paper and the Overseer panel report stay unreachable and are recorded as trail ends. Each claim read against its new supports; the dependents draw on what still holds)",
     "saw": {
      "said on PLACES.md": "**And it is worth being clear about what it does not claim.** A trial that works at Mariager says nothing about Lillebælt: DCE's own runoff report says fjord catchments do not all respond alike to the national relation. **Places would have to be tried separately, which is the argument of this page.**",
      "texts": "859a051331945ee3",
-     "rests on C-NI-SR353-QUALIFY": "adfbd1f8885435ea"
+     "rests on C-NI-SR353-QUALIFY": "a867d4fdad414532"
     }
    }
   },
@@ -5548,6 +5560,62 @@
     "saw": {
      "said on ARCHIVE.md": "A residual: measured-plus-modelled total minus modelled point sources minus modelled background, with a retention uncertainty of 16 percentage points in this project's register, which gives no source for it.",
      "texts": "84aa2867f818bfd0"
+    }
+   }
+  },
+  {
+   "id": "C-PC-OLD-MAR-CAUSE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-PC-MAR-CAUSE on PLACES.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "PLACES.md",
+    "commit": "b460dc5",
+    "file": "docs/PLACES.md",
+    "begin": "What is known about cause is thinner than it looks.",
+    "end": "The sill limits how often the basin's bottom water is exchanged.",
+    "why": "The work DCE's report cites is partly readable: the DCE note, now pinned, gives a cause - groundwater that takes decades to reach the streams - so 'gives no cause' no longer holds."
+   },
+   "replaced_by": [
+    "C-PC-MAR-CAUSE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "What is known about cause is thinner than it looks. DCE's national runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen load less than the national relation indicates, citing work this project could not read, and it gives no cause. The sill limits how often the basin's bottom water is exchanged.",
+     "texts": "07d7c3e7a0d7fab8"
+    }
+   }
+  },
+  {
+   "id": "C-PC-OLD-MAR-N",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-PC-MAR-N on PLACES.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "PLACES.md",
+    "commit": "b460dc5",
+    "file": "docs/PLACES.md",
+    "begin": "The one readable",
+    "end": "is not established",
+    "why": "It is no longer the one readable source, and the note it cites found no marked fall at Mariager over the years it covers, so 'not that it did not fall' no longer holds for that period."
+   },
+   "replaced_by": [
+    "C-PC-MAR-N"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The one readable source says this catchment's diffuse load fell less than the national relation predicts — not that it did not fall — and how the fjord's bottom water answered is not established",
+     "texts": "f8111cf67dd95fea"
     }
    }
   }

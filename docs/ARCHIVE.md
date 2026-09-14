@@ -1105,6 +1105,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-GC-C-REGISTER`](CLAIMS.md#C-GC-C-REGISTER) — each opens what it rests on.
 
+<a id="C-GC-OLD-C-MARK-V"></a>
+### The earlier wording of C-GC-C-MARK-V on CONSTRUCTED.md.
+
+`C-GC-OLD-C-MARK-V` · retired 2026-09-14 from [CONSTRUCTED.md](CONSTRUCTED.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-GC-OLD-C-MARK-V">The study that sizes the catchment coefficients could not be read here</span><sup class="claim-mark">[†](ARCHIVE.md#C-GC-OLD-C-MARK-V "What this claim rests on")</sup>
+
+**Why it was retired:** DCE's note, now pinned, gives each fjord it covers its own slope, so the coefficients are readable; it is the journal paper that stays unread.
+
+**Replaced by:** [`C-GC-C-MARK-V`](CLAIMS.md#C-GC-C-MARK-V) — each opens what it rests on.
+
 <a id="C-GC-OLD-C-MOST"></a>
 ### Most published constructions have only had the sign check.
 
@@ -4372,6 +4383,39 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-IN-BIAS`](CLAIMS.md#C-IN-BIAS) — each opens what it rests on.
 
+<a id="C-IN-OLD-G-BRAK"></a>
+### The earlier wording of C-IN-G-BRAK on INCIDENCE.md.
+
+`C-IN-OLD-G-BRAK` · retired 2026-09-14 from [INCIDENCE.md](INCIDENCE.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-IN-OLD-G-BRAK">The numeric braklægningspunkt | Not established.† | The text of the June 2025 partial agreement, and the implementing act.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-G-BRAK "What this claim rests on")</sup>
+
+**Why it was retired:** The agreement it named, now pinned, sets the point per catchment by a rule rather than as one number, and the ministry's assessment says the figures per catchment were still to be computed.
+
+**Replaced by:** [`C-IN-G-BRAK`](CLAIMS.md#C-IN-G-BRAK) — each opens what it rests on.
+
+<a id="C-IN-OLD-G-RATES"></a>
+### The earlier wording of C-IN-G-RATES on INCIDENCE.md.
+
+`C-IN-OLD-G-RATES` · retired 2026-09-14 from [INCIDENCE.md](INCIDENCE.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-IN-OLD-G-RATES">Established for permanent extensification only, read from the pinned BEK 130/2026 §18 in section 6. The other *tilskud* schemes were not read, and no rate for them is published here.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-G-RATES "What this claim rests on")</sup>
+
+**Why it was retired:** The decision paper on compensation, now pinned, sets a financing frame for the new regulation, and the ministry's assessment says the rates were still to be computed; the other schemes' rates are not published.
+
+**Replaced by:** [`C-IN-G-RATES`](CLAIMS.md#C-IN-G-RATES) — each opens what it rests on.
+
+<a id="C-IN-OLD-G-REMARKS"></a>
+### The earlier wording of C-IN-G-REMARKS on INCIDENCE.md.
+
+`C-IN-OLD-G-REMARKS` · retired 2026-09-14 from [INCIDENCE.md](INCIDENCE.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-IN-OLD-G-REMARKS">Not read. The enacted text was read — §6, §11, §57 and §65 are quoted from it — but the explanatory remarks, which is where the modelling behind the quota would be described, were not.</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-G-REMARKS "What this claim rests on")</sup>
+
+**Why it was retired:** The bill with its explanatory remarks is now pinned and read for how the quota is formed.
+
+**Replaced by:** [`C-IN-G-REMARKS`](CLAIMS.md#C-IN-G-REMARKS) — each opens what it rests on.
+
 <a id="C-IN-OLD-GRADIENTS"></a>
 ### The ladder's gradients differ by more than its levels.
 
@@ -4701,6 +4745,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** 'Slightly' understates it - the median dairy holding with accounts carries about two animal units per declared hectare against the historic line - and 'the wrong crops' was a judgement where the fact is that most of its land is outside the base.
 
 **Replaced by:** [`C-IN-DAIRY-SQUEEZE`](CLAIMS.md#C-IN-DAIRY-SQUEEZE) — each opens what it rests on.
+
+<a id="C-IN-OLD-T-TILLAEG"></a>
+### The earlier wording of C-IN-T-TILLAEG on INCIDENCE.md.
+
+`C-IN-OLD-T-TILLAEG` · retired 2026-09-14 from [INCIDENCE.md](INCIDENCE.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-IN-OLD-T-TILLAEG">that, as Venstre described it, secured an exception for vegetable producers</span><sup class="claim-mark">[†](ARCHIVE.md#C-IN-OLD-T-TILLAEG "What this claim rests on")</sup>
+
+**Why it was retired:** The agreement's own text, now pinned, states the exemption; the page no longer needs Venstre's account of it.
+
+**Replaced by:** [`C-IN-T-TILLAEG`](CLAIMS.md#C-IN-T-TILLAEG) — each opens what it rests on.
 
 <a id="C-IN-OLD-TENCATCH"></a>
 ### The report states the pattern repeats across a stated number of other catchments.
@@ -6384,6 +6439,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-NI-NEGATIVE`](CLAIMS.md#C-NI-NEGATIVE) — each opens what it rests on.
 
+<a id="C-NI-OLD4-PERFORMANCE-UNREAD"></a>
+### The earlier wording of C-NI-PERFORMANCE-UNREAD on NITROGEN.md.
+
+`C-NI-OLD4-PERFORMANCE-UNREAD` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-NI-OLD4-PERFORMANCE-UNREAD">This is the question the rest of it turns on: whether a fall in the surplus shows up as a fall in the measured load, catchment by catchment. DCE's own qualification above says it did not everywhere — Mariager Fjord and parts of Limfjorden responded less than the national relation indicates. The study that quantifies it per catchment could not be read here, so the size of the shortfall is not given on this page.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD4-PERFORMANCE-UNREAD "What this claim rests on")</sup>
+
+**Why it was retired:** The study behind DCE's qualification is partly readable after all: the DCE note it cites is open and pinned, and finds no relation at all for Mariager Fjord; only the journal paper stays unread.
+
+**Replaced by:** [`C-NI-PERFORMANCE-UNREAD`](CLAIMS.md#C-NI-PERFORMANCE-UNREAD) — each opens what it rests on.
+
 ## OBSERVING.md
 
 <a id="C-ML-OLD-DECLINE"></a>
@@ -7733,6 +7799,28 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** Whether these waters fit the hypothesis was not checked.
 
 **Replaced by:** [`C-PC-PORTFOLIO`](CLAIMS.md#C-PC-PORTFOLIO) — each opens what it rests on.
+
+<a id="C-PC-OLD-MAR-CAUSE"></a>
+### The earlier wording of C-PC-MAR-CAUSE on PLACES.md.
+
+`C-PC-OLD-MAR-CAUSE` · retired 2026-09-14 from [PLACES.md](PLACES.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-PC-OLD-MAR-CAUSE">What is known about cause is thinner than it looks. DCE's national runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen load less than the national relation indicates, citing work this project could not read, and it gives no cause. The sill limits how often the basin's bottom water is exchanged.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-MAR-CAUSE "What this claim rests on")</sup>
+
+**Why it was retired:** The work DCE's report cites is partly readable: the DCE note, now pinned, gives a cause - groundwater that takes decades to reach the streams - so 'gives no cause' no longer holds.
+
+**Replaced by:** [`C-PC-MAR-CAUSE`](CLAIMS.md#C-PC-MAR-CAUSE) — each opens what it rests on.
+
+<a id="C-PC-OLD-MAR-N"></a>
+### The earlier wording of C-PC-MAR-N on PLACES.md.
+
+`C-PC-OLD-MAR-N` · retired 2026-09-14 from [PLACES.md](PLACES.md) · as published in `b460dc5`
+
+> <span class="claim" data-claim="C-PC-OLD-MAR-N">The one readable source says this catchment's diffuse load fell less than the national relation predicts — not that it did not fall — and how the fjord's bottom water answered is not established</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-MAR-N "What this claim rests on")</sup>
+
+**Why it was retired:** It is no longer the one readable source, and the note it cites found no marked fall at Mariager over the years it covers, so 'not that it did not fall' no longer holds for that period.
+
+**Replaced by:** [`C-PC-MAR-N`](CLAIMS.md#C-PC-MAR-N) — each opens what it rests on.
 
 <a id="C-PC-OLD-NINETYEIGHT"></a>
 ### Plurality without a decision rule produces a stated number of stories.

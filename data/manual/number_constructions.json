@@ -1175,10 +1175,10 @@
     "../danish-livestock/docs/data-sources.md"
    ],
    "confirmed": {
-    "by": "fork w2-in (re-read: socialcontext.py's compute part - read_registers() through compute() and main() - is identical to the version last read, verified by diff; only the page-writing part was rewritten into checked claims and the self-quotation helper removed. The fields covered are written by the unchanged code. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/socialcontext.py - four INCIDENCE rows reworded from the pinned agreement texts - the braklægningspunkt, the compensation rates, the bill's remarks and the tillægsaftale; nothing computed changed; the fields this construction covers are computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/socialcontext.py": "4cb7546c41711811",
+     "scripts/socialcontext.py": "863c02267bd30c21",
      "../danish-livestock/data/chr_2024.json": "6dec4ea4405d56e5",
      "../danish-livestock/data/land_by_cvr.json": "5abc496953b6ac82",
      "../danish-livestock/data/cvr_raw.jsonl": "f77642e911523557",

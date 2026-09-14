@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the C-NI-PERFORMANCE-UNREAD sentence was reworded from DCE's pinned 2012 note; nothing computed changed; the fields this construction covers are computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "abe1090bd2badcbe"
+     "scripts/nitrogen.py": "d7b09ce7bd4da4d9"
     }
    }
   }

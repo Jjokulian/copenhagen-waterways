@@ -114,10 +114,12 @@ def main():
       + C("C-PC-MAR-SULPHIDE", "Sulphide from the sediment reaching the water column, where it is "
           "oxidised, is documented for Mariager Fjord among other basins (Middelburg and Levin, "
           "2009).") + "\n")
-    w(C("C-PC-MAR-CAUSE", "**What is known about cause is thinner than it looks.** DCE's national "
-        "runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen load less than "
-        "the national relation indicates, citing work this project could not read, and it gives no "
-        "cause. The sill limits how often the basin's bottom water is exchanged.") + "\n")
+    w(C("C-PC-MAR-CAUSE", "**What is known about cause is thinner than it looks, but not empty.** "
+        "DCE's national runoff report says Mariager Fjord's catchment reduced its diffuse nitrogen "
+        "load less than the national relation indicates. The DCE note it cites finds no relation at "
+        "all between surplus and load there, and puts it down to groundwater that takes decades to "
+        "reach the streams - nitrate kept rising in several streams around the fjord while it fell "
+        "elsewhere. The sill limits how often the basin's bottom water is exchanged.") + "\n")
     w(C("C-PC-MAR-TWO", "So two things are supported, each in part: a sill that limits exchange, "
         "which a nitrogen target does not address, and a catchment whose diffuse load fell less than "
         "the national relation predicts, for reasons not established here.") + "\n")
@@ -131,10 +133,11 @@ def main():
       + C("C-PC-BORNHOLM", "For the Baltic's Bornholm Basin the same idea has been worked through "
           "with a model, not tried.") + " "
       + C("C-PC-MAR-COST", "Cost and side effects at Mariager are not assessed here.") + "\n")
-    w(C("C-PC-MAR-N", "*Cause-contingent:* nitrogen reduction in the catchment. The one readable "
-        "source says this catchment's diffuse load fell less than the national relation predicts — "
-        "not that it did not fall — and how the fjord's bottom water answered is not established "
-        "here.") + "\n")
+    w(C("C-PC-MAR-N", "*Cause-contingent:* nitrogen reduction in the catchment. DCE's 2018 report "
+        "says this catchment's diffuse load fell less than the national relation predicts; the note "
+        "it cites found no marked fall there over the years it covers, unlike every other fjord it "
+        "looked at, and no relation to the surplus. How the fjord's bottom water answered is not "
+        "established here.") + "\n")
     w("---\n")
     w("## Lillebælt and Det Sydfynske Øhav — the second tier\n")
     w(C("C-PC-LBJ", f"**Measured:** {lbj['share_below_low'] * 100:.1f}% and "
