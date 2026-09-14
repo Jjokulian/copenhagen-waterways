@@ -6,7 +6,7 @@
 
 ## The claim, as it is made
 
-<span class="claim" data-claim="C-PC-CA-FEDT-DEF">*Fedtemøg* is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach ([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).</span><sup class="claim-mark">[†](CLAIMS.md#C-PC-CA-FEDT-DEF "What this claim rests on")</sup> <span class="claim" data-claim="C-PC-CA-PUBLIC">In the public record this project pinned, that outcome is joined to agriculture's nitrogen:</span><sup class="claim-mark">[†](CLAIMS.md#C-PC-CA-PUBLIC "What this claim rests on")</sup>
+<span class="claim" data-claim="C-PC-CA-FEDT-DEF">*Fedtemøg* is a popular name for mass occurrences of loose-lying brown algae that can lie rotting at the water's edge and on the beach ([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).</span><sup class="claim-mark">[†](CLAIMS.md#C-PC-CA-FEDT-DEF "What this claim rests on")</sup> <span class="claim" data-claim="C-PC-CA-PUBLIC">In the public record this project pinned, that outcome is joined to agriculture's nitrogen:</span><sup class="claim-mark">[†](CLAIMS.md#C-PC-CA-PUBLIC "What this claim rests on")</sup>
 
 > <span class="claim" data-claim="C-PC-CA-WIKI-AGRI">"Forekomsten af fedtemøg ved danske kyster skyldes især landbrugets udledning af kvælstof" — the same article</span><sup class="claim-mark">[†](CLAIMS.md#C-PC-CA-WIKI-AGRI "What this claim rests on")</sup>
 >

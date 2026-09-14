@@ -4111,8 +4111,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "asks whether the faecal payload reaches the water or is spent in the soil, and answers it at a handful of paired catchments.",
      "texts": "2826703b5b6268ae"
@@ -4139,8 +4139,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Prices are stated ranges rather than quotations, the sensor choices are ordinary catalogue parts, and nothing here has been built by this project. What it is for is to make the thing costed and concrete enough that a disagreement about it is a disagreement about numbers.",
      "texts": "3e1cdbf8929c2881"
@@ -4176,8 +4176,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Tracer | Why it is faecal | What it is confounded with | What resolves that | |---|---|---|---| | Coprostanol (`5β-cholestan-3β-ol`) | Made by gut bacteria reducing cholesterol. Vertebrate guts make it; soil does not | Any warm-blooded gut, including humans and wildlife | the ratios below | | `24-ethylcoprostanol` / coprostanol | Plant sterols reduced in a herbivore gut | — | This ratio separates herbivore from human. High ethyl form: cattle, pigs on plant feed. Low: human sewage | | Coprostanol / (coprostanol + cholestanol) | Above ~0.7 is the accepted faecal threshold | in-situ reduction in anoxic sediment can mimic it slightly | pair with the marker below | | Host-specific *Bacteroidales* by qPCR — `Pig-2-Bac`, BacR, HF183 | Gut microbiota are host-specific to the genus level | Nothing, in terms of source | This is the attribution instrument. DNA decays in days to weeks, so it reports *recent* input only | | crAssphage | A human-gut bacteriophage | Nothing else has it | Establishes the human baseline, so the rest can be assigned elsewhere | | Acesulfame-K, carbamazepine | Human diet and human medicine; conservative and persistent | Nothing agricultural | Marks the human fraction independently of biology — a chemical crosscheck on the microbial one | | Tylosin, tetracyclines, ivermectin | Given to livestock, not to people at these volumes | Veterinary use in pets, at trivial scale | Quantifies the livestock fraction; VetStat holds the sales that would calibrate it | | Copper and zinc | Feed additives, and conservative once in sediment | Heavily: brake pads, roofs, tyres, urban runoff | Useless alone in a mixed catchment; useful in a rural one, and useful as a *load* once the fraction is known | | δ¹⁵N of nitrate | Manure and sewage nitrogen is isotopically heavy (+10 to +20‰); synthetic fertiliser sits near 0‰ | Denitrification enriches δ¹⁵N too, which has fooled people for decades | Measure δ¹⁸O of nitrate alongside it: denitrification moves both together on a known slope, a source change does not | | fDOM, tryptophan-like (peak T) vs humic-like (peak C) | Protein-like fluorescence rises with fresh faecal and sewage organic matter; humic-like rises with soil | turbidity, temperature, iron | Correctable, and it is the only one of these that can run continuously — which is its whole value",
      "texts": "ee80b946dc0f07d4"
@@ -4204,8 +4204,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is the number the national account has never had, and the reason it has never had it is that nobody measured the end members.",
      "texts": "f19f49121cf4b8a6"
@@ -4232,8 +4232,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The product of the two is the thing nobody has.",
      "texts": "61cac637237b974f"
@@ -4260,8 +4260,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The ratio of coprostanol to organic matter in pig slurry varies with diet, storage and digestion; DNA markers decay on a timescale of days; sterols do not.",
      "texts": "24d2ce3fc6887240"
@@ -4288,8 +4288,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "There is no faecal sensor. Nothing you can put in a stream reports \"manure\".",
      "texts": "12de0032608179da"
@@ -4316,8 +4316,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "is the existing monitoring programme: a fortnightly visit that misses the event.",
      "texts": "85d69305d1bb8c3b"
@@ -4355,8 +4355,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Five measurements, in rough order of value per krone. | Sensor | What it is for | Stated cost, DKK | |---|---|---:| | Water level — ultrasonic ranger above the surface, or a vented pressure transducer | Without discharge there is no load, only a concentration. This is the sensor that turns the network from anecdote into accounting. Mounted above water, an ultrasonic head does not foul | 1,000–3,000 | | Turbidity — nephelometric, 90°, with a wiper | The carrier. Metals, phosphorus, tyre wear and faecal particles all travel attached to sediment, so turbidity is the single best proxy for *payload in transit* | 1,500–6,000 | | Conductivity and temperature | Separates dilution from delivery. A storm that dilutes conductivity while raising turbidity is surface wash; a rise in both is something else. Temperature is needed by every other reading | 500–2,000 | | fDOM — tryptophan-like fluorescence | The one fingerprint dimension that can run continuously. Protein-like fluorescence tracks fresh faecal and sewage organic matter; measured against a humic-like channel it separates that from soil-derived matter. It is the cost driver, and the sensor that makes this network more than a turbidity network | 8,000–20,000 | | Dissolved oxygen — optical | The receiving-water consequence, at the same minute as the cause | 3,000–8,000 | Logger, power and communications, which are the boring part and the part that decides whether the thing survives a winter: | | | Stated cost, DKK | |---|---|---:| | Microcontroller, RTC, SD card, watchdog | ESP32 class; log locally as well as transmit, because the network is the thing that fails | 300–800 | | Radio | LoRaWAN to a community gateway where one is in range; NB-IoT or LTE-M with a data SIM where none is | 200–700 | | Power | 10–20 W panel, `LiFePO₄`, charge controller. Danish December is the design case, not July | 800–2,500 | | Enclosure, mount, cable, desiccant | IP67, mounted to a road culvert or bridge parapet | 700–2,000 | A node comes to roughly 5,000–12,000 DKK without fDOM and 15,000–30,000 with it. One person can build one in an evening. The hard part was never the electronics.",
      "texts": "6db769b86e25abb6"
@@ -4394,8 +4394,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Everything above as a list of things to buy, because a cost is only real when it is a purchase order. Part names are examples of the class, not endorsements, and no price here is a quotation — they are the stated ranges a buyer should expect to find and then replace with what a supplier actually says. ### The node — what one stream costs | | Example of the class | What it is for | DKK | |---|---|---|---:| | Stage, ultrasonic | MaxBotix HRXL-WR class, IP67, mounted above the water on a bridge or culvert | Level → discharge, via a rating curve. Mounted in air, so it cannot foul — which is why it beats a pressure transducer for an unattended node | 900–1,800 | | *or* Stage, pressure | vented submersible transducer, 0–2 m | Where there is no overhead mounting. Vented cable, or it reads the weather | 1,200–3,000 | | Turbidity, nephelometric | `ISO 7027` 90° module; with a wiper if the budget reaches | The carrier for everything particulate. The cheap analog boards sold for hobby use are presence/absence at best — say so in the data or do not fit one | 1,500–6,000 | | Conductivity + temperature | Atlas Scientific EZO-EC with a K=1.0 probe, or an industrial two-electrode cell | Separates dilution from delivery, and every other reading needs the temperature | 600–2,000 | | Dissolved oxygen, optical | luminescent/optical DO probe — not a galvanic membrane cell, which drifts and dies | The consequence, measured at the same minute as the cause | 3,000–9,000 | | fDOM, tryptophan channel | Turner Cyclops-7F class, tryptophan configuration, with a humic-like channel if affordable | The one fingerprint dimension that runs continuously. This is the difference between a turbidity network and a fingerprint network | 9,000–22,000 | | Logger + radio | ESP32 with LoRaWAN, or with LTE-M/NB-IoT where no gateway is in range; RTC, microSD, watchdog | Logs locally *and* transmits. The radio is the least reliable part | 400–1,200 | | Power | 10–20 W panel, MPPT controller, 12 V `LiFePO₄` 20 Ah | Sized for December, not July | 800–2,500 | | Enclosure and mount | IP67 box, cable glands, stainless bracket, desiccant, anti-theft | Survives a winter and a curious passer-by | 700–2,000 | A node without fDOM: 5,000–12,000 DKK. With it: 15,000–30,000. ### The kit a group shares | | Why | DKK | |---|---|---:| | Formazin turbidity standards, EC calibration solutions, DO zero solution | A reading without a calibration record is not data. This is the least glamorous line and the one that decides whether the network is admissible | 2,000–5,000 | | A reference sonde, borrowed or shared, for co-location | `X16` — the check that ties cheap readings to the national record | 15,000–60,000, or borrowed | | Spare probes, cable, glands, desiccant, one spare node | Field repairs happen in February in the rain | 5,000–10,000 | ### The sampler, which is where the answer comes from | | | DKK | |---|---|---:| | Automatic sampler, 12–24 bottles, flow- and turbidity-triggered | Teledyne ISCO or Hach AS950 class; a used one is a perfectly good used one | 25,000–60,000 | | Bottle analysis — sterols, host markers, crAssphage, acesulfame, one veterinary residue, Cu/Zn, COD/BOD, nutrients, δ¹⁵N + δ¹⁸O | The real cost of the experiment. Not every bottle needs the full panel; the cheap determinands go on all of them and the fingerprint on the ones the continuous tier says matter | 1,500–4,000 per bottle | ### What that means for the experiment on the next page | | Quantity | DKK | |---|---:|---:| | Nodes with fDOM, 12 matched pairs | 24 | 360,000–720,000 | | Samplers, rotating | 8 | 200,000–480,000 | | Shared kit, three regional sets | 3 | 60,000–200,000 | | Bottles analysed over two seasons | ~600 | 900,000–2,400,000 | | Hardware and laboratory, total | | 1.5–3.8 M DKK | So the sensors are not the expensive part — the bottles are, and the bottles are the part that cannot be economised without losing the attribution the whole design exists for. A node is a weekend and a few thousand kroner. The laboratory is the commitment.",
      "texts": "65b86d9741d80dfd"
@@ -4422,8 +4422,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This is where the attribution comes from, because it is a laboratory measurement and there is no in-situ substitute:",
      "texts": "40804d664726c4b2"
@@ -4450,8 +4450,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "conservative, and from feed;",
      "texts": "8d59ed880f1e7c64"
@@ -4478,8 +4478,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Stated: 25,000–60,000 DKK per sampler, and 1,500–4,000 DKK per bottle analysed, which is why tier 2 is sparse and event-triggered rather than continuous. Twenty samplers rotating around a network of hundreds of nodes is the realistic shape.",
      "texts": "0881d75c13570910"
@@ -4506,8 +4506,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Partly, and less every year — but the honest answer has three tiers rather than one, and the middle tier is the one that changes the economics.",
      "texts": "163bc8d8498d009b"
@@ -4534,8 +4534,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The discriminating chemistry: faecal sterols by GC-MS, host-specific markers and crAssphage by qPCR, veterinary residues by LC-MS/MS, nitrate isotopes by IRMS. These are extractions, chromatography and mass spectrometry. Nothing you can bolt to a culvert does them, and anybody who says otherwise is selling something. So attribution, today, means a bottle.",
      "texts": "177d2679b046ff41"
@@ -4562,8 +4562,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "run continuously for months on a battery. UV nitrate needs no reagent either — it is expensive rather than manual. And wet-chemistry nutrient analysers run nitrate and phosphate hourly in situ for weeks, which trades a bottle round for a reagent refill — a different chore, on a calmer schedule, and one that can be done on the same visit the sensor is cleaned on.",
      "texts": "fd584e9a9702a78d"
@@ -4590,8 +4590,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "for harmful algae and for eDNA. They cost more than everything else on this page combined, which means they belong at a handful of anchor sites rather than at eight hundred. The trajectory is clear and the price is not there yet, and a plan that assumed otherwise would be planning on a press release.",
      "texts": "2b22029619741e69"
@@ -4620,8 +4620,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is the sentence that makes the arithmetic bearable. At a site, a season of event bottles establishes the local relation between the cheap continuous dimensions — fluorescence, turbidity, conductivity — and the laboratory panel. Once that relation holds, the sensors carry the estimate between calibrations and the bottles fall back to validation: a handful a year to confirm the relation has not drifted, and a fresh round whenever something changes upstream. So the bottle count scales with sites × recalibrations, not with events forever, and the cost curve bends down after the first year or two rather than running flat. The network page has that as two dials — how long the calibration phase lasts, and what fraction of the sampling continues afterwards — because the honest answer depends on how stable the relation turns out to be, and nobody knows that yet for a Danish stream.",
      "texts": "63d482ba8f851e02"
@@ -4648,8 +4648,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The presets reproduce the stages > in SETTLE.md.",
      "texts": "714bb8eaad8483c2"
@@ -4678,8 +4678,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every Danish stream that reaches the sea is the target that removes extrapolation entirely. These are stated arithmetic, not a budget anybody has approved. | | Nodes | Tier-1 hardware | fDOM on a subset | Samplers | Total hardware | |---|---:|---:|---:|---:|---:| | A person, one catchment | 5 | 40,000 | — | — | ~40,000 DKK | | A club or a municipality | 40 | 320,000 | 5 × 20,000 | 2 × 40,000 | ~500,000 DKK | | Every outlet in the country | 800 | 6.4 M | 80 × 20,000 | 20 × 40,000 | ~8.8 M DKK | > And that last figure is the smallest of three numbers, which is why it should not > be the headline. 8.8 M is *inland hardware only*. Add marine moorings in the > fjords and belts, a near-bed string on each, and the servicing and laboratory that > keep them meaningful, and the network tool puts a thorough permanent > network at 0.5–1 bn DKK over 25 years — almost all of it operations, not > instruments. Against the Copenhagen retrofit costed at 2.6–10.4 bn, that is on > the order of a tenth: knowing costs about ten per cent of doing. Neither > negligible nor absurd — a normal monitoring fraction on a capital programme, and a > decision rather than a rounding error. For comparison, the same page that argues for this puts a single bored pipe shot at 160,000–640,000 DKK. The national network is the price of about twenty streets. The recurring cost is not the hardware and never was: - Servicing. A fouled sensor produces confident wrong numbers, which is worse than no sensor. Budget two to six visits a year per node, and prefer the sensor that fouls least even where it reads worst. - Calibration. Every node needs a documented calibration history and a co-location against a reference instrument — which is `X16`, already written. - Laboratory. The tier-2 bottles, which is where the money actually goes.",
      "texts": "07976a24a94c9c82"
@@ -4706,8 +4706,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Software is not the constraint and has not been for years.",
      "texts": "c4edb53a17808885"
@@ -4734,8 +4734,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The radio is the least reliable component.",
      "texts": "eb0e727965e6db24"
@@ -4762,8 +4762,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The argument this network exists to settle is one that gated data created.",
      "texts": "6a9e23c12d598578"
@@ -4790,8 +4790,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "So the shape of it is a hundred people with one node each and a shared protocol, not one institution with a plan — which is also the only shape that gets built without anybody's permission.",
      "texts": "0d8f4770c56ad933"
@@ -4818,8 +4818,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The instruments exist, the protocol is ordinary, the cost is > the price of twenty streets, and nobody has done it.",
      "texts": "35383cb27af89b07"
@@ -4846,8 +4846,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Everything else on this site is an audit: it takes numbers that exist and asks what they are estimators of. This page is the opposite. It is a design for producing numbers that do not exist yet, aimed at the one question the whole dispute turns on and nobody has ever measured directly:",
      "texts": "4a00184dcbd64825"
@@ -4874,8 +4874,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "constructs the instrument: the fingerprint that separates a pig from a person from a road,",
      "texts": "28ac0611e1aeea65"
@@ -4902,8 +4902,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Danish rules forbid spreading through the autumn and winter and open a window in spring.",
      "texts": "cc72b948c75cb1c7"
@@ -4931,8 +4931,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A sampler on a five-millimetre trigger catches something like nine events in a spreading season and a comparable number in the autumn control window — enough for a paired comparison within a single year, at a single site, without waiting a decade. *Caveat carried from the source:* a reanalysis grid cell understates extremes, so the ≥10 mm row is a floor.",
      "texts": "f176265deec6cde1"
@@ -4959,8 +4959,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "indistinguishable at the great majority of sites",
      "texts": "cf2b65d3067fb0e6"
@@ -4987,8 +4987,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Written down in advance, because each of these has ruined a monitoring programme somewhere:",
      "texts": "beb1689c2d0cf62c"
@@ -5015,8 +5015,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Microbial markers fall away in days, so a marker absence at a site visited late is not evidence of absence.",
      "texts": "df47891bd4317796"
@@ -5043,8 +5043,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "From the bill of materials in SENSING.md, at stated prices rather than quotations: The purchase order is in SENSING.md — every sensor, an example part of its class, and what to expect to pay. The short version: a node is 5,000–12,000 DKK without the fluorometer and 15,000–30,000 with it, and the sensors are not the expensive part. The laboratory bottles are — 1,500–4,000 DKK each, and they are the line that cannot be economised without losing the attribution the design exists for. | Phase | What | Stated cost | |---|---|---:| | Pilot — one season, 3 pairs | 6 nodes with fDOM, 2 samplers, ~60 bottles | ~0.4–0.6 M DKK | | The experiment — 2 years, 12 pairs | 24 nodes, 8 samplers, ~600 bottles, servicing | ~3–5 M DKK | | The standing network afterwards | a node on every outlet that reaches the sea | ~8.8 M DKK of hardware | The pilot is inside the reach of a foundation, a university department, or a crowdfunded association. The full experiment is the cost of one junction rebuild. The comparison that matters is not to a research budget: it is to a national nitrogen programme costing orders of magnitude more and producing no test.",
      "texts": "6ec4b9177dd368d5"
@@ -5071,8 +5071,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It is the only test whose failure means *do not build the national network*, and it costs about thirty thousand kroner to run.",
      "texts": "618047cd1d2b95e6"
@@ -5105,8 +5105,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What it costs, item by item: | | | DKK | |---|---|---:| | 2 nodes with fDOM | one high-density catchment and its match | 30,000–60,000 | | 1 automatic sampler | rotated between the two, or fixed on the high-density one | 25,000–60,000 | | Calibration standards, spares, mounts | the shared kit, smallest version | 7,000–15,000 | | Reference sonde for co-location | borrowed from a utility or a department, which most will lend for a season | 0, or 15,000–60,000 to buy | | End-member samples — 3 slurry tanks, 1 plant effluent, 1 road gully, 2 soils | full fingerprint panel on each. This is the row that decides the fourth test | 18,000–28,000 | | Event bottles — 3 events × 8 | full panel on 8 of them, cheap determinands on the rest | 25,000–60,000 | | Servicing, travel, a server | one person, twenty visits, a small VM | 5,000–10,000 | | Total | one pair, one season, one person | 110,000–230,000 DKK | Which is a used car, not a house — and it is the number that matters, because it is the one somebody can actually decide to spend. The full experiment is only worth funding if this comes back clean, and if it does not, the money saved is the whole three to five million. A staged path, with a decision at each step — and it is dialable on a map, where each preset below reproduces the row beside it: | Stage | Scope | Cost | The question it answers | |---|---|---:|---| | `0` — one node | a single stream, no sampler | 15,000–30,000 | does the hardware survive and report? | | `1` — proof of concept | one pair, one season, one sampler | 110,000–230,000 | does the method discriminate, here? | | `2` — regional | three pairs, both windows | 0.4–0.6 M | is the effect visible at all, and how variable? | | `3` — the experiment | twelve pairs, two years | 3–5 M | which of the 3 hypotheses is right | | `4` — the network | every outlet that reaches the sea | 8.8 M + operating | the same answer everywhere, permanently | No stage is wasted if the next one is never funded. Stage 0 is a real series from a real stream. Stage 1 is a publishable methods result either way. Stage 2 is a regional finding. That property is not an accident of the costing — it is the reason to stage it like this rather than to write one large proposal that has to be accepted whole.",
      "texts": "b2fc359e2a0f573f"
@@ -5137,8 +5137,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Because the figure is easy to lose next to a research budget, here it is next to things people actually price: | | Stated cost | |---|---:| | The pilot — three pairs, one season | ~0.5 M DKK, the price of a small flat outside the cities | | The experiment that settles it — 12 pairs, two years | 3–5 M DKK, the price of a cheap house | | The standing national network, hardware | ~8.8 M DKK | | One bored street shot, from the retrofit costing on this site | 0.16–0.64 M DKK | So the decisive experiment costs about what a house costs, and the capital for a national network costs about what a good house in Copenhagen costs. That is the honest headline and it should be uncomfortable: the argument has run for forty years, and the measurement that would settle a central part of it has never been bought at a price a single wealthy person could pay. But do not mistake the capital for the programme. Hardware is the cheap half and saying otherwise is how these schemes die: - Servicing. 800 nodes at four visits a year is on the order of 3–4 M DKK a year — which is to say two to four people, permanently. A sensor that nobody visits produces confident wrong numbers, which is worse than no sensor. - Laboratory. The tier-2 bottles at 1,500–4,000 DKK each are the largest single line in the experiment budget, and the only one that cannot be economised without losing the attribution. - Custody. Somebody has to keep the archive, the calibration histories and the pre-registration for a decade, and that is a job rather than a server. So: a house to find out, and a few salaries a year to keep knowing. The first number is startlingly small. The second is the one a proposal has to be honest about, because it is the one that gets cut in year three and takes the series with it.",
      "texts": "4201188f3c5f5bc0"
@@ -5170,8 +5170,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This page prices one question. The obvious next one is what it would cost to settle the *field* — not the faecal channel alone, but enough of the 23 designs in EXPERIMENTS.md to leave the Danish sea argument with measurements where it currently has models. Adding up what this project has actually costed, and marking clearly what it has not: | Block | What it buys | Stated cost | |---|---|---:| | This experiment | whether the payload reaches the water, and whose it is | 3–5 M | | The standing stream network | the same question everywhere, permanently, no extrapolation | 8.8 M hardware | | Instrumenting the 13 largest overflow structures | flow rather than event counts — the largest single uncertainty on this site | ~1 M | | The cheap marine tier — `X14`, `X15`, `X16` | oxygen and temperature at many points instead of monthly at few | 1–3 M | | The missing instruments — `X19`, `X20` | a *fedtemøg* index and a structured record of what people have watched for forty years. Three of the four public words have no instrument; these are two of them | small — a panel and a protocol | | The desk work — `X8`, `X21`, `X22` | analyses on data that already exists and has never been run | nothing but time | | A trials portfolio — the meta-solution in PROGRAMME.md | whether the interventions work, in named places, reversibly | 6–24 M | Capital, in the order of 20–40 M DKK. Which is a large villa, or a small apartment building, or about one kilometre of urban motorway — and it is *not* the same as an upper-middle-class house: that figure buys the decisive single experiment, not the programme. Plus 5–10 M a year to service, sample and keep custody, which is the number that decides whether any of it survives to be a time series.",
      "texts": "a7e4df605e283ffb"
@@ -5200,8 +5200,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "And three honest deductions from that total. - Ship time is not in it. The autumn benthic extension and anything offshore needs a vessel and an institution, and this project cannot price either. - Some of it cannot be bought at all. 40 of the 166 mechanisms in the register are unscoreable because the deciding measurement has no column anywhere; money buys the instrument, not the decades of record it should have been collecting. - And the cheapest block is the one nobody has done. 3 designs need no fieldwork and no funding — the data exists and the analysis has never been run.",
      "texts": "22a967bf8561ddc2"
@@ -5228,8 +5228,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nothing above needs a change in the law, a data agreement, or anybody's permission except the landowner's at each culvert. That is unusual in this field and it is the reason this page exists.",
      "texts": "333dc7260b65de42"
@@ -5256,8 +5256,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every disputed number in > Danish nutrient policy is a modelled quantity defended by the people who model it. > This produces a measured quantity, at named places, on dates, with the raw series > published and the decision rule fixed in advance — so the result is available to > somebody who does not trust either party. That is the only kind of number that > ends a forty-year disagreement, and the striking thing is how cheap it is.",
      "texts": "e5a926bb8a6886bc"

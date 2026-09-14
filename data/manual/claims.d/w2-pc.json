@@ -56,6 +56,46 @@
    "sha256": "19f41a619396adf60e38624fd302dff962c31e84634d418a9ad88d1da89d8c32",
    "checked": "2026-09-11",
    "status": "unchanged since pinned"
+  },
+  "PC-DR-FEDT-2024": {
+   "title": "DR, 2024-06-19: Klar til sommer-dukkerten? Fedtemøg breder sig langs de åbne kyster",
+   "url": "https://www.dr.dk/nyheder/indland/klar-til-sommer-dukkerten-fedtemoeg-breder-sig-langs-de-aabne-kyster",
+   "retrieved": "2026-09-14",
+   "sha256": "ede7e50165e1ed99243c07ab5a86f14d1112860b992c4adf4d3837b59e90595e",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "PC-TV2FYN-FEDT-2024": {
+   "title": "TV 2 Fyn, 2024-06-30 (Joachim Næshave): Vilde billeder under overfladen: Klistret fedtemøg forvandler havet til livløs ørken",
+   "url": "https://www.tv2fyn.dk/svendborg/vilde-billeder-under-overfladen-klistret-fedtemoeg-forvandler-havet-til-livloes-oerken",
+   "retrieved": "2026-09-14",
+   "sha256": "7a6f90a39122cdd082eb1649bbf710e933efe0ca55fa5cb2be8ed96a15148283",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "PC-AN-FEDT-2026": {
+   "title": "Aktuel Naturvidenskab, 2026 (Stiig Markager, Aarhus Universitet): Forstå fedtemøget",
+   "url": "https://aktuelnaturvidenskab.dk/find-artikel/nyeste-numre/2-2026/forstaa-fedtemoeget",
+   "retrieved": "2026-09-14",
+   "sha256": "286909bdac45df914e9e220022bd72925ac5dee90c0063914f1ef1ca716331fb",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "PC-LEX-FEDTEMOEG": {
+   "title": "Den Store Danske (Poul Møller Pedersen): fedtemøg",
+   "url": "https://denstoredanske.lex.dk/fedtem%C3%B8g",
+   "retrieved": "2026-09-14",
+   "sha256": "e18de5f5448ce5e378033ddecde0d0e00a4c50ae9161aea369bbc178db17f26d",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
+  },
+  "PC-DDO-FEDTEMOEG": {
+   "title": "Den Danske Ordbog: fedtemøg",
+   "url": "https://ordnet.dk/ddo/ordbog?query=Fedtem%C3%B8g",
+   "retrieved": "2026-09-14",
+   "sha256": "81abd3c8b490e5c32a1474be56cf9cc3f9ea0da682bda649136e679c7dc16aa1",
+   "checked": "2026-09-14",
+   "status": "pinned 2026-09-14"
   }
  },
  "nodes": [
@@ -162,12 +202,6 @@
    "detail": "The occurrence of fedtemøg on Danish coasts is ascribed especially to agriculture's discharge of nitrogen.",
    "source": "PC-WIKI-FEDTEMOEG",
    "said": "skyldes især landbrugets udledning af kvælstof"
-  },
-  {
-   "id": "U-PC-FEDT-REFS",
-   "kind": "untraced",
-   "label": "Trail ends: the article's\nreferences for that sentence",
-   "detail": "Searched on 2026-09-11: the Danish Wikipedia article itself. It gives references for the sentence on agriculture; they were not read here, so what they establish is not known."
   },
   {
    "id": "E-PC-DN",
@@ -290,6 +324,60 @@
    "kind": "untraced",
    "label": "Trail ends: whether these waters\nfit the hypothesis",
    "detail": "Whether Lillebælt and Det Sydfynske Øhav are nitrogen-limited for long and slowly flushed was not checked against any source or dataset here (2026-09-11)."
+  },
+  {
+   "id": "E-PC-FEDT-DR",
+   "kind": "external",
+   "label": "DR, quoting Stiig Markager:\nrain and farm nitrogen",
+   "detail": "Stiig Markager, professor of marine environment at Aarhus University, gives the cause as the winter's heavy rain combined with agriculture's use of nitrogen, washed out to the coasts. No study or measurement is cited.",
+   "source": "PC-DR-FEDT-2024",
+   "said": "Årsagen er den store nedbør, vi havde i vinter, kombineret med landbrugets brug af kvælstof på markerne"
+  },
+  {
+   "id": "E-PC-FEDT-TV2",
+   "kind": "external",
+   "label": "TV 2 Fyn, quoting Stiig Markager:\n'it is the slurry'",
+   "detail": "The same researcher: slurry is the cause, with maize growing and more livestock as the main factors on Funen. No study or measurement is cited; the article links a DCE note on oxygen depletion, which does not mention fedtemøg.",
+   "source": "PC-TV2FYN-FEDT-2024",
+   "said": "Det er gylle, der er årsagen til det her"
+  },
+  {
+   "id": "E-PC-FEDT-AN",
+   "kind": "external",
+   "label": "Markager's own explainer:\n'probably a combination'",
+   "detail": "In his own article the researcher calls an early bloom probably a combination of ice, oxygen depletion and phosphorus in the fjord bed, with nitrogen and phosphorus carried in by streams. The article cites no study, data set or measurement.",
+   "source": "PC-AN-FEDT-2026",
+   "said": "sandsynligvis en kombination af is, iltsvind og fosfor i fjordbunden samt kvælstof og fosfor tilført via vandløb"
+  },
+  {
+   "id": "E-PC-FEDT-LEX-GROWTH",
+   "kind": "external",
+   "label": "Den Store Danske:\ngrowth promoted by nutrients",
+   "detail": "The encyclopaedia the Wikipedia article also cites says only that growth is promoted by increased amounts of nutrient salts; it names neither agriculture nor nitrogen.",
+   "source": "PC-LEX-FEDTEMOEG",
+   "said": "Væksten fremmes af forøgede mængder af næringssalte"
+  },
+  {
+   "id": "E-PC-FEDT-LEX-DEF",
+   "kind": "external",
+   "label": "Den Store Danske:\nwhat fedtemøg is",
+   "detail": "A popular name for mass occurrences of the loose-lying brown algae Pylaiella littoralis and Ectocarpus penicillatus.",
+   "source": "PC-LEX-FEDTEMOEG",
+   "said": "en folkelig betegnelse for masseforekomster af de løstliggende brunalger"
+  },
+  {
+   "id": "E-PC-FEDT-DDO",
+   "kind": "external",
+   "label": "Den Danske Ordbog:\nrotting on the beach",
+   "detail": "A slimy, foul-smelling mass of dead brown algae and the like, lying and rotting at the water's edge and on the beach.",
+   "source": "PC-DDO-FEDTEMOEG",
+   "said": "der ligger og rådner i vandkanten og på stranden"
+  },
+  {
+   "id": "U-PC-FEDT-END",
+   "kind": "untraced",
+   "label": "Trail ends: one researcher's\nexplanation, no measurement",
+   "detail": "Searched on 2026-09-14: the article's two references for the sentence (DR and TV 2 Fyn), which both quote Stiig Markager without a study; his own explainer in Aktuel Naturvidenskab, which gives a mechanism with several causes and cites nothing; the DCE note on oxygen depletion that TV 2 Fyn links, and DCE's marine monitoring report for the year before, neither of which mentions fedtemøg; Den Store Danske, which says growth is promoted by nutrient salts; and the six DCE and agency documents this project holds, which do not contain the word. No measurement tying fedtemøg's occurrence to agriculture's nitrogen was found."
   }
  ],
  "claims": [
@@ -1705,28 +1793,33 @@
    "stance": "theirs",
    "holder": "Danish Wikipedia (Fedtemøg)",
    "page": "CAUSATION.md",
-   "claim": "Fedtemøg is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach.",
-   "because": "Their grounds, as far as found: the article cites a reference for the definition, which was not read here.",
+   "claim": "Fedtemøg is a popular name for mass occurrences of loose-lying brown algae that can lie rotting at the water's edge and on the beach.",
+   "because": "A definition of a popular name, followed to its sources: Den Store Danske defines it as mass occurrences of two loose-lying brown algae, and Den Danske Ordbog as a mass of dead brown algae rotting at the water's edge and on the beach; the Wikipedia article draws on both.",
    "rests_on": [
     "E-PC-FEDT-DEF",
     "E-PC-FEDT-ROT",
-    "U-PC-FEDT-REFS"
+    "E-PC-FEDT-LEX-DEF",
+    "E-PC-FEDT-DDO"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-PC-CA-OLD-FAT"
+    "C-PC-CA-OLD-FAT",
+    "C-PC-OLD-FEDT-DEF"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: FEDT-DEF reread against the rebuilt CAUSATION wording, 'filamentous' dropped as no source uses it; GROWN still holds - the trail's end adds seabed phosphorus and ice to what else may limit growth, which is the open question it names; PUBLIC still holds - the Wikipedia sentence and the DN statement are the pinned record joining fedtemøg to agriculture's nitrogen)",
     "saw": {
-     "said on CAUSATION.md": "*Fedtemøg* is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach ([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).",
+     "said on CAUSATION.md": "*Fedtemøg* is a popular name for mass occurrences of loose-lying brown algae that can lie rotting at the water's edge and on the beach ([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).",
      "hypothesis C3": "a5d664149d523b62",
-     "texts": "8ce07057aeb726e0",
+     "texts": "6838881ff9c1fdae",
      "node E-PC-FEDT-DEF": "222ba88eb2180ce8",
      "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
      "node E-PC-FEDT-ROT": "ae2bce6cf5c78a9c",
-     "node U-PC-FEDT-REFS": "f65a7fbad010ba6e"
+     "node E-PC-FEDT-LEX-DEF": "65003374375e517f",
+     "pinned PC-LEX-FEDTEMOEG": "e18de5f5448ce5e3",
+     "node E-PC-FEDT-DDO": "bda6558ecb2ebc3c",
+     "pinned PC-DDO-FEDTEMOEG": "81abd3c8b490e5c3"
     }
    }
   },
@@ -1746,12 +1839,12 @@
     "C-PC-CA-OLD-SENTENCE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: FEDT-DEF reread against the rebuilt CAUSATION wording, 'filamentous' dropped as no source uses it; GROWN still holds - the trail's end adds seabed phosphorus and ice to what else may limit growth, which is the open question it names; PUBLIC still holds - the Wikipedia sentence and the DN statement are the pinned record joining fedtemøg to agriculture's nitrogen)",
     "saw": {
      "said on CAUSATION.md": "In the public record this project pinned, that outcome is joined to agriculture's nitrogen:",
      "texts": "889195e9ef2604f2",
-     "rests on C-PC-CA-WIKI-AGRI": "5481261d5c898f94",
+     "rests on C-PC-CA-WIKI-AGRI": "e25d28db2573c874",
      "rests on C-PC-CA-DN": "520ac5434c36818e"
     }
    }
@@ -1763,21 +1856,33 @@
    "holder": "Danish Wikipedia (Fedtemøg)",
    "page": "CAUSATION.md",
    "claim": "The occurrence of fedtemøg on Danish coasts is due especially to agriculture's discharge of nitrogen.",
-   "because": "Their grounds, as far as found: the article gives references for the sentence, which were not read here.",
+   "because": "Their grounds, followed to the end: the article's two references are news reports quoting one researcher, Stiig Markager, who names no study; in his own later article he calls an early bloom probably a combination of ice, oxygen depletion and phosphorus in the fjord bed with nitrogen and phosphorus from streams; and the encyclopaedia the article also cites says only that nutrient salts promote growth. The sentence states as settled what its sources give as one expert's explanation; no measurement behind it was found.",
    "rests_on": [
     "E-PC-FEDT-AGRI",
-    "U-PC-FEDT-REFS"
+    "E-PC-FEDT-DR",
+    "E-PC-FEDT-TV2",
+    "E-PC-FEDT-AN",
+    "E-PC-FEDT-LEX-GROWTH",
+    "U-PC-FEDT-END"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the fedtemøg trail followed to its end - both Wikipedia references (DR, TV 2 Fyn) and the researcher they quote, his own explainer, Den Store Danske and Den Danske Ordbog each pinned and each quote located in its pin; the DCE note TV 2 Fyn links, DCE's marine report for 2019 and the six documents the project holds searched for the word; OLD-FEDT-DEF: passage located in docs/CAUSATION.md at b86c6b4, no source calls the algae filamentous)",
     "saw": {
      "said on CAUSATION.md": "\"Forekomsten af fedtemøg ved danske kyster skyldes især landbrugets udledning af kvælstof\" — the same article",
-     "texts": "5481261d5c898f94",
+     "texts": "e25d28db2573c874",
      "node E-PC-FEDT-AGRI": "b3a24d2249098536",
      "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
-     "node U-PC-FEDT-REFS": "f65a7fbad010ba6e"
+     "node E-PC-FEDT-DR": "2652cf912505caf9",
+     "pinned PC-DR-FEDT-2024": "ede7e50165e1ed99",
+     "node E-PC-FEDT-TV2": "e200efdd80c4d64f",
+     "pinned PC-TV2FYN-FEDT-2024": "7a6f90a39122cdd0",
+     "node E-PC-FEDT-AN": "29af7239da66f3bf",
+     "pinned PC-AN-FEDT-2026": "286909bdac45df91",
+     "node E-PC-FEDT-LEX-GROWTH": "04c5465435637639",
+     "pinned PC-LEX-FEDTEMOEG": "e18de5f5448ce5e3",
+     "node U-PC-FEDT-END": "a7ccfaf8a6d84587"
     }
    }
   },
@@ -2195,14 +2300,14 @@
     "C-PC-CA-OLD-ROUTES"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: FEDT-DEF reread against the rebuilt CAUSATION wording, 'filamentous' dropped as no source uses it; GROWN still holds - the trail's end adds seabed phosphorus and ice to what else may limit growth, which is the open question it names; PUBLIC still holds - the Wikipedia sentence and the DN statement are the pinned record joining fedtemøg to agriculture's nitrogen)",
     "saw": {
      "said on CAUSATION.md": "Fedtemøg is algae, and algae are grown: the strands attach to stones, mussels or other algae and grow on until they tear loose (Danish Wikipedia). So nitrogen is on fedtemøg's path, and the open questions are *which* nitrogen and *what else* limits the growth — not whether nitrogen matters.",
      "texts": "33726e7d58fc9878",
      "node E-PC-FEDT-GROW": "c7f03591adf3306a",
      "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
-     "rests on C-PC-CA-FEDT-DEF": "8ce07057aeb726e0"
+     "rests on C-PC-CA-FEDT-DEF": "6838881ff9c1fdae"
     }
    }
   },
@@ -3620,8 +3725,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One place is 3.9 times worse than anywhere else, and it is not the one anybody argues about.",
      "texts": "a162e1657c93a615"
@@ -3648,8 +3753,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the worst measured, and nitrogen does not reach it",
      "texts": "9d89ea07bdea64ad"
@@ -3676,8 +3781,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "a fjord that died. It is the site of Denmark's most notorious fish kill",
      "texts": "d217249061f71dec"
@@ -3704,8 +3809,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Free sulphide in the water column is what remains after the sediment's iron buffer is spent",
      "texts": "e9f30e18b396080d"
@@ -3732,8 +3837,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What is known about cause, and it is unusually definite. Windolf et al. (2012) studied ten catchments over twenty years. Eight responded to reductions in agricultural nitrogen surplus within five years. Mariager showed no response at all — high diffuse loads throughout, and the highest intercept in the study. The authors attribute it to old, oxic groundwater in chalk aquifers, where nitrate survives instead of being denitrified. The fjord is also a deep silled basin, so its bottom water exchanges rarely",
      "texts": "2eba61b2dcd659e7"
@@ -3760,8 +3865,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "So the honest statement is that the two candidate explanations are both physical: a sill that prevents exchange, and an aquifer that delays whatever the land does by decades. Neither is addressed by a nitrogen target, and the paper's own data says the nitrogen lever was pulled and nothing moved",
      "texts": "e63d62f50d831814"
@@ -3790,8 +3895,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This is engineering with precedent: forced downwelling and artificial deep-water oxygenation have been run at basin scale in Sweden's Byfjorden and trialled in the Baltic. Cost and side effects are real and are not assessed here",
      "texts": "865fae8d1500a94a"
@@ -3818,8 +3923,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The evidence available says this has already been tried at scale and produced no measurable response in this fjord within twenty years",
      "texts": "c6ab42e0202c4875"
@@ -3846,8 +3951,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the second tier, and the ones with a case",
      "texts": "6c6a51d9a2fef7e5"
@@ -3874,8 +3979,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Not Mariager's severity, but an order of magnitude above the national pattern, and on the largest station counts in the table",
      "texts": "67d3dc1b423a1b3a"
@@ -3902,8 +4007,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "These are stratified, sheltered waters with substantial catchments — which is the combination the nutrient hypothesis actually predicts. If the standard account is right anywhere, it is here, and this is where a nitrogen intervention should be tested rather than assumed. That is a testable proposition and it is not tested in this project",
      "texts": "298d14d33efd65f4"
@@ -3930,8 +4035,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the loudest claim, and the measurement disagrees about what is",
      "texts": "ebbfb7a32716f505"
@@ -3958,8 +4063,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "greasy water, a shore people would rather not walk on, fish kills. The most publicly contested coastal water in Denmark, and the one nearest the largest population",
      "texts": "00277f21d9fdc883"
@@ -3986,8 +4091,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "DCE report no registered iltsvind here in 2023 or 2025 — including 2023, the worst iltsvind year in two decades",
      "texts": "20d60ac1f67fcd23"
@@ -4014,8 +4119,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "These are not in conflict. They are answers to different questions. The bay is shallow and mixes readily, so it may never meet a criterion defined as *oxygen below 4 mg/l in stratified bottom water* while still having anoxic sediment, sulphate reduction and a fouled shoreline. The measurement says the bay is not suffocating. It says nothing about whether it is dead",
      "texts": "fee914952d7768b6"
@@ -4042,8 +4147,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Three of the four words the public uses have no instrument behind them at all — *fedtemøg* has no measurement, *fiskedød* has no open register, and *livet i fjordene* is a claim about structure that oxygen does not address. So for this place",
      "texts": "502cf3dc56c330a0"
@@ -4070,8 +4175,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "because oxygen is not the measured problem here. A nitrogen reduction sized on a national residual will not change a shoreline that is already at a median of",
      "texts": "06697eeba1ce1636"
@@ -4098,8 +4203,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "which costs almost nothing:* there is no instrument for the thing people are actually complaining about. Before proposing a fix for *fedtemøg*, somebody has to be able to say whether it got better. That is the cheapest unblocking step on this coast and it is not a modelling problem",
      "texts": "f77597d0a996f57f"
@@ -4127,8 +4232,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The severity ranking and the attention ranking are different. Mariager is 3.9 times worse than anywhere and is not the subject of a national argument. Køge Bugt is among the best-oxygenated waters in the country and is the subject of one. 2. The place where the standard account is most likely right is not the place it is most loudly applied. Lillebælt and the Sydfynske Øhav fit the nutrient story; Mariager demonstrably does not, on twenty years of data",
      "texts": "5cacda31d0232849"
@@ -4155,8 +4260,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Intervention is the only thing that identifies a cause *without enumerating the confounders*. When you set a variable rather than observe it, every backdoor path is cut by construction",
      "texts": "78f085c4ae6ca63f"
@@ -4183,8 +4288,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Difference between places is the only thing that makes any of this identifiable",
      "texts": "f4a292f9c6bbe7d3"
@@ -4211,8 +4316,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This project has already met that trade three times in the data — a national relation that is tight *because* the local coefficient varies, water bodies that carry no signal within themselves, and a national oxygen trend that tracks which stations were reporting. Aggregation is what destroyed the contrast in each case",
      "texts": "6a49e572fa64d152"
@@ -4239,8 +4344,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "does not produce an answer, it produces ninety-eight stories and a fight about which one counts",
      "texts": "57383f4b7e60d5c7"
@@ -4267,8 +4372,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Denmark is unusually well placed to do this, and the reason is concrete. A trial needs a *before*. Denmark has 46 years of near-bed oxygen at 1,327 stations, which is a baseline almost nowhere else has",
      "texts": "a2a12c97c4ca94ed"
@@ -4295,8 +4400,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "bottom oxygen and sulphide, existing stations, [1–2 years",
      "texts": "9f83bca137134f9b"
@@ -4323,8 +4428,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the one place the standard account predicts it should work",
      "texts": "84f620d3904d09a0"
@@ -4351,8 +4456,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The economics are the argument. A national reduction is expensive, recurring, irreversible within a year, and produces no test. A portfolio of trials is cheap against it, reversible, and every result is permanent — it holds whoever is in office and whatever the next model says. The value-of-information case is standard decision analysis: where the intervention cost is large and the attribution uncertain by a factor, information is worth a substantial fraction of the intervention",
      "texts": "f050944c9a5db3e3"
@@ -4379,8 +4484,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "is the oldest way to stall a regulation, and the fact that it is sometimes true is what makes it effective. There is a large economic interest in delay here",
      "texts": "4209bdf7fba1918e"
@@ -4407,8 +4512,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "With them it is the only instrument on the table that produces an answer rather than a compliance figure",
      "texts": "223bbd7d3e9872de"
@@ -4435,8 +4540,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the transfer coefficient between land and estuary already varies twenty-six-fold between bays, and one catchment in ten responds to nitrogen not at all",
      "texts": "a0fe6b566dfdce9d"
@@ -4463,8 +4568,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "this project's own testing says the water bodies are not real units",
      "texts": "e7213cc413726703"
@@ -4492,8 +4597,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That sentence, or a close variant, is how the figure enters public argument. It is a claim about an outcome on a shore. The number behind it is a share of one term in one account. Between the two lie four links, and this document asks what coefficient each one has",
      "texts": "519585162fe811ba"
@@ -4520,8 +4625,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "They answer different questions, and only the second one is the question the public sentence is asking",
      "texts": "210929532bd8d17e"
@@ -4549,8 +4654,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two omissions set the scale of the gap. Atmospheric deposition to Danish marine waters is 45–65 kt N/yr — comparable to the entire land-based term, falling on the water directly, and absent from every published apportionment. Sediment regeneration is not a source at all in the accounting frame, yet one study puts net advection at around a tenth of what annual primary production requires, which implies internal recycling supplies most of it",
      "texts": "d6f8c1c8c46a315d"
@@ -4579,8 +4684,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nitrogen → oxygen depletion | no coefficient | NOT COMPUTED | Nitrogen is one of at least six oxygen sinks. There is no potency term: a kilogram in February into a mixed column counts the same as a kilogram in July under a pycnocline. No ventilation term, no state variable. | | Oxygen depletion → loss of higher life | no coefficient | NOT COMPUTED | Hypoxia is one route among several — toxicants, trawling, turbidity, sulphide exposure, physical loss of habitat. The soft-bottom survey runs from the start of March to the end of May, so the autumn kill is never observed, only its aftermath. | | Loss of higher life → fedtemøg on a shore | no coefficient | NOT MEASURED AT ALL | Fedtemøg has no national monitoring — not extent, not biomass, not duration. And it needs retention, stranding wind and a shore, which are properties of the receiving bay, not of the source",
      "texts": "861155eef1bfd65d"
@@ -4608,8 +4713,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nitrogen is necessary for one pathway, not for the outcome Section 2 treats the argument as a chain and asks for each link's coefficient. That concedes too much, because it accepts the shape. The published framing is > nitrogen → primary production → biomass → the mush on the shore and that is one branch of a tree, not the trunk. There are at least three routes to the same endpoint, and nitrogen is a necessary condition for exactly one of them",
      "texts": "d7d7d7f8de2a5114"
@@ -4636,8 +4741,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The comparison can be made from Miljøstyrelsen's own numbers. Every discharge type in the typetal table carries both an organic load (COD) and a nitrogen load. Route A's carbon is what that nitrogen could produce at Redfield stoichiometry — 5.68 g C per g N. Route B's carbon is what the water is already carrying — 0.375 g C per g COD",
      "texts": "aec85b22f3391ab8"
@@ -4664,8 +4769,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The two pathways are the same size. Only one of them is counted, and that one is counted at 0.6% of a national nitrogen total",
      "texts": "04b60d177838f56c"
@@ -4693,8 +4798,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "is not a metaphor. It means fat filth, and the fat is literal. Sewage carries fats, oils and grease continuously, and the sewer accumulates them into the deposits Danish utilities call fedtpropper — the same thing an English-speaking utility calls a fatberg. As a fedtemøg precursor, fat has an uncomfortable set of properties: | Property | Value | Consequence | |---|---|---| | Nitrogen content | 0% | Triglycerides are carbon, hydrogen and oxygen. A nitrogen accounting cannot see this material at all — not under-count it, *not see it*. | | Carbon content | ~76% by mass | Roughly twice the carbon density of algal dry matter. | | Oxygen demand | ~2.9 g `O₂` per g | Against ~1.1 for carbohydrate and ~1.5 for protein. Fat is the most oxygen-expensive common organic material there is. | | Density | below water | It floats. It does not settle out of the way; it goes to the surface and then to a shore. | | Solubility | none | It does not dilute. It coalesces. | | Degradation | slow, and slower without oxygen | It persists long enough to travel, and longest exactly where the water is already anoxic. | And its release is threshold-triggered. A fedtprop is a deposit on a pipe wall. It leaves when the flow is high enough to scour it — which is the same condition, in the same hours, as a combined sewer overflow. The material is retained through every dry day of the year and exported during precisely the hours when the flow bypasses the treatment works. So the annual accounting is doubly wrong for this material. It is invisible to the nitrogen unit, and its export is concentrated in the event tail that a modelled-annual-volume × fixed-concentration method averages away. Scale, as far as it can be established. One Danish utility reported receiving 25 tonnes of fat at its treatment plant in a single year, alongside 193 tonnes of screenings. That is one utility, one year, and — the important part — it counts only what *reached the works*. Every hour the system is in overflow is an hour that stream is going somewhere else. There is no national figure, no monitoring, and no unit in which it would be reported",
      "texts": "54a3c496edc268e8"
@@ -4723,8 +4828,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The ratio above understates route B, because the two carbons are not interchangeable: 1. Route A carbon is conditional. It requires a phototroph that is present, in a growing season, with light reaching it, and with phosphorus and silicon in supportive ratio. Nitrogen delivered in November grows nothing. 2. Route B carbon is unconditional. It is already organic matter. It settles, it decays, and it consumes oxygen in the dark in December exactly as well as in July. 3. Route B arrives where it is discharged. Route A carbon is produced wherever the light and the season allowed, which may be nowhere near the shore that receives the consequence. 4. Route B arrives in pulses, on the flow threshold — the same events that scour a basin and resuspend its accumulated sludge. Route A is a slow background. Which inverts the seasonal argument. Nitrogen's effectiveness at producing shore biomass is highest in spring and summer and close to zero in late autumn. Direct organic matter's effectiveness is flat across the year, and its delivery peaks in autumn and winter with the rain. The two pathways have opposite seasonality, and only the one that switches off in autumn is measured",
      "texts": "6108c13f2a589048"
@@ -4751,8 +4856,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This route is the one the nutrient frame cannot even represent as a question. It has no source, no load, no unit. And it is the only route that explains why the same bay can produce more decaying material in a year when *less* was delivered",
      "texts": "e98d5aafe38a7532"
@@ -4779,8 +4884,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The consequence for the 70%. A necessary condition for one branch is not a cause of the outcome. Removing nitrogen entirely would close route A and leave routes B and C running",
      "texts": "53f6d5a8f25bce3a"
@@ -4807,8 +4912,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The bloom is mostly not made of what was delivered",
      "texts": "5a85de7c77e5d65c"
@@ -4836,8 +4941,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This is not a speculative mechanism. It is the standard distinction in marine biogeochemistry between new production — running on nutrients newly supplied from outside the productive layer — and regenerated production, running on nutrients recycled in place. Their ratio has a name, the f-ratio, and in productive coastal water in summer it is low: most of the production is regenerated, not new. Which means the sentence \"this bloom was caused by X% agriculture\" is making a claim about the minority term. The majority of the nitrogen in a late-summer bloom was not delivered that summer by anyone. It was released by the previous round of dying",
      "texts": "5703044b2a4dbe0c"
@@ -4865,8 +4970,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "None of that is exotic or contested. It is the ordinary behaviour of a system with positive feedback, and it is why the same load can produce record damage in one year and a third of it in the next",
      "texts": "2c4d61844b9bc47e"
@@ -4893,8 +4998,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "And in Køge Bugt, the trigger is probably not nutrients The loop above still starts with growth. A bay receiving a large, pulsed delivery of sewage solids and fat can enter it further along — the organic material and the oxygen demand arrive together, already made, and the die-off that releases the internal store can be the *first* step rather than the third. That is a different causal shape from the one the accounting models, it produces the same shore, and it would be attributed to nitrogen by any method that only counts nitrogen",
      "texts": "76c060e2e03f6998"
@@ -4922,8 +5027,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "spent thirty-five years and a great deal of money running it. The intervention. Flow-normalised total nitrogen supply from Danish land areas to the sea has fallen from about 100 kt N/yr in 1990 to about 55 kt — a reduction of roughly 50%. Airborne nitrogen to Danish sea areas is down by about the same. This is the largest environmental intervention in modern Danish policy and it is not in dispute",
      "texts": "d9fe46d61f8d981d"
@@ -4950,8 +5055,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Area of Danish inner waters affected by oxygen depletion, mid/late September, as reported by DCE: | Year | September extent | | |---|---:|---| | 1989 | — | September extent comparable to 2023 | | 2000 | — | September extent comparable to 2023 | | 2002 | — | largest recorded; still the maximum of the series | | 2023 | ~7,500 km² | largest in 20 years; second-largest September on record, exceeded only by 2002 | | 2024 | ~11,000 km² | 47% larger than 2023 by these extents; second-largest ever recorded, exceeded only by 2002 | | 2025 | ~3,700 km² | far smaller area, but early onset and a high severe fraction - over 40% of the affected area severely depleted in August",
      "texts": "c806d62db56fcb48"
@@ -4978,8 +5083,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Put side by side: Land-based nitrogen supply is down about half since 1990. September oxygen-depletion extent in 2023 and 2024 was at or above the level of 1989, 2000 and 2002, when the load was roughly double. No trend in the extremes is detectable against a halved input. If nitrogen load were the dominant control on oxygen depletion, halving it should have moved the extremes. It did not.",
      "texts": "94df4b51e5e45964"
@@ -5006,8 +5111,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The series is NOT monotonically worsening. Interannual variance is very large - 2025 was roughly a third of 2024 by area. That variance is itself the finding: extent is governed by the physics of the individual year, not by the slow trend in load. 2025 is the reason to be careful with this argument, and also the reason it points where it does. A system whose worst outcome swings threefold between consecutive years, under a load that barely moves between them, is a system governed by the physics and the state of the individual year — wind, stratification, temperature, what the bed is made of — with load as a slow background term. Note also that the load series is *flow-normalised*: the weather signal is deliberately removed from the input and is the dominant signal in the output",
      "texts": "57b6baaf60dd72b6"
@@ -5036,8 +5141,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "LOOP catchments show 8-24 years between a management change and a detectable decline in stream nitrogen. 1990-2025 is 35 years - longer than the longest observed lag - so lag cannot carry the whole gap. | | Warming | SUPPORTED, INDEPENDENT | DCE names bottom-water temperature above the long-term mean as a contributing factor. Warmer water holds less oxygen and respires faster. This has strengthened while nitrogen fell. It is not represented anywhere in a source apportionment. | | Loss of assimilative state | MECHANISTICALLY SUPPORTED, UNQUANTIFIED | Eelgrass down 80-90% from historical extent; filtration capacity lost; benthos repeatedly killed; denitrification switching to DNRA under anoxia; a loose bed resuspending several times more often (see SEABED.md). The same load does more damage than it did in 1990. No term in any published account carries this",
      "texts": "c86b05ed83edaff1"
@@ -5064,8 +5169,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It is also the one that fails on its own terms, because the elapsed time exceeds the longest lag anyone has measured",
      "texts": "6be3bf5b315c6f92"
@@ -5093,8 +5198,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "State-dependence, stated as the mechanism The third explanation deserves its own statement, because it is the one this project's own computations support",
      "texts": "bdcdb066bab9f2d3"
@@ -5123,8 +5228,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "toxicants and metals, which remove grazers and filter feeders — the very organisms that would otherwise convert the subsidy into structure 2. physical disturbance of the bed, which removes the binding fauna and drops the erosion threshold roughly fivefold (SEABED.md) 3. each hypoxic event, which kills the benthos and makes the next event cheaper 4. the loss of eelgrass, which removed both the uptake capacity and the sediment stabilisation at once 5. turbidity from a bed that now resuspends several times more often, which keeps the light from whatever might recolonise",
      "texts": "6b80bdbaab2bc877"
@@ -5151,8 +5256,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every item on that list is a reason the *same* kilogram of nitrogen does more damage in 2025 than it did in 1990. None of them appears in a source apportionment, because none of them is a source. Nitrogen sensitivity is a derived property of a damaged system, and the accounting treats it as a",
      "texts": "2078a1ad3468788f"
@@ -5179,8 +5284,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It does not establish that agriculture is off the hook. Multiplying unknown fractions yields an unknown, not a small one. Agriculture is plausibly still the largest single nitrogen contributor, the load is real, and reductions have documented local benefits",
      "texts": "349be8675183cb5e"
@@ -5207,8 +5312,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It does establish that the number is not what it is presented as. \"69.6% of nitrogen\" is a residual of models over one term of an open account. \"70% of fedtemøg\" is that residual multiplied by four coefficients that have never been computed. The first is a defensible piece of bookkeeping. The second is not a measurement of anything",
      "texts": "a876b31adcf282fd"
@@ -5235,8 +5340,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "And it establishes an asymmetry in what gets counted. Every term that would shift blame away from a countable source — deposition, regeneration, groundwater, legacy, temperature, state — is precisely a term with no row. That may be coincidence of what is easy to measure. It is worth noticing that the easy measurements and the politically actionable ones are the same set",
      "texts": "151fca74952b3040"
@@ -5263,8 +5368,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That thirty-five years of data cannot distinguish them is the strongest single argument that the accounting is measuring the wrong thing",
      "texts": "5db4d85f2c6a75e4"
@@ -5294,8 +5399,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "All three series exist and are published. Nobody has published the regression. | | Whether state-dependence is real | The same regression with an interaction term, or simply: does a given load produce more hypoxia now than in 1990, holding weather constant? Answerable from existing DCE series. | | Whether the denominator can be closed | Two of the 10 empty rows are tractable with standard methods — submarine groundwater discharge via radon/radium tracers, internal regeneration via benthic flux chambers. Both are routine elsewhere. | | Whether the potency term matters | Weight existing load figures by season and receiving-water stratification. Even a crude weighting beats the current implicit equal weight everywhere. | | Whether fedtemøg has the season everyone assumes | Fixed coastal cameras, monthly index, year-round. The cheapest item on this list by an order of magnitude, and the only claim here that is currently unfalsifiable in either direction. | None of these needs new instruments. Four of the five need no new data at all — only that two published series be plotted against each other",
      "texts": "d7e389c8db9f6a26"
@@ -5322,8 +5427,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Sources for the load and outcome series, with URLs, are in `data/manual/monitoring.json` under `load_trend_vs_outcome`. The pathway enumeration is in `data/manual/nitrogen_pathways.json`. Bounds marked as ours are constructed here and labelled as such",
      "texts": "d3799700ab63e867"
@@ -5350,8 +5455,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "argues the specific case: every Danish catchment has been sprayed for decades, so for that mechanism there is nothing to compare against — the counterfactual does not exist at any price until somebody stops somewhere.",
      "texts": "02fd75e623e5b109"
@@ -5378,11 +5483,39 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Filling any empty row lowers that ceiling.",
      "texts": "163d64f42659d917"
+    }
+   }
+  },
+  {
+   "id": "C-PC-OLD-FEDT-DEF",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The page called fedtemøg filamentous brown algae.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "CAUSATION.md",
+    "commit": "b86c6b4",
+    "file": "docs/CAUSATION.md",
+    "begin": "is a popular name for mass occurrences of loose-lying filamentous brown algae",
+    "end": "on the beach",
+    "why": "None of the sources for the definition - Den Store Danske, Den Danske Ordbog, Danish Wikipedia - calls the algae filamentous; the word was added here."
+   },
+   "replaced_by": [
+    "C-PC-CA-FEDT-DEF"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach",
+     "texts": "0d38646d0826ff2a"
     }
    }
   }

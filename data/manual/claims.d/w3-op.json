@@ -1538,8 +1538,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Enumerating the `Parameter` column of the whole CTD extract (`data/raw/oda/ctd.csv.gz`, one streaming pass) returns 17 distinct parameters and no more: > Temperatur 7,501,201 · Salinitet 7,474,425 · Oxygen indhold 7,146,792 · Fluorescens > 6,783,570 · Oxygenmætning 6,598,099 · Lysdæmpning 5,217,330 · Konduktivitet > 5,169,272 · Vægtfylde 4,329,607 · Turbiditet 1,076,915 · FDOM 890,921 · > Photometer måling 576,179 · Photometer reference 531,071 · pH 237,445 · > Strømhastighed 84,734 · Strømretning 84,572 · Farvestof 4,601 · Dihydrogensulfid",
      "texts": "111ad444733e1e2e"
@@ -1567,8 +1567,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "In-water N and P are also absent locally — `data/raw/oda/stations.csv` is a station registry, and `ODA-TILFOERSEL` (queued, unfetched) is *region-aggregated load*, the exact quantity `J1` says not to use. The hypothesis is missing both its dependent variable and its discriminator.",
      "texts": "3f39c6b5c7dd49ac"
@@ -1595,8 +1595,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The raw CTD file carries three more, and they co-occur. Distinct (station, date) casts by sensor set: | sensors present on the cast | casts | |---|---:| | fluorescence + attenuation | 74,391 | | fluorescence + attenuation + turbidity | 2,148 | | fluorescence + attenuation + FDOM | 191 | | all four (fluo + FDOM + attenuation + turbidity) | 9,717 | | any FDOM at all | 10,589 (211 stations, 2021–2026 only) | FDOM — the CDOM proxy, and the one term that could be measured *out* of an optical residual — begins in 2021. The metric would be, per cast in the",
      "texts": "66cab1f188232c08"
@@ -1623,8 +1623,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "gives the only test such a number admits: R must shrink by exactly P when a part P is measured out of it.",
      "texts": "b67ca91226c5b396"
@@ -1653,8 +1653,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "First, R has no physical units, because the inputs have none. Enumerating `Parameter`×`Enhed` over the same file: Lysdæmpning is recorded in `pct` (5,217,330 rows) — a transmission percentage whose beam path length is nowhere in the record, so it cannot be converted to m⁻¹. Fluorescens is `Ingen`, dimensionless, on 6,783,473 of its 6,783,570 rows (83 in µg/l, 14 \"Ikke oplyst\"). FDOM is `ppb`, a fluorescence-standard unit, not an absorption coefficient. Error class 6, absent dimension, on the total; class 4, schema conflation, on the parts. That the column really does conflate units is visible in the same table: Konduktivitet appears as mS/cm (4,425,525) *and* mS/m (743,747), Vægtfylde as g/l (3,412,223) *and* kg/m³ (917,384) — factors of 100 and 1000 inside one column, unflagged. 494 further rows are column-shifted, with the parameter name sitting in the unit field.",
      "texts": "77d3be7296fdab24"
@@ -1679,8 +1679,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Third, the candidate signal is smaller than the disagreement between two measurements of the total. On the 6,879 same-day ship/satellite pairs in `data/derived/matchups.json`, the log ratio of satellite Kd490 to ship Kd(PAR) has sd 0.352 (median 0.769, p10–p90 0.566–1.188). Regressing log KD490 on log CHL in two single-day slices of `data/raw/cmems/grid/{transp,plankton}__inner__2015.nc` (n = 22,916 and 15,624) leaves residuals of sd 0.172 and 0.206. The satellite-only version of this metric is dead on arrival, by arithmetic rather than judgement.",
      "texts": "6ba8f6ac68cfd1d2"
@@ -1707,8 +1707,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Fourth, even the ship total is partly a model. `LIGHT.md` establishes that broadband Kd falls with depth in uniform water; casts beginning above 2 m give median Kd 0.35, below 2 m 0.27 — a 23% swing from an undocumented metadata choice. Error class 7, model-as-datum",
      "texts": "64c6aee560513bd6"
@@ -1735,8 +1735,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "TEP is called *transparent* because its refractive index is close to seawater's; it requires staining to be counted at all.",
      "texts": "9c89417c313bbcdd"
@@ -1763,8 +1763,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nobody has that figure and it is worth having.",
      "texts": "16b6f0e61958bd12"
@@ -1791,8 +1791,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "demonstrably includes sonde calibration drift, unstated path length, residual CDOM beyond what FDOM tracks, and spectral mismatch between a broadband channel and two fluorometers.",
      "texts": "76d4783162016b94"
@@ -1819,8 +1819,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Thirty Alcian blue TEP samples from the rosette on casts already running the four-sensor suite, at any of the 211 stations carrying FDOM since 2021. Not a survey — a calibration. Thirty paired points settle whether R carries any TEP information: a correlation turns 9,717 existing casts into a retrospective TEP series; no correlation retires the optical route permanently and cheaply. The method costs a filter, a dye and a spectrophotometer.",
      "texts": "88b31f54b1e8d57a"
@@ -1847,8 +1847,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One field, already known to the operators, currently unrecorded — without it no attenuation coefficient can be reconstructed from five million readings.",
      "texts": "13d9aad37d4e81e0"
@@ -2768,8 +2768,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nothing in Denmark varies sulphate while holding organic loading, iron supply and temperature fixed, so the contrast has to be built. A core incubation is the answer, and it is cheap.",
      "texts": "b889ab9ae4fceec6"
@@ -2796,8 +2796,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is four orders of magnitude coarser than the front it would have to resolve",
      "texts": "0589995726e016f2"
@@ -2825,8 +2825,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two full independent scans of `ctd.csv.gz` both return 2,601 rows, and they are not a Danish series. 2,598 come from one station — `93610032` \"Dybet\", Mariager Fjord midterdel — with 1 row each from three other Mariager sites; 210 casts on 207 dates, 2001–2008 and 2010, nothing since; µg/l; depths 2–66 m; 432 zeros; median 27.9, max 30,022 µg/l. Gear is `Ketcher` on every row (a bottle, not a sonde; 1,941 rows carry `999 - Ukendt` as instrument). One permanently stratified silled basin, one authority, nine years: usable for the `H₂S` climatology of Mariager Fjord's monolimnion and nothing comparative.",
      "texts": "3ad0b6c9127559a5"
@@ -2853,8 +2853,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "ODA `vandkemi` carries `Svovlbrinte (sulfid)` at 1,125 historical stations: a far better series, measuring the same endpoint.",
      "texts": "0669fef08dc81812"
@@ -2886,8 +2886,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Source | What it measures | Resolution / coverage | Size, licence | Separate production path? | |---|---|---|---|---| | DCE SR323, *Sammenhænge i det marine miljø*, `dce2.au.dk/pub/SR323.pdf` | LOI, TN, TP and iron-bound P over the top 10 cm; sulphide-front depth; buffer capacity; oxidised iron, top 1.5 cm | 12 NOVANA stations, 1999–2003 and 2017–2018, 7 fjords + Sydfynske Øhav + N. Øresund; front dataset 1,759 measurements, 16 areas, spring+autumn; research series 2005–2015, 20 open-water stations | 5.24 MB PDF, text-extractable (219,607 chars) | Analysis of NOVANA — not separate; the 2005–2015 front series is | | NOVA teknisk anvisning kap. 14, `ecos.au.dk/fileadmin/ecos/Fagdatacentre/Marin/TA_NOVA_1998/Kap14.pdf` | The method: `§14.7.1.1` front by silver plate, `§14.7.1.2` buffer capacity, `§14.7.1.3` oxidised iron in the `H₂S` buffer zone, `§14.6.1.1` iron-bound P, bilag 14.3 photometric `Fe²⁺` | protocol, 1998 | 389 KB, 138,791 chars | n/a — it is the path | | ICES DOME sediment, Denmark — direct GET, no login | `Fe`, `Mn`, `S`, `PTOT`, `CORG`, `LOIGN`, `AL`, `PB210`, grain size | Counted here: 47,019 rows; 47 samples at 12 positions carry Fe+S+PTOT together, all of them 14 Feb 1990 – 19 Mar 1991. Fe elsewhere: 2 stations | 823 KB zip → 9.6 MB CSV, open | From Danish VanDa/ODA — not separate | | PANGAEA `997075`, Kiel Bight core incubation, 2025 | Sequential Fe extraction (poorly-crystalline/crystalline Fe(II)/Fe(III)), total S, `H₂S`, sulphate, ³⁵S reduction rate, alkalinity — under controlled oxygen cycling | 54.572 N 10.178 E, Feb–Mar 2025, 767 points | small, CC-BY | Yes, GEOMAR | | PANGAEA `987329`–`987366` (AL561, 2021) | TOC, TN, bulk TS, porewater dissolved Fe and phosphate; in-situ chamber phosphate flux | 15 Kattegat–Skagerrak stations, one cruise | small, CC-BY | Yes | | PANGAEA `880132` (Bornholm SEDEX) | Sequential P fractions incl. Fe-bound P | one borehole, 2013, 563 points | small, CC-BY | Yes | | ODA `Sedimentkemi/Sporstof` (`Emne_12_19`) | `Phosphor, Fe-adsorberet`, TP, TN, glødetab | 18 stations now, 39 ever | small, login | NOVANA, different lab chain |",
      "texts": "c47c02eaa5f98479"
@@ -2916,8 +2916,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Still absent: any paired sequential Fe *and* S extraction (AVS, CRS, ascorbate/dithionite Fe) on Danish sediment, and any Danish phosphate release rate outside the 15 AL561 chambers.",
      "texts": "f8d270bb8fdbb4e5"
@@ -2947,8 +2947,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Denmark had a written national method for `R6`'s own variables and stopped running it.",
      "texts": "031e08d5a030082c"
@@ -2976,8 +2976,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The register's \"no Fe speciation for any Danish site\" is wrong for 1998–2003 and right for everything after.",
      "texts": "ab73e6f68be663cc"
@@ -3004,8 +3004,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "in DOME: one physical sample appears twice as `SED63` and `SED2000`, two grain-size fractions with different values; pooling them shifts any ratio. Values like `16400000.000000002 ug/kg` betray a unit conversion inside DOME — that precision is manufactured.",
      "texts": "4257ec97a3e784c6"
@@ -3032,8 +3032,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The null, computed under the constraint imposed, not quoted.",
      "texts": "5a261eecdd7b15f9"
@@ -3060,8 +3060,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Reinstate the 1998 assay at 20 existing `Bundfauna` stations, one spring and one autumn.",
      "texts": "7ecfe315ef5bc1d1"
@@ -3088,8 +3088,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "makes every one of those measurements together, in the western Baltic, in 2025 — current, standard and adjacent.",
      "texts": "c2f84d8870ed10dc"
@@ -3905,8 +3905,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "both sides exist in ODA, neither is fetched, the join is small. Armchair. Tentative, not an obstacle.",
      "texts": "748df0b027377fa3"
@@ -3933,8 +3933,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "for Danish inner waters, close to unrecorded. I counted what exists.",
      "texts": "175b184aa5f719a3"
@@ -3962,8 +3962,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "When this was written nothing in the repository carried a nutrient concentration. The Vandkemi extract has been fetched since (`data/raw/oda/kemi.csv.gz`), so the response side is now held; the pool side, Sedimentkemi, is not, and `A7` still cannot be scored in either form.",
      "texts": "7c7cba9a6c5ff3ee"
@@ -3991,8 +3991,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "record `17465937`, one file `BalticSeaInSituFluxDIP_v3.xlsx`, 852,169 bytes, `CC-BY-4.0`; paper `https://essd.copernicus.org/articles/17 / 6423 / 2025/`. I downloaded and parsed it. Sheet `StationOverview` holds 498 flux rows, 59 stations, 2001–2021, one row per chamber unit per deployment, carrying DIP flux with its standard error, bottom-water oxygen, salinity, temperature, depth, sediment type, sediment organic carbon, oxygen class, lander type, lat/lon, year and month. Per-measurement, not a summary — a directly measured benthic release rate, the rarest object in the whole `A7` problem. And it is almost entirely outside Denmark. By subbasin: EGB 237, NBP 82, WGB 65, Gulf of Finland 60, Gulf of Bothnia 30, Bornholm Basin 18, Arkona 6. Only 5 of 59 stations lie west of 15.5°E — `BY2` (14.099°E, 54.975°N), HB3, HB1, HB2, BY5, all near Bornholm. The paper states it *\"does not consider the Kattegat and the Belt Sea … as being part of the Baltic Sea.\"* Zero stations in the Kattegat, the Belts, the Sound or any Danish fjord. Months run 2–11 — no December or January anywhere. Sediment types: mud/muddy sand 372, mixed 113, coarse",
      "texts": "32d35cecfe2d3397"
@@ -4019,8 +4019,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Independence: high. A chamber lander incubating a patch of bed is a different instrument, quantity and operator (Gothenburg/GEOMAR, not Danish monitoring) from the CTD sonde — a *fourth* production path beside CTD, ocean colour and Secchi.",
      "texts": "74b5b00b1f934923"
@@ -4051,8 +4051,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| source | what it measures | resolution / coverage | note | |---|---|---|---| | NERI Technical Report 483, Fossing et al. 2004, `dmu.dk/1_viden/2_publikationer/3_fagrapporter/rapporter/FR483.PDF` (1.9 MB; `pdftotext -layout` → 214,023 chars) | Aarhus Bay measured sediment oxygen uptake, `NO₃⁻` and `NH₄⁺` flux, sulphate reduction rate, ~monthly | one station, Mar 1990 – May 1991 | The report is a *model* set-up (class 7); the flux series in it is not, and is credited to Gundersen et al. (1995) and Lomstein & Blackburn (1992) — the only seasonal Danish benthic flux series I found | | DMU eutrophication assessment, `www2.dmu.dk/.../4_eutrophication/degradation.asp`, Figure 2.29 | seasonal sediment `NO₃⁻`, `NH₄⁺`, `PO₄³⁻` flux | *\"6 estuaries each represented with 3 stations sampled 16 times over a two-year period\"* — 18 stations, ~288 observations | The largest Danish benthic flux campaign I found any trace of. Quartiles only, and no source cited. Finding the underlying data is a small, undone task | | AL561 / APOC, PANGAEA `10.1594/PANGAEA.987348`, `.987349`, `.987353` | in-situ chamber `NH₄⁺`, `PO₄³⁻`, Fe, alkalinity flux + porewater | 15 stations, one cruise, Aug 2021, Kattegat→Skagerrak | already in `DATA_QUEUE.md`; several stations sit nearer Sweden/Norway | | ODA Vandkemi `Emne_10_11` / Sedimentkemi `Emne_12_19` | ortho-phosphat-P, N, P, chlorophyll, pH, alkalinity, sulphide / loss-on-ignition, total N and P, Fe-adsorbed P by layer | per sample with depth / per core per depth interval | neither fetched. `A7`'s two sides. Bottle wet chemistry is a production path separate from the CTD sonde | | EMODnet Chemistry DIVAnd phosphate climatologies, Baltic 1975 / 2021 v2023 | interpolated phosphate on HELCOM standard depths | 6-year centred seasonal means | not evidence. A DIVA interpolation of SeaDataNet — class 7, and built partly from the same Danish data |",
      "texts": "de56bf3ab62de499"
@@ -4079,8 +4079,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the only per-station water depth held.",
      "texts": "3e2a4a744a2cfd4a"
@@ -4107,8 +4107,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That asymmetry is the problem. The response side is ~1,125 stations; the pool side is 39 in the entire national record.",
      "texts": "5e66093a0e9ddff5"
@@ -4136,8 +4136,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "An unresolved discrepancy, flagged not settled. `NOVANA-PROG` (Miljøstyrelsen, 2023–2027) states sediment nutrient pools are taken at 16–19 stations a year *\"across 89 of 109 water bodies\"*, at 7 depths, every January–February. ODA exposes 39 ever. Either that rotation has not run or ODA does not expose the whole record. Ask before quoting either number.",
      "texts": "9bbaa5f1ba23a1ce"
@@ -4164,8 +4164,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Internal loading is normally *inferred* as what is left over after a mass balance, which makes it model-as-datum by construction. FR483 is the local instance: a model of Aarhus Bay whose sediment term is fitted, not read.",
      "texts": "f5bdc8dfae36bfd8"
@@ -4192,8 +4192,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Denmark has essentially none of it.",
      "texts": "877ee1c922a3cadb"
@@ -4220,8 +4220,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One fetch, in this order. `Emne_12_19` (Sedimentkemi) first — 39 stations ever, trivially small, and it fixes how many positions the test can have. Then `Emne_10_11` (Vandkemi), tens of MB. `scripts/fetch_oda.py` implements neither: `TOPICS` has five keys and `argparse(choices=...)` rejects both, so it is one dict entry each, node ids already recorded in `data/manual/data_sources.json`. Set an explicit period — the criterion pane is period-filtered and silently returns the current network otherwise.",
      "texts": "0b82020b6bd78a9f"
@@ -4248,8 +4248,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The measurement, and it is cheap. Sample the existing sediment stations twice, late February and late September, instead of once in winter. That one change turns the summer release from a residual into a difference of two measured pools, at whatever station count is already funded. Then: one chamber deployment anywhere in the Kattegat, the Belts or a Danish fjord, since the count there is zero.",
      "texts": "aee4f485ab014c7f"
@@ -4276,8 +4276,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Separately, the Zenodo file makes one check possible now: whether the CTD-derived bottom-oxygen field agrees with the independently measured bottom-water oxygen recorded beside each chamber flux, at the 5 stations near Bornholm.",
      "texts": "67986920a03dc152"
@@ -4972,8 +4972,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The quantity the hypothesis is about is not recorded in this archive at any density, in any matrix, at any station. `E7` is therefore unscoreable, not refuted — an absent dimension (error class 6), not a null result.",
      "texts": "ec1861104d859132"
@@ -5001,8 +5001,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "(c) is abundant here. (b) exists in ODA `Bundfauna`, not yet fetched. (a) does not exist in anything held.",
      "texts": "6bd7ddaa5aa97a25"
@@ -5029,8 +5029,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "of them with ≥60 months and 231 with ≥120 — the response-side record is dense; the exposure side has no column to sit in.",
      "texts": "55924e3199c505ba"
@@ -5057,8 +5057,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "distinct marine observation sites (`Hav` 798,324 rows, `Havn` 201, `Punkt i fjord`",
      "texts": "26dc1d4b18e7d929"
@@ -5085,8 +5085,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "measurements scanned in full; the `Parameter` column takes 17 distinct named values: Temperatur, Salinitet, Oxygen indhold, Fluorescens, Oxygenmætning, Lysdæmpning, Konduktivitet, Vægtfylde, Turbiditet, FDOM, Photometer måling, Photometer reference, pH, Strømhastighed, Strømretning, Farvestof, Dihydrogensulfid (2,601 rows), plus 3,381 blank.",
      "texts": "755d5b1296530df1"
@@ -5113,8 +5113,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the three groundwater layers in `data/raw/` are water levels (419), potentiometric contours (138) and depth-to-table polygons (2,087), carrying no analyte.",
      "texts": "c74c4b98d24c8467"
@@ -5141,8 +5141,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "keyword search over `docs/DATA_QUEUE.md` (145 sources) and `data/raw/` returns no *bekæmpelsesmiddelstatistik*, *behandlingshyppighed* or equivalent. Such statistics are published nationally; that is general knowledge and is not verified from anything in this repository",
      "texts": "384e908d9e340f3b"
@@ -5169,8 +5169,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "One quality-element code pools every river-basin-specific pollutant — pesticides, metals, everything — into a single column. A pesticide effect cannot be separated from a metal one even in principle at this resolution.",
      "texts": "ae13b43ce7e389f4"
@@ -5197,8 +5197,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "downstream. `docs/data/areas/areas.json` marks 66 of the 123 marine water bodies as having hazardous-substance observation. That flag is manufactured in `scripts/areas.py` by assigning each of these inland points to the *nearest marine water body within `MAX_ASSIGN_KM = 20`* — 205 of the 256 were assigned this way. The marine toxicant \"coverage\" in this archive is lake and stream points attributed to the sea by proximity. It is not a marine sample, and it is not a pesticide measurement.",
      "texts": "def4e3eda61f0a03"
@@ -5226,8 +5226,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "analyte lists have not been verified by anyone here. That uncertainty is itself the point: nobody in this project can currently say whether a single marine pesticide concentration is recorded in Denmark, which is what makes this a measurement question.",
      "texts": "27d810f592c9e446"
@@ -5254,8 +5254,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Enumerate, do not download. Run the topic and parameter *metadata* calls already implemented in `scripts/fetch_oda.py` (`expand`, `option_list`) against Hav / Sedimentkemi / MFS Sporstof, Hav / MFS i biota, and Hav / Vandkemi, and record the parameter names and per-parameter station counts. Metadata only, no extract. One session. This decides whether `E7` has an exposure side at all.",
      "texts": "2de7f4fabace366a"
@@ -5282,8 +5282,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Pick the panel by target conservation, not market label: a photosystem-II inhibitor plus its degradation product (the algae the chlorophyll indicator counts), a neuroactive (copepods), an azole (the sterol pathway every eukaryote has), and glyphosate with AMPA.",
      "texts": "5ea1962221777cf6"
@@ -5310,8 +5310,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "which at present nobody here can make in either direction.",
      "texts": "3012ab29060dd7c7"

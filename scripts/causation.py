@@ -90,7 +90,7 @@ def main():
 
     a("## The claim, as it is made\n")
     a(C("C-PC-CA-FEDT-DEF", "*Fedtemøg* is a popular name for mass occurrences of loose-lying "
-        "filamentous brown algae that can lie rotting at the water's edge and on the beach "
+        "brown algae that can lie rotting at the water's edge and on the beach "
         "([Danish Wikipedia](https://da.wikipedia.org/wiki/Fedtem%C3%B8g)).") + " "
       + C("C-PC-CA-PUBLIC", "In the public record this project pinned, that outcome is joined to "
           "agriculture's nitrogen:") + "\n")

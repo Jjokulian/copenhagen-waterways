@@ -1013,6 +1013,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PC-CA-CEILING`](CLAIMS.md#C-PC-CA-CEILING) — each opens what it rests on.
 
+<a id="C-PC-OLD-FEDT-DEF"></a>
+### The page called fedtemøg filamentous brown algae.
+
+`C-PC-OLD-FEDT-DEF` · retired 2026-09-14 from [CAUSATION.md](CAUSATION.md) · as published in `b86c6b4`
+
+> <span class="claim" data-claim="C-PC-OLD-FEDT-DEF">is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD-FEDT-DEF "What this claim rests on")</sup>
+
+**Why it was retired:** None of the sources for the definition - Den Store Danske, Den Danske Ordbog, Danish Wikipedia - calls the algae filamentous; the word was added here.
+
+**Replaced by:** [`C-PC-CA-FEDT-DEF`](CLAIMS.md#C-PC-CA-FEDT-DEF) — each opens what it rests on.
+
 ## CLAIMS.md
 
 <a id="C-FA-OLD-NOTE"></a>
@@ -5189,6 +5200,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** No source held says when fat leaves the sewers or how much; overflows run above a flow threshold, but fat's release with them is not established.
 
 **Replaced by:** [`C-LE-C-FAT`](CLAIMS.md#C-LE-C-FAT) — each opens what it rests on.
+
+<a id="C-LE-OLD-FEDT"></a>
+### The farm page called fedtemøg filamentous brown algae.
+
+`C-LE-OLD-FEDT` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `b86c6b4`
+
+> <span class="claim" data-claim="C-LE-OLD-FEDT">er en folkelig betegnelse for masseforekomster af løstliggende, trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD-FEDT "What this claim rests on")</sup>
+
+**Why it was retired:** None of the sources for the definition - Den Store Danske, Den Danske Ordbog, Danish Wikipedia - calls the algae filamentous; the word was added here.
+
+**Replaced by:** [`C-LE-FEDT`](CLAIMS.md#C-LE-FEDT) — each opens what it rests on.
 
 <a id="C-LE-OLD-FEED"></a>
 ### Mussel meal and seaweed are feed, and the feed is the environmental service.

@@ -1258,25 +1258,32 @@
    "kind": "attributed",
    "stance": "theirs",
    "holder": "Danish Wikipedia (Fedtemøg)",
-   "claim": "Fedtemøg is a popular name for mass occurrences of loose-lying filamentous brown algae, which can lie rotting at the water's edge and on the beach.",
-   "because": "The article's definition.",
+   "claim": "Fedtemøg is a popular name for mass occurrences of loose-lying brown algae, which can lie rotting at the water's edge and on the beach.",
+   "because": "The definition, followed to its sources: Den Store Danske and Den Danske Ordbog, which the Wikipedia article draws on.",
    "rests_on": [
     "E-PC-FEDT-DEF",
     "E-PC-FEDT-ROT",
-    "U-PC-FEDT-REFS"
+    "E-PC-FEDT-LEX-DEF",
+    "E-PC-FEDT-DDO"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: C-LE-FEDT reread against the rebuilt LANDBRUG wording - 'trådformede' dropped as no source uses it - and now rests on Den Store Danske and Den Danske Ordbog; C-LE-PUBLIC and C-LE-JOIN still hold, their quotations unchanged, the trail now ending in U-PC-FEDT-END; C-BA-B1-NOT-OXYGEN still holds, its reason reworded to the sources' definition; C-LE-OLD-FEDT: passage located in docs/LANDBRUG.md at b86c6b4)",
     "saw": {
-     "said on LANDBRUG.md": "*Fedtemøg* er en folkelig betegnelse for masseforekomster af løstliggende, trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.",
-     "texts": "99e9572283e03075",
+     "said on LANDBRUG.md": "*Fedtemøg* er en folkelig betegnelse for masseforekomster af løstliggende brunalger, som kan ligge og rådne i vandkanten og på stranden.",
+     "texts": "125f787f08a86d6d",
      "node E-PC-FEDT-DEF": "222ba88eb2180ce8",
      "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
      "node E-PC-FEDT-ROT": "ae2bce6cf5c78a9c",
-     "node U-PC-FEDT-REFS": "f65a7fbad010ba6e"
+     "node E-PC-FEDT-LEX-DEF": "65003374375e517f",
+     "pinned PC-LEX-FEDTEMOEG": "e18de5f5448ce5e3",
+     "node E-PC-FEDT-DDO": "bda6558ecb2ebc3c",
+     "pinned PC-DDO-FEDTEMOEG": "81abd3c8b490e5c3"
     }
-   }
+   },
+   "replaces": [
+    "C-LE-OLD-FEDT"
+   ]
   },
   {
    "id": "C-LE-PUBLIC",
@@ -1290,23 +1297,23 @@
     "E-PC-FEDT-AGRI",
     "E-PC-DN",
     "E-PC-DN-2",
-    "U-PC-FEDT-REFS"
+    "U-PC-FEDT-END"
    ],
    "replaces": [
     "C-LE-OLD-SENTENCE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: C-LE-FEDT reread against the rebuilt LANDBRUG wording - 'trådformede' dropped as no source uses it - and now rests on Den Store Danske and Den Danske Ordbog; C-LE-PUBLIC and C-LE-JOIN still hold, their quotations unchanged, the trail now ending in U-PC-FEDT-END; C-BA-B1-NOT-OXYGEN still holds, its reason reworded to the sources' definition; C-LE-OLD-FEDT: passage located in docs/LANDBRUG.md at b86c6b4)",
     "saw": {
      "said on LANDBRUG.md": "I den offentlige debat, som projektet har fastholdt, knyttes fedtemøg og iltsvind til landbrugets kvælstof. Den danske Wikipedia-artikel om fedtemøg skriver, at forekomsten ved danske kyster *”skyldes især landbrugets udledning af kvælstof”*, og Danmarks Naturfredningsforenings præsident sagde om kvælstofaftalen: *”År efter år har vi set forfærdeligt iltsvind og fedtemøg. Skal havet have en chance, må landbrugets kvælstofforurening ned.”*",
-     "texts": "261e358d0f9d5d17",
+     "texts": "57e370d7b73003b8",
      "node E-PC-FEDT-AGRI": "b3a24d2249098536",
      "pinned PC-WIKI-FEDTEMOEG": "e09cd37f6cc2a612",
      "node E-PC-DN": "0d187f286ee8091e",
      "pinned PC-DN-GJERDING": "19f41a619396adf6",
      "node E-PC-DN-2": "7088b418f824bbc0",
-     "node U-PC-FEDT-REFS": "f65a7fbad010ba6e"
+     "node U-PC-FEDT-END": "a7ccfaf8a6d84587"
     }
    }
   },
@@ -1325,13 +1332,13 @@
     "C-LE-OLD-SENTENCE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: C-LE-FEDT reread against the rebuilt LANDBRUG wording - 'trådformede' dropped as no source uses it - and now rests on Den Store Danske and Den Danske Ordbog; C-LE-PUBLIC and C-LE-JOIN still hold, their quotations unchanged, the trail now ending in U-PC-FEDT-END; C-BA-B1-NOT-OXYGEN still holds, its reason reworded to the sources' definition; C-LE-OLD-FEDT: passage located in docs/LANDBRUG.md at b86c6b4)",
     "saw": {
      "said on LANDBRUG.md": "Andelen på 69,6 % kommer fra en tredje kilde. Ingen af dem, der citeres her, ganger de to sammen, men argumentet indbyder læseren til det. Mellem andelen og skaden ligger disse led:",
      "texts": "6251b1aceefdd749",
      "rests on C-PC-CA-JOIN": "cd709c9e3f0eb108",
-     "rests on C-LE-PUBLIC": "261e358d0f9d5d17"
+     "rests on C-LE-PUBLIC": "57e370d7b73003b8"
     }
    }
   },
@@ -2491,8 +2498,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "En tidligere version af denne side sagde, at der *ikke findes nogen koefficient mellem kvælstof og nogen økologisk effekt*. Det er for bredt, og det er nu rettet til det, dokumenterne faktisk viser — en skærpelse, ikke en tilbagetrækning.",
      "texts": "beaced28f2e4ce8f"
@@ -2519,8 +2526,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Hvis én eller flere iltsvindsindikatorer siger, at vandområdet er ramt, sættes indsatsbehovet til en fast reduktion på 25 % af den nuværende TN-koncentration — uanset hvor slemt iltsvindet er, hvor meget kvælstof der tilføres, eller hvordan området er indrettet.",
      "texts": "cf1024a72c680d2e"
@@ -2547,8 +2554,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Den kan hverken falsificeres eller kalibreres, fordi der ingen respons-kurve er bag den.",
      "texts": "a360ccd31668062d"
@@ -2576,8 +2583,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det er iltsvind, der bærer den offentlige begrundelse for aftalen. Og netop der er koefficienten et skøn.",
      "texts": "6b7013ad4e1a04bc"
@@ -2604,8 +2611,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Projektet her bruger det meste af sin plads på at tage byens egne udledninger fra hinanden — regnbetingede overløb, spildevandsplanens huller, hvad Københavns skybrudsplan faktisk dækker.",
      "texts": "0cb60e3790ef0c4f"
@@ -2632,8 +2639,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Tallet er landbrugets andel af den landbaserede, vandbårne post alene — kvælstof, der når kysten gennem danske vandløb og umålte oplande. Det er to rækker ud af tyve i den opgørelse, projektet har lavet over alle veje, ad hvilke reaktivt kvælstof når danske havområder:",
      "texts": "4ac55fdf3cedc36d"
@@ -2660,8 +2667,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "veje har slet intet tal — heriblandt atmosfærisk afsætning af organisk kvælstof, udsivning af grundvand under havet, og frigivelse fra sedimentet, som efter én undersøgelse leverer størstedelen af det, den årlige primærproduktion kræver.",
      "texts": "ec8df0565dcf5929"
@@ -2690,8 +2697,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "En tom række kan kun lægge til. Nævneren har altså et gulv og intet loft, og enhver procent regnet mod den er et loft, ikke et estimat: > Landbruget står for højst 30 % af det opgjorte reaktive kvælstof, der når danske havområder. Udfyld én af de tomme rækker, og loftet falder. Det kan ikke stige.",
      "texts": "862532b0bd37024c"
@@ -2718,8 +2725,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "atmosfærisk afsætning direkte på havoverfladen er 45–65 kt N/år — på størrelse med hele den landbaserede post — og optræder ikke i nogen offentliggjort fordeling.",
      "texts": "9d20a557a52cd240"
@@ -2746,8 +2753,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Sådan fremkommer landbrugsandelen: målt-plus-modelleret total, minus modellerede punktkilder, minus modelleret naturligt baggrundsbidrag. Det, der bliver tilbage, kaldes landbrug.",
      "texts": "67a9fb0a0c81613c"
@@ -2779,8 +2786,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Måledækning | 49 % af arealet måles, 51 % modelleres | | Målemetode | stikprøver med faste mellemrum, transport beregnet som sum af daglig vandføring gange lineært interpoleret koncentration | | Dokumenteret skævhed | i alle tre vandløb i GUDP-undersøgelsen fra 2018 gav stikprøver altid lavere transport end højfrekvent måling | | Retentionens usikkerhed | ± 16 procentpoint på landsgennemsnittet | | Estimatorens opførsel | i tørre år som 1996 og 2005 bliver det beregnede dyrkningsbidrag negativt",
      "texts": "43a2bb7815e5dac1"
@@ -2807,8 +2814,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "En størrelse, der kan blive negativ, er ikke en måling af en fysisk mængde. Den er residualet af to modeller, og den arver begges fejl med modsat fortegn.",
      "texts": "86cf9e413fcbe995"
@@ -2836,8 +2843,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Sætningen, der bruges politisk, er ikke *69,6 % af den landbaserede vandbårne kvælstofpost*. Den er *landbruget står for omkring 70 % af iltsvindet* — eller af fedtemøget. Mellem de to sætninger ligger tre led:",
      "texts": "702896e21dfb7a94"
@@ -2868,8 +2875,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Led | Koefficient | |---|---| | Kvælstof → iltsvind | findes ikke. Kvælstof er én af mindst seks iltforbrugende processer. Der er ingen potensfaktor: et kilo i februar i en opblandet vandsøjle tæller som et kilo i juli under et springlag | | Iltsvind → tab af højere liv | findes ikke. Iltsvind er én vej blandt flere — miljøfremmede stoffer, trawl, turbiditet, svovlbrinte. Bundfaunaen prøvetages 1. marts – 31. maj, så efterårets dødelighed ses aldrig | | Tab af højere liv → fedtemøg | findes ikke. Fedtemøg overvåges ikke systematisk overhovedet — ikke udbredelse, ikke biomasse, ikke varighed",
      "texts": "629f121822ef97fd"
@@ -2896,8 +2903,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Hvert led er en reel årsagssammenhæng. Ingen af dem har et tal. Et produkt af tre ukendte brøker er en ukendt brøk — og det præsenteres som ét målt tal.",
      "texts": "73333361fe585585"
@@ -2925,8 +2932,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Den landbaserede kvælstoftilførsel er faldet fra omkring 100 kt N/år i 1990 til omkring 55 kt — en reduktion på cirka 50 %. Luftbåren kvælstof til danske havområder er faldet tilsvarende. Det er den største miljøindsats i nyere dansk politik, og den er ikke omstridt.",
      "texts": "1cb38ac7f0cdaa96"
@@ -2954,8 +2961,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Iltsvindets udbredelse i september | |---|---| | 1989 | — | | 2000 | — | | 2002 | — | | 2023 | ~7,500 km² | | 2024 | ~11,000 km² | | 2025 | ~3,700 km² | Halvér tilførslen, og yderpunkterne rykker sig ikke. 2023 og 2024 lå på niveau med 1989, 2000 og 2002, hvor belastningen var omtrent dobbelt så stor. Og 2025 kom ind på en tredjedel af 2024 — så udsvinget mellem to på hinanden følgende år er større end trenden over femogtredive.",
      "texts": "0e70e057624755f8"
@@ -2984,8 +2991,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det er bevis for, at udbredelsen styres af det enkelte års fysik og af havbundens tilstand, med belastningen som en langsom baggrund. Ingen af de to ting kan en kildeopgørelse overhovedet udtrykke, for ingen af dem er en kilde.",
      "texts": "f19027a2fb113445"
@@ -3012,8 +3019,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Overløbsmængder er modellerede, ikke målte. PULS registrerer antal overløb og ingen vandføring. Massen beregnes som modelleret årsvolumen gange et fast typetal — og kvalitetskontrolleres ved at tjekke, om koncentrationen ligger tæt på det samme typetal. Usikkerheden på volumen er angivet til 135 % på det laveste videnniveau.",
      "texts": "c7c697b56a791b5d"
@@ -3040,8 +3047,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Typetallene for miljøfarlige stoffer hviler på 6 målestationer for fællessystem og 5 for separat regnvand, anvendt på 19,665 udledningspunkter — i oplande *valgt* til at repræsentere husholdninger og boligområder, og udtrykkeligt afgrænset over for industriområder og stærkt trafikerede veje. Samme rapport finder de højeste medianer for metaller i slam fra bassiner.",
      "texts": "556a64f72d8e7c12"
@@ -3068,8 +3075,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Kun den ene halvdel tælles, og den tælles til 0,6 % af en national kvælstoftotal.",
      "texts": "04b60d177838f56c"
@@ -3096,8 +3103,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Og det frigives på en flowtærskel, altså netop i de timer, hvor vandet går uden om renseanlægget.",
      "texts": "8a4abe61d6610056"
@@ -3124,8 +3131,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det viser ikke, at landbruget er uden andel. At gange ukendte brøker giver en ukendt, ikke en lille. Landbruget er sandsynligvis stadig den største enkelte kvælstofkilde, belastningen er reel, og reduktioner har dokumenterede lokale gevinster.",
      "texts": "4aab2c5f7d7f0de7"
@@ -3152,8 +3159,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "er snævrere og stærkere: grundlaget for et kvantificeret, sektorspecifikt mål er ikke til stede. Der findes ingen nævner, ingen potensfaktor, og ingen dokumenteret virkning på yderpunkterne efter femogtredive år. Et fejlspecificeret instrument er ikke kun urimeligt over for den regulerede — det er farligt for alle, fordi det bliver ved med at kræve mere af det samme, når det samme ikke virker.",
      "texts": "f908936dc2f8fc2c"
@@ -3181,8 +3188,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Så er der to håndtag, ikke ét, og det andet har hidtil ikke været i spil.",
      "texts": "aa0cfe63ad3038eb"
@@ -3211,8 +3218,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Virkemiddel | Hvad det gør, som reduktion ikke gør | |---|---| | Muslinge- og tangopdræt | fjerner kvælstof, der allerede er i vandet, og høstes i stedet for at rådne. Det eneste virkemiddel, der arbejder på lageret frem for på tilførslen | | Ålegræs og bundintegritet | genopretter optagelsen og stabiliserer sedimentet, så metaller og svovlbrinte bliver liggende | | Vådområder og efterafgrøder | de kendte, og de virker — men kun på tilførslen",
      "texts": "5cc8bd89ccb919b9"
@@ -3239,8 +3246,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det afgørende ved marin ekstraktion er, at det er en produktion. Muslingemel og tang er foder. Og foderet er selve miljøydelsen: kvælstoffet fjernes ved, at biomassen tages op.",
      "texts": "be2391261aef73d5"
@@ -3267,8 +3274,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Den bindende omkostning ved at lade et dyr leve længere er foder. Hvis et kvælstofvirkemiddel *producerer* foder og betales som miljøydelse, så kan den samme politik finansiere, at dyr lever længere, i stedet for at besætninger bliver mindre.",
      "texts": "e91b5dced24670e1"
@@ -3295,8 +3302,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det er ikke en omskrivning. Det er en ændring af, hvad betalingen er knyttet til. I den nuværende ordning falder dyrets værdi sammen med dets død, og jo tidligere jo bedre — tyrekalve, lam, orner. Et foderflow, der betales for at fjerne kvælstof fra havet, afkobler betalingen fra aflivningen.",
      "texts": "099f526c47c656a8"
@@ -3323,8 +3330,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ekstraktivt opdræt opkoncentrerer metaller og organiske miljøfremmede stoffer. Hvor høsten må gå hen, afgøres af analyse, ikke af hensigt — og zink og kobber er ikke det samme som cadmium og kviksølv, som opkoncentreres op gennem fødekæden og som intet levende har et evolutionært beredskab over for.",
      "texts": "7df3159bc6c7a653"
@@ -3351,8 +3358,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Ekstraktivt opdræt i den nødvendige skala er ikke økonomisk afprøvet. Der er ikke sket en effektivitetsrevolution endnu — men der er heller ikke gjort noget alvorligt forsøg.",
      "texts": "99dbc244e6fe9a79"
@@ -3379,8 +3386,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Det er en tabt sag og en dårlig sag. I stedet fire ting, som alle er billige, og som ingen kan afvise uden at forklare hvorfor:",
      "texts": "d0b5e3f79e9df09b"
@@ -3411,8 +3418,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Krav | Hvorfor det ikke kan afvises | |---|---| | Offentliggør regressionen. Iltsvindets årlige udbredelse mod flow-normaliseret belastning, vindarbejde i lagdelingssæsonen og bundvandstemperatur | alle tre serier er allerede offentliggjort af DCE. Det kræver ingen nye data, ingen nye målinger og ingen bevilling | | Udfyld nævneren. Mindst de to tomme rækker, der kan måles med standardmetoder — udsivning af grundvand under havet med radon- og radiumsporing, og intern frigivelse fra sedimentet med bundkamre | begge er rutine i udlandet. Uden en nævner er der ingen procent | | Mål overløbene i hændelser. Flowproportional prøvetagning på de største bygværker, over hændelser af forskellig størrelse | det er videnniveau 5 i Miljøstyrelsens egen skala, med 30 % usikkerhed mod 135 %. Metoden er defineret. Næsten ingen bruger den | | Finansiér marin ekstraktion som virkemiddel, med krav om analyse af høsten | det er det eneste virkemiddel, der fjerner kvælstof, som allerede er i vandet",
      "texts": "109d3712f7ad90ef"
@@ -3439,8 +3446,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "De tre første er krav om *måling*. Det er den stærkeste position, man kan indtage over for et tal, man mener er forkert: forlang ikke, at det ændres — forlang, at det bliver efterprøvet.",
      "texts": "a24f41c61ee82444"
@@ -3467,8 +3474,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This page argues, in Danish and to a Danish agricultural audience, that the evidential chain from the published 69.6% figure to a quantified sector-specific reduction target has three missing links: there is no closed denominator (10 of 20 enumerated nitrogen pathways carry no number), no dose-response behind the oxygen requirement — which is a binary trigger and a judged flat 25%, where chlorophyll and light attenuation do have fitted coefficients — and no detectable movement in the extremes after a 35-year halving of the load. It states explicitly that this does not exonerate agriculture, that multiplying unknown fractions yields an unknown rather than a small one, and that it is not an argument for inaction. It applies the same scrutiny to urban discharge, where the numbers are worse. And it ends with four demands, three of which are demands for measurement rather than for a different answer.",
      "texts": "bd681c4a842ea70f"
@@ -4240,8 +4247,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Everything else on this site works on Danish coastal water and reports what its data supports.",
      "texts": "86b26c34385ce3ef"
@@ -4268,8 +4275,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Danish monitoring produces concentrations. It does not produce images of consequence, and the two are not substitutes.",
      "texts": "b4ace96a5a642a66"
@@ -4299,8 +4306,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Fødevarestyrelsen found PFOS in calf meat at 156, 189 and 230 ng/g, analysed 27 samples across beef, fish, fruit, berries, vegetables and honey, and offered 179 residents a health examination. Every one of those is a measurement of a *concentration* — in the food, and then in the people. Nothing published records what the animals looked like, whether they were examined beyond a meat assay, or what symptoms if any they showed. The exposure was documented as a number in the food chain and never as an effect in an organism.",
      "texts": "ab7b8fe3426d71ba"
@@ -4328,8 +4335,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Parkersburg, 1998–2004, is the counter-case, and it is the reason anyone outside a toxicology department has heard of PFAS at all.",
      "texts": "7e07b6ef8fe67f82"
@@ -4356,8 +4363,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "filmed his own herd over years: more than 150 animals dead one at a time, blackened teeth, tumours, deformities, calves born with white blind eyes, a creek running with foam and a discharge pipe from a DuPont landfill. He made that record himself because no official programme covered what was happening to him.",
      "texts": "c08a00a05a032006"
@@ -4384,8 +4391,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It is also the form of evidence that moves anything. And it is entirely absent from the Danish record — which is this project's recurring finding arriving one layer further out: the thing that is easy to count gets counted, and the thing that would show what it means does not.",
      "texts": "421e8192c8e5ec89"
@@ -4413,8 +4420,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "discovery documents were donated to UCSF's Industry Documents Library — free, fully searchable, two PFAS collections spanning 1961–2006, including the 39 documents used in *The Devil We Know*, alongside the tobacco and opioid archives. The document archive is public. The video archive is not, and remains under copyright into the",
      "texts": "203cef785add445e"
@@ -4441,8 +4448,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Both films licensed the footage, so a rights holder exists and has granted permission before.",
      "texts": "4f9d2df7d8db38d1"
@@ -4469,8 +4476,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The nearest thing here is `viz/log.html`, an offline field logger that records a shore observation in the flood model's own vocabulary — the right shape, at approximately none of the required scale.",
      "texts": "7182030f6cffb96f"
@@ -4497,8 +4504,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It is not Danish, and mostly cannot be. The cases that carry the evidence are elsewhere, and the reason they are elsewhere is itself part of the finding: the exposure had to be extreme and unregulated before anyone was moved to record it.",
      "texts": "41b6e2a60e725a6a"
@@ -4525,8 +4532,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "because it answers the question the rest of the site keeps raising and cannot settle: what would it take for a harm nobody is measuring to become visible at all. That is the same question as `X19` and `X20` in EXPERIMENTS.md, asked at a different scale.",
      "texts": "89d68f8136350595"
@@ -4553,8 +4560,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "discovery documents are routinely donated to public libraries after litigation; film and photographs almost never are, and the reasons are legal rather than scientific.",
      "texts": "57fb0c4f897726e4"
@@ -4581,8 +4588,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "In the known instances it was the affected party, not an institution.",
      "texts": "d16fa6596e750078"
@@ -4609,8 +4616,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The Danish equivalent, which does not exist. No open register of fish kills, no photographic record of a fouled shore, no examination of an affected animal beyond a residue assay.",
      "texts": "1096f6b2ee0febc8"
@@ -4637,8 +4644,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Hand-written. Extracted from `OPEN_PROBLEMS.md` item 9, which now points here. Nothing in this page has been verified beyond what that item already stated, and it should be read as a project outline rather than as findings.",
      "texts": "5db106ea60910dfa"
@@ -5896,8 +5903,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every other instrument in this area asks a regulator to prove a harm that is diffuse by construction.",
      "texts": "b703f546dee0d3b0"
@@ -5924,8 +5931,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "remedies that are all several centuries old and thoroughly litigated.",
      "texts": "81c04655d648dce6"
@@ -5952,8 +5959,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What does not exist is a rule that says *this kind of chemistry may only be placed on the market under a return-bearing title*. Denmark already runs a deposit system for containers, the EU already runs producer responsibility for electronics and batteries, and equipment leasing is a mature industry. The gap is that none of them is keyed to what the substance does when it disperses.",
      "texts": "4fa8e0b8d295506a"
@@ -5981,8 +5988,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "of rubber infill per pitch, migrating continuously; one municipal buyer, one contract, one supplier",
      "texts": "11f1e6f7137d478b"
@@ -6009,8 +6016,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the mechanism exists and is priced nominally rather than at externality. This is the precedent, not the frontier",
      "texts": "bece4e885066519d"
@@ -6037,8 +6044,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The carcass comes back anyway; the wear left on the road while driving is the externality, and no return obligation reaches it.",
      "texts": "db3f28164865b5f8"
@@ -6065,8 +6072,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "abrasion becomes a priced attribute, the way rolling resistance and wet grip already are.",
      "texts": "6d298279618d6595"
@@ -6093,8 +6100,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "which is auditable, dated, and punishable in a way that \"PFAS-free\" on a label currently is not.",
      "texts": "6ddbec77564dc822"
@@ -6122,8 +6129,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is a private regulator that moves in quarters rather than in the years a REACH restriction takes",
      "texts": "b47b6e8e11cdf890"
@@ -6150,8 +6157,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A levy is border-adjustable in a way a product ban is not: an importer posts the liability or does not place the goods. That matters because the substances this project cares about mostly arrive rather than originate.",
      "texts": "f95c07bc747e8257"
@@ -6179,8 +6186,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "none of them is exotic — deposit systems already deal with all three.",
      "texts": "37b422a15a336e61"
@@ -6210,11 +6217,39 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| This page says | Which answers | |---|---| | A levy is a national fiscal instrument | the REACH row: a product ban is harmonised, so no level below the EU can start one | | Unmanaged dispersal costs more than managed destruction, on the day | the industry question: destruction has liability demand and no market demand | | The levy class is keyed to the evolutionary prior | section 5: the same taxonomy already decides the source-control instrument and the disposal route | | Rates and return infrastructure differ by place, on dates | the plurality argument: difference between places is the only thing that makes any of this identifiable | | Declarations become fiscal rather than promotional | the ecolabel argument: a claim nobody audits is not evidence",
      "texts": "8e712dbb903a301e"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD-FEDT",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The farm page called fedtemøg filamentous brown algae.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "b86c6b4",
+    "file": "docs/LANDBRUG.md",
+    "begin": "er en folkelig betegnelse for masseforekomster af løstliggende, trådformede brunalger",
+    "end": "på stranden.",
+    "why": "None of the sources for the definition - Den Store Danske, Den Danske Ordbog, Danish Wikipedia - calls the algae filamentous; the word was added here."
+   },
+   "replaced_by": [
+    "C-LE-FEDT"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "er en folkelig betegnelse for masseforekomster af løstliggende, trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.",
+     "texts": "5fed76d326546aab"
     }
    }
   }

@@ -850,8 +850,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Compares the 2012 flood model - recovered from the PDFs it was published in - against the cloudburst works in the Spildevandsplan.",
      "texts": "7820d3a43d69dc5e"
@@ -879,8 +879,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the sheets also paint 1.31 km² over lakes and the harbour, excluded here",
      "texts": "50ea68b327ba876b"
@@ -907,8 +907,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The plan is aimed correctly and is largely unbuilt: 85% of the modelled flooding has something planned within 200 m of it, and 44% has anything that has actually broken ground. The gap between those two columns is the backlog.",
      "texts": "ddc35f6f2758c646"
@@ -936,8 +936,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "If the sheets were placed wrongly, flooding would land in the harbour at about that rate. It lands there less often than that in every band except 0.2–0.5 m, 0.5–1 m and over 2 m: | Band | Share falling in open water | |---|---:| | 0.05–0.1 m | 10.7% | | 0.1–0.2 m | 12.8% | | 0.2–0.5 m | 25.3% | | 0.5–1 m | 17.6% | | 1–2 m | 7.6% | | over 2 m | 24.1% | FAIL - in 0.2–0.5 m, 0.5–1 m and over 2 m, modelled flooding lands in open water at least as often as open water's own share of the area. For those depths this check gives no evidence that the sheets are placed correctly; the other bands still avoid water.",
      "texts": "df266a4a49cfeed0"
@@ -964,8 +964,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "sits over combined sewer, where stormwater and sewage share one pipe - so that standing water is mixed with sewage. But 81% of the mapped area is combined sewer too, a ratio of 1.15: flooding lands over combined sewer a little more often than its share of the area, and most of the consequence is the plumbing - the inner city is built that way almost everywhere.",
      "texts": "78731fa4cff6a4cb"
@@ -992,8 +992,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The flood model is a 2012 calculation of a 2010 scenario; the plan is from 2018 with later addenda, so this compares two snapshots taken years apart.",
      "texts": "a8befe36e9712b98"
@@ -1020,8 +1020,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The sheets paint depth over lakes and the harbour as well as over land. Those cells are excluded here - water standing on water is not something a cloudburst basin addresses - and reported separately above.",
      "texts": "5da8fa814e5504ac"
@@ -1634,8 +1634,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every figure traces to a source; nothing is estimated.",
      "texts": "d460bf0d6af465a1"
@@ -1662,8 +1662,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "drawn but never described",
      "texts": "652ffa0b37d38b8f"
@@ -1690,8 +1690,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The finding worth keeping: the city draws 262 numbered structures that no page of the statutory plan describes. That is checked against the whole document - the project register plus the 116 appendix, status, target and 'aktuelle projekter' pages - not just the project pages.",
      "texts": "6758385806eebc0c"
@@ -1718,8 +1718,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Rates, not capacity. These say how much water leaves the system each year.",
      "texts": "48fc6e71193255af"
@@ -1746,8 +1746,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "catchments carry sewage and rain in one pipe, which is why heavy rain is what pushes sewage into the harbour.",
      "texts": "7bf63faf2107a4d1"
@@ -1774,8 +1774,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Facts that exist only in prose - depth, diameter, pump capacity - each with a source.",
      "texts": "d405d8117fe2d587"
@@ -1802,8 +1802,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Temporary work shafts at Vodroffsvej/Gammel Kongevej, Halmtorvet/Gasværksvej, Kalvebod Brygge `45-47`. The statutory plan page `K1.57` describes two permanent deep shafts - the counts refer to different things.",
      "texts": "e3807e40fbba57d3"
@@ -1830,8 +1830,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "values appear in the city's own map layers and nowhere in the text of the plan:",
      "texts": "54aed397a58627c4"
@@ -1858,8 +1858,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Depths and diameters come from planning prose, not survey. No open source gives surveyed invert levels for Copenhagen sewers.",
      "texts": "6aeb49e485c7d917"
@@ -2423,8 +2423,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Wind from the Open-Meteo ERA5 archive (1995-01-01 to 2025-12-31, 271,752 hourly records), coastline from OpenStreetMap, everything else computed.",
      "texts": "01981d63b5d1de4f"
@@ -2451,8 +2451,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "In a shallow bay the thing that lifts sediment off the bed is orbital motion under waves, and that follows from wind speed, direction, fetch and depth. Currents redistribute what the waves have already lifted — important, and not done here, because it needs data behind registration.",
      "texts": "ed697d020c0f97a4"
@@ -2479,8 +2479,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The chain: wind → fetch by direction (ray-cast to the OSM coastline) → fetch-limited wave height and period (Young & Verhagen 1996, shallow-water form) → bottom orbital velocity (linear wave theory) → bed shear stress (Swart friction factor) → compared against the critical stress for a living bed and a dead one.",
      "texts": "5ce94359d1bcb521"
@@ -2507,8 +2507,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Fetch: Køge Bugt is a southeast-facing funnel | Wind from | Fetch | |---|---:| | N | 6.5 km | | NE | 7.5 km | | E | 31.8 km | | SE | 120.0 km | | S | 19.3 km | | SW | 17.5 km | | W | 9.5 km | | NW | 5.8 km | Southeast runs to 120 km — the open Baltic approach — against a median of 9 km over the other directions in the table. Southeast is also the onshore direction for the western shore. The bay's longest wave fetch and its stranding direction are the same.",
      "texts": "c21621e0be876f5f"
@@ -2535,8 +2535,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A dead bed resuspends several times more often Critical bed shear stress: 0.1 Pa with no biology, 0.5 Pa with biofilm, tube fauna and eelgrass binding the grains. Same weather, same waves — the only variable is whether the benthos is alive.",
      "texts": "7c8a139ef0c742df"
@@ -2563,8 +2563,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the dead bed resuspends 6.8 times as often as the live one — and the deeper, quieter water is exactly where the fine organic sulphidic mud settles.",
      "texts": "5ff890862a7fd5ae"
@@ -2591,8 +2591,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "There is a name for what that looks like. Under severe oxygen depletion, white filamentous sulphur bacteria (*Beggiatoa*) spread across the bed in milky sheets, oxidising hydrogen sulphide to sulphate using oxygen taken from the water. Danish calls them liglagen — corpse shroud — and they appear in late summer. The mat is the sulphide oxygen sink, visible.",
      "texts": "0a2c135ec60ecc97"
@@ -2620,8 +2620,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That matters because resuspending sulphidic sediment is itself an oxygen sink, with no nitrogen and no algae in it. At 50 µmol acid-volatile sulphide per gram of dry sediment and a dry bulk density of 0.5 g/cm³, stirring 5 cm consumes about 80 g `O₂`/m², against 80 g `O₂`/m² in a 10 m water column holding 8 mg/L. A storm over a dead bed can strip the water on its own. (These are stated values for an illustration, not measurements of Køge Bugt.)",
      "texts": "1492d535ec582de7"
@@ -2648,8 +2648,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Which produces the loop - iltsvind, toxicants or trawling kill the benthos - the erosion threshold falls — the bed becomes loose - storms resuspend more sediment, more often - buried sulphide and metals are re-oxidised and remobilised - resuspended sulphide consumes oxygen; turbidity blocks light - less eelgrass, less benthos — and the threshold falls again",
      "texts": "11d3cbcc7f7bde6a"
@@ -2676,8 +2676,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "An earlier version of this document said the resuspension season coincides with the overflow season. Over 31 years of rainfall it does not: rain intense enough to overflow a combined sewer peaks in June to August, because intensity in Denmark is convective. Resuspension peaks in October to January. See CURRENTS.md — the two are separated by a residence time, not simultaneous, and the sequence is deposit in summer, mobilise in autumn.",
      "texts": "b7d1b3fa253b6bad"
@@ -2704,8 +2704,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Note the ratio column: biology protects most in summer (8.7× in July) and least in a January gale (3.1×). Losing the benthos costs you most in the calm season; in a storm the bed moves regardless.",
      "texts": "6c575fc8d36e365c"
@@ -2732,8 +2732,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Southwest and southeast drive 26% and 26% of the resuspension — but for opposite reasons. Southwesterlies come over 16 km of water; southeasterlies run 89 km. Southwest does the routine work, southeast does the damage, and only southeast pushes toward the shore rather than away from it.",
      "texts": "1336a51af422855c"
@@ -2761,8 +2761,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The accumulation term, which iltsvind does not have Fedtemøg requires the biomass to *pile up somewhere*. A bay that produces the same algae and flushes it out does not get fedtemøg. So retention and stranding are part of the causal chain in a way they never are for oxygen depletion. Wind from roughly 70–200° drives surface water, floating mats and their odour onto the western shore and inland",
      "texts": "bbe72179e146c5be"
@@ -2789,8 +2789,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What changes is what it carries. Warm-and-onshore peaks in August — growth and rotting conditions. Strong-and-onshore peaks in January — the stranding conditions.",
      "texts": "7e1df4804a7dd8eb"
@@ -2817,8 +2817,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Which gives a sequence rather than a single season: mats grow and begin to putrefy in late summer in warm, weakly-mixed water, and are then driven ashore by the first autumn gales. That is one phenomenon with two phases, in two different months, and neither is measured.",
      "texts": "6aab51a14e96e80f"
@@ -2845,8 +2845,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The convergence of wind-driven southward transport against the Baltic outflow is a coherent mechanism for accumulation and would explain why fine sediment and floating material collect in this bay, but it needs current fields that are behind registration. Everything above is wave physics from wind, and says nothing about what arrives from elsewhere.",
      "texts": "42b44e0b38c62c0d"
@@ -2873,8 +2873,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Also absent: any measurement. These are computed exceedance frequencies against literature values for critical shear stress, not observations of sediment moving. The ratio between a live and dead bed is robust; the absolute hours depend on a threshold that varies with mud composition.",
      "texts": "b7678c37403bb1dd"
@@ -3572,8 +3572,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Eelgrass has a requirement, not a preference. Below roughly 11–14% of surface light at the seabed it does not grow slowly — it dies. The Danish light-attenuation target is built on the same number from the other direction: the environmental objective for Kd is derived by assuming eelgrass needs about 14% of surface irradiance at the depth it is supposed to reach. So the indicator and the requirement are two ends of one calculation, and the calculation can be run from the raw record rather than inherited from an assessment.",
      "texts": "b02bdbff76702008"
@@ -3600,8 +3600,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That is the whole eelgrass question in one number per cast, and it is computed from a measurement rather than from a model of a reference condition.",
      "texts": "7c2f47eaa1348cfd"
@@ -3626,8 +3626,8 @@
    "replaced_by": [],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This is the question decades of load reduction are supposed to have answered.",
      "texts": "13efddf10295453a"
@@ -3654,8 +3654,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The second row is the check that matters, and it is the one nobody runs. If a trend appears on all casts but not on the stations measured throughout, it is a trend in where Denmark chose to measure, not in the water — hypothesis `I1` — Changing station network, put to the record rather than asserted.",
      "texts": "fac1de577905f6bb"
@@ -3682,8 +3682,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Every figure above rests on Kd, and Kd is a straight line fitted to the logarithm of light against depth. That fit assumes attenuation is the same all the way down. ODA publishes the measurements the line was fitted to, so the assumption can be checked rather than granted: refit the top half of each profile against the bottom half. 53,468 casts carry enough points to allow it",
      "texts": "0e6037c46dd96d16"
@@ -3712,8 +3712,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The bottom half attenuates less, and the gap closes the deeper the profile begins. That ordering is the whole result. It runs opposite to resuspension — a turbid layer over the bed would make the bottom half steeper, and it does so in only 22–48% of casts, outweighed on average by something else. The something else is that a PAR sensor counts photons across the whole band without distinguishing them, and water absorbs the band unevenly - as an earlier version of this page put it, roughly 0.5 per metre at 700 nm against 0.015 per metre at 450 nm. The red part of the light is gone near the surface, and what continues downward is the fraction water attenuates least. So the apparent broadband Kd falls with depth in perfectly uniform water, purely because the surviving spectrum has shifted. If that is the mechanism, the effect must fade for profiles that begin below the red-absorbing layer, because the red is already gone. It does: the ratio runs from 0.879 for profiles starting at the surface to 0.987 for those starting below 5.1 m, rising overall though not at every step.",
      "texts": "e0ec4e70555d6724"
@@ -3740,8 +3740,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What follows is that Kd measured this way is not a property of the water. It is a property of the water and the depth window jointly. Two casts in identical water, one begun near the surface and one begun deeper, return different numbers. The indicator, the target derived from it, and every figure on this page inherit that.",
      "texts": "598f98233844fa4c"
@@ -3768,8 +3768,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Neither is the true number. They are two answers from one record, separated by a choice nobody documents making.",
      "texts": "c5e3a5f331eab92e"
@@ -3797,8 +3797,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The measurement that would separate the two explanations — spectral attenuation rather than one broadband coefficient — is not made anywhere in the Danish programme. A single number cannot say whether the light stopped because something was in the water or because water is red-absorbing and the sensor started shallow. That is `Z8` — The attenuation budget is never partitioned again, one layer below where it is stated.",
      "texts": "ed31dd50b7152f0e"
@@ -3825,8 +3825,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "ODA is straightforward about this and publishes the flag — `SigtTilBund`, sight-to-bottom — which is the only reason any of this can be checked.",
      "texts": "376b5f74dabbf450"
@@ -3853,8 +3853,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "readings are measurements of bathymetry wearing the units of clarity. From 10 m down it essentially stops happening (0.8%). The censoring is not an error — it is what the instrument does — but it is one-sided: it can only make the water look less clear than it is, never more, and only in the shallows.",
      "texts": "973c1f2517e3ff18"
@@ -3881,8 +3881,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Neither of Denmark's two transparency records is a clean measurement of the water alone — one depends on where the sensor started, the other on how deep the sea is underneath it.",
      "texts": "26c1225db1677d23"
@@ -3909,8 +3909,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It settles the arithmetic, which was never in doubt, and it puts a number on the thing the Kd indicator is a proxy for. What it cannot settle is *why* the light is where it is. Kd is one broadband number and its causes do not separate — phytoplankton, resuspended mineral sediment, coloured dissolved organic matter and drifted detritus all darken water identically at this resolution. That is `Z8`, and it is why a Kd exceedance is attributed to algae by assumption rather than by measurement.",
      "texts": "bb88b2994868506c"
@@ -3937,8 +3937,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "It also cannot see the shading that happens *after* the light has passed through the water. Epiphytes growing on the leaf shade the host at the blade surface, where no water-column measurement reaches (`Z9` — Epiphyte shading, which bypasses the water column), so the nutrient-to-light pathway can operate with every number on this page looking acceptable.",
      "texts": "b3195499a78ba5d3"

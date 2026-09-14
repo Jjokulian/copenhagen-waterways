@@ -1863,7 +1863,7 @@
    "stance": "ours",
    "page": "hypodrafts/B1.md",
    "claim": "It would say nothing about oxygen: this is {ref:B1}'s delivery limb, bearing on {ref:O9}, not {ref:O1}; faecal indicators are not oxygen demand, and they are not the rotting algae that fedtemøg names, so {ref:O2} stays unscored too.",
-   "because": "The register lists those outcomes for the hypothesis; a faecal count measures contamination, not oxygen or algae, and fedtemøg is loose filamentous brown algae.",
+   "because": "The register lists those outcomes for the hypothesis; a faecal count measures contamination, not oxygen or algae, and fedtemøg is loose-lying brown algae.",
    "rests_on": [
     "D-LR-REGISTER",
     "C-PC-CA-FEDT-DEF"
@@ -1872,8 +1872,8 @@
     "C-BA-OLD-B1-O2"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: C-LE-FEDT reread against the rebuilt LANDBRUG wording - 'trådformede' dropped as no source uses it - and now rests on Den Store Danske and Den Danske Ordbog; C-LE-PUBLIC and C-LE-JOIN still hold, their quotations unchanged, the trail now ending in U-PC-FEDT-END; C-BA-B1-NOT-OXYGEN still holds, its reason reworded to the sources' definition; C-LE-OLD-FEDT: passage located in docs/LANDBRUG.md at b86c6b4)",
     "saw": {
      "claim {ref:B1}": "B1: Combined sewer overflow",
      "claim {ref:O9}": "O9: Bathing water failure",
@@ -1884,9 +1884,9 @@
      "hypothesis O1": "8b559c161b2cbb0a",
      "hypothesis O2": "83fca28fa62c98e8",
      "hypothesis O9": "da8652e0ccd1cbe1",
-     "texts": "ac3a257cdbe25b37",
+     "texts": "7e8a821d94bb4445",
      "node D-LR-REGISTER": "2d21a171b8570678",
-     "rests on C-PC-CA-FEDT-DEF": "8ce07057aeb726e0"
+     "rests on C-PC-CA-FEDT-DEF": "6838881ff9c1fdae"
     }
    }
   },
@@ -3397,8 +3397,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That regressor is not a datum — it is a model output (class `7`) driven by rainfall, which drives every rival too, so regressing it on a rainfall-driven response tests rainfall.",
      "texts": "538d42360d2515fa"
@@ -3426,8 +3426,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Faecal indicator is sewage-specific: the typetal put combined overflow at Tot-N 12 mg/l against 2 for separate stormwater.",
      "texts": "ef16ed9a214de2ef"
@@ -3457,8 +3457,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "per-sample E. coli + enterococci, dated | 172,440 DK samples, 2008–2024, 1,437 site ids, ~9,000/yr; 0 nulls; 26,301 at limit of detection; 688 flagged `missingValue` yet carrying a value | `2` LOD censoring; `1` the 688; `6` no clock time | | same, `[timeseries_SeasonalPeriod]` | dated episode log | 1,208 `shortTermPollution` periods (2011–2024), 755 `bathingProhibition` (2017–), 76 `abnormalSituation`, 76 `cyanobacteriaBloom` | `5` — declaration is discretionary | | same, sample flags | — | 1,272 `shortTermPollutionSample`, 1,205 `replacementSample`, 22,912 `preSeasonSample` | `3` — the Directive permits discarding the first and substituting the second, so the compliance statistic drops precisely the overflow samples; the raw table keeps them",
      "texts": "43fa738981375f37"
@@ -3490,8 +3490,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "joins to WISE ids exactly; 1,437 > 1,026 because delisted sites persist | `5` | | `data/raw/spildevand/combined_overflow.geojson` | 4,217 CSOs; `Red areal`, annual volume, `Antal overløb` | `Antal overløb` null for 1,676 of 4,217 (39.7%); volume null 77, zero 719 | `5`; volume itself `7`, unused here | | `data/raw/national/punkt_rbu_udl.geojson` | 19,665 RBU points; `vol_sb`, `vol_fbas` | `vol_sb` non-null 4,068 (2,740 zeros); `vol_fbas` 8,763 (5,771 zeros) | `5` | | the two together | joinable? | 3,712 of 4,130 CSO names match `pkt_navn`; the register disagrees with itself — `OV` 2,812 vs 3,015, `OF` 77 vs 209 — and `UR`, `ikke oplyst` are in no codelist | 4 — schema/vintage conflation",
      "texts": "ef7f072b04ec3ebd"
@@ -3518,8 +3518,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the tail is a unit error, trim above p95 | `1` in the tail",
      "texts": "f57b98ce23361704"
@@ -3547,8 +3547,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "the right source, needs one free API key. Key-free fallback NOAA GHCN-Daily: 16 Danish stations carry PRCP, only three run past 2020 — too sparse. `data/raw/weather/*` and `marine/wind_*` are Open-Meteo reanalysis, not gauges | `7` if reanalysis is substituted",
      "texts": "245c4f9975100eaa"
@@ -3575,8 +3575,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "overflow at national scale does not exist. What does:",
      "texts": "9888b376935843a4"
@@ -3603,8 +3603,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "CC-BY EEA, ~5 MB streamed — fully separate: laboratory counts and municipal declarations, no hydraulic model in the chain.",
      "texts": "34628dfb4435dc59"
@@ -3632,8 +3632,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Vesthimmerlands Forsyning, `/spildevand/overloebsdata` — measured: 11 sensor-instrumented structures, monthly counts and volumes, 2025 plus archive, HTML tables, no API. Inland and tiny, but a real knowledge-level-5 set.",
      "texts": "f896d78e32361b5a"
@@ -3660,8 +3660,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "(DHI/HOFOR) — ingests measured overflow on a ~10-minute cycle; host did not resolve from here, archive not known public. The highest-value fetch for",
      "texts": "4e64fd206e466502"
@@ -3688,8 +3688,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "live, undocumented. Same production path, but would carry the per-structure *knowledge level* (TA DP02 0–5) that names an instrumented subset.",
      "texts": "6820d886d6cf046a"
@@ -3718,8 +3718,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Standardiseret bestemmelse af overløb* — national overflow uncertainty ~110%, reducible to ~50% for 20–40 M DKK/yr; the citation for class 7, not data. Waterbase-UWWTD is agglomeration-annual, class 3 and 7. MiljøGIS `vp3basis2019` WFS now 404s — the repo's own fetch path is dead.",
      "texts": "75a63acb9e2c41e5"
@@ -3746,8 +3746,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "delivery limb (`O9`, weakly `O2`), not `O1`; faecal indicators are not COD, so the oxygen claim stays unscored.",
      "texts": "325de6297af85f89"
@@ -3774,8 +3774,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "crews avoid storms, and a replacement sample supersedes a short-term-pollution one — which attenuates toward zero, so a positive result survives it but a null does not license \"no effect\".",
      "texts": "f6ca7e89286f7f5c"
@@ -3802,8 +3802,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "That combined systems deliver sewage-specific contamination to the shore, event-timed, near their outfalls, across 17 seasons and ~1,000 sites — and via `C2` that the timing is set by storage, not weather alone. It separates `B1` from `B2` on a signature rather than a shared driver, and falsification is equally available and cheap.",
      "texts": "2218653bcdff165b"
@@ -3830,8 +3830,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Smallest improvement: the Copenhagen Badevandsudsigten measured-overflow archive, or the per-structure knowledge level from the PULS API. Either converts a structural proxy into an instrumented subset and moves the exposure out of error class",
      "texts": "8291863b5ab8ef14"
@@ -3858,8 +3858,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "What can be tested is its precondition. The 69.6% is a residual, and a residual cannot be validated against itself (`../RESIDUAL.md`, which states the growth test at line 111). This drafts that growth test against the archive, which turns out to be obtainable.",
      "texts": "3937ff4e248efc3f"
@@ -3886,8 +3886,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The unverified claim — that DK-QNP, covering the ungauged half of Denmark, takes the national field nitrogen surplus as an input — is correct, and DCE state it.",
      "texts": "439df3078058c40d"
@@ -3914,8 +3914,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "A farming statistic is an input to the model generating the diffuse load over ~51% of the country, and its correlation with that load is then reported as evidence — error class 7, model-as-datum, exactly.",
      "texts": "b9b603003fb79c95"
@@ -3946,8 +3946,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "| Source | Verified here | Error class | |---|---|---| | DCE `Vandløb . NOVANA`, `https://dce2.au.dk/pub/SR.pdf` | SR353 = Vandløb 2018, 8.7 MB, text-extractable: `pdftotext -layout` yields 172,210 chars; `pdfinfo` shows Distiller 19.0, 2019-12-02. SR527 (Vandløb 2021) and SR532 share the URL shape | 2, published to 2 s.f. | | SR353 figures | 2018 land→coast ≈ 50.000 t N/yr, point sources ≈ 5.200 t N/yr; 209 coastal stream stations plus a model for the rest; 240 discharge gauges in the 1990-2018 run; field surplus 186.000–240.000 t N over five agrohydrological years | 7, then 2 | | `data/raw/national/hovedoplande.geojson` | 24 features, including `DK` *\"Int vidå-kruså\"* beside `DK4.1` *\"Vidå-kruså\"* — a transboundary catchment named as such | 6, no foreign-inflow term | | `docs/data/areas/stations_series.json` | 679,422 station-months (summed over 9 variables, 60,460 … 84,668), 1,415 stations, 564 months from 1980. No nutrients | 3 | | `data/raw/oda/ctd.csv.gz` | 448,723,078 bytes, 34 columns; first 40 MB compressed = 5,391,122 rows ⇒ ~1.35×10⁵ rows per compressed MB ⇒ 5–6×10⁷ total, consistent with the stated",
      "texts": "746c70e2dc09fe03"
@@ -3974,8 +3974,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Falsified if: R does not move; R moves by materially less than P; or the total T moves instead. Any of the three means the published share is not a share of anything.",
      "texts": "42b8af780c199849"
@@ -4002,8 +4002,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Use the actual (aktuel) series, never the climate-normalised one: normalisation is a model applied to the total (SR353 records it running 1% above actual over 1990-2017), so it moves T by itself and would contaminate the third failure mode.",
      "texts": "e406b3bf38cba983"
@@ -4030,8 +4030,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "SR353 and SR527 confirmed) — ~12 PDFs, ~8 MB each, streamed to disk, then",
      "texts": "4004df6538e61488"
@@ -4059,8 +4059,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "SR353 declares two unprompted: a new regional bias correction of DK-QNP monthly loads (\"Bias-korrektionen … er ny i forhold til de foregående år\"), and a correction of TN and TP measured 2016–Apr 2017 by a wrong analytical method, plus a smaller one for 2007-2014. Each is a candidate *P* with a stated year.",
      "texts": "a6bb95ae71142dc2"
@@ -4087,8 +4087,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "single failure of the third kind — T moving with R — licenses the opposite and stronger one: the share is circular.",
      "texts": "46043e7a3bf044ed"
@@ -4115,8 +4115,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Nor whether \"Denmark\" is a closed box — the account carries no foreign-inflow term though the national catchment layer names the transboundary unit outright.",
      "texts": "a881f95d01e36bd1"
@@ -4144,8 +4144,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "ODA `vandkemi` is not fetchable by `scripts/fetch_oda.py` as it stands. `TOPICS` holds five keys — `stations`, `ctd`, `lys`, `iltkor`, `maaledybde` — and `argparse(choices=sorted(TOPICS))` rejects `kemi`: the docstring advertises the topic, the dict does not implement it. Missing is one `Emne__` node id, discoverable with the `expand()` helper already in the file.",
      "texts": "c7c60bef235cbc8f"
@@ -4172,8 +4172,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Size, estimated and not measured: vandkemi is bottle samples, a few depths × tens of parameters per visit, against CTD's hundreds of depth bins × 9 — so one to two orders of magnitude fewer rows than ctd's ~5×10⁷: 10⁶–10⁷ rows, roughly 10–100 MB gzipped, streamed in 64 KB chunks under the existing `--max-mb 2000` guard. Not a multi-GB job. I did not run it.",
      "texts": "56c73c25a7cd874e"
@@ -4200,8 +4200,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Substituting it for a land load commits the very class-7 error this hypothesis stands charged with.",
      "texts": "b3087c0958964db5"
@@ -4228,8 +4228,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "This test came out of a question about `A1` and is written here because it is more specific than the hypothesis it serves:",
      "texts": "7a24e340a9de0ee9"
@@ -4259,8 +4259,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "contains at least two components that no field produced: - 1999 — the nitrogen norm was cut 10%, dropping the quota ~40,000 t N, while grass norms changed simultaneously, raising it ~15,000 t N. DCE's own report calls the result a *\"spring\"* in the compiled series. - 2012 — the method for computing nutrients removed at harvest changed from dry-matter yield to feed units, and the net-input figures *\"er steget lidt ift. de tidligere opgørelser.\"* Both are administrative events on known dates with no physical counterpart.",
      "texts": "fd12239cb899154c"
@@ -4287,8 +4287,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "already report significant linear relations between N surplus and normalised diffuse load in nine of ten catchments, over 1990–2009. They fit one line per catchment over the whole window and never ask whether it holds in both halves — and that window straddles",
      "texts": "5b6061c93229cde6"
@@ -4318,8 +4318,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "recomputed each vintage | public PDFs, `pdftotext`-extractable | | annual N surplus per catchment | Windolf et al. (2012) supplementary B | with the paper | | normalised diffuse load per catchment | Windolf et al. (2012); DCE annual reports | published | | estuary total N, measured | national monitoring 1989–, 12–46 samples/yr | the independent terminal series | | stream N, gauged fraction | fortnightly total-N × daily discharge | measured; 22–87% of area by catchment",
      "texts": "cc79f3690a00d1be"
@@ -4346,8 +4346,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Estuary N is the cleanest series available and is class 1–2 throughout.",
      "texts": "3191f3d16f83c948"
@@ -4375,8 +4375,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Two further controls, both cheap: - Placebo dates. Fit the same break test at every year 1993–2006. If 1999 is not distinguished from its neighbours, there is no step to find. - Gauged-fraction stratification. The circular component scales with the modelled share, so the effect should be strongest at Isefjord (22% gauged) and weakest at Randers (87%). That gradient is a prediction no rival explanation makes.",
      "texts": "633f15a576f3aaa4"
@@ -4403,8 +4403,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "Windolf's measured estuary nitrogen fell 24–62% regardless, and the intercept of those regressions lands on independently measured background. Both things can be true: the construction is partly administrative, and the decline is real.",
      "texts": "db5b49477e7fb117"
@@ -4431,8 +4431,8 @@
    ],
    "rests_on": [],
    "confirmed": {
-    "on": "2026-09-13",
-    "by": "Claude (second confirmation, 2026-09-13, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
     "saw": {
      "said on ARCHIVE.md": "The catchment-level series are in a paper supplement and DCE annual reports; neither has been extracted. Nothing here has been computed.",
      "texts": "2a10e4a764cca762"

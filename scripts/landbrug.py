@@ -260,8 +260,8 @@ def render():
 
     # ---------------------------------------------------------------- 3
     a("## 3. Tre led mangler mellem tallet og skaden\n")
-    a(C("C-LE-FEDT", "*Fedtemøg* er en folkelig betegnelse for masseforekomster af løstliggende, "
-        "trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.") + " "
+    a(C("C-LE-FEDT", "*Fedtemøg* er en folkelig betegnelse for masseforekomster af løstliggende "
+        "brunalger, som kan ligge og rådne i vandkanten og på stranden.") + " "
       + C("C-LE-PUBLIC", "I den offentlige debat, som projektet har fastholdt, knyttes fedtemøg og "
           "iltsvind til landbrugets kvælstof. Den danske Wikipedia-artikel om fedtemøg skriver, at "
           "forekomsten ved danske kyster *”skyldes især landbrugets udledning af kvælstof”*, og "

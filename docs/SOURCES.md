@@ -1815,7 +1815,7 @@ Joins the sibling project's livestock register, declared field parcels, CVR mast
 <a id="K-FARM-LANDBRUG"></a>
 ### Counts and constants the Danish-language page derives itself
 
-`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared), 2026-09-13
+`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **stale: scripts/landbrug.py changed since it was read** · read by Claude (2026-09-13: since the last reading scripts/landbrug.py gained four claim sentences at the top of render() - C-LE-LEFTOVER, C-LE-TOP-DENOM, C-LE-TOP-CHAIN, C-LE-FIX - page text only; the computation of n_pathways, n_unquantified, agri_pct, c_per_n and c_per_cod is unchanged, so every field reads as declared), 2026-09-13
 
 Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.
 
