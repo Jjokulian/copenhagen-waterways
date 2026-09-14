@@ -259,11 +259,11 @@
     "data/derived/light.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: meta_facts.py no longer writes pathways_total and pathways_unquantified - the pages take them from scripts/pathways.py and the two fields are no longer declared; every other field is computed as before)",
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
     "on": "2026-09-14",
     "saw": {
      "data/derived/enums.json": "d6e860d36c583106",
-     "data/derived/hypotheses.json": "bf741395d16fdb52",
+     "data/derived/hypotheses.json": "1bc365774f8ce208",
      "data/raw/_manifest.json": "7dc01d09bebb357f",
      "data/raw/plan_projects.json": "3a35c90af6192df5",
      "data/raw/vp3_basis_2019_punkt_rbu_udl.geojson": "b2b949376e93ee05",

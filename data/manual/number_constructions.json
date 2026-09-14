@@ -1492,12 +1492,12 @@
     "docs/hypodrafts/K1.md"
    ],
    "confirmed": {
-    "by": "Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
+    "on": "2026-09-14",
     "saw": {
      "scripts/rescore.py": "7bbddbd8f771e443",
      "data/raw/oda/kemi.csv.gz": "5040073b78eea3d3",
-     "docs/HYPOTHESES.md": "4ece3f8f0ef80d64",
+     "docs/HYPOTHESES.md": "d8473add0b439221",
      "docs/hypodrafts/K1.md": "aa8553e22bf51878"
     }
    }

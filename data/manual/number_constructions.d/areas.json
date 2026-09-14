@@ -479,10 +479,10 @@
     "data/derived/hypotheses.json"
    ],
    "confirmed": {
-    "by": "fork w2-hyp (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long, with every id and title unchanged; what changed is text inside entries. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
+    "on": "2026-09-14",
     "saw": {
-     "data/derived/hypotheses.json": "bf741395d16fdb52"
+     "data/derived/hypotheses.json": "1bc365774f8ce208"
     }
    }
   }

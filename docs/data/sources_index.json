@@ -5,8 +5,8 @@
     "Each list entry is one mechanism, or one group."
    ],
    "confirmed": {
-    "by": "fork w2-hyp (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long, with every id and title unchanged; what changed is text inside entries. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/hypotheses.json",
    "gaps": [],
@@ -2073,8 +2073,8 @@
     "A station's series position is where its samples were taken."
    ],
    "confirmed": {
-    "by": "fork w2-hyp (written against _layer_counts(), _daylight() and _sign_flips() in hypotheses.py and sun_events() in daylight.py; the counts match the fetched layers' features and the day lengths and distances were recomputed by hand. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/hypotheses_evidence.json",
    "gaps": [
@@ -2118,8 +2118,8 @@
     "Equal date strings mean the record states a single visit. A record could state a genuine one-day lifespan; nothing in the register distinguishes that."
    ],
    "confirmed": {
-    "by": "fork w2-hyp (re-read hypotheses.py: _register_facts(), which writes the register fields this declares, is identical to the version before this change, verified by diff; the evidence file gained layer counts, solstice day lengths and sign-flip geometry, declared in K-HY-EVIDENCE. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/hypotheses_evidence.json",
    "gaps": [
@@ -2847,7 +2847,7 @@
     "One reference point stands for the city for the solstice examples."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: meta_facts.py no longer writes pathways_total and pathways_unquantified - the pages take them from scripts/pathways.py and the two fields are no longer declared; every other field is computed as before)",
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/meta_facts.json",
@@ -4437,8 +4437,8 @@
     "Si:DIN, rather than Si to total nitrogen, is the ratio the hypothesis concerns."
    ],
    "confirmed": {
-    "by": "Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/rescore.json",
    "gaps": [
@@ -19463,10 +19463,10 @@
   },
   "F-03924c3609": {
    "code": {
-    "file": "scripts/pages/grundlaget.py",
-    "first": 85,
-    "line": 91,
-    "text": "    parts = re.split(r\"(\\d[\\d.,]*\\d|\\d)\", shown)\n    if len(parts) > 3:\n        return \"\".join(R(sid, p, phrase) if i % 2 else p for i, p in enumerate(parts))\n    missing = _nums(shown) - _nums(phrase)\n    if missing:\n        raise live.Unjustified(f\"{sid}: '{shown}' is not in the phrase '{phrase}'\")\n    return claims.resolve(CL, \"{read:%s:%s|%s}\" % (sid, shown, phrase), _cache)[0]\n\n\ndef rval(sid, value, phrase):"
+    "file": "scripts/hypotheses.py",
+    "first": 77,
+    "line": 83,
+    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -19494,10 +19494,10 @@
     }
    ],
    "synthetic": false,
-   "value": "0.6",
+   "value": 0.6,
    "where": [
-    "scripts/pages/grundlaget.py",
-    91
+    "scripts/hypotheses.py",
+    83
    ]
   },
   "F-0393f1a1d4": {
@@ -43229,10 +43229,10 @@
   },
   "F-174fa66b89": {
    "code": {
-    "file": "scripts/pages/hypodraft_i3.py",
+    "file": "scripts/hypotheses.py",
     "first": 77,
     "line": 83,
-    "text": "        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \"\n        \"water-chemistry samples whose clock is an observed time rarely visit night or \""
+    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -43281,7 +43281,7 @@
    "synthetic": false,
    "value": 17.103,
    "where": [
-    "scripts/pages/hypodraft_i3.py",
+    "scripts/hypotheses.py",
     83
    ]
   },
@@ -48028,10 +48028,10 @@
   },
   "F-1acb8bcb68": {
    "code": {
-    "file": "scripts/pages/hypodraft_f3.py",
-    "first": 151,
-    "line": 157,
-    "text": "        \"stations under the portal's default period than with a period set.\") + \" \"\n      + C(\"C-AF-F3-FITTED\", \"Use the per-transect observed depth limit, never an indicator's \"\n          \"fitted one: a fitted depth limit is a model output, and testing a model's output \"\n          \"against its own input tests the model.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-REG\", f\"`data/raw/oda/stations.csv`, the ODA station register, holds \"\n        f\"{reg['rows']:,} records for {reg['stations']:,} stations, \"\n        f\"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run \"\n        f\"from {reg['first_date']} to {reg['last_date']}.\") + \" \"\n      + C(\"C-AF-F3-IDS\", f\"The register carries only {ev['series_stations_in_register']:,} of \""
+    "file": "scripts/hypotheses.py",
+    "first": 77,
+    "line": 83,
+    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -48080,8 +48080,8 @@
    "synthetic": false,
    "value": 6288,
    "where": [
-    "scripts/pages/hypodraft_f3.py",
-    157
+    "scripts/hypotheses.py",
+    83
    ]
   },
   "F-1acf833585": {
@@ -68342,10 +68342,10 @@
   },
   "F-2ad04809f0": {
    "code": {
-    "file": "scripts/pages/hypodraft_i3.py",
+    "file": "scripts/hypotheses.py",
     "first": 77,
     "line": 83,
-    "text": "        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \"\n        \"water-chemistry samples whose clock is an observed time rarely visit night or \""
+    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -68394,7 +68394,7 @@
    "synthetic": false,
    "value": 6.902,
    "where": [
-    "scripts/pages/hypodraft_i3.py",
+    "scripts/hypotheses.py",
     83
    ]
   },
@@ -85154,10 +85154,10 @@
   },
   "F-36b30a135c": {
    "code": {
-    "file": "scripts/pages/hypodraft_i3.py",
-    "first": 76,
-    "line": 82,
-    "text": "        \"worst-month value — is an order statistic of the draws. Its expectation moves with \"\n        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \""
+    "file": "scripts/hypotheses.py",
+    "first": 77,
+    "line": 83,
+    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -85206,8 +85206,8 @@
    "synthetic": false,
    "value": 55.0,
    "where": [
-    "scripts/pages/hypodraft_i3.py",
-    82
+    "scripts/hypotheses.py",
+    83
    ]
   },
   "F-36be190051": {
@@ -150710,8 +150710,8 @@
   "F-69b4510b42": {
    "code": {
     "file": "scripts/hypotheses.py",
-    "first": 3725,
-    "line": 3731,
+    "first": 3730,
+    "line": 3736,
     "text": "    a(\"# The field of hypotheses\\n\")\n    a(\"Showing that a claim rests on poor grounds reduces its political \"\n      \"actionability. It does not show the claim is wrong, and it does not tell you \"\n      \"what is right. So this page does the other thing: it enumerates the \"\n      \"mechanisms that could produce the outcomes below, all of them stated at full \"\n      \"strength, so that each can be related to the same evidence and scored.\\n\")\n    a(f\"**{VALUES['n_hypotheses']} mechanisms in {VALUES['n_groups']} groups.** No entry here is the \"\n      \"subject of the page and the rest its alternatives. The grouping is \"\n      \"alphabetical for reference, which is an ordering and not a ranking; the \"\n      \"letters carry no priority, and `A1` is first for the same reason `Z8` is \""
    },
    "constructions": [
@@ -150750,7 +150750,7 @@
    "value": 17,
    "where": [
     "scripts/hypotheses.py",
-    3731
+    3736
    ]
   },
   "F-69b813826e": {
@@ -155693,8 +155693,8 @@
   "F-6de7e5976b": {
    "code": {
     "file": "scripts/hypotheses.py",
-    "first": 4540,
-    "line": 4546,
+    "first": 4545,
+    "line": 4551,
     "text": "    \"\"\"HYPOTHESIS_DATA.md: what the data holds that bears on each hypothesis. A\n    hypothesis says how things might work and carries no measurement; the counts,\n    shares and published figures that bear on one are here, each a checked claim,\n    and each hypothesis's Needs links to its section.\"\"\"\n    title = {h: t for h, _, t, *_ in rows}\n    title.update({i: nm for i, nm, _ in OUTCOMES})\n    v = lambda k, f=\"\": format(VALUES[k], f)\n    C = live.claim\n    o = []\n    a = o.append"
    },
    "constructions": [
@@ -155746,7 +155746,7 @@
    "value": 11.399999999999999,
    "where": [
     "scripts/hypotheses.py",
-    4546
+    4551
    ]
   },
   "F-6decb62c26": {
@@ -174609,8 +174609,8 @@
   "F-7cc847c6a4": {
    "code": {
     "file": "scripts/hypotheses.py",
-    "first": 3747,
-    "line": 3753,
+    "first": 3752,
+    "line": 3758,
     "text": "      \"separate it from its neighbours. Where that measurement does not exist in \"\n      \"Denmark, the entry says so — a hypothesis nobody can test is not thereby \"\n      \"false, it is **unranked**, and a ranking that omits its unranked members is \"\n      \"a ranking of what was convenient to measure.\\n\")\n\n    a(\"## This list is not exhaustive, and we have no way to know how far off it is\\n\")\n    a(f\"There are {VALUES['n_hypotheses']} entries below. That number should not be read as a \"\n      \"decomposition of the problem, and the field should not be read as closed.\\n\")\n    # the register's own growth is the evidence that it is incomplete, so this is a\n    # historical claim - the one place on the page that may quote its past"
    },
    "constructions": [
@@ -174649,7 +174649,7 @@
    "value": 166,
    "where": [
     "scripts/hypotheses.py",
-    3753
+    3758
    ]
   },
   "F-7ccad751a5": {
@@ -249649,8 +249649,8 @@
   "F-b5b1f7dcbe": {
    "code": {
     "file": "scripts/hypotheses.py",
-    "first": 4540,
-    "line": 4546,
+    "first": 4545,
+    "line": 4551,
     "text": "    \"\"\"HYPOTHESIS_DATA.md: what the data holds that bears on each hypothesis. A\n    hypothesis says how things might work and carries no measurement; the counts,\n    shares and published figures that bear on one are here, each a checked claim,\n    and each hypothesis's Needs links to its section.\"\"\"\n    title = {h: t for h, _, t, *_ in rows}\n    title.update({i: nm for i, nm, _ in OUTCOMES})\n    v = lambda k, f=\"\": format(VALUES[k], f)\n    C = live.claim\n    o = []\n    a = o.append"
    },
    "constructions": [
@@ -249717,7 +249717,7 @@
    "value": 256,
    "where": [
     "scripts/hypotheses.py",
-    4546
+    4551
    ]
   },
   "F-b5b78b96fb": {

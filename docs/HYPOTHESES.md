@@ -839,7 +839,7 @@ Desert vegetation traps sand and concentrates nutrients into mounds with barren 
 
 **Discriminated by.** Spatial variance of fauna and organic matter, not their mean. A mosaic and a homogenised flat can share a mean and differ completely in variance.
 
-**Needs.** Fauna sampled with enough spatial replication to estimate variance within an area. Present design gives one grab per station.
+**Needs.** Fauna sampled with enough spatial replication to estimate variance within an area. The monitoring already takes replicate grabs at a station, each with its own position, so variance within a station can be computed from ODA's bottom-fauna topic; variance across an area also needs enough stations in it.
 
 ### [D10](HYPOTHESES.md "Winnowing and armouring") — Winnowing and armouring
 
@@ -2257,7 +2257,7 @@ Sulphide precipitates FeS, removing the iron oxides that bind phosphate in oxic 
 
 **Discriminated by.** Sediment Fe:S and Fe:P ratios against phosphate release rate.
 
-**Needs.** Sequential iron and sulphur extraction on sediment. Not routine now - but not never: the national method of 1998 (TA kap. 14) measured the sulphide buffer capacity and the oxidised iron in the buffer zone, with results for 1998–2003, and was then dropped; today's ODA sediment topic carries no iron. See [`openproblems/R6.md`](openproblems/R6.md).
+**Needs.** Sequential iron and sulphur extraction on sediment. Not routine now - but not never: the national method of 1998 (TA kap. 14) measured the sulphide buffer capacity and the oxidised iron in the buffer zone, with results for 1999–2003 (SR323). The sulphide front was still recorded at open-water stations in 2005–2015, and sediment organic matter and nitrogen were measured again in 2017–2018, but no later buffer-capacity or iron results have been found, and today's ODA sediment topic carries no iron. See [`openproblems/R6.md`](openproblems/R6.md).
 
 ### [R7](HYPOTHESES.md "Estuarine flocculation deposits river carbon at the coast") — Estuarine flocculation deposits river carbon at the coast
 

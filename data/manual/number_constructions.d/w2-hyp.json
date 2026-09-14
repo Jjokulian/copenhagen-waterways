@@ -96,10 +96,10 @@
     "docs/data/areas/flags.json"
    ],
    "confirmed": {
-    "by": "fork w2-hyp (written against _layer_counts(), _daylight() and _sign_flips() in hypotheses.py and sun_events() in daylight.py; the counts match the fetched layers' features and the day lengths and distances were recomputed by hand. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/hypotheses.py": "c5c1c6b1bb14e174",
+     "scripts/hypotheses.py": "63c8933691f65e08",
      "scripts/daylight.py": "84c11f42cb7e2cab",
      "docs/data/areas/flags.json": "bc135e9dd068497f"
     }

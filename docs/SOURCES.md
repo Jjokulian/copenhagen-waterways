@@ -1165,7 +1165,7 @@ Where a number came from is not the same as why it should be believed. Each decl
 <a id="K-AREAS-HYPCOUNT"></a>
 ### The size of the hypothesis register
 
-`K-AREAS-HYPCOUNT` · covers data/derived/hypotheses.json · **current** · read by fork w2-hyp (re-read: hypotheses.json still has a hypotheses list and a groups list, 166 and 17 long, with every id and title unchanged; what changed is text inside entries. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-AREAS-HYPCOUNT` · covers data/derived/hypotheses.json · **current** · read by Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files), 2026-09-14
 
 The number of mechanisms and groups in the hypothesis register, read as the length of its lists.
 
@@ -2112,7 +2112,7 @@ The page's own tally of DCE's Tabel 3: how many indicator-models DCE fitted, the
 <a id="K-HY-EVIDENCE"></a>
 ### Layer counts, solstice day lengths and the sign-flip geometry the hypotheses page computes
 
-`K-HY-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by fork w2-hyp (written against _layer_counts(), _daylight() and _sign_flips() in hypotheses.py and sun_events() in daylight.py; the counts match the fetched layers' features and the day lengths and distances were recomputed by hand. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-HY-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Facts the hypotheses page and its data page state about the national layers, the length of the day at the solstices, and the flagged sign-flip stations.
 
@@ -2132,7 +2132,7 @@ Facts the hypotheses page and its data page state about the national layers, the
 <a id="K-HYPOTHESES-EVIDENCE"></a>
 ### What the hypothesis register states about itself and the station register
 
-`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by fork w2-hyp (re-read hypotheses.py: _register_facts(), which writes the register fields this declares, is identical to the version before this change, verified by diff; the evidence file gained layer counts, solstice day lengths and sign-flip geometry, declared in K-HY-EVIDENCE. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-HYPOTHESES-EVIDENCE` · covers data/derived/hypotheses_evidence.json · **current** · read by Claude (2026-09-14: scripts/hypotheses.py carries two corrected sentences, approved by the owner - D9's sampling design and R6's measurement history - with no number added; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the entries and groups of the hypothesis register as it is written, and two facts about the ODA station register that entry `I1` states: how many series stations the register carries, and on how many of its records the start date is the end date.
 
@@ -2479,7 +2479,7 @@ Classifies each sheet's pixels into the six painted depth classes and converts p
 <a id="K-META-FACTS"></a>
 ### Small counts and solstice elevations for the overview pages
 
-`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-14: meta_facts.py no longer writes pathways_total and pathways_unquantified - the pages take them from scripts/pathways.py and the two fields are no longer declared; every other field is computed as before), 2026-09-14
+`K-META-FACTS` · covers data/derived/meta_facts.json · **current** · read by Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files), 2026-09-14
 
 Counts over files other scripts or fetches wrote, file sizes on disk, and three solar elevations at a fixed point in Copenhagen, stored so that the overview pages can print them live instead of typing them.
 
@@ -3221,7 +3221,7 @@ A value as an external document states it, confirmed to be present in the docume
 <a id="K-RESCORE"></a>
 ### Yearly median surface Si:DIN ratio
 
-`K-RESCORE` · covers data/derived/rescore.json · **current** · read by Claude (re-read rescore.py after my edit: A5's still-missing list now names volume transport at the Belt and Sound sections, as A5's own Needs line asks and the source register finds no open series; the salinity key takes promille, the unit the extract carries; a docstring and a comment lost typed counts. The matrix logic and every test are unchanged - the tests read no salinity and select no hypothesis by class. 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-RESCORE` · covers data/derived/rescore.json · **current** · read by Claude (2026-09-14: data/derived/hypotheses.json and docs/HYPOTHESES.md changed only in two sentences of D9's and R6's text, corrected with the owner's approval; the number of hypotheses, their groups and every field this construction counts are unchanged, checked against the files), 2026-09-14
 
 After an availability matrix for the hypotheses that were blocked on the water-chemistry fetch, the script computes, for hypothesis `K1` (silicon depletion and the diatom-to-flagellate shift in `docs/HYPOTHESES.md`), the yearly distribution of the surface molar Si:DIN ratio: its median and its share below one. It computes only the nutrient driver; the phytoplankton-community response it is meant to drive is not held.
 
