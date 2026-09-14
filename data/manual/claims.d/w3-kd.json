@@ -1304,12 +1304,12 @@
     "C-KD-OLD-D7-LYS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-kd (read each D7 sentence against its claim, reasoning and what it rests on: light.json Secchi bands and casts, ds_facts.json flags, drafts_b_counts.json panel, easting and seabed classes, waves.json and waves.py, enums.json, hypodraft_ctd.json and hypodraft_facts.json counts, the pinned Copernicus and Open-Meteo phrases, the source register, fetch_oda.py TOPICS and the maaledybde and lys headers; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on hypodrafts/D7.md": "**Second response.** `lys.csv.gz` holds 2,370,091 records of light-attenuation profiles (`LyssvaekkelsesKoefficient`, K_d) at 566 stations with a position; this project's light analysis counts 62,741 casts in them with a positive K_d and a date, and its growing-season casts run from 1980 to 2026.",
      "texts": "3f76222193250e20",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-LR-LIGHT": "d13e75be5b44c526",
      "node X-LR-LIGHT": "3ab43ea609543b4d"
     }

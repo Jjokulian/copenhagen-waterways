@@ -741,8 +741,8 @@
     "X-KP-HYPFACTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "**The panel.** `docs/data/areas/stations_series.json`, the monthly panel this project analyses, holds 679,422 station-months across its 9 variables at 1,415 stations, over 564 months from 1980: one median per station, month and variable, so a station-quarter built from it is a median of medians. Near-bed oxygen (`oxy_bed`) fills 76,980 station-months and near-surface oxygen (`oxy_surf`), the placebo, 76,963.",
      "texts": "92cc41e710d458b3",
@@ -750,7 +750,7 @@
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
      "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -956,13 +956,13 @@
     "D-KD-DBCOUNTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "The layer is compiled from surveys at map scales whose denominators, in the `scale` field, run from 5,000 to 500,000, with 7 polygons at the finest scale and 7 at the coarsest, so boundary precision is not uniform.",
      "texts": "f40ada8da88255f9",
      "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
@@ -1000,14 +1000,14 @@
     "C-DZ-OLD-D1-POSITION"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dz (read each D1 sentence against its claim, reasoning and what it rests on: drafts_b_counts.json panel and seabed counts, hypodraft_facts.json scale range, first year and CTD size, enums.json Klorofyl a, partition_contiguous.json knn floor and partition_contiguous.py, the CTD header, the pinned figshare and HELCOM metadata records, the source register and the scripts searched; the design values are stated choices; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "**Depth and position.** The CTD extract, `data/raw/oda/ctd.csv.gz` (448.7 MB compressed), has columns beside each station's coordinates (`X_UTM32`, `Y_UTM32`) for the depth (`Dybde (m)`) and the position (`MålingX_UTM32`, `MalingY_UTM32`) of each measurement row, so one streamed pass can place each cast in the c-square it was taken in, with its depth.",
      "texts": "960e2cf765fde6e0",
      "node D-DZ-CTDHEAD": "2077016bbbc85a12",
      "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -1620,13 +1620,13 @@
     "C-DZ-OLD-Z8-LYS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-dz (read each Z8 sentence against its claim, reasoning and what it rests on: enums.json Parameter, Enhed and SondeNr counts with the unit totals matched, light.json casts, geometry ratios and start-depth medians, hypodraft_facts.json and hypodraft_ctd.json counts, the lys and CTD headers, cube.json, matchup.py and matchups.json, the pinned TA M06, Copernicus, CEDA, NASA and Goncalves-Araujo texts, the fDOM and turbidity pins, the source register and HYPOTHESES.md at 00a157f; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on hypodrafts/Z8.md": "**Light profiles.** `lys.csv.gz` holds 2,370,091 records at 566 stations with a position; this project's light analysis counts 62,741 casts in it with a positive Kd and a date, 60,697 of them with a fit correlation of at least 0.9 or none reported.",
      "texts": "3ca60cd8c6692f3a",
      "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-LR-LIGHT": "d13e75be5b44c526",
      "node X-LR-LIGHT": "3ab43ea609543b4d"
     }

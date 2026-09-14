@@ -141,18 +141,6 @@ def enums():
             "supplier_values": len(e["DataleverandørNavn"])}
 
 
-def hazardous():
-    """The national river-basin-specific-pollutant status network: its stations,
-    by the kind of water body they belong to, and how many measure sediment."""
-    fs = json.load(open(os.path.join(RAW, "national", "sw_mfs_tilstand.geojson"),
-                        encoding="utf-8"))["features"]
-    p = [f["properties"] for f in fs]
-    body = lambda x, pre: (x.get("eusurfacew") or "").startswith(pre)
-    return {"total": len(p), "sediment": sum(x.get("maaltsedim") == "Ja" for x in p),
-            "lake": sum(body(x, "DKLAKE") for x in p), "river": sum(body(x, "DKRIVER") for x in p),
-            "coast": sum(body(x, "DKCOAST") for x in p)}
-
-
 def sign_flips():
     f = json.load(open(os.path.join(ROOT, "docs", "data", "areas", "flags.json"), encoding="utf-8"))
     fl = [x for x in f["flags"] if x["flag"] == "batch_sign_flip"]
@@ -166,7 +154,7 @@ def main(argv):
                     "scripts/hypodraft_facts.py."}
     for name, fn in (("weather", weather), ("maaledybde", maaledybde), ("lys", lys),
                      ("kemi", kemi), ("seabed", seabed), ("areas", areas), ("series", series),
-                     ("enums", enums), ("hazardous", hazardous), ("sign_flips", sign_flips),
+                     ("enums", enums), ("sign_flips", sign_flips),
                      ("series_by_variable", series_by_variable),
                      ("stations_register", stations_register), ("layers", layers)):
         out[name] = fn()

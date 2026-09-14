@@ -77,7 +77,7 @@
 | | reading | cases |
 |---|---|---|
 | **absence → absence** | "we didn't find it" ⇒ "it isn't there" | <span class="claim" data-claim="C-KP-FM-ABSENCE">the lists above, of which *"no row carries a clock time"* is the purest: a property of one unfetched topic, reported as a property of the archive</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FM-ABSENCE "What this claim rests on")</sup> |
-| **presence → evidence** | "there is a column" ⇒ "there is a measurement" | <span class="claim" data-claim="C-KP-FM-PRESENCE">the national hazardous-substance layer's [256](SOURCES.md#F-aee5a58e2f) points are all freshwater — [152](SOURCES.md#F-4e20821308) in lakes, [104](SOURCES.md#F-53860b0f29) in rivers, none coastal — so a marine column built from it would carry only freshwater points</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FM-PRESENCE "What this claim rests on")</sup> |
+| **presence → evidence** | "there is a column" ⇒ "there is a measurement" | <span class="claim" data-claim="C-KP-FM-PRESENCE">the national hazardous-substance layer's [256](SOURCES.md#F-9edac16b2c) points are all freshwater — [152](SOURCES.md#F-076f9f4115) in lakes, [104](SOURCES.md#F-0b7a823dec) in rivers, none coastal — so a marine column built from it would carry only freshwater points</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FM-PRESENCE "What this claim rests on")</sup> |
 
 <span class="claim" data-claim="C-KP-FM-WORSE">The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FM-WORSE "What this claim rests on")</sup>
 

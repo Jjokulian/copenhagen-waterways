@@ -45,10 +45,10 @@
     "scripts/drafts_b_counts.py"
    ],
    "confirmed": {
-    "by": "agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/drafts_b_counts.py": "b257668118049836"
+     "scripts/drafts_b_counts.py": "402bcf6808156de3"
     }
    }
   },

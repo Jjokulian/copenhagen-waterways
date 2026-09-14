@@ -339,7 +339,7 @@
 <a id="T-24a64d2b"></a>
 ### [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) — The two failure modes are symmetric
 
-3 numbers in the columns *reading*, *cases*. Read from `data/derived/hypodraft_facts.json` (`hazardous.lake`, `hazardous.river`, `hazardous.total`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py).
+3 numbers in the columns *reading*, *cases*. Read from `data/derived/areas.json` (`hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py).
 
 <a id="T-75cda9e1"></a>
 ### [KNOWN_AND_UNKNOWN.md](KNOWN_AND_UNKNOWN.md) — The second list
@@ -839,7 +839,7 @@
 <a id="T-d0c45ed5"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — E. Chemical demand and toxicity
 
-11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/hypodraft_ctd.json` (`h2s.top_station_rows`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/hypodraft_facts.json` (`hazardous.coast`, `hazardous.lake`, `hazardous.river`, `hazardous.sediment`, `hazardous.total`, `series.station_months`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py).
+11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/hypodraft_ctd.json` (`h2s.top_station_rows`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/hypodraft_facts.json` (`series.station_months`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py). Read from `data/derived/oxygen.json` (`hazardous.sediment`), written by [`scripts/oxygen.py`](../scripts/oxygen.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py).
 
 <a id="T-dfb9df78"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — D. Physical disturbance of the bed
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,859 distinct numbers in running text, from these sources.
+1,852 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -885,7 +885,7 @@
 - `data/derived/cycles.json`, written by [`scripts/cycles.py`](../scripts/cycles.py) — 9 numbers.
 - `data/derived/depth_clock.json`, written by [`scripts/depth_clock.py`](../scripts/depth_clock.py) — 2 numbers.
 - `data/derived/detectable.json`, written by [`scripts/detectable.py`](../scripts/detectable.py) — 11 numbers.
-- `data/derived/drafts_b_counts.json`, written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py) — 47 numbers.
+- `data/derived/drafts_b_counts.json`, written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py) — 41 numbers.
 - `data/derived/ds_facts.json`, written by [`scripts/ds_facts.py`](../scripts/ds_facts.py) — 44 numbers.
 - `data/derived/ds_probes.json`, written by [`scripts/ds_probe.py`](../scripts/ds_probe.py) — 2 numbers. Feature types listed in the WFS server's GetCapabilities response to an anonymous request.
 - `data/derived/enums.json`, written by [`scripts/enums.py`](../scripts/enums.py) — 45 numbers.
@@ -899,7 +899,7 @@
 - `data/derived/grundlaget.json`, written by [`scripts/pages/grundlaget.py`](../scripts/pages/grundlaget.py) — 9 numbers.
 - `data/derived/hypodraft_b1.json`, written by [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py) — 26 numbers.
 - `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 25 numbers.
-- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 32 numbers.
+- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 31 numbers.
 - `data/derived/hypotheses.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 2 numbers.
 - `data/derived/hypotheses_evidence.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 18 numbers.
 - `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 3 numbers.
@@ -1568,7 +1568,7 @@ The count of records per value of each categorical column, from the enumeration 
 <a id="K-DRAFTSA-FACTS"></a>
 ### File facts cited by the hypothesis drafts
 
-`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **stale: scripts/hypodraft_facts.py changed since it was read** · read by fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before), 2026-09-14
 
 Re-derives, from the files named, the row counts, station counts, spans and layer facts the hypothesis drafts once typed from one-off checks.
 
@@ -1633,7 +1633,7 @@ Counts the rows of the hypothesis triage by class, by register group and by the 
 <a id="K-DRAFTSB-COUNTS"></a>
 ### Counts of held files, as the drafts quote them
 
-`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **stale: scripts/drafts_b_counts.py changed since it was read** · read by Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: drafts_b_counts.py's mfs() now keeps only the count of points with no matrix flagged and the distinct-value counts; the point, water-type and matrix counts are made once in areas.py and oxygen.py and are no longer declared here; the unused collections import went with them; everything else is computed as before), 2026-09-14
 
 Counts the monthly station panel, the soundings extract, the seabed sediment layer and the pollutant-status layer, and parses the station counts the ODA portal returned as recorded in the source register - the file facts the hypothesis drafts and open problems cite.
 
@@ -2234,7 +2234,7 @@ Reads the sibling project's fetched registers (CHR herds, declared hectares per 
 <a id="K-KD-PLANKTON"></a>
 ### Span of the CMEMS plankton files on disk
 
-`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **stale: scripts/drafts_b_counts.py changed since it was read** · read by agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged), 2026-09-14
 
 The first and last year of the yearly CMEMS Baltic plankton files held on disk, and which years look partial by file size.
 

@@ -15,7 +15,6 @@ pages carry them as quotations of the draft as committed, which is what they are
 
 Writes data/derived/drafts_b_counts.json.
 """
-import collections
 import csv
 import gzip
 import io
@@ -105,12 +104,8 @@ def mfs():
     """The national layer that carries river-basin-specific pollutant status."""
     props = [f["properties"] for f in json.load(open(MFS, encoding="utf-8"))["features"]]
     flag = lambda v: str(v).strip().lower() not in ("", "none", "0", "nej", "false")
-    kind = collections.Counter(re.match(r"[A-Z]*", p.get("eusurfacew") or "").group(0) for p in props)
-    return {"points": len(props), "by_type": dict(kind),
-            "biota": sum(flag(p.get("maaltbiota")) for p in props),
-            "water": sum(flag(p.get("maaltvand")) for p in props),
-            "sediment": sum(flag(p.get("maaltsedim")) for p in props),
-            "no_matrix": sum(not any(flag(p.get(k)) for k in ("maaltbiota", "maaltvand", "maaltsedim"))
+    # the point, water-type and matrix counts are made once, in areas.py and oxygen.py
+    return {"no_matrix": sum(not any(flag(p.get(k)) for k in ("maaltbiota", "maaltvand", "maaltsedim"))
                              for p in props),
             "distinct_qecode": len({p.get("qecode") for p in props}),
             "distinct_qestatusor": len({p.get("qestatusor") for p in props}),

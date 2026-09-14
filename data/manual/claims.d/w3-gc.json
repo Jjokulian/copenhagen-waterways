@@ -4989,13 +4989,13 @@
     "C-GC-OLD-C-TABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gc (read each recorded wording on GRUNDLAGET.md or CONSTRUCTED.md against its register entry and every node under it; every quoted phrase found in its pinned text by the engine, and the load-bearing ones read in context in the pins of NOVANA 2023-27, DHI's method reports, DCE's statistical report and the two second-opinion reports; the Tabel 3 tally recomputed from the pin and checked against DCE's stated means and observing.py's parse; CONSTRUCTED values checked in areas.json, partition_subspace.json, light.json, the flood manifest and architecture.json; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on CONSTRUCTED.md": "withdrawn; the coverage was manufactured by proximity",
      "texts": "1c9a777a28ff0887",
      "node X-GC-AREAS-HZ": "0133199bf9d195c5",
-     "rests on C-KP-FM-PRESENCE": "132829d24f71379f"
+     "rests on C-KP-FM-PRESENCE": "17de61fe81710028"
     }
    }
   },

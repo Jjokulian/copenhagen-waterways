@@ -78,26 +78,6 @@
       "kind": "counted",
       "is": "Distinct values of the `mapping` field, which names the survey campaign each polygon was compiled from."
      },
-     "mfs.points": {
-      "kind": "counted",
-      "is": "Points in `data/raw/national/sw_mfs_tilstand.geojson`."
-     },
-     "mfs.by_type.*": {
-      "kind": "counted",
-      "is": "Points whose `eusurfacew` code starts with this letter prefix (lake or river water body)."
-     },
-     "mfs.biota": {
-      "kind": "counted",
-      "is": "Points whose `maaltbiota` flag is set (not blank, zero or no)."
-     },
-     "mfs.water": {
-      "kind": "counted",
-      "is": "Points whose `maaltvand` flag is set."
-     },
-     "mfs.sediment": {
-      "kind": "counted",
-      "is": "Points whose `maaltsedim` flag is set."
-     },
      "mfs.no_matrix": {
       "kind": "counted",
       "is": "Points with none of the three matrix flags set."
@@ -168,8 +148,8 @@
     "scripts/drafts_b_counts.py"
    ],
    "confirmed": {
-    "by": "Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: drafts_b_counts.py's mfs() now keeps only the count of points with no matrix flagged and the distinct-value counts; the point, water-type and matrix counts are made once in areas.py and oxygen.py and are no longer declared here; the unused collections import went with them; everything else is computed as before)",
+    "on": "2026-09-14",
     "saw": {
      "data/manual/data_sources_2.json": "6d052e73fa896f81",
      "data/raw/geus/seabed_sediment_dk.gpkg": "417650d223d33a47",
@@ -177,7 +157,7 @@
      "data/raw/oda/maaledybde.csv.gz": "bcdb9d24722798a1",
      "docs/data/areas/stations_series.bin": "cfa4a83100559ec4",
      "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
-     "scripts/drafts_b_counts.py": "b257668118049836"
+     "scripts/drafts_b_counts.py": "402bcf6808156de3"
     }
    }
   }

@@ -886,8 +886,8 @@
     "The files named are the ones the drafts' statements are about."
    ],
    "confirmed": {
-    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10"
+    "by": "Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/hypodraft_facts.json",
    "gaps": [
@@ -903,7 +903,7 @@
    "licenses": "Statements about the held files themselves.",
    "model": "Each fact is one count or extreme over one held file, computed at build time: rows read with the declared delimiter and encoding, distinct values by exact string, layer features by parsing the file.",
    "not_licensed": "Statements about the water, the seabed or the monitoring programme beyond what the files hold.",
-   "status": "stale: scripts/hypodraft_facts.py changed since it was read",
+   "status": "current",
    "title": "File facts cited by the hypothesis drafts",
    "void_if": [
     "a file is refetched and the script is not rerun"
@@ -1028,8 +1028,8 @@
     "The portal counts in the register were read correctly when they were recorded."
    ],
    "confirmed": {
-    "by": "Claude (added the plankton-grid counts behind the corrected K1 note, 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: drafts_b_counts.py's mfs() now keeps only the count of points with no matrix flagged and the distinct-value counts; the point, water-type and matrix counts are made once in areas.py and oxygen.py and are no longer declared here; the unused collections import went with them; everything else is computed as before)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
    "gaps": [
@@ -1054,7 +1054,7 @@
    "licenses": "Statements about the files as held: how many records, stations, polygons or points they contain and how those divide.",
    "model": "Plain counts over the files as held: sums of the panel's declared `n`, distinct station indices read from its binary, distinct values and group counts over the soundings CSV and the two geographic layers, and a pattern match over the register's recorded portal counts.",
    "not_licensed": "Anything about the water, the seabed or pollutants themselves; any count of what exists outside the extracts; any claim that the portal still returns these station lists today.",
-   "status": "stale: scripts/drafts_b_counts.py changed since it was read",
+   "status": "current",
    "title": "Counts of held files, as the drafts quote them",
    "void_if": [
     "an extract is re-fetched and this script is not re-run",
@@ -2340,8 +2340,8 @@
     "A file much smaller than the others holds fewer days, not a denser encoding."
    ],
    "confirmed": {
-    "by": "agent w3-kd (written against the code it describes: plankton() in drafts_b_counts.py, run_tests() in rescore.py, the exceedance loop in waves.py main(); 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged)",
+    "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
    "gaps": [
@@ -2358,7 +2358,7 @@
    "licenses": "Which years of the plankton product are on disk, and that the first of them is not a full year.",
    "model": "`plankton()` in `scripts/drafts_b_counts.py` globs the files, parses the year from each name with `re.search`, takes `min` and `max` of the years, and marks a year partial when its size is below `typical / 2`, with `typical` the median of the file sizes.",
    "not_licensed": "Anything about the data inside the files, or about the years the product itself covers.",
-   "status": "stale: scripts/drafts_b_counts.py changed since it was read",
+   "status": "current",
    "title": "Span of the CMEMS plankton files on disk",
    "void_if": [
     "files are added or removed and the script is not rerun"
@@ -10413,6 +10413,8 @@
   "docs/KNOWN_AND_UNKNOWN.md": [
    "F-000ac8d87b",
    "F-0156368344",
+   "F-076f9f4115",
+   "F-0b7a823dec",
    "F-0f04693c5a",
    "F-18d47162ce",
    "F-208361ba97",
@@ -10425,9 +10427,7 @@
    "F-44a0407afe",
    "F-4c570f3335",
    "F-4df017f985",
-   "F-4e20821308",
    "F-501f30a23e",
-   "F-53860b0f29",
    "F-6a03a69734",
    "F-708e892f0c",
    "F-779d628231",
@@ -10435,10 +10435,10 @@
    "F-8c53142a45",
    "F-8c5cf9d9c1",
    "F-8ec238aa8e",
+   "F-9edac16b2c",
    "F-9fa9c3c21c",
    "F-a8322ee49b",
    "F-ab2d7eefd2",
-   "F-aee5a58e2f",
    "F-b5ea195365",
    "F-b78fe39caf",
    "F-bb5f71323f",
@@ -13356,8 +13356,10 @@
    "F-048c9341ee",
    "F-0528ea00b7",
    "F-0596b7e6b1",
+   "F-076f9f4115",
    "F-07e3b11a0d",
    "F-0827f1f9d3",
+   "F-0b7a823dec",
    "F-0bd0994607",
    "F-0d520cad5c",
    "F-0dcf689add",
@@ -13383,6 +13385,7 @@
    "F-1efd11344c",
    "F-2104dff7ad",
    "F-215d13e350",
+   "F-21ba8df2cc",
    "F-22cf725cc7",
    "F-22ddb6e7b6",
    "F-24d37b4999",
@@ -13412,7 +13415,6 @@
    "F-4b41d0c1a1",
    "F-4c1023c5f4",
    "F-4df017f985",
-   "F-4e20821308",
    "F-4e8b726836",
    "F-4ea953ea01",
    "F-4eb6ff02df",
@@ -13421,7 +13423,6 @@
    "F-5166c930a6",
    "F-51f28a1b04",
    "F-52cfe2e72d",
-   "F-53860b0f29",
    "F-53c0aaacfb",
    "F-5683df4d6c",
    "F-56f1715935",
@@ -13445,6 +13446,7 @@
    "F-7270c02bc1",
    "F-73622a0de3",
    "F-7495c59f85",
+   "F-7730f288be",
    "F-7769a94f7a",
    "F-786f319d70",
    "F-7a78427d2e",
@@ -13459,20 +13461,19 @@
    "F-8693013085",
    "F-89669b4a5d",
    "F-8a51a62310",
-   "F-8bf5ff138f",
    "F-8c53142a45",
    "F-8e56e09dff",
    "F-8f5ab0863b",
    "F-8fb3c1299e",
    "F-90694b6d65",
    "F-906d8ca940",
-   "F-929f2dcc25",
    "F-935d9e0296",
    "F-9530b4b76f",
    "F-9777cbd65a",
    "F-98fd432a8d",
    "F-9c2bc4c9bc",
    "F-9c7c58c0f7",
+   "F-9edac16b2c",
    "F-a0a9cd248d",
    "F-a45fdd75f4",
    "F-a5ec7810c4",
@@ -13484,7 +13485,6 @@
    "F-acb2b229c0",
    "F-ad0e6f85ff",
    "F-ada657e8a8",
-   "F-aee5a58e2f",
    "F-af8e15dae6",
    "F-aff8947a9f",
    "F-b17d38223a",
@@ -13633,33 +13633,33 @@
   ],
   "docs/openproblems/E7.md": [
    "F-008df4b99b",
-   "F-08fa672da8",
+   "F-076f9f4115",
+   "F-0b7a823dec",
    "F-0e36027845",
    "F-1a68f99696",
    "F-1acb8bcb68",
    "F-1d69e55cf8",
    "F-214c717648",
-   "F-2e0664e8b7",
+   "F-21ba8df2cc",
    "F-37d1c997e7",
    "F-44433af5f2",
-   "F-4d1a1b05ed",
    "F-4df017f985",
+   "F-6f95225e78",
    "F-779d628231",
    "F-81bea72caf",
-   "F-886deb6674",
    "F-8a5714e136",
    "F-9b5234765d",
+   "F-9edac16b2c",
    "F-a053d110be",
    "F-a19f846432",
    "F-a95c664ddf",
    "F-b2b6fccc0e",
    "F-b4aaddf0af",
    "F-b61d7944ec",
-   "F-b66947c89f",
    "F-b66ba59fb8",
    "F-bd2aa15b15",
+   "F-bd4eb32548",
    "F-bd74e20689",
-   "F-fad92131f2",
    "F-fff0060a3d"
   ],
   "docs/openproblems/J1.md": [
@@ -15008,9 +15008,9 @@
   "F-008df4b99b": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 122,
-    "line": 128,
-    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
+    "first": 123,
+    "line": 129,
+    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -15064,7 +15064,7 @@
    "value": 564,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    128
+    129
    ]
   },
   "F-008ed6b857": {
@@ -15339,10 +15339,10 @@
   },
   "F-00ac661b28": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 202,
+    "line": 208,
+    "text": "    w(\"---\")\n    w(\"\")\n    w(\"## What the shape of it says\")\n    w(\"\")\n    w(\"### Blocked on a fetch\")\n    w(\"\")\n    w(C(\"C-TR-FETCH\", f\"**{cls['fetch']['n']} of {n} ({share('fetch'):.0f}%) are blocked on a \"\n        \"fetch**: what they need is named and is not held here.\") + \" \"\n      + C(\"C-TR-OPEN\", \"The source register records some of those sources as open without a \"\n          \"login: the ICES swept-area-ratio product and HELCOM's fishing-intensity layers, ICES \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -15398,8 +15398,8 @@
    "synthetic": false,
    "value": 37.34939759036144,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    208
    ]
   },
   "F-00b2bde87b": {
@@ -26181,84 +26181,6 @@
     74
    ]
   },
-  "F-08fa672da8": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 167,
-    "line": 173,
-    "text": "               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs",
-    "rows": [
-     [
-      "points",
-      "256"
-     ],
-     [
-      "by_type",
-      "{… 2 keys}"
-     ],
-     [
-      "biota",
-      "253"
-     ],
-     [
-      "water",
-      "174"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "no_matrix",
-      "3"
-     ],
-     [
-      "distinct_qecode",
-      "1"
-     ],
-     [
-      "distinct_qestatusor",
-      "1"
-     ],
-     [
-      "distinct_da_oekolog",
-      "1"
-     ],
-     [
-      "distinct_aktivstart",
-      "1"
-     ]
-    ],
-    "target": "water"
-   },
-   "field": {
-    "is": "Points whose `maaltvand` flag is set.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.water"
-   ],
-   "synthetic": false,
-   "value": 174,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    173
-   ]
-  },
   "F-08fef7cafb": {
    "code": {
     "file": "scripts/socialcontext.py",
@@ -31668,10 +31590,10 @@
   },
   "F-0d520cad5c": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 153,
+    "line": 159,
+    "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -31727,8 +31649,8 @@
    "synthetic": false,
    "value": 9.036144578313253,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    159
    ]
   },
   "F-0d53cd5d41": {
@@ -38848,10 +38770,10 @@
   },
   "F-135749f431": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 636,
-    "line": 642,
-    "text": "        f\"below the depth cut in `rescore.py`, runs from {dip['4']['median']:.1f} µg/l in April to \"\n        f\"**{dip['10']['median']:.1f} µg/l in October**, a {rise:.0f}% rise through the summer into \"\n        \"autumn.\") + \" \" + C(\"C-OP-18-A7-READ\", \"That is the pattern release from sediment under \"\n                             \"stratification would give. The strong form, that it happens *without* a \"\n                             \"matching river input, still needs the endpoint the code cannot reach.\"))\n    w()\n    w(C(\"C-OP-18-E11\", f\"**{ref('E11')} is answerable in principle.** {e11['n_bottles_with_both']:,} \"\n        \"bottles carry both pH and ammonium. The un-ionised fraction, the toxic one, comes out at a median \"\n        f\"of {e11['median']:.3f} µg/l, a 95th percentile of {e11['p95']:.1f} and a maximum of \"\n        f\"{e11['max']:.0f} - indicative only, because the salinity and in-situ temperature corrections to \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -38900,8 +38822,8 @@
    "synthetic": false,
    "value": 25988,
    "where": [
-    "scripts/pages/open_problems.py",
-    642
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-1360822d73": {
@@ -40972,10 +40894,10 @@
   },
   "F-153d19187a": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 65,
-    "line": 71,
-    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -41072,8 +40994,8 @@
    "synthetic": false,
    "value": 2601,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    71
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-1546645182": {
@@ -47951,9 +47873,9 @@
   "F-1acb8bcb68": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 130,
-    "line": 136,
-    "text": "               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \""
+    "first": 131,
+    "line": 137,
+    "text": "               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -48003,7 +47925,7 @@
    "value": 6288,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    136
+    137
    ]
   },
   "F-1acf833585": {
@@ -48886,10 +48808,10 @@
   },
   "F-1b7430e469": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 604,
-    "line": 610,
-    "text": "        \"`vandkemi` fetch - \" + \", \".join(ref(h) for h in hyps[:-1]) + f\" and {ref(hyps[-1])} - and \"\n        \"checks, per hypothesis, which of the variables its consequence needs are now in hand:\"))\n    w()\n    w(\"| | |\")\n    w(\"|---|---|\")\n    w(f\"| **testable now** | {rs['tally']['testable now']} — \" + \", \".join(ref(h) for h in testable) + \" |\")\n    w(f\"| **partly unblocked; a second blocker was behind the first** | **{rs['tally'][partly]}** |\")\n    w()\n    w(C(\"C-OP-18-LOCKS\", f\"**A blocker can hide a blocker.** {ref('A1')} and {ref('A2')} need river load, \"\n        \"which lives on a different ODA endpoint that `fetch_oda.py` cannot currently reach: its `run()` \""
+    "file": "scripts/pages/triage.py",
+    "first": 222,
+    "line": 228,
+    "text": "    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \"\n      + C(\"C-TR-SECOND\", f\"{refs(['A1', 'A2', 'A7'])} need river input, on ODA topics \"\n          f\"`fetch_oda.py` does not reach; {ref('A5')} needs volume transport at the Belt and Sound \""
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -48926,8 +48848,8 @@
    "synthetic": false,
    "value": 8,
    "where": [
-    "scripts/pages/open_problems.py",
-    610
+    "scripts/pages/triage.py",
+    228
    ]
   },
   "F-1b811d8a29": {
@@ -51267,9 +51189,9 @@
   "F-1d69e55cf8": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 138,
-    "line": 144,
-    "text": "    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \""
+    "first": 139,
+    "line": 145,
+    "text": "               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -51399,7 +51321,7 @@
    "value": 62,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    144
+    145
    ]
   },
   "F-1d6d6f4733": {
@@ -71162,10 +71084,10 @@
   },
   "F-2cc76f7f45": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 338,
-    "line": 344,
-    "text": "    w(\"| **Stage 6** its own spatiality | \" + C(\"C-KP-WHY-S6\", \"you run one trial nationally, and a response that differs from place to place averages away\") + \" |\")\n    w(\"| **Stage 7** the social argument | \" + C(\"C-KP-WHY-S7\", \"a result lands in a discourse that has no way to receive it, and is read as whichever side funded it\") + \" |\")\n    w()\n    w(B(\"C-KP-BOUNDARY\") + \"**So this is not the analysis failing.** It is the analysis returning a specific,\")\n    w(\"defensible answer: *here is the boundary of what observation can settle, and it is closer than\")\n    w(f\"anyone assumed.* {cls['unscoreable']} of {n} mechanisms are unscoreable and {cls['experiment']} more need an\")\n    w(f\"experiment — **{share(beyond, n):.0f}% of the field was never reachable this way**, and no amount of further\")\n    w(\"modelling moves it.\" + E)\n    w()\n    w(B(\"C-KP-INTERVENE\") + \"Past that boundary, intervening is not a retreat from method. It is the only\")"
+    "file": "scripts/pages/triage.py",
+    "first": 283,
+    "line": 289,
+    "text": "    w(f\"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed\")\n    w(\"\")\n    w(C(\"C-TR-UNSCOREABLE\", f\"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) \"\n        \"are unscoreable**: the deciding measurement is in none of the sources this project \"\n        \"surveyed.\") + \" \"\n      + C(\"C-TR-BEYOND\", f\"Add the {cls['experiment']['n']} that need an experiment and \"\n          f\"**{live.step('K-SUBSET-SHARE', beyond / n * 100):.0f}% of the hypothesis field is \"\n          \"beyond reach of any reanalysis of the data this project holds or has found.**\"))\n    w(\"\")\n    w(C(\"C-TR-CONTEST\", \"This is the number that matters for how the whole argument should be \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -71236,8 +71158,8 @@
    "synthetic": false,
    "value": 37.34939759036144,
    "where": [
-    "scripts/pages/plan.py",
-    344
+    "scripts/pages/triage.py",
+    289
    ]
   },
   "F-2ccbfc2ecf": {
@@ -73671,84 +73593,6 @@
    "where": [
     "scripts/pages/grundlaget.py",
     255
-   ]
-  },
-  "F-2e0664e8b7": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 178,
-    "line": 184,
-    "text": "          \"sampling date.**\"))\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-CONFLATE\", \"**Schema conflation.** One quality-element code stands for \"\n               \"every river-basin-specific pollutant, whatever the substance, in a single \"\n               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {hl['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs",
-    "rows": [
-     [
-      "points",
-      "256"
-     ],
-     [
-      "by_type",
-      "{… 2 keys}"
-     ],
-     [
-      "biota",
-      "253"
-     ],
-     [
-      "water",
-      "174"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "no_matrix",
-      "3"
-     ],
-     [
-      "distinct_qecode",
-      "1"
-     ],
-     [
-      "distinct_qestatusor",
-      "1"
-     ],
-     [
-      "distinct_da_oekolog",
-      "1"
-     ],
-     [
-      "distinct_aktivstart",
-      "1"
-     ]
-    ],
-    "target": "points"
-   },
-   "field": {
-    "is": "Points in `data/raw/national/sw_mfs_tilstand.geojson`.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.points"
-   ],
-   "synthetic": false,
-   "value": 256,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    184
    ]
   },
   "F-2e071cb18b": {
@@ -79842,10 +79686,10 @@
   },
   "F-3307597d2e": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 153,
+    "line": 159,
+    "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -79901,8 +79745,8 @@
    "synthetic": false,
    "value": 2.4096385542168677,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    159
    ]
   },
   "F-331aa4af95": {
@@ -86940,9 +86784,9 @@
   "F-37d1c997e7": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 167,
-    "line": 173,
-    "text": "               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \""
+    "first": 168,
+    "line": 174,
+    "text": "    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \"\n          f\"same on all {hl['points']}. **No analyte name, no concentration, no unit, no \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -86950,26 +86794,6 @@
    "excerpt": {
     "parent": "mfs",
     "rows": [
-     [
-      "points",
-      "256"
-     ],
-     [
-      "by_type",
-      "{… 2 keys}"
-     ],
-     [
-      "biota",
-      "253"
-     ],
-     [
-      "water",
-      "174"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
      [
       "no_matrix",
       "3"
@@ -87012,7 +86836,7 @@
    "value": 3,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    173
+    174
    ]
   },
   "F-37da5bc982": {
@@ -88022,10 +87846,10 @@
   },
   "F-38d4f3aa11": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 131,
-    "line": 137,
-    "text": "      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \"\n      f\"{arch} are the monitoring archive auditing itself.{E} \"\n      f\"{B('C-LR-L-MONITORED')}**So nutrients did not win an argument against the \"\n      \"alternatives. Nutrients are the group that has a monitoring programme, and \"\n      f\"{unscore + experiment} rival mechanisms have never been in a position to \"\n      f\"compete.**{E} [the whole triage →](PLAN.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-CHECKABLE')}That is not a claim that nutrients are innocent, or that the \""
+    "file": "scripts/pages/triage.py",
+    "first": 315,
+    "line": 321,
+    "text": "        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))\n    w(\"\")\n    w(\"### An honest caveat about this table\")\n    w(\"\")"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -88057,8 +87881,8 @@
    "synthetic": false,
    "value": 62,
    "where": [
-    "scripts/pages/landing.py",
-    137
+    "scripts/pages/triage.py",
+    321
    ]
   },
   "F-38de94525e": {
@@ -100683,10 +100507,10 @@
   },
   "F-42f0fd7709": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 153,
+    "line": 159,
+    "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -100742,8 +100566,8 @@
    "synthetic": false,
    "value": 12.048192771084338,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    159
    ]
   },
   "F-430391ce9b": {
@@ -112857,84 +112681,6 @@
    "synthetic": false,
    "value": "10"
   },
-  "F-4d1a1b05ed": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 166,
-    "line": 172,
-    "text": "               \"register records that where Denmark's national pesticide statistics are now \"\n               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs",
-    "rows": [
-     [
-      "points",
-      "256"
-     ],
-     [
-      "by_type",
-      "{… 2 keys}"
-     ],
-     [
-      "biota",
-      "253"
-     ],
-     [
-      "water",
-      "174"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "no_matrix",
-      "3"
-     ],
-     [
-      "distinct_qecode",
-      "1"
-     ],
-     [
-      "distinct_qestatusor",
-      "1"
-     ],
-     [
-      "distinct_da_oekolog",
-      "1"
-     ],
-     [
-      "distinct_aktivstart",
-      "1"
-     ]
-    ],
-    "target": "biota"
-   },
-   "field": {
-    "is": "Points whose `maaltbiota` flag is set (not blank, zero or no).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.biota"
-   ],
-   "synthetic": false,
-   "value": 253,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    172
-   ]
-  },
   "F-4d1c493122": {
    "code": {
     "file": "scripts/pages/drafts_b_page.py",
@@ -114468,64 +114214,6 @@
    ],
    "synthetic": false,
    "value": 90.72841772474631
-  },
-  "F-4e20821308": {
-   "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 134,
-    "line": 140,
-    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['points']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "hazardous",
-    "rows": [
-     [
-      "total",
-      "256"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "lake",
-      "152"
-     ],
-     [
-      "river",
-      "104"
-     ],
-     [
-      "coast",
-      "0"
-     ]
-    ],
-    "target": "lake"
-   },
-   "field": {
-    "is": "Of those, stations on a lake water body (`DKLAKE`).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "hazardous.lake"
-   ],
-   "synthetic": false,
-   "value": 152,
-   "where": [
-    "scripts/pages/known_and_unknown.py",
-    140
-   ]
   },
   "F-4e2947acc2": {
    "constructions": [
@@ -122385,64 +122073,6 @@
    ],
    "synthetic": false,
    "value": "34"
-  },
-  "F-53860b0f29": {
-   "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 134,
-    "line": 140,
-    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['points']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "hazardous",
-    "rows": [
-     [
-      "total",
-      "256"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "lake",
-      "152"
-     ],
-     [
-      "river",
-      "104"
-     ],
-     [
-      "coast",
-      "0"
-     ]
-    ],
-    "target": "river"
-   },
-   "field": {
-    "is": "Of those, stations on a river water body (`DKRIVER`).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "hazardous.river"
-   ],
-   "synthetic": false,
-   "value": 104,
-   "where": [
-    "scripts/pages/known_and_unknown.py",
-    140
-   ]
   },
   "F-538a73226f": {
    "constructions": [
@@ -158639,10 +158269,10 @@
   },
   "F-6f95225e78": {
    "code": {
-    "file": "scripts/oxygen.py",
-    "first": 285,
-    "line": 291,
-    "text": "    a(C(\"C-OB-OX-HAZARD\", \"And the toxicant column is not monitored in the sea in this \"\n        \"layer. The water-plan register's hazardous-substance layer holds \"\n        f\"{hl['points']} points: {hl['lake']} in lakes, {hl['river']} in rivers and \"\n        f\"{hl['coast']} in coastal or marine water. Of Denmark's {hz['n_wb']} marine water \"\n        f\"bodies, {hz['without']} have none, covering {hz['area_without']:,.0f} km² - \"\n        f\"{hz['pct_without']:.0f}% of the sea. Across those freshwater points the matrices \"\n        f\"measured are biota {hz['biota']}, water {hz['water']} and sediment \"\n        f\"{hz['sediment']}.\") + \"\\n\")\n    a(C(\"C-OB-OX-DOME\", \"The international ICES DOME archive holds Danish marine sediment \"\n        \"contaminant data. This project's notes on its Danish sediment file record \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 168,
+    "line": 174,
+    "text": "    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \"\n          f\"same on all {hl['points']}. **No analyte name, no concentration, no unit, no \""
    },
    "constructions": [
     "K-WATER-OXYGEN"
@@ -158707,8 +158337,8 @@
    "synthetic": false,
    "value": 174,
    "where": [
-    "scripts/oxygen.py",
-    291
+    "scripts/pages/openproblem_e7.py",
+    174
    ]
   },
   "F-6f9e6a9b2a": {
@@ -168677,10 +168307,10 @@
   },
   "F-779d628231": {
    "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 74,
-    "line": 80,
-    "text": "|---|---|---|\n| **it exists** | **known known** — the {ctd_rows} CTD measurements, and everything computed from them | **UNKNOWN KNOWN** — data that exists, is held by someone, and is absent from our map |\n| **we know it's missing** | **known unknown** — the {meta['gated_sources']} gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), {meta['gated_slots']} of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |\n\n{C(\"C-KP-UNKNOWN-KNOWN\", \"**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.\")} Some of those we found:\n\n- {C(\"C-KP-CTD-PARAMS\", f\"`ctd.csv.gz` carries **{meta['ctd_parameters']} distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry {hf['series']['variables']} variables, drawn from five of them.\")}\n- {C(\"C-KP-VEGETATION\", \"The ODA topic tree holds **eelgrass**, **macroalgae** and **bottom fauna** topics, and none is in the fetch script.\")}\n- {C(\"C-KP-FISHING\", \"Fishing effort is published openly: [Global Fishing Watch's apparent fishing effort](https://zenodo.org/records/14982712), version three, covering 2012–2024, as a direct download with no login.\")}\n"
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 133,
+    "line": 139,
+    "text": "               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \""
    },
    "constructions": [
     "K-META-FACTS"
@@ -168789,8 +168419,8 @@
    "synthetic": false,
    "value": 17,
    "where": [
-    "scripts/pages/known_and_unknown.py",
-    80
+    "scripts/pages/openproblem_e7.py",
+    139
    ]
   },
   "F-779db984b0": {
@@ -181337,9 +180967,9 @@
   "F-81bea72caf": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 122,
-    "line": 128,
-    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
+    "first": 123,
+    "line": 129,
+    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -181393,7 +181023,7 @@
    "value": 9,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    128
+    129
    ]
   },
   "F-81cc2fdcb9": {
@@ -185652,10 +185282,10 @@
   },
   "F-85266abfd1": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 114,
-    "line": 120,
-    "text": "    w(C(\"C-OQ-J1-OPTICS\", \"The archive holds more optics than the monthly panel exposes. \"\n        f\"`docs/data/areas/stations_series.json` carries {ss['total_station_months']:,} \"\n        f\"station-months over {ss['n_variables']} variables, of which one is optical: `fluo`, \"\n        f\"fluorescence in the relative unit `rel`, on {ss['variables']['fluo']['n']:,} \"\n        \"station-months. Beside fluorescence the raw CTD file carries the three optical \"\n        f\"channels the metric below uses: `Lysdæmpning`, light attenuation, on {L:,} records, \"\n        f\"`Turbiditet` on {T:,}, and `FDOM`, the \"\n        f\"fluorescence of dissolved organic matter, on {F:,}, from {fd['first_year']} to \"\n        f\"{fd['last_year']} only.\"))\n    w(\"\")"
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -185752,8 +185382,8 @@
    "synthetic": false,
    "value": 1076915,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    120
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-854ee6fdbb": {
@@ -189886,52 +189516,6 @@
     664
    ]
   },
-  "F-886deb6674": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 166,
-    "line": 172,
-    "text": "               \"register records that where Denmark's national pesticide statistics are now \"\n               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs.by_type",
-    "rows": [
-     [
-      "DKRIVER",
-      "104"
-     ],
-     [
-      "DKLAKE",
-      "152"
-     ]
-    ],
-    "target": "DKRIVER"
-   },
-   "field": {
-    "is": "Points whose `eusurfacew` code starts with this letter prefix (lake or river water body).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.by_type.DKRIVER"
-   ],
-   "synthetic": false,
-   "value": 104,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    172
-   ]
-  },
   "F-8878751ad3": {
    "code": {
     "file": "data/manual/claims.d/methodlab-b.json",
@@ -193235,9 +192819,9 @@
   "F-8a5714e136": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 137,
-    "line": 143,
-    "text": "               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \""
+    "first": 138,
+    "line": 144,
+    "text": "    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -193367,7 +192951,7 @@
    "value": 63,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    143
+    144
    ]
   },
   "F-8a5f33fd60": {
@@ -195539,64 +195123,6 @@
    "where": [
     "scripts/pages/areas.py",
     423
-   ]
-  },
-  "F-8bf5ff138f": {
-   "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "hazardous",
-    "rows": [
-     [
-      "total",
-      "256"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "lake",
-      "152"
-     ],
-     [
-      "river",
-      "104"
-     ],
-     [
-      "coast",
-      "0"
-     ]
-    ],
-    "target": "sediment"
-   },
-   "field": {
-    "is": "Of those, stations flagged as measuring sediment (`maaltsedim`).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "hazardous.sediment"
-   ],
-   "synthetic": false,
-   "value": 5,
-   "where": [
-    "scripts/pages/triage.py",
-    107
    ]
   },
   "F-8c05cfc977": {
@@ -205239,64 +204765,6 @@
    "synthetic": false,
    "value": "2"
   },
-  "F-929f2dcc25": {
-   "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "hazardous",
-    "rows": [
-     [
-      "total",
-      "256"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "lake",
-      "152"
-     ],
-     [
-      "river",
-      "104"
-     ],
-     [
-      "coast",
-      "0"
-     ]
-    ],
-    "target": "coast"
-   },
-   "field": {
-    "is": "Of those, stations on a coastal water body (`DKCOAST`).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "hazardous.coast"
-   ],
-   "synthetic": false,
-   "value": 0,
-   "where": [
-    "scripts/pages/triage.py",
-    107
-   ]
-  },
   "F-92a0336f71": {
    "constructions": [
     "K-FARM-INCIDENCE"
@@ -206461,10 +205929,10 @@
   },
   "F-935d9e0296": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 279,
+    "line": 285,
+    "text": "          f\"{cls['unscoreable']['n']} unscoreable** \"\n          f\"({live.step('K-SUBSET-SHARE', both / cls['unscoreable']['n'] * 100):.0f}%).\"))\n    w(\"\")\n    beyond = cls[\"unscoreable\"][\"n\"] + cls[\"experiment\"][\"n\"]\n    w(f\"### {share('unscoreable'):.0f}% of the field cannot be scored with any source surveyed\")\n    w(\"\")\n    w(C(\"C-TR-UNSCOREABLE\", f\"**{cls['unscoreable']['n']} of {n} ({share('unscoreable'):.0f}%) \"\n        \"are unscoreable**: the deciding measurement is in none of the sources this project \"\n        \"surveyed.\") + \" \"\n      + C(\"C-TR-BEYOND\", f\"Add the {cls['experiment']['n']} that need an experiment and \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -206520,8 +205988,8 @@
    "synthetic": false,
    "value": 25.301204819277107,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    285
    ]
   },
   "F-9360b95c7a": {
@@ -216972,9 +216440,9 @@
   "F-9b5234765d": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 181,
-    "line": 187,
-    "text": "               \"every river-basin-specific pollutant, whatever the substance, in a single \"\n               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {hl['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \"\n               f\"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have \"\n               \"a point of the layer, because every point belongs to a lake or a river.\"))\n    w(\"\")"
+    "first": 182,
+    "line": 188,
+    "text": "               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {hl['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \"\n               f\"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have \"\n               \"a point of the layer, because every point belongs to a lake or a river.\"))\n    w(\"\")\n    w(\"## Why *measurement* and not the other two\")"
    },
    "constructions": [
     "K-WATER-OXYGEN"
@@ -217040,7 +216508,7 @@
    "value": 123,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    187
+    188
    ]
   },
   "F-9b69d76855": {
@@ -223241,9 +222709,9 @@
   "F-a053d110be": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 126,
-    "line": 132,
-    "text": "    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))"
+    "first": 127,
+    "line": 133,
+    "text": "    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -223281,7 +222749,7 @@
    "value": 1327,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    132
+    133
    ]
   },
   "F-a059ac3b79": {
@@ -224805,9 +224273,9 @@
   "F-a19f846432": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 141,
-    "line": 147,
-    "text": "               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \"\n               \"page has not checked.\") + \" \"\n      + C(\"C-OQ-E7-KEMI-THIN\", \"The held counts are records per parameter; how many stations \""
+    "first": 142,
+    "line": 148,
+    "text": "    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \"\n               \"page has not checked.\") + \" \"\n      + C(\"C-OQ-E7-KEMI-THIN\", \"The held counts are records per parameter; how many stations \"\n          \"and years they span has not been counted, so whether they meet the test below is \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -224937,7 +224405,7 @@
    "value": 984,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    147
+    148
    ]
   },
   "F-a1abbdb25b": {
@@ -234836,9 +234304,9 @@
   "F-a95c664ddf": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 125,
-    "line": 131,
-    "text": "    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \""
+    "first": 126,
+    "line": 132,
+    "text": "    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))"
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -234876,7 +234344,7 @@
    "value": 76980,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    131
+    132
    ]
   },
   "F-a96752daea": {
@@ -239077,10 +238545,10 @@
   },
   "F-acb2b229c0": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 136,
-    "line": 142,
-    "text": "        f\"`pct` on {unit['pct']:,} records - exactly as many as `Lysdæmpning` ({L:,}) and \"\n        f\"`Oxygenmætning` ({O:,}) carry together - and none of its units is a coefficient per \"\n        \"metre: the attenuation channel is a percentage transmission, not an attenuation \"\n        \"coefficient.\") + \" \"\n      + C(\"C-OQ-J1-PATH\", \"A transmission becomes a coefficient only through the path length \"\n          \"the light travelled, and no column of the extract records one.\") + \" \"\n      + C(\"C-OQ-J1-FDOMUNIT\", f\"`FDOM`'s {F:,} records match the {unit['ppb']:,} in `ppb`, a \"\n          \"concentration unit, not an absorption coefficient. The total has no dimension; the \"\n          \"parts come from one column that mixes scales.\"))\n    w(\"\")"
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -239177,8 +238645,8 @@
    "synthetic": false,
    "value": 890921,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    142
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-acb72c1e37": {
@@ -241778,64 +241246,6 @@
    "synthetic": true,
    "value": 0.7879022277227723
   },
-  "F-aee5a58e2f": {
-   "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 134,
-    "line": 140,
-    "text": "\n### The two failure modes are symmetric\n\n| | reading | cases |\n|---|---|---|\n| **absence → absence** | \"we didn't find it\" ⇒ \"it isn't there\" | {C(\"C-KP-FM-ABSENCE\", \"the lists above, of which *\\\"no row carries a clock time\\\"* is the purest: a property of one unfetched topic, reported as a property of the archive\")} |\n| **presence → evidence** | \"there is a column\" ⇒ \"there is a measurement\" | {C(\"C-KP-FM-PRESENCE\", f\"the national hazardous-substance layer's {hz['points']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points\")} |\n\n{C(\"C-KP-FM-WORSE\", \"The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**\")}\n"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "hazardous",
-    "rows": [
-     [
-      "total",
-      "256"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "lake",
-      "152"
-     ],
-     [
-      "river",
-      "104"
-     ],
-     [
-      "coast",
-      "0"
-     ]
-    ],
-    "target": "total"
-   },
-   "field": {
-    "is": "Stations in the national river-basin-specific-pollutant status network, `sw_mfs_tilstand.geojson`.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "hazardous.total"
-   ],
-   "synthetic": false,
-   "value": 256,
-   "where": [
-    "scripts/pages/known_and_unknown.py",
-    140
-   ]
-  },
   "F-aee8a1ff8a": {
    "code": {
     "file": "scripts/solutions.py",
@@ -243215,10 +242625,10 @@
   },
   "F-aff8947a9f": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 198,
-    "line": 204,
-    "text": "        f\"{n} lettered hypotheses, one row each:\"))\n    w()\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for key, lab in CLASS_ROWS:\n        b = \"**\" if key == \"testable\" else \"\"\n        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()"
+    "file": "scripts/pages/triage.py",
+    "first": 153,
+    "line": 159,
+    "text": "    w(C(\"C-TR-COUNTS\", \"Counted over the rows, restricted to the identifiers the register \"\n        \"holds, the classes stand at:\"))\n    w(\"\")\n    w(\"| class | n | share |\")\n    w(\"|---|---:|---:|\")\n    for k in ORDER:\n        w(f\"| {label(k)} | {cls[k]['n']} | {share(k):.0f}% |\")\n    w(f\"| | **{n}** | |\")\n    w(\"\")\n    w(live.claim_begin(\"C-TR-CLASSES\") + \"**Class definitions.** *Testable now* — consequence, \""
    },
    "constructions": [
     "K-SUBSET-SHARE",
@@ -243274,8 +242684,8 @@
    "synthetic": false,
    "value": 13.855421686746988,
    "where": [
-    "scripts/pages/plan.py",
-    204
+    "scripts/pages/triage.py",
+    159
    ]
   },
   "F-affed35064": {
@@ -245071,10 +244481,10 @@
   },
   "F-b17d38223a": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 214,
-    "line": 220,
-    "text": "      + (\", \".join(ref(h) for h in now9[:-1]) + \" and \" + ref(now9[-1]) if len(now9) > 1 else ref(now9[0]))\n      + (\" are\" if len(now9) > 1 else \" is\") + \" testable now, and the rest wait on something the extract\")\n    w(\"does not carry; [TRIAGE.md](hypodrafts/TRIAGE.md) names each one's blocker.\" + E)\n    w(C(\"C-KP-ILTKOR\", \"(`iltkor` is declared in `fetch_oda.py`'s topics and has never been fetched: the \"\n        \"only one of its six topics with no file on disk.)\"))\n    w()\n    w(B(\"C-KP-GROUPS\") + f\"**Not one hypothesis in group A is testable now.** All {grp['A']['n']} are blocked,\")\n    w(f\"unscoreable or unestablished. Of the {cls['testable']} testable now, {grp['I']['testable']} are from group I —\")\n    w(f\"hypotheses about the archive itself — {grp['C']['testable']} from C and {grp['Z']['testable']} from Z, the two\")\n    w(\"physical groups; none is from the groups on \" + \", \".join(f\"*{titles[g].lower()}*\" for g in zero[:-1])"
+    "file": "scripts/pages/triage.py",
+    "first": 242,
+    "line": 248,
+    "text": "    if a_test:\n        verb = \"is\" if len(a_test) == 1 else \"are\"\n        w(C(\"C-TR-GROUPA\", f\"In group A, the nutrient group, {ga['testable']} of {ga['n']} \"\n            f\"{verb} testable now: {refs(a_test)}. The rest are {rest}.\"))\n    else:\n        w(C(\"C-TR-GROUPA\", f\"No hypothesis in group A, the nutrient group, is testable now; its \"\n            f\"{ga['n']} are {rest}.\"))\n    w(\"\")\n    if int(bf[\"fetch\"]) != int(bf[\"n\"]):\n        raise live.Unjustified(\"TRIAGE: the page calls every bottom-fauna row a fetch not yet made\")"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -245131,8 +244541,8 @@
    "synthetic": false,
    "value": 10,
    "where": [
-    "scripts/pages/plan.py",
-    220
+    "scripts/pages/triage.py",
+    248
    ]
   },
   "F-b1804c5af7": {
@@ -246537,9 +245947,9 @@
   "F-b2b6fccc0e": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 181,
-    "line": 187,
-    "text": "               \"every river-basin-specific pollutant, whatever the substance, in a single \"\n               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {hl['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \"\n               f\"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have \"\n               \"a point of the layer, because every point belongs to a lake or a river.\"))\n    w(\"\")"
+    "first": 182,
+    "line": 188,
+    "text": "               \"column. A pesticide effect cannot be separated from any other pollutant's even \"\n               \"in principle at this resolution.\"))\n    w(\"- \" + C(\"C-OQ-E7-VERDICT\", \"**Model-as-datum.** The value is a status verdict, and it is \"\n               f\"invariant across all {hl['points']} points, so it carries no information for \"\n               \"discriminating anything.\"))\n    w(\"- \" + C(\"C-OQ-E7-NOMARINE\", \"No marine water body here carries a hazardous-substance \"\n               f\"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have \"\n               \"a point of the layer, because every point belongs to a lake or a river.\"))\n    w(\"\")\n    w(\"## Why *measurement* and not the other two\")"
    },
    "constructions": [
     "K-WATER-OXYGEN"
@@ -246605,7 +246015,7 @@
    "value": 0,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    187
+    188
    ]
   },
   "F-b2c065fd37": {
@@ -248183,9 +247593,9 @@
   "F-b4aaddf0af": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 141,
-    "line": 147,
-    "text": "               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \"\n               \"page has not checked.\") + \" \"\n      + C(\"C-OQ-E7-KEMI-THIN\", \"The held counts are records per parameter; how many stations \""
+    "first": 142,
+    "line": 148,
+    "text": "    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \"\n               \"page has not checked.\") + \" \"\n      + C(\"C-OQ-E7-KEMI-THIN\", \"The held counts are records per parameter; how many stations \"\n          \"and years they span has not been counted, so whether they meet the test below is \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -248315,7 +247725,7 @@
    "value": 100,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    147
+    148
    ]
   },
   "F-b4afa9fb52": {
@@ -250703,10 +250113,10 @@
   },
   "F-b5ea195365": {
    "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 93,
-    "line": 99,
-    "text": "\n### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |"
+    "file": "scripts/pages/triage.py",
+    "first": 218,
+    "line": 224,
+    "text": "    vk, bf = tc[\"clusters\"][\"vandkemi\"], tc[\"clusters\"][\"bundfauna\"]\n    tl = rs[\"tally\"]\n    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -250763,8 +250173,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/known_and_unknown.py",
-    99
+    "scripts/pages/triage.py",
+    224
    ]
   },
   "F-b5ea286603": {
@@ -250972,9 +250382,9 @@
   "F-b61d7944ec": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 121,
-    "line": 127,
-    "text": "          \"`Bundfauna`, not fetched. (c) is not held as a load: the water carries nutrient \"\n          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \""
+    "first": 122,
+    "line": 128,
+    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -251028,7 +250438,7 @@
    "value": 679422,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    127
+    128
    ]
   },
   "F-b632c5f52c": {
@@ -251232,52 +250642,6 @@
    "where": [
     "scripts/seabed.py",
     121
-   ]
-  },
-  "F-b66947c89f": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 165,
-    "line": 171,
-    "text": "    w(\"- \" + C(\"C-OQ-E7-SALES\", \"No pesticide sales or usage series is held, and the source \"\n               \"register records that where Denmark's national pesticide statistics are now \"\n               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs.by_type",
-    "rows": [
-     [
-      "DKRIVER",
-      "104"
-     ],
-     [
-      "DKLAKE",
-      "152"
-     ]
-    ],
-    "target": "DKLAKE"
-   },
-   "field": {
-    "is": "Points whose `eusurfacew` code starts with this letter prefix (lake or river water body).",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.by_type.DKLAKE"
-   ],
-   "synthetic": false,
-   "value": 152,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    171
    ]
   },
   "F-b66ba59fb8": {
@@ -260906,9 +260270,9 @@
   "F-bd2aa15b15": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 138,
-    "line": 144,
-    "text": "    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \""
+    "first": 139,
+    "line": 145,
+    "text": "               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \"\n               \"hazardous substances, is held, and among its `Parameter` values are `Diuron` on \"\n               f\"{kemi['Diuron']:,} records, a herbicide, and `Hydroxy-atrazin` on \"\n               f\"{kemi['Hydroxy-atrazin']:,} and `Hydroxysimazin` on {kemi['Hydroxysimazin']:,}, \"\n               \"the hydroxy forms of the triazine herbicides atrazine and simazine; beside them \"\n               f\"two chlorinated phenoxypropionic acids, `{PHENOXY[0]}` on \"\n               f\"{kemi[PHENOXY[0]]:,} and `{PHENOXY[1]}` on {kemi[PHENOXY[1]]:,}, whose use this \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -261038,7 +260402,7 @@
    "value": 63,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    144
+    145
    ]
   },
   "F-bd2dc3f8ee": {
@@ -261371,10 +260735,10 @@
   },
   "F-bd4eb32548": {
    "code": {
-    "file": "scripts/oxygen.py",
-    "first": 285,
-    "line": 291,
-    "text": "    a(C(\"C-OB-OX-HAZARD\", \"And the toxicant column is not monitored in the sea in this \"\n        \"layer. The water-plan register's hazardous-substance layer holds \"\n        f\"{hl['points']} points: {hl['lake']} in lakes, {hl['river']} in rivers and \"\n        f\"{hl['coast']} in coastal or marine water. Of Denmark's {hz['n_wb']} marine water \"\n        f\"bodies, {hz['without']} have none, covering {hz['area_without']:,.0f} km² - \"\n        f\"{hz['pct_without']:.0f}% of the sea. Across those freshwater points the matrices \"\n        f\"measured are biota {hz['biota']}, water {hz['water']} and sediment \"\n        f\"{hz['sediment']}.\") + \"\\n\")\n    a(C(\"C-OB-OX-DOME\", \"The international ICES DOME archive holds Danish marine sediment \"\n        \"contaminant data. This project's notes on its Danish sediment file record \""
+    "file": "scripts/pages/openproblem_e7.py",
+    "first": 167,
+    "line": 173,
+    "text": "               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \""
    },
    "constructions": [
     "K-WATER-OXYGEN"
@@ -261439,8 +260803,8 @@
    "synthetic": false,
    "value": 253,
    "where": [
-    "scripts/oxygen.py",
-    291
+    "scripts/pages/openproblem_e7.py",
+    173
    ]
   },
   "F-bd58527cd6": {
@@ -261578,9 +260942,9 @@
   "F-bd74e20689": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 130,
-    "line": 136,
-    "text": "               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \""
+    "first": 131,
+    "line": 137,
+    "text": "               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -261630,7 +260994,7 @@
    "value": 798574,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    136
+    137
    ]
   },
   "F-bd75e086c4": {
@@ -283878,10 +283242,10 @@
   },
   "F-cf5c72a98d": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 65,
-    "line": 71,
-    "text": "        refuse(\"a unit per metre is now in the CTD unit column\")\n    panel = json.load(open(os.path.join(ROOT, \"docs\", \"data\", \"areas\", \"stations_series.json\"),\n                           encoding=\"utf-8\"))\n    if {v[\"key\"]: v[\"unit\"] for v in panel[\"variables\"]}.get(\"fluo\") != \"rel\":\n        refuse(\"the panel no longer gives fluorescence in the unit rel\")\n\n    plist = \" · \".join(f\"{k} {v:,}\" for k, v in sorted(par.items(), key=lambda kv: -int(kv[1])))\n\n    o = []\n    w = o.append"
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -283978,8 +283342,8 @@
    "synthetic": false,
    "value": 7474645,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    71
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-cf60786ff0": {
@@ -298396,10 +297760,10 @@
   },
   "F-da414cb2c0": {
    "code": {
-    "file": "scripts/pages/plan.py",
-    "first": 204,
-    "line": 210,
-    "text": "        w(f\"| {lab} | {b}{cls[key]}{b} | {b}{share(cls[key], n):.0f}%{b} |\")\n    w()\n    w(\"**Four things the shape says.**\")\n    w()\n    w(B(\"C-KP-VANDKEMI\") + \"**One extract was named as the blocker for nine.** ODA `vandkemi` (`Emne_10_11`)\")\n    w(\"is named in the blocker for \" + \", \".join(ref(h) for h in nine[:-1]) + f\" and {ref(nine[-1])}.\")\n    w(f\"It is now held — {rows:,} rows and {ds['kemi']['parameters']} parameters from {ds['kemi']['years'][0]}, among\")\n    w(\"them total N, total P, ortho-P, nitrite+nitrate, ammonium, chlorophyll a, silicon, and\")\n    w(f\"{en['kemi']['categorical']['Parameter']['Oxygen indhold']:,} oxygen measurements each carrying a depth. The triage above\")\n    w(\"now classes the nine against what the extract holds rather than against its absence: \""
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 94,
+    "line": 100,
+    "text": "### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |"
    },
    "constructions": [
     "K-DS-FACTS"
@@ -298500,8 +297864,8 @@
    "synthetic": false,
    "value": 146,
    "where": [
-    "scripts/pages/plan.py",
-    210
+    "scripts/pages/known_and_unknown.py",
+    100
    ]
   },
   "F-da54056785": {
@@ -312826,10 +312190,10 @@
   },
   "F-e51550bdc9": {
    "code": {
-    "file": "scripts/pages/constructed.py",
-    "first": 66,
-    "line": 72,
-    "text": "        (\"**`hz`, marine hazardous-substance coverage** — ours\",\n         \"the source layer's own geography\",\n         C(\"C-GC-C-HZ-R\", f\"**{hz['coast']} of {hz['points']} points are marine** \"\n           f\"({hz['lake']} lake, {hz['river']} river)\"),\n         C(\"C-GC-C-HZ-V\", \"withdrawn; the coverage was manufactured by proximity\"), True),\n        (\"**`SigtDybde_m`, Secchi depth**\",\n         f\"`BundDybde_m`, bottom depth, {L['n_paired']:,} paired rows\",\n         C(\"C-GC-C-SECCHI-R\", f\"seen-to-bottom on **{sh:.1f}%** of readings where the water is \"\n           f\"{split:g} m deep or less, and **{dp:.1f}%** deeper\"),\n         C(\"C-GC-C-SECCHI-V\", f\"right-censored, **{sh / dp:.0f}× more in shallow water**; any \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -312886,8 +312250,8 @@
    "synthetic": false,
    "value": 96708,
    "where": [
-    "scripts/pages/constructed.py",
-    72
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-e5193dafdc": {
@@ -315427,10 +314791,10 @@
   },
   "F-e786dfc514": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 124,
-    "line": 130,
-    "text": "      f\"{B('C-LR-L-BALTIC')}At the Gotland Deep, every oxygen value below {P['depth_m']:g} m \"\n      f\"is under {P['o2_mg_l']:g} mg/l in **{g['months_all_below_pct']:.0f}%** of months, \"\n      f\"while Danish inner waters are below {lo:g} mg/l in **{dk_below:.1f}%** of near-bed \"\n      f\"observations — two different conditions under one word.{E} \"\n      \"[there is no Denmark →](AREAS.md)\")\n    w(\"\")\n    w(f\"{B('C-LR-L-NUTRIENTS')}**And none of the {testable} testable mechanisms is a nutrient \"\n      \"hypothesis.** Every entry in that group is waiting on a data fetch, unscoreable, or \"\n      f\"unestablished.{E} {B('C-LR-L-PHYSICS')}Of the testable ones, {phys} are physical — \"\n      \"resupply, disturbance of the bed, renewal, the physical fields — and \""
+    "file": "scripts/pages/triage.py",
+    "first": 312,
+    "line": 318,
+    "text": "    bio = sum(int(gs[g][\"testable\"]) for g in BIOLOGY)\n    hard = sum(gs[g][\"unscoreable\"] + gs[g][\"experiment\"] for g in BIOLOGY + [\"E\"])\n    if bio:\n        raise live.Unjustified(\"TRIAGE: the page says the biology groups hold no testable entry\")\n    w(C(\"C-TR-PATTERN\", \"The pattern across groups: **the archive held here tests physics and \"\n        \"itself, and the groups on biology hold no testable entry.** Groups C, G, Z and I hold \"\n        f\"{phys} of the {cls['testable']['n']} testable-now entries. Groups F, J, T and R — \"\n        \"biological structure, films, sediment sickness, decay — hold none of them, and E, \"\n        f\"chemistry, holds {gs['E']['testable']}; those five groups hold {hard} of the \"\n        f\"{beyond} entries that are unscoreable or need an experiment.\"))"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -315463,8 +314827,8 @@
    "synthetic": false,
    "value": 23,
    "where": [
-    "scripts/pages/landing.py",
-    130
+    "scripts/pages/triage.py",
+    318
    ]
   },
   "F-e787032151": {
@@ -329843,10 +329207,10 @@
   },
   "F-f392c48f94": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 603,
-    "line": 609,
-    "text": "    w(C(\"C-OP-18-SET\", \"`scripts/rescore.py` takes the hypotheses listed as waiting on the ODA \"\n        \"`vandkemi` fetch - \" + \", \".join(ref(h) for h in hyps[:-1]) + f\" and {ref(hyps[-1])} - and \"\n        \"checks, per hypothesis, which of the variables its consequence needs are now in hand:\"))\n    w()\n    w(\"| | |\")\n    w(\"|---|---|\")\n    w(f\"| **testable now** | {rs['tally']['testable now']} — \" + \", \".join(ref(h) for h in testable) + \" |\")\n    w(f\"| **partly unblocked; a second blocker was behind the first** | **{rs['tally'][partly]}** |\")\n    w()\n    w(C(\"C-OP-18-LOCKS\", f\"**A blocker can hide a blocker.** {ref('A1')} and {ref('A2')} need river load, \""
+    "file": "scripts/pages/triage.py",
+    "first": 220,
+    "line": 226,
+    "text": "    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \""
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -329883,8 +329247,8 @@
    "synthetic": false,
    "value": 1,
    "where": [
-    "scripts/pages/open_problems.py",
-    609
+    "scripts/pages/triage.py",
+    226
    ]
   },
   "F-f397ce00d4": {
@@ -338658,84 +338022,6 @@
    "synthetic": false,
    "value": "0.44"
   },
-  "F-fad92131f2": {
-   "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 167,
-    "line": 173,
-    "text": "               \"published could not be established.\"))\n    w(\"\")\n    w(\"## The national pollutant-status layer\")\n    w(\"\")\n    w(C(\"C-OQ-E7-MFS\", f\"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} \"\n        f\"points, none of them marine**: {hl['lake']} `DKLAKE`, \"\n        f\"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water \"\n        f\"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.\") + \" \"\n      + C(\"C-OQ-E7-MFS-ONE\", f\"What each point carries is `qecode = \\\"{qe}\\\"`, \"\n          f\"`qestatusor = \\\"{qs}\\\"`, `da_oekolog = \\\"{do}\\\"` and `aktivstart = {ak}`, each the \""
-   },
-   "constructions": [
-    "K-DRAFTSB-COUNTS"
-   ],
-   "excerpt": {
-    "parent": "mfs",
-    "rows": [
-     [
-      "points",
-      "256"
-     ],
-     [
-      "by_type",
-      "{… 2 keys}"
-     ],
-     [
-      "biota",
-      "253"
-     ],
-     [
-      "water",
-      "174"
-     ],
-     [
-      "sediment",
-      "5"
-     ],
-     [
-      "no_matrix",
-      "3"
-     ],
-     [
-      "distinct_qecode",
-      "1"
-     ],
-     [
-      "distinct_qestatusor",
-      "1"
-     ],
-     [
-      "distinct_da_oekolog",
-      "1"
-     ],
-     [
-      "distinct_aktivstart",
-      "1"
-     ]
-    ],
-    "target": "sediment"
-   },
-   "field": {
-    "is": "Points whose `maaltsedim` flag is set.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/drafts_b_counts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/drafts_b_counts.json",
-    "mfs.sediment"
-   ],
-   "synthetic": false,
-   "value": 5,
-   "where": [
-    "scripts/pages/openproblem_e7.py",
-    173
-   ]
-  },
   "F-fae421f06a": {
    "code": {
     "file": "scripts/socialcontext.py",
@@ -345191,9 +344477,9 @@
   "F-fff0060a3d": {
    "code": {
     "file": "scripts/pages/openproblem_e7.py",
-    "first": 121,
-    "line": 127,
-    "text": "          \"`Bundfauna`, not fetched. (c) is not held as a load: the water carries nutrient \"\n          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \""
+    "first": 122,
+    "line": 128,
+    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -345247,7 +344533,7 @@
    "value": 1415,
    "where": [
     "scripts/pages/openproblem_e7.py",
-    127
+    128
    ]
   },
   "F-fffe961438": {

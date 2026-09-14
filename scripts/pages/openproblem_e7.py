@@ -63,6 +63,7 @@ def text():
     par, kemi = ctd["categorical"]["Parameter"], en["kemi"]["categorical"]["Parameter"]
     meta = J("meta_facts.json")
     ox = J("oxygen.json")["hazardous"]
+    hl = J("areas.json")["hazardous_layer"]
 
     # the page's statements about the files, refused if the files stop saying them
     if len(par) != meta["ctd_parameters"] or any(PEST.search(p) for p in par):
@@ -167,13 +168,13 @@ def text():
     w("")
     w("## The national pollutant-status layer")
     w("")
-    w(C("C-OQ-E7-MFS", f"`data/raw/national/sw_mfs_tilstand.geojson` - **{mfs['points']} "
-        f"points, none of them marine**: {mfs['by_type']['DKLAKE']} `DKLAKE`, "
-        f"{mfs['by_type']['DKRIVER']} `DKRIVER`. Matrices flagged: biota {mfs['biota']}, water "
-        f"{mfs['water']}, **sediment {mfs['sediment']}**, nothing {mfs['no_matrix']}.") + " "
+    w(C("C-OQ-E7-MFS", f"`data/raw/national/sw_mfs_tilstand.geojson` - **{hl['points']} "
+        f"points, none of them marine**: {hl['lake']} `DKLAKE`, "
+        f"{hl['river']} `DKRIVER`. Matrices flagged: biota {ox['biota']}, water "
+        f"{ox['water']}, **sediment {ox['sediment']}**, nothing {mfs['no_matrix']}.") + " "
       + C("C-OQ-E7-MFS-ONE", f"What each point carries is `qecode = \"{qe}\"`, "
           f"`qestatusor = \"{qs}\"`, `da_oekolog = \"{do}\"` and `aktivstart = {ak}`, each the "
-          f"same on all {mfs['points']}. **No analyte name, no concentration, no unit, no "
+          f"same on all {hl['points']}. **No analyte name, no concentration, no unit, no "
           "sampling date.**"))
     w("")
     w("- " + C("C-OQ-E7-CONFLATE", "**Schema conflation.** One quality-element code stands for "
@@ -181,7 +182,7 @@ def text():
                "column. A pesticide effect cannot be separated from any other pollutant's even "
                "in principle at this resolution."))
     w("- " + C("C-OQ-E7-VERDICT", "**Model-as-datum.** The value is a status verdict, and it is "
-               f"invariant across all {mfs['points']} points, so it carries no information for "
+               f"invariant across all {hl['points']} points, so it carries no information for "
                "discriminating anything."))
     w("- " + C("C-OQ-E7-NOMARINE", "No marine water body here carries a hazardous-substance "
                f"observation: of the {ox['n_wb']} marine water bodies, {ox['with_points']} have "

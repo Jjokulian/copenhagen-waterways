@@ -110,15 +110,15 @@
    "fmt": "{:,}"
   },
   "da_mfs_total": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/areas.json",
    "path": [
-    "hazardous",
-    "total"
+    "hazardous_layer",
+    "points"
    ],
    "fmt": "{:,}"
   },
   "da_mfs_sediment": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/oxygen.json",
    "path": [
     "hazardous",
     "sediment"
@@ -126,25 +126,25 @@
    "fmt": "{:,}"
   },
   "da_mfs_lake": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/areas.json",
    "path": [
-    "hazardous",
+    "hazardous_layer",
     "lake"
    ],
    "fmt": "{:,}"
   },
   "da_mfs_river": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/areas.json",
    "path": [
-    "hazardous",
+    "hazardous_layer",
     "river"
    ],
    "fmt": "{:,}"
   },
   "da_mfs_coast": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/areas.json",
    "path": [
-    "hazardous",
+    "hazardous_layer",
     "coast"
    ],
    "fmt": "{:,}"

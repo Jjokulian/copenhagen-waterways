@@ -1895,8 +1895,8 @@
     "X-KP-HYPFACTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each R6 sentence against its claim, reasoning and what it rests on: the pinned SR323 and NOVA kap. 14 texts with every number read at its phrase, the pinned NOVANA 2023-2027 text, the PANGAEA records of 997075, 987348 and 880132, hypodraft_ctd.json, drafts_b_counts.json, hypodraft_facts.json, enums.json, the source register's ODA, DOME and AL561 entries, and the places page's Mariager claims; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on openproblems/R6.md": "The archive's finest routine observable near the bed is a monthly median per station: `stations_series.json` holds 679,422 station-months at 1,415 stations over 564 months from 1980, near-bed oxygen on 76,980 of them.",
      "texts": "e927720256513321",
@@ -1904,7 +1904,7 @@
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
      "node D-OQ-HYPFACTS": "f737a97815667619",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -3573,15 +3573,15 @@
     "D-KP-SOURCEREG"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each A7 sentence against its claim, reasoning and what it rests on: rescore.json and the OPEN_PROBLEMS A7 claim, the pinned Hylen et al. paper and Zenodo record, the pinned NERI report, SR323, NOVA kap. 14 and NOVANA 2023-2027 texts with every number read at its phrase, the AL561 PANGAEA record, drafts_b_counts.json, hypodraft_facts.json, the seabed layer's fields, fetch_oda.py and the source register; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on openproblems/A7.md": "`data/raw/geus/seabed_sediment_dk.gpkg`, layer `Seabed_sedimen` - 108 polygons in 7 substrate classes (Gravel and coarse sand 22, Mud and sandy mud 9, Muddy sand 16, Quaternary clay and silt 14, Sand 22, Sedimentary rock 3, Till/diamicton 22), compiled from 22 named survey campaigns at map scales whose denominators run from 5,000 to 500,000. Usable as substrate class if the scale travels with it; **no organic-carbon value at all**, as the register's `R7-TOC-MAP-GAP` records.",
      "texts": "dd8b6f8661bf2b51",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
      "node D-OQ-HYPFACTS": "f737a97815667619",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b",
+     "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-OQ-SEABED-FIELDS": "73213c7b2274aa00",
      "node D-KP-SOURCEREG": "5f1ff7a12c321845"
     }
@@ -4409,13 +4409,13 @@
     "C-OQ-OLD-E7-REGISTER"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each E7 sentence against its claim, reasoning and what it rests on: enums.json parameter lists of the CTD and water-chemistry extracts, meta_facts.json, drafts_b_counts.json, hypodraft_facts.json, oxygen.json, the pollutant layer's fields and values, the GEUS and groundwater files, fetch_oda.py, the source register's ODA hazardous-substance, stream and pesticide-use entries, and the pinned Wikipedia diuron, atrazine, simazine, lindane and glyphosate phrases; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on openproblems/E7.md": "`data/raw/oda/stations.csv` - the ODA station register: 798,574 rows, 6,288 distinct stations.",
      "texts": "2d5672bc0a124fcc",
      "node D-OQ-HYPFACTS": "f737a97815667619",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -4616,18 +4616,22 @@
     "D-HY-HAZ",
     "X-KD-DBCOUNTS",
     "D-KD-DBCOUNTS",
-    "C-HY-E6-FRESHWATER"
+    "C-HY-E6-FRESHWATER",
+    "X-OB-AREAS",
+    "X-HY-OXYGEN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each E7 sentence against its claim, reasoning and what it rests on: enums.json parameter lists of the CTD and water-chemistry extracts, meta_facts.json, drafts_b_counts.json, hypodraft_facts.json, oxygen.json, the pollutant layer's fields and values, the GEUS and groundwater files, fetch_oda.py, the source register's ODA hazardous-substance, stream and pesticide-use entries, and the pinned Wikipedia diuron, atrazine, simazine, lindane and glyphosate phrases; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on openproblems/E7.md": "`data/raw/national/sw_mfs_tilstand.geojson` - **256 points, none of them marine**: 152 `DKLAKE`, 104 `DKRIVER`. Matrices flagged: biota 253, water 174, **sediment 5**, nothing 3.",
-     "texts": "8e6e800656d01e2d",
+     "texts": "d1af4fae4b304f89",
      "node D-HY-HAZ": "a74dd208c5fde788",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "rests on C-HY-E6-FRESHWATER": "520f284d6b922651"
+     "rests on C-HY-E6-FRESHWATER": "520f284d6b922651",
+     "node X-OB-AREAS": "0066c296ca875263",
+     "node X-HY-OXYGEN": "e31920ffeba25755"
     }
    }
   },
@@ -4641,17 +4645,19 @@
    "rests_on": [
     "X-KD-DBCOUNTS",
     "D-KD-DBCOUNTS",
-    "D-OQ-MFS-FIELDS"
+    "D-OQ-MFS-FIELDS",
+    "X-OB-AREAS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each E7 sentence against its claim, reasoning and what it rests on: enums.json parameter lists of the CTD and water-chemistry extracts, meta_facts.json, drafts_b_counts.json, hypodraft_facts.json, oxygen.json, the pollutant layer's fields and values, the GEUS and groundwater files, fetch_oda.py, the source register's ODA hazardous-substance, stream and pesticide-use entries, and the pinned Wikipedia diuron, atrazine, simazine, lindane and glyphosate phrases; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on openproblems/E7.md": "What each point carries is `qecode = \"QE3-3 - River Basin Specific Pollutants\"`, `qestatusor = \"3\"`, `da_oekolog = \"2\"` and `aktivstart = 01-01-1999`, each the same on all 256. **No analyte name, no concentration, no unit, no sampling date.**",
-     "texts": "8856b98b4700558b",
+     "texts": "154f40ea350f2f08",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-OQ-MFS-FIELDS": "c01346f174e7621e"
+     "node D-OQ-MFS-FIELDS": "c01346f174e7621e",
+     "node X-OB-AREAS": "0066c296ca875263"
     }
    }
   },
@@ -4669,12 +4675,12 @@
     "C-OQ-OLD-E7-CONFLATE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on openproblems/E7.md": "**Schema conflation.** One quality-element code stands for every river-basin-specific pollutant, whatever the substance, in a single column. A pesticide effect cannot be separated from any other pollutant's even in principle at this resolution.",
      "texts": "5d4430b3b1b91a31",
-     "rests on C-OQ-E7-MFS-ONE": "8856b98b4700558b"
+     "rests on C-OQ-E7-MFS-ONE": "154f40ea350f2f08"
     }
    }
   },
@@ -4689,12 +4695,12 @@
     "C-OQ-E7-MFS-ONE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each E7 sentence against its claim, reasoning and what it rests on: enums.json parameter lists of the CTD and water-chemistry extracts, meta_facts.json, drafts_b_counts.json, hypodraft_facts.json, oxygen.json, the pollutant layer's fields and values, the GEUS and groundwater files, fetch_oda.py, the source register's ODA hazardous-substance, stream and pesticide-use entries, and the pinned Wikipedia diuron, atrazine, simazine, lindane and glyphosate phrases; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on openproblems/E7.md": "**Model-as-datum.** The value is a status verdict, and it is invariant across all 256 points, so it carries no information for discriminating anything.",
      "texts": "2b21a782bc1a617b",
-     "rests on C-OQ-E7-MFS-ONE": "8856b98b4700558b"
+     "rests on C-OQ-E7-MFS-ONE": "154f40ea350f2f08"
     }
    }
   },
@@ -4871,12 +4877,12 @@
     "C-OQ-E7-MFS-ONE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on openproblems/E7.md": "**If that is too thin**, the smallest useful addition is one analyte panel bolted onto stations that already carry fauna: 20 existing `Bundfauna` stations spanning an agricultural gradient, sampled before application, twice after, and in winter, sediment plus passive samplers. The requirements, each of which the national pollutant-status layer violates: **named analytes reported individually, never a \"pesticides\" sum**; **per-analyte LOD reported with every result**, chosen below the effect concentration for the conserved target rather than wherever the instrument lands; and **\"< LOD\" recorded as censoring with its threshold**, so a non-detect is reportable as a bound instead of silently becoming a zero.",
      "texts": "9bd78c92b398004d",
-     "rests on C-OQ-E7-MFS-ONE": "8856b98b4700558b"
+     "rests on C-OQ-E7-MFS-ONE": "154f40ea350f2f08"
     }
    }
   },

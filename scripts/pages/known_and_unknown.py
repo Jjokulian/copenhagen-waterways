@@ -47,7 +47,7 @@ def main():
     ku = ds["kemi"]
     ortho = ku["units"]["Orthophosphat"]
     ortho_mg = share(ortho["mg/l"], ortho["mg/l"] + ortho["µg/l"])
-    hz = hf["hazardous"]
+    hz = J(DERIVED, "areas.json")["hazardous_layer"]
     hirt = ds["maaledybde"]["hirtshals_15m"]
     dyreenhed = pin("{count:BEK931-2024:dyreenhed}")
     n170 = pin("{read:BEK931-2024:170|divideret med 170 kg}")
@@ -137,7 +137,7 @@ def main():
 | | reading | cases |
 |---|---|---|
 | **absence → absence** | "we didn't find it" ⇒ "it isn't there" | {C("C-KP-FM-ABSENCE", "the lists above, of which *\"no row carries a clock time\"* is the purest: a property of one unfetched topic, reported as a property of the archive")} |
-| **presence → evidence** | "there is a column" ⇒ "there is a measurement" | {C("C-KP-FM-PRESENCE", f"the national hazardous-substance layer's {hz['total']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points")} |
+| **presence → evidence** | "there is a column" ⇒ "there is a measurement" | {C("C-KP-FM-PRESENCE", f"the national hazardous-substance layer's {hz['points']} points are all freshwater — {hz['lake']} in lakes, {hz['river']} in rivers, none coastal — so a marine column built from it would carry only freshwater points")} |
 
 {C("C-KP-FM-WORSE", "The second is worse, because it *adds* confidence. But they share a root: **treating the shape of a search result as a property of the world.**")}
 

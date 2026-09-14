@@ -365,26 +365,6 @@
       "kind": "counted",
       "is": "Distinct `TekniskAnvisningAnvendt` values in the whole CTD extract."
      },
-     "hazardous.total": {
-      "kind": "counted",
-      "is": "Stations in the national river-basin-specific-pollutant status network, `sw_mfs_tilstand.geojson`."
-     },
-     "hazardous.sediment": {
-      "kind": "counted",
-      "is": "Of those, stations flagged as measuring sediment (`maaltsedim`)."
-     },
-     "hazardous.lake": {
-      "kind": "counted",
-      "is": "Of those, stations on a lake water body (`DKLAKE`)."
-     },
-     "hazardous.river": {
-      "kind": "counted",
-      "is": "Of those, stations on a river water body (`DKRIVER`)."
-     },
-     "hazardous.coast": {
-      "kind": "counted",
-      "is": "Of those, stations on a coastal water body (`DKCOAST`)."
-     },
      "sign_flips.station_months": {
       "kind": "counted",
       "is": "Station-months flagged as a batch sign flip in `docs/data/areas/flags.json`."
@@ -471,10 +451,10 @@
     "scripts/enums.py"
    ],
    "confirmed": {
-    "by": "fork drafts-a (written against the code, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/hypodraft_facts.py": "f2f1381a58c0d275",
+     "scripts/hypodraft_facts.py": "72e2e6cd44484771",
      "scripts/enums.py": "e21dcf1b1c5748b5"
     }
    }

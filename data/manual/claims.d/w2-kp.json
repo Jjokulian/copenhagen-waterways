@@ -65,7 +65,7 @@
    "id": "X-KP-HYPFACTS",
    "kind": "script",
    "label": "hypodraft_facts.py",
-   "detail": "Facts the hypothesis drafts cite from held files: among them the hazardous-substance layer's points by kind of water, and the probe numbers in the CTD extract."
+   "detail": "Facts the hypothesis drafts cite from held files: among them the probe numbers in the CTD extract."
   },
   {
    "id": "X-KP-STATIONS",
@@ -504,13 +504,13 @@
    ],
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-kp (read each claim, its reasoning and what it rests on against the page wording as built; counts against triage.json, enums.json, ds_facts.json, meta_facts.json, hypodraft_facts.json and cycles.json; the drainage figures against the pinned DCA report and the fishing record against the pinned Zenodo page; history phrases checked by the engine at their commits; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on PLAN.md": "**Not done.** A measurement-level store: depth, time and *station identity* as questions rather than columns. The station series this project analyses keep at most two depths — surface and bed — and one value per station and month, and carry no instrument. That is a choice made for convenience and not yet unmade.",
      "texts": "dc01c5549c11421f",
      "node D-KP-SERIES": "75fa427597293f59",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -977,14 +977,14 @@
    ],
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (formatting only: identifiers the number check reads as quantities - a report number, paragraph ranges, a station name, a placeholder value, a reporting level - set as code in this claim's texts or in claims under it; wording and figures unchanged. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on PLAN.md": "**And it never terminates.** Each new independently produced measure-space is another trial, so the score carries a time index and has no final value. Three production paths today; and 74% of CTD measurements carry a named probe — 81 probe numbers in all — so instruments are a further axis to compare across.",
      "texts": "1dbbf5e48b0992ae",
      "rests on C-KP-PATHS": "fc03d189a9074ed2",
      "node X-KP-ENUMS": "9f81357787adb189",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -1524,14 +1524,14 @@
    ],
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-kp (read each claim, its reasoning and what it rests on against the page wording as built; counts against triage.json, enums.json, ds_facts.json, meta_facts.json, hypodraft_facts.json and cycles.json; the drainage figures against the pinned DCA report and the fishing record against the pinned Zenodo page; history phrases checked by the engine at their commits; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
     "saw": {
      "said on KNOWN_AND_UNKNOWN.md": "`ctd.csv.gz` carries **17 distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry 9 variables, drawn from five of them.",
      "texts": "731af8b353816909",
      "node X-KP-ENUMS": "9f81357787adb189",
      "node X-KP-META": "b1c9cb927fef3b76",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
   },
@@ -2212,16 +2212,18 @@
    "claim": "The national hazardous-substance layer's points are all freshwater, so a marine column built from it would carry only freshwater points.",
    "because": "hypodraft_facts.py counts the layer's points by kind of water: lakes and rivers, none coastal.",
    "rests_on": [
-    "X-KP-HYPFACTS"
+    "X-OB-AREAS",
+    "D-OB-HZLAYER"
    ],
    "basis": "computed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-kp (read each claim, its reasoning and what it rests on against the page wording as built; counts against triage.json, enums.json, ds_facts.json, meta_facts.json, hypodraft_facts.json and cycles.json; the drainage figures against the pinned DCA report and the fishing record against the pinned Zenodo page; history phrases checked by the engine at their commits; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the hazardous-substance layer's point and water-type counts are now made once, in areas.py, and its matrix counts once, in oxygen.py by the strict 'Ja' rule; the three claims that printed the removed copies now rest on those two scripts, and what they say is unchanged. The four resting on them draw on what the layer says - freshwater points, one code, a constant verdict, no analyte named - not on which script counts it)",
     "saw": {
      "said on KNOWN_AND_UNKNOWN.md": "the national hazardous-substance layer's 256 points are all freshwater — 152 in lakes, 104 in rivers, none coastal — so a marine column built from it would carry only freshwater points",
-     "texts": "132829d24f71379f",
-     "node X-KP-HYPFACTS": "b78ab850a1db2c4b"
+     "texts": "17de61fe81710028",
+     "node X-OB-AREAS": "0066c296ca875263",
+     "node D-OB-HZLAYER": "01cb3d44e450c96b"
     }
    }
   },
