@@ -56,7 +56,7 @@
      },
      "maaledybde.stations_with_bottom_depth": {
       "kind": "counted",
-      "is": "Distinct stations with at least one non-blank `BundDybde_m`."
+      "is": "Distinct stations with at least one `BundDybde_m` that parses as a number (`formats.num`, the declared ODA format)."
      },
      "maaledybde.rows_x_equals_x1": {
       "kind": "counted",
@@ -152,7 +152,7 @@
     "scripts/drafts_b_counts.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
      "data/manual/data_sources_2.json": "6d052e73fa896f81",
@@ -161,7 +161,7 @@
      "data/raw/oda/maaledybde.csv.gz": "bcdb9d24722798a1",
      "docs/data/areas/stations_series.bin": "cfa4a83100559ec4",
      "docs/data/areas/stations_series.json": "e40a60dd6a7c721a",
-     "scripts/drafts_b_counts.py": "406e53b1cbb3f373"
+     "scripts/drafts_b_counts.py": "ddc1fff74df5a671"
     }
    }
   }

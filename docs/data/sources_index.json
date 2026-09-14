@@ -886,7 +886,7 @@
     "The files named are the ones the drafts' statements are about."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the Secchi extract's record and bottom-depth counts, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/hypodraft_facts.json",
@@ -1028,7 +1028,7 @@
     "The portal counts in the register were read correctly when they were recorded."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
@@ -2340,7 +2340,7 @@
     "A file much smaller than the others holds fewer days, not a denser encoding."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
@@ -8390,13 +8390,13 @@
    "F-52f50387e2",
    "F-55ed2e801b",
    "F-566c0ca9ca",
-   "F-5683df4d6c",
    "F-59503bce6c",
    "F-5a40007fae",
    "F-5b51d1bbc4",
    "F-5bb29588ed",
    "F-5c085abe9f",
    "F-5d2b7845e5",
+   "F-5e2026012e",
    "F-6270109e4e",
    "F-63372240e0",
    "F-64faee3408",
@@ -8495,7 +8495,6 @@
    "F-b5209874b6",
    "F-b61d7944ec",
    "F-b6d8ac2b3c",
-   "F-b78e848332",
    "F-b87ceb99d3",
    "F-ba3e051cdc",
    "F-bb388c026b",
@@ -8551,6 +8550,7 @@
    "F-ec36127728",
    "F-ed9b66fb2e",
    "F-ee9bc541a9",
+   "F-eea1e4eb92",
    "F-f37c341d77",
    "F-f3813ac6c6",
    "F-f6aed45f21",
@@ -13121,7 +13121,7 @@
    "F-255eb2999d",
    "F-38e9913de7",
    "F-55ed2e801b",
-   "F-5683df4d6c",
+   "F-5e2026012e",
    "F-6270109e4e",
    "F-8d988c3666",
    "F-91ed13ae96",
@@ -13132,12 +13132,12 @@
    "F-a95c664ddf",
    "F-ae661b1220",
    "F-b6d8ac2b3c",
-   "F-b78e848332",
    "F-c18aa3ed5b",
    "F-d213ba86e1",
    "F-d29c796283",
    "F-e28b0c81f0",
    "F-eb88322a13",
+   "F-eea1e4eb92",
    "F-f37c341d77",
    "F-ff67d5d2a8"
   ],
@@ -13262,15 +13262,14 @@
    "F-301a45c3f7",
    "F-341b020904",
    "F-5621596820",
-   "F-5683df4d6c",
    "F-58afca2992",
    "F-5a6a77bc92",
+   "F-5e2026012e",
    "F-883af86af5",
    "F-9fee8eb468",
    "F-a65709e687",
    "F-a8a4b5f18f",
    "F-b5f33a89f8",
-   "F-b78e848332",
    "F-bd2a4e4894",
    "F-bd74e20689",
    "F-c9c0e8b759",
@@ -13279,6 +13278,7 @@
    "F-db5b546583",
    "F-dfae2980f7",
    "F-e0cd5a53f8",
+   "F-eea1e4eb92",
    "F-f8f56b7f48",
    "F-fd7e9a24fa",
    "F-ff725b4398",
@@ -13456,7 +13456,6 @@
    "F-51f28a1b04",
    "F-52cfe2e72d",
    "F-53c0aaacfb",
-   "F-5683df4d6c",
    "F-56f1715935",
    "F-5a90478e4b",
    "F-5a9ac13e75",
@@ -13553,6 +13552,7 @@
    "F-eb1cc571c1",
    "F-eb400328ff",
    "F-ec30fa9198",
+   "F-eea1e4eb92",
    "F-ef0f98c5fb",
    "F-ef76059756",
    "F-f392c48f94",
@@ -15040,8 +15040,8 @@
   "F-008df4b99b": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -15100,7 +15100,7 @@
    "value": 564,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-008ed6b857": {
@@ -25493,10 +25493,10 @@
   },
   "F-0827f1f9d3": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 172,
-    "line": 178,
-    "text": "               \"carrying `BundDybde_m`. **Its northing is missing:** the second easting column \"\n               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))\n    w(\"- \" + C(\"C-OQ-A7-SEABED\", \"`data/raw/geus/seabed_sediment_dk.gpkg`, layer \"\n               f\"`Seabed_sedimen` - {sb['features']} polygons in {sb['classes']} substrate \"\n               f\"classes ({clist}), compiled from {sb['campaigns']} named survey campaigns at \"\n               f\"map scales whose denominators run from {sbf['scale_min']:,} to \"\n               f\"{sbf['scale_max']:,}. Usable as \"\n               \"substrate class if the scale travels with it; **no organic-carbon value at \"\n               \"all**, as the register's `R7-TOC-MAP-GAP` records.\"))"
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -25541,8 +25541,8 @@
    "synthetic": false,
    "value": 5000,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    178
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-08289ef870": {
@@ -42949,8 +42949,8 @@
   "F-16daf10c54": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1027,
-    "line": 1033,
+    "first": 1029,
+    "line": 1035,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -42969,7 +42969,7 @@
    "value": 5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1033
+    1035
    ]
   },
   "F-17026cc7ba": {
@@ -48151,10 +48151,10 @@
   },
   "F-1acb8bcb68": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 131,
-    "line": 137,
-    "text": "               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 151,
+    "line": 157,
+    "text": "        \"stations under the portal's default period than with a period set.\") + \" \"\n      + C(\"C-AF-F3-FITTED\", \"Use the per-transect observed depth limit, never an indicator's \"\n          \"fitted one: a fitted depth limit is a model output, and testing a model's output \"\n          \"against its own input tests the model.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-REG\", f\"`data/raw/oda/stations.csv`, the ODA station register, holds \"\n        f\"{reg['rows']:,} records for {reg['stations']:,} stations, \"\n        f\"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run \"\n        f\"from {reg['first_date']} to {reg['last_date']}.\") + \" \"\n      + C(\"C-AF-F3-IDS\", f\"The register carries only {ev['series_stations_in_register']:,} of \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -48203,8 +48203,8 @@
    "synthetic": false,
    "value": 6288,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    137
+    "scripts/pages/hypodraft_f3.py",
+    157
    ]
   },
   "F-1acf833585": {
@@ -49299,8 +49299,8 @@
   "F-1b8d5655f5": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 221,
-    "line": 227,
+    "first": 222,
+    "line": 228,
     "text": "    w(\"2. \" + C(\"C-AF-F3-P2\", \"Per transect-year, over the growth season this project's \"\n                \"light analysis uses, March to September: median cover; nearest-cast Kd \"\n                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \"\n                f\"over requirements from {rq0}% to {rq1}%.\"))\n    w(\"5. \" + C(\"C-AF-F3-P5\", \"Repeat with the CMEMS `KD490` pixels as the clarity source, \""
    },
    "constructions": [
@@ -49319,7 +49319,7 @@
    "value": 5,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    227
+    228
    ]
   },
   "F-1b8d8a98d6": {
@@ -52713,8 +52713,8 @@
   "F-1e328e10eb": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 838,
-    "line": 844,
+    "first": 840,
+    "line": 846,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -52733,7 +52733,7 @@
    "value": 35,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    844
+    846
    ]
   },
   "F-1e33d8a4c0": {
@@ -61483,8 +61483,8 @@
   "F-255eb2999d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1088,
-    "line": 1094,
+    "first": 1090,
+    "line": 1096,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P4\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"A superposed-epoch composite at lags from −{param:cc_c4_lag_before} to +{param:cc_c4_lag_after} months per site, recording the peak lag.\",\n   \"because\": \"The window opens before the event to show the baseline and runs well after it to reach the far end of the path; its bounds are stated before any fit.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -61503,7 +61503,7 @@
    "value": 24,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1094
+    1096
    ]
   },
   "F-25637e891f": {
@@ -71576,8 +71576,8 @@
   "F-2cd2cd8a94": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -71616,7 +71616,7 @@
    "value": 84656,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-2cd46014d3": {
@@ -73644,8 +73644,8 @@
   "F-2dd587317e": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1613,
-    "line": 1619,
+    "first": 1615,
+    "line": 1621,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-UNFILLED\",\n   \"kind\": \"bounded\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"At least {calc:da_oxy_bed_n - da_oxysat_bed_n|,} oxy_bed station-months carry no saturation, the difference of the two counts being a lower bound, and SondeNr is `999`, probe unknown, on {calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}% of the CTD extract.\",\n   \"because\": \"A station-month with oxygen and no saturation is one of the oxygen count not matched in the saturation count; since some saturation station-months might lack oxygen, the difference of the two counts can only undercount them. The probe share is enums.py's count of `999` over all rows of the extract.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -73679,7 +73679,7 @@
    "value": 12487,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1619
+    1621
    ]
   },
   "F-2dd6490112": {
@@ -76388,10 +76388,10 @@
   },
   "F-301a45c3f7": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 186,
-    "line": 192,
-    "text": "        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]\n    w(f\"{sd['z11_shallow_start']:.2f} <span>or</span> {sd['z11_deep_start']:.2f} m\")\n    w(\"\")\n    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 136,
+    "line": 142,
+    "text": "    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \"\n          \"Two answers in one column, so Kd is stratified by start depth, never pooled.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-VEG\", \"ODA's vegetation topics — eelgrass with bottom fauna, with \""
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -76448,8 +76448,8 @@
    "synthetic": false,
    "value": 8.18,
    "where": [
-    "scripts/pages/landing.py",
-    192
+    "scripts/pages/hypodraft_f3.py",
+    142
    ]
   },
   "F-302225b842": {
@@ -81218,8 +81218,8 @@
   "F-341458f0de": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -81278,7 +81278,7 @@
    "value": 1980,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-3417dfbf87": {
@@ -81345,10 +81345,10 @@
   },
   "F-341b020904": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 157,
-    "line": 163,
-    "text": "        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \"\n          \"inherits the first reason instead.\"))"
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 136,
+    "line": 142,
+    "text": "    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \"\n          \"Two answers in one column, so Kd is stratified by start depth, never pooled.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-VEG\", \"ODA's vegetation topics — eelgrass with bottom fauna, with \""
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -81405,8 +81405,8 @@
    "synthetic": false,
    "value": 0.27,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    163
+    "scripts/pages/hypodraft_f3.py",
+    142
    ]
   },
   "F-341fd4af4f": {
@@ -102980,8 +102980,8 @@
   "F-44b150c62f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -103000,7 +103000,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-44b1a20db1": {
@@ -124747,8 +124747,8 @@
   "F-55ed2e801b": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1088,
-    "line": 1094,
+    "first": 1090,
+    "line": 1096,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P4\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"A superposed-epoch composite at lags from −{param:cc_c4_lag_before} to +{param:cc_c4_lag_after} months per site, recording the peak lag.\",\n   \"because\": \"The window opens before the event to show the baseline and runs well after it to reach the far end of the path; its bounds are stated before any fit.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -124767,7 +124767,7 @@
    "value": 12,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1094
+    1096
    ]
   },
   "F-55ffde7cdb": {
@@ -125112,10 +125112,10 @@
   },
   "F-5621596820": {
    "code": {
-    "file": "scripts/light.py",
-    "first": 434,
-    "line": 440,
-    "text": "        f\"casts) to {d['kd']['p90']} (p90, the murkiest), median {d['kd']['median']}.\") + \"\\n\")\n\n    a(\"## The depth a plant could reach\\n\")\n    a(C(\"C-FR-LT-CONVERT\", f\"Each cast converted to the deepest point still receiving {lo}% of \"\n        \"surface light, by the second line above:\") + \"\\n\")\n    a(\"> \" + C(\"C-FR-LT-DEPTH\", f\"Median **{d['z11']['median']} m**. The clearest casts (p90) \"\n               f\"reach {d['z11']['p90']} m; the murkiest (p10) reach {d['z11']['p10']} m. At the \"\n               f\"target's {hi}% the median is **{d['z14_median']} m**.\") + \"\\n\")\n    a(C(\"C-FR-LT-POTENTIAL\", \"It is a number per cast, computed from the published Kd rather \"\n        \"than from a model of a reference condition; DCE add that enough light does not mean \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 123,
+    "line": 129,
+    "text": "                \"satellite attenuation `KD490` in the held CMEMS transparency files — neither \"\n                \"derived from vegetation.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-STAYS\", \"**What stays circular and cannot be removed:** the light requirement \"\n        \"`C2` needs — the share of surface light eelgrass needs at the bed — is physiology, \"\n        \"not measured here, and no document pinned in this project gives it. This project's \"\n        f\"light analysis carries two values for it, {lo}% and {hi}% of surface light, as \"\n        \"parameters of its own code with no source recorded. If the requirement is wrong, \"\n        f\"the adequacy call moves with it, so `C2` is reported across requirements from \"\n        f\"{rq0}% to {rq1}% rather than at one threshold.\"))"
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -125192,8 +125192,8 @@
    "synthetic": false,
    "value": 14,
    "where": [
-    "scripts/light.py",
-    440
+    "scripts/pages/hypodraft_f3.py",
+    129
    ]
   },
   "F-563107ed2b": {
@@ -125661,52 +125661,6 @@
    ],
    "synthetic": false,
    "value": "0.016"
-  },
-  "F-5683df4d6c": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 571,
-    "line": 577,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"hypodraft_facts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "maaledybde",
-    "rows": [
-     [
-      "rows",
-      "151203"
-     ],
-     [
-      "stations_with_bottom",
-      "1176"
-     ]
-    ],
-    "target": "rows"
-   },
-   "field": {
-    "is": "Records in `maaledybde.csv.gz`, one per visit and depth record.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "maaledybde.rows"
-   ],
-   "synthetic": false,
-   "value": 151203,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    577
-   ]
   },
   "F-568821e8ea": {
    "code": {
@@ -128936,8 +128890,8 @@
   "F-58afca2992": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 194,
-    "line": 200,
+    "first": 195,
+    "line": 201,
     "text": "    w(\"\")\n    w(C(\"C-AF-F3-NULLS\", \"The nulls are computed, not quoted: a temporal one and a spatial \"\n        \"one, because either time or place could fake the result.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-N1\", \"**`N1`, temporal.** For `C1`: circularly shift each transect's cover \"\n        \"series against its own clarity series by a random whole number of years, at least \"\n        f\"{shift}, preserving within-series autocorrelation and the transect's mean. \"\n        f\"{draws} draws; the null distribution of the median cross-lagged asymmetry is \"\n        \"computed, not assumed to centre on zero.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -128956,7 +128910,7 @@
    "value": 2,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    200
+    201
    ]
   },
   "F-58afdf5921": {
@@ -131017,10 +130971,10 @@
   },
   "F-5a6a77bc92": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 156,
-    "line": 162,
-    "text": "        \"describes, and `R_new = R_old − P` has no independent `P`. It would become a real test \"\n        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 135,
+    "line": 141,
+    "text": "    w(\"\")\n    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \"\n          \"Two answers in one column, so Kd is stratified by start depth, never pooled.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-OQ-LIGHT-SPLIT"
@@ -131097,8 +131051,8 @@
    "synthetic": false,
    "value": 2.0,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    162
+    "scripts/pages/hypodraft_f3.py",
+    141
    ]
   },
   "F-5a6aa3c0d7": {
@@ -135915,10 +135869,10 @@
   },
   "F-5e2026012e": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 165,
-    "line": 171,
-    "text": "    w(\"\")\n    w(\"- \" + C(\"C-OQ-A7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \"\n               f\"{md['stations']:,} stations, {md['stations_with_bottom_depth']:,} of them \"\n               \"carrying `BundDybde_m`. **Its northing is missing:** the second easting column \"\n               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))"
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 571,
+    "line": 577,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"drafts_b_counts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -135946,7 +135900,7 @@
     "target": "stations_with_bottom_depth"
    },
    "field": {
-    "is": "Distinct stations with at least one non-blank `BundDybde_m`.",
+    "is": "Distinct stations with at least one `BundDybde_m` that parses as a number (`formats.num`, the declared ODA format).",
     "kind": "counted",
     "synthetic": false
    },
@@ -135963,8 +135917,8 @@
    "synthetic": false,
    "value": 1176,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    171
+    "data/manual/claims.d/w3-cc.json",
+    577
    ]
   },
   "F-5e473f543c": {
@@ -141463,8 +141417,8 @@
   "F-6270109e4e": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 838,
-    "line": 844,
+    "first": 840,
+    "line": 846,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -141483,7 +141437,7 @@
    "value": 5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    844
+    846
    ]
   },
   "F-62735c2dd6": {
@@ -153448,8 +153402,8 @@
   "F-6c253b945d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1642,
-    "line": 1648,
+    "first": 1644,
+    "line": 1650,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-NOCLOCK\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The CTD extract's header, with {fig:da_ctd_columns} columns, has Dato as a date such as `19701013`, no hour, and no other time field.\",\n   \"because\": \"hypodraft_facts.py counts the header's columns; the date column holds a date, and no column holds a clock time.\",\n   \"rests_on\": [\n    \"C-HY-I3-NOCLOCK\","
    },
    "constructions": [
@@ -153492,7 +153446,7 @@
    "value": 34,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1648
+    1650
    ]
   },
   "F-6c29c95adc": {
@@ -181417,8 +181371,8 @@
   "F-81bea72caf": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -181477,7 +181431,7 @@
    "value": 9,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-81cc2fdcb9": {
@@ -189533,8 +189487,8 @@
   "F-883af86af5": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 195,
-    "line": 201,
+    "first": 196,
+    "line": 202,
     "text": "    w(C(\"C-AF-F3-NULLS\", \"The nulls are computed, not quoted: a temporal one and a spatial \"\n        \"one, because either time or place could fake the result.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-N1\", \"**`N1`, temporal.** For `C1`: circularly shift each transect's cover \"\n        \"series against its own clarity series by a random whole number of years, at least \"\n        f\"{shift}, preserving within-series autocorrelation and the transect's mean. \"\n        f\"{draws} draws; the null distribution of the median cross-lagged asymmetry is \"\n        \"computed, not assumed to centre on zero.\"))\n    w(\"\")\n    w(\"**`N2`, spatial, contiguity- and depth-preserving.** \""
    },
    "constructions": [
@@ -189553,7 +189507,7 @@
    "value": 999,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    201
+    202
    ]
   },
   "F-88475212ca": {
@@ -197859,8 +197813,8 @@
   "F-8d988c3666": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -197879,7 +197833,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-8da052e2e9": {
@@ -202071,10 +202025,10 @@
   },
   "F-906d8ca940": {
    "code": {
-    "file": "scripts/pages/openproblem_r6.py",
-    "first": 98,
-    "line": 104,
-    "text": "      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \"\n          f\"for the {CH('H2S')} climatology of Mariager Fjord's bottom water and nothing \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -202119,8 +202073,8 @@
    "synthetic": false,
    "value": 2598,
    "where": [
-    "scripts/pages/openproblem_r6.py",
-    104
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-907dfc9928": {
@@ -204661,8 +204615,8 @@
   "F-91ed13ae96": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1027,
-    "line": 1033,
+    "first": 1029,
+    "line": 1035,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -204681,7 +204635,7 @@
    "value": 3,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1033
+    1035
    ]
   },
   "F-91f3ff7fdc": {
@@ -206857,8 +206811,8 @@
   "F-93848b93bd": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -206877,7 +206831,7 @@
    "value": 20,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-939768acc0": {
@@ -219410,8 +219364,8 @@
   "F-9d8de7883a": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1921,
-    "line": 1927,
+    "first": 1923,
+    "line": 1929,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P5\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Repeat with D detrended on year within each cell, so that a trend temperature and deficit share across the years cannot manufacture the slope, and report the variants with at least {param:cc_c6_years_low} and at least {param:cc_c6_years_high} years.\",\n   \"because\": \"A trend common to temperature and deficit over the years could produce a within-cell slope with no year-to-year link; detrending removes it, and the variants show whether the minimum number of years matters.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -219430,7 +219384,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1927
+    1929
    ]
   },
   "F-9d8fbecb30": {
@@ -224312,8 +224266,8 @@
   "F-a12a6c0f1a": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -224332,7 +224286,7 @@
    "value": 54,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-a12e0256e4": {
@@ -233899,8 +233853,8 @@
   "F-a8a4b5f18f": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 223,
-    "line": 229,
+    "first": 224,
+    "line": 230,
     "text": "                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \"\n                f\"over requirements from {rq0}% to {rq1}%.\"))\n    w(\"5. \" + C(\"C-AF-F3-P5\", \"Repeat with the CMEMS `KD490` pixels as the clarity source, \"\n                \"streamed by year.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -233919,7 +233873,7 @@
    "value": 20,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    229
+    230
    ]
   },
   "F-a8a88b42c8": {
@@ -234991,10 +234945,10 @@
   },
   "F-a95c664ddf": {
    "code": {
-    "file": "scripts/pages/openproblem_r6.py",
-    "first": 87,
-    "line": 93,
-    "text": "    w(\"\")\n    w(\"## No water-column observable can reach it, and this should be said plainly\")\n    w(\"\")\n    w(C(\"C-OQ-R6-PANEL\", \"The archive's finest routine observable near the bed is a monthly \"\n        f\"median per station: `stations_series.json` holds {ss['total_station_months']:,} \"\n        f\"station-months at {ss['n_stations']:,} stations over {ss['months']} months from \"\n        f\"{year0}, near-bed oxygen on {ss['variables']['oxy_bed']['n']:,} of them.\") + \" \"\n      + C(\"C-OQ-R6-SCALE\", f\"{R('R6')} lives at the sulphide front, which the national sediment \"\n          \"reports place millimetres to centimetres below the sediment surface; a station-month \"\n          \"median of bottom-water oxygen is far coarser in space and time, and the wrong \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 493,
+    "line": 499,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -235031,8 +234985,8 @@
    "synthetic": false,
    "value": 76980,
    "where": [
-    "scripts/pages/openproblem_r6.py",
-    93
+    "data/manual/claims.d/w3-cc.json",
+    499
    ]
   },
   "F-a96752daea": {
@@ -241522,8 +241476,8 @@
   "F-ae661b1220": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -241542,7 +241496,7 @@
    "value": 56.5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-ae74e014e2": {
@@ -244510,8 +244464,8 @@
   "F-b0c4aba8b0": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -244530,7 +244484,7 @@
    "value": 30,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-b0da37d40e": {
@@ -246162,8 +246116,8 @@
   "F-b21f94aa9f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -246182,7 +246136,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-b232ec3929": {
@@ -248852,8 +248806,8 @@
   "F-b5209874b6": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -248872,7 +248826,7 @@
    "value": -2,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-b524605bc0": {
@@ -250849,10 +250803,10 @@
   },
   "F-b5ea195365": {
    "code": {
-    "file": "scripts/pages/known_and_unknown.py",
-    "first": 94,
-    "line": 100,
-    "text": "\n### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |"
+    "file": "scripts/pages/triage.py",
+    "first": 218,
+    "line": 224,
+    "text": "    vk, bf = tc[\"clusters\"][\"vandkemi\"], tc[\"clusters\"][\"bundfauna\"]\n    tl = rs[\"tally\"]\n    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \""
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -250909,8 +250863,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/known_and_unknown.py",
-    100
+    "scripts/pages/triage.py",
+    224
    ]
   },
   "F-b5ea286603": {
@@ -250981,10 +250935,10 @@
   },
   "F-b5f33a89f8": {
    "code": {
-    "file": "scripts/pages/landing.py",
-    "first": 186,
-    "line": 192,
-    "text": "        \"changing, over all casts, or only at the stations measured at both ends of the \"\n        f\"record. Keeping only those shrinks the trend to {ratio:.0f}% of the all-cast \"\n        f\"figure, and rests on {tr['n_stable_stations']} stations.\"))\n    w(\"\")\n    w(\"<!-- landing:fact:light-depth -->\")\n    sd = light[\"start_depth\"]\n    w(f\"{sd['z11_shallow_start']:.2f} <span>or</span> {sd['z11_deep_start']:.2f} m\")\n    w(\"\")\n    w(C(\"C-LR-L-LIGHTDEPTH\", \"How deep useful light reaches, as a median over the casts that \"\n        \"began near the surface and over those that began deeper: the two differ by \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 134,
+    "line": 140,
+    "text": "    w(\"## The data held, counted here\")\n    w(\"\")\n    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \"\n          \"Two answers in one column, so Kd is stratified by start depth, never pooled.\"))"
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -251041,8 +250995,8 @@
    "synthetic": false,
    "value": 6.31,
    "where": [
-    "scripts/pages/landing.py",
-    192
+    "scripts/pages/hypodraft_f3.py",
+    140
    ]
   },
   "F-b5ffbe35ae": {
@@ -251118,8 +251072,8 @@
   "F-b61d7944ec": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -251178,7 +251132,7 @@
    "value": 679422,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-b632c5f52c": {
@@ -251905,8 +251859,8 @@
   "F-b6d8ac2b3c": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 938,
-    "line": 944,
+    "first": 940,
+    "line": 946,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-N2\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The second null draws {param:cc_c4_surrogates} amplitude-adjusted phase-randomised surrogates of each response.\",\n   \"because\": \"A pulse-like record's distribution of values is part of what makes it pulse-like; the amplitude-adjusted surrogates try to keep that distribution along with the periodogram, where plain random phases keep only the periodogram.\",\n   \"rests_on\": [\n    \"C-CC-C4-RP\""
    },
    "constructions": [
@@ -251925,7 +251879,7 @@
    "value": 10000,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    944
+    946
    ]
   },
   "F-b6ee96a3e7": {
@@ -252316,52 +252270,6 @@
    ],
    "synthetic": false,
    "value": 130.0
-  },
-  "F-b78e848332": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 571,
-    "line": 577,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"hypodraft_facts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "maaledybde",
-    "rows": [
-     [
-      "rows",
-      "151203"
-     ],
-     [
-      "stations_with_bottom",
-      "1176"
-     ]
-    ],
-    "target": "stations_with_bottom"
-   },
-   "field": {
-    "is": "Stations with at least one parseable `BundDybde_m`.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "maaledybde.stations_with_bottom"
-   ],
-   "synthetic": false,
-   "value": 1176,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    577
-   ]
   },
   "F-b78f3b67ea": {
    "code": {
@@ -254061,8 +253969,8 @@
   "F-b87ceb99d3": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1562,
-    "line": 1568,
+    "first": 1564,
+    "line": 1570,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-QUANT\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Raw Temperatur is written with at most one decimal on {fig:da_tdec_one} of {fig:da_tdec_rows} rows of the whole CTD extract ({calc@K-SUBSET-SHARE:da_tdec_one / da_tdec_rows * 100|.0f}%); how much that rounding moves C_sat has not been computed here.\",\n   \"because\": \"hypodraft_ctd.py counts, over every row of the extract, the Temperatur rows and those whose original result has no more than a single digit after the decimal comma; nothing here computes the solubility, so its sensitivity to the rounding is not known.\",\n   \"rests_on\": [\n    \"D-CTD\","
    },
    "constructions": [
@@ -254120,7 +254028,7 @@
    "value": 14.355600092302511,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1568
+    1570
    ]
   },
   "F-b88094c201": {
@@ -260958,8 +260866,8 @@
   "F-bd2a4e4894": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 151,
-    "line": 157,
+    "first": 152,
+    "line": 158,
     "text": "      + C(\"C-AF-F3-FITTED\", \"Use the per-transect observed depth limit, never an indicator's \"\n          \"fitted one: a fitted depth limit is a model output, and testing a model's output \"\n          \"against its own input tests the model.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-REG\", f\"`data/raw/oda/stations.csv`, the ODA station register, holds \"\n        f\"{reg['rows']:,} records for {reg['stations']:,} stations, \"\n        f\"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run \"\n        f\"from {reg['first_date']} to {reg['last_date']}.\") + \" \"\n      + C(\"C-AF-F3-IDS\", f\"The register carries only {ev['series_stations_in_register']:,} of \"\n          f\"the {ev['series_stations']:,} stations of the monthly series built from the CTD \""
    },
    "constructions": [
@@ -261010,7 +260918,7 @@
    "value": 2329,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    157
+    158
    ]
   },
   "F-bd2aa15b15": {
@@ -261687,10 +261595,10 @@
   },
   "F-bd74e20689": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 131,
-    "line": 137,
-    "text": "               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 151,
+    "line": 157,
+    "text": "        \"stations under the portal's default period than with a period set.\") + \" \"\n      + C(\"C-AF-F3-FITTED\", \"Use the per-transect observed depth limit, never an indicator's \"\n          \"fitted one: a fitted depth limit is a model output, and testing a model's output \"\n          \"against its own input tests the model.\"))\n    w(\"\")\n    w(C(\"C-AF-F3-REG\", f\"`data/raw/oda/stations.csv`, the ODA station register, holds \"\n        f\"{reg['rows']:,} records for {reg['stations']:,} stations, \"\n        f\"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run \"\n        f\"from {reg['first_date']} to {reg['last_date']}.\") + \" \"\n      + C(\"C-AF-F3-IDS\", f\"The register carries only {ev['series_stations_in_register']:,} of \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -261739,8 +261647,8 @@
    "synthetic": false,
    "value": 798574,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    137
+    "scripts/pages/hypodraft_f3.py",
+    157
    ]
   },
   "F-bd75e086c4": {
@@ -266206,8 +266114,8 @@
   "F-c0c6ee0e4f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1845,
-    "line": 1851,
+    "first": 1847,
+    "line": 1853,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -266226,7 +266134,7 @@
    "value": 40,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1851
+    1853
    ]
   },
   "F-c0caf683aa": {
@@ -277242,8 +277150,8 @@
   "F-c9c0e8b759": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 130,
-    "line": 136,
+    "first": 131,
+    "line": 137,
     "text": "        f\"the adequacy call moves with it, so `C2` is reported across requirements from \"\n        f\"{rq0}% to {rq1}% rather than at one threshold.\"))\n    w(\"\")\n    w(\"## The data held, counted here\")\n    w(\"\")\n    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \""
    },
    "constructions": [
@@ -277282,7 +277190,7 @@
    "value": 566,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    136
+    137
    ]
   },
   "F-c9cfdb1949": {
@@ -287225,10 +287133,10 @@
   },
   "F-d20841b0ec": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 173,
-    "line": 179,
-    "text": "               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))\n    w(\"- \" + C(\"C-OQ-A7-SEABED\", \"`data/raw/geus/seabed_sediment_dk.gpkg`, layer \"\n               f\"`Seabed_sedimen` - {sb['features']} polygons in {sb['classes']} substrate \"\n               f\"classes ({clist}), compiled from {sb['campaigns']} named survey campaigns at \"\n               f\"map scales whose denominators run from {sbf['scale_min']:,} to \"\n               f\"{sbf['scale_max']:,}. Usable as \"\n               \"substrate class if the scale travels with it; **no organic-carbon value at \"\n               \"all**, as the register's `R7-TOC-MAP-GAP` records.\"))\n    w(\"- \" + C(\"C-OQ-A7-PORTAL\", \"The source register records the ODA portal's station lists, \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -287273,8 +287181,8 @@
    "synthetic": false,
    "value": 500000,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    179
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-d20a616afe": {
@@ -287341,8 +287249,8 @@
   "F-d213ba86e1": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -287361,7 +287269,7 @@
    "value": 20,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-d214771a10": {
@@ -288219,8 +288127,8 @@
   "F-d290efb8d8": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1868,
-    "line": 1874,
+    "first": 1870,
+    "line": 1876,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P2\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Compute C_sat and D, and keep cells with at least {param:cc_c6_min_years} distinct years.\",\n   \"because\": \"A cell needs enough years for a slope within it; the minimum is a stated choice, and the variants below show whether it matters.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -288239,7 +288147,7 @@
    "value": 8,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1874
+    1876
    ]
   },
   "F-d293d0b46c": {
@@ -288285,8 +288193,8 @@
   "F-d294e85461": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 222,
-    "line": 228,
+    "first": 223,
+    "line": 229,
     "text": "                \"light analysis uses, March to September: median cover; nearest-cast Kd \"\n                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \"\n                f\"over requirements from {rq0}% to {rq1}%.\"))\n    w(\"5. \" + C(\"C-AF-F3-P5\", \"Repeat with the CMEMS `KD490` pixels as the clarity source, \"\n                \"streamed by year.\"))"
    },
    "constructions": [
@@ -288305,7 +288213,7 @@
    "value": 5,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    228
+    229
    ]
   },
   "F-d29c2aa9f6": {
@@ -288365,8 +288273,8 @@
   "F-d29c796283": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -288385,7 +288293,7 @@
    "value": 120,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-d2a4fbe2ce": {
@@ -300067,8 +299975,8 @@
   "F-db5b546583": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 220,
-    "line": 226,
+    "first": 221,
+    "line": 227,
     "text": "                \"before using any of them.\"))\n    w(\"2. \" + C(\"C-AF-F3-P2\", \"Per transect-year, over the growth season this project's \"\n                \"light analysis uses, March to September: median cover; nearest-cast Kd \"\n                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \"\n                f\"over requirements from {rq0}% to {rq1}%.\"))"
    },
    "constructions": [
@@ -300087,7 +299995,7 @@
    "value": 3,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    226
+    227
    ]
   },
   "F-db69bb79c4": {
@@ -300585,8 +300493,8 @@
   "F-dba2ee11be": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1921,
-    "line": 1927,
+    "first": 1923,
+    "line": 1929,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P5\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Repeat with D detrended on year within each cell, so that a trend temperature and deficit share across the years cannot manufacture the slope, and report the variants with at least {param:cc_c6_years_low} and at least {param:cc_c6_years_high} years.\",\n   \"because\": \"A trend common to temperature and deficit over the years could produce a within-cell slope with no year-to-year link; detrending removes it, and the variants show whether the minimum number of years matters.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -300605,7 +300513,7 @@
    "value": 3,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1927
+    1929
    ]
   },
   "F-dbb2230366": {
@@ -302138,8 +302046,8 @@
   "F-dd36b0529d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1396,
-    "line": 1402,
+    "first": 1398,
+    "line": 1404,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-DEF\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"D = C_sat(T_bed, S_bed) minus O_bed, in mg/l, with C_sat from Weiss's equations in ml/l converted at {read:CC-USGS-OWQ-2011-03:1.42905|that factor should have been 1.42905 mg/mL} mg per ml.\",\n   \"because\": \"A published solubility function fixed before the data are seen makes the ceiling a known quantity; the conversion is the mass of a millilitre of oxygen that the USGS memorandum gives.\",\n   \"rests_on\": [\n    \"E-CC-USGS-WEISS\","
    },
    "constructions": [
@@ -302171,7 +302079,7 @@
    "value": "1.42905",
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1402
+    1404
    ]
   },
   "F-dd435484db": {
@@ -303062,8 +302970,8 @@
   "F-ddd486da04": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1903,
-    "line": 1909,
+    "first": 1905,
+    "line": 1911,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P4\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The null: {param:cc_c6_perms} permutations of D across years within each cell, T held in place, keeping cell means, the seasonal cycle, every station effect and both marginals and destroying only the within-cell pairing; report the permutation spread, the ordinary least-squares standard error and their ratio, since neighbouring stations in the same month can sample the same water.\",\n   \"because\": \"Permuting within a cell keeps everything but the pairing the hypothesis is about. The ordinary standard error assumes independent residuals, which neighbouring stations sampling the same water need not give, so the ratio measures how far that assumption would mislead.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -303082,7 +302990,7 @@
    "value": 2000,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1909
+    1911
    ]
   },
   "F-ddd8294c22": {
@@ -305406,8 +305314,8 @@
   "F-dfae2980f7": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 223,
-    "line": 229,
+    "first": 224,
+    "line": 230,
     "text": "                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \"\n                f\"over requirements from {rq0}% to {rq1}%.\"))\n    w(\"5. \" + C(\"C-AF-F3-P5\", \"Repeat with the CMEMS `KD490` pixels as the clarity source, \"\n                \"streamed by year.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -305426,7 +305334,7 @@
    "value": 8,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    229
+    230
    ]
   },
   "F-dfae9eb90e": {
@@ -306887,10 +306795,10 @@
   },
   "F-e0cd5a53f8": {
    "code": {
-    "file": "scripts/light.py",
-    "first": 534,
-    "line": 540,
-    "text": "                   \"line fitted to the lower half differ, so a Kd depends on the depth window it \"\n                   \"is fitted over as well as on the water.** The instruction's own rules - fit \"\n                   \"above the thermocline only where the curve differs across it, leave out the \"\n                   \"lowest readings where it bends - choose that window cast by cast.\") + \"\\n\")\n        if sd.get(\"z11_deep_start\") and sd.get(\"z11_shallow_start\"):\n            a(C(\"C-FR-LT-SPLIT\", f\"Splitting the growth-season casts on where they started: \"\n                f\"{sd['n_shallow_start']:,} began above {p['start_split_m']} m and give a median \"\n                f\"Kd of {sd['kd_shallow_start']} and a median depth reaching {lo}% of \"\n                f\"{sd['z11_shallow_start']} m; {sd['n_deep_start']:,} began below \"\n                f\"{p['start_split_m']} m and give {sd['kd_deep_start']} and \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 134,
+    "line": 140,
+    "text": "    w(\"## The data held, counted here\")\n    w(\"\")\n    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \"\n          \"Two answers in one column, so Kd is stratified by start depth, never pooled.\"))"
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -306967,8 +306875,8 @@
    "synthetic": false,
    "value": 11,
    "where": [
-    "scripts/light.py",
-    540
+    "scripts/pages/hypodraft_f3.py",
+    140
    ]
   },
   "F-e0d1926291": {
@@ -309092,8 +309000,8 @@
   "F-e28b0c81f0": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 617,
-    "line": 623,
+    "first": 619,
+    "line": 625,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-GOTFILE\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Copernicus Gotland file holds salinity, temperature and oxygen against depth at the Gotland Deep on a monthly and one-metre grid, regridded from discrete observations; salinity and temperature run from 1993-01 to 2024-11, and oxygen, declared as a volume fraction in ml/l, fills {fig:cc_gotland_months} months from 2005-11 to 2025-01.\",\n   \"because\": \"The file's attributes and values, read on 2026-09-11, give the variables, the grid, the title, the regridding comment and the spans; landing_facts.py counts the months the project's copy of the oxygen holds, which are the months the file fills.\",\n   \"rests_on\": [\n    \"H-CC-GOTFILE\","
    },
    "constructions": [
@@ -309152,7 +309060,7 @@
    "value": 226,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    623
+    625
    ]
   },
   "F-e28fcc62f1": {
@@ -319961,8 +319869,8 @@
   "F-eb88322a13": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 838,
-    "line": 844,
+    "first": 840,
+    "line": 846,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -319981,7 +319889,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    844
+    846
    ]
   },
   "F-eb954ec463": {
@@ -323664,10 +323572,10 @@
   },
   "F-eea1e4eb92": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 168,
-    "line": 174,
-    "text": "               f\"{ss['months']} months from {year0}, {ss['n_variables']} variables ({vlist}). \"\n               \"**No nutrient variable.**\"))\n    w(\"- \" + C(\"C-OQ-A7-MD\", f\"`data/raw/oda/maaledybde.csv.gz` - {md['rows']:,} records at \"\n               f\"{md['stations']:,} stations, {md['stations_with_bottom_depth']:,} of them \"\n               \"carrying `BundDybde_m`. **Its northing is missing:** the second easting column \"\n               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))\n    w(\"- \" + C(\"C-OQ-A7-SEABED\", \"`data/raw/geus/seabed_sediment_dk.gpkg`, layer \"\n               f\"`Seabed_sedimen` - {sb['features']} polygons in {sb['classes']} substrate \"\n               f\"classes ({clist}), compiled from {sb['campaigns']} named survey campaigns at \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 571,
+    "line": 577,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"drafts_b_counts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -323712,8 +323620,8 @@
    "synthetic": false,
    "value": 151203,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    174
+    "data/manual/claims.d/w3-cc.json",
+    577
    ]
   },
   "F-eea3489da6": {
@@ -329099,8 +329007,8 @@
   "F-f37c341d77": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1027,
-    "line": 1033,
+    "first": 1029,
+    "line": 1035,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -329119,7 +329027,7 @@
    "value": 8,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1033
+    1035
    ]
   },
   "F-f3813ac6c6": {
@@ -335913,10 +335821,10 @@
   },
   "F-f8f56b7f48": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 156,
-    "line": 162,
-    "text": "        \"describes, and `R_new = R_old − P` has no independent `P`. It would become a real test \"\n        \"only if the absorption by dissolved matter were measured, and none of the extract's \"\n        \"channels measures an absorption.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-START\", \"**Third, even the ship's own attenuation coefficient depends on how \"\n        \"the cast was taken.** In this project's light analysis the growth-season casts whose \"\n        f\"profile begins above {split:g} m give a median Kd of {sd['kd_shallow_start']} and \"\n        f\"those beginning below it {sd['kd_deep_start']}; where a cast starts is a matter of \"\n        \"how it was taken, not of the water.\") + \" \"\n      + C(\"C-OQ-J1-LYSD\", \"The per-depth `Lysdæmpning` channel escapes that artefact but \""
+    "file": "scripts/pages/hypodraft_f3.py",
+    "first": 133,
+    "line": 139,
+    "text": "    w(\"\")\n    w(\"## The data held, counted here\")\n    w(\"\")\n    w(C(\"C-AF-F3-LYS\", f\"`data/raw/oda/lys.csv.gz` holds {lys['rows']:,} records at \"\n        f\"{lys['stations_with_coordinates']:,} stations with coordinates.\") + \" \"\n      + C(\"C-AF-F3-STARTDEPTH\", \"Its apparent Kd depends on where a cast starts: this \"\n          f\"project's light analysis gives a median Kd of {sd['kd_shallow_start']:g} and a \"\n          f\"median depth reaching {lo}% of surface light of {sd['z11_shallow_start']:g} m for \"\n          f\"casts starting above {lp['start_split_m']:g} m, against \"\n          f\"{sd['kd_deep_start']:g} and {sd['z11_deep_start']:g} m for casts starting below. \""
    },
    "constructions": [
     "K-WATER-LIGHT"
@@ -335973,8 +335881,8 @@
    "synthetic": false,
    "value": 0.35,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    162
+    "scripts/pages/hypodraft_f3.py",
+    139
    ]
   },
   "F-f8fc24617a": {
@@ -341384,8 +341292,8 @@
   "F-fd7e9a24fa": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 157,
-    "line": 163,
+    "first": 158,
+    "line": 164,
     "text": "        f\"{reg['with_transect_end']:,} of them with a transect end coordinate; its dates run \"\n        f\"from {reg['first_date']} to {reg['last_date']}.\") + \" \"\n      + C(\"C-AF-F3-IDS\", f\"The register carries only {ev['series_stations_in_register']:,} of \"\n          f\"the {ev['series_stations']:,} stations of the monthly series built from the CTD \"\n          \"extract, so its identifiers are not the extracts'; a transect is joined to light \"\n          \"casts by distance, not by id.\") + \" \"\n      + C(\"C-AF-F3-JOIN\", f\"Where a light cast lies within {join} km of a transect, the \"\n          \"transect's clarity comes from it; where none does, from CMEMS pixels. The share \"\n          \"of transects the radius keeps is reported with the result.\"))\n    w(\"\")"
    },
    "constructions": [
@@ -341404,7 +341312,7 @@
    "value": 2,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    163
+    164
    ]
   },
   "F-fd827fe0d5": {
@@ -343669,8 +343577,8 @@
   "F-ff67d5d2a8": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 788,
-    "line": 794,
+    "first": 790,
+    "line": 796,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -343689,7 +343597,7 @@
    "value": 15,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    794
+    796
    ]
   },
   "F-ff70b51952": {
@@ -343738,8 +343646,8 @@
   "F-ff725b4398": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 204,
-    "line": 210,
+    "first": 205,
+    "line": 211,
     "text": "    w(\"**`N2`, spatial, contiguity- and depth-preserving.** \"\n      + C(\"C-AF-F3-CONTIG\", \"A free permutation is the wrong null for anything spatial: on \"\n          \"this project's own stations, random connected partitions of matched sizes agree \"\n          \"with each other well above chance, by contiguity alone \"\n          \"(`docs/data/areas/partition_contiguous.json`).\") + \" \"\n      + C(\"C-AF-F3-N2\", \"So relabel cover-loss status only *within* strata of substrate \"\n          f\"class from GEUS × {band} m bottom-depth band, and only across transects connected \"\n          \"on a nearest-neighbour graph whose edges crossing the OSM coastline are removed — \"\n          \"the same water graph the partition work uses, never the water-body polygons. \"\n          \"Report the observed statistic as **lift over this null**, and report the null's \""
    },
    "constructions": [
@@ -343758,7 +343666,7 @@
    "value": 1,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    210
+    211
    ]
   },
   "F-ff7aedf287": {
@@ -344149,8 +344057,8 @@
   "F-ffc2b9b20e": {
    "code": {
     "file": "scripts/pages/hypodraft_f3.py",
-    "first": 219,
-    "line": 225,
+    "first": 220,
+    "line": 226,
     "text": "                \"`Maks dybde begraenset af`, `Daekningsgrad (%)` and both depth-limit columns \"\n                \"before using any of them.\"))\n    w(\"2. \" + C(\"C-AF-F3-P2\", \"Per transect-year, over the growth season this project's \"\n                \"light analysis uses, March to September: median cover; nearest-cast Kd \"\n                \"**stratified by cast start depth**, never pooled; bottom depth from the \"\n                \"transect's own `Vanddybde maks (m)`; light at bed = exp(−Kd·z).\"))\n    w(\"3. \" + C(\"C-AF-F3-P3\", f\"`C1`: per-transect cross-lagged regression at lags of {lag0} \"\n                f\"to {lag1} years, median across transects, against `N1` and `N2`.\"))\n    w(\"4. \" + C(\"C-AF-F3-P4\", f\"`C2`: count transect-years with at least {seasons} \"\n                f\"consecutive adequate growth seasons and cover below {cover}%; sensitivity \""
    },
    "constructions": [
@@ -344169,7 +344077,7 @@
    "value": 1,
    "where": [
     "scripts/pages/hypodraft_f3.py",
-    225
+    226
    ]
   },
   "F-ffcddb89cb": {
@@ -344436,8 +344344,8 @@
   "F-fff0060a3d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1477,
-    "line": 1483,
+    "first": 1479,
+    "line": 1485,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
@@ -344496,7 +344404,7 @@
    "value": 1415,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1483
+    1485
    ]
   },
   "F-fffe961438": {

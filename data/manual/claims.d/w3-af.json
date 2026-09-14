@@ -140,7 +140,7 @@
    "id": "D-AF-HYPFACTS",
    "kind": "held",
    "label": "File facts for the drafts\\ndata/derived/hypodraft_facts.json",
-   "detail": "What hypodraft_facts.py counted in held files: among them the light extract's records and stations, the Secchi extract's records and stations with a bottom depth, the station register's rows, stations, transect ends and dates, and the CTD extract's size."
+   "detail": "What hypodraft_facts.py counted in held files: among them the light extract's records and stations, the station register's rows, stations, transect ends and dates, and the CTD extract's size."
   },
   {
    "id": "D-AF-HYPCTD",
@@ -886,12 +886,12 @@
     "X-HY-FACTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-af (read each F3, C1 and AUDIT sentence as recorded against its register claim, reasoning and what it rests on: hypodraft_facts.json, hypodraft_ctd.json, enums.json, light.json and its construction's gap on the eelgrass requirement, hypotheses_evidence.json, the source registers' vegetation and nutrient-input entries, the lys header and CMEMS transp file attributes, the pinned DCE, DHI and NOVA phrases, the drafts as committed at 7c4dd30 and Z8 at 0138743, the brief at 00a157f, and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the Secchi extract's record count and its stations with a bottom depth are read from one place, drafts_b_counts.json, which now counts a bottom depth only when it parses as a number - the rule these claims state, and the same count; hypodraft_facts.json's copy is gone. The two claims that print them rest on drafts_b_counts.py and its file; the F3 file-facts node no longer lists them, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on hypodrafts/F3.md": "`data/raw/oda/lys.csv.gz` holds 2,370,091 records at 566 stations with coordinates.",
      "texts": "3ce882958ea4f563",
-     "node D-AF-HYPFACTS": "0c9ab5c914cf238e",
+     "node D-AF-HYPFACTS": "d82c417a52181013",
      "node X-HY-FACTS": "0c9203a01293ee22"
     }
    }
@@ -976,12 +976,12 @@
     "D-HY-REGISTER"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-af (read each F3, C1 and AUDIT sentence as recorded against its register claim, reasoning and what it rests on: hypodraft_facts.json, hypodraft_ctd.json, enums.json, light.json and its construction's gap on the eelgrass requirement, hypotheses_evidence.json, the source registers' vegetation and nutrient-input entries, the lys header and CMEMS transp file attributes, the pinned DCE, DHI and NOVA phrases, the drafts as committed at 7c4dd30 and Z8 at 0138743, the brief at 00a157f, and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the Secchi extract's record count and its stations with a bottom depth are read from one place, drafts_b_counts.json, which now counts a bottom depth only when it parses as a number - the rule these claims state, and the same count; hypodraft_facts.json's copy is gone. The two claims that print them rest on drafts_b_counts.py and its file; the F3 file-facts node no longer lists them, and the claims still on it use only the facts it lists)",
     "saw": {
      "said on hypodrafts/F3.md": "`data/raw/oda/stations.csv`, the ODA station register, holds 798,574 records for 6,288 stations, 2,329 of them with a transect end coordinate; its dates run from 1911-05-17 to 2026-09-04.",
      "texts": "6eb846119510720b",
-     "node D-AF-HYPFACTS": "0c9ab5c914cf238e",
+     "node D-AF-HYPFACTS": "d82c417a52181013",
      "node X-HY-FACTS": "0c9203a01293ee22",
      "node D-HY-REGISTER": "62c37f9461c9976a"
     }
@@ -1037,26 +1037,26 @@
    "stance": "ours",
    "page": "hypodrafts/F3.md",
    "claim": "The Secchi extract holds the counted records at the counted stations with a bottom depth, carrying bottom depth and the supplier's disc-at-the-bed flag; its Secchi depths are censored at the bed far more often in shallow water.",
-   "because": "hypodraft_facts.py counts the records and the stations with a parseable bottom depth; the censoring by depth band is the {ref:D7} page's claim, from light.py.",
+   "because": "drafts_b_counts.py counts the records and the stations with a bottom depth that parses as a number; the censoring by depth band is the {ref:D7} page's claim, from light.py.",
    "rests_on": [
-    "D-AF-HYPFACTS",
-    "X-HY-FACTS",
-    "C-KD-D7-CENSOR"
+    "C-KD-D7-CENSOR",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-AF-OLD-F3-MAALOFFER"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the Secchi extract's record count and its stations with a bottom depth are read from one place, drafts_b_counts.json, which now counts a bottom depth only when it parses as a number - the rule these claims state, and the same count; hypodraft_facts.json's copy is gone. The two claims that print them rest on drafts_b_counts.py and its file; the F3 file-facts node no longer lists them, and the claims still on it use only the facts it lists)",
     "saw": {
      "because {ref:D7}": "D7: Storm-driven resuspension",
      "said on hypodrafts/F3.md": "`data/raw/oda/maaledybde.csv.gz` holds 151,203 records, at 1,176 stations with a bottom depth, and carries `BundDybde_m` and `SigtTilBund`; its Secchi depths are censored at the bed, far more often in shallow water (D7 counts it).",
      "hypothesis D7": "2a66f39d76ef19ab",
-     "texts": "fbffa82fbdadbb35",
-     "node D-AF-HYPFACTS": "0c9ab5c914cf238e",
-     "node X-HY-FACTS": "0c9203a01293ee22",
-     "rests on C-KD-D7-CENSOR": "be388bd271845844"
+     "texts": "bab207e0b223ab7c",
+     "rests on C-KD-D7-CENSOR": "be388bd271845844",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -1850,13 +1850,13 @@
     "D-CTD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-af (read each F3, C1 and AUDIT sentence as recorded against its register claim, reasoning and what it rests on: hypodraft_facts.json, hypodraft_ctd.json, enums.json, light.json and its construction's gap on the eelgrass requirement, hypotheses_evidence.json, the source registers' vegetation and nutrient-input entries, the lys header and CMEMS transp file attributes, the pinned DCE, DHI and NOVA phrases, the drafts as committed at 7c4dd30 and Z8 at 0138743, the brief at 00a157f, and the scripts named; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the Secchi extract's record count and its stations with a bottom depth are read from one place, drafts_b_counts.json, which now counts a bottom depth only when it parses as a number - the rule these claims state, and the same count; hypodraft_facts.json's copy is gone. The two claims that print them rest on drafts_b_counts.py and its file; the F3 file-facts node no longer lists them, and the claims still on it use only the facts it lists)",
     "saw": {
      "D-CTD.label {fig:ctd_rows}": "53,710,760",
      "said on hypodrafts/C1.md": "**Source:** `data/raw/oda/ctd.csv.gz` (448.7 MB gzipped), one row per measurement, with `Dybde (m)` and coordinates.",
      "texts": "0458c8f2910ec7ce",
-     "node D-AF-HYPFACTS": "0c9ab5c914cf238e",
+     "node D-AF-HYPFACTS": "d82c417a52181013",
      "node X-HY-FACTS": "0c9203a01293ee22",
      "node D-CTD": "f8d18f725cee6bd0"
     }

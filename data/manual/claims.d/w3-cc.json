@@ -575,21 +575,23 @@
    "stance": "ours",
    "page": "hypodrafts/C4.md",
    "claim": "The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.",
-   "because": "hypodraft_facts.py counts every record of the extract and the stations with a bottom depth that parses as a number.",
+   "because": "drafts_b_counts.py counts every record of the extract and the stations with a bottom depth that parses as a number.",
    "rests_on": [
     "H-CC-MAAL",
-    "X-HY-FACTS"
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-cc (read each C4 sentence as recorded in claim_spans.json against its register entry, reasoning and what it rests on: hypodraft_facts.json and landing_facts.json as printed, the two CMEMS inflow netCDF files and the three Baltic wind files read directly, gotland.json against the netCDF oxygen months, stations_series.py, the pinned Mohrholz 2018, USGS 2011.03 and Wikipedia phrases, and the source register entry IOW-MBI; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the Secchi extract's record count and its stations with a bottom depth are read from one place, drafts_b_counts.json, which now counts a bottom depth only when it parses as a number - the rule these claims state, and the same count; hypodraft_facts.json's copy is gone. The two claims that print them rest on drafts_b_counts.py and its file; the F3 file-facts node no longer lists them, and the claims still on it use only the facts it lists)",
     "saw": {
      "claim {fig:da_maal_rows}": "151,203",
      "claim {fig:da_maal_stations_bottom}": "1,176",
      "said on hypodrafts/C4.md": "`data/raw/oda/maaledybde.csv.gz` gives `BundDybde_m` per visit: 151,203 records, with a bottom depth at 1,176 stations.",
-     "texts": "1f87181ace1af2dd",
+     "texts": "10caa2b05e845122",
      "node H-CC-MAAL": "f4bbda825f118e98",
-     "node X-HY-FACTS": "0c9203a01293ee22"
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },

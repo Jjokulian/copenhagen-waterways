@@ -301,14 +301,6 @@
       "kind": "counted",
       "is": "Calendar years with any hourly value in the held wind files `data/raw/weather/wind_*.json`."
      },
-     "maaledybde.rows": {
-      "kind": "counted",
-      "is": "Records in `maaledybde.csv.gz`, one per visit and depth record."
-     },
-     "maaledybde.stations_with_bottom": {
-      "kind": "counted",
-      "is": "Stations with at least one parseable `BundDybde_m`."
-     },
      "lys.rows": {
       "kind": "counted",
       "is": "Records in `lys.csv.gz`."
@@ -419,10 +411,10 @@
     "scripts/enums.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the Secchi extract's record and bottom-depth counts, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/hypodraft_facts.py": "4c5f0456ccb5ed19",
+     "scripts/hypodraft_facts.py": "19899b5b61de9b7b",
      "scripts/enums.py": "e21dcf1b1c5748b5"
     }
    }

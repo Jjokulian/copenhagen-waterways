@@ -45,10 +45,10 @@
     "scripts/drafts_b_counts.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/drafts_b_counts.py": "406e53b1cbb3f373"
+     "scripts/drafts_b_counts.py": "ddc1fff74df5a671"
     }
    }
   },

@@ -46,15 +46,6 @@ def weather():
     return {"n_years": len(years), "first_year": min(years), "last_year": max(years)}
 
 
-def maaledybde():
-    rows, with_bottom = 0, set()
-    for r in gz_rows(os.path.join(RAW, "oda", "maaledybde.csv.gz")):
-        rows += 1
-        if num(r.get("BundDybde_m")) is not None:
-            with_bottom.add(r.get("ObservationsstedNr"))
-    return {"rows": rows, "stations_with_bottom": len(with_bottom)}
-
-
 def lys():
     rows, coords = 0, set()
     for r in gz_rows(os.path.join(RAW, "oda", "lys.csv.gz")):
@@ -131,7 +122,7 @@ def sign_flips():
 def main(argv):
     out = {"_what": "Facts the hypothesis drafts cite from held files, re-derived by "
                     "scripts/hypodraft_facts.py."}
-    for name, fn in (("weather", weather), ("maaledybde", maaledybde), ("lys", lys),
+    for name, fn in (("weather", weather), ("lys", lys),
                      ("kemi", kemi), ("seabed", seabed), ("areas", areas),
                      ("enums", enums), ("sign_flips", sign_flips),
                      ("stations_register", stations_register), ("layers", layers)):

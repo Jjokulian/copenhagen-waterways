@@ -52,7 +52,7 @@
    "fmt": "{:g}"
   },
   "da_maal_rows": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
     "maaledybde",
     "rows"
@@ -807,10 +807,10 @@
    "fmt": "{:,}"
   },
   "da_maal_stations_bottom": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
     "maaledybde",
-    "stations_with_bottom"
+    "stations_with_bottom_depth"
    ],
    "fmt": "{:,}"
   },

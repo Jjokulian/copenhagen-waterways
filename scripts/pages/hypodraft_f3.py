@@ -47,7 +47,8 @@ def text():
     rq0, rq1 = P("af_f3_req_lo_pct"), P("af_f3_req_hi_pct")
 
     hf = J("hypodraft_facts.json")
-    lys, reg, md = hf["lys"], hf["stations_register"], hf["maaledybde"]
+    lys, reg = hf["lys"], hf["stations_register"]
+    md = J("drafts_b_counts.json")["maaledybde"]
     lt = J("light.json")
     sd, lp = lt["start_depth"], lt["params"]
     lo, hi = lp["req_lo_pct"], lp["req_hi_pct"]
@@ -165,7 +166,7 @@ def text():
           "of transects the radius keeps is reported with the result."))
     w("")
     w(C("C-AF-F3-MAAL", f"`data/raw/oda/maaledybde.csv.gz` holds {md['rows']:,} records, at "
-        f"{md['stations_with_bottom']:,} stations with a bottom depth, and carries "
+        f"{md['stations_with_bottom_depth']:,} stations with a bottom depth, and carries "
         "`BundDybde_m` and `SigtTilBund`; its Secchi depths are censored at the bed, far "
         f"more often in shallow water ({R('D7')} counts it)."))
     w("")

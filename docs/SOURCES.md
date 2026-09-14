@@ -819,7 +819,7 @@
 <a id="T-8f98ed51"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — C. Physical control of resupply
 
-4 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/hypodraft_ctd.json` (`c1.min_levels`, `c1.with_levels_and_oxygen`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/hypodraft_facts.json` (`maaledybde.rows`, `weather.n_years`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py).
+4 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/drafts_b_counts.json` (`maaledybde.rows`), written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py). Read from `data/derived/hypodraft_ctd.json` (`c1.min_levels`, `c1.with_levels_and_oxygen`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/hypodraft_facts.json` (`weather.n_years`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py).
 
 <a id="T-b6cbd727"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — A. Nutrient-driven production in place
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,841 distinct numbers in running text, from these sources.
+1,839 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -899,7 +899,7 @@
 - `data/derived/grundlaget.json`, written by [`scripts/pages/grundlaget.py`](../scripts/pages/grundlaget.py) — 9 numbers.
 - `data/derived/hypodraft_b1.json`, written by [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py) — 26 numbers.
 - `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 25 numbers.
-- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 17 numbers.
+- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 15 numbers.
 - `data/derived/hypotheses.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 2 numbers.
 - `data/derived/hypotheses_evidence.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 18 numbers.
 - `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 3 numbers.
@@ -1568,7 +1568,7 @@ The count of records per value of each categorical column, from the enumeration 
 <a id="K-DRAFTSA-FACTS"></a>
 ### File facts cited by the hypothesis drafts
 
-`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the Secchi extract's record and bottom-depth counts, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Re-derives, from the files named, the row counts, station counts, spans and layer facts the hypothesis drafts once typed from one-off checks.
 
@@ -1633,7 +1633,7 @@ Counts the rows of the hypothesis triage by class, by register group and by the 
 <a id="K-DRAFTSB-COUNTS"></a>
 ### Counts of held files, as the drafts quote them
 
-`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the monthly station panel, the soundings extract, the seabed sediment layer and the pollutant-status layer, and parses the station counts the ODA portal returned as recorded in the source register - the file facts the hypothesis drafts and open problems cite.
 
@@ -2234,7 +2234,7 @@ Reads the sibling project's fetched registers (CHR herds, declared hectares per 
 <a id="K-KD-PLANKTON"></a>
 ### Span of the CMEMS plankton files on disk
 
-`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says), 2026-09-14
+`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - counts a station as having a bottom depth only when the value parses as a number (formats.num), the rule the claims state; the count is unchanged; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The first and last year of the yearly CMEMS Baltic plankton files held on disk, and which years look partial by file size.
 

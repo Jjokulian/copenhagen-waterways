@@ -28,6 +28,7 @@ from array import array
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from common import DERIVED, MANUAL, RAW, ROOT, log
+import formats
 
 SERIES = os.path.join(ROOT, "docs", "data", "areas", "stations_series.json")
 SERIES_BIN = os.path.join(ROOT, "docs", "data", "areas", "stations_series.bin")
@@ -78,7 +79,7 @@ def maaledybde():
             rows += 1
             s = r.get("ObservationsstedNr")
             st.add(s)
-            if (r.get("BundDybde_m") or "").strip():
+            if formats.num(r.get("BundDybde_m")) is not None:
                 bund.add(s)
             if r.get("X_UTM32") == r.get("X_UTM321"):
                 same_x += 1
