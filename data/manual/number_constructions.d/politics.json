@@ -256,11 +256,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
      "scripts/streams.py": "ba3177e06932c91c",
-     "scripts/programme.py": "7ba7340da40f4dd0"
+     "scripts/programme.py": "ec2a6585facf5374"
     }
    }
   },
@@ -524,11 +524,11 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
      "scripts/architecture.py": "af0d805385dfbef8",
-     "scripts/programme.py": "7ba7340da40f4dd0"
+     "scripts/programme.py": "ec2a6585facf5374"
     }
    }
   },
@@ -647,22 +647,6 @@
       "kind": "calculated",
       "is": "The same for the combined-sewered catchments outside it."
      },
-     "rbu_register.points": {
-      "kind": "counted",
-      "is": "Features in the national rain-conditioned outfall register `punkt_rbu_udl`."
-     },
-     "rbu_register.with_volume": {
-      "kind": "counted",
-      "is": "Of those, the features with a registered basin volume `vol_sb` above zero."
-     },
-     "rbu_register.top_one_pct_n": {
-      "kind": "counted",
-      "is": "The largest one per cent of the features with a volume, by volume, rounded down and at least one."
-     },
-     "rbu_register.top_one_pct_share_pct": {
-      "kind": "share",
-      "is": "Their summed volume as a percentage of the summed volume of all features with a volume."
-     },
      "combined_catchments.n": {
       "kind": "counted",
       "is": "Catchments in `docs/data/architecture.json` classed combined."
@@ -715,10 +699,10 @@
     "scripts/programme.py"
    ],
    "confirmed": {
-    "by": "Claude (re-read: programme.py's only change against the committed version is my one-line grammar fix - 'is' or 'are' after the nutrient group's testable count, in a branch taken only when that count is not zero; no computation changed. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/programme.py - no longer computes the overflow register's tail, which solutions.py computes from the same file with the same filter; PROGRAMME's table reads it there; everything else it computes is unchanged; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/programme.py": "7ba7340da40f4dd0"
+     "scripts/programme.py": "ec2a6585facf5374"
     }
    }
   },

@@ -67,10 +67,10 @@
     "data/raw/weather/wind_2019_2025.json"
    ],
    "confirmed": {
-    "by": "Claude (re-read: settle.py's only change since agent w3-ss confirmed this is my rewording of one printed string, the marine tier's line; rain_days() and the fields it writes are untouched. 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/settle.py - reads the overflow register's counts from solutions.json instead of the copy in programme.json; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/settle.py": "368021f06d9968c2",
+     "scripts/pages/settle.py": "8ba0c98474df96c0",
      "data/raw/weather/wind_2019_2025.json": "57528b257df540bc"
     }
    }

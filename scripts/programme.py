@@ -277,10 +277,6 @@ def facts():
     """What this page computes for itself, written to data/derived/programme.json and
     read back live, so each number it prints has a field to point at."""
     sp = amager_split()
-    pts = [x["properties"] for x in
-           read_json(os.path.join(RAWD, "national", "punkt_rbu_udl.geojson"))["features"]]
-    vols = sorted((v for v in ((p.get("vol_sb") or 0) for p in pts) if v > 0), reverse=True)
-    n1 = max(1, int(len(vols) * 0.01))
     ar = read_json(os.path.join(ROOT, "docs", "data", "architecture.json"))
     comb = [c for c in ar["catchments"] if c["c"] == "combined"]
     prov = read_json(os.path.join(DERIVED, "terraincheck.json"))["provenance"]
@@ -289,9 +285,6 @@ def facts():
         "_what": "Counts and sums PROGRAMME.md computes for itself (scripts/programme.py, "
                  "facts()), stored so the page reads them back as live values.",
         "amager_split": {"amager_ha": sp["Amager"], "mainland_ha": sp["mainland"]},
-        "rbu_register": {"points": len(pts), "with_volume": len(vols),
-                         "top_one_pct_n": n1,
-                         "top_one_pct_share_pct": sum(vols[:n1]) / sum(vols) * 100},
         "combined_catchments": {"n": len(comb),
                                 "planned_to_separate": sum(1 for c in comb
                                                            if c.get("p") in SEPARATING)},
@@ -681,7 +674,10 @@ def render():
     NEAR = P("rivermap_near_m")
     tri, T = triage()
     tri_total = T["n_triaged"]
-    rb = F["rbu_register"]
+    rb = live.live_json(os.path.join(DERIVED, "solutions.json"))["register"]
+    t0 = rb["tail"][0]
+    if t0["share_of_structures"] != 0.01:
+        raise SystemExit("solutions.json's first tail row is no longer the top one per cent")
     gs = [G[k] for k in G.keys()]
     mpp = [g["m_per_px_from_scalebar"] for g in gs]
     ses = [g["standard_error_m"] for g in gs if "standard_error_m" in g]
@@ -2283,13 +2279,13 @@ def render():
     a("| Measure | Cost | What it settles |")
     a("|---|---|---|")
     for m, c, w in [
-        (f"Flow-proportional sampling at the {rb['top_one_pct_n']} largest overflow "
+        (f"Flow-proportional sampling at the {t0['count']} largest overflow "
          "structures",
          "weeks",
-         f"Whether load is as concentrated as volume is. {rb['top_one_pct_n']} of "
-         f"{rb['with_volume']:,} structures hold {rb['top_one_pct_share_pct']:.0f}% of "
+         f"Whether load is as concentrated as volume is. {t0['count']} of "
+         f"{rb['with_volume']:,} structures hold {t0['share_of_volume'] * 100:.0f}% of "
          f"recorded storage; if load follows, much of the problem has "
-         f"{rb['top_one_pct_n']} addresses."),
+         f"{t0['count']} addresses."),
         ("Fat, oil, grease and total organic carbon added to the determinands", "trivial",
          "Whether the material the shore is named after is even in the discharge."),
         ("Autumn benthic sampling at existing stations", "one survey season",

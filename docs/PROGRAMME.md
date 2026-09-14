@@ -814,7 +814,7 @@ Seven things. They are ordered by how much evidence stands behind them, not by h
 
 | Measure | Cost | What it settles |
 |---|---|---|
-| Flow-proportional sampling at the [13](SOURCES.md#F-8b39dac318) largest overflow structures | **weeks** | Whether load is as concentrated as volume is. [13](SOURCES.md#F-8b39dac318) of [1,328](SOURCES.md#F-56459bfcad) structures hold [24](SOURCES.md#F-21d33a092b)% of recorded storage; if load follows, much of the problem has [13](SOURCES.md#F-8b39dac318) addresses. |
+| Flow-proportional sampling at the [13](SOURCES.md#F-aee8a1ff8a) largest overflow structures | **weeks** | Whether load is as concentrated as volume is. [13](SOURCES.md#F-aee8a1ff8a) of [1,328](SOURCES.md#F-66b55fdb81) structures hold [24](SOURCES.md#F-c2c8fe6829)% of recorded storage; if load follows, much of the problem has [13](SOURCES.md#F-aee8a1ff8a) addresses. |
 | Fat, oil, grease and total organic carbon added to the determinands | **trivial** | Whether the material the shore is named after is even in the discharge. |
 | Autumn benthic sampling at existing stations | **one survey season** | The depth of the annual die-off, which the spring sampling window does not see. |
 | Fixed coastal cameras with a monthly index, year-round | **negligible** | Whether fedtemøg has the season everyone assumes. Currently unfalsifiable in either direction. |

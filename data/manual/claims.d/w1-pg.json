@@ -318,7 +318,7 @@
    "id": "X-PG-FACTS",
    "kind": "script",
    "label": "programme.py facts()",
-   "detail": "Counts and sums the page computes for itself - the Amager split of combined-sewered impervious area, the tail of the national overflow register, the combined catchments planned for separation, the flood sheets by how they were placed - written to data/derived/programme.json and read back live."
+   "detail": "Counts and sums the page computes for itself - the Amager split of combined-sewered impervious area, the combined catchments planned for separation, the flood sheets by how they were placed - written to data/derived/programme.json and read back live."
   },
   {
    "id": "X-PG-TRIAGE",
@@ -2837,12 +2837,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**What this covers.** The 2012 model was published as 7 PDF sheets with the georeferencing stripped out. 3 registered automatically against the water in them. The other 4 — `amager`, `bispebjerg`, `kbhvest`, `norrebro` — were placed from control points reported by a resident, who found marked dots on a web map one at a time. **All 7 are now placed**, and everything below is **5.85 km² of modelled flood path** across the whole city.",
      "texts": "1b83b1862c7496c9",
-     "node X-PG-FACTS": "15e09472e3492ba9",
+     "node X-PG-FACTS": "03d05217d91f2089",
      "node D-PG-GEOREF": "2e8054e0eb5999ba",
      "node D-PG-RIVERMAP": "ea0bdc32dadb9053"
     }
@@ -4149,14 +4149,14 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**How much larger is worth doing in rates rather than in adjectives, because a year is exactly the window that hides it.** Sewage is produced at roughly the rate people live: taking the ordinary design figures — 130 litres per person per day, and a morning peak of 2× that — a thousand people peak at about 3 litres a second, and they do it at the same hour every day, which is a load a plant can be built for. Rain is not like that. Against 31 years of hourly rainfall over Copenhagen, **one hectare of paved surface in a 10 mm hour matches the morning peak of about 7,385 people**. Amager's 1,052 combined-sewered impervious hectares come to **23 m³/s — the morning peak of 7.8 million people**, from an island. Even the *median* hour with rain in it, 0.3 mm, is 0.70 m³/s: the morning peak of 233 thousand. The two streams are not the same size; putting them in one pipe is what makes the small one uncontrollable.",
      "texts": "ba94145d38a18a94",
      "node D-PG-STREAMS": "2cdb88e62f7fdbf5",
      "node A-PG-STREAMCONV": "551667148dd8e52b",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -4246,15 +4246,15 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-12",
-    "by": "Claude (re-read after the AREAS search fix reassigned outfalls: only the numbers moved - Køge Bugt's registered basin volume is now 8,161 m3 across 837 outfalls, about 6 minutes of the design hour on Amager instead of about 10 - and 'a few minutes; basins postpone a spill, they do not store the rain' holds, more strongly. 2026-09-12; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**So the basins retire.** A spare basin is an organ of the combined system: it exists to hold a mixture back until the plant can take it. Take the rain out and there is no mixture, the foul flow arrives at the rate it is produced, and the plant treats it as it comes. A basin then has nothing to buffer. It is not the instrument for the rain stream either, and the scale says why: the entire registered spare-basin volume on **Køge Bugt** — every basin in the water body, across 837 rain-conditioned outfalls — is **8,161 m³**. One hour of 10 mm of rain on Amager's 1,052 combined-sewered impervious hectares alone is about **84,120 m³** at a runoff coefficient of 0.8. The whole registered basin volume of the bay is about 6 minutes of that one hour, from one island. Basins were never storage for the rain; they are a device for postponing a spill.",
      "texts": "c68c90ffcf8bf9fd",
      "node D-PG-AREASDATA": "0e39df67bd7dc9e6",
      "node D-PG-STREAMS": "2cdb88e62f7fdbf5",
      "node A-PG-STREAMCONV": "551667148dd8e52b",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -4762,12 +4762,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**And Amager is 31% of the problem.** Splitting Copenhagen's combined-sewered impervious area by island:",
      "texts": "6a905a0f134b1db9",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -4807,12 +4807,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**Between 0.5% and 2.6% of the polder would do it.** That is the difference between this and the quarry. By surface, which is what settling needs, the quarry is 2 to 9 times too small and the wrong shape; the polder is 38 to 190 times larger than needed and the right shape.",
      "texts": "0a77363ae005b64a",
-     "node X-PG-FACTS": "15e09472e3492ba9",
+     "node X-PG-FACTS": "03d05217d91f2089",
      "node A-PG-STATED": "640e5aa30b545c48",
      "node D-PG-ARCH": "b249df063fc3f6b9",
      "node D-PG-MONITORING": "66c5737f7588d5fb"
@@ -4835,12 +4835,12 @@
     "C-PG-OLD-7257"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "texts": "32158fd42b5be927",
      "node D-PG-GEOREF": "2e8054e0eb5999ba",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -4905,12 +4905,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**It only serves 31% of the city.** The mainland's 2,395 ha cannot reach the polder by gravity — the harbour is in the way. This is not the answer for Copenhagen. It is a good answer for Amager, and Amager is where 31% of the combined-sewered surface is.",
      "texts": "b297c900ae20e316",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -9160,25 +9160,29 @@
    "stance": "ours",
    "page": "PROGRAMME.md",
    "claim": "Everything above is contestable because the measurements that would resolve it were never taken; the table lists six and what each settles.",
-   "because": "The overflow register's tail is programme.json's; the monitoring windows and gaps are monitoring.json's and the source profiles'. The page's earlier remark that all three regression series are already published by DCE was not checked.",
+   "because": "The overflow register's tail is solutions.json's; the monitoring windows and gaps are monitoring.json's and the source profiles'. The page's earlier remark that all three regression series are already published by DCE was not checked.",
    "rests_on": [
     "X-PG-FACTS",
     "D-PG-MONITORING",
-    "D-PG-DATASOURCES"
+    "D-PG-DATASOURCES",
+    "X-CS-SOLUTIONS",
+    "H-SS-RBU"
    ],
    "basis": "assessed",
    "replaces": [
     "C-PG-OLD-DCESERIES"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "This is first in priority and last in the list because it is the least satisfying. Everything above is contestable, and it is contestable because the measurements that would resolve it were never taken:",
-     "texts": "d0e2f845ac0133a5",
-     "node X-PG-FACTS": "15e09472e3492ba9",
+     "texts": "fe2c05990941a5f5",
+     "node X-PG-FACTS": "03d05217d91f2089",
      "node D-PG-MONITORING": "66c5737f7588d5fb",
-     "node D-PG-DATASOURCES": "82470b28bc62b8e5"
+     "node D-PG-DATASOURCES": "82470b28bc62b8e5",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node H-SS-RBU": "e1f942bc2bd387ab"
     }
    }
   },
@@ -9197,12 +9201,12 @@
     "C-PG-OLD-REACHSTARTED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "The interventions above split by timescale, and the split is the argument for what to do this year:",
      "texts": "d69f7f120687b91d",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "node X-PG-FACTS": "03d05217d91f2089"
     }
    }
   },
@@ -9348,12 +9352,12 @@
     "C-PG-OLD-DECLINED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "Which produces an uncomfortable conclusion for everyone. The people who want urgent action have to accept that the physical fix is a generational programme. The people who want to wait for better evidence have to accept that the evidence is cheap and has not been gathered.",
      "texts": "9671c222e0844c88",
-     "rests on C-PG-7-INTRO": "d0e2f845ac0133a5"
+     "rests on C-PG-7-INTRO": "fe2c05990941a5f5"
     }
    }
   },
@@ -9363,18 +9367,20 @@
    "stance": "ours",
    "page": "PROGRAMME.md",
    "claim": "The measurement is a season's work and the operating changes a year's; whether they matter depends on whether the register's concentration carries to load, which nobody has measured.",
-   "because": "The concentration of storage in few structures is programme.json's; its load is the first measurement in section 7.",
+   "because": "The concentration of storage in few structures is solutions.json's; its load is the first measurement in section 7.",
    "rests_on": [
-    "X-PG-FACTS"
+    "X-CS-SOLUTIONS",
+    "H-SS-RBU"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-pg (wrote the page wording and the claim together and read each against the other; pinned phrases and history passages checked by the engine; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on PROGRAMME.md": "**Is it solvable in a year?** Not the infrastructure. But the *measurement* is a season's work, and the *operating* changes — basin emptying, grease enforcement, release timing — are a year's work and would act on exactly the pulsed, threshold-triggered discharge that the annual accounting is blind to. If the concentration in the register carries through to load, then a year of operational change on a few dozen structures is not a small intervention at all. Nobody knows whether it does, because nobody has measured it. That is the single most actionable sentence in this document.",
-     "texts": "fca942839e285d6b",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "texts": "1d55f29ce2f19789",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e",
+     "node H-SS-RBU": "e1f942bc2bd387ab"
     }
    }
   },

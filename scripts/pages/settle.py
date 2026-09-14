@@ -123,7 +123,8 @@ def values():
     c = live.live_json(OUT)
     x = live.live_json(os.path.join(DERIVED, "experiments.json"))
     t = live.live_json(os.path.join(DERIVED, "triage.json"))
-    rb = live.live_json(os.path.join(DERIVED, "programme.json"))["rbu_register"]
+    rb = live.live_json(os.path.join(DERIVED, "solutions.json"))["register"]
+    t0 = rb["tail"][0]
     rain = c["rain"]
     trig = [r for r in rain["by_threshold"] if r["mm"] == TRIGGER_MM][0]
     return {
@@ -138,7 +139,7 @@ def values():
         "hypotheses": f"{c['hypotheses']}",
         "designs": f"{x['n_experiments']}", "desk": f"{x['by_scale']['desk']}",
         "unscoreable": f"{t['classes']['unscoreable']['n']}", "mechanisms": f"{t['n_triaged']}",
-        "cso_n": f"{rb['top_one_pct_n']}", "cso_share": f"{rb['top_one_pct_share_pct']:.0f}",
+        "cso_n": f"{t0['count']}", "cso_share": f"{t0['share_of_volume'] * 100:.0f}",
         "cso_with": f"{rb['with_volume']:,}",
         "seasons": f"{rain['seasons']}", "first": f"{rain['first_year']}",
         "last": f"{rain['last_year']}",

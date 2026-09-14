@@ -696,8 +696,8 @@
   {
    "id": "H-SS-RBU",
    "kind": "held",
-   "label": "The overflow register's tail\\ndata/derived/programme.json",
-   "detail": "From the national overflow register: the structures with a reported volume, the number in the top percentile by volume, and the share of all reported volume they hold (scripts/programme.py, facts())."
+   "label": "The overflow register's tail\\ndata/derived/solutions.json",
+   "detail": "From the national overflow register: the structures with a reported volume, the number in the top percentile by volume, and the share of all reported volume they hold (scripts/solutions.py)."
   },
   {
    "id": "X-SS-SETTLE",
@@ -3732,22 +3732,22 @@
    "stance": "ours",
    "page": "SETTLE.md",
    "claim": "Instrumenting the largest overflow structures by reported volume would give flow rather than counts at the few that hold the share of reported volume printed.",
-   "because": "Counted from the national overflow register by programme.py.",
+   "because": "Counted from the national overflow register by solutions.py.",
    "rests_on": [
     "H-SS-RBU",
-    "X-PG-FACTS"
+    "X-CS-SOLUTIONS"
    ],
    "replaces": [
     "C-SS-OLD-WHOLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national overflow register's structures with a volume, the top one per cent of them and the share of volume they hold are read from one place, solutions.json, which counts them from the same file with the same filter; programme.json's copy is gone. The claims that use them rest on solutions.py and the register-tail node, which now names solutions.json; programme.py's facts node no longer lists the tail, and the claims still on it use only the Amager split, the separation counts and the flood sheets it lists; the page wordings and values are unchanged)",
     "saw": {
      "said on SETTLE.md": "**Instrumenting the 13 largest overflow structures**: flow rather than event counts, at the structures that hold 24% of the volume reported by the 1,328 that report one.",
-     "texts": "a91bd867e33a9fa4",
-     "node H-SS-RBU": "9759648f34d997bd",
-     "node X-PG-FACTS": "15e09472e3492ba9"
+     "texts": "3ca2c0f57ebd27fa",
+     "node H-SS-RBU": "e1f942bc2bd387ab",
+     "node X-CS-SOLUTIONS": "79cf5f1747916b5e"
     }
    }
   },
