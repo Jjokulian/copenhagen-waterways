@@ -20,6 +20,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from common import ROOT, log, write_doc
 import claims as _claims
 import live
+import readings
 
 OUT = os.path.join(ROOT, "docs", "SENSING.md")
 C, B, E = live.claim, live.claim_begin, live.CLAIM_END
@@ -47,7 +48,7 @@ def J(*parts):
 
 
 def render():
-    mon = J("data", "manual", "monitoring.json")["diffuse_load"]
+    mon = readings.diffuse()
     meas, mod, stations = mon["area_measured_pct"], mon["area_modelled_pct"], mon["stream_stations"]
     danva = RD("DANVA-2024", 69.6, "hvor landbruget alene står for 69,6 %")
     hi = RD("SS-WIKI-COPRO", 0.7,

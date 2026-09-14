@@ -651,18 +651,6 @@
    "covers": {
     "file": "data/manual/monitoring.json",
     "fields": {
-     "diffuse_load.area_measured_pct": {
-      "kind": "document",
-      "is": "The share of Danish land area whose nitrogen transport is measured at stream stations, as the monitoring documentation states it."
-     },
-     "diffuse_load.area_modelled_pct": {
-      "kind": "document",
-      "is": "The share whose transport is modelled instead."
-     },
-     "diffuse_load.retention_uncertainty_national_average_pct_points": {
-      "kind": "document",
-      "is": "The stated uncertainty of the national average retention, in percentage points."
-     },
      "load_trend_vs_outcome.nitrogen_load.approx_1990_kt": {
       "kind": "document",
       "is": "The flow-normalised nitrogen supply from Danish land to the sea around the start of the series, kilotonnes a year, as reported by DCE and summarised at miljotilstand.dk - an approximate reading of the published series."
@@ -721,10 +709,10 @@
     "data/manual/monitoring.json"
    ],
    "confirmed": {
-    "by": "fork farm (written against the code and the pinned texts, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json": "0bd5fd966bfd7077"
+     "data/manual/monitoring.json": "b41261b44411c99d"
     }
    }
   },
@@ -773,10 +761,10 @@
     "data/manual/nitrogen_pathways.json"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: landbrug.py no longer writes n_pathways and n_unquantified - the page takes them from scripts/pathways.py and the two fields are no longer declared; agri_pct, c_per_n and c_per_cod are written as before)",
+    "by": "Claude (2026-09-14: scripts/landbrug.py - the diffuse-load figures come from readings.diffuse(); four claim sentences were reworded; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/landbrug.py": "198a7d14cf9ddc96",
+     "scripts/landbrug.py": "d1d48cdb79f546d9",
      "data/manual/nitrogen_pathways.json": "3c05038bde72ac40"
     }
    }

@@ -146,30 +146,6 @@
    ]
   }
  },
- "diffuse_load": {
-  "stream_stations": 240,
-  "stations_near_river_mouths": 120,
-  "area_measured_pct": 49,
-  "area_modelled_pct": 51,
-  "method": "grab samples at fixed intervals, load computed as sum of daily discharge x linearly interpolated concentration",
-  "documented_bias": "In all three streams of the 2018 GUDP study, transport computed from grab samples was ALWAYS underestimated relative to intensive daily measurement. The authors suggest bias-correcting the national figures.",
-  "deviation_annual_pct": [
-   -0.9,
-   -7.7
-  ],
-  "deviation_monthly_pct": [
-   -50,
-   98
-  ],
-  "storm_dynamics": "high-frequency sensor data show nitrate diluting as discharge rises, then rising with a ~7 hour lag behind the flow peak, moving up to 0.5 mg N/l per hour",
-  "retention_uncertainty_pct_points": [
-   6,
-   27
-  ],
-  "retention_uncertainty_national_average_pct_points": 16,
-  "estimator_pathology": "In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment.",
-  "agriculture_is_a_residual": "measured-plus-modelled total, minus modelled point sources, minus modelled natural background"
- },
  "monitoring_windows": {
   "iltsvind_DCE": {
    "period": "Jul-Aug, Aug-Sep, Sep-Oct, Oct-Nov",

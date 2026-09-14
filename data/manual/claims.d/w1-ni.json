@@ -54,12 +54,6 @@
    "detail": "data/manual/monitoring.json: documented properties of the Danish measurement system, collected from technical annexes; each section names its source, and the diffuse-load section names none."
   },
   {
-   "id": "U-NI-DIFFUSE-SOURCES",
-   "kind": "untraced",
-   "label": "Trail ends: the diffuse-load\\nfigures are uncited",
-   "detail": "The monitoring register's diffuse-load section - the stream stations, the measured and modelled shares of the country, the validation study's deviations, the retention uncertainty and the negative dry-year contribution - carries no citation, and none of the pinned documents was found to state them (searched on 2026-09-11)."
-  },
-  {
    "id": "U-NI-LINE-METHODS",
    "kind": "untraced",
    "label": "Trail ends: how the smaller\\nlines are estimated",
@@ -478,6 +472,54 @@
    "kind": "script",
    "label": "pathways.py",
    "detail": "scripts/pathways.py: counts the pathway register's rows and the rows with no lower bound, once, for every page that prints them - NITROGEN, LANDBRUG, LANDING, CAUSATION and OPEN_PROBLEMS - so each count is one number with one menu."
+  },
+  {
+   "id": "E-NI-SR353-STATIONS-N",
+   "kind": "external",
+   "label": "SR353: the stations behind\nthe national nitrogen load",
+   "detail": "DCE's stream report for 2018 computes the nitrogen reaching the sea from land on the stations and catchment area it states, and models the rest of the country.",
+   "source": "SR353",
+   "said": "fra land af total-kvælstof til havet omkring Danmark"
+  },
+  {
+   "id": "E-NI-SR4-2010",
+   "kind": "external",
+   "label": "SR4: about half the country,\nin the 2010 report",
+   "detail": "DCE's stream report for 2010 describes about a hundred and twenty stations near the stream mouths covering about half of Denmark - the older figures the register had carried beside the 2018 station count.",
+   "source": "SR4",
+   "said": "som er søgt placeret så tæt på vandløbenes udmunding i havet som muligt"
+  },
+  {
+   "id": "E-NI-VJ-ALWAYS",
+   "kind": "external",
+   "label": "Vand & Jord 2018: grab samples\nalways underestimated",
+   "detail": "In the three streams measured daily alongside, the transport computed from samples at fixed intervals was always underestimated against the measured transport; the authors ask whether the national figures should be bias-corrected.",
+   "source": "VJ-2018-N-VANDLOEB",
+   "said": "altid underestimeret"
+  },
+  {
+   "id": "E-NI-VJ-METHOD",
+   "kind": "external",
+   "label": "Vand & Jord 2018: linear\ninterpolation between samples",
+   "detail": "For each simulated sampling scheme, linear interpolation estimated the daily nitrogen concentrations between samples - the method of the national load.",
+   "source": "VJ-2018-N-VANDLOEB",
+   "said": "til at estimere daglige kvælstofkoncentrationer"
+  },
+  {
+   "id": "E-NI-NKM-RET",
+   "kind": "external",
+   "label": "NKM2020: the uncertainty\nof retention, by region",
+   "detail": "The national nitrogen model's method report gives the uncertainty of total retention from the root zone to the coast as two standard deviations, varying between its bias regions, with a national average.",
+   "source": "NKM2020",
+   "said": "Usikkerheden på den samlede retention fra rodzonen til kysten er inden for disse regioner estimeret til at ligge mellem"
+  },
+  {
+   "id": "E-NI-AR245-NEG",
+   "kind": "external",
+   "label": "DMU AR245: a negative\ncultivation contribution",
+   "detail": "A DMU report on phosphorus reaching three lakes at Haderslev: its measured source apportionment gave negative cultivation contributions in dry years, which the authors call a meaningless result of the uncertainty. It is about phosphorus in three lakes, not the national nitrogen share.",
+   "source": "DMU-AR245",
+   "said": "Dette er naturligvis et meningsløst resultat"
   }
  ],
  "claims": [
@@ -1108,49 +1150,63 @@
    "kind": "provisional",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "In dry years the calculated cultivation contribution has come out negative, and the share is published to one decimal with no error bar.",
-   "because": "The dry-year result is in the monitoring register without a citation; the decimal and the absence of any stated uncertainty are read from the pinned summary.",
+   "claim": "A residual can come out impossible: a DMU study of phosphorus reaching three lakes at Haderslev got a negative cultivation contribution in dry years, which its authors call meaningless; no such result for the national nitrogen share is on file here, and the share is published to one decimal with no error bar.",
+   "because": "The DMU report's own words, pinned; the national share's decimal and the missing uncertainty are read from DANVA's summary.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-AR245-NEG",
     "E-NI-DANVA-AGRI"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on NITROGEN.md": "The monitoring register records, without a citation: In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment. A residual whose error can exceed its own signal is published to one decimal place with no error bar.",
-     "texts": "cd6eea1f4e0c6103",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
+     "said on NITROGEN.md": "A residual can come out impossible. In a DMU study of phosphorus reaching three lakes at Haderslev, the measured source apportionment gave a **negative** cultivation contribution in dry years such as 1996 and 2005, which its authors call a meaningless result of the uncertainty in the estimate. That study is of phosphorus; no such result for the national nitrogen share is on file here. The share itself is published to one decimal place with no error bar.",
+     "texts": "757897a0c68d7a82",
+     "node E-NI-AR245-NEG": "a48214093fdf4100",
+     "pinned DMU-AR245": "03be5012f9934b01",
      "node E-NI-DANVA-AGRI": "f6dee177504238f2",
      "pinned DANVA-2024": "cce512d654be929c"
     }
-   }
+   },
+   "replaces": [
+    "C-NI-OLD3-NEGATIVE"
+   ]
   },
   {
    "id": "C-NI-DIFFUSE-BASIS",
    "kind": "provisional",
    "stance": "ours",
    "page": "NITROGEN.md",
-   "claim": "The diffuse load rests on stream stations covering about half the country with the rest modelled; grab samples with linear interpolation underestimated load in all three streams of a validation study; retention carries a wide uncertainty.",
-   "because": "All transcribed in the monitoring register, which gives no citation for them.",
+   "claim": "The diffuse load rests on stream stations whose catchments cover the share of the country DCE's 2018 stream report gives, the rest modelled; samples at fixed intervals with linear interpolation always underestimated load in the three streams of a 2018 study measured daily alongside; the uncertainty of retention varies between the national nitrogen model's regions.",
+   "because": "Each figure is read from the report that states it, pinned: SR353 for the stations and the area, the Vand & Jord article for the comparison, NKM2020 for retention.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES"
+    "E-NI-SR353-STATIONS-N",
+    "E-BA-SR353-STATIONS",
+    "E-NI-VJ-ALWAYS",
+    "E-NI-VJ-METHOD",
+    "E-NI-NKM-RET"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on NITROGEN.md": "Underneath it, by the same register's uncited figures: **240 stream stations** covering **49%** of the country, the other **51%** modelled. Load is grab samples plus linear interpolation, and in all three streams of the 2018 validation study that method **always underestimated** — annual deviations -0.9% to -7.7%, monthly deviations reaching +98%. Retention, the largest single term, carries **±6–27 percentage points**.",
-     "texts": "10319ce061cd915a",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8"
+     "said on NITROGEN.md": "Underneath it, by DCE's stream report for 2018: **237 stream stations** whose catchments cover **61%** of the country, the other **39%** modelled. Load is computed from samples at fixed intervals with linear interpolation, and in all three streams of a 2018 study measured daily alongside, that method **always underestimated** - under monthly sampling by -0.9% to -7.7% a year on average. Retention, the largest single term, is uncertain by **6–27 percentage points** between the national nitrogen model's regions, 16 on the national average.",
+     "texts": "f8bd84ac93707f81",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b",
+     "node E-BA-SR353-STATIONS": "c06f931928626192",
+     "node E-NI-VJ-ALWAYS": "6936285c6aa0672a",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "node E-NI-VJ-METHOD": "4471a15735f16f8f",
+     "node E-NI-NKM-RET": "4c70ea9c2251ed60",
+     "pinned NKM2020": "f291d3650b9a0f3c"
     }
-   }
+   },
+   "replaces": [
+    "C-NI-OLD3-DIFFUSE-BASIS"
+   ]
   },
   {
    "id": "C-NI-DP02-LEVELS",
@@ -1254,25 +1310,25 @@
    "stance": "ours",
    "page": "NITROGEN.md",
    "claim": "The two are coupled: the surplus is an input to DK-QNP, which supplies the river-transport term over the modelled part of the country, so the surplus partly determines the share's minuend - but the share itself is the residual.",
-   "because": "From DCE's naming of the surplus as DK-QNP's input and the register's modelled share of the country, which carries no citation.",
+   "because": "From DCE's naming of the surplus as DK-QNP's input, and the share of the country no station covers, from DCE's stream report for 2018.",
    "rests_on": [
     "C-NI-SR353-INPUT",
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES"
+    "E-NI-SR353-STATIONS-N"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-NI-OLD-UNGAUGED"
+    "C-NI-OLD-UNGAUGED",
+    "C-NI-OLD3-COUPLED"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-ni (read against the page wording and what it rests on - pinned documents, data, and the untraced nodes that say what could not be found; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on NITROGEN.md": "They are coupled, which is why they get confused: **A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the modelled 51% of the country.** So A partly determines the minuend of B. But the ~70% itself is B.",
-     "texts": "695a667719f16ef3",
+     "said on NITROGEN.md": "They are coupled, which is why they get confused: **A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the modelled 39% of the country.** So A partly determines the minuend of B. But the ~70% itself is B.",
+     "texts": "f10932f35657ed9c",
      "rests on C-NI-SR353-INPUT": "8962b8931ab8fea1",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8"
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b"
     }
    }
   },
@@ -3713,6 +3769,90 @@
     "saw": {
      "said on ARCHIVE.md": "Bounds marked as ours are ours. Several ranges in section 1 are constructed here from the biases identified, not published figures. They are stated so they can be argued with",
      "texts": "f63fea34a2a0d968"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD3-NEGATIVE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-NI-NEGATIVE on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "01af772",
+    "file": "docs/NITROGEN.md",
+    "begin": "The monitoring register records, without a citation: In",
+    "end": "one decimal place with no error bar.",
+    "why": "The negative cultivation contribution in dry years comes from a DMU study of phosphorus reaching three lakes at Haderslev; the register had filed it under the national nitrogen load, without a source."
+   },
+   "replaced_by": [
+    "C-NI-NEGATIVE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "The monitoring register records, without a citation: In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment. A residual whose error can exceed its own signal is published to one decimal place with no error bar.",
+     "texts": "71cf972e34f6135d"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD3-DIFFUSE-BASIS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-NI-DIFFUSE-BASIS on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "01af772",
+    "file": "docs/NITROGEN.md",
+    "begin": "Underneath it, by the same register's uncited figures:",
+    "end": "percentage points**.",
+    "why": "The register's figures were uncited and one was wrong: it paired the station count of DCE's 2018 report with the measured share of its 2010 report, and gave a monthly deviation no source states. The figures are now read from the reports."
+   },
+   "replaced_by": [
+    "C-NI-DIFFUSE-BASIS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Underneath it, by the same register's uncited figures: 240 stream stations covering 49% of the country, the other 51% modelled. Load is grab samples plus linear interpolation, and in all three streams of the 2018 validation study that method always underestimated — annual deviations -0.9% to -7.7%, monthly deviations reaching +98%. Retention, the largest single term, carries ±6–27 percentage points.",
+     "texts": "68d743b13ef03b3f"
+    }
+   }
+  },
+  {
+   "id": "C-NI-OLD3-COUPLED",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-NI-COUPLED on NITROGEN.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "NITROGEN.md",
+    "commit": "01af772",
+    "file": "docs/NITROGEN.md",
+    "begin": "They are coupled, which is why they get",
+    "end": "itself is B.",
+    "why": "The modelled share of the country came from the register's uncited figure, which was the 2010 report's; the 2018 report gives a smaller modelled share."
+   },
+   "replaced_by": [
+    "C-NI-COUPLED"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "They are coupled, which is why they get confused: A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the modelled 51% of the country. So A partly determines the minuend of B. But the ~70% itself is B.",
+     "texts": "01a00391cba7c5fc"
     }
    }
   }

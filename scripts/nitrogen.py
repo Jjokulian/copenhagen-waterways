@@ -39,6 +39,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, RAW, ROOT, log, read_json, write_doc
 import claims
 import live
+import readings
 import pathways
 
 KOEGE = ["København", "Hvidovre", "Tårnby", "Brøndby", "Vallensbæk",
@@ -50,35 +51,9 @@ STRAITS = ("oresund_s", "drogden", "oresund_n", "storebaelt")
 VOL = "Vand_(m3/ aar)"
 
 CL = claims.load()[0]
-READ = live.live_json(os.path.join(MANUAL, "nitrogen_readings.json"))
-_pins = {}
+from readings import READ, _norm, _pin, rv   # the one reader for pinned figures
 # a claim the page asserts: one span inside one paragraph, registered in w1-ni.json
 C, B, E = live.claim, live.claim_begin, live.CLAIM_END
-
-
-def _norm(t):
-    """A pin as text: for a web page, HTML entities decoded and tags dropped; for any
-    pin, whitespace collapsed. (A PDF's text keeps its '<' and '>' - stripping
-    "tags" there would eat the prose between a stray pair.)"""
-    head = t[:4000].lower()
-    if "<html" in head or "<!doctype" in head:
-        t = re.sub(r"<[^>]+>", " ", html.unescape(t))
-    return re.sub(r"\s+", " ", t).strip()
-
-
-def _pin(sid):
-    if sid not in _pins:
-        _pins[sid] = _norm(claims.pin_text(CL, sid))
-    return _pins[sid]
-
-
-def rv(key):
-    """A value read out of a pinned document - refused unless its phrase is there."""
-    e = READ["pinned"][key]
-    if _norm(e["phrase"]) not in _pin(e["source"]):
-        raise live.Unjustified(f"nitrogen_readings.json pinned.{key}: the phrase "
-                               f"'{e['phrase']}' is not in the pinned text of {e['source']}")
-    return e["value"]
 
 
 def quote(sid, phrase):
@@ -586,7 +561,7 @@ def main():
     mon = live.live_json(os.path.join(MANUAL, "monitoring.json"))
     K = live.live_json(os.path.join(MANUAL, "nitrogen_constants.json"))
     OF = live.live_json(os.path.join(DERIVED, "outfalls.json"))["layers"]
-    ql, dl, ov = mon["quality_control"], mon["diffuse_load"], mon["overflow_reporting"]
+    ql, dl, ov = mon["quality_control"], readings.diffuse(), mon["overflow_reporting"]
     lv = list(ov["knowledge_levels"])
     # the register's values that its sources print, checked against the pins
     verify("DP02", "Niveau for usikkerhed på udledt stofmængde 135 % 100 % Niveau 3 55 % "
@@ -602,8 +577,8 @@ def main():
         ("Agriculture", agri,
          f"**Residual.** (grab-sampled load over {dl['area_measured_pct']}% of the area + model "
          f"output over {dl['area_modelled_pct']}%) minus point sources minus the natural "
-         f"background, with retention modelled at ±{dl['retention_uncertainty_pct_points'][0]}"
-         f"-{dl['retention_uncertainty_pct_points'][1]} percentage points."),
+         f"background, with retention uncertain by {dl['retention_uncertainty_pct_points'][0]}"
+         f"-{dl['retention_uncertainty_pct_points'][1]} percentage points between regions."),
         ("Natural background", rv("apportion_background"),
          "Determined in small catchments with little human impact and transferred to the rest — "
          "and the subtrahend that determines the residual above."),
@@ -691,18 +666,23 @@ def main():
     audit, (total13, _) = surplus_audit(mon)
     w(audit)
     w("### And the estimator can return impossible values\n")
-    w(C("C-NI-NEGATIVE", "The monitoring register records, without a citation: "
-        f"{dl['estimator_pathology']} A residual whose error can exceed its own "
-        "signal is published to one decimal place with no error bar.") + "\n")
-    w(C("C-NI-DIFFUSE-BASIS", "Underneath it, by the same register's uncited figures: "
-        f"**{dl['stream_stations']} stream stations** covering "
+    w(C("C-NI-NEGATIVE", "A residual can come out impossible. In a DMU study of phosphorus "
+        "reaching three lakes at Haderslev, the measured source apportionment gave a **negative** "
+        "cultivation contribution in dry years such as 1996 and 2005, which its authors call a "
+        "meaningless result of the uncertainty in the estimate. That study is of phosphorus; no such "
+        "result for the national nitrogen share is on file here. The share itself is published to "
+        "one decimal place with no error bar.") + "\n")
+    w(C("C-NI-DIFFUSE-BASIS", "Underneath it, by DCE's stream report for 2018: "
+        f"**{dl['stream_stations']} stream stations** whose catchments cover "
         f"**{dl['area_measured_pct']}%** of the country, the other **{dl['area_modelled_pct']}%** "
-        "modelled. Load is grab samples plus linear interpolation, and in all three streams of the "
-        "2018 validation study that method **always underestimated** — annual deviations "
-        f"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}%, monthly deviations "
-        f"reaching {dl['deviation_monthly_pct'][1]:+.0f}%. Retention, the largest single term, "
-        f"carries **±{dl['retention_uncertainty_pct_points'][0]}–"
-        f"{dl['retention_uncertainty_pct_points'][1]} percentage points**.") + "\n")
+        "modelled. Load is computed from samples at fixed intervals with linear interpolation, and "
+        "in all three streams of a 2018 study measured daily alongside, that method **always "
+        "underestimated** - under monthly sampling by "
+        f"{dl['deviation_annual_pct'][0]}% to {dl['deviation_annual_pct'][1]}% a year on average. "
+        "Retention, the largest single term, is uncertain by "
+        f"**{dl['retention_uncertainty_pct_points'][0]}–{dl['retention_uncertainty_pct_points'][1]} "
+        "percentage points** between the national nitrogen model's regions, "
+        f"{dl['retention_uncertainty_national_average_pct_points']} on the national average.") + "\n")
     w("### Overflow is modelled, and the deciding variable is not collected\n")
     w("| Knowledge level | Method | Stated uncertainty |\n|---|---|---:|")
     for x in lv:

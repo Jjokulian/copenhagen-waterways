@@ -328,18 +328,6 @@
    "detail": "The description of shrinkage - expected stock from delivery and till records against a count, the gap called shrinkage, and the kinds of loss it includes - is the general accounting meaning of the word. No retail source was pinned for it on 2026-09-11; it is used as an illustration, not as a finding about retailers."
   },
   {
-   "id": "D-LR-MONITORING",
-   "kind": "held",
-   "label": "The diffuse-load record\\ndata/manual/monitoring.json",
-   "detail": "A hand-kept record of the national diffuse-load method: measured and modelled area, the grab-sample method and its documented bias in a 2018 study, the retention uncertainty, the negative agricultural contribution in dry years, and how the agricultural share is formed as a residual."
-  },
-  {
-   "id": "U-LR-MONITORING-SOURCES",
-   "kind": "untraced",
-   "label": "Trail ends: the documents\\nbehind monitoring.json",
-   "detail": "monitoring.json records these facts in its own words; the reports and the 2018 study they come from are not pinned in this repository, so the phrases cannot be checked against them. Searched the pins and fragments on 2026-09-11."
-  },
-  {
    "id": "E-LR-DANVA",
    "kind": "external",
    "label": "DANVA: agriculture's\\nshare of nitrogen",
@@ -2032,12 +2020,12 @@
     "C-LR-OLD-THISMONTH"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the RESIDUAL sentence against the claim, its reasoning and what it rests on: monitoring.json, pathways, currents, flood alignment and the floodgap history read in the files; DANVA, DCE, TYPETAL, FAO, EPA, WHO and Wikipedia phrases found in the pinned texts by the engine; the shop figures are stated, illustrative values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: each rests on C-LR-R-DKRESIDUAL, which now rests on DCE's pinned methods note instead of the removed diffuse-load record; what it says - the national share is a residual - is unchanged, and so is what these two draw from it)",
     "saw": {
      "said on RESIDUAL.md": "Shrinkage is a residual. So is the Danish figure this site is about. So are several widely used figures in economics and medicine, listed below.",
      "texts": "262288a6218db499",
-     "rests on C-LR-R-DKRESIDUAL": "c42d14d32d9729bd",
+     "rests on C-LR-R-DKRESIDUAL": "f33634b8d39d97a1",
      "rests on C-LR-R-OUTPUTGAP": "1742c6e26cf0a014",
      "rests on C-LR-R-NAIRU": "1a92cc9f1b4e9bcd",
      "rests on C-LR-R-EXCESS": "7b8560c35557f66b",
@@ -2266,22 +2254,23 @@
    "stance": "ours",
    "page": "RESIDUAL.md",
    "claim": "The Danish agricultural nitrogen share is a residual: measured and modelled total at the coast, minus modelled point sources, minus modelled natural background.",
-   "because": "As recorded in monitoring.json and audited in CAUSATION.md's chain; the report passages behind that record are not pinned.",
+   "because": "DCE's methods note defines it, pinned; CAUSATION.md audits the chain.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "X-LR-CAUSATION",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-MSFD-RESIDUAL",
+    "E-NI-MSFD-BACKGROUND",
+    "X-LR-CAUSATION"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the RESIDUAL sentence against the claim, its reasoning and what it rests on: monitoring.json, pathways, currents, flood alignment and the floodgap history read in the files; DANVA, DCE, TYPETAL, FAO, EPA, WHO and Wikipedia phrases found in the pinned texts by the engine; the shop figures are stated, illustrative values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on RESIDUAL.md": "That figure is a residual. It is produced like this:",
-     "texts": "c42d14d32d9729bd",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node X-LR-CAUSATION": "acc8f681a42a92f1",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "texts": "f33634b8d39d97a1",
+     "node E-NI-MSFD-RESIDUAL": "71b6f9dcc5f264b4",
+     "pinned MSFD28": "8204718867e3910b",
+     "node E-NI-MSFD-BACKGROUND": "8bce9af7d19e5c93",
+     "node X-LR-CAUSATION": "acc8f681a42a92f1"
     }
    }
   },
@@ -2311,48 +2300,56 @@
    "kind": "argued",
    "stance": "ours",
    "page": "RESIDUAL.md",
-   "claim": "The Danish figure inherits a part-measured, part-modelled area, a grab-sample method with a documented low bias in the one intensive comparison recorded, and a retention term with a wide uncertainty.",
-   "because": "The shares, the bias and the uncertainty range are read from monitoring.json; its sources are not pinned.",
+   "claim": "The Danish figure inherits a part-measured, part-modelled area, a sampling method with a documented low bias in the one intensive comparison recorded, and a retention term whose uncertainty varies widely between regions.",
+   "because": "The shares from DCE's 2018 stream report, the bias from the Vand & Jord article, the uncertainty from the national nitrogen model's method report, all pinned.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-SR353-STATIONS-N",
+    "E-NI-VJ-ALWAYS",
+    "E-NI-NKM-RET"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the RESIDUAL sentence against the claim, its reasoning and what it rests on: monitoring.json, pathways, currents, flood alignment and the floodgap history read in the files; DANVA, DCE, TYPETAL, FAO, EPA, WHO and Wikipedia phrases found in the pinned texts by the engine; the shop figures are stated, illustrative values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on RESIDUAL.md": "**The inputs it inherits.** Of the land area involved, 49% is measured and 51% is modelled. The measured part uses grab samples at intervals, and a 2018 study of streams measured intensively alongside found that method gave *lower* transport than continuous measurement in every stream it covered — a documented one-directional bias. The natural background that gets subtracted is a model output, and retention — the largest single term in it — carries an uncertainty of **±6–27 percentage points**.",
-     "texts": "b6f7eaf70739829f",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "said on RESIDUAL.md": "**The inputs it inherits.** Of the land area involved, 61% is measured and 39% is modelled. The measured part uses grab samples at intervals, and a 2018 study of streams measured intensively alongside found that method gave *lower* transport than continuous measurement in every stream it covered — a documented one-directional bias. The natural background that gets subtracted is a model output, and retention — the largest single term in it — is uncertain by **6–27 percentage points** between the national nitrogen model's regions.",
+     "texts": "aade497dd9b719b1",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b",
+     "node E-NI-VJ-ALWAYS": "6936285c6aa0672a",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "node E-NI-NKM-RET": "4c70ea9c2251ed60",
+     "pinned NKM2020": "f291d3650b9a0f3c"
     }
-   }
+   },
+   "replaces": [
+    "C-LR-OLD2-R-DKINPUTS"
+   ]
   },
   {
    "id": "C-LR-R-DKNEGATIVE",
    "kind": "argued",
    "stance": "ours",
    "page": "RESIDUAL.md",
-   "claim": "In dry years the calculated agricultural contribution comes out negative, which is at least that year's error from a method whose noise is the same every year.",
-   "because": "monitoring.json records the negative values in dry years; the reasoning is C-LR-R-NEGATIVE's.",
+   "claim": "The same kind of method can fail the impossibility test: for phosphorus reaching three lakes at Haderslev, a measured source apportionment gave a negative cultivation contribution in dry years; no such result for the national nitrogen share is on file here.",
+   "because": "The DMU report's words, pinned; the reasoning is C-LR-R-NEGATIVE's.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "U-LR-MONITORING-SOURCES",
+    "E-NI-AR245-NEG",
     "C-LR-R-NEGATIVE"
    ],
    "basis": "assessed",
    "replaces": [
-    "C-LR-OLD-DKEVERYYEAR"
+    "C-LR-OLD-DKEVERYYEAR",
+    "C-LR-OLD2-R-DKNEGATIVE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the RESIDUAL sentence against the claim, its reasoning and what it rests on: monitoring.json, pathways, currents, flood alignment and the floodgap history read in the files; DANVA, DCE, TYPETAL, FAO, EPA, WHO and Wikipedia phrases found in the pinned texts by the engine; the shop figures are stated, illustrative values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on RESIDUAL.md": "**It fails the impossibility test.** In dry years — 1996, 2005 — the calculated agricultural contribution comes out **negative**. A mass of nitrogen cannot be less than nothing, so that excursion is at least that year's error, from a method whose noise is the same in every year.",
-     "texts": "1f268e2f4d301e9a",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87",
+     "said on RESIDUAL.md": "**The same method can fail the impossibility test.** For phosphorus reaching three lakes at Haderslev, a measured source apportionment gave a **negative** cultivation contribution in dry years - 1996, 2005. A mass cannot be less than nothing, so that excursion is at least that year's error, from a method whose noise is the same in every year. No such result for the national nitrogen share is on file here.",
+     "texts": "d8e405bf50a509fb",
+     "node E-NI-AR245-NEG": "a48214093fdf4100",
+     "pinned DMU-AR245": "03be5012f9934b01",
      "rests on C-LR-R-NEGATIVE": "f6308d181685ce1a"
     }
    }
@@ -2370,13 +2367,13 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w1-lr (read the RESIDUAL sentence against the claim, its reasoning and what it rests on: monitoring.json, pathways, currents, flood alignment and the floodgap history read in the files; DANVA, DCE, TYPETAL, FAO, EPA, WHO and Wikipedia phrases found in the pinned texts by the engine; the shop figures are stated, illustrative values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: each rests on C-LR-R-DKRESIDUAL, which now rests on DCE's pinned methods note instead of the removed diffuse-load record; what it says - the national share is a residual - is unchanged, and so is what these two draw from it)",
     "saw": {
      "said on RESIDUAL.md": "**It cannot be checked at a single moment.** There is no independent measurement of \"nitrogen from agriculture\" to compare it against: if there were, nobody would compute it as a leftover.",
      "texts": "8f4d2ddf91f39e77",
      "rests on C-LR-R-UNCHECKABLE": "c0abd27473dcbfbd",
-     "rests on C-LR-R-DKRESIDUAL": "c42d14d32d9729bd"
+     "rests on C-LR-R-DKRESIDUAL": "f33634b8d39d97a1"
     }
    }
   },
@@ -3879,6 +3876,62 @@
     "saw": {
      "said on ARCHIVE.md": "Nobody has checked the enumeration",
      "texts": "8005481f1fd4daf6"
+    }
+   }
+  },
+  {
+   "id": "C-LR-OLD2-R-DKINPUTS",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LR-R-DKINPUTS on RESIDUAL.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "RESIDUAL.md",
+    "commit": "01af772",
+    "file": "docs/RESIDUAL.md",
+    "begin": "Of the land area involved,",
+    "end": "percentage points**.",
+    "why": "The shares were the 2010 report's, and the retention uncertainty was given as one plus-or-minus band where the source gives a range between regions."
+   },
+   "replaced_by": [
+    "C-LR-R-DKINPUTS"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Of the land area involved, 49% is measured and 51% is modelled. The measured part uses grab samples at intervals, and a 2018 study of streams measured intensively alongside found that method gave *lower* transport than continuous measurement in every stream it covered — a documented one-directional bias. The natural background that gets subtracted is a model output, and retention — the largest single term in it — carries an uncertainty of ±6–27 percentage points.",
+     "texts": "3eb03252b81dbfe8"
+    }
+   }
+  },
+  {
+   "id": "C-LR-OLD2-R-DKNEGATIVE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LR-R-DKNEGATIVE on RESIDUAL.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "RESIDUAL.md",
+    "commit": "01af772",
+    "file": "docs/RESIDUAL.md",
+    "begin": "fails the impossibility",
+    "end": "the same in every year.",
+    "why": "The negative contribution in dry years is from a DMU study of phosphorus at three lakes; the page presented it as the national agricultural nitrogen contribution."
+   },
+   "replaced_by": [
+    "C-LR-R-DKNEGATIVE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "fails the impossibility test. In dry years — 1996, 2005 — the calculated agricultural contribution comes out negative. A mass of nitrogen cannot be less than nothing, so that excursion is at least that year's error, from a method whose noise is the same in every year.",
+     "texts": "496157a2a6af6d20"
     }
    }
   }

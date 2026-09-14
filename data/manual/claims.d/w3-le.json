@@ -1074,25 +1074,25 @@
    "page": "LANDBRUG.md",
    "kind": "provisional",
    "stance": "ours",
-   "claim": "Part of the catchment area is measured and the rest modelled, in the shares the register gives.",
-   "because": "Read from monitoring.json, which gives no source for them.",
+   "claim": "Part of the catchment area is measured and the rest modelled, in the shares DCE's stream report for 2018 gives.",
+   "because": "Read from the pinned report.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-SR353-STATIONS-N",
     "C-NI-DIFFUSE-BASIS"
    ],
    "replaces": [
-    "C-LE-OLD-METHODTABLE"
+    "C-LE-OLD-METHODTABLE",
+    "C-LE-OLD2-R-COVER"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on LANDBRUG.md": "49 % af arealet måles, 51 % modelleres",
-     "texts": "268d064f96246039",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
-     "rests on C-NI-DIFFUSE-BASIS": "10319ce061cd915a"
+     "said on LANDBRUG.md": "61 % af arealet måles, 39 % modelleres",
+     "texts": "8956d1c13dd9f937",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b",
+     "rests on C-NI-DIFFUSE-BASIS": "f8bd84ac93707f81"
     }
    }
   },
@@ -1102,24 +1102,23 @@
    "kind": "provisional",
    "stance": "ours",
    "claim": "Stream load is computed from grab samples at fixed intervals, as the sum of daily discharge times linearly interpolated concentration.",
-   "because": "The register's description of the method, without a source.",
+   "because": "The Vand & Jord article's description of the method, pinned.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-VJ-METHOD",
     "C-NI-DIFFUSE-BASIS"
    ],
    "replaces": [
     "C-LE-OLD-METHODTABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on LANDBRUG.md": "stikprøver med faste mellemrum; transporten beregnes som summen af daglig vandføring gange lineært interpoleret koncentration",
-     "texts": "24b212b2b09dd636",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
-     "rests on C-NI-DIFFUSE-BASIS": "10319ce061cd915a"
+     "texts": "492be2501432fb66",
+     "node E-NI-VJ-METHOD": "4471a15735f16f8f",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "rests on C-NI-DIFFUSE-BASIS": "f8bd84ac93707f81"
     }
    }
   },
@@ -1129,24 +1128,23 @@
    "kind": "provisional",
    "stance": "ours",
    "claim": "In all three streams of the 2018 GUDP study, grab samples always gave lower transport than intensive daily measurement.",
-   "because": "The register's account of the study, which is not pinned here.",
+   "because": "The article's own finding, pinned.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-VJ-ALWAYS",
     "C-NI-DIFFUSE-BASIS"
    ],
    "replaces": [
     "C-LE-OLD-METHODTABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on LANDBRUG.md": "i alle tre vandløb i GUDP-undersøgelsen fra 2018 gav stikprøverne **altid lavere** transport end intensiv daglig måling",
-     "texts": "12f6f4cbf8a74d48",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
-     "rests on C-NI-DIFFUSE-BASIS": "10319ce061cd915a"
+     "texts": "e328097a3a703c33",
+     "node E-NI-VJ-ALWAYS": "6936285c6aa0672a",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "rests on C-NI-DIFFUSE-BASIS": "f8bd84ac93707f81"
     }
    }
   },
@@ -1155,25 +1153,24 @@
    "page": "LANDBRUG.md",
    "kind": "provisional",
    "stance": "ours",
-   "claim": "Retention on the national average carries the uncertainty in percentage points the register gives.",
-   "because": "The register's figure, without a source.",
+   "claim": "Retention on the national average carries the uncertainty in percentage points the national nitrogen model's method report gives.",
+   "because": "Read from the pinned report.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-NKM-RET",
     "C-PC-CA-L1"
    ],
    "replaces": [
     "C-LE-OLD-METHODTABLE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on LANDBRUG.md": "± 16 procentpoint på landsgennemsnittet",
-     "texts": "92214d29e7843891",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
-     "rests on C-PC-CA-L1": "15fb2a78341d09a3"
+     "texts": "017270a9bbe56c7a",
+     "node E-NI-NKM-RET": "4c70ea9c2251ed60",
+     "pinned NKM2020": "f291d3650b9a0f3c",
+     "rests on C-PC-CA-L1": "8e2cca2b9ac09156"
     }
    }
   },
@@ -1182,25 +1179,25 @@
    "page": "LANDBRUG.md",
    "kind": "provisional",
    "stance": "ours",
-   "claim": "In dry years such as 1996 and 2005 the calculated cultivation contribution has come out negative.",
-   "because": "The register records it without a citation.",
+   "claim": "For phosphorus reaching three lakes at Haderslev a measured source apportionment gave a negative cultivation contribution in dry years; no such result for the national nitrogen is on file here.",
+   "because": "The DMU report's words, pinned.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES",
+    "E-NI-AR245-NEG",
     "C-NI-NEGATIVE"
    ],
    "replaces": [
-    "C-LE-OLD-METHODTABLE"
+    "C-LE-OLD-METHODTABLE",
+    "C-LE-OLD2-R-DRY"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on LANDBRUG.md": "i tørre år som 1996 og 2005 er det beregnede dyrkningsbidrag kommet ud **negativt**",
-     "texts": "5041b145424b6852",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8",
-     "rests on C-NI-NEGATIVE": "cd6eea1f4e0c6103"
+     "said on LANDBRUG.md": "for fosfor til tre søer ved Haderslev gav den målebaserede kildeopsplitning i tørre år som 1996 og 2005 et **negativt** dyrkningsbidrag; for landets kvælstof er intet sådant resultat fundet",
+     "texts": "ff2d3fb767c7a02d",
+     "node E-NI-AR245-NEG": "a48214093fdf4100",
+     "pinned DMU-AR245": "03be5012f9934b01",
+     "rests on C-NI-NEGATIVE": "757897a0c68d7a82"
     }
    }
   },
@@ -1209,23 +1206,32 @@
    "page": "LANDBRUG.md",
    "kind": "gap",
    "stance": "ours",
-   "claim": "The rows of the table stand in the project's monitoring register without a source; the documents behind them are not pinned here.",
-   "because": "Searched as the untraced node records.",
+   "claim": "The rows are read from the reports they come from, each figure checked against the pinned copy.",
+   "because": "Each row rests on its report's pinned text.",
    "rests_on": [
-    "D-NI-MONITORING",
-    "U-NI-DIFFUSE-SOURCES"
+    "E-NI-SR353-STATIONS-N",
+    "E-NI-VJ-ALWAYS",
+    "E-NI-NKM-RET",
+    "E-NI-AR245-NEG"
    ],
    "replaces": [
-    "C-LE-OLD-METHODTABLE"
+    "C-LE-OLD-METHODTABLE",
+    "C-LE-OLD2-R-SOURCE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on LANDBRUG.md": "Rækkerne står i projektets register over overvågningen, som ikke angiver, hvor de kommer fra; de dokumenter, de bygger på, er ikke fastholdt her.",
-     "texts": "a3e2b73d197e51d7",
-     "node D-NI-MONITORING": "cc8492094bf9de57",
-     "node U-NI-DIFFUSE-SOURCES": "7b313ca4ab50e2a8"
+     "said on LANDBRUG.md": "Rækkerne er læst i de rapporter, de stammer fra: DCE's vandløbsrapport for 2018, en undersøgelse i Vand & Jord fra 2018, den nationale kvælstofmodels metoderapport og en DMU-rapport om fosfor; hvert tal er kontrolleret mod den fastholdte kopi.",
+     "texts": "b644919ca929fdfb",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b",
+     "node E-NI-VJ-ALWAYS": "6936285c6aa0672a",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "node E-NI-NKM-RET": "4c70ea9c2251ed60",
+     "pinned NKM2020": "f291d3650b9a0f3c",
+     "node E-NI-AR245-NEG": "a48214093fdf4100",
+     "pinned DMU-AR245": "03be5012f9934b01"
     }
    }
   },
@@ -1234,22 +1240,23 @@
    "page": "LANDBRUG.md",
    "kind": "argued",
    "stance": "ours",
-   "claim": "A computed quantity that comes out negative where the physical amount cannot be has an error that can exceed its signal; it is what is left when modelled terms are subtracted from a partly modelled total, it inherits their errors, and the share is published to one decimal without an uncertainty.",
-   "because": "A difference carries the errors of all its terms; the decimal and the absence of an uncertainty are read from DANVA's summary.",
+   "claim": "A computed quantity that comes out negative where the physical amount cannot be - as the phosphorus cultivation contribution did at Haderslev - has an error that can exceed its signal; it is what is left when modelled terms are subtracted from a partly modelled total, it inherits their errors, and the share is published to one decimal without an uncertainty.",
+   "because": "A difference carries the errors of all its terms; the example is the DMU report's; the decimal and the absence of an uncertainty are read from DANVA's summary.",
    "rests_on": [
     "C-NI-NEGATIVE",
     "C-LE-RESIDUAL"
    ],
    "replaces": [
-    "C-LE-OLD-NEGATIVE"
+    "C-LE-OLD-NEGATIVE",
+    "C-LE-OLD2-NEGATIVE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on LANDBRUG.md": "En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke kan være det, har en fejl, der kan være større end selve signalet. Den er det, der bliver tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.",
-     "texts": "e71393226d61cbd3",
-     "rests on C-NI-NEGATIVE": "cd6eea1f4e0c6103",
+     "said on LANDBRUG.md": "En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke kan være det - som dyrkningsbidraget af fosfor ved Haderslev - har en fejl, der kan være større end selve signalet. Den er det, der bliver tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.",
+     "texts": "fdca3077922492ca",
+     "rests on C-NI-NEGATIVE": "757897a0c68d7a82",
      "rests on C-LE-RESIDUAL": "d102e5bccad766d3"
     }
    }
@@ -1349,21 +1356,22 @@
    "page": "LANDBRUG.md",
    "kind": "provisional",
    "stance": "ours",
-   "claim": "Agriculture's share of the land-based waterborne term is published: a residual of measured and modelled terms, with a retention uncertainty in this project's register, which gives no source for it.",
+   "claim": "Agriculture's share of the land-based waterborne term is published: a residual of measured and modelled terms, with a retention uncertainty on the national average that the national nitrogen model's method report gives.",
    "because": "CAUSATION.md's reading of the same link.",
    "rests_on": [
     "C-PC-CA-L1"
    ],
    "replaces": [
-    "C-LE-OLD-LINKS"
+    "C-LE-OLD-LINKS",
+    "C-LE-OLD2-L1"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-le (read the recorded wording on LANDBRUG.md against the register entry, its reasoning and every node and claim under it; each pinned phrase found by the engine and read in its surrounding passage; numbers checked in nitrogen_pathways.json, monitoring.json and landbrug.json or the pinned document they are read from; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on LANDBRUG.md": "**69,6 %, offentliggjort.** En restpost: målt og modelleret total minus punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± 16 procentpoint i projektets register, som ikke angiver en kilde til den",
-     "texts": "80e2203ce484af3d",
-     "rests on C-PC-CA-L1": "15fb2a78341d09a3"
+     "said on LANDBRUG.md": "**69,6 %, offentliggjort.** En restpost: målt og modelleret total minus punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på 16 procentpoint på landsgennemsnittet ifølge den nationale kvælstofmodel",
+     "texts": "c50210b7b9e26578",
+     "rests on C-PC-CA-L1": "8e2cca2b9ac09156"
     }
    }
   },
@@ -6252,6 +6260,146 @@
     "saw": {
      "said on ARCHIVE.md": "er en folkelig betegnelse for masseforekomster af løstliggende, trådformede brunalger, som kan ligge og rådne i vandkanten og på stranden.",
      "texts": "5fed76d326546aab"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD2-R-COVER",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LE-R-COVER on LANDBRUG.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "01af772",
+    "file": "docs/LANDBRUG.md",
+    "begin": "af arealet måles,",
+    "end": "% modelleres",
+    "why": "The measured and modelled shares were the 2010 report's, not the 2018 report's that the rest of the table uses."
+   },
+   "replaced_by": [
+    "C-LE-R-COVER"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "af arealet måles, 51 % modelleres",
+     "texts": "22e561f3b7480823"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD2-R-DRY",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LE-R-DRY on LANDBRUG.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "01af772",
+    "file": "docs/LANDBRUG.md",
+    "begin": "i tørre år som",
+    "end": "kommet ud **negativt**",
+    "why": "The negative cultivation contribution is from a DMU study of phosphorus at three lakes, not from the national nitrogen apportionment."
+   },
+   "replaced_by": [
+    "C-LE-R-DRY"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "i tørre år som 1996 og 2005 er det beregnede dyrkningsbidrag kommet ud negativt",
+     "texts": "7255e6ff1a2bca8d"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD2-R-SOURCE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LE-R-SOURCE on LANDBRUG.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "01af772",
+    "file": "docs/LANDBRUG.md",
+    "begin": "Rækkerne står i projektets register over overvågningen, som",
+    "end": "de bygger på, er ikke fastholdt her.",
+    "why": "The rows are now read from the reports they come from and checked against pinned copies, so the sentence saying they had no source no longer holds."
+   },
+   "replaced_by": [
+    "C-LE-R-SOURCE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Rækkerne står i projektets register over overvågningen, som ikke angiver, hvor de kommer fra; de dokumenter, de bygger på, er ikke fastholdt her.",
+     "texts": "1214ab7554b2235f"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD2-L1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LE-L1 on LANDBRUG.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "01af772",
+    "file": "docs/LANDBRUG.md",
+    "begin": "En restpost: målt og modelleret total minus punktkilder",
+    "end": "som ikke angiver en kilde til den",
+    "why": "The retention uncertainty has a source - the national nitrogen model's method report - so the sentence saying the register gave none no longer holds."
+   },
+   "replaced_by": [
+    "C-LE-L1"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "En restpost: målt og modelleret total minus punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± 16 procentpoint i projektets register, som ikke angiver en kilde til den",
+     "texts": "a7506e1ef3d68d1f"
+    }
+   }
+  },
+  {
+   "id": "C-LE-OLD2-NEGATIVE",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-LE-NEGATIVE on LANDBRUG.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "LANDBRUG.md",
+    "commit": "01af772",
+    "file": "docs/LANDBRUG.md",
+    "begin": "En beregnet størrelse, der bliver negativ, hvor den",
+    "end": "offentliggøres med én decimal og uden usikkerhed.",
+    "why": "Read with the table above it, the sentence implied the national nitrogen share had come out negative; the documented case is phosphorus at three lakes."
+   },
+   "replaced_by": [
+    "C-LE-NEGATIVE"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke kan være det, har en fejl, der kan være større end selve signalet. Den er det, der bliver tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.",
+     "texts": "9fff403bbf0e4773"
     }
    }
   }

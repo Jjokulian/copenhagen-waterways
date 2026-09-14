@@ -15,8 +15,9 @@ without growth are set out separately, as routes to iltsvind.
 
 Every number reaches the page through live.py: the pathway bounds from
 data/manual/nitrogen_pathways.json (this project's own compilation, without a source per
-row), the nutrient typetal and the retention uncertainty from data/manual/monitoring.json,
-the stoichiometric constants from data/derived/landbrug.json and meta_facts.json, and the
+row), the nutrient typetal from data/manual/monitoring.json, the retention uncertainty
+read from the national nitrogen model's method report through readings.py, the
+stoichiometric constants from data/derived/landbrug.json and meta_facts.json, and the
 published figures read from their pinned documents. Every assertion is a checked claim,
 registered with what it rests on in data/manual/claims.d/w2-pc.json.
 
@@ -29,6 +30,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, MANUAL, ROOT, log, write_doc
 import claims as _claims
 import live
+import readings
 import pathways
 
 OUT = os.path.join(ROOT, "docs", "CAUSATION.md")
@@ -61,7 +63,7 @@ def main():
     O2 = live.chem("O2")
     n_paths, n_empty = pathways.counts()
     C_PER_N, C_PER_COD = F["c_per_n"], F["c_per_cod"]
-    ret = mon["diffuse_load"]["retention_uncertainty_national_average_pct_points"]
+    ret = readings.diffuse()["retention_uncertainty_national_average_pct_points"]
 
     # the two rows that make up the land-based waterborne term the published share is of
     land = [p for p in paths if p["pathway"].startswith("Danish land via")]
@@ -153,8 +155,8 @@ def main():
     a("|---|---|---|---|")
     a(f"| Agriculture → the land-based waterborne nitrogen term | {PCT}% | **PUBLISHED** | "
       + C("C-PC-CA-L1", "A residual: measured-plus-modelled total minus modelled point sources minus "
-          f"modelled background, with a retention uncertainty of {ret} percentage points in this "
-          "project's register, which gives no source for it.") + " |")
+          f"modelled background, with a retention uncertainty of {ret} percentage points on the "
+          "national average, as the national nitrogen model's method report gives it.") + " |")
     a("| That term → all reactive nitrogen reaching the sea | no coefficient | **OPEN SET** | "
       + C("C-PC-CA-L2", f"{n_empty} of {n_paths} enumerated pathways carry no number, among them "
           "deposition's organic fraction, submarine groundwater discharge and sediment "

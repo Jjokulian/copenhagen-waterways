@@ -319,6 +319,48 @@
    "source": "DHI-MODEL-DEL2-2015",
    "phrase": "Hjarbæk Fjord 158 93,9 21,3",
    "where": "DHI del 2, the Danish share of the chlorophyll indicator in Hjarbæk Fjord, per cent"
+  },
+  "sr353_n_stations": {
+   "value": 237,
+   "source": "SR353",
+   "phrase": "data fra i alt 237 målestationer",
+   "where": "the stream stations behind the national nitrogen load to the sea, 1990-2018"
+  },
+  "sr353_n_area_pct": {
+   "value": 61,
+   "source": "SR353",
+   "phrase": "Det svarer til 61% af landets samlede areal",
+   "where": "their catchments' share of Denmark's area"
+  },
+  "vj_dev_jegstrup_monthly": {
+   "value": -0.9,
+   "source": "VJ-2018-N-VANDLOEB",
+   "phrase": "-0,9 ±2,3 %",
+   "where": "mean deviation of the annual transport under monthly sampling, Jegstrup Bæk"
+  },
+  "vj_dev_monthly": {
+   "value": -7.7,
+   "source": "VJ-2018-N-VANDLOEB",
+   "phrase": "-7,7 ± 4,4 % (ved en månedlig strategi)",
+   "where": "mean deviation of the annual transport under monthly sampling, the stream it suited least"
+  },
+  "nkm_ret_lo": {
+   "value": 6,
+   "source": "NKM2020",
+   "phrase": "mellem 6 og 27 procentpoint",
+   "where": "two standard deviations of total retention, root zone to coast: the lowest bias region"
+  },
+  "nkm_ret_hi": {
+   "value": 27,
+   "source": "NKM2020",
+   "phrase": "mellem 6 og 27 procentpoint",
+   "where": "the same, the highest bias region"
+  },
+  "nkm_ret_avg": {
+   "value": 16,
+   "source": "NKM2020",
+   "phrase": "med et landsgennemsnit på 16 procentpoint",
+   "where": "the same, the national average"
   }
  }
 }

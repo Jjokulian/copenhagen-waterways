@@ -84,10 +84,10 @@
     "scripts/pages/residual.py"
    ],
    "confirmed": {
-    "by": "fork w1-lr (re-read: residual.py changed only in page wording - a blockquote joined onto one line and a comma; the melamine step line is unchanged; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/residual.py - the diffuse-load figures come from readings.diffuse(); two claim sentences were reworded; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/residual.py": "b239798e04a8cd9b"
+     "scripts/pages/residual.py": "78de5e6a139be984"
     }
    }
   }

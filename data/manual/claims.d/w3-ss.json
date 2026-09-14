@@ -801,21 +801,23 @@
    "stance": "ours",
    "page": "SENSING.md",
    "claim": "Denmark's diffuse load figure rests on catchment area of which a share is measured and the rest modelled.",
-   "because": "Both shares are read from the project's record of the national diffuse-load method; the documents behind it are not pinned here.",
+   "because": "Both shares are read from DCE's stream report for 2018, pinned.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-SR353-STATIONS-N"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on SENSING.md": "Denmark's diffuse load figure rests on catchment area that is 49% measured and 51% modelled ([NITROGEN.md](NITROGEN.md))",
-     "texts": "55609ae91f70300c",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "said on SENSING.md": "Denmark's diffuse load figure rests on catchment area that is 61% measured and 39% modelled ([NITROGEN.md](NITROGEN.md))",
+     "texts": "39cbc7b575f4220f",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b"
     }
-   }
+   },
+   "replaces": [
+    "C-SS-OLD2-S-AREA"
+   ]
   },
   {
    "id": "C-SS-S-OBJECTION",
@@ -828,12 +830,12 @@
     "C-SS-S-AREA"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on SENSING.md": "the objection this project keeps making is not that the model is bad but that **a partition is not a measurement**. A network dense enough to have a node on every stream that reaches the sea would end that argument by removing its subject.",
      "texts": "e953f8c2bdb4e18f",
-     "rests on C-SS-S-AREA": "55609ae91f70300c"
+     "rests on C-SS-S-AREA": "39cbc7b575f4220f"
     }
    }
   },
@@ -1517,15 +1519,15 @@
     "C-NI-NEGATIVE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on SENSING.md": "**And the last number is the honest one.** This method is the residual method — the same operation the 69.6% figure is built on, which this project spends [NITROGEN.md](NITROGEN.md) taking apart. It is only better if it obeys rules the original does not: **every subtraction is a measurement rather than a model**, **the error propagates and is published with the number**, and **the final residual is never named after a source.** An unexplained remainder is an unexplained remainder. The moment it gets called *agriculture*, this becomes the thing it was built to replace.",
      "texts": "20b199c34a70d810",
      "node E-LR-DANVA": "29a0061681f07e2d",
      "pinned DANVA-2024": "cce512d654be929c",
      "rests on C-PO-RESIDUAL": "57da8db9680a62b6",
-     "rests on C-NI-NEGATIVE": "cd6eea1f4e0c6103"
+     "rests on C-NI-NEGATIVE": "757897a0c68d7a82"
     }
    }
   },
@@ -1673,22 +1675,23 @@
    "stance": "ours",
    "page": "SENSING.md",
    "claim": "Without the sampler the network shows only wiggles; without the network the sampler is the existing programme of grab samples at fixed intervals, from which transport came out underestimated in every stream of a study the project records; the design is the coupling.",
-   "because": "The project's record of the national method gives grab samples at fixed intervals and the study's finding; its source documents are not pinned here.",
+   "because": "The method and the 2018 study's finding, both from the pinned Vand & Jord article.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-VJ-ALWAYS",
+    "E-NI-VJ-METHOD"
    ],
    "replaces": [
     "C-SS-OLD-FORTNIGHT"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on SENSING.md": "Tier 1 without tier 2 is a network of interesting wiggles. Tier 2 without tier 1 is the existing monitoring programme: grab samples at fixed intervals, from which transport came out underestimated against intensive daily measurement in every stream of the 2018 study this project records. **The design is the coupling** — tier 1 decides when tier 2 fires.",
-     "texts": "2388d89b2fb87d56",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "texts": "792d60c32884da01",
+     "node E-NI-VJ-ALWAYS": "6936285c6aa0672a",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223",
+     "node E-NI-VJ-METHOD": "4471a15735f16f8f"
     }
    }
   },
@@ -2654,19 +2657,21 @@
    "stance": "ours",
    "page": "SENSING.md",
    "claim": "It would show whether and when the payload moves, across the country rather than at the national stream stations sampled at fixed intervals.",
-   "because": "The station count and the method are read from the project's record of the national method.",
+   "because": "The station count from DCE's stream report for 2018 and the method from the Vand & Jord article, both pinned.",
    "rests_on": [
-    "D-LR-MONITORING",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-SR353-STATIONS-N",
+    "E-NI-VJ-METHOD"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ss (read the recorded wording on SENSING.md or SETTLE.md against the register entry, its reasoning and every node under it: values checked in monitoring.json, programme.json, triage.json, experiments.json and settle.json; every quoted phrase found in its pinned text by the engine and read in context by hand; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on SENSING.md": "**Would.** Whether the payload moves in events, where, how often, and in what season — across the whole country rather than at 240 stream stations sampled at fixed intervals. Whether the spreading window shows up in the water. Which catchments are quiet and which are not, without a model in between.",
-     "texts": "7dbbd6a464f9c3af",
-     "node D-LR-MONITORING": "36f77e54cd1539ce",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "said on SENSING.md": "**Would.** Whether the payload moves in events, where, how often, and in what season — across the whole country rather than at 237 stream stations sampled at fixed intervals. Whether the spreading window shows up in the water. Which catchments are quiet and which are not, without a model in between.",
+     "texts": "4c2fd872de2676d7",
+     "node E-NI-SR353-STATIONS-N": "392495f6e3621cb2",
+     "pinned SR353": "8a598b8a6973094b",
+     "node E-NI-VJ-METHOD": "4471a15735f16f8f",
+     "pinned VJ-2018-N-VANDLOEB": "3d2d0c67d1959223"
     }
    }
   },
@@ -5261,6 +5266,34 @@
     "saw": {
      "said on ARCHIVE.md": "Every disputed number in > Danish nutrient policy is a modelled quantity defended by the people who model it. > This produces a measured quantity, at named places, on dates, with the raw series > published and the decision rule fixed in advance — so the result is available to > somebody who does not trust either party. That is the only kind of number that > ends a forty-year disagreement, and the striking thing is how cheap it is.",
      "texts": "e5a926bb8a6886bc"
+    }
+   }
+  },
+  {
+   "id": "C-SS-OLD2-S-AREA",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-SS-S-AREA on SENSING.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "SENSING.md",
+    "commit": "01af772",
+    "file": "docs/SENSING.md",
+    "begin": "Denmark's diffuse load figure rests on catchment area",
+    "end": "% modelled",
+    "why": "The measured and modelled shares were the 2010 report's; the 2018 report gives a larger measured share."
+   },
+   "replaced_by": [
+    "C-SS-S-AREA"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "Denmark's diffuse load figure rests on catchment area that is 49% measured and 51% modelled",
+     "texts": "474322e6de45592a"
     }
    }
   }

@@ -178,18 +178,19 @@ the water utilities' association DANVA, from the environment agency's accounts �
 people who built it wrote it down and published it**. That matters, and this page returns to
 it at the end.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-R-DKDOCUMENTED "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-LR-R-DKINPUTS">**The inputs it inherits.** Of the land area involved, [49](SOURCES.md#F-d90ee38f36)% is
-measured and [51](SOURCES.md#F-e986da2740)% is modelled. The measured part uses grab samples at intervals, and a
+<span class="claim" data-claim="C-LR-R-DKINPUTS">**The inputs it inherits.** Of the land area involved, [61](SOURCES.md#F-86acc253ed)% is
+measured and [39](SOURCES.md#F-aaa29ab6dc)% is modelled. The measured part uses grab samples at intervals, and a
 2018 study of streams measured intensively alongside found that method gave *lower*
 transport than continuous measurement in every stream it covered — a documented
 one-directional bias. The natural background that gets subtracted is a model output, and
-retention — the largest single term in it — carries an uncertainty of **±[6](SOURCES.md#F-fb507b62c6)–[27](SOURCES.md#F-11ea8dab17)
-percentage points**.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-R-DKINPUTS "What this claim rests on")</sup>
+retention — the largest single term in it — is uncertain by **[6](SOURCES.md#F-28a4ed4736)–[27](SOURCES.md#F-27cb5aafd0) percentage
+points** between the national nitrogen model's regions.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-R-DKINPUTS "What this claim rests on")</sup>
 
-<span class="claim" data-claim="C-LR-R-DKNEGATIVE">**It fails the impossibility test.** In dry years — 1996, 2005 — the
-calculated agricultural contribution comes out **negative**. A mass of nitrogen cannot be less
-than nothing, so that excursion is at least that year's error, from a method whose noise is
-the same in every year.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-R-DKNEGATIVE "What this claim rests on")</sup>
+<span class="claim" data-claim="C-LR-R-DKNEGATIVE">**The same method can fail the impossibility test.** For phosphorus
+reaching three lakes at Haderslev, a measured source apportionment gave a **negative**
+cultivation contribution in dry years - 1996, 2005. A mass cannot be less than nothing, so
+that excursion is at least that year's error, from a method whose noise is the same in every
+year. No such result for the national nitrogen share is on file here.</span><sup class="claim-mark">[†](CLAIMS.md#C-LR-R-DKNEGATIVE "What this claim rests on")</sup>
 
 <span class="claim" data-claim="C-LR-R-DKNOCHECK">**It cannot be checked at a single moment.** There is no independent
 measurement of "nitrogen from agriculture" to compare it against: if there were, nobody would

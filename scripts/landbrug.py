@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DERIVED, ROOT, log, read_json, write_doc
 import claims as _claims
 import live
+import readings
 import pathways
 
 MANUAL = os.path.join(ROOT, "data", "manual")
@@ -95,7 +96,7 @@ def render():
     tt = mon["typetal_nutrients_mg_per_l"]
     hz = mon["hazardous_substances"]
     ov = mon["overflow_reporting"]
-    dl = mon["diffuse_load"]
+    dl = readings.diffuse()
 
     # the published share, read from DANVA's page; the arithmetic uses the same value as
     # stored in landbrug.json, and the page is refused if the two ever differ
@@ -246,13 +247,18 @@ def render():
                                         "intensiv daglig måling") + " |")
     a("| Retentionens usikkerhed | " + C("C-LE-R-RETENTION", f"± {ret} procentpoint på "
                                             "landsgennemsnittet") + " |")
-    a("| Estimatorens opførsel | " + C("C-LE-R-DRY", "i tørre år som 1996 og 2005 er det "
-                                          "beregnede dyrkningsbidrag kommet ud **negativt**") + " |")
+    a("| Estimatorens opførsel | " + C("C-LE-R-DRY", "for fosfor til tre søer ved Haderslev gav "
+                                          "den målebaserede kildeopsplitning i tørre år som 1996 og 2005 "
+                                          "et **negativt** dyrkningsbidrag; for landets kvælstof er intet "
+                                          "sådant resultat fundet") + " |")
     a("")
-    a(C("C-LE-R-SOURCE", "Rækkerne står i projektets register over overvågningen, som ikke "
-        "angiver, hvor de kommer fra; de dokumenter, de bygger på, er ikke fastholdt her.") + "\n")
+    a(C("C-LE-R-SOURCE", "Rækkerne er læst i de rapporter, de stammer fra: DCE's vandløbsrapport "
+        "for 2018, en undersøgelse i Vand & Jord fra 2018, den nationale kvælstofmodels "
+        "metoderapport og en DMU-rapport om fosfor; hvert tal er kontrolleret mod den fastholdte "
+        "kopi.") + "\n")
     a(C("C-LE-NEGATIVE", "En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke "
-        "kan være det, har en fejl, der kan være større end selve signalet. Den er det, der bliver "
+        "kan være det - som dyrkningsbidraget af fosfor ved Haderslev - har en fejl, der kan være "
+        "større end selve signalet. Den er det, der bliver "
         "tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver "
         "fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.") + "\n")
 
@@ -273,8 +279,8 @@ def render():
     a("|---|---|")
     a("| Landbrug → den landbaserede, vandbårne kvælstofpost | "
       + C("C-LE-L1", f"**{pct} %, offentliggjort.** En restpost: målt og modelleret total minus "
-          f"punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± {ret} "
-          "procentpoint i projektets register, som ikke angiver en kilde til den") + " |")
+          f"punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på {ret} "
+          "procentpoint på landsgennemsnittet ifølge den nationale kvælstofmodel") + " |")
     a("| Den post → alt reaktivt kvælstof, der når havet | "
       + C("C-LE-L2", f"**ingen: mængden er åben.** {n_unq} af {n_all} opregnede veje har intet "
           "tal, heriblandt organisk kvælstof i afsætningen, udsivning af grundvand under havet og "

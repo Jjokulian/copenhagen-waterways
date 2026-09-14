@@ -2162,25 +2162,29 @@
    "kind": "provisional",
    "stance": "ours",
    "page": "CAUSATION.md",
-   "claim": "Agriculture's share is a residual of measured and modelled terms, with a wide retention uncertainty in this project's register, which gives no source for it.",
-   "because": "NITROGEN's reading of the diffuse-load method and the residual.",
+   "claim": "Agriculture's share is a residual of measured and modelled terms, with a retention uncertainty the national nitrogen model's method report gives.",
+   "because": "NITROGEN's reading of the diffuse-load method and the residual; the uncertainty from the pinned report.",
    "rests_on": [
     "C-NI-DIFFUSE-BASIS",
     "C-NI-RESIDUAL-ABSORBS",
-    "U-LR-MONITORING-SOURCES"
+    "E-NI-NKM-RET"
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
-     "said on CAUSATION.md": "A residual: measured-plus-modelled total minus modelled point sources minus modelled background, with a retention uncertainty of 16 percentage points in this project's register, which gives no source for it.",
-     "texts": "15fb2a78341d09a3",
-     "rests on C-NI-DIFFUSE-BASIS": "10319ce061cd915a",
+     "said on CAUSATION.md": "A residual: measured-plus-modelled total minus modelled point sources minus modelled background, with a retention uncertainty of 16 percentage points on the national average, as the national nitrogen model's method report gives it.",
+     "texts": "8e2cca2b9ac09156",
+     "rests on C-NI-DIFFUSE-BASIS": "f8bd84ac93707f81",
      "rests on C-NI-RESIDUAL-ABSORBS": "131b4fcd12dcd19d",
-     "node U-LR-MONITORING-SOURCES": "9c76b81736c30d87"
+     "node E-NI-NKM-RET": "4c70ea9c2251ed60",
+     "pinned NKM2020": "f291d3650b9a0f3c"
     }
-   }
+   },
+   "replaces": [
+    "C-PC-OLD2-CA-L1"
+   ]
   },
   {
    "id": "C-PC-CA-L2",
@@ -2273,12 +2277,12 @@
     "C-PC-CA-OLD-CHAIN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on CAUSATION.md": "Every one of those links is a real causal connection, and none of them has a number here. A product of unknown fractions is an unknown fraction — **not a small one**. Agriculture may still be the largest single contributor at every link; this project has not computed it either way, and no source it holds does.",
      "texts": "805efb5cdbb8c4f2",
-     "rests on C-PC-CA-L1": "15fb2a78341d09a3",
+     "rests on C-PC-CA-L1": "8e2cca2b9ac09156",
      "rests on C-PC-CA-L3": "09838a71cda9a282",
      "rests on C-PC-CA-L4": "e8f4b4423c967635"
     }
@@ -3465,12 +3469,12 @@
     "C-PC-CA-OLD-ESTABLISH"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-pc (wrote this claim against the page's own wording, the pinned passages it rests on - each checked by the engine - and the code, data and wave-1 claims under it; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the national diffuse-load figures are now read from the reports that state them - DCE's stream report for 2018 (SR353) for the stations and the measured share, the 2018 Vand & Jord article for the grab-sample comparison and the method, the national nitrogen model's method report (NKM2020) for retention's uncertainty - each checked against its pin. The register had paired the 2018 station count with the 2010 report's measured share, filed a DMU phosphorus result from three lakes as a property of the national nitrogen share, and given a monthly deviation no source states; those wordings are archived. Each claim here was read against its new supports; the six resting on changed ones draw on what still holds - a residual, a partly measured area, no error bar)",
     "saw": {
      "said on CAUSATION.md": "**It does establish that the number is not what it is read as.** \"69.6% of nitrogen\" is a residual of models over one term of an open account. Read as a share of fedtemøg, it is multiplied by coefficients nobody here has computed. The first is a defensible piece of bookkeeping. The second is not a measurement of anything.",
      "texts": "3b769505673ae0f0",
-     "rests on C-PC-CA-L1": "15fb2a78341d09a3",
+     "rests on C-PC-CA-L1": "8e2cca2b9ac09156",
      "rests on C-PC-CA-EVERYLINK": "805efb5cdbb8c4f2"
     }
    }
@@ -5516,6 +5520,34 @@
     "saw": {
      "said on ARCHIVE.md": "is a popular name for mass occurrences of loose-lying filamentous brown algae that can lie rotting at the water's edge and on the beach",
      "texts": "0d38646d0826ff2a"
+    }
+   }
+  },
+  {
+   "id": "C-PC-OLD2-CA-L1",
+   "kind": "historical",
+   "stance": "ours",
+   "page": "ARCHIVE.md",
+   "claim": "The earlier wording of C-PC-CA-L1 on CAUSATION.md.",
+   "retired": {
+    "on": "2026-09-14",
+    "from": "CAUSATION.md",
+    "commit": "01af772",
+    "file": "docs/CAUSATION.md",
+    "begin": "A residual: measured-plus-modelled total minus modelled point sources",
+    "end": "register, which gives no source for it.",
+    "why": "The retention uncertainty has a source - the national nitrogen model's method report - so the sentence saying the register gave none no longer holds."
+   },
+   "replaced_by": [
+    "C-PC-CA-L1"
+   ],
+   "rests_on": [],
+   "confirmed": {
+    "on": "2026-09-14",
+    "by": "Claude (second confirmation, 2026-09-14, after ARCHIVE.md was written: each passage located in git at its commit, each with its reason, and each replacement live)",
+    "saw": {
+     "said on ARCHIVE.md": "A residual: measured-plus-modelled total minus modelled point sources minus modelled background, with a retention uncertainty of 16 percentage points in this project's register, which gives no source for it.",
+     "texts": "84aa2867f818bfd0"
     }
    }
   }

@@ -1024,6 +1024,17 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-PC-CA-FEDT-DEF`](CLAIMS.md#C-PC-CA-FEDT-DEF) — each opens what it rests on.
 
+<a id="C-PC-OLD2-CA-L1"></a>
+### The earlier wording of C-PC-CA-L1 on CAUSATION.md.
+
+`C-PC-OLD2-CA-L1` · retired 2026-09-14 from [CAUSATION.md](CAUSATION.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-PC-OLD2-CA-L1">A residual: measured-plus-modelled total minus modelled point sources minus modelled background, with a retention uncertainty of [16](SOURCES.md#F-b041af24d8) percentage points in this project's register, which gives no source for it.</span><sup class="claim-mark">[†](ARCHIVE.md#C-PC-OLD2-CA-L1 "What this claim rests on")</sup>
+
+**Why it was retired:** The retention uncertainty has a source - the national nitrogen model's method report - so the sentence saying the register gave none no longer holds.
+
+**Replaced by:** [`C-PC-CA-L1`](CLAIMS.md#C-PC-CA-L1) — each opens what it rests on.
+
 ## CLAIMS.md
 
 <a id="C-FA-OLD-NOTE"></a>
@@ -5476,6 +5487,61 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-LE-C-OVERFLOW`](CLAIMS.md#C-LE-C-OVERFLOW) — each opens what it rests on.
 
+<a id="C-LE-OLD2-L1"></a>
+### The earlier wording of C-LE-L1 on LANDBRUG.md.
+
+`C-LE-OLD2-L1` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LE-OLD2-L1">En restpost: målt og modelleret total minus punktkilder minus modelleret baggrund, med en usikkerhed på retentionen på ± [16](SOURCES.md#F-b9e25a1061) procentpoint i projektets register, som ikke angiver en kilde til den</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD2-L1 "What this claim rests on")</sup>
+
+**Why it was retired:** The retention uncertainty has a source - the national nitrogen model's method report - so the sentence saying the register gave none no longer holds.
+
+**Replaced by:** [`C-LE-L1`](CLAIMS.md#C-LE-L1) — each opens what it rests on.
+
+<a id="C-LE-OLD2-NEGATIVE"></a>
+### The earlier wording of C-LE-NEGATIVE on LANDBRUG.md.
+
+`C-LE-OLD2-NEGATIVE` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LE-OLD2-NEGATIVE">En beregnet størrelse, der bliver negativ, hvor den fysiske mængde ikke kan være det, har en fejl, der kan være større end selve signalet. Den er det, der bliver tilbage, når modellerede led trækkes fra en delvist modelleret total, og den arver fejlene i dem alle — og andelen offentliggøres med én decimal og uden usikkerhed.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD2-NEGATIVE "What this claim rests on")</sup>
+
+**Why it was retired:** Read with the table above it, the sentence implied the national nitrogen share had come out negative; the documented case is phosphorus at three lakes.
+
+**Replaced by:** [`C-LE-NEGATIVE`](CLAIMS.md#C-LE-NEGATIVE) — each opens what it rests on.
+
+<a id="C-LE-OLD2-R-COVER"></a>
+### The earlier wording of C-LE-R-COVER on LANDBRUG.md.
+
+`C-LE-OLD2-R-COVER` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LE-OLD2-R-COVER">af arealet måles, [51](SOURCES.md#F-54b5457d7d) % modelleres</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD2-R-COVER "What this claim rests on")</sup>
+
+**Why it was retired:** The measured and modelled shares were the 2010 report's, not the 2018 report's that the rest of the table uses.
+
+**Replaced by:** [`C-LE-R-COVER`](CLAIMS.md#C-LE-R-COVER) — each opens what it rests on.
+
+<a id="C-LE-OLD2-R-DRY"></a>
+### The earlier wording of C-LE-R-DRY on LANDBRUG.md.
+
+`C-LE-OLD2-R-DRY` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LE-OLD2-R-DRY">i tørre år som 1996 og 2005 er det beregnede dyrkningsbidrag kommet ud negativt</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD2-R-DRY "What this claim rests on")</sup>
+
+**Why it was retired:** The negative cultivation contribution is from a DMU study of phosphorus at three lakes, not from the national nitrogen apportionment.
+
+**Replaced by:** [`C-LE-R-DRY`](CLAIMS.md#C-LE-R-DRY) — each opens what it rests on.
+
+<a id="C-LE-OLD2-R-SOURCE"></a>
+### The earlier wording of C-LE-R-SOURCE on LANDBRUG.md.
+
+`C-LE-OLD2-R-SOURCE` · retired 2026-09-14 from [LANDBRUG.md](LANDBRUG.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LE-OLD2-R-SOURCE">Rækkerne står i projektets register over overvågningen, som ikke angiver, hvor de kommer fra; de dokumenter, de bygger på, er ikke fastholdt her.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LE-OLD2-R-SOURCE "What this claim rests on")</sup>
+
+**Why it was retired:** The rows are now read from the reports they come from and checked against pinned copies, so the sentence saying they had no source no longer holds.
+
+**Replaced by:** [`C-LE-R-SOURCE`](CLAIMS.md#C-LE-R-SOURCE) — each opens what it rests on.
+
 ## LIGHT.md
 
 <a id="C-FR-OLD-LT-ALGAE"></a>
@@ -6284,6 +6350,39 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** DCE's autumn note that year calls the mid-September extent the second largest registered, not the worst in two decades.
 
 **Replaced by:** [`C-NI-KOEGE-DCE`](CLAIMS.md#C-NI-KOEGE-DCE) — each opens what it rests on.
+
+<a id="C-NI-OLD3-COUPLED"></a>
+### The earlier wording of C-NI-COUPLED on NITROGEN.md.
+
+`C-NI-OLD3-COUPLED` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-NI-OLD3-COUPLED">They are coupled, which is why they get confused: A is an input to DK-QNP, and DK-QNP supplies B's river-transport term over the modelled [51](SOURCES.md#F-5cc59207ef)% of the country. So A partly determines the minuend of B. But the ~[70](SOURCES.md#F-a517964b85)% itself is B.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD3-COUPLED "What this claim rests on")</sup>
+
+**Why it was retired:** The modelled share of the country came from the register's uncited figure, which was the 2010 report's; the 2018 report gives a smaller modelled share.
+
+**Replaced by:** [`C-NI-COUPLED`](CLAIMS.md#C-NI-COUPLED) — each opens what it rests on.
+
+<a id="C-NI-OLD3-DIFFUSE-BASIS"></a>
+### The earlier wording of C-NI-DIFFUSE-BASIS on NITROGEN.md.
+
+`C-NI-OLD3-DIFFUSE-BASIS` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-NI-OLD3-DIFFUSE-BASIS">Underneath it, by the same register's uncited figures: [240](SOURCES.md#F-ed9d4a58d8) stream stations covering [49](SOURCES.md#F-69c276e12a)% of the country, the other [51](SOURCES.md#F-27a4e0b6c5)% modelled. Load is grab samples plus linear interpolation, and in all three streams of the 2018 validation study that method always underestimated — annual deviations -[0.9](SOURCES.md#F-6f26568cfc)% to -[7.7](SOURCES.md#F-e8aeba9838)%, monthly deviations reaching +[98](SOURCES.md#F-26e2b8f5b8)%. Retention, the largest single term, carries ±[6](SOURCES.md#F-6e18f59c39)–[27](SOURCES.md#F-545d55e04d) percentage points.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD3-DIFFUSE-BASIS "What this claim rests on")</sup>
+
+**Why it was retired:** The register's figures were uncited and one was wrong: it paired the station count of DCE's 2018 report with the measured share of its 2010 report, and gave a monthly deviation no source states. The figures are now read from the reports.
+
+**Replaced by:** [`C-NI-DIFFUSE-BASIS`](CLAIMS.md#C-NI-DIFFUSE-BASIS) — each opens what it rests on.
+
+<a id="C-NI-OLD3-NEGATIVE"></a>
+### The earlier wording of C-NI-NEGATIVE on NITROGEN.md.
+
+`C-NI-OLD3-NEGATIVE` · retired 2026-09-14 from [NITROGEN.md](NITROGEN.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-NI-OLD3-NEGATIVE">The monitoring register records, without a citation: In dry years such as 1996 and 2005 the calculated cultivation contribution comes out NEGATIVE - described in the literature as a meaningless result caused by the uncertainty in the assessment. A residual whose error can exceed its own signal is published to one decimal place with no error bar.</span><sup class="claim-mark">[†](ARCHIVE.md#C-NI-OLD3-NEGATIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The negative cultivation contribution in dry years comes from a DMU study of phosphorus reaching three lakes at Haderslev; the register had filed it under the national nitrogen load, without a source.
+
+**Replaced by:** [`C-NI-NEGATIVE`](CLAIMS.md#C-NI-NEGATIVE) — each opens what it rests on.
 
 ## OBSERVING.md
 
@@ -9977,6 +10076,28 @@ A claim is retired when no good justification for it can be given - most often b
 
 **Replaced by:** [`C-LR-R-LOADBEARING`](CLAIMS.md#C-LR-R-LOADBEARING) — each opens what it rests on.
 
+<a id="C-LR-OLD2-R-DKINPUTS"></a>
+### The earlier wording of C-LR-R-DKINPUTS on RESIDUAL.md.
+
+`C-LR-OLD2-R-DKINPUTS` · retired 2026-09-14 from [RESIDUAL.md](RESIDUAL.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LR-OLD2-R-DKINPUTS">Of the land area involved, [49](SOURCES.md#F-31c2631b76)% is measured and [51](SOURCES.md#F-faa29f65b2)% is modelled. The measured part uses grab samples at intervals, and a 2018 study of streams measured intensively alongside found that method gave *lower* transport than continuous measurement in every stream it covered — a documented one-directional bias. The natural background that gets subtracted is a model output, and retention — the largest single term in it — carries an uncertainty of ±[6](SOURCES.md#F-8b9aba35a3)–[27](SOURCES.md#F-213b60ad80) percentage points.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LR-OLD2-R-DKINPUTS "What this claim rests on")</sup>
+
+**Why it was retired:** The shares were the 2010 report's, and the retention uncertainty was given as one plus-or-minus band where the source gives a range between regions.
+
+**Replaced by:** [`C-LR-R-DKINPUTS`](CLAIMS.md#C-LR-R-DKINPUTS) — each opens what it rests on.
+
+<a id="C-LR-OLD2-R-DKNEGATIVE"></a>
+### The earlier wording of C-LR-R-DKNEGATIVE on RESIDUAL.md.
+
+`C-LR-OLD2-R-DKNEGATIVE` · retired 2026-09-14 from [RESIDUAL.md](RESIDUAL.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-LR-OLD2-R-DKNEGATIVE">fails the impossibility test. In dry years — 1996, 2005 — the calculated agricultural contribution comes out negative. A mass of nitrogen cannot be less than nothing, so that excursion is at least that year's error, from a method whose noise is the same in every year.</span><sup class="claim-mark">[†](ARCHIVE.md#C-LR-OLD2-R-DKNEGATIVE "What this claim rests on")</sup>
+
+**Why it was retired:** The negative contribution in dry years is from a DMU study of phosphorus at three lakes; the page presented it as the national agricultural nitrogen contribution.
+
+**Replaced by:** [`C-LR-R-DKNEGATIVE`](CLAIMS.md#C-LR-R-DKNEGATIVE) — each opens what it rests on.
+
 ## SEABED.md
 
 <a id="C-FR-OLD-SB-ACCUM"></a>
@@ -10442,6 +10563,17 @@ A claim is retired when no good justification for it can be given - most often b
 **Why it was retired:** The table's cells carried no sources. Read again against pinned documents, several did not survive: the herbivore sterol ratio is documented for cattle and sheep, not for pigs on plant feed; the faecal cut-off is a pair of cut-offs with an uncertain band between them, not one accepted threshold, and the sediment confounder had no source; the human marker is shed by some non-human animals, so 'confounded with nothing' is contradicted by the method's own documentation; 'nothing else has it' for crAssphage and 'nothing agricultural' for the human chemicals had no source; copper as a feed additive and the metals being conservative were not found; 'fooled people for decades' and iron as a fluorescence confounder had no source.
 
 **Replaced by:** [`C-SS-F-COPRO`](CLAIMS.md#C-SS-F-COPRO), [`C-SS-F-RATIO`](CLAIMS.md#C-SS-F-RATIO), [`C-SS-F-ETHYL`](CLAIMS.md#C-SS-F-ETHYL), [`C-SS-F-HOST`](CLAIMS.md#C-SS-F-HOST), [`C-SS-F-CRASS`](CLAIMS.md#C-SS-F-CRASS), [`C-SS-F-HUMANCHEM`](CLAIMS.md#C-SS-F-HUMANCHEM), [`C-SS-F-VET`](CLAIMS.md#C-SS-F-VET), [`C-SS-F-METALS`](CLAIMS.md#C-SS-F-METALS), [`C-SS-F-D15N`](CLAIMS.md#C-SS-F-D15N), [`C-SS-F-FDOM`](CLAIMS.md#C-SS-F-FDOM) — each opens what it rests on.
+
+<a id="C-SS-OLD2-S-AREA"></a>
+### The earlier wording of C-SS-S-AREA on SENSING.md.
+
+`C-SS-OLD2-S-AREA` · retired 2026-09-14 from [SENSING.md](SENSING.md) · as published in `01af772`
+
+> <span class="claim" data-claim="C-SS-OLD2-S-AREA">Denmark's diffuse load figure rests on catchment area that is [49](SOURCES.md#F-68161b438f)% measured and [51](SOURCES.md#F-6a47049d66)% modelled</span><sup class="claim-mark">[†](ARCHIVE.md#C-SS-OLD2-S-AREA "What this claim rests on")</sup>
+
+**Why it was retired:** The measured and modelled shares were the 2010 report's; the 2018 report gives a larger measured share.
+
+**Replaced by:** [`C-SS-S-AREA`](CLAIMS.md#C-SS-S-AREA) — each opens what it rests on.
 
 ## SETTLE.md
 

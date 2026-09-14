@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from common import ROOT, log, write_doc
 import claims as _claims
 import live
+import readings
 
 OUT = os.path.join(ROOT, "docs", "RESIDUAL.md")
 C, B, E = live.claim, live.claim_begin, live.CLAIM_END
@@ -66,7 +67,7 @@ def J(*parts):
 
 
 def render():
-    diff = J("data", "manual", "monitoring.json")["diffuse_load"]
+    diff = readings.diffuse()
     ci = J("data", "derived", "currents_index.json")
     ct = J("data", "derived", "currents_transport.json")
     fa = J("data", "derived", "floodalign.json")
@@ -328,13 +329,14 @@ measured and {mod:.0f}% is modelled. The measured part uses grab samples at inte
 2018 study of streams measured intensively alongside found that method gave *lower*
 transport than continuous measurement in every stream it covered — a documented
 one-directional bias. The natural background that gets subtracted is a model output, and
-retention — the largest single term in it — carries an uncertainty of **±{ru[0]:.0f}–{ru[1]:.0f}
-percentage points**.{E}
+retention — the largest single term in it — is uncertain by **{ru[0]:.0f}–{ru[1]:.0f} percentage
+points** between the national nitrogen model's regions.{E}
 
-{B('C-LR-R-DKNEGATIVE')}**It fails the impossibility test.** In dry years — 1996, 2005 — the
-calculated agricultural contribution comes out **negative**. A mass of nitrogen cannot be less
-than nothing, so that excursion is at least that year's error, from a method whose noise is
-the same in every year.{E}
+{B('C-LR-R-DKNEGATIVE')}**The same method can fail the impossibility test.** For phosphorus
+reaching three lakes at Haderslev, a measured source apportionment gave a **negative**
+cultivation contribution in dry years - 1996, 2005. A mass cannot be less than nothing, so
+that excursion is at least that year's error, from a method whose noise is the same in every
+year. No such result for the national nitrogen share is on file here.{E}
 
 {B('C-LR-R-DKNOCHECK')}**It cannot be checked at a single moment.** There is no independent
 measurement of "nitrogen from agriculture" to compare it against: if there were, nobody would

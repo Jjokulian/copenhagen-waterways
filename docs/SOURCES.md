@@ -39,7 +39,7 @@
 <a id="T-f4aba89b"></a>
 ### [CAUSATION.md](CAUSATION.md) — 2. Missing coefficients, reported as one number
 
-4 numbers in the columns *Link*, *Coefficient*, *Status*, *Why*. Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from pinned documents: `DANVA-2024`.
+4 numbers in the columns *Link*, *Coefficient*, *Status*, *Why*. Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from `data/manual/nitrogen_readings.json` (`pinned.nkm_ret_avg.value`). Read from pinned documents: `DANVA-2024`.
 
 <a id="T-81f44d68"></a>
 ### [CONSTRUCTED.md](CONSTRUCTED.md) — The register
@@ -349,12 +349,12 @@
 <a id="T-5ecab7b4"></a>
 ### [LANDBRUG.md](LANDBRUG.md) — 3. Tre led mangler mellem tallet og skaden
 
-5 numbers in the columns *Led*, *Koefficient*. Read from `data/manual/monitoring.json` (`diffuse_load.retention_uncertainty_national_average_pct_points`). Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from pinned documents: `DANVA-2024`, `DCE-STATMOD-2015`.
+5 numbers in the columns *Led*, *Koefficient*. Read from `data/manual/nitrogen_pathways.json` (`pathways.n`, `pathways.n_unquantified`). Read from `data/manual/nitrogen_readings.json` (`pinned.nkm_ret_avg.value`). Read from pinned documents: `DANVA-2024`, `DCE-STATMOD-2015`.
 
 <a id="T-7109e001"></a>
 ### [LANDBRUG.md](LANDBRUG.md) — 2. Tallet er en restpost, ikke en måling
 
-3 numbers. Read from `data/manual/monitoring.json` (`diffuse_load.area_measured_pct`, `diffuse_load.area_modelled_pct`, `diffuse_load.retention_uncertainty_national_average_pct_points`).
+3 numbers. Read from `data/manual/nitrogen_readings.json` (`pinned.nkm_ret_avg.value`, `pinned.sr353_n_area_pct.value`). 1 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-a1fc5018"></a>
 ### [LANDBRUG.md](LANDBRUG.md) — 1. Hvad de 69,6 % faktisk er en andel af
@@ -454,7 +454,7 @@
 <a id="T-d39ecaac"></a>
 ### [NITROGEN.md](NITROGEN.md) — 2. The numbers are not estimators of what they are named
 
-9 numbers in the columns *Called*, *Actually is*. Read from `data/manual/monitoring.json` (`diffuse_load.area_measured_pct`, `diffuse_load.area_modelled_pct`, `diffuse_load.retention_uncertainty_pct_points.*`, `overflow_reporting.knowledge_levels.*.uncertainty_pct`). Read from `data/manual/nitrogen_readings.json` (`pinned.apportion_agriculture.value`, `pinned.apportion_background.value`, `pinned.apportion_plants.value`).
+9 numbers in the columns *Called*, *Actually is*. Read from `data/manual/monitoring.json` (`overflow_reporting.knowledge_levels.*.uncertainty_pct`). Read from `data/manual/nitrogen_readings.json` (`pinned.apportion_agriculture.value`, `pinned.apportion_background.value`, `pinned.apportion_plants.value`, `pinned.nkm_ret_hi.value`, `pinned.nkm_ret_lo.value`, `pinned.sr353_n_area_pct.value`). 1 calculated on the page, each with its arithmetic in its menu.
 
 <a id="T-e9af650a"></a>
 ### [NITROGEN.md](NITROGEN.md) — Overflow is modelled, and the deciding variable is not collected
@@ -928,10 +928,10 @@
 - `data/derived/triage.json`, written by [`scripts/triage_counts.py`](../scripts/triage_counts.py) — 94 numbers.
 - `data/derived/unlock.json` — 4 numbers.
 - `data/derived/waves.json`, written by [`scripts/waves.py`](../scripts/waves.py) — 11 numbers.
-- `data/manual/monitoring.json` — 35 numbers.
+- `data/manual/monitoring.json` — 27 numbers.
 - `data/manual/nitrogen_constants.json` — 3 numbers.
 - `data/manual/nitrogen_pathways.json` — 6 numbers.
-- `data/manual/nitrogen_readings.json` — 15 numbers. A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator.
+- `data/manual/nitrogen_readings.json` — 22 numbers. A value as a document prints it, recorded with the exact phrase it sits in and the source it comes from. The field-surplus table entries are norm-product accounts from DCE SR120 Table 3.4, in kg N per hectare; the apportionment shares are percentages of land-based nitrogen to coastal waters. The G/M entries are chlorophyll-a boundaries in µg/l from the second opinion's `Tabel C.1` (the first scenario is VP3, the second the intercalibrated value); the Kd bins are the fractions of DCE's banding equation for Kd; the Hjarbæk entry is a percentage of the chlorophyll indicator.
 - `data/raw/national/punkt_rbu_udl.geojson`, written by [`scripts/fetch_national.py`](../scripts/fetch_national.py) — 2 numbers.
 - `data/raw/vp3_basis_2019_punkt_rbu_udl.geojson`, written by [`scripts/fetch_wfs.py`](../scripts/fetch_wfs.py) — 4 numbers.
 - `data/raw/weather/fetch.json` — 4 numbers.
@@ -1151,7 +1151,7 @@
 
 ### Calculated on a page
 
-371 numbers are arithmetic on the numbers above; each shows its calculation, with every operand linked, in its menu.
+372 numbers are arithmetic on the numbers above; each shows its calculation, with every operand linked, in its menu.
 
 ### Quoted from an earlier version of this site
 
@@ -1815,7 +1815,7 @@ Joins the sibling project's livestock register, declared field parcels, CVR mast
 <a id="K-FARM-LANDBRUG"></a>
 ### Counts and constants the Danish-language page derives itself
 
-`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by Claude (2026-09-14: landbrug.py no longer writes n_pathways and n_unquantified - the page takes them from scripts/pathways.py and the two fields are no longer declared; agri_pct, c_per_n and c_per_cod are written as before), 2026-09-14
+`K-FARM-LANDBRUG` · covers data/derived/landbrug.json · **current** · read by Claude (2026-09-14: scripts/landbrug.py - the diffuse-load figures come from readings.diffuse(); four claim sentences were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Writes the few numbers the page derives itself - two counts over the pathway register, the published agricultural share it quotes, and two stoichiometric constants - so that the page reads them back live.
 
@@ -1831,7 +1831,7 @@ Writes the few numbers the page derives itself - two counts over the pathway reg
 <a id="K-FARM-MONITORING"></a>
 ### How the national nutrient and oxygen figures are produced - the fields LANDBRUG.md prints
 
-`K-FARM-MONITORING` · covers data/manual/monitoring.json · **current** · read by fork farm (written against the code and the pinned texts, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-FARM-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 A hand-curated register of documented properties of the Danish measurement system, each with its source; this declaration covers the diffuse-load, load-trend and standard-concentration fields the Danish-language page prints.
 
@@ -2305,7 +2305,7 @@ Computes the values the landing page states that no other script stores: two dow
 <a id="K-LR-MASSFRAC"></a>
 ### An element's share of a compound's mass
 
-`K-LR-MASSFRAC` · covers a step · **current** · read by fork w1-lr (re-read: residual.py changed only in page wording - a blockquote joined onto one line and a comma; the melamine step line is unchanged; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-LR-MASSFRAC` · covers a step · **current** · read by Claude (2026-09-14: scripts/pages/residual.py - the diffuse-load figures come from readings.diffuse(); two claim sentences were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The share of a compound's mass that one element makes up, from its formula and standard atomic masses.
 
@@ -2531,7 +2531,7 @@ The fetch manifest: for every fetched layer, its server, title, geometry types, 
 <a id="K-META-MONITORING"></a>
 ### Monitoring facts transcribed from named public documents
 
-`K-META-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude fork meta (written against the code and the data, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-META-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 A hand-curated register of monitoring and reporting facts read from named public documents: DCE notices and summaries, Miljøstyrelsen's technical instruction, and the documentation of two sediment releases.
 
@@ -2654,7 +2654,7 @@ The annual overflow volume the national combined-sewer overflow layer reports, a
 <a id="K-NI-RBU-POINTS"></a>
 ### Rain-dependent discharge points in the national register layer
 
-`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before), 2026-09-14
+`K-NI-RBU-POINTS` · covers data/raw/national/punkt_rbu_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 How many rain-dependent discharge points the national register lists.
 
@@ -2800,7 +2800,7 @@ The same join and computation as K-MANURE in the main register; these are the fi
 <a id="K-NITROGEN-MONITORING"></a>
 ### How the Danish nutrient figures are produced, from the technical annexes
 
-`K-NITROGEN-MONITORING` · covers data/manual/monitoring.json · **current** · read by fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-NITROGEN-MONITORING` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Documented properties of the Danish measurement system, collected from technical annexes because they are stripped when headline numbers travel.
 
@@ -2835,7 +2835,7 @@ Every pathway of reactive nitrogen to Danish marine waters this project could en
 <a id="K-NITROGEN-READINGS"></a>
 ### Values read out of pinned documents, each checked at its phrase
 
-`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-13: since the last reading the sources of claims.d/nitrogen.json gained six ids for the 17-step chain - DMU-AR245, MST-2023-MOF121, NKM2020, SR681, VJ-2018-N-VANDLOEB, VP3-2023 - and none was removed or changed, so every reading's source is still present and each field reads as declared), 2026-09-13
+`K-NITROGEN-READINGS` · covers data/manual/nitrogen_readings.json · **current** · read by Claude (2026-09-14: nitrogen_readings.json gained seven readings - SR353's stations and measured share, the Vand & Jord deviations, NKM2020's retention uncertainty - each with its phrase located in its pin and its value printed in the phrase; scripts/readings.py is the reader now watched, and rv() refuses a reading whose phrase is not in the pin, as before), 2026-09-14
 
 Holds the numbers docs/NITROGEN.md and docs/GRUNDLAGET.md read from documents rather than compute: DCE SR120's field balance and its method notes, the published national apportionment, the second opinion's chlorophyll G/M boundaries, DCE's Kd banding and DHI's Danish share for Hjarbæk Fjord.
 
@@ -2874,7 +2874,7 @@ Joins the plan's project pages to the city's cloudburst map layers on the `klima
 <a id="K-NITROGEN-RENS"></a>
 ### Approved treatment-plant capacity, from the national register
 
-`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before), 2026-09-14
+`K-NITROGEN-RENS` · covers data/raw/national/punkt_rens_udl.geojson · **current** · read by Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The treatment plants around Køge Bugt at or above a stated capacity, from the national register.
 
@@ -3021,7 +3021,7 @@ Records, per flood sheet, how it was placed and how far its placement can be tru
 <a id="K-POLITICS-KARLSTRUP"></a>
 ### Karlstrup Kalkgrav's registered area, depth and pumping, as transcribed
 
-`K-POLITICS-KARLSTRUP` · covers data/manual/monitoring.json · **current** · read by fork politics (written against the producing scripts on 2026-09-10; not yet read by the project owner), 2026-09-10
+`K-POLITICS-KARLSTRUP` · covers data/manual/monitoring.json · **current** · read by Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Holds the physical facts about Karlstrup Kalkgrav that PROGRAMME.md weighs against using it as a receiving water.
 

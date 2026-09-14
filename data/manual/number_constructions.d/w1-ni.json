@@ -85,10 +85,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "3b65bafc91d0d21e"
+     "scripts/nitrogen.py": "abe1090bd2badcbe"
     }
    }
   }

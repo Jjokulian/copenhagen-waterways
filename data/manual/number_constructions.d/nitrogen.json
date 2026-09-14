@@ -47,15 +47,17 @@
    "watches": [
     "data/manual/nitrogen_readings.json",
     "data/manual/claims.d/nitrogen.json#sources",
-    "scripts/pages/grundlaget.py"
+    "scripts/pages/grundlaget.py",
+    "scripts/readings.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-13: since the last reading the sources of claims.d/nitrogen.json gained six ids for the 17-step chain - DMU-AR245, MST-2023-MOF121, NKM2020, SR681, VJ-2018-N-VANDLOEB, VP3-2023 - and none was removed or changed, so every reading's source is still present and each field reads as declared)",
-    "on": "2026-09-13",
+    "by": "Claude (2026-09-14: nitrogen_readings.json gained seven readings - SR353's stations and measured share, the Vand & Jord deviations, NKM2020's retention uncertainty - each with its phrase located in its pin and its value printed in the phrase; scripts/readings.py is the reader now watched, and rv() refuses a reading whose phrase is not in the pin, as before)",
+    "on": "2026-09-14",
     "saw": {
-     "data/manual/nitrogen_readings.json": "692d8b2ecde62cf7",
+     "data/manual/nitrogen_readings.json": "a03491fce7c57416",
      "data/manual/claims.d/nitrogen.json#sources": "a8fadfa0a7e17b1c",
-     "scripts/pages/grundlaget.py": "7b84287f07d1799d"
+     "scripts/pages/grundlaget.py": "7b84287f07d1799d",
+     "scripts/readings.py": "28b8f25dde237a56"
     }
    }
   },
@@ -232,30 +234,6 @@
    "covers": {
     "file": "data/manual/monitoring.json",
     "fields": {
-     "diffuse_load.stream_stations": {
-      "kind": "counted",
-      "is": "Stream stations in the national diffuse-load monitoring."
-     },
-     "diffuse_load.area_measured_pct": {
-      "kind": "document",
-      "is": "The share of Danish land whose stream load is measured rather than modelled."
-     },
-     "diffuse_load.area_modelled_pct": {
-      "kind": "document",
-      "is": "The share modelled."
-     },
-     "diffuse_load.deviation_annual_pct.*": {
-      "kind": "document",
-      "is": "Annual deviation of grab-sample transport from intensive daily measurement in the validation study, percent."
-     },
-     "diffuse_load.deviation_monthly_pct.*": {
-      "kind": "document",
-      "is": "Monthly deviation, percent."
-     },
-     "diffuse_load.retention_uncertainty_pct_points.*": {
-      "kind": "document",
-      "is": "The stated uncertainty of modelled retention, percentage points."
-     },
      "quality_control.acceptance_interval_combined_mg_per_l.*": {
       "kind": "document",
       "is": "An end of the acceptance interval for reported nitrogen over reported volume from combined-sewer overflows, mg/l."
@@ -300,16 +278,14 @@
    "licenses": "What the measurement system's own documents say about how its numbers are produced.",
    "not_licensed": "That those procedures produce accurate loads.",
    "watches": [
-    "data/manual/monitoring.json#diffuse_load",
     "data/manual/monitoring.json#quality_control",
     "data/manual/monitoring.json#hazardous_substances",
     "data/manual/monitoring.json#national_volumes_m3_per_year"
    ],
    "confirmed": {
-    "by": "fork nitrogen (written against scripts/nitrogen.py, cropland.py, manure.py and currents.py as read, 2026-09-10; not yet read by the project owner)",
-    "on": "2026-09-10",
+    "by": "Claude (2026-09-14: data/manual/monitoring.json - its uncited diffuse-load section was removed; the pages read those figures from the reports, and the section's fields are no longer declared; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "data/manual/monitoring.json#diffuse_load": "ea0e6aa43811ae1a",
      "data/manual/monitoring.json#quality_control": "c8596fbd30eb7e7e",
      "data/manual/monitoring.json#hazardous_substances": "916fe2a1105cb0e6",
      "data/manual/monitoring.json#national_volumes_m3_per_year": "71a147f63614e5c1"
@@ -528,10 +504,10 @@
     "scripts/nitrogen.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: the only change to nitrogen.py since the last reading is that the two pathway counts come from scripts/pathways.py; the fields this construction covers are computed as before)",
+    "by": "Claude (2026-09-14: scripts/nitrogen.py - the reader for pinned figures moved to scripts/readings.py; the diffuse-load figures come from readings.diffuse(); C-NI-NEGATIVE, C-NI-DIFFUSE-BASIS and the residual row were reworded; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/nitrogen.py": "3b65bafc91d0d21e"
+     "scripts/nitrogen.py": "abe1090bd2badcbe"
     }
    }
   },
