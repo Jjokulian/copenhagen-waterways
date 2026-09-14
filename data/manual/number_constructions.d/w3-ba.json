@@ -33,10 +33,10 @@
     "scripts/pages/hypodraft_a1.py"
    ],
    "confirmed": {
-    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-HALFWIDTH', unit * 0.5) to the stated rounding units of SR353's total and point-source figure; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/hypodraft_a1.py": "6b094deab2c892b0"
+     "scripts/pages/hypodraft_a1.py": "11897884ab319217"
     }
    }
   },
@@ -72,10 +72,10 @@
     "scripts/pages/hypodraft_a1.py"
    ],
    "confirmed": {
-    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-UNIFORM-SD', ((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5) to the two half-widths; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/hypodraft_a1.py": "6b094deab2c892b0"
+     "scripts/pages/hypodraft_a1.py": "11897884ab319217"
     }
    }
   }

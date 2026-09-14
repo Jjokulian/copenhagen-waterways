@@ -85,27 +85,6 @@ def areas():
     return {"n": len(a["areas"])}
 
 
-def series():
-    s = json.load(open(os.path.join(ROOT, "docs", "data", "areas", "stations_series.json"), encoding="utf-8"))
-    return {"station_months": sum(v["n"] for v in s["variables"]),
-            "stations": len(s["stations"]), "variables": len(s["variables"])}
-
-
-def series_by_variable():
-    """Values and distinct stations per variable of the monthly station series,
-    read from the binary layout its .json describes."""
-    import numpy as np
-    base = os.path.join(ROOT, "docs", "data", "areas")
-    s = json.load(open(os.path.join(base, "stations_series.json"), encoding="utf-8"))
-    raw = open(os.path.join(base, "stations_series.bin"), "rb").read()
-    out = {}
-    for v in s["variables"]:
-        st = np.frombuffer(raw, dtype=np.uint16, count=v["n"], offset=v["offset"])
-        out[v["key"]] = {"n": v["n"], "stations": int(len(np.unique(st)))}
-    return {"months": s["months"], "year0": s["year0"], "by_variable": out,
-            "bin_bytes": len(raw)}
-
-
 def stations_register():
     rows, st, transect = 0, set(), set()
     first, last = None, None
@@ -153,9 +132,8 @@ def main(argv):
     out = {"_what": "Facts the hypothesis drafts cite from held files, re-derived by "
                     "scripts/hypodraft_facts.py."}
     for name, fn in (("weather", weather), ("maaledybde", maaledybde), ("lys", lys),
-                     ("kemi", kemi), ("seabed", seabed), ("areas", areas), ("series", series),
+                     ("kemi", kemi), ("seabed", seabed), ("areas", areas),
                      ("enums", enums), ("sign_flips", sign_flips),
-                     ("series_by_variable", series_by_variable),
                      ("stations_register", stations_register), ("layers", layers)):
         out[name] = fn()
         log(f"  {name}: {out[name]}")

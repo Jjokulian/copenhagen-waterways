@@ -219,8 +219,8 @@
     "The unit is the one its printing shows: a total printed with trailing zeros is taken as rounded at its last non-zero digit."
    ],
    "confirmed": {
-    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-HALFWIDTH', unit * 0.5) to the stated rounding units of SR353's total and point-source figure; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "a step",
    "gaps": [
@@ -254,8 +254,8 @@
     "Each is uniform within its half-width."
    ],
    "confirmed": {
-    "by": "agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-UNIFORM-SD', ((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5) to the two half-widths; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "a step",
    "gaps": [
@@ -886,7 +886,7 @@
     "The files named are the ones the drafts' statements are about."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before)",
+    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/hypodraft_facts.json",
@@ -1028,7 +1028,7 @@
     "The portal counts in the register were read correctly when they were recorded."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: drafts_b_counts.py's mfs() now keeps only the count of points with no matrix flagged and the distinct-value counts; the point, water-type and matrix counts are made once in areas.py and oxygen.py and are no longer declared here; the unused collections import went with them; everything else is computed as before)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
@@ -2193,8 +2193,8 @@
     "A window is a run of consecutive years with both ends inside the index period; windows of every length from the minimum to the whole period count, each once."
    ],
    "confirmed": {
-    "by": "agent w3-il (written against the code it describes: the window count in scripts/pages/hypodraft_l3.py lines 45-50, closed form checked against the enumeration there; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11"
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_l3.py - reads the panel's first year from drafts_b_counts.json, where its other panel counts already come from; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14"
    },
    "covers": "a step",
    "gaps": [
@@ -2340,7 +2340,7 @@
     "A file much smaller than the others holds fewer days, not a denser encoding."
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14"
    },
    "covers": "data/derived/drafts_b_counts.json",
@@ -8323,6 +8323,7 @@
    "F-f693b34ac5"
   ],
   "docs/CLAIMS.md": [
+   "F-008df4b99b",
    "F-02635cc76a",
    "F-0638af89e7",
    "F-076f9f4115",
@@ -8339,12 +8340,12 @@
    "F-1697485954",
    "F-16daf10c54",
    "F-173d507c7a",
-   "F-1766a595e3",
    "F-17d442d3cc",
    "F-18d47162ce",
    "F-1bae49478e",
    "F-1dcf8ae5fb",
    "F-1e328e10eb",
+   "F-1f76a99b02",
    "F-2001ee421d",
    "F-21172c962f",
    "F-21ba8df2cc",
@@ -8356,23 +8357,25 @@
    "F-27c460c084",
    "F-292abe00c9",
    "F-2964eb294e",
+   "F-2cd2cd8a94",
    "F-2cf443d3cf",
    "F-2d4093ce84",
+   "F-2dd587317e",
    "F-2e379d9d80",
    "F-2f8dc9beea",
    "F-32ea7a16e8",
+   "F-341458f0de",
    "F-348096b730",
    "F-35e8d8dd04",
    "F-36731a6b6b",
    "F-369f8b4a24",
+   "F-38e9913de7",
    "F-3930296ae3",
-   "F-3a60c33ffc",
    "F-3b74139141",
    "F-3d9ed6cb7b",
    "F-3dbeb389fb",
    "F-3e1120ac9a",
    "F-43048d49f9",
-   "F-44433af5f2",
    "F-44a0407afe",
    "F-44b150c62f",
    "F-46d5cbc06a",
@@ -8395,7 +8398,6 @@
    "F-5c085abe9f",
    "F-5d2b7845e5",
    "F-6270109e4e",
-   "F-627274f1a2",
    "F-63372240e0",
    "F-64faee3408",
    "F-65d38500a4",
@@ -8416,7 +8418,6 @@
    "F-73f3cb2e7b",
    "F-7571695877",
    "F-7730f288be",
-   "F-7769a94f7a",
    "F-777b25e425",
    "F-77c1dbbd09",
    "F-7857d6fb97",
@@ -8428,6 +8429,7 @@
    "F-7cdc1eac31",
    "F-7decb00e81",
    "F-80610a15a4",
+   "F-81bea72caf",
    "F-8250689043",
    "F-82b7b7e736",
    "F-83543218b1",
@@ -8438,7 +8440,6 @@
    "F-8638b76e7f",
    "F-87cbbb2297",
    "F-8878751ad3",
-   "F-8a4e8ec0a0",
    "F-8b13c8e0be",
    "F-8b70ef0282",
    "F-8c083c10c8",
@@ -8455,6 +8456,7 @@
    "F-91bbc1443d",
    "F-91d55572e3",
    "F-91ed13ae96",
+   "F-92d0ea9ce4",
    "F-93848b93bd",
    "F-940dbf62e4",
    "F-9762b4db21",
@@ -8467,6 +8469,7 @@
    "F-9fa9c3c21c",
    "F-9fee8eb468",
    "F-a04b5dbab1",
+   "F-a053d110be",
    "F-a0c0606ed3",
    "F-a12a6c0f1a",
    "F-a33f8c08bd",
@@ -8475,6 +8478,7 @@
    "F-a70c80ff66",
    "F-a8322ee49b",
    "F-a90009b1e3",
+   "F-a95c664ddf",
    "F-a987b8d1e3",
    "F-aaaa7cf960",
    "F-ab2d7eefd2",
@@ -8489,6 +8493,7 @@
    "F-b26a658bdb",
    "F-b3003d7d80",
    "F-b5209874b6",
+   "F-b61d7944ec",
    "F-b6d8ac2b3c",
    "F-b78e848332",
    "F-b87ceb99d3",
@@ -8502,6 +8507,7 @@
    "F-bec24964f0",
    "F-bee3b38975",
    "F-c0c6ee0e4f",
+   "F-c18aa3ed5b",
    "F-c1e06aaedc",
    "F-c20885b069",
    "F-c5ef51d900",
@@ -8509,7 +8515,6 @@
    "F-c8b8b1dcfd",
    "F-c92bfe9b2d",
    "F-c9907518b1",
-   "F-cb09ee93d7",
    "F-cb7e7c7b57",
    "F-ccc60469bd",
    "F-cea9326ff7",
@@ -8521,12 +8526,10 @@
    "F-d290efb8d8",
    "F-d29c796283",
    "F-d4ab94d60c",
-   "F-d519303f1a",
    "F-d5fafefad0",
    "F-d75ee66258",
    "F-d94fbe607b",
    "F-d9c9804616",
-   "F-da36d9a0d9",
    "F-db2e05e3d9",
    "F-dba2ee11be",
    "F-dc51124c36",
@@ -8537,7 +8540,6 @@
    "F-e28b0c81f0",
    "F-e2cc286a52",
    "F-e46c5b924b",
-   "F-e4779c5760",
    "F-e5e4906951",
    "F-e630ea6fa6",
    "F-e6348875d1",
@@ -8547,15 +8549,12 @@
    "F-ea9357c91f",
    "F-eb88322a13",
    "F-ec36127728",
-   "F-ed417b4b5a",
    "F-ed9b66fb2e",
    "F-ee9bc541a9",
-   "F-f27c348866",
    "F-f37c341d77",
    "F-f3813ac6c6",
    "F-f6aed45f21",
    "F-f7b709b120",
-   "F-f7bd812015",
    "F-f841caeb03",
    "F-f88f6ae3cd",
    "F-fbc8adfce6",
@@ -8563,7 +8562,8 @@
    "F-fc9935fe72",
    "F-fdfa079bf0",
    "F-ff3c86dc5b",
-   "F-ff67d5d2a8"
+   "F-ff67d5d2a8",
+   "F-fff0060a3d"
   ],
   "docs/CONSTRUCTED.md": [
    "F-076f9f4115",
@@ -10458,6 +10458,7 @@
    "F-6a03a69734",
    "F-708e892f0c",
    "F-779d628231",
+   "F-81bea72caf",
    "F-857821cb67",
    "F-8c53142a45",
    "F-8c5cf9d9c1",
@@ -10472,7 +10473,6 @@
    "F-bd0568af5a",
    "F-c0e2d7eac1",
    "F-c20885b069",
-   "F-cb09ee93d7",
    "F-cb89b765bd",
    "F-d0b274b132",
    "F-d32d88f033",
@@ -12958,6 +12958,7 @@
    "F-fcd8ec8568"
   ],
   "docs/hypodrafts/A1.md": [
+   "F-008df4b99b",
    "F-18a4d33097",
    "F-19d9459f77",
    "F-1a65bf49a3",
@@ -12967,10 +12968,10 @@
    "F-2c6cea59ed",
    "F-30e388bced",
    "F-33522ad347",
+   "F-341458f0de",
    "F-3a2fedf01e",
    "F-3dfe456756",
    "F-42ecae4a8d",
-   "F-44433af5f2",
    "F-463688865b",
    "F-4df017f985",
    "F-558e4ac7d9",
@@ -12978,28 +12979,27 @@
    "F-5d025509bd",
    "F-5d7e2cb146",
    "F-6c253b945d",
-   "F-7769a94f7a",
    "F-77d48a4848",
    "F-80967ba978",
+   "F-81bea72caf",
    "F-8867285152",
    "F-897bba09c9",
    "F-8c9c7d9cf6",
    "F-9bf0e10033",
+   "F-9ecc204bb2",
    "F-9fa9c3c21c",
    "F-a17c9263d9",
+   "F-a7381242a1",
    "F-b047e411d7",
    "F-b13ba625e6",
+   "F-b61d7944ec",
    "F-b6474e2555",
    "F-bcdb046417",
-   "F-cb09ee93d7",
    "F-cbc46638de",
-   "F-d519303f1a",
    "F-db782d7c5c",
    "F-e2cc286a52",
-   "F-f27c348866",
-   "F-f2e801ebf6",
-   "F-fdde9e7c79",
-   "F-ff662f3a7e"
+   "F-ff662f3a7e",
+   "F-fff0060a3d"
   ],
   "docs/hypodrafts/A1b.md": [
    "F-2b35b5362f",
@@ -13117,71 +13117,71 @@
   ],
   "docs/hypodrafts/C4.md": [
    "F-16daf10c54",
-   "F-1766a595e3",
    "F-1e328e10eb",
    "F-255eb2999d",
-   "F-3a60c33ffc",
+   "F-38e9913de7",
    "F-55ed2e801b",
    "F-5683df4d6c",
    "F-6270109e4e",
-   "F-8a4e8ec0a0",
    "F-8d988c3666",
    "F-91ed13ae96",
+   "F-92d0ea9ce4",
    "F-9be4156372",
+   "F-a053d110be",
    "F-a12a6c0f1a",
+   "F-a95c664ddf",
    "F-ae661b1220",
    "F-b6d8ac2b3c",
    "F-b78e848332",
+   "F-c18aa3ed5b",
    "F-d213ba86e1",
    "F-d29c796283",
    "F-e28b0c81f0",
-   "F-e4779c5760",
    "F-eb88322a13",
    "F-f37c341d77",
-   "F-f7bd812015",
    "F-ff67d5d2a8"
   ],
   "docs/hypodrafts/C6.md": [
+   "F-008df4b99b",
    "F-18d47162ce",
+   "F-1f76a99b02",
+   "F-2cd2cd8a94",
+   "F-2dd587317e",
    "F-32ea7a16e8",
-   "F-44433af5f2",
+   "F-341458f0de",
    "F-44b150c62f",
    "F-4df017f985",
    "F-52f50387e2",
    "F-5bb29588ed",
    "F-5c085abe9f",
-   "F-627274f1a2",
    "F-6c253b945d",
-   "F-7769a94f7a",
-   "F-8a4e8ec0a0",
+   "F-81bea72caf",
    "F-8c53142a45",
+   "F-92d0ea9ce4",
    "F-93848b93bd",
    "F-9d8de7883a",
    "F-a33f8c08bd",
    "F-a8322ee49b",
+   "F-a95c664ddf",
    "F-b0c4aba8b0",
    "F-b21f94aa9f",
    "F-b5209874b6",
+   "F-b61d7944ec",
    "F-b87ceb99d3",
    "F-c0c6ee0e4f",
-   "F-cb09ee93d7",
    "F-d290efb8d8",
-   "F-d519303f1a",
-   "F-da36d9a0d9",
    "F-dba2ee11be",
    "F-dd36b0529d",
    "F-ddd486da04",
-   "F-e4779c5760",
-   "F-ed417b4b5a",
-   "F-f27c348866"
+   "F-fff0060a3d"
   ],
   "docs/hypodrafts/D1.md": [
    "F-008df4b99b",
    "F-0827f1f9d3",
    "F-0fb797829f",
+   "F-341458f0de",
    "F-36c69a2711",
    "F-37fa5eca11",
-   "F-44433af5f2",
    "F-6215d8e767",
    "F-71de5ceb31",
    "F-7caf85939e",
@@ -13329,8 +13329,8 @@
    "F-0a242556eb",
    "F-174fa66b89",
    "F-2ad04809f0",
+   "F-341458f0de",
    "F-36b30a135c",
-   "F-44433af5f2",
    "F-4ed890d0d9",
    "F-5bcbce2460",
    "F-730bd84080",
@@ -13359,7 +13359,7 @@
    "F-11ff58743f",
    "F-1f76a99b02",
    "F-24d6de13e2",
-   "F-44433af5f2",
+   "F-341458f0de",
    "F-4ed890d0d9",
    "F-5ccadf68a1",
    "F-74d5587d92",
@@ -13479,7 +13479,6 @@
    "F-73622a0de3",
    "F-7495c59f85",
    "F-7730f288be",
-   "F-7769a94f7a",
    "F-786f319d70",
    "F-7a78427d2e",
    "F-7b66b1ce10",
@@ -13524,6 +13523,7 @@
    "F-b36383859a",
    "F-b5bd0a6bda",
    "F-b5ea195365",
+   "F-b61d7944ec",
    "F-b9e1bc1fb7",
    "F-ba16162ea9",
    "F-bd58527cd6",
@@ -13624,9 +13624,9 @@
    "F-1f76a99b02",
    "F-2cd2cd8a94",
    "F-2fed65efd6",
+   "F-341458f0de",
    "F-3a1c589e4b",
    "F-4058d83d39",
-   "F-44433af5f2",
    "F-5de2ea481e",
    "F-5e2026012e",
    "F-6215d8e767",
@@ -13673,8 +13673,8 @@
    "F-1d69e55cf8",
    "F-214c717648",
    "F-21ba8df2cc",
+   "F-341458f0de",
    "F-37d1c997e7",
-   "F-44433af5f2",
    "F-4df017f985",
    "F-6f95225e78",
    "F-779d628231",
@@ -13741,9 +13741,9 @@
    "F-20578fffc4",
    "F-2bed4cf5ba",
    "F-2fed65efd6",
+   "F-341458f0de",
    "F-3918efedcf",
    "F-3b91ef5350",
-   "F-44433af5f2",
    "F-491428cc45",
    "F-6b152a6536",
    "F-6d6b903f5d",
@@ -13793,8 +13793,8 @@
   "F-000ac8d87b": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 70,
-    "line": 76,
+    "first": 71,
+    "line": 77,
     "text": "\n{C(\"C-KP-QUADRANTS\", \"The quadrants sort what this project holds and misses by two questions: whether a thing exists, and whether we know we have it.\")}\n\n| | we know we have it | we don't know we have it |\n|---|---|---|\n| **it exists** | **known known** — the {ctd_rows} CTD measurements, and everything computed from them | **UNKNOWN KNOWN** — data that exists, is held by someone, and is absent from our map |\n| **we know it's missing** | **known unknown** — the {meta['gated_sources']} gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), {meta['gated_slots']} of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |\n\n{C(\"C-KP-UNKNOWN-KNOWN\", \"**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.\")} Some of those we found:\n"
    },
    "constructions": [
@@ -13897,7 +13897,7 @@
    "value": 93,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    76
+    77
    ]
   },
   "F-000ba6561e": {
@@ -15039,10 +15039,10 @@
   },
   "F-008df4b99b": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 123,
-    "line": 129,
-    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -15061,6 +15061,10 @@
      [
       "months",
       "564"
+     ],
+     [
+      "year0",
+      "1980"
      ],
      [
       "n_variables",
@@ -15095,8 +15099,8 @@
    "synthetic": false,
    "value": 564,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    129
+    "data/manual/claims.d/w3-cc.json",
+    1483
    ]
   },
   "F-008ed6b857": {
@@ -16357,8 +16361,8 @@
   "F-0156368344": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 52,
-    "line": 58,
+    "first": 53,
+    "line": 59,
     "text": "    dyreenhed = pin(\"{count:BEK931-2024:dyreenhed}\")\n    n170 = pin(\"{read:BEK931-2024:170|divideret med 170 kg}\")\n    drained = pin(\"{read:KP-DRAENKORT-DCA135:52|På det endelige kort er 52% af markarealet drænet}\")\n    res_m = pin(\"{read:KP-DRAENKORT-DCA135:30.4|Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%}\")\n    accuracy = pin(\"{read:KP-DRAENKORT-DCA135:79|Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%}\")\n    flood_before = live.was(\"5df1889\", \"docs/FLOOD_GAP.md\", \"Across @@ km² of modelled flooding\")\n    flood_after = live.was(\"c8e5a6b\", \"docs/FLOOD_GAP.md\", \"Across @@ km² of modelled flooding\")\n    nine = tri[\"clusters\"][\"vandkemi\"][\"n\"]\n\n    text = f\"\"\"# What is known, by whom"
    },
    "constructions": [
@@ -16383,7 +16387,7 @@
    "value": "5.847",
    "where": [
     "scripts/pages/known_and_unknown.py",
-    58
+    59
    ]
   },
   "F-0159c39f63": {
@@ -25489,10 +25493,10 @@
   },
   "F-0827f1f9d3": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_a7.py",
+    "first": 172,
+    "line": 178,
+    "text": "               \"carrying `BundDybde_m`. **Its northing is missing:** the second easting column \"\n               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))\n    w(\"- \" + C(\"C-OQ-A7-SEABED\", \"`data/raw/geus/seabed_sediment_dk.gpkg`, layer \"\n               f\"`Seabed_sedimen` - {sb['features']} polygons in {sb['classes']} substrate \"\n               f\"classes ({clist}), compiled from {sb['campaigns']} named survey campaigns at \"\n               f\"map scales whose denominators run from {sbf['scale_min']:,} to \"\n               f\"{sbf['scale_max']:,}. Usable as \"\n               \"substrate class if the scale travels with it; **no organic-carbon value at \"\n               \"all**, as the register's `R7-TOC-MAP-GAP` records.\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -25537,8 +25541,8 @@
    "synthetic": false,
    "value": 5000,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_a7.py",
+    178
    ]
   },
   "F-08289ef870": {
@@ -27669,10 +27673,10 @@
   },
   "F-0a242556eb": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 124,
-    "line": 130,
-    "text": "          \"those also with an `Oxygen indhold` value in mg/l; \"\n          f\"{c1['with_levels_oxygen_bottom']:,} of those joined to a recorded `BundDybde_m` \"\n          f\"in `maaledybde.csv.gz`, and {c1['with_levels_oxygen_bottom_deep']:,} of these \"\n          f\"with a temperature profile reaching {c1['deep_m']:g} m. Of all \"\n          f\"{c1['station_days_ts']:,}, {c1['oxygen_near_deepest_t']:,} have their deepest \"\n          f\"{CH('O2')} within {c1['near_m']:g} m of the deepest temperature or below it. \"\n          f\"They come from {c1['stations']:,} stations, {c1['first_year']} to \"\n          f\"{c1['last_year']}.\"))\n    w(\"\")\n    w(C(\"C-AF-C1-MAAL\", f\"`maaledybde.csv.gz` holds {c1['maaledybde_station_days']:,} distinct \""
+    "file": "scripts/pages/hypodraft_i3.py",
+    "first": 133,
+    "line": 139,
+    "text": "               f\"marks {sf['station_months']} station-months at {sf['stations']} stations \"\n               f\"as a sign inversion ({R('I7')}) and removes nothing.\"))\n    w(\"- \" + C(\"C-IL-I3-REPLIC\", \"**The panel is a monthly median**, so within-month \"\n               \"replication is gone from it. The CTD extract keeps each cast with its date, \"\n               \"so whatever replication there is survives there: `hypodraft_ctd.py` counts \"\n               f\"{ctd['station_days_ts']:,} station-days with temperature and salinity \"\n               f\"there, at {ctd['stations']:,} stations. How many station-months hold more \"\n               \"than one sampling day has not been counted here. So the panel can test \"\n               \"count and window, and only the extract can test variance within a month.\"))\n    w(\"- \" + C(\"C-IL-I3-SAT\", \"`oxysat_bed` is computed from oxygen, temperature and \""
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -27765,8 +27769,8 @@
    "synthetic": false,
    "value": 1478,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    130
+    "scripts/pages/hypodraft_i3.py",
+    139
    ]
   },
   "F-0a304e6553": {
@@ -34040,8 +34044,8 @@
   "F-0f04693c5a": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 94,
-    "line": 100,
+    "first": 95,
+    "line": 101,
     "text": "### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |"
    },
    "constructions": [
@@ -34114,7 +34118,7 @@
    "value": 38.453159041394336,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    100
+    101
    ]
   },
   "F-0f0668bf48": {
@@ -39016,10 +39020,10 @@
   },
   "F-135749f431": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 645,
-    "line": 651,
-    "text": "        f\"below the depth cut in `rescore.py`, runs from {dip['4']['median']:.1f} µg/l in April to \"\n        f\"**{dip['10']['median']:.1f} µg/l in October**, a {rise:.0f}% rise through the summer into \"\n        \"autumn.\") + \" \" + C(\"C-OP-18-A7-READ\", \"That is the pattern release from sediment under \"\n                             \"stratification would give. The strong form, that it happens *without* a \"\n                             \"matching river input, still needs the endpoint the code cannot reach.\"))\n    w()\n    w(C(\"C-OP-18-E11\", f\"**{ref('E11')} is answerable in principle.** {e11['n_bottles_with_both']:,} \"\n        \"bottles carry both pH and ammonium. The un-ionised fraction, the toxic one, comes out at a median \"\n        f\"of {e11['median']:.3f} µg/l, a 95th percentile of {e11['p95']:.1f} and a maximum of \"\n        f\"{e11['max']:.0f} - indicative only, because the salinity and in-situ temperature corrections to \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -39068,8 +39072,8 @@
    "synthetic": false,
    "value": 25988,
    "where": [
-    "scripts/pages/open_problems.py",
-    651
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-1360822d73": {
@@ -42945,8 +42949,8 @@
   "F-16daf10c54": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1025,
-    "line": 1031,
+    "first": 1027,
+    "line": 1033,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -42965,7 +42969,7 @@
    "value": 5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1031
+    1033
    ]
   },
   "F-17026cc7ba": {
@@ -43348,10 +43352,10 @@
   },
   "F-174fa66b89": {
    "code": {
-    "file": "scripts/hypotheses.py",
+    "file": "scripts/pages/hypodraft_i3.py",
     "first": 77,
     "line": 83,
-    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
+    "text": "        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \"\n        \"water-chemistry samples whose clock is an observed time rarely visit night or \""
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -43400,54 +43404,8 @@
    "synthetic": false,
    "value": 17.103,
    "where": [
-    "scripts/hypotheses.py",
+    "scripts/pages/hypodraft_i3.py",
     83
-   ]
-  },
-  "F-1766a595e3": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.oxy_bed",
-    "rows": [
-     [
-      "n",
-      "76980"
-     ],
-     [
-      "stations",
-      "1327"
-     ]
-    ],
-    "target": "stations"
-   },
-   "field": {
-    "is": "Distinct stations with any value of that variable, read from the binary station-index array.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.oxy_bed.stations"
-   ],
-   "synthetic": false,
-   "value": 1327,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
    ]
   },
   "F-1768e1ab56": {
@@ -49129,10 +49087,10 @@
   },
   "F-1b7430e469": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 613,
-    "line": 619,
-    "text": "        \"`vandkemi` fetch - \" + \", \".join(ref(h) for h in hyps[:-1]) + f\" and {ref(hyps[-1])} - and \"\n        \"checks, per hypothesis, which of the variables its consequence needs are now in hand:\"))\n    w()\n    w(\"| | |\")\n    w(\"|---|---|\")\n    w(f\"| **testable now** | {rs['tally']['testable now']} — \" + \", \".join(ref(h) for h in testable) + \" |\")\n    w(f\"| **partly unblocked; a second blocker was behind the first** | **{rs['tally'][partly]}** |\")\n    w()\n    w(C(\"C-OP-18-LOCKS\", f\"**A blocker can hide a blocker.** {ref('A1')} and {ref('A2')} need river load, \"\n        \"which lives on a different ODA endpoint that `fetch_oda.py` cannot currently reach: its `run()` \""
+    "file": "scripts/pages/triage.py",
+    "first": 222,
+    "line": 228,
+    "text": "    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \"\n      + C(\"C-TR-SECOND\", f\"{refs(['A1', 'A2', 'A7'])} need river input, on ODA topics \"\n          f\"`fetch_oda.py` does not reach; {ref('A5')} needs volume transport at the Belt and Sound \""
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -49169,8 +49127,8 @@
    "synthetic": false,
    "value": 8,
    "where": [
-    "scripts/pages/open_problems.py",
-    619
+    "scripts/pages/triage.py",
+    228
    ]
   },
   "F-1b811d8a29": {
@@ -52002,9 +51960,9 @@
   "F-1dc26c8976": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -52031,7 +51989,7 @@
    "value": "179",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-1dc6b55e39": {
@@ -52755,8 +52713,8 @@
   "F-1e328e10eb": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 836,
-    "line": 842,
+    "first": 838,
+    "line": 844,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -52775,7 +52733,7 @@
    "value": 35,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    842
+    844
    ]
   },
   "F-1e33d8a4c0": {
@@ -55579,8 +55537,8 @@
   "F-208361ba97": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 97,
-    "line": 103,
+    "first": 98,
+    "line": 104,
     "text": "|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |"
    },
    "constructions": [
@@ -55631,7 +55589,7 @@
    "value": 85035,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    103
+    104
    ]
   },
   "F-208b4809e6": {
@@ -59544,9 +59502,9 @@
   "F-240e5ebce1": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -59573,7 +59531,7 @@
    "value": "8",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-24107756a7": {
@@ -61525,8 +61483,8 @@
   "F-255eb2999d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1086,
-    "line": 1092,
+    "first": 1088,
+    "line": 1094,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P4\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"A superposed-epoch composite at lags from −{param:cc_c4_lag_before} to +{param:cc_c4_lag_after} months per site, recording the peak lag.\",\n   \"because\": \"The window opens before the event to show the baseline and runs well after it to reach the far end of the path; its bounds are stated before any fit.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -61545,7 +61503,7 @@
    "value": 24,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1092
+    1094
    ]
   },
   "F-25637e891f": {
@@ -68561,10 +68519,10 @@
   },
   "F-2ad04809f0": {
    "code": {
-    "file": "scripts/hypotheses.py",
+    "file": "scripts/pages/hypodraft_i3.py",
     "first": 77,
     "line": 83,
-    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
+    "text": "        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \"\n        \"water-chemistry samples whose clock is an observed time rarely visit night or \""
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -68613,7 +68571,7 @@
    "synthetic": false,
    "value": 6.902,
    "where": [
-    "scripts/hypotheses.py",
+    "scripts/pages/hypodraft_i3.py",
     83
    ]
   },
@@ -71617,10 +71575,10 @@
   },
   "F-2cd2cd8a94": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 75,
-    "line": 81,
-    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -71657,8 +71615,8 @@
    "synthetic": false,
    "value": 84656,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    81
+    "data/manual/claims.d/w3-cc.json",
+    1483
    ]
   },
   "F-2cd46014d3": {
@@ -73681,6 +73639,47 @@
    "where": [
     "scripts/pages/areas.py",
     581
+   ]
+  },
+  "F-2dd587317e": {
+   "code": {
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1613,
+    "line": 1619,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-UNFILLED\",\n   \"kind\": \"bounded\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"At least {calc:da_oxy_bed_n - da_oxysat_bed_n|,} oxy_bed station-months carry no saturation, the difference of the two counts being a lower bound, and SondeNr is `999`, probe unknown, on {calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}% of the CTD extract.\",\n   \"because\": \"A station-month with oxygen and no saturation is one of the oxygen count not matched in the saturation count; since some saturation station-months might lack oxygen, the difference of the two counts can only undercount them. The probe share is enums.py's count of `999` over all rows of the extract.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
+   },
+   "constructions": [
+    "K-DRAFTSB-COUNTS"
+   ],
+   "kind": "calculated",
+   "rests_on": {
+    "counted": 2
+   },
+   "src": [
+    "op",
+    "-",
+    [
+     [
+      "leaf",
+      "data/derived/drafts_b_counts.json",
+      "stations_series.variables.oxy_bed.n"
+     ],
+     [
+      "leaf",
+      "data/derived/drafts_b_counts.json",
+      "stations_series.variables.oxysat_bed.n"
+     ]
+    ],
+    [
+     76980,
+     64493
+    ]
+   ],
+   "synthetic": false,
+   "value": 12487,
+   "where": [
+    "data/manual/claims.d/w3-cc.json",
+    1619
    ]
   },
   "F-2dd6490112": {
@@ -76136,10 +76135,10 @@
   },
   "F-2fed65efd6": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 180,
-    "line": 186,
-    "text": "               \"substrate class if the scale travels with it; **no organic-carbon value at \"\n               \"all**, as the register's `R7-TOC-MAP-GAP` records.\"))\n    w(\"- \" + C(\"C-OQ-A7-PORTAL\", \"The source register records the ODA portal's station lists, \"\n               \"taken with an explicit period in an authenticated comparison: Vandkemi \"\n               f\"{portal['vandkemi']['with_period']:,} stations over 1970–2026 against \"\n               f\"{portal['vandkemi']['no_period']} with no period set; Sedimentkemi/Sporstof \"\n               f\"{sed['with_period']} over the whole record, {sed['no_period']} currently.\"))\n    w(\"\")\n    w(C(\"C-OQ-A7-ASYM\", \"**That asymmetry is the problem.** The response side has \"\n        f\"ortho-phosphate at {dip['stations']:,} stations in the held extract; the pool side has \""
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 151,
+    "line": 157,
+    "text": "    w(\"- \" + C(\"C-OQ-R6-PG880132\", \"**PANGAEA `880132`**: sequential phosphorus extraction, \"\n               \"iron-bound phosphorus among its fractions, on one sediment core from the \"\n               \"Bornholm Basin.\"))\n    w(\"- \" + C(\"C-OQ-R6-ODASED\", \"**ODA `Sedimentkemi/Sporstof`** (`Emne_12_19`): the source \"\n               \"register records its parameters - loss on ignition, total N, iron-adsorbed P, \"\n               \"total P, dry matter and density, none of them an iron content - and the portal's \"\n               f\"station list at {portal['no_period']} stations with no period set and \"\n               f\"{portal['with_period']} over the whole record. It is not held here.\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-NOVANA\", \"The national programme for 2023–2027 takes, in sediment, total N, \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -76176,8 +76175,8 @@
    "synthetic": false,
    "value": 18,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    186
+    "scripts/pages/openproblem_r6.py",
+    157
    ]
   },
   "F-2fef8091d0": {
@@ -77572,9 +77571,9 @@
   "F-30e388bced": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -77605,7 +77604,7 @@
    "value": "4",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-30edee37e8": {
@@ -81215,6 +81214,72 @@
    ],
    "synthetic": false,
    "value": "39"
+  },
+  "F-341458f0de": {
+   "code": {
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
+   },
+   "constructions": [
+    "K-DRAFTSB-COUNTS"
+   ],
+   "excerpt": {
+    "parent": "stations_series",
+    "rows": [
+     [
+      "total_station_months",
+      "679422"
+     ],
+     [
+      "n_stations",
+      "1415"
+     ],
+     [
+      "months",
+      "564"
+     ],
+     [
+      "year0",
+      "1980"
+     ],
+     [
+      "n_variables",
+      "9"
+     ],
+     [
+      "bin_bytes",
+      "5435376"
+     ],
+     [
+      "variables",
+      "{… 9 keys}"
+     ]
+    ],
+    "target": "year0"
+   },
+   "field": {
+    "is": "The panel's first year, as its descriptor declares.",
+    "kind": "measured",
+    "synthetic": false
+   },
+   "kind": "measured",
+   "producer": "scripts/drafts_b_counts.py",
+   "rests_on": {
+    "measured": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/drafts_b_counts.json",
+    "stations_series.year0"
+   ],
+   "synthetic": false,
+   "value": 1980,
+   "where": [
+    "data/manual/claims.d/w3-cc.json",
+    1483
+   ]
   },
   "F-3417dfbf87": {
    "code": {
@@ -85270,10 +85335,10 @@
   },
   "F-36b30a135c": {
    "code": {
-    "file": "scripts/hypotheses.py",
-    "first": 77,
-    "line": 83,
-    "text": "        kind, arg = m.groups()\n        if kind == \"q\":\n            c = re.match(r\"([0-9a-f]{7,40}):(.*)$\", arg, re.S)\n            commit, loc = (c.group(1), c.group(2)) if c else (QUOTED[0], arg)\n            return live.was(commit, QUOTED[1], loc)\n        name, _, fmt = arg.partition(\"|\")\n        return format(VALUES[name], fmt)\n    return PH.sub(rep, text)\n\n"
+    "file": "scripts/pages/hypodraft_i3.py",
+    "first": 76,
+    "line": 82,
+    "text": "        \"worst-month value — is an order statistic of the draws. Its expectation moves with \"\n        \"the number of draws and with the months they fall in.\")\n      + \" \"\n      + C(\"C-IL-I3-A-PANEL\", \"The monthly panel records, for each station, which months \"\n          \"carry a value, so both the count and the window can be read off it.\"))\n    w(\"\")\n    w(C(\"C-IL-I3-B-SUN\", f\"**Daily phase.** Daylight at {dl['lat']:.0f}°N runs from \"\n        f\"{dl['shortest_h']:.0f} h at the December solstice to {dl['longest_h']:.0f} h at \"\n        \"the June solstice, so if oxygen follows the sun, sampling held to working hours \"\n        \"meets a different phase of its daily cycle as the season moves; the \""
    },
    "constructions": [
     "K-HY-EVIDENCE"
@@ -85322,8 +85387,8 @@
    "synthetic": false,
    "value": 55.0,
    "where": [
-    "scripts/hypotheses.py",
-    83
+    "scripts/pages/hypodraft_i3.py",
+    82
    ]
   },
   "F-36be190051": {
@@ -88247,6 +88312,52 @@
     588
    ]
   },
+  "F-38e9913de7": {
+   "code": {
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 493,
+    "line": 499,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
+   },
+   "constructions": [
+    "K-DRAFTSB-COUNTS"
+   ],
+   "excerpt": {
+    "parent": "stations_series.variables.sal_bed",
+    "rows": [
+     [
+      "n",
+      "83309"
+     ],
+     [
+      "stations",
+      "1395"
+     ]
+    ],
+    "target": "stations"
+   },
+   "field": {
+    "is": "Distinct stations among this variable's station-months, read from the station indices in the binary at the variable's offset.",
+    "kind": "counted",
+    "synthetic": false
+   },
+   "kind": "counted",
+   "producer": "scripts/drafts_b_counts.py",
+   "rests_on": {
+    "counted": 1
+   },
+   "src": [
+    "leaf",
+    "data/derived/drafts_b_counts.json",
+    "stations_series.variables.sal_bed.stations"
+   ],
+   "synthetic": false,
+   "value": 1395,
+   "where": [
+    "data/manual/claims.d/w3-cc.json",
+    499
+   ]
+  },
   "F-38e9c5f476": {
    "code": {
     "file": "scripts/pages/hypodraft_c1.py",
@@ -89703,9 +89814,9 @@
   "F-3a2fedf01e": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -89736,7 +89847,7 @@
    "value": "240",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-3a34c27ad8": {
@@ -89782,52 +89893,6 @@
    ],
    "synthetic": false,
    "value": "5,217,330"
-  },
-  "F-3a60c33ffc": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.sal_surf",
-    "rows": [
-     [
-      "n",
-      "83341"
-     ],
-     [
-      "stations",
-      "1393"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.sal_surf.n"
-   ],
-   "synthetic": false,
-   "value": 83341,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
-   ]
   },
   "F-3a70a9dc3f": {
    "code": {
@@ -90852,8 +90917,8 @@
   "F-3b39e7a914": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 98,
-    "line": 104,
+    "first": 99,
+    "line": 105,
     "text": "| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |\n| **One column, three meanings** | one guard written for all of them | {C(\"C-KP-T-KFAKTOR\", \"`KorrektionsFaktor` is a Winkler-to-electrode ratio for oxygen, a calibration against chlorophyll for fluorescence, and, for CTD temperature and salinity, a factor the instruction does not describe\")} |"
    },
    "constructions": [
@@ -90956,7 +91021,7 @@
    "value": 4332,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    104
+    105
    ]
   },
   "F-3b3c2fe074": {
@@ -94781,9 +94846,9 @@
   "F-3dfe456756": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -94814,7 +94879,7 @@
    "value": "201",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-3e047c4257": {
@@ -102542,60 +102607,6 @@
    "synthetic": false,
    "value": "1.188"
   },
-  "F-44433af5f2": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable",
-    "rows": [
-     [
-      "months",
-      "564"
-     ],
-     [
-      "year0",
-      "1980"
-     ],
-     [
-      "by_variable",
-      "{… 9 keys}"
-     ],
-     [
-      "bin_bytes",
-      "5435376"
-     ]
-    ],
-    "target": "year0"
-   },
-   "field": {
-    "is": "The first year of the monthly station series.",
-    "kind": "measured",
-    "synthetic": false
-   },
-   "kind": "measured",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "measured": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.year0"
-   ],
-   "synthetic": false,
-   "value": 1980,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
-   ]
-  },
   "F-44619d5477": {
    "constructions": [
     "K-WATER-WAVES"
@@ -102969,8 +102980,8 @@
   "F-44b150c62f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -102989,7 +103000,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-44b1a20db1": {
@@ -124736,8 +124747,8 @@
   "F-55ed2e801b": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1086,
-    "line": 1092,
+    "first": 1088,
+    "line": 1094,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P4\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"A superposed-epoch composite at lags from −{param:cc_c4_lag_before} to +{param:cc_c4_lag_after} months per site, recording the peak lag.\",\n   \"because\": \"The window opens before the event to show the baseline and runs well after it to reach the far end of the path; its bounds are stated before any fit.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -124756,7 +124767,7 @@
    "value": 12,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1092
+    1094
    ]
   },
   "F-55ffde7cdb": {
@@ -125654,8 +125665,8 @@
   "F-5683df4d6c": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 569,
-    "line": 575,
+    "first": 571,
+    "line": 577,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"hypodraft_facts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
    },
    "constructions": [
@@ -125694,7 +125705,7 @@
    "value": 151203,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    575
+    577
    ]
   },
   "F-568821e8ea": {
@@ -135162,9 +135173,9 @@
   "F-5d7e2cb146": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -135195,7 +135206,7 @@
    "value": "6.7",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-5d83e0051d": {
@@ -141452,8 +141463,8 @@
   "F-6270109e4e": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 836,
-    "line": 842,
+    "first": 838,
+    "line": 844,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -141472,53 +141483,7 @@
    "value": 5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    842
-   ]
-  },
-  "F-627274f1a2": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.temp_bed",
-    "rows": [
-     [
-      "n",
-      "84656"
-     ],
-     [
-      "stations",
-      "1414"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.temp_bed.n"
-   ],
-   "synthetic": false,
-   "value": 84656,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
+    844
    ]
   },
   "F-62735c2dd6": {
@@ -153483,8 +153448,8 @@
   "F-6c253b945d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1638,
-    "line": 1644,
+    "first": 1642,
+    "line": 1648,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-NOCLOCK\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The CTD extract's header, with {fig:da_ctd_columns} columns, has Dato as a date such as `19701013`, no hour, and no other time field.\",\n   \"because\": \"hypodraft_facts.py counts the header's columns; the date column holds a date, and no column holds a clock time.\",\n   \"rests_on\": [\n    \"C-HY-I3-NOCLOCK\","
    },
    "constructions": [
@@ -153527,7 +153492,7 @@
    "value": 34,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1644
+    1648
    ]
   },
   "F-6c29c95adc": {
@@ -159766,8 +159731,8 @@
   "F-708e892f0c": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 98,
-    "line": 104,
+    "first": 99,
+    "line": 105,
     "text": "| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |\n| **One column, three meanings** | one guard written for all of them | {C(\"C-KP-T-KFAKTOR\", \"`KorrektionsFaktor` is a Winkler-to-electrode ratio for oxygen, a calibration against chlorophyll for fluorescence, and, for CTD temperature and salinity, a factor the instruction does not describe\")} |"
    },
    "constructions": [
@@ -159814,7 +159779,7 @@
    "value": 292.3,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    104
+    105
    ]
   },
   "F-70917d135e": {
@@ -162098,10 +162063,10 @@
   },
   "F-71de5ceb31": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 111,
-    "line": 117,
-    "text": "      + C(\"C-AF-C1-RAW\", \"The test uses raw per-measurement oxygen, not the published \"\n          \"iltsvind extent: it compares casts within a station and month, and an extent \"\n          \"mapped per survey carries neither the cast nor its density profile.\"))\n    w(\"\")\n    w(\"## 2. The data, and the circularity check\")\n    w(\"\")\n    w(C(\"C-AF-C1-SRC\", f\"**Source:** `data/raw/oda/ctd.csv.gz` ({ctd_mb:.1f} MB gzipped), one \"\n        \"row per measurement, with `Dybde (m)` and coordinates.\") + \" \"\n      + C(\"C-AF-C1-COUNTS\", \"One streaming pass over the whole extract, by \"\n          \"`scripts/hypodraft_ctd.py`, counts \""
+    "file": "scripts/pages/hypodraft_d1.py",
+    "first": 150,
+    "line": 156,
+    "text": "          f\"polygons at the finest scale and {n_hi} at the coarsest, so boundary precision \"\n          \"is not uniform.\") + \" \"\n      + C(\"C-DZ-D1-BOUNDARY\", \"Carry distance to a class boundary as a covariate, and test \"\n          \"stations near a boundary separately.\"))\n    w(\"\")\n    w(C(\"C-DZ-D1-POSITION\", \"**Depth and position.** The CTD extract, \"\n        f\"`data/raw/oda/ctd.csv.gz` ({mb:.1f} MB compressed), has columns beside each \"\n        \"station's coordinates (`X_UTM32`, `Y_UTM32`) for the depth (`Dybde (m)`) and the \"\n        \"position (`MålingX_UTM32`, `MalingY_UTM32`) of each measurement row, so one streamed \"\n        \"pass can place each cast in the c-square it was taken in, with its depth.\") + \" \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -162132,8 +162097,8 @@
    "synthetic": false,
    "value": 448.723078,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    117
+    "scripts/pages/hypodraft_d1.py",
+    156
    ]
   },
   "F-71e860dfb1": {
@@ -163296,10 +163261,10 @@
   },
   "F-730bd84080": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 122,
-    "line": 128,
-    "text": "          f\"`Temperatur` and a `Salinitet` value; {c1['with_levels']:,} of them with at least \"\n          f\"{c1['min_levels']} depth levels of each; {c1['with_levels_and_oxygen']:,} of \"\n          \"those also with an `Oxygen indhold` value in mg/l; \"\n          f\"{c1['with_levels_oxygen_bottom']:,} of those joined to a recorded `BundDybde_m` \"\n          f\"in `maaledybde.csv.gz`, and {c1['with_levels_oxygen_bottom_deep']:,} of these \"\n          f\"with a temperature profile reaching {c1['deep_m']:g} m. Of all \"\n          f\"{c1['station_days_ts']:,}, {c1['oxygen_near_deepest_t']:,} have their deepest \"\n          f\"{CH('O2')} within {c1['near_m']:g} m of the deepest temperature or below it. \"\n          f\"They come from {c1['stations']:,} stations, {c1['first_year']} to \"\n          f\"{c1['last_year']}.\"))"
+    "file": "scripts/pages/hypodraft_i3.py",
+    "first": 132,
+    "line": 138,
+    "text": "               \"which the extracts are known to carry, reach the panel. The flag record \"\n               f\"marks {sf['station_months']} station-months at {sf['stations']} stations \"\n               f\"as a sign inversion ({R('I7')}) and removes nothing.\"))\n    w(\"- \" + C(\"C-IL-I3-REPLIC\", \"**The panel is a monthly median**, so within-month \"\n               \"replication is gone from it. The CTD extract keeps each cast with its date, \"\n               \"so whatever replication there is survives there: `hypodraft_ctd.py` counts \"\n               f\"{ctd['station_days_ts']:,} station-days with temperature and salinity \"\n               f\"there, at {ctd['stations']:,} stations. How many station-months hold more \"\n               \"than one sampling day has not been counted here. So the panel can test \"\n               \"count and window, and only the extract can test variance within a month.\"))"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -163392,8 +163357,8 @@
    "synthetic": false,
    "value": 152671,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    128
+    "scripts/pages/hypodraft_i3.py",
+    138
    ]
   },
   "F-730fbbcd3f": {
@@ -168436,56 +168401,6 @@
     487
    ]
   },
-  "F-7769a94f7a": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series",
-    "rows": [
-     [
-      "station_months",
-      "679422"
-     ],
-     [
-      "stations",
-      "1415"
-     ],
-     [
-      "variables",
-      "9"
-     ]
-    ],
-    "target": "station_months"
-   },
-   "field": {
-    "is": "Values in the monthly station series, summed over its variables: one per station, month and variable.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series.station_months"
-   ],
-   "synthetic": false,
-   "value": 679422,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
-   ]
-  },
   "F-7769d4d4a6": {
    "constructions": [
     "K-QUOTE"
@@ -168842,10 +168757,10 @@
   },
   "F-779d628231": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 133,
-    "line": 139,
-    "text": "               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \"\n               f\"{reg['rows']:,} rows, {reg['stations']:,} distinct stations.\"))\n    w(\"- \" + C(\"C-OQ-E7-CTD\", f\"`data/raw/oda/ctd.csv.gz` - {ctd['rows']:,} records; the \"\n               f\"`Parameter` column takes {meta['ctd_parameters']} distinct values: {names}. \"\n               \"**Not one is a pesticide, a degradation product, or any organic \"\n               \"contaminant.**\"))\n    w(\"- \" + C(\"C-OQ-E7-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the marine water chemistry with its \""
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 75,
+    "line": 81,
+    "text": "|---|---|---|\n| **it exists** | **known known** — the {ctd_rows} CTD measurements, and everything computed from them | **UNKNOWN KNOWN** — data that exists, is held by someone, and is absent from our map |\n| **we know it's missing** | **known unknown** — the {meta['gated_sources']} gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), {meta['gated_slots']} of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |\n\n{C(\"C-KP-UNKNOWN-KNOWN\", \"**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.\")} Some of those we found:\n\n- {C(\"C-KP-CTD-PARAMS\", f\"`ctd.csv.gz` carries **{meta['ctd_parameters']} distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry {panel['n_variables']} variables, drawn from five of them.\")}\n- {C(\"C-KP-VEGETATION\", \"The ODA topic tree holds **eelgrass**, **macroalgae** and **bottom fauna** topics, and none is in the fetch script.\")}\n- {C(\"C-KP-FISHING\", \"Fishing effort is published openly: [Global Fishing Watch's apparent fishing effort](https://zenodo.org/records/14982712), version three, covering 2012–2024, as a direct download with no login.\")}\n"
    },
    "constructions": [
     "K-META-FACTS"
@@ -168954,8 +168869,8 @@
    "synthetic": false,
    "value": 17,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    139
+    "scripts/pages/known_and_unknown.py",
+    81
    ]
   },
   "F-779db984b0": {
@@ -169291,9 +169206,9 @@
   "F-77d48a4848": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -169320,7 +169235,7 @@
    "value": "1",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-77d7c34ab1": {
@@ -180105,9 +180020,9 @@
   "F-80967ba978": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -180134,7 +180049,7 @@
    "value": "5",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-80992d9c6d": {
@@ -181501,10 +181416,10 @@
   },
   "F-81bea72caf": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 123,
-    "line": 129,
-    "text": "          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -181523,6 +181438,10 @@
      [
       "months",
       "564"
+     ],
+     [
+      "year0",
+      "1980"
      ],
      [
       "n_variables",
@@ -181557,8 +181476,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    129
+    "data/manual/claims.d/w3-cc.json",
+    1483
    ]
   },
   "F-81cc2fdcb9": {
@@ -184913,10 +184832,10 @@
   },
   "F-84464ace67": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 222,
-    "line": 228,
-    "text": "               \"claimed for summer. With one annual observation the summer drawdown *cannot* be a \"\n               \"difference of two measurements, so anyone wanting a number must infer it. The \"\n               \"programme design forces model-as-datum here.\"))\n    w(\"\")\n    w(\"## Smallest unblocking thing\")\n    w(\"\")\n    w(\"1. \" + C(\"C-OQ-A7-S1\", f\"**One fetch.** `Emne_12_19` (Sedimentkemi): {sed['with_period']} \"\n                \"stations ever, and it fixes how many positions the test can have. \"\n                \"`scripts/fetch_oda.py` has no entry for it: its `TOPICS` already carry the \"\n                \"water chemistry `Emne_10_11`, and its argument parser accepts only those keys, \""
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 152,
+    "line": 158,
+    "text": "               \"iron-bound phosphorus among its fractions, on one sediment core from the \"\n               \"Bornholm Basin.\"))\n    w(\"- \" + C(\"C-OQ-R6-ODASED\", \"**ODA `Sedimentkemi/Sporstof`** (`Emne_12_19`): the source \"\n               \"register records its parameters - loss on ignition, total N, iron-adsorbed P, \"\n               \"total P, dry matter and density, none of them an iron content - and the portal's \"\n               f\"station list at {portal['no_period']} stations with no period set and \"\n               f\"{portal['with_period']} over the whole record. It is not held here.\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-NOVANA\", \"The national programme for 2023–2027 takes, in sediment, total N, \"\n        \"total P, iron-bound phosphate, dry matter, loss on ignition and density, in layers of \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -184953,8 +184872,8 @@
    "synthetic": false,
    "value": 39,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    228
+    "scripts/pages/openproblem_r6.py",
+    158
    ]
   },
   "F-845a5522fd": {
@@ -191743,9 +191662,9 @@
   "F-897bba09c9": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -191776,7 +191695,7 @@
    "value": "240,000",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-897c28907d": {
@@ -193346,52 +193265,6 @@
    "where": [
     "scripts/socialcontext.py",
     1524
-   ]
-  },
-  "F-8a4e8ec0a0": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.sal_bed",
-    "rows": [
-     [
-      "n",
-      "83309"
-     ],
-     [
-      "stations",
-      "1395"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.sal_bed.n"
-   ],
-   "synthetic": false,
-   "value": 83309,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
    ]
   },
   "F-8a51a62310": {
@@ -197986,8 +197859,8 @@
   "F-8d988c3666": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -198006,7 +197879,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-8da052e2e9": {
@@ -199774,8 +199647,8 @@
   "F-8ec238aa8e": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 51,
-    "line": 57,
+    "first": 52,
+    "line": 58,
     "text": "    hirt = ds[\"maaledybde\"][\"hirtshals_15m\"]\n    dyreenhed = pin(\"{count:BEK931-2024:dyreenhed}\")\n    n170 = pin(\"{read:BEK931-2024:170|divideret med 170 kg}\")\n    drained = pin(\"{read:KP-DRAENKORT-DCA135:52|På det endelige kort er 52% af markarealet drænet}\")\n    res_m = pin(\"{read:KP-DRAENKORT-DCA135:30.4|Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%}\")\n    accuracy = pin(\"{read:KP-DRAENKORT-DCA135:79|Kortet har en opløsning på 30,4 x 30,4 meter og en nøjagtighed på 79%}\")\n    flood_before = live.was(\"5df1889\", \"docs/FLOOD_GAP.md\", \"Across @@ km² of modelled flooding\")\n    flood_after = live.was(\"c8e5a6b\", \"docs/FLOOD_GAP.md\", \"Across @@ km² of modelled flooding\")\n    nine = tri[\"clusters\"][\"vandkemi\"][\"n\"]\n"
    },
    "constructions": [
@@ -199800,7 +199673,7 @@
    "value": "5.932",
    "where": [
     "scripts/pages/known_and_unknown.py",
-    57
+    58
    ]
   },
   "F-8ecd0ccc39": {
@@ -202198,10 +202071,10 @@
   },
   "F-906d8ca940": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 98,
+    "line": 104,
+    "text": "      + C(\"C-OQ-R6-CONFOUND\", \"A correlation between bed oxygen and water-column phosphate is \"\n          f\"equally predicted by {R('A7')}, {R('R2')}, {R('R5')} and plain mineralisation. \"\n          \"**Unscoreable here, not refuted.**\"))\n    w(\"\")\n    w(C(\"C-OQ-R6-H2S\", \"**The `Dihydrogensulfid` series, checked rather than assumed.** The CTD \"\n        f\"extract's `Dihydrogensulfid` has {h2s['rows']:,} records at {h2s['stations']} \"\n        f\"stations, {h2s['top_station_rows']:,} of them from station `{TOP_STATION}` in \"\n        \"Mariager Fjord.\") + \" \"\n      + C(\"C-OQ-R6-H2SUSE\", \"One silled fjord whose inner basin exchanges little water: usable \"\n          f\"for the {CH('H2S')} climatology of Mariager Fjord's bottom water and nothing \""
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -202246,8 +202119,8 @@
    "synthetic": false,
    "value": 2598,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_r6.py",
+    104
    ]
   },
   "F-907dfc9928": {
@@ -204745,6 +204618,10 @@
       "564"
      ],
      [
+      "year0",
+      "1980"
+     ],
+     [
       "n_variables",
       "9"
      ],
@@ -204784,8 +204661,8 @@
   "F-91ed13ae96": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1025,
-    "line": 1031,
+    "first": 1027,
+    "line": 1033,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -204804,7 +204681,7 @@
    "value": 3,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1031
+    1033
    ]
   },
   "F-91f3ff7fdc": {
@@ -205821,10 +205698,10 @@
   },
   "F-92d0ea9ce4": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 75,
-    "line": 81,
-    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 493,
+    "line": 499,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -205861,8 +205738,8 @@
    "synthetic": false,
    "value": 83309,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    81
+    "data/manual/claims.d/w3-cc.json",
+    499
    ]
   },
   "F-92d73d1d05": {
@@ -206980,8 +206857,8 @@
   "F-93848b93bd": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -207000,7 +206877,7 @@
    "value": 20,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-939768acc0": {
@@ -217804,9 +217681,9 @@
   "F-9bf0e10033": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -217833,7 +217710,7 @@
    "value": "5,200",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-9bfcad3eda": {
@@ -219533,8 +219410,8 @@
   "F-9d8de7883a": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1917,
-    "line": 1923,
+    "first": 1921,
+    "line": 1927,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P5\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Repeat with D detrended on year within each cell, so that a trend temperature and deficit share across the years cannot manufacture the slope, and report the variants with at least {param:cc_c6_years_low} and at least {param:cc_c6_years_high} years.\",\n   \"because\": \"A trend common to temperature and deficit over the years could produce a within-cell slope with no year-to-year link; detrending removes it, and the variants show whether the minimum number of years matters.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -219553,7 +219430,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1923
+    1927
    ]
   },
   "F-9d8fbecb30": {
@@ -221280,10 +221157,10 @@
   },
   "F-9ecc204bb2": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 111,
-    "line": 117,
-    "text": "    w(\"\")\n    w(\"## The new metric, stated precisely enough to be rejected\")\n    w(\"\")\n    w(C(\"C-OQ-J1-OPTICS\", \"The archive holds more optics than the monthly panel exposes. \"\n        f\"`docs/data/areas/stations_series.json` carries {ss['total_station_months']:,} \"\n        f\"station-months over {ss['n_variables']} variables, of which one is optical: `fluo`, \"\n        f\"fluorescence in the relative unit `rel`, on {ss['variables']['fluo']['n']:,} \"\n        \"station-months. Beside fluorescence the raw CTD file carries the three optical \"\n        f\"channels the metric below uses: `Lysdæmpning`, light attenuation, on {L:,} records, \"\n        f\"`Turbiditet` on {T:,}, and `FDOM`, the \""
+    "file": "scripts/pages/openproblem_a7.py",
+    "first": 75,
+    "line": 81,
+    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -221320,8 +221197,8 @@
    "synthetic": false,
    "value": 60460,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    117
+    "scripts/pages/openproblem_a7.py",
+    81
    ]
   },
   "F-9edac16b2c": {
@@ -223467,10 +223344,10 @@
   },
   "F-a053d110be": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 127,
-    "line": 133,
-    "text": "    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))\n    w(\"- \" + C(\"C-OQ-E7-REG\", \"`data/raw/oda/stations.csv` - the ODA station register: \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 493,
+    "line": 499,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -223507,8 +223384,8 @@
    "synthetic": false,
    "value": 1327,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    133
+    "data/manual/claims.d/w3-cc.json",
+    499
    ]
   },
   "F-a059ac3b79": {
@@ -224435,8 +224312,8 @@
   "F-a12a6c0f1a": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -224455,7 +224332,7 @@
    "value": 54,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-a12e0256e4": {
@@ -224795,10 +224672,10 @@
   },
   "F-a17c9263d9": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 100,
-    "line": 106,
-    "text": "          \"Danish TEP, sea-surface microlayer or surfactant measurement either.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-NP\", \"The discriminator's other side is held: the water-chemistry extract \"\n        f\"carries `Nitrit+nitrat-N` on {kemi['Nitrit+nitrat-N']:,} records, \"\n        f\"`Ammoniak+ammonium-N` on {kemi['Ammoniak+ammonium-N']:,}, `Ortho-phosphat-P` on \"\n        f\"{kemi['Ortho-phosphat-P']:,}, \"\n        f\"`Nitrogen,total N` on {kemi['Nitrogen,total N']:,} and `Phosphor, total-P` on \"\n        f\"{kemi['Phosphor, total-P']:,}, one result per record, so an ambient N:P can be \"\n        \"formed by station, date and depth.\") + \" \"\n      + C(\"C-OQ-J1-UNSCOREABLE\", \"The hypothesis is missing its dependent variable, not its \""
+    "file": "scripts/pages/hypodraft_a1.py",
+    "first": 183,
+    "line": 189,
+    "text": "    w(\"- \" + C(\"C-BA-A1-CTD\", f\"`data/raw/oda/ctd.csv.gz` is {ly['ctd_bytes']:,} bytes with \"\n               f\"{ly['ctd_columns']:,} columns and {en['ctd']['rows']:,} rows; its parameters \"\n               \"include temperature, salinity, oxygen, fluorescence and turbidity, and none \"\n               \"is a nutrient.\"))\n    w(\"- \" + C(\"C-BA-A1-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the ODA water-chemistry \"\n               f\"extract, is held: {en['kemi']['rows']:,} rows, with total nitrogen on \"\n               f\"{kemi_p['Nitrogen,total N']:,}, nitrite+nitrate on \"\n               f\"{kemi_p['Nitrit+nitrat-N']:,} and ammonium on \"\n               f\"{kemi_p['Ammoniak+ammonium-N']:,} — nitrogen **in the sea**, a state and a \"\n               \"response, not a load from land.\"))"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -224887,8 +224764,8 @@
    "synthetic": false,
    "value": 190473,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    106
+    "scripts/pages/hypodraft_a1.py",
+    189
    ]
   },
   "F-a17d20fea6": {
@@ -235114,10 +234991,10 @@
   },
   "F-a95c664ddf": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 126,
-    "line": 132,
-    "text": "    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \"\n               f\"kind.** Near-bed oxygen alone is {ss['variables']['oxy_bed']['n']:,} \"\n               f\"station-months over {ss['variables']['oxy_bed']['stations']:,} stations: the \"\n               \"response-side record is dense; the exposure side has no column to sit in \"\n               \"there.\"))"
+    "file": "scripts/pages/openproblem_r6.py",
+    "first": 87,
+    "line": 93,
+    "text": "    w(\"\")\n    w(\"## No water-column observable can reach it, and this should be said plainly\")\n    w(\"\")\n    w(C(\"C-OQ-R6-PANEL\", \"The archive's finest routine observable near the bed is a monthly \"\n        f\"median per station: `stations_series.json` holds {ss['total_station_months']:,} \"\n        f\"station-months at {ss['n_stations']:,} stations over {ss['months']} months from \"\n        f\"{year0}, near-bed oxygen on {ss['variables']['oxy_bed']['n']:,} of them.\") + \" \"\n      + C(\"C-OQ-R6-SCALE\", f\"{R('R6')} lives at the sulphide front, which the national sediment \"\n          \"reports place millimetres to centimetres below the sediment surface; a station-month \"\n          \"median of bottom-water oxygen is far coarser in space and time, and the wrong \""
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -235154,8 +235031,8 @@
    "synthetic": false,
    "value": 76980,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    132
+    "scripts/pages/openproblem_r6.py",
+    93
    ]
   },
   "F-a96752daea": {
@@ -241645,8 +241522,8 @@
   "F-ae661b1220": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -241665,7 +241542,7 @@
    "value": 56.5,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-ae74e014e2": {
@@ -243965,7 +243842,7 @@
     "file": "scripts/pages/hypodraft_a1.py",
     "first": 177,
     "line": 183,
-    "text": "    w(\"- \" + C(\"C-BA-A1-SERIES\", \"`docs/data/areas/stations_series.json` holds \"\n               f\"{sr['station_months']:,} station-month values summed over its \"\n               f\"{sr['variables']:,} variables ({lo:,} to {hi:,} per variable), from \"\n               f\"{sr['stations']:,} stations over {sv['months']:,} months from {sv['year0']}. \"\n               \"Its variables are temperature, salinity, oxygen and oxygen saturation at \"\n               \"surface and bed, and fluorescence: **no nutrients**.\"))\n    w(\"- \" + C(\"C-BA-A1-CTD\", f\"`data/raw/oda/ctd.csv.gz` is {ly['ctd_bytes']:,} bytes with \"\n               f\"{ly['ctd_columns']:,} columns and {en['ctd']['rows']:,} rows; its parameters \"\n               \"include temperature, salinity, oxygen, fluorescence and turbidity, and none \"\n               \"is a nutrient.\"))"
+    "text": "    w(\"- \" + C(\"C-BA-A1-SERIES\", \"`docs/data/areas/stations_series.json` holds \"\n               f\"{ss['total_station_months']:,} station-month values summed over its \"\n               f\"{ss['n_variables']:,} variables ({lo:,} to {hi:,} per variable), from \"\n               f\"{ss['n_stations']:,} stations over {ss['months']:,} months from {ss['year0']}. \"\n               \"Its variables are temperature, salinity, oxygen and oxygen saturation at \"\n               \"surface and bed, and fluorescence: **no nutrients**.\"))\n    w(\"- \" + C(\"C-BA-A1-CTD\", f\"`data/raw/oda/ctd.csv.gz` is {ly['ctd_bytes']:,} bytes with \"\n               f\"{ly['ctd_columns']:,} columns and {en['ctd']['rows']:,} rows; its parameters \"\n               \"include temperature, salinity, oxygen, fluorescence and turbidity, and none \"\n               \"is a nutrient.\"))"
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -244633,8 +244510,8 @@
   "F-b0c4aba8b0": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -244653,7 +244530,7 @@
    "value": 30,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-b0da37d40e": {
@@ -245109,10 +244986,10 @@
   },
   "F-b13ba625e6": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 98,
-    "line": 104,
-    "text": "      + C(\"C-OQ-J1-SEARCHED\", \"The source register's `J1-J2-J3-GAP` records searches of \"\n          \"PANGAEA, HELCOM's catalogue, Dryad, Zenodo and the ODA parameter lists that found no \"\n          \"Danish TEP, sea-surface microlayer or surfactant measurement either.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-NP\", \"The discriminator's other side is held: the water-chemistry extract \"\n        f\"carries `Nitrit+nitrat-N` on {kemi['Nitrit+nitrat-N']:,} records, \"\n        f\"`Ammoniak+ammonium-N` on {kemi['Ammoniak+ammonium-N']:,}, `Ortho-phosphat-P` on \"\n        f\"{kemi['Ortho-phosphat-P']:,}, \"\n        f\"`Nitrogen,total N` on {kemi['Nitrogen,total N']:,} and `Phosphor, total-P` on \"\n        f\"{kemi['Phosphor, total-P']:,}, one result per record, so an ambient N:P can be \""
+    "file": "scripts/pages/hypodraft_a1.py",
+    "first": 185,
+    "line": 191,
+    "text": "               \"include temperature, salinity, oxygen, fluorescence and turbidity, and none \"\n               \"is a nutrient.\"))\n    w(\"- \" + C(\"C-BA-A1-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the ODA water-chemistry \"\n               f\"extract, is held: {en['kemi']['rows']:,} rows, with total nitrogen on \"\n               f\"{kemi_p['Nitrogen,total N']:,}, nitrite+nitrate on \"\n               f\"{kemi_p['Nitrit+nitrat-N']:,} and ammonium on \"\n               f\"{kemi_p['Ammoniak+ammonium-N']:,} — nitrogen **in the sea**, a state and a \"\n               \"response, not a load from land.\"))\n    w(\"\")\n    w(C(\"C-BA-A1-USED\", \"Only the published reports are used by the test. The held \""
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -245213,8 +245090,8 @@
    "synthetic": false,
    "value": 181647,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    104
+    "scripts/pages/hypodraft_a1.py",
+    191
    ]
   },
   "F-b15e673816": {
@@ -246285,8 +246162,8 @@
   "F-b21f94aa9f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -246305,7 +246182,7 @@
    "value": 0,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-b232ec3929": {
@@ -248975,8 +248852,8 @@
   "F-b5209874b6": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -248995,7 +248872,7 @@
    "value": -2,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-b524605bc0": {
@@ -250972,10 +250849,10 @@
   },
   "F-b5ea195365": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 218,
-    "line": 224,
-    "text": "    vk, bf = tc[\"clusters\"][\"vandkemi\"], tc[\"clusters\"][\"bundfauna\"]\n    tl = rs[\"tally\"]\n    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \""
+    "file": "scripts/pages/known_and_unknown.py",
+    "first": 94,
+    "line": 100,
+    "text": "\n### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |"
    },
    "constructions": [
     "K-DRAFTSA-TRIAGE"
@@ -251032,8 +250909,8 @@
    "synthetic": false,
    "value": 9,
    "where": [
-    "scripts/pages/triage.py",
-    224
+    "scripts/pages/known_and_unknown.py",
+    100
    ]
   },
   "F-b5ea286603": {
@@ -251240,10 +251117,10 @@
   },
   "F-b61d7944ec": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 122,
-    "line": 128,
-    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -251262,6 +251139,10 @@
      [
       "months",
       "564"
+     ],
+     [
+      "year0",
+      "1980"
      ],
      [
       "n_variables",
@@ -251296,8 +251177,8 @@
    "synthetic": false,
    "value": 679422,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    128
+    "data/manual/claims.d/w3-cc.json",
+    1483
    ]
   },
   "F-b632c5f52c": {
@@ -251405,9 +251286,9 @@
   "F-b6474e2555": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -251438,7 +251319,7 @@
    "value": "209",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-b6478b8ebf": {
@@ -252024,8 +251905,8 @@
   "F-b6d8ac2b3c": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 936,
-    "line": 942,
+    "first": 938,
+    "line": 944,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-N2\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The second null draws {param:cc_c4_surrogates} amplitude-adjusted phase-randomised surrogates of each response.\",\n   \"because\": \"A pulse-like record's distribution of values is part of what makes it pulse-like; the amplitude-adjusted surrogates try to keep that distribution along with the periodogram, where plain random phases keep only the periodogram.\",\n   \"rests_on\": [\n    \"C-CC-C4-RP\""
    },
    "constructions": [
@@ -252044,7 +251925,7 @@
    "value": 10000,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    942
+    944
    ]
   },
   "F-b6ee96a3e7": {
@@ -252439,8 +252320,8 @@
   "F-b78e848332": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 569,
-    "line": 575,
+    "first": 571,
+    "line": 577,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-MAAL\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Secchi and depth extract gives BundDybde_m per visit: {fig:da_maal_rows} records, with a bottom depth at {fig:da_maal_stations_bottom} stations.\",\n   \"because\": \"hypodraft_facts.py counts every record of the extract and the stations with a bottom depth that parses as a number.\",\n   \"rests_on\": [\n    \"H-CC-MAAL\","
    },
    "constructions": [
@@ -252479,7 +252360,7 @@
    "value": 1176,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    575
+    577
    ]
   },
   "F-b78f3b67ea": {
@@ -252531,8 +252412,8 @@
   "F-b78fe39caf": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 98,
-    "line": 104,
+    "first": 99,
+    "line": 105,
     "text": "| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |\n| **One column, three meanings** | one guard written for all of them | {C(\"C-KP-T-KFAKTOR\", \"`KorrektionsFaktor` is a Winkler-to-electrode ratio for oxygen, a calibration against chlorophyll for fluorescence, and, for CTD temperature and salinity, a factor the instruction does not describe\")} |"
    },
    "constructions": [
@@ -252635,7 +252516,7 @@
    "value": 90971.753728,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    104
+    105
    ]
   },
   "F-b794e39b60": {
@@ -254180,8 +254061,8 @@
   "F-b87ceb99d3": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1558,
-    "line": 1564,
+    "first": 1562,
+    "line": 1568,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-QUANT\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Raw Temperatur is written with at most one decimal on {fig:da_tdec_one} of {fig:da_tdec_rows} rows of the whole CTD extract ({calc@K-SUBSET-SHARE:da_tdec_one / da_tdec_rows * 100|.0f}%); how much that rounding moves C_sat has not been computed here.\",\n   \"because\": \"hypodraft_ctd.py counts, over every row of the extract, the Temperatur rows and those whose original result has no more than a single digit after the decimal comma; nothing here computes the solubility, so its sensitivity to the rounding is not known.\",\n   \"rests_on\": [\n    \"D-CTD\","
    },
    "constructions": [
@@ -254239,7 +254120,7 @@
    "value": 14.355600092302511,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1564
+    1568
    ]
   },
   "F-b88094c201": {
@@ -260010,10 +259891,10 @@
   },
   "F-bcdb046417": {
    "code": {
-    "file": "scripts/pages/openproblem_j1.py",
-    "first": 97,
-    "line": 103,
-    "text": "        \"`data/raw/oda/kemi.csv.gz`.\") + \" \"\n      + C(\"C-OQ-J1-SEARCHED\", \"The source register's `J1-J2-J3-GAP` records searches of \"\n          \"PANGAEA, HELCOM's catalogue, Dryad, Zenodo and the ODA parameter lists that found no \"\n          \"Danish TEP, sea-surface microlayer or surfactant measurement either.\"))\n    w(\"\")\n    w(C(\"C-OQ-J1-NP\", \"The discriminator's other side is held: the water-chemistry extract \"\n        f\"carries `Nitrit+nitrat-N` on {kemi['Nitrit+nitrat-N']:,} records, \"\n        f\"`Ammoniak+ammonium-N` on {kemi['Ammoniak+ammonium-N']:,}, `Ortho-phosphat-P` on \"\n        f\"{kemi['Ortho-phosphat-P']:,}, \"\n        f\"`Nitrogen,total N` on {kemi['Nitrogen,total N']:,} and `Phosphor, total-P` on \""
+    "file": "scripts/pages/hypodraft_a1.py",
+    "first": 184,
+    "line": 190,
+    "text": "               f\"{ly['ctd_columns']:,} columns and {en['ctd']['rows']:,} rows; its parameters \"\n               \"include temperature, salinity, oxygen, fluorescence and turbidity, and none \"\n               \"is a nutrient.\"))\n    w(\"- \" + C(\"C-BA-A1-KEMI\", \"`data/raw/oda/kemi.csv.gz`, the ODA water-chemistry \"\n               f\"extract, is held: {en['kemi']['rows']:,} rows, with total nitrogen on \"\n               f\"{kemi_p['Nitrogen,total N']:,}, nitrite+nitrate on \"\n               f\"{kemi_p['Nitrit+nitrat-N']:,} and ammonium on \"\n               f\"{kemi_p['Ammoniak+ammonium-N']:,} — nitrogen **in the sea**, a state and a \"\n               \"response, not a load from land.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-DRAFTSA-ENUMS"
@@ -260110,8 +259991,8 @@
    "synthetic": false,
    "value": 182399,
    "where": [
-    "scripts/pages/openproblem_j1.py",
-    103
+    "scripts/pages/hypodraft_a1.py",
+    190
    ]
   },
   "F-bcdd9b20d5": {
@@ -266325,8 +266206,8 @@
   "F-c0c6ee0e4f": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1841,
-    "line": 1847,
+    "first": 1845,
+    "line": 1851,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Read the three near-bed arrays at the offsets in the .json, key on station and month, keep {param:cc_c6_o_min} ≤ O ≤ {param:cc_c6_o_max} mg/l, {param:cc_c6_t_min} ≤ T ≤ {param:cc_c6_t_max} °C and {param:cc_c6_s_min} ≤ S ≤ {param:cc_c6_s_max}, and report what the filter removes.\",\n   \"because\": \"The bounds are set wide so that only values outside what water can hold are removed, before any statistic; the key joins the three arrays by station and month.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -266345,7 +266226,7 @@
    "value": 40,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1847
+    1851
    ]
   },
   "F-c0caf683aa": {
@@ -267204,10 +267085,10 @@
   },
   "F-c18aa3ed5b": {
    "code": {
-    "file": "scripts/pages/openproblem_a7.py",
-    "first": 75,
-    "line": 81,
-    "text": "        refuse(f\"the seabed layer's fields have changed: {sorted(fields ^ SEABED_FIELDS)}\")\n    oda = os.listdir(os.path.join(ROOT, \"data\", \"raw\", \"oda\"))\n    if any(\"sedim\" in f.lower() or \"sporstof\" in f.lower() for f in oda):\n        refuse(\"a sediment-chemistry extract is now held\")\n    if \"Emne_12_19\" in open(os.path.join(ROOT, \"scripts\", \"fetch_oda.py\"), encoding=\"utf-8\").read():\n        refuse(\"fetch_oda.py now names the sediment topic\")\n    vlist = \" · \".join(f\"`{k}` {v['n']:,}\" for k, v in ss[\"variables\"].items())\n    clist = \", \".join(f\"{k} {v}\" for k, v in sb[\"by_class\"].items())\n    sed = portal[\"sedimentkemi_sporstof\"]\n"
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 493,
+    "line": 499,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -267244,8 +267125,8 @@
    "synthetic": false,
    "value": 83341,
    "where": [
-    "scripts/pages/openproblem_a7.py",
-    81
+    "data/manual/claims.d/w3-cc.json",
+    499
    ]
   },
   "F-c18d72c531": {
@@ -278677,56 +278558,6 @@
    "synthetic": false,
    "value": "11"
   },
-  "F-cb09ee93d7": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series",
-    "rows": [
-     [
-      "station_months",
-      "679422"
-     ],
-     [
-      "stations",
-      "1415"
-     ],
-     [
-      "variables",
-      "9"
-     ]
-    ],
-    "target": "variables"
-   },
-   "field": {
-    "is": "Variables in the monthly station series.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series.variables"
-   ],
-   "synthetic": false,
-   "value": 9,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
-   ]
-  },
   "F-cb11357298": {
    "constructions": [
     "K-AREAS-PLACES"
@@ -279443,8 +279274,8 @@
   "F-cb89b765bd": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 94,
-    "line": 100,
+    "first": 95,
+    "line": 101,
     "text": "### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |"
    },
    "constructions": [
@@ -279547,7 +279378,7 @@
    "value": 14,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    100
+    101
    ]
   },
   "F-cb8ce496c8": {
@@ -284339,10 +284170,10 @@
   },
   "F-cf77feeaa1": {
    "code": {
-    "file": "scripts/pages/hypodraft_c1.py",
-    "first": 124,
-    "line": 130,
-    "text": "          \"those also with an `Oxygen indhold` value in mg/l; \"\n          f\"{c1['with_levels_oxygen_bottom']:,} of those joined to a recorded `BundDybde_m` \"\n          f\"in `maaledybde.csv.gz`, and {c1['with_levels_oxygen_bottom_deep']:,} of these \"\n          f\"with a temperature profile reaching {c1['deep_m']:g} m. Of all \"\n          f\"{c1['station_days_ts']:,}, {c1['oxygen_near_deepest_t']:,} have their deepest \"\n          f\"{CH('O2')} within {c1['near_m']:g} m of the deepest temperature or below it. \"\n          f\"They come from {c1['stations']:,} stations, {c1['first_year']} to \"\n          f\"{c1['last_year']}.\"))\n    w(\"\")\n    w(C(\"C-AF-C1-MAAL\", f\"`maaledybde.csv.gz` holds {c1['maaledybde_station_days']:,} distinct \""
+    "file": "scripts/pages/hypodraft_l3.py",
+    "first": 186,
+    "line": 192,
+    "text": "    w(C(\"C-IL-L3-NOTLIC\", \"Not licensed: anything about chlorophyll, nutrient loading, or \"\n        f\"the modelled reference condition, which is where {R('L3')}'s stake actually lies \"\n        f\"({R('L1')}, {R('L2')}). Nothing causal.\"))\n    w(\"\")\n    w(C(\"C-IL-L3-PRE\", f\"Nor anything before the panel's first year, {y0}, which \"\n        \"`cube.py` fixes: the CTD extract it is built from holds station-days with \"\n        f\"temperature and salinity from {ctd['first_year']}, and those earlier years are \"\n        f\"not in the panel. {R('L3')} is about where monitoring records begin, so the \"\n        \"earlier years matter to it.\"))\n    w(\"\")"
    },
    "constructions": [
     "K-DRAFTSA-CTD"
@@ -284435,8 +284266,8 @@
    "synthetic": false,
    "value": 1970,
    "where": [
-    "scripts/pages/hypodraft_c1.py",
-    130
+    "scripts/pages/hypodraft_l3.py",
+    192
    ]
   },
   "F-cf78724741": {
@@ -285728,9 +285559,9 @@
   "F-d0b274b132": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 33,
-    "line": 39,
-    "text": "    ds, hf = J(DERIVED, \"ds_facts.json\"), J(DERIVED, \"hypodraft_facts.json\")\n    tri = J(DERIVED, \"triage.json\")\n    CL = claims.load()[0]\n    cache = {}\n\n    def pin(text):\n        return claims.resolve(CL, text, cache)[0]\n\n    def share(part, whole):\n        return live.step(\"K-SUBSET-SHARE\", part / whole * 100)"
+    "first": 34,
+    "line": 40,
+    "text": "    panel = J(DERIVED, \"drafts_b_counts.json\")[\"stations_series\"]\n    tri = J(DERIVED, \"triage.json\")\n    CL = claims.load()[0]\n    cache = {}\n\n    def pin(text):\n        return claims.resolve(CL, text, cache)[0]\n\n    def share(part, whole):\n        return live.step(\"K-SUBSET-SHARE\", part / whole * 100)"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -285761,7 +285592,7 @@
    "value": "79",
    "where": [
     "scripts/pages/known_and_unknown.py",
-    39
+    40
    ]
   },
   "F-d0b7e777ba": {
@@ -287394,10 +287225,10 @@
   },
   "F-d20841b0ec": {
    "code": {
-    "file": "scripts/pages/triage.py",
-    "first": 101,
-    "line": 107,
-    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
+    "file": "scripts/pages/openproblem_a7.py",
+    "first": 173,
+    "line": 179,
+    "text": "               f\"`X_UTM321` repeats `X_UTM32` in {md['rows_x_equals_x1']:,} of the \"\n               f\"{md['rows']:,} records. Positions come from `stations_series`, not from it.\"))\n    w(\"- \" + C(\"C-OQ-A7-SEABED\", \"`data/raw/geus/seabed_sediment_dk.gpkg`, layer \"\n               f\"`Seabed_sedimen` - {sb['features']} polygons in {sb['classes']} substrate \"\n               f\"classes ({clist}), compiled from {sb['campaigns']} named survey campaigns at \"\n               f\"map scales whose denominators run from {sbf['scale_min']:,} to \"\n               f\"{sbf['scale_max']:,}. Usable as \"\n               \"substrate class if the scale travels with it; **no organic-carbon value at \"\n               \"all**, as the register's `R7-TOC-MAP-GAP` records.\"))\n    w(\"- \" + C(\"C-OQ-A7-PORTAL\", \"The source register records the ODA portal's station lists, \""
    },
    "constructions": [
     "K-DRAFTSA-FACTS"
@@ -287442,8 +287273,8 @@
    "synthetic": false,
    "value": 500000,
    "where": [
-    "scripts/pages/triage.py",
-    107
+    "scripts/pages/openproblem_a7.py",
+    179
    ]
   },
   "F-d20a616afe": {
@@ -287510,8 +287341,8 @@
   "F-d213ba86e1": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -287530,7 +287361,7 @@
    "value": 20,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-d214771a10": {
@@ -288388,8 +288219,8 @@
   "F-d290efb8d8": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1864,
-    "line": 1870,
+    "first": 1868,
+    "line": 1874,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P2\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Compute C_sat and D, and keep cells with at least {param:cc_c6_min_years} distinct years.\",\n   \"because\": \"A cell needs enough years for a slope within it; the minimum is a stated choice, and the variants below show whether it matters.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -288408,7 +288239,7 @@
    "value": 8,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1870
+    1874
    ]
   },
   "F-d293d0b46c": {
@@ -288534,8 +288365,8 @@
   "F-d29c796283": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -288554,7 +288385,7 @@
    "value": 120,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-d2a4fbe2ce": {
@@ -291925,56 +291756,6 @@
     661
    ]
   },
-  "F-d519303f1a": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series",
-    "rows": [
-     [
-      "station_months",
-      "679422"
-     ],
-     [
-      "stations",
-      "1415"
-     ],
-     [
-      "variables",
-      "9"
-     ]
-    ],
-    "target": "stations"
-   },
-   "field": {
-    "is": "Stations in the monthly station series.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series.stations"
-   ],
-   "synthetic": false,
-   "value": 1415,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
-   ]
-  },
   "F-d528968118": {
    "code": {
     "file": "scripts/pages/areas.py",
@@ -293442,8 +293223,8 @@
   "F-d626dd3578": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 97,
-    "line": 103,
+    "first": 98,
+    "line": 104,
     "text": "|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |"
    },
    "constructions": [
@@ -293510,7 +293291,7 @@
    "value": 26380,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    103
+    104
    ]
   },
   "F-d63beae417": {
@@ -298034,47 +297815,6 @@
    "synthetic": false,
    "value": 17527.14670275655
   },
-  "F-da36d9a0d9": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1609,
-    "line": 1615,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-UNFILLED\",\n   \"kind\": \"bounded\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"At least {calc:da_oxy_bed_n - da_oxysat_bed_n|,} oxy_bed station-months carry no saturation, the difference of the two counts being a lower bound, and SondeNr is `999`, probe unknown, on {calc@K-SUBSET-SHARE:hy_ctd_999 / hy_ctd_rows * 100|.1f}% of the CTD extract.\",\n   \"because\": \"A station-month with oxygen and no saturation is one of the oxygen count not matched in the saturation count; since some saturation station-months might lack oxygen, the difference of the two counts can only undercount them. The probe share is enums.py's count of `999` over all rows of the extract.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "kind": "calculated",
-   "rests_on": {
-    "counted": 2
-   },
-   "src": [
-    "op",
-    "-",
-    [
-     [
-      "leaf",
-      "data/derived/hypodraft_facts.json",
-      "series_by_variable.by_variable.oxy_bed.n"
-     ],
-     [
-      "leaf",
-      "data/derived/hypodraft_facts.json",
-      "series_by_variable.by_variable.oxysat_bed.n"
-     ]
-    ],
-    [
-     76980,
-     64493
-    ]
-   ],
-   "synthetic": false,
-   "value": 12487,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1615
-   ]
-  },
   "F-da3811313c": {
    "constructions": [
     "K-NITROGEN-READINGS"
@@ -298214,8 +297954,8 @@
   "F-da414cb2c0": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 94,
-    "line": 100,
+    "first": 95,
+    "line": 101,
     "text": "### The second list\n\n| | what it was | where it had been the whole time |\n|---|---|---|\n| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |"
    },
    "constructions": [
@@ -298318,7 +298058,7 @@
    "value": 146,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    100
+    101
    ]
   },
   "F-da54056785": {
@@ -300845,8 +300585,8 @@
   "F-dba2ee11be": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1917,
-    "line": 1923,
+    "first": 1921,
+    "line": 1927,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P5\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"Repeat with D detrended on year within each cell, so that a trend temperature and deficit share across the years cannot manufacture the slope, and report the variants with at least {param:cc_c6_years_low} and at least {param:cc_c6_years_high} years.\",\n   \"because\": \"A trend common to temperature and deficit over the years could produce a within-cell slope with no year-to-year link; detrending removes it, and the variants show whether the minimum number of years matters.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -300865,7 +300605,7 @@
    "value": 3,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1923
+    1927
    ]
   },
   "F-dbb2230366": {
@@ -302398,8 +302138,8 @@
   "F-dd36b0529d": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1394,
-    "line": 1400,
+    "first": 1396,
+    "line": 1402,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-DEF\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"D = C_sat(T_bed, S_bed) minus O_bed, in mg/l, with C_sat from Weiss's equations in ml/l converted at {read:CC-USGS-OWQ-2011-03:1.42905|that factor should have been 1.42905 mg/mL} mg per ml.\",\n   \"because\": \"A published solubility function fixed before the data are seen makes the ceiling a known quantity; the conversion is the mass of a millilitre of oxygen that the USGS memorandum gives.\",\n   \"rests_on\": [\n    \"E-CC-USGS-WEISS\","
    },
    "constructions": [
@@ -302431,7 +302171,7 @@
    "value": "1.42905",
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1400
+    1402
    ]
   },
   "F-dd435484db": {
@@ -303322,8 +303062,8 @@
   "F-ddd486da04": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1899,
-    "line": 1905,
+    "first": 1903,
+    "line": 1909,
     "text": "  },\n  {\n   \"id\": \"C-CC-C6-P4\",\n   \"kind\": \"argued\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The null: {param:cc_c6_perms} permutations of D across years within each cell, T held in place, keeping cell means, the seasonal cycle, every station effect and both marginals and destroying only the within-cell pairing; report the permutation spread, the ordinary least-squares standard error and their ratio, since neighbouring stations in the same month can sample the same water.\",\n   \"because\": \"Permuting within a cell keeps everything but the pairing the hypothesis is about. The ordinary standard error assumes independent residuals, which neighbouring stations sampling the same water need not give, so the ratio measures how far that assumption would mislead.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -303342,7 +303082,7 @@
    "value": 2000,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1905
+    1909
    ]
   },
   "F-ddd8294c22": {
@@ -309352,8 +309092,8 @@
   "F-e28b0c81f0": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 615,
-    "line": 621,
+    "first": 617,
+    "line": 623,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-GOTFILE\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The Copernicus Gotland file holds salinity, temperature and oxygen against depth at the Gotland Deep on a monthly and one-metre grid, regridded from discrete observations; salinity and temperature run from 1993-01 to 2024-11, and oxygen, declared as a volume fraction in ml/l, fills {fig:cc_gotland_months} months from 2005-11 to 2025-01.\",\n   \"because\": \"The file's attributes and values, read on 2026-09-11, give the variables, the grid, the title, the regridding comment and the spans; landing_facts.py counts the months the project's copy of the oxygen holds, which are the months the file fills.\",\n   \"rests_on\": [\n    \"H-CC-GOTFILE\","
    },
    "constructions": [
@@ -309412,7 +309152,7 @@
    "value": 226,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    621
+    623
    ]
   },
   "F-e28fcc62f1": {
@@ -311808,52 +311548,6 @@
     140
    ]
   },
-  "F-e4779c5760": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.oxy_bed",
-    "rows": [
-     [
-      "n",
-      "76980"
-     ],
-     [
-      "stations",
-      "1327"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.oxy_bed.n"
-   ],
-   "synthetic": false,
-   "value": 76980,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
-   ]
-  },
   "F-e48e67ff4f": {
    "code": {
     "file": "scripts/pages/grundlaget.py",
@@ -312643,10 +312337,10 @@
   },
   "F-e51550bdc9": {
    "code": {
-    "file": "scripts/pages/constructed.py",
-    "first": 66,
-    "line": 72,
-    "text": "        (\"**`hz`, marine hazardous-substance coverage** — ours\",\n         \"the source layer's own geography\",\n         C(\"C-GC-C-HZ-R\", f\"**{hz['coast']} of {hz['points']} points are marine** \"\n           f\"({hz['lake']} lake, {hz['river']} river)\"),\n         C(\"C-GC-C-HZ-V\", \"withdrawn; the coverage was manufactured by proximity\"), True),\n        (\"**`SigtDybde_m`, Secchi depth**\",\n         f\"`BundDybde_m`, bottom depth, {L['n_paired']:,} paired rows\",\n         C(\"C-GC-C-SECCHI-R\", f\"seen-to-bottom on **{sh:.1f}%** of readings where the water is \"\n           f\"{split:g} m deep or less, and **{dp:.1f}%** deeper\"),\n         C(\"C-GC-C-SECCHI-V\", f\"right-censored, **{sh / dp:.0f}× more in shallow water**; any \""
+    "file": "scripts/pages/triage.py",
+    "first": 101,
+    "line": 107,
+    "text": "\n\ndef main(argv):\n    sections()\n    d, _, _ = claims.load()\n    cache = {}\n    R = lambda text: claims.resolve(d, text, cache)[0]\n    tc = live.live_json(os.path.join(DERIVED, \"triage.json\"))\n    rs = live.live_json(os.path.join(DERIVED, \"rescore.json\"))\n    reg = json.load(open(os.path.join(DERIVED, \"hypotheses.json\"), encoding=\"utf-8\"))"
    },
    "constructions": [
     "K-DRAFTSA-LIGHT"
@@ -312703,8 +312397,8 @@
    "synthetic": false,
    "value": 96708,
    "where": [
-    "scripts/pages/constructed.py",
-    72
+    "scripts/pages/triage.py",
+    107
    ]
   },
   "F-e5193dafdc": {
@@ -320267,8 +319961,8 @@
   "F-eb88322a13": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 836,
-    "line": 842,
+    "first": 838,
+    "line": 844,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-INDEX\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The event index: eastward wind at the southern point, from speed and direction, as a daily mean; its {param:cc_c4_burst_days}-day running sum is the westerly burst, multiplied by the easterly deficit of the {param:cc_c4_deficit_days} days before it, with a gap of {param:cc_c4_gap_days} days, as preconditioning; winter maxima give the event onsets.\",\n   \"because\": \"Mohrholz (2018) describes wind and air-pressure differences as setting up the sea-level difference between the Kattegat and the western Baltic that drives barotropic inflows; the index encodes a westerly burst after an easterly spell. Its windows are stated design values, not fitted, and the southern point is the one of the three nearest the straits.\",\n   \"rests_on\": [\n    \"E-CC-MOHR-WIND\","
    },
    "constructions": [
@@ -320287,7 +319981,7 @@
    "value": 10,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    842
+    844
    ]
   },
   "F-eb954ec463": {
@@ -322029,52 +321723,6 @@
    ],
    "synthetic": false,
    "value": "63,476"
-  },
-  "F-ed417b4b5a": {
-   "code": {
-    "file": "scripts/pages/draftkit.py",
-    "first": 64,
-    "line": 70,
-    "text": "def commit_of(rel):\n    r = subprocess.run([\"git\", \"log\", \"-1\", \"--format=%h\", \"--\", rel], cwd=ROOT,\n                       capture_output=True, text=True)\n    c = r.stdout.strip()\n    if not c:\n        raise SystemExit(f\"{rel} has no committed version to quote\")\n    return c\n\n\ndef build(rel, text, commit=None):"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.oxysat_bed",
-    "rows": [
-     [
-      "n",
-      "64493"
-     ],
-     [
-      "stations",
-      "1152"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.oxysat_bed.n"
-   ],
-   "synthetic": false,
-   "value": 64493,
-   "where": [
-    "scripts/pages/draftkit.py",
-    70
-   ]
   },
   "F-ed540ba456": {
    "constructions": [
@@ -328504,60 +328152,6 @@
    "synthetic": false,
    "value": 901.1618222703422
   },
-  "F-f27c348866": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1475,
-    "line": 1481,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable",
-    "rows": [
-     [
-      "months",
-      "564"
-     ],
-     [
-      "year0",
-      "1980"
-     ],
-     [
-      "by_variable",
-      "{… 9 keys}"
-     ],
-     [
-      "bin_bytes",
-      "5435376"
-     ]
-    ],
-    "target": "months"
-   },
-   "field": {
-    "is": "Months spanned by the monthly station series, from its descriptor.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.months"
-   ],
-   "synthetic": false,
-   "value": 564,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    1481
-   ]
-  },
   "F-f2841a87dd": {
    "constructions": [
     "K-QUOTE"
@@ -328889,52 +328483,6 @@
    ],
    "synthetic": false,
    "value": "0.89"
-  },
-  "F-f2e801ebf6": {
-   "code": {
-    "file": "scripts/pages/hypodraft_a1.py",
-    "first": 173,
-    "line": 179,
-    "text": "    w(\"- \" + C(\"C-BA-A1-HOV\", \"`data/raw/national/hovedoplande.geojson` holds \"\n               f\"{ly['hovedoplande_features']:,} main catchments, among them `DK` *Int \"\n               \"vidå-kruså* beside `DK4.1` *Vidå-kruså*: a catchment named as international \"\n               \"beside its Danish part.\"))\n    w(\"- \" + C(\"C-BA-A1-SERIES\", \"`docs/data/areas/stations_series.json` holds \"\n               f\"{sr['station_months']:,} station-month values summed over its \"\n               f\"{sr['variables']:,} variables ({lo:,} to {hi:,} per variable), from \"\n               f\"{sr['stations']:,} stations over {sv['months']:,} months from {sv['year0']}. \"\n               \"Its variables are temperature, salinity, oxygen and oxygen saturation at \"\n               \"surface and bed, and fluorescence: **no nutrients**.\"))"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.temp_surf",
-    "rows": [
-     [
-      "n",
-      "84668"
-     ],
-     [
-      "stations",
-      "1414"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.temp_surf.n"
-   ],
-   "synthetic": false,
-   "value": 84668,
-   "where": [
-    "scripts/pages/hypodraft_a1.py",
-    179
-   ]
   },
   "F-f2f4186adb": {
    "code": {
@@ -329551,8 +329099,8 @@
   "F-f37c341d77": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 1025,
-    "line": 1031,
+    "first": 1027,
+    "line": 1033,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-P1\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"Build the wind index; take its winter maxima and the top k onsets for k = {param:cc_c4_k_a}, {param:cc_c4_k_b} and {param:cc_c4_k_c}, declared before seeing the answer.\",\n   \"because\": \"Several values of k declared in advance show whether a result depends on how many events are kept, without letting that choice follow the result.\",\n   \"rests_on\": [],\n   \"confirmed\": {"
    },
    "constructions": [
@@ -329571,7 +329119,7 @@
    "value": 8,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    1031
+    1033
    ]
   },
   "F-f3813ac6c6": {
@@ -329655,10 +329203,10 @@
   },
   "F-f392c48f94": {
    "code": {
-    "file": "scripts/pages/open_problems.py",
-    "first": 612,
-    "line": 618,
-    "text": "    w(C(\"C-OP-18-SET\", \"`scripts/rescore.py` takes the hypotheses listed as waiting on the ODA \"\n        \"`vandkemi` fetch - \" + \", \".join(ref(h) for h in hyps[:-1]) + f\" and {ref(hyps[-1])} - and \"\n        \"checks, per hypothesis, which of the variables its consequence needs are now in hand:\"))\n    w()\n    w(\"| | |\")\n    w(\"|---|---|\")\n    w(f\"| **testable now** | {rs['tally']['testable now']} — \" + \", \".join(ref(h) for h in testable) + \" |\")\n    w(f\"| **partly unblocked; a second blocker was behind the first** | **{rs['tally'][partly]}** |\")\n    w()\n    w(C(\"C-OP-18-LOCKS\", f\"**A blocker can hide a blocker.** {ref('A1')} and {ref('A2')} need river load, \""
+    "file": "scripts/pages/triage.py",
+    "first": 220,
+    "line": 226,
+    "text": "    one = int(tl[RS_TESTABLE]) == 1\n    w(\"### The water-chemistry extract, re-scored\")\n    w(\"\")\n    w(C(\"C-TR-RESCORE\", \"The ODA water-chemistry extract (`vandkemi`, `Emne_10_11`) was named \"\n        f\"in the blocker for {refs(nine)} — {vk['n']} hypotheses. It is now held, and \"\n        \"`scripts/rescore.py` checks each against it: \"\n        f\"**{tl[RS_TESTABLE]} {'has' if one else 'have'} every variable {'its' if one else 'their'} \"\n        f\"consequence needs and {'is' if one else 'are'} testable \"\n        f\"now, {refs(rs_t)}**; for the other {tl[RS_PARTLY]} a second blocker stood behind the \"\n        \"first.\") + \" \""
    },
    "constructions": [
     "K-META-RESCORE-TESTS"
@@ -329695,8 +329243,8 @@
    "synthetic": false,
    "value": 1,
    "where": [
-    "scripts/pages/open_problems.py",
-    618
+    "scripts/pages/triage.py",
+    226
    ]
   },
   "F-f397ce00d4": {
@@ -333874,9 +333422,9 @@
   "F-f6d841dc22": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 33,
-    "line": 39,
-    "text": "    ds, hf = J(DERIVED, \"ds_facts.json\"), J(DERIVED, \"hypodraft_facts.json\")\n    tri = J(DERIVED, \"triage.json\")\n    CL = claims.load()[0]\n    cache = {}\n\n    def pin(text):\n        return claims.resolve(CL, text, cache)[0]\n\n    def share(part, whole):\n        return live.step(\"K-SUBSET-SHARE\", part / whole * 100)"
+    "first": 34,
+    "line": 40,
+    "text": "    panel = J(DERIVED, \"drafts_b_counts.json\")[\"stations_series\"]\n    tri = J(DERIVED, \"triage.json\")\n    CL = claims.load()[0]\n    cache = {}\n\n    def pin(text):\n        return claims.resolve(CL, text, cache)[0]\n\n    def share(part, whole):\n        return live.step(\"K-SUBSET-SHARE\", part / whole * 100)"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -333907,7 +333455,7 @@
    "value": "52",
    "where": [
     "scripts/pages/known_and_unknown.py",
-    39
+    40
    ]
   },
   "F-f6d967b0e2": {
@@ -334993,52 +334541,6 @@
    "where": [
     "scripts/pages/hypodraft_c1.py",
     134
-   ]
-  },
-  "F-f7bd812015": {
-   "code": {
-    "file": "data/manual/claims.d/w3-cc.json",
-    "first": 493,
-    "line": 499,
-    "text": "  },\n  {\n   \"id\": \"C-CC-C4-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.\",\n   \"because\": \"hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.sal_bed",
-    "rows": [
-     [
-      "n",
-      "83309"
-     ],
-     [
-      "stations",
-      "1395"
-     ]
-    ],
-    "target": "stations"
-   },
-   "field": {
-    "is": "Distinct stations with any value of that variable, read from the binary station-index array.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.sal_bed.stations"
-   ],
-   "synthetic": false,
-   "value": 1395,
-   "where": [
-    "data/manual/claims.d/w3-cc.json",
-    499
    ]
   },
   "F-f7c4272eed": {
@@ -341484,8 +340986,8 @@
   "F-fd4b1ba41e": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 98,
-    "line": 104,
+    "first": 99,
+    "line": 105,
     "text": "| **A clock on every row** | {C(\"C-KP-T-NOCLOCK\", \"this project said *no row in the archive carries a clock time* and built a class of *unscoreable* on it\")} | {C(\"C-KP-T-CLOCK\", f\"`Startklok`, on **all but {kemi_rows - en['kemi']['nonblank']['Startklok']} of {kemi_rows:,}** water-chemistry rows. The claim was true of the CTD extract and inferred from a topic nobody had fetched\")} |\n| **The topic itself** | {C(\"C-KP-T-TOPIC-BLOCK\", f\"{nine} hypotheses were blocked on it\")} | {C(\"C-KP-T-TOPIC\", \"named in `fetch_oda.py`'s own docstring and missing from its `TOPICS` dict; it has since been fetched\")} |\n| **Two units in one column** | averages taken across them | {C(\"C-KP-T-UNITS\", f\"**{ku['parameters_multi_unit']} of {ku['parameters']} parameters**. `Orthophosphat` is in mg/l on {ortho_mg:.0f}% of its rows and in µg/l on the rest, a thousandfold apart; integrated primary production is spread over several units\")} |\n| **The flood sheets are photographs** | {C(\"C-KP-T-REG\", f\"registered by correlating against water polygons, at {cv['stated_error_min_m']:.0f}–{cv['stated_error_max_m']:.0f} m\")} | {C(\"C-KP-T-PHOTOS\", \"they carry an **orthophoto basemap** — buildings, streets, Rådhuspladsen's fountain — so the strongest cue for placing them was not the one used\")} |\n| **Grid north is not north** | {C(\"C-KP-T-NORTHUP\", \"*\\\"every sheet has north up (the north arrow confirms it)\\\"*, as the placement code still says\")} | {C(\"C-KP-T-NORTH\", f\"meridian convergence of **{cv['gamma_min_deg']:.2f}–{cv['gamma_max_deg']:.2f}°**, displacing corners **{cv['shift_min_m']:.0f}–{cv['shift_max_m']:.0f} m** — {cv['shift_over_error_min']:.1f} to {cv['shift_over_error_max']:.1f} times the registration error the pipeline reports for itself\")} |\n| **Censoring with no name** | read as measurements | {C(\"C-KP-T-CENSOR\", f\"`ResultatAttribut` = `<` on **{en['kemi']['categorical']['ResultatAttribut']['<']:,} rows**, where the value is the *detection limit*; `SigtTilBund` on {ds['maaledybde']['secchi_to_bottom']:,} Secchi readings that reached the bottom\")} |\n| **Values no instrument gave** | averaged | {C(\"C-KP-T-SENTINEL\", f\"depth exactly `99` on {ku['depth_exactly_99']:,} rows; a station named `Hirtshals 15 m` with bottom depths up to {hirt['max_m']:.1f} m (median {hirt['median_m']:.1f} m); oxygen saturation recorded up to {ku['saturation_max_pct']:,.0f}%\")} |\n| **The regulatory unit is void** | a headline figure framed on DE/ha | {C(\"C-KP-T-DE\", f\"`dyreenhed` occurs **{dyreenhed} times** in BEK 931/2024. The binding ceiling is {n170} kg N per hectare of harmoniareal\")} |\n| **A national drainage map** | *\"drained areas are not mapped\"* | {C(\"C-KP-T-DRAIN\", f\"mapped for Miljøstyrelsen at a {res_m} m resolution: {drained}% of agricultural land drained, with a stated accuracy of {accuracy}%, in a report we had not read\")} |\n| **One column, three meanings** | one guard written for all of them | {C(\"C-KP-T-KFAKTOR\", \"`KorrektionsFaktor` is a Winkler-to-electrode ratio for oxygen, a calibration against chlorophyll for fluorescence, and, for CTD temperature and salinity, a factor the instruction does not describe\")} |"
    },
    "constructions": [
@@ -341532,7 +341034,7 @@
    "value": 17.5,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    104
+    105
    ]
   },
   "F-fd4bcfaa65": {
@@ -342248,52 +341750,6 @@
    "synthetic": false,
    "value": 378198.9400000007
   },
-  "F-fdde9e7c79": {
-   "code": {
-    "file": "scripts/pages/hypodraft_a1.py",
-    "first": 173,
-    "line": 179,
-    "text": "    w(\"- \" + C(\"C-BA-A1-HOV\", \"`data/raw/national/hovedoplande.geojson` holds \"\n               f\"{ly['hovedoplande_features']:,} main catchments, among them `DK` *Int \"\n               \"vidå-kruså* beside `DK4.1` *Vidå-kruså*: a catchment named as international \"\n               \"beside its Danish part.\"))\n    w(\"- \" + C(\"C-BA-A1-SERIES\", \"`docs/data/areas/stations_series.json` holds \"\n               f\"{sr['station_months']:,} station-month values summed over its \"\n               f\"{sr['variables']:,} variables ({lo:,} to {hi:,} per variable), from \"\n               f\"{sr['stations']:,} stations over {sv['months']:,} months from {sv['year0']}. \"\n               \"Its variables are temperature, salinity, oxygen and oxygen saturation at \"\n               \"surface and bed, and fluorescence: **no nutrients**.\"))"
-   },
-   "constructions": [
-    "K-DRAFTSA-FACTS"
-   ],
-   "excerpt": {
-    "parent": "series_by_variable.by_variable.fluo",
-    "rows": [
-     [
-      "n",
-      "60460"
-     ],
-     [
-      "stations",
-      "1046"
-     ]
-    ],
-    "target": "n"
-   },
-   "field": {
-    "is": "Values of one variable in the monthly station series: one per station and month.",
-    "kind": "counted",
-    "synthetic": false
-   },
-   "kind": "counted",
-   "producer": "scripts/hypodraft_facts.py",
-   "rests_on": {
-    "counted": 1
-   },
-   "src": [
-    "leaf",
-    "data/derived/hypodraft_facts.json",
-    "series_by_variable.by_variable.fluo.n"
-   ],
-   "synthetic": false,
-   "value": 60460,
-   "where": [
-    "scripts/pages/hypodraft_a1.py",
-    179
-   ]
-  },
   "F-fdf00e8938": {
    "code": {
     "file": "scripts/nitrogen.py",
@@ -342431,8 +341887,8 @@
   "F-fe0618057d": {
    "code": {
     "file": "scripts/pages/known_and_unknown.py",
-    "first": 70,
-    "line": 76,
+    "first": 71,
+    "line": 77,
     "text": "\n{C(\"C-KP-QUADRANTS\", \"The quadrants sort what this project holds and misses by two questions: whether a thing exists, and whether we know we have it.\")}\n\n| | we know we have it | we don't know we have it |\n|---|---|---|\n| **it exists** | **known known** — the {ctd_rows} CTD measurements, and everything computed from them | **UNKNOWN KNOWN** — data that exists, is held by someone, and is absent from our map |\n| **we know it's missing** | **known unknown** — the {meta['gated_sources']} gated sources in [If you have data access we don't](IF_YOU_HAVE_THE_DATA.md), {meta['gated_slots']} of them with a slot the analysis is already written against | **unknown unknown** — measurements nobody makes and nobody has thought to want |\n\n{C(\"C-KP-UNKNOWN-KNOWN\", \"**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.\")} Some of those we found:\n"
    },
    "constructions": [
@@ -342531,7 +341987,7 @@
    "value": 10,
    "where": [
     "scripts/pages/known_and_unknown.py",
-    76
+    77
    ]
   },
   "F-fe0702fe6e": {
@@ -344178,9 +343634,9 @@
   "F-ff662f3a7e": {
    "code": {
     "file": "scripts/pages/draftkit.py",
-    "first": 82,
-    "line": 88,
-    "text": "    text = Q.sub(lambda m: \"{was:\" + commit + \":\" + rel + \":\" + m.group(1) + \"}\", text)\n    if n_quotes:\n        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:"
+    "first": 84,
+    "line": 90,
+    "text": "        head, _, rest = text.partition(\"\\n\")\n        text = (head + \"\\n\\n*Numbers shown as quotations are carried from this page as committed \"\n                f\"at `{commit}`: nothing in the repository stores them yet, so each says what \"\n                \"the page said, not that it was re-derived.*\\n\" + rest)\n    d, _, _ = claims.load()\n    try:\n        out = claims.resolve(d, text, {})[0]\n    except claims.Refused as e:\n        log(f\"  {rel}: {e}\")\n        return None"
    },
    "constructions": [
     "K-READ-PHRASE"
@@ -344207,14 +343663,14 @@
    "value": "50,000",
    "where": [
     "scripts/pages/draftkit.py",
-    88
+    90
    ]
   },
   "F-ff67d5d2a8": {
    "code": {
     "file": "data/manual/claims.d/w3-cc.json",
-    "first": 786,
-    "line": 792,
+    "first": 788,
+    "line": 794,
     "text": "  },\n  {\n   \"id\": \"C-CC-C4-PANEL\",\n   \"kind\": \"stipulated\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C4.md\",\n   \"claim\": \"The panel rule: stations inside {param:cc_c4_lon_w}–{param:cc_c4_lon_e} °E and {param:cc_c4_lat_s}–{param:cc_c4_lat_n} °N whose median bottom depth is at least {param:cc_c4_depth_m} m and which carry at least {param:cc_c4_months} monthly sal_bed medians in 1993–2024, each listed individually, never merged into a water body.\",\n   \"because\": \"A box, a depth cut and a minimum number of months are a rule a reader can re-run; the minimum keeps out stations with too few months to remove their own seasonal cycle; listing positions keeps the test off any partition into water bodies.\",\n   \"rests_on\": [],\n   \"replaces\": ["
    },
    "constructions": [
@@ -344233,7 +343689,7 @@
    "value": 15,
    "where": [
     "data/manual/claims.d/w3-cc.json",
-    792
+    794
    ]
   },
   "F-ff70b51952": {
@@ -344979,10 +344435,10 @@
   },
   "F-fff0060a3d": {
    "code": {
-    "file": "scripts/pages/openproblem_e7.py",
-    "first": 122,
-    "line": 128,
-    "text": "          \"concentrations, but river load lives on an ODA endpoint `fetch_oda.py` cannot \"\n          \"reach.\"))\n    w(\"\")\n    w(\"## What is actually here - counted\")\n    w(\"\")\n    w(\"- \" + C(\"C-OQ-E7-PANEL\", f\"`docs/data/areas/stations_series.json` - \"\n               f\"{ss['total_station_months']:,} station-months, {ss['n_stations']:,} stations, \"\n               f\"{ss['months']} monthly slots from {year0}, across {ss['n_variables']} \"\n               \"variables: fluorescence, oxygen and oxygen saturation (bed and surface), \"\n               \"salinity and temperature (bed and surface). **No toxicant variable of any \""
+    "file": "data/manual/claims.d/w3-cc.json",
+    "first": 1477,
+    "line": 1483,
+    "text": "  },\n  {\n   \"id\": \"C-CC-C6-SERIES\",\n   \"kind\": \"measured\",\n   \"stance\": \"ours\",\n   \"page\": \"hypodrafts/C6.md\",\n   \"claim\": \"The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.\",\n   \"because\": \"drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.\",\n   \"rests_on\": [\n    \"D-KP-SERIES\","
    },
    "constructions": [
     "K-DRAFTSB-COUNTS"
@@ -345001,6 +344457,10 @@
      [
       "months",
       "564"
+     ],
+     [
+      "year0",
+      "1980"
      ],
      [
       "n_variables",
@@ -345035,8 +344495,8 @@
    "synthetic": false,
    "value": 1415,
    "where": [
-    "scripts/pages/openproblem_e7.py",
-    128
+    "data/manual/claims.d/w3-cc.json",
+    1483
    ]
   },
   "F-fffe961438": {

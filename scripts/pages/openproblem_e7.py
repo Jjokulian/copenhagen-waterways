@@ -57,7 +57,7 @@ def text():
     dc = J("drafts_b_counts.json")
     ss, mfs = dc["stations_series"], dc["mfs"]
     hf = J("hypodraft_facts.json")
-    reg, year0 = hf["stations_register"], hf["series_by_variable"]["year0"]
+    reg, year0 = hf["stations_register"], dc["stations_series"]["year0"]
     en = J("enums.json")
     ctd = en["ctd"]
     par, kemi = ctd["categorical"]["Parameter"], en["kemi"]["categorical"]["Parameter"]

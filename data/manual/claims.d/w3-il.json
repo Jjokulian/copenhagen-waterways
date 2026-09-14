@@ -52,7 +52,7 @@
    "id": "D-IL-HYPFACTS",
    "kind": "held",
    "label": "Draft file facts\\ndata/derived/hypodraft_facts.json",
-   "detail": "Written by hypodraft_facts.py: among other facts, the first year of the monthly station series, and the station-months and stations the flag record marks as a batch sign flip."
+   "detail": "Written by hypodraft_facts.py: among other facts, the station-months and stations the flag record marks as a batch sign flip."
   },
   {
    "id": "D-IL-HYPCTD",
@@ -344,32 +344,28 @@
    "stance": "ours",
    "page": "hypodrafts/I3.md",
    "claim": "The monthly station panel holds the counted station-months, stations and variables, one monthly median per station and variable over the month slots from the panel's first January; near-bed oxygen has the counted station-months and stations.",
-   "because": "drafts_b_counts.py reads the panel's declaration and its binary for the totals and the distinct stations per variable; the first year is the panel's own, which cube.py fixes and hypodraft_facts.py reads back.",
+   "because": "drafts_b_counts.py reads the panel's declaration and its binary for the totals and the distinct stations per variable; the first year is the panel's own, which cube.py fixes and drafts_b_counts.py reads back.",
    "rests_on": [
     "D-KP-SERIES",
     "X-IL-SERIES",
     "X-IL-CUBE",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "X-HY-FACTS",
-    "D-IL-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-IL-OLD-I3-PANEL"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/I3.md": "`docs/data/areas/stations_series.json` holds 679,422 station-months at 1,415 stations over 9 variables: one monthly median per station and variable, in 564 month slots from January 1980. Near-bed oxygen, `oxy_bed`, has 76,980 station-months at 1,327 stations.",
-     "texts": "f61d747c394ccb1b",
+     "texts": "b68b5bde8e87c9b0",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-IL-SERIES": "45e0d9ac2e98cc2c",
      "node X-IL-CUBE": "2f346bb4313bf8ef",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node X-HY-FACTS": "0c9203a01293ee22",
-     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -392,8 +388,8 @@
     "C-IL-OLD-I3-CLASS1"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/I3.md": "**Values are not range-checked.** `stations_series.py` takes the median of every value in the deepest quarter of each cast's depth range, with no test of range, so values no instrument could give, which the extracts are known to carry, reach the panel. The flag record marks 11 station-months at 6 stations as a sign inversion (I7) and removes nothing.",
      "hypothesis I7": "498a591b6ac36714",
@@ -403,7 +399,7 @@
      "rests on C-HY-I7-CASE": "d66906822d86e34b",
      "node D-HY-FLAGS": "59611865975d2929",
      "node X-HY-FACTS": "0c9203a01293ee22",
-     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+     "node D-IL-HYPFACTS": "7b46cd96498e7606"
     }
    }
   },
@@ -782,26 +778,22 @@
     "X-IL-SERIES",
     "X-IL-CUBE",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "X-HY-FACTS",
-    "D-IL-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-IL-OLD-L3-DROPS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/L3.md": "`docs/data/areas/stations_series.json` holds 679,422 station-months, the sum of its 9 variables' counts, at 1,415 stations, in 564 month slots from January 1980; `stations_series.bin` is 5,435,376 bytes, 8 per station-month, as the declared layout of a `uint16` station index, a `uint16` month index and a `float32` value requires.",
-     "texts": "0740b14c1079402b",
+     "texts": "67658c01f1d0a583",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-IL-SERIES": "45e0d9ac2e98cc2c",
      "node X-IL-CUBE": "2f346bb4313bf8ef",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node X-HY-FACTS": "0c9203a01293ee22",
-     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -848,8 +840,8 @@
     "C-IL-OLD-L3-DROPS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/L3.md": "`stations_series.py` takes the median of every value in the deepest quarter of each cast's depth range, with no test of range, so values no instrument could give, which the extracts are known to carry, reach the panel; the flag record marks 11 station-months at 6 stations as a sign inversion (I7) and removes nothing. A test must set its own bounds and say how many values they drop.",
      "hypothesis I7": "498a591b6ac36714",
@@ -859,7 +851,7 @@
      "rests on C-HY-I7-CASE": "d66906822d86e34b",
      "node D-HY-FLAGS": "59611865975d2929",
      "node X-HY-FACTS": "0c9203a01293ee22",
-     "node D-IL-HYPFACTS": "ddbf38e149a4a591"
+     "node D-IL-HYPFACTS": "7b46cd96498e7606"
     }
    }
   },
@@ -1179,32 +1171,32 @@
    "stance": "ours",
    "page": "hypodrafts/L3.md",
    "claim": "Nothing before the panel's first year, which cube.py fixes, is licensed: the CTD extract the panel is built from holds station-days with temperature and salinity from an earlier year, which are not in the panel, and {ref:L3} is about where monitoring records begin.",
-   "because": "The panel's first year is the constant cube.py sets and hypodraft_facts.py reads back; hypodraft_ctd.py finds station-days in the extract from an earlier year; the generator refuses the page if that stops being so.",
+   "because": "The panel's first year is the constant cube.py sets and drafts_b_counts.py reads back; hypodraft_ctd.py finds station-days in the extract from an earlier year; the generator refuses the page if that stops being so.",
    "rests_on": [
     "X-IL-CUBE",
-    "X-HY-FACTS",
-    "D-IL-HYPFACTS",
     "X-KD-HYPCTD",
     "D-IL-HYPCTD",
-    "D-LR-REGISTER"
+    "D-LR-REGISTER",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-IL-OLD-L3-PRE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-il (read each I3 and L3 sentence as recorded in claim_spans.json against its claim, reasoning and what it rests on: drafts_b_counts.json, hypodraft_facts.json, hypodraft_ctd.json, hypotheses_evidence.json, stations_series.py and cube.py, the clock, flag, sentinel and derived-channel claims it cites, and the stated design values; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {ref:L3}": "L3: The trend depends on the start year",
      "said on hypodrafts/L3.md": "Nor anything before the panel's first year, 1980, which `cube.py` fixes: the CTD extract it is built from holds station-days with temperature and salinity from 1970, and those earlier years are not in the panel. L3 is about where monitoring records begin, so the earlier years matter to it.",
      "hypothesis L3": "d25ea94e11a66ed0",
-     "texts": "7530fb65c4bd2747",
+     "texts": "89a70a518caf3bde",
      "node X-IL-CUBE": "2f346bb4313bf8ef",
-     "node X-HY-FACTS": "0c9203a01293ee22",
-     "node D-IL-HYPFACTS": "ddbf38e149a4a591",
      "node X-KD-HYPCTD": "1ceeb76bd5900e03",
      "node D-IL-HYPCTD": "46e504f8e69f3e96",
-     "node D-LR-REGISTER": "2d21a171b8570678"
+     "node D-LR-REGISTER": "2d21a171b8570678",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },

@@ -1516,22 +1516,24 @@
    "stance": "ours",
    "page": "KNOWN_AND_UNKNOWN.md",
    "claim": "The CTD extract carries the distinct Parameter values the page counts, including Turbiditet and FDOM, and the station series this project analyses carry variables drawn from five of them.",
-   "because": "Distinct values of Parameter by enums.py; the series variables by hypodraft_facts.py - temperature, salinity, oxygen, oxygen saturation and fluorescence.",
+   "because": "Distinct values of Parameter by enums.py; the series variables by drafts_b_counts.py - temperature, salinity, oxygen, oxygen saturation and fluorescence.",
    "rests_on": [
     "X-KP-ENUMS",
     "X-KP-META",
-    "X-KP-HYPFACTS"
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "basis": "computed",
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the panel's variable count on KNOWN_AND_UNKNOWN is read from drafts_b_counts.json like every other panel count, the copy in hypodraft_facts.json being gone; the claim now rests on drafts_b_counts.py and its file, its wording and value unchanged, and the claim resting on it draws on the same)",
     "saw": {
      "said on KNOWN_AND_UNKNOWN.md": "`ctd.csv.gz` carries **17 distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry 9 variables, drawn from five of them.",
-     "texts": "731af8b353816909",
+     "texts": "3e1d8f6c8e62624c",
      "node X-KP-ENUMS": "9f81357787adb189",
      "node X-KP-META": "b1c9cb927fef3b76",
-     "node X-KP-HYPFACTS": "1d05f2994f56127a"
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -1596,12 +1598,12 @@
    ],
    "basis": "assessed",
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "fork w2-kp (read each claim, its reasoning and what it rests on against the page wording as built; counts against triage.json, enums.json, ds_facts.json, meta_facts.json, hypodraft_facts.json and cycles.json; the drainage figures against the pinned DCA report and the fishing record against the pinned Zenodo page; history phrases checked by the engine at their commits; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the panel's variable count on KNOWN_AND_UNKNOWN is read from drafts_b_counts.json like every other panel count, the copy in hypodraft_facts.json being gone; the claim now rests on drafts_b_counts.py and its file, its wording and value unchanged, and the claim resting on it draws on the same)",
     "saw": {
      "said on KNOWN_AND_UNKNOWN.md": "None of those was hidden; they were simply not looked for. **So any sentence in this project of the form \"Denmark does not measure X\" should be read as \"X is not in what we fetched\"** — and the two are not the same claim.",
      "texts": "915e5f7f2cecb96a",
-     "rests on C-KP-CTD-PARAMS": "731af8b353816909",
+     "rests on C-KP-CTD-PARAMS": "3e1d8f6c8e62624c",
      "rests on C-KP-VEGETATION": "e9bdaf719f0a6da1",
      "rests on C-KP-FISHING": "1e41dfa315607519"
     }

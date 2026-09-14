@@ -45,10 +45,10 @@
     "scripts/drafts_b_counts.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged)",
+    "by": "Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/drafts_b_counts.py": "402bcf6808156de3"
+     "scripts/drafts_b_counts.py": "406e53b1cbb3f373"
     }
    }
   },

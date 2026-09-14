@@ -48,7 +48,7 @@ def text():
             refuse(f"the panel no longer carries {key}")
     ob = ss["variables"]["oxy_bed"]
     hf = J("hypodraft_facts.json")
-    y0 = hf["series_by_variable"]["year0"]
+    y0 = ss["year0"]
     sf = hf["sign_flips"]
     dl = J("hypotheses_evidence.json")["daylight"]
     if sorted(d[5:7] for d in dl["days"]) != ["06", "12"]:

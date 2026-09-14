@@ -30,7 +30,8 @@ def J(*p):
 
 def main():
     en, cv, meta = J(DERIVED, "enums.json"), J(DERIVED, "convergence.json"), J(DERIVED, "meta_facts.json")
-    ds, hf = J(DERIVED, "ds_facts.json"), J(DERIVED, "hypodraft_facts.json")
+    ds = J(DERIVED, "ds_facts.json")
+    panel = J(DERIVED, "drafts_b_counts.json")["stations_series"]
     tri = J(DERIVED, "triage.json")
     CL = claims.load()[0]
     cache = {}
@@ -77,7 +78,7 @@ def main():
 
 {C("C-KP-UNKNOWN-KNOWN", "**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.")} Some of those we found:
 
-- {C("C-KP-CTD-PARAMS", f"`ctd.csv.gz` carries **{meta['ctd_parameters']} distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry {hf['series']['variables']} variables, drawn from five of them.")}
+- {C("C-KP-CTD-PARAMS", f"`ctd.csv.gz` carries **{meta['ctd_parameters']} distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry {panel['n_variables']} variables, drawn from five of them.")}
 - {C("C-KP-VEGETATION", "The ODA topic tree holds **eelgrass**, **macroalgae** and **bottom fauna** topics, and none is in the fetch script.")}
 - {C("C-KP-FISHING", "Fishing effort is published openly: [Global Fishing Watch's apparent fishing effort](https://zenodo.org/records/14982712), version three, covering 2012–2024, as a direct download with no login.")}
 

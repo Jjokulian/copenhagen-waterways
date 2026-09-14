@@ -193,7 +193,7 @@
    "id": "D-OQ-HYPFACTS",
    "kind": "held",
    "label": "Facts for the drafts\\ndata/derived/hypodraft_facts.json",
-   "detail": "What hypodraft_facts.py read from held files: among them the monthly panel's first year, the station register's rows and stations, and the seabed layer's smallest and largest map scale."
+   "detail": "What hypodraft_facts.py read from held files: among them the station register's rows and stations, and the seabed layer's smallest and largest map scale."
   },
   {
    "id": "D-OQ-OXYGEN",
@@ -1886,25 +1886,21 @@
    "stance": "ours",
    "page": "openproblems/R6.md",
    "claim": "The finest routine near-bed observable is the monthly panel: its station-months, stations and months from its first year, with near-bed oxygen on the counted station-months.",
-   "because": "drafts_b_counts.py counts the panel from its binary; hypodraft_facts.py reads its first year.",
+   "because": "drafts_b_counts.py counts the panel from its binary and reads its first year.",
    "rests_on": [
     "D-KP-SERIES",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "D-OQ-HYPFACTS",
-    "X-KP-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on openproblems/R6.md": "The archive's finest routine observable near the bed is a monthly median per station: `stations_series.json` holds 679,422 station-months at 1,415 stations over 564 months from 1980, near-bed oxygen on 76,980 of them.",
-     "texts": "e927720256513321",
+     "texts": "ab164fa2748dac8e",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-OQ-HYPFACTS": "f737a97815667619",
-     "node X-KP-HYPFACTS": "1d05f2994f56127a"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -1924,8 +1920,8 @@
     "C-OQ-OLD-R6-SCALE"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each R6 sentence against its claim, reasoning and what it rests on: the pinned SR323 and NOVA kap. 14 texts with every number read at its phrase, the pinned NOVANA 2023-2027 text, the PANGAEA records of 997075, 987348 and 880132, hypodraft_ctd.json, drafts_b_counts.json, hypodraft_facts.json, enums.json, the source register's ODA, DOME and AL561 entries, and the places page's Mariager claims; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {ref:R6}": "R6: Sulphide locks the iron that would hold the phosphate",
      "said on openproblems/R6.md": "R6 lives at the sulphide front, which the national sediment reports place millimetres to centimetres below the sediment surface; a station-month median of bottom-water oxygen is far coarser in space and time, and the wrong quantity besides: oxygen is R6's *precondition*, not its consequence.",
@@ -1935,7 +1931,7 @@
      "pinned OQ-SR323": "3cdd2c4ef3a2867c",
      "node E-OQ-TA14-BIND": "792dab059b96e6fd",
      "pinned TA-NOVA-1998-K14": "11c04d872416d507",
-     "rests on C-OQ-R6-PANEL": "e927720256513321"
+     "rests on C-OQ-R6-PANEL": "ab164fa2748dac8e"
     }
    }
   },
@@ -3512,19 +3508,17 @@
    "rests_on": [
     "D-KP-SERIES",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "D-OQ-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each A7 sentence against its claim, reasoning and what it rests on: rescore.json and the OPEN_PROBLEMS A7 claim, the pinned Hylen et al. paper and Zenodo record, the pinned NERI report, SR323, NOVA kap. 14 and NOVANA 2023-2027 texts with every number read at its phrase, the AL561 PANGAEA record, drafts_b_counts.json, hypodraft_facts.json, the seabed layer's fields, fetch_oda.py and the source register; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on openproblems/A7.md": "`docs/data/areas/stations_series.json` - 679,422 station-months, 1,415 stations, 564 months from 1980, 9 variables (`fluo` 60,460 · `oxy_bed` 76,980 · `oxy_surf` 76,963 · `oxysat_bed` 64,493 · `oxysat_surf` 64,552 · `sal_bed` 83,309 · `sal_surf` 83,341 · `temp_bed` 84,656 · `temp_surf` 84,668). **No nutrient variable.**",
-     "texts": "8ed4cc218b529ad2",
+     "texts": "4c9c9d79edbe3f11",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-OQ-HYPFACTS": "f737a97815667619"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -3574,13 +3568,13 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on openproblems/A7.md": "`data/raw/geus/seabed_sediment_dk.gpkg`, layer `Seabed_sedimen` - 108 polygons in 7 substrate classes (Gravel and coarse sand 22, Mud and sandy mud 9, Muddy sand 16, Quaternary clay and silt 14, Sand 22, Sedimentary rock 3, Till/diamicton 22), compiled from 22 named survey campaigns at map scales whose denominators run from 5,000 to 500,000. Usable as substrate class if the scale travels with it; **no organic-carbon value at all**, as the register's `R7-TOC-MAP-GAP` records.",
      "texts": "dd8b6f8661bf2b51",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-OQ-HYPFACTS": "f737a97815667619",
+     "node D-OQ-HYPFACTS": "ea1cbea4e5049360",
      "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-OQ-SEABED-FIELDS": "73213c7b2274aa00",
      "node D-KP-SOURCEREG": "5f1ff7a12c321845"
@@ -4371,26 +4365,24 @@
    "stance": "ours",
    "page": "openproblems/E7.md",
    "claim": "The monthly panel's station-months, stations, months and variables, none a toxicant; near-bed oxygen at the counted station-months and stations.",
-   "because": "drafts_b_counts.py counts the panel per variable and its stations; hypodraft_facts.py reads its first year.",
+   "because": "drafts_b_counts.py counts the panel per variable and its stations, and reads its first year.",
    "rests_on": [
     "D-KP-SERIES",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "D-OQ-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-OQ-OLD-E7-OXY"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-op (read each E7 sentence against its claim, reasoning and what it rests on: enums.json parameter lists of the CTD and water-chemistry extracts, meta_facts.json, drafts_b_counts.json, hypodraft_facts.json, oxygen.json, the pollutant layer's fields and values, the GEUS and groundwater files, fetch_oda.py, the source register's ODA hazardous-substance, stream and pesticide-use entries, and the pinned Wikipedia diuron, atrazine, simazine, lindane and glyphosate phrases; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on openproblems/E7.md": "`docs/data/areas/stations_series.json` - 679,422 station-months, 1,415 stations, 564 monthly slots from 1980, across 9 variables: fluorescence, oxygen and oxygen saturation (bed and surface), salinity and temperature (bed and surface). **No toxicant variable of any kind.** Near-bed oxygen alone is 76,980 station-months over 1,327 stations: the response-side record is dense; the exposure side has no column to sit in there.",
-     "texts": "2150deddf2aa3f82",
+     "texts": "bc4c3552a626ac4d",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-OQ-HYPFACTS": "f737a97815667619"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -4410,11 +4402,11 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on openproblems/E7.md": "`data/raw/oda/stations.csv` - the ODA station register: 798,574 rows, 6,288 distinct stations.",
      "texts": "2d5672bc0a124fcc",
-     "node D-OQ-HYPFACTS": "f737a97815667619",
+     "node D-OQ-HYPFACTS": "ea1cbea4e5049360",
      "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }

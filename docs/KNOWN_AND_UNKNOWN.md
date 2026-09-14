@@ -17,7 +17,7 @@
 
 <span class="claim" data-claim="C-KP-UNKNOWN-KNOWN">**The unknown known is the dangerous one**, because it is indistinguishable from absence when you are inside the archive.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-UNKNOWN-KNOWN "What this claim rests on")</sup> Some of those we found:
 
-- <span class="claim" data-claim="C-KP-CTD-PARAMS">`ctd.csv.gz` carries **[17](SOURCES.md#F-779d628231) distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry [9](SOURCES.md#F-cb09ee93d7) variables, drawn from five of them.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-CTD-PARAMS "What this claim rests on")</sup>
+- <span class="claim" data-claim="C-KP-CTD-PARAMS">`ctd.csv.gz` carries **[17](SOURCES.md#F-779d628231) distinct `Parameter` values**, including **Turbiditet** and **FDOM**; the station series this project analyses carry [9](SOURCES.md#F-81bea72caf) variables, drawn from five of them.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-CTD-PARAMS "What this claim rests on")</sup>
 - <span class="claim" data-claim="C-KP-VEGETATION">The ODA topic tree holds **eelgrass**, **macroalgae** and **bottom fauna** topics, and none is in the fetch script.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-VEGETATION "What this claim rests on")</sup>
 - <span class="claim" data-claim="C-KP-FISHING">Fishing effort is published openly: [Global Fishing Watch's apparent fishing effort](https://zenodo.org/records/14982712), version three, covering 2012–2024, as a direct download with no login.</span><sup class="claim-mark">[†](CLAIMS.md#C-KP-FISHING "What this claim rests on")</sup>
 

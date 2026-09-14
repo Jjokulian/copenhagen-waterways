@@ -191,7 +191,7 @@
    "id": "D-DZ-HYPFACTS",
    "kind": "held",
    "label": "Draft file facts\\ndata/derived/hypodraft_facts.json",
-   "detail": "What hypodraft_facts.py counted in held files: among them the light extract's records and positioned stations, the seabed layer's smallest and largest map-scale denominators, the monthly panel's first year and months, and the CTD extract's size on disk."
+   "detail": "What hypodraft_facts.py counted in held files: among them the light extract's records and positioned stations, the seabed layer's smallest and largest map-scale denominators, and the CTD extract's size on disk."
   },
   {
    "id": "D-DZ-CONTIG",
@@ -732,25 +732,21 @@
    "stance": "ours",
    "page": "hypodrafts/D1.md",
    "claim": "The monthly panel this project analyses holds the counted station-months across its variables at the counted stations, from its first year over the counted months, one median per station, month and variable; near-bed and near-surface oxygen fill the counted station-months each.",
-   "because": "drafts_b_counts.py sums the panel's declared counts and counts its stations; the panel's own description says it holds a monthly median per station per variable; hypodraft_facts.py reads its first year.",
+   "because": "drafts_b_counts.py sums the panel's declared counts, counts its stations and reads its first year; the panel's own description says it holds a monthly median per station per variable.",
    "rests_on": [
     "D-KP-SERIES",
     "X-KD-DBCOUNTS",
-    "D-KD-DBCOUNTS",
-    "D-DZ-HYPFACTS",
-    "X-KP-HYPFACTS"
+    "D-KD-DBCOUNTS"
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "**The panel.** `docs/data/areas/stations_series.json`, the monthly panel this project analyses, holds 679,422 station-months across its 9 variables at 1,415 stations, over 564 months from 1980: one median per station, month and variable, so a station-quarter built from it is a median of medians. Near-bed oxygen (`oxy_bed`) fills 76,980 station-months and near-surface oxygen (`oxy_surf`), the placebo, 76,963.",
-     "texts": "92cc41e710d458b3",
+     "texts": "d79d4555546f9ae1",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
-     "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
-     "node X-KP-HYPFACTS": "1d05f2994f56127a"
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -957,11 +953,11 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "The layer is compiled from surveys at map scales whose denominators, in the `scale` field, run from 5,000 to 500,000, with 7 polygons at the finest scale and 7 at the coarsest, so boundary precision is not uniform.",
      "texts": "f40ada8da88255f9",
-     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node D-DZ-HYPFACTS": "d72d816ef682eedd",
      "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
@@ -1001,12 +997,12 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/D1.md": "**Depth and position.** The CTD extract, `data/raw/oda/ctd.csv.gz` (448.7 MB compressed), has columns beside each station's coordinates (`X_UTM32`, `Y_UTM32`) for the depth (`Dybde (m)`) and the position (`MålingX_UTM32`, `MalingY_UTM32`) of each measurement row, so one streamed pass can place each cast in the c-square it was taken in, with its depth.",
      "texts": "960e2cf765fde6e0",
      "node D-DZ-CTDHEAD": "2077016bbbc85a12",
-     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node D-DZ-HYPFACTS": "d72d816ef682eedd",
      "node X-KP-HYPFACTS": "1d05f2994f56127a"
     }
    }
@@ -1621,11 +1617,11 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/Z8.md": "**Light profiles.** `lys.csv.gz` holds 2,370,091 records at 566 stations with a position; this project's light analysis counts 62,741 casts in it with a positive Kd and a date, 60,697 of them with a fit correlation of at least 0.9 or none reported.",
      "texts": "3ca60cd8c6692f3a",
-     "node D-DZ-HYPFACTS": "a3e5746ee56aa6ab",
+     "node D-DZ-HYPFACTS": "d72d816ef682eedd",
      "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node D-LR-LIGHT": "d13e75be5b44c526",
      "node X-LR-LIGHT": "3ab43ea609543b4d"

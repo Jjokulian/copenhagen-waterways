@@ -47,7 +47,7 @@ def text():
     v = ss["variables"]
     if not set(NEED) | {"oxysat_bed"} <= set(v):
         refuse(f"the panel's variables are now {sorted(v)}, not those the page names")
-    if int(J("hypodraft_facts.json")["series_by_variable"]["year0"]) != 1980:
+    if int(ss["year0"]) != 1980:
         refuse("the page says the panel's months count from January 1980; it no longer does")
     if not v["oxysat_bed"]["n"] < v["oxy_bed"]["n"]:
         refuse("the page says saturation is held on fewer bed station-months than oxygen")

@@ -32,10 +32,10 @@
     "data/manual/claims.d/w3-il.json#params"
    ],
    "confirmed": {
-    "by": "agent w3-il (written against the code it describes: the window count in scripts/pages/hypodraft_l3.py lines 45-50, closed form checked against the enumeration there; 2026-09-11; not yet read by the project owner)",
-    "on": "2026-09-11",
+    "by": "Claude (2026-09-14: scripts/pages/hypodraft_l3.py - reads the panel's first year from drafts_b_counts.json, where its other panel counts already come from; nothing computed changed; the fields this construction covers are read or computed as its declaration says)",
+    "on": "2026-09-14",
     "saw": {
-     "scripts/pages/hypodraft_l3.py": "3303542b5a111743",
+     "scripts/pages/hypodraft_l3.py": "67c4f6994375a1af",
      "data/manual/claims.d/w3-il.json#params": "b60fda72457665b9"
     }
    }

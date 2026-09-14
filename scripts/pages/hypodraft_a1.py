@@ -58,7 +58,8 @@ def text():
     names = {(f["properties"]["hov_id"], f["properties"]["hov_na"]) for f in hov}
     if not {("DK", "Int vidå-kruså"), ("DK4.1", "Vidå-kruså")} <= names:
         refuse("the main-catchment layer no longer holds the two Vidå-kruså entries")
-    sbv = fx["series_by_variable"]["by_variable"]
+    ss = J("drafts_b_counts.json")["stations_series"]
+    sbv = ss["variables"]
     if set(sbv) != PANEL:
         refuse(f"the monthly series now holds {sorted(sbv)}, not the variables the page names")
     ctd_p = en["ctd"]["categorical"]["Parameter"]
@@ -69,7 +70,6 @@ def text():
         refuse("the water-chemistry extract no longer carries the nitrogen parameters counted")
     ns = [sbv[v]["n"] for v in sorted(sbv)]
     lo, hi = min(ns), max(ns)
-    sr, sv = fx["series"], fx["series_by_variable"]
     ly = fx["layers"]
 
     uT, uP = P("ba_a1_unit_total"), P("ba_a1_unit_point")
@@ -175,9 +175,9 @@ def text():
                "vidå-kruså* beside `DK4.1` *Vidå-kruså*: a catchment named as international "
                "beside its Danish part."))
     w("- " + C("C-BA-A1-SERIES", "`docs/data/areas/stations_series.json` holds "
-               f"{sr['station_months']:,} station-month values summed over its "
-               f"{sr['variables']:,} variables ({lo:,} to {hi:,} per variable), from "
-               f"{sr['stations']:,} stations over {sv['months']:,} months from {sv['year0']}. "
+               f"{ss['total_station_months']:,} station-month values summed over its "
+               f"{ss['n_variables']:,} variables ({lo:,} to {hi:,} per variable), from "
+               f"{ss['n_stations']:,} stations over {ss['months']:,} months from {ss['year0']}. "
                "Its variables are temperature, salinity, oxygen and oxygen saturation at "
                "surface and bed, and fluorescence: **no nutrients**."))
     w("- " + C("C-BA-A1-CTD", f"`data/raw/oda/ctd.csv.gz` is {ly['ctd_bytes']:,} bytes with "

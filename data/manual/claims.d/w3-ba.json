@@ -201,7 +201,7 @@
    "id": "H-BA-FACTS",
    "kind": "held",
    "label": "File facts\\ndata/derived/hypodraft_facts.json",
-   "detail": "What hypodraft_facts.py counted from held files, among them the features of the main-catchment layer, the size and header of the CTD extract, and the monthly station series' values, stations, variables and months."
+   "detail": "What hypodraft_facts.py counted from held files, among them the features of the main-catchment layer and the size and header of the CTD extract."
   },
   {
    "id": "H-BA-RESCORE",
@@ -2380,12 +2380,12 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/A1.md": "`data/raw/national/hovedoplande.geojson` holds 24 main catchments, among them `DK` *Int vidå-kruså* beside `DK4.1` *Vidå-kruså*: a catchment named as international beside its Danish part.",
      "texts": "0259ff0687751137",
      "node H-BA-HOVEDOPLANDE": "8c4a72a64f7f31a2",
-     "node H-BA-FACTS": "1b0edd22f2d189f2",
+     "node H-BA-FACTS": "b94fe4e715e80cac",
      "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node X-BA-GEN-A1": "172f2fb9a49525a4",
      "node A-BA-INT": "a99851009964590a"
@@ -2398,24 +2398,24 @@
    "stance": "ours",
    "page": "hypodrafts/A1.md",
    "claim": "The monthly station series holds the counted station-month values over its variables - temperature, salinity, oxygen and oxygen saturation at surface and bed, and fluorescence - from the counted stations and months: no nutrients.",
-   "because": "hypodraft_facts.py counts the series from its descriptor and binary; the page's generator refuses unless the variables are exactly those named.",
+   "because": "drafts_b_counts.py counts the series from its descriptor and binary; the page's generator refuses unless the variables are exactly those named.",
    "rests_on": [
-    "H-BA-FACTS",
-    "X-KP-HYPFACTS",
-    "X-BA-GEN-A1"
+    "X-BA-GEN-A1",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-BA-OLD-A1-TABLE"
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/A1.md": "`docs/data/areas/stations_series.json` holds 679,422 station-month values summed over its 9 variables (60,460 to 84,668 per variable), from 1,415 stations over 564 months from 1980. Its variables are temperature, salinity, oxygen and oxygen saturation at surface and bed, and fluorescence: **no nutrients**.",
-     "texts": "5930f58253747737",
-     "node H-BA-FACTS": "1b0edd22f2d189f2",
-     "node X-KP-HYPFACTS": "1d05f2994f56127a",
-     "node X-BA-GEN-A1": "172f2fb9a49525a4"
+     "texts": "98710fbf25f9a137",
+     "node X-BA-GEN-A1": "172f2fb9a49525a4",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -2438,14 +2438,14 @@
    ],
    "confirmed": {
     "on": "2026-09-14",
-    "by": "Claude (2026-09-14: X-KP-HYPFACTS no longer describes hypodraft_facts.py as counting the hazardous-substance layer - those counts are made once, in areas.py and oxygen.py. Each of these rests on the script for something else it still counts - the CTD parameters and probes, the station series, the seabed layer's scale range, the light extract, the station register, the main-catchment layer - and is unchanged)",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "D-CTD.label {fig:ctd_rows}": "53,710,760",
      "said on hypodrafts/A1.md": "`data/raw/oda/ctd.csv.gz` is 448,723,078 bytes with 34 columns and 53,710,760 rows; its parameters include temperature, salinity, oxygen, fluorescence and turbidity, and none is a nutrient.",
      "texts": "3fb376e5fc80c4aa",
      "node D-CTD": "f8d18f725cee6bd0",
      "node X-KP-ENUMS": "9f81357787adb189",
-     "node H-BA-FACTS": "1b0edd22f2d189f2",
+     "node H-BA-FACTS": "b94fe4e715e80cac",
      "node X-KP-HYPFACTS": "1d05f2994f56127a",
      "node X-BA-GEN-A1": "172f2fb9a49525a4"
     }
@@ -2493,14 +2493,14 @@
     "C-BA-A1-KEMI"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-ba (read each B1, A1 and A1b sentence as recorded against its claim, reasoning and what it rests on: the pinned DISCODATA responses for the Danish WISE bathing-water records, DP02's typetal and knowledge levels, SR353, SR527 and SR120 passages, the Vesthimmerlands Forsyning page, the statistical-methods error-class table; the fields of hypodraft_b1.json, hypodraft_facts.json and enums.json; fetch_oda.py TOPICS and run(); the source-register entries named; and, for each retired claim, its passage read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {ref:A1}": "A1: Danish land-based nitrogen load",
      "said on hypodrafts/A1.md": "Only the published reports are used by the test. The held monitoring files are what A1 would otherwise be tested on: the station panel and the CTD carry no nitrogen, and the water chemistry carries it as a concentration in the sea.",
      "hypothesis A1": "80987dd8682890c0",
      "texts": "34e38b540915a8f1",
-     "rests on C-BA-A1-SERIES": "5930f58253747737",
+     "rests on C-BA-A1-SERIES": "98710fbf25f9a137",
      "rests on C-BA-A1-CTD": "3fb376e5fc80c4aa",
      "rests on C-BA-A1-KEMI": "8f112e9bbf44ee56"
     }

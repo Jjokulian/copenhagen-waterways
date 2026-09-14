@@ -158,10 +158,10 @@
    "fmt": "{:,}"
   },
   "da_series_months": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series",
-    "station_months"
+    "stations_series",
+    "total_station_months"
    ],
    "fmt": "{:,}"
   },
@@ -713,94 +713,94 @@
    "fmt": "{:,}"
   },
   "da_series_vars": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series",
-    "variables"
+    "stations_series",
+    "n_variables"
    ],
    "fmt": "{:,}"
   },
   "da_series_stations": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series",
-    "stations"
+    "stations_series",
+    "n_stations"
    ],
    "fmt": "{:,}"
   },
   "da_series_nmonths": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
+    "stations_series",
     "months"
    ],
    "fmt": "{:,}"
   },
   "da_sal_bed_n": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "sal_bed",
     "n"
    ],
    "fmt": "{:,}"
   },
   "da_sal_bed_st": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "sal_bed",
     "stations"
    ],
    "fmt": "{:,}"
   },
   "da_oxy_bed_n": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "oxy_bed",
     "n"
    ],
    "fmt": "{:,}"
   },
   "da_oxy_bed_st": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "oxy_bed",
     "stations"
    ],
    "fmt": "{:,}"
   },
   "da_sal_surf_n": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "sal_surf",
     "n"
    ],
    "fmt": "{:,}"
   },
   "da_temp_bed_n": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "temp_bed",
     "n"
    ],
    "fmt": "{:,}"
   },
   "da_oxysat_bed_n": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
-    "by_variable",
+    "stations_series",
+    "variables",
     "oxysat_bed",
     "n"
    ],

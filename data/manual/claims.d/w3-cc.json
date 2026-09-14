@@ -52,25 +52,25 @@
    "fmt": "{:,}"
   },
   "cc_series_vars": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series",
-    "variables"
+    "stations_series",
+    "n_variables"
    ],
    "fmt": "{}"
   },
   "cc_series_slots": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
+    "stations_series",
     "months"
    ],
    "fmt": "{:,}"
   },
   "cc_series_year0": {
-   "file": "data/derived/hypodraft_facts.json",
+   "file": "data/derived/drafts_b_counts.json",
    "path": [
-    "series_by_variable",
+    "stations_series",
     "year0"
    ],
    "fmt": "{}"
@@ -497,15 +497,16 @@
    "stance": "ours",
    "page": "hypodrafts/C4.md",
    "claim": "The monthly panel holds sal_bed on {fig:da_sal_bed_n} station-months at {fig:da_sal_bed_st} stations, oxy_bed on {fig:da_oxy_bed_n} at {fig:da_oxy_bed_st}, and sal_surf on {fig:da_sal_surf_n}; its binary file is exactly as long as the layout its .json declares.",
-   "because": "hypodraft_facts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.",
+   "because": "drafts_b_counts.py counts each variable's values and distinct stations from the binary layout the .json declares; the page's generator checks, before writing, that the variables' blocks tile the binary file from start to end.",
    "rests_on": [
     "D-KP-SERIES",
-    "X-HY-FACTS",
-    "X-CC-C4PAGE"
+    "X-CC-C4PAGE",
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-cc (read each C4 sentence as recorded in claim_spans.json against its register entry, reasoning and what it rests on: hypodraft_facts.json and landing_facts.json as printed, the two CMEMS inflow netCDF files and the three Baltic wind files read directly, gotland.json against the netCDF oxygen months, stations_series.py, the pinned Mohrholz 2018, USGS 2011.03 and Wikipedia phrases, and the source register entry IOW-MBI; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {fig:da_sal_bed_n}": "83,309",
      "claim {fig:da_sal_bed_st}": "1,395",
@@ -513,10 +514,11 @@
      "claim {fig:da_oxy_bed_st}": "1,327",
      "claim {fig:da_sal_surf_n}": "83,341",
      "said on hypodrafts/C4.md": "`docs/data/areas/stations_series.{json,bin}`, the monthly panel: `sal_bed` on 83,309 station-months at 1,395 stations, `oxy_bed` on 76,980 at 1,327, `sal_surf` on 83,341; the `.bin` is exactly as long as the layout its `.json` declares.",
-     "texts": "2efb57282c68aaf6",
+     "texts": "01096ab6f9610bc5",
      "node D-KP-SERIES": "75fa427597293f59",
-     "node X-HY-FACTS": "0c9203a01293ee22",
-     "node X-CC-C4PAGE": "8222adbf87497cd1"
+     "node X-CC-C4PAGE": "8222adbf87497cd1",
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },
@@ -1479,17 +1481,18 @@
    "stance": "ours",
    "page": "hypodrafts/C6.md",
    "claim": "The monthly panel holds {fig:da_series_months} station-months, the sum over its {fig:cc_series_vars} variables, at {fig:da_series_stations} stations in {fig:cc_series_slots} monthly slots from January {fig:cc_series_year0}; near-bed, oxy_bed {fig:da_oxy_bed_n}, temp_bed {fig:da_temp_bed_n}, sal_bed {fig:da_sal_bed_n} and oxysat_bed {fig:da_oxysat_bed_n}.",
-   "because": "hypodraft_facts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.",
+   "because": "drafts_b_counts.py sums the point counts the .json declares for its variables, counts its stations and variables, and reads its number of monthly slots and its first year.",
    "rests_on": [
     "D-KP-SERIES",
-    "X-HY-FACTS"
+    "X-KD-DBCOUNTS",
+    "D-KD-DBCOUNTS"
    ],
    "replaces": [
     "C-CC-OLD-C6-SPAN"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-cc (read each C6 sentence as recorded in claim_spans.json against its register entry, reasoning and what it rests on: hypodraft_facts.json, hypodraft_ctd.json and enums.json as printed, stations_series.py and hypodraft_ctd.py code, the pinned USGS 2011.03 and Wikipedia phrases, and the claims of other pages it rests on; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {fig:da_series_months}": "679,422",
      "claim {fig:cc_series_vars}": "9",
@@ -1501,9 +1504,10 @@
      "claim {fig:da_sal_bed_n}": "83,309",
      "claim {fig:da_oxysat_bed_n}": "64,493",
      "said on hypodrafts/C6.md": "`docs/data/areas/stations_series.{json,bin}` holds 679,422 station-months — the sum over its 9 variables — at 1,415 stations, in 564 monthly slots from January 1980. Near-bed: `oxy_bed` 76,980 · `temp_bed` 84,656 · `sal_bed` 83,309 · `oxysat_bed` 64,493.",
-     "texts": "ac736bcabc8c217e",
+     "texts": "4cde27c24ddba122",
      "node D-KP-SERIES": "75fa427597293f59",
-     "node X-HY-FACTS": "0c9203a01293ee22"
+     "node X-KD-DBCOUNTS": "ba8503d1125cd516",
+     "node D-KD-DBCOUNTS": "e048d76319cd5ee4"
     }
    }
   },

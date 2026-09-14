@@ -62,7 +62,7 @@ def text():
     if int(lo) >= int(hi):
         refuse("the seabed layer is no longer compiled at more than one map scale")
     n_lo, n_hi = sb["by_scale"][str(int(lo))], sb["by_scale"][str(int(hi))]
-    year0 = hf["series_by_variable"]["year0"]
+    year0 = dc["stations_series"]["year0"]
     mb = hf["layers"]["ctd_bytes"] / 1e6
     chl = J("enums.json")["kemi"]["categorical"]["Parameter"]["Klorofyl a"]
     pc = live.live_json(os.path.join(ROOT, "docs", "data", "areas",

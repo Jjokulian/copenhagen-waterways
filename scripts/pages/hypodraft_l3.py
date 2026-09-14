@@ -60,7 +60,7 @@ def text():
         refuse("stations_series.bin no longer holds eight bytes per station-month")
     ob, osat = ss["variables"]["oxy_bed"], ss["variables"]["oxysat_bed"]
     hf = J("hypodraft_facts.json")
-    y0 = hf["series_by_variable"]["year0"]
+    y0 = ss["year0"]
     sf = hf["sign_flips"]
     ctd = J("hypodraft_ctd.json")["c1"]
     if int(ctd["first_year"]) >= int(y0):

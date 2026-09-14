@@ -79,7 +79,7 @@
    "id": "H-GI-FACTS",
    "kind": "held",
    "label": "File facts\\ndata/derived/hypodraft_facts.json",
-   "detail": "What hypodraft_facts.py counted from held files, among them the station register's rows and its distinct station numbers, and the monthly panel's first year."
+   "detail": "What hypodraft_facts.py counted from held files, among them the station register's rows and its distinct station numbers."
   },
   {
    "id": "E-GI-DCE23-EUTRO",
@@ -259,23 +259,21 @@
     "D-KP-SERIES",
     "X-KD-DBCOUNTS",
     "D-KD-DBCOUNTS",
-    "H-GI-SERIESMETA",
-    "H-GI-FACTS"
+    "H-GI-SERIESMETA"
    ],
    "replaces": [
     "C-GI-OLD-G1-DATA"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/G1.md": "`docs/data/areas/stations_series.{json,bin}` holds 679,422 station-months at 1,415 stations, in 564 monthly slots from January 1980, each value a median per station and month. The variables the identity needs are held on: `oxy_bed` 76,980, `temp_bed` 84,656, `sal_bed` 83,309, `temp_surf` 84,668 and `sal_surf` 83,341 station-months.",
-     "texts": "97776262ee979d44",
+     "texts": "769f3714c8c67069",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
-     "node H-GI-SERIESMETA": "e903fba3c2aecf35",
-     "node H-GI-FACTS": "a77b92e347805287"
+     "node H-GI-SERIESMETA": "e903fba3c2aecf35"
     }
    }
   },
@@ -294,13 +292,13 @@
     "C-GI-OLD-G1-DATA"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: only formatting changed - hypothesis IDs typed bare in register texts are now live references, checked against the register like any other; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "U-GI-G1-NORUN.label {ref:G1}": "G1: Warming",
      "said on hypodrafts/G1.md": "No script here joins them or applies a plausibility filter; a station-month carrying every one of them can be no more common than the rarest, so the joined panel holds at most 76,980 station-months before any filter.",
      "texts": "b44ff9a46617a245",
-     "rests on C-GI-G1-DATA": "97776262ee979d44",
+     "rests on C-GI-G1-DATA": "769f3714c8c67069",
      "node U-GI-G1-NORUN": "19e2f0c1101462ef"
     }
    }
@@ -845,24 +843,22 @@
     "X-KD-DBCOUNTS",
     "D-KD-DBCOUNTS",
     "H-GI-SERIESMETA",
-    "X-GI-SERIES",
-    "H-GI-FACTS"
+    "X-GI-SERIES"
    ],
    "replaces": [
     "C-GI-OLD-I1-DATA"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "agent w3-gi (read each G1 and I1 sentence as the build recorded it against its claim, reasoning and what it rests on: the panel counts in drafts_b_counts.json, the station-register counts in hypotheses_evidence.json and hypodraft_facts.json, the CTD temperature decimals in hypodraft_ctd.json counted on OriginalResultat, stations_series.py's layer cut and median, flags.json as the panel's per-value flags, the pinned DCE 2023 oxygen note, and a search of scripts/ and data/derived/ for the computations and the station split; each retired passage as read out of git at 00a157f against its reason and replacement; 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "said on hypodrafts/I1.md": "`docs/data/areas/stations_series.{json,bin}` holds 679,422 station-months at 1,415 stations, in 564 monthly slots from January 1980, for 9 variables; the `.bin` is 5,435,376 bytes, exactly 8 bytes per station-month, as the layout's `uint16` station index, `uint16` month index and `float32` value per point imply. The variable used, `oxy_bed`, is held on 76,980 station-months at 1,327 stations.",
-     "texts": "32287dbb44290742",
+     "texts": "f9d61f622c1183e1",
      "node D-KP-SERIES": "75fa427597293f59",
      "node X-KD-DBCOUNTS": "ba8503d1125cd516",
      "node D-KD-DBCOUNTS": "e048d76319cd5ee4",
      "node H-GI-SERIESMETA": "e903fba3c2aecf35",
-     "node X-GI-SERIES": "4c8493acdda70a07",
-     "node H-GI-FACTS": "a77b92e347805287"
+     "node X-GI-SERIES": "4c8493acdda70a07"
     }
    }
   },
@@ -982,8 +978,8 @@
     "C-GI-OLD-I1-REGISTER"
    ],
    "confirmed": {
-    "on": "2026-09-11",
-    "by": "Claude (re-read: only formatting changed - claim IDs, commit hashes and satellite names in register texts are now set as code so the compiler reads them as identifiers, not quantities; no wording changed. 2026-09-11; not yet read by the project owner)",
+    "on": "2026-09-14",
+    "by": "Claude (2026-09-14: the monthly panel's counts and first year are read from one place, drafts_b_counts.json, which counts them from the panel's own files; hypodraft_facts.json's copy, identical in every value, is gone. The panel claims now rest on drafts_b_counts.py and its file, the file-facts nodes no longer list the panel, and the claims on those nodes use only the facts still listed; the page wordings are unchanged)",
     "saw": {
      "claim {fig:hy_i1_in}": "34",
      "claim {fig:hy_i1_series}": "1,415",
@@ -994,7 +990,7 @@
      "node D-HY-REGISTER": "62c37f9461c9976a",
      "node X-HY-HYPOTHESES": "b6b9dab6ca712d28",
      "node X-HY-FACTS": "0c9203a01293ee22",
-     "node H-GI-FACTS": "a77b92e347805287"
+     "node H-GI-FACTS": "fdc6568ae77851d5"
     }
    }
   },

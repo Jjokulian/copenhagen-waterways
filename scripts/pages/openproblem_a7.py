@@ -63,7 +63,7 @@ def text():
     dc = J("drafts_b_counts.json")
     ss, md, sb, portal = dc["stations_series"], dc["maaledybde"], dc["seabed"], dc["oda_portal"]
     hf = J("hypodraft_facts.json")
-    year0, sbf = hf["series_by_variable"]["year0"], hf["seabed"]
+    year0, sbf = dc["stations_series"]["year0"], hf["seabed"]
     if any(k.lower().startswith(NUTRIENT_KEYS) for k in ss["variables"]):
         refuse("the monthly panel now carries a nutrient variable")
     if md["rows_x_equals_x1"] != md["rows"]:

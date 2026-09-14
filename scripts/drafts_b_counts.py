@@ -43,12 +43,12 @@ PORTAL_TOPICS = {"ctd": "Feltmaaling / CTD", "vandkemi": "Vandkemi",
 
 
 def series():
-    """The monthly station panel: totals, and distinct stations per variable read
+    """The monthly station panel: totals, its first year, and distinct stations per variable read
     from the binary itself (n uint16 station indices at each variable's offset)."""
     meta = json.load(open(SERIES, encoding="utf-8"))
     raw = open(SERIES_BIN, "rb").read()
     out = {"total_station_months": sum(v["n"] for v in meta["variables"]),
-           "n_stations": len(meta["stations"]), "months": meta["months"],
+           "n_stations": len(meta["stations"]), "months": meta["months"], "year0": meta["year0"],
            "n_variables": len(meta["variables"]), "bin_bytes": len(raw), "variables": {}}
     for v in meta["variables"]:
         idx = array("H")

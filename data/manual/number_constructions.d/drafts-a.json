@@ -341,18 +341,6 @@
       "kind": "counted",
       "is": "Areas in the project's area partition, `docs/data/areas/areas.json`."
      },
-     "series.station_months": {
-      "kind": "counted",
-      "is": "Values in the monthly station series, summed over its variables: one per station, month and variable."
-     },
-     "series.stations": {
-      "kind": "counted",
-      "is": "Stations in the monthly station series."
-     },
-     "series.variables": {
-      "kind": "counted",
-      "is": "Variables in the monthly station series."
-     },
      "enums.probe_ids_known": {
       "kind": "counted",
       "is": "Distinct `SondeNr` values in the whole CTD extract other than the unknown-probe code."
@@ -372,26 +360,6 @@
      "sign_flips.stations": {
       "kind": "counted",
       "is": "Distinct stations among them."
-     },
-     "series_by_variable.months": {
-      "kind": "counted",
-      "is": "Months spanned by the monthly station series, from its descriptor."
-     },
-     "series_by_variable.year0": {
-      "kind": "measured",
-      "is": "The first year of the monthly station series."
-     },
-     "series_by_variable.bin_bytes": {
-      "kind": "measured",
-      "is": "Size in bytes of `stations_series.bin`."
-     },
-     "series_by_variable.by_variable.*.n": {
-      "kind": "counted",
-      "is": "Values of one variable in the monthly station series: one per station and month."
-     },
-     "series_by_variable.by_variable.*.stations": {
-      "kind": "counted",
-      "is": "Distinct stations with any value of that variable, read from the binary station-index array."
      },
      "stations_register.rows": {
       "kind": "counted",
@@ -451,10 +419,10 @@
     "scripts/enums.py"
    ],
    "confirmed": {
-    "by": "Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before)",
+    "by": "Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says)",
     "on": "2026-09-14",
     "saw": {
-     "scripts/hypodraft_facts.py": "72e2e6cd44484771",
+     "scripts/hypodraft_facts.py": "4c5f0456ccb5ed19",
      "scripts/enums.py": "e21dcf1b1c5748b5"
     }
    }

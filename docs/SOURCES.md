@@ -839,7 +839,7 @@
 <a id="T-d0c45ed5"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — E. Chemical demand and toxicity
 
-11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/hypodraft_ctd.json` (`h2s.top_station_rows`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/hypodraft_facts.json` (`series.station_months`), written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py). Read from `data/derived/oxygen.json` (`hazardous.sediment`), written by [`scripts/oxygen.py`](../scripts/oxygen.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py).
+11 numbers in the columns *id*, *consequence*, *class*, *blocker*. Read from `data/derived/areas.json` (`hazardous_layer.coast`, `hazardous_layer.lake`, `hazardous_layer.points`, `hazardous_layer.river`), written by [`scripts/areas.py`](../scripts/areas.py). Read from `data/derived/drafts_b_counts.json` (`stations_series.total_station_months`), written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py). Read from `data/derived/enums.json` (`ctd.categorical.Parameter.Dihydrogensulfid`, `ctd.rows`, `kemi.categorical.Parameter.Temperatur`), written by [`scripts/enums.py`](../scripts/enums.py). Read from `data/derived/hypodraft_ctd.json` (`h2s.top_station_rows`), written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py). Read from `data/derived/oxygen.json` (`hazardous.sediment`), written by [`scripts/oxygen.py`](../scripts/oxygen.py). Read from `data/derived/rescore.json` (`tests.E11_unionised_nh3_ug_l.n_bottles_with_both`), written by [`scripts/rescore.py`](../scripts/rescore.py).
 
 <a id="T-dfb9df78"></a>
 ### [hypodrafts/TRIAGE.md](hypodrafts/TRIAGE.md) — D. Physical disturbance of the bed
@@ -868,7 +868,7 @@
 
 ## Numbers in running text, by where they come from
 
-1,853 distinct numbers in running text, from these sources.
+1,841 distinct numbers in running text, from these sources.
 
 ### From data files
 
@@ -885,7 +885,7 @@
 - `data/derived/cycles.json`, written by [`scripts/cycles.py`](../scripts/cycles.py) — 9 numbers.
 - `data/derived/depth_clock.json`, written by [`scripts/depth_clock.py`](../scripts/depth_clock.py) — 2 numbers.
 - `data/derived/detectable.json`, written by [`scripts/detectable.py`](../scripts/detectable.py) — 11 numbers.
-- `data/derived/drafts_b_counts.json`, written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py) — 41 numbers.
+- `data/derived/drafts_b_counts.json`, written by [`scripts/drafts_b_counts.py`](../scripts/drafts_b_counts.py) — 43 numbers.
 - `data/derived/ds_facts.json`, written by [`scripts/ds_facts.py`](../scripts/ds_facts.py) — 44 numbers.
 - `data/derived/ds_probes.json`, written by [`scripts/ds_probe.py`](../scripts/ds_probe.py) — 2 numbers. Feature types listed in the WFS server's GetCapabilities response to an anonymous request.
 - `data/derived/enums.json`, written by [`scripts/enums.py`](../scripts/enums.py) — 45 numbers.
@@ -899,7 +899,7 @@
 - `data/derived/grundlaget.json`, written by [`scripts/pages/grundlaget.py`](../scripts/pages/grundlaget.py) — 9 numbers.
 - `data/derived/hypodraft_b1.json`, written by [`scripts/hypodraft_b1.py`](../scripts/hypodraft_b1.py) — 26 numbers.
 - `data/derived/hypodraft_ctd.json`, written by [`scripts/hypodraft_ctd.py`](../scripts/hypodraft_ctd.py) — 25 numbers.
-- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 31 numbers.
+- `data/derived/hypodraft_facts.json`, written by [`scripts/hypodraft_facts.py`](../scripts/hypodraft_facts.py) — 17 numbers.
 - `data/derived/hypotheses.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 2 numbers.
 - `data/derived/hypotheses_evidence.json`, written by [`scripts/hypotheses.py`](../scripts/hypotheses.py) — 18 numbers.
 - `data/derived/landbrug.json`, written by [`scripts/landbrug.py`](../scripts/landbrug.py) — 3 numbers.
@@ -1261,7 +1261,7 @@ Lists every ODA marine station with a position and which extracted topics it car
 <a id="K-BA-HALFWIDTH"></a>
 ### Half the rounding unit of a published figure
 
-`K-BA-HALFWIDTH` · covers a step · **current** · read by agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-HALFWIDTH', unit * 0.5) to the stated rounding units of SR353's total and point-source figure; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-BA-HALFWIDTH` · covers a step · **current** · read by Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The largest error a figure printed in a report can carry from rounding alone: half the unit it is rounded to.
 
@@ -1278,7 +1278,7 @@ The largest error a figure printed in a report can carry from rounding alone: ha
 <a id="K-BA-UNIFORM-SD"></a>
 ### Spread of a sum of independent rounding errors
 
-`K-BA-UNIFORM-SD` · covers a step · **current** · read by agent w3-ba (read against scripts/pages/hypodraft_a1.py, where the step is applied as live.step('K-BA-UNIFORM-SD', ((hT ** 2 + hT ** 2 + hP ** 2 + hP ** 2) / 3) ** 0.5) to the two half-widths; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-BA-UNIFORM-SD` · covers a step · **current** · read by Claude (2026-09-14: scripts/pages/hypodraft_a1.py - reads the panel's counts and first year from drafts_b_counts.json instead of the copy, identical in every value; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The standard deviation of the sum of the rounding errors of the four printed figures one comparison of two vintages uses, if each error is independent and uniform within its half-width.
 
@@ -1568,7 +1568,7 @@ The count of records per value of each categorical column, from the enumeration 
 <a id="K-DRAFTSA-FACTS"></a>
 ### File facts cited by the hypothesis drafts
 
-`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by Claude (2026-09-14: hypodraft_facts.py no longer writes the hazardous-substance layer's counts - they are made once in areas.py and oxygen.py, and the five fields are no longer declared here; every other field is computed as before), 2026-09-14
+`K-DRAFTSA-FACTS` · covers data/derived/hypodraft_facts.json · **current** · read by Claude (2026-09-14: scripts/hypodraft_facts.py - drops its copy of the panel's counts and first year, which drafts_b_counts.py provides; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Re-derives, from the files named, the row counts, station counts, spans and layer facts the hypothesis drafts once typed from one-off checks.
 
@@ -1633,7 +1633,7 @@ Counts the rows of the hypothesis triage by class, by register group and by the 
 <a id="K-DRAFTSB-COUNTS"></a>
 ### Counts of held files, as the drafts quote them
 
-`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: drafts_b_counts.py's mfs() now keeps only the count of points with no matrix flagged and the distinct-value counts; the point, water-type and matrix counts are made once in areas.py and oxygen.py and are no longer declared here; the unused collections import went with them; everything else is computed as before), 2026-09-14
+`K-DRAFTSB-COUNTS` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 Counts the monthly station panel, the soundings extract, the seabed sediment layer and the pollutant-status layer, and parses the station counts the ODA portal returned as recorded in the source register - the file facts the hypothesis drafts and open problems cite.
 
@@ -2167,7 +2167,7 @@ The number of CTD records per value of the sampling-gear column, from the enumer
 <a id="K-IL-WINDOWS"></a>
 ### Admissible windows of consecutive years
 
-`K-IL-WINDOWS` · covers a step · **current** · read by agent w3-il (written against the code it describes: the window count in scripts/pages/hypodraft_l3.py lines 45-50, closed form checked against the enumeration there; 2026-09-11; not yet read by the project owner), 2026-09-11
+`K-IL-WINDOWS` · covers a step · **current** · read by Claude (2026-09-14: scripts/pages/hypodraft_l3.py - reads the panel's first year from drafts_b_counts.json, where its other panel counts already come from; nothing computed changed; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 How many windows of consecutive whole years, each at least a minimum length, fit inside an index period.
 
@@ -2234,7 +2234,7 @@ Reads the sibling project's fetched registers (CHR herds, declared hectares per 
 <a id="K-KD-PLANKTON"></a>
 ### Span of the CMEMS plankton files on disk
 
-`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: the only changes to drafts_b_counts.py since the last reading are in mfs() and an unused import; plankton() is unchanged), 2026-09-14
+`K-KD-PLANKTON` · covers data/derived/drafts_b_counts.json · **current** · read by Claude (2026-09-14: scripts/drafts_b_counts.py - adds the panel's first year, read from its descriptor, beside the counts it already takes from the panel's files; the fields this construction covers are read or computed as its declaration says), 2026-09-14
 
 The first and last year of the yearly CMEMS Baltic plankton files held on disk, and which years look partial by file size.
 

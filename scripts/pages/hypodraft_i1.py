@@ -47,7 +47,7 @@ def text():
 
     ss = J("drafts_b_counts.json")["stations_series"]
     ob = ss["variables"]["oxy_bed"]
-    if int(J("hypodraft_facts.json")["series_by_variable"]["year0"]) != 1980:
+    if int(ss["year0"]) != 1980:
         refuse("the page says the panel's months count from January 1980; it no longer does")
     per_point = ss["bin_bytes"] / ss["total_station_months"]
     if float(per_point) != 8.0:
